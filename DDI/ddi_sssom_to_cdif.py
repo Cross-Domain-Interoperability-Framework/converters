@@ -731,7 +731,7 @@ def convert(xml_path, doi_url=None, version="25", detect=True, verbose=False,
 
     if detect:
         try:
-            sys.path.insert(0, os.path.normpath(os.path.join(HERE, "..", "..")))
+            sys.path.insert(0, os.path.normpath(os.path.join(HERE, "..", "validation")))
             from detect_conformance import detect_conformance, apply_conformance
             apply_conformance(doc, detect_conformance(doc))
         except Exception as e:

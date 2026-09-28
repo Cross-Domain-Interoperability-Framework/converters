@@ -115,7 +115,7 @@ def group_sources(root):
 # local file path, which baked "file:///C:/…" into published records -- a
 # machine-specific identifier in a committed artifact.
 PUBLIC_BASE = ("https://cross-domain-interoperability-framework.github.io/"
-               "validation/converters/DCAT/dcatExamplesOK/")
+               "converters/DCAT/dcatExamplesOK/")
 
 
 def merged_graph(files, source_root=None):

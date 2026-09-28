@@ -294,7 +294,7 @@ spatial/temporal coverage or other discovery-level content, and further profiles
 (`data_description`, `provenance`, …) when the content warrants. Detection finding
 nothing means the declaration is **omitted**, not defaulted (the built-in claim
 applies only under `--static-conformance`, or when `detect_conformance` cannot be
-imported). See [`../../detect_conformance.py`](../../detect_conformance.py).
+imported). See [`../../detect_conformance.py`](../validation/detect_conformance.py).
 
 ## Requirements
 

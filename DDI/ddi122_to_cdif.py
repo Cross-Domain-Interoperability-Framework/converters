@@ -58,10 +58,11 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-# detect_conformance (validation/ root) derives dcterms:conformsTo from the
-# record's actual content. Best-effort: falls back to the built-in conformsTo
-# when it (or its rdflib/pyshacl deps) is unavailable.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+# detect_conformance lives in the `validation` submodule at the repo root. It
+# derives dcterms:conformsTo from the record's actual content. Best-effort:
+# falls back to the built-in conformsTo when the submodule is not initialized
+# (or its rdflib/pyshacl deps are unavailable).
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "validation"))
 try:
     from detect_conformance import detect_conformance, apply_conformance
     _HAVE_DETECT = True

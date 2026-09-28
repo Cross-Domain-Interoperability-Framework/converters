@@ -21,18 +21,39 @@ expose their conversion as an importable function.
 | [`ROCrate/ROCrateToCDIF.py`](ROCrate/ROCrateToCDIF.py) | RO-Crate 1.2 → CDIF | RO-Crate |
 | [`ROCrate/ValidateROCrate.py`](ROCrate/ValidateROCrate.py) | RO-Crate structural + SHACL validator | RO-Crate |
 
-Related, but **not** in `converters/`: `../geocodes_harvester.py` harvests SOSO
-records from the EarthCube GeoCodes SPARQL catalog and converts them to CDIF —
-it's a network harvester, not a general file converter. For converting a SOSO
-file or URL you already have, use `soso2cdif.py`.
+Related, but **not** a converter here: `geocodes_harvester.py` (in the
+[`validation`](https://github.com/Cross-Domain-Interoperability-Framework/validation)
+repo, bundled here as the `validation/` submodule) harvests SOSO records from the
+EarthCube GeoCodes SPARQL catalog and converts them to CDIF — it's a network
+harvester, not a general file converter. For converting a SOSO file or URL you
+already have, use `soso2cdif.py`.
+
+## Setup
+
+```bash
+git clone https://github.com/Cross-Domain-Interoperability-Framework/converters.git
+cd converters
+git submodule update --init      # pulls the `validation` repo (detect_conformance + schemas)
+pip install -r requirements.txt
+```
+
+The [`validation`](https://github.com/Cross-Domain-Interoperability-Framework/validation)
+repo is bundled as a git submodule at [`validation/`](validation/). The
+`format → CDIF` converters import `detect_conformance` from it to set
+`conformsTo` from content, and the `--validate` / `build_corpus.py` schema checks
+read the CDIF schemas and frame from it. **The submodule is optional at runtime:**
+every converter guards the import, so conversion still works without it — the
+`conformsTo` declaration just falls back to the built-in default (and `--validate`
+falls back to fetching the schema from GitHub). Initialize the submodule to get
+content-derived conformance detection.
 
 ## The "detect conformance" convention (for `format → CDIF` converters)
 
 A CDIF record declares which profiles it conforms to in a `schema:subjectOf`
 catalog record via `dcterms:conformsTo`. Rather than hard-coding a profile list,
 a converter should set that from the record's **actual content**: the
-[`detect_conformance.py`](../detect_conformance.py) module (at the repo root)
-tests, per CDIF class, a presence SPARQL `ASK` (the elements the class introduces
+[`detect_conformance.py`](validation/detect_conformance.py) module (in the
+bundled `validation/` submodule) tests, per CDIF class, a presence SPARQL `ASK` (the elements the class introduces
 beyond its base) gated by a content-SHACL validity check, and
 `apply_conformance()` writes the detected `cdif:` URIs into
 `subjectOf/dcterms:conformsTo` (preserving any non-`cdif:` domain claims).
@@ -130,9 +151,9 @@ headers → physical mappings. `--doi` is required; `--fetch-headers` /
 ## Validating converter output
 
 ```bash
-# CDIF output -> a CDIF profile schema (frame first)
-python ../tools/FrameAndValidate.py out.json -v \
-    --schema ../CDIFDiscoverySchema.json --frame ../CDIF-frame-2026.jsonld
+# CDIF output -> a CDIF profile schema (frame first; schemas live in the submodule)
+python validation/tools/FrameAndValidate.py out.json -v \
+    --schema validation/CDIFDiscoverySchema.json --frame validation/CDIF-frame-2026.jsonld
 
 # SOSO output -> SOSO v1.3 SHACL (use ConvertToSOSO --https so the shapes target it)
 #   soso_common_v1.3.0.ttl from the ESIP science-on-schema.org repo
@@ -144,14 +165,19 @@ mlcroissant validate --jsonld out-croissant.json
 ## Layout
 
 ```
-converters/
+converters/                  (repository root)
 ├── README.md                 this file
+├── requirements.txt
 ├── soso2cdif.py              SOSO file/URL -> CDIF (front-end for soso/)
+├── sssom_engine.py           shared table-driven mapping engine
 ├── soso/                     CDIF <-> Science-on-Schema.org (+ README, examples)
 ├── croissant/                CDIF <-> MLCommons Croissant (+ mapping docs, examples)
-├── DCAT/                     DCAT -> CDIF (+ README)
-├── DDI/                      DDI Codebook 2.5 -> CDIF
-└── mappings/                 SSSOM tables documenting each converter's mappings
+├── DCAT/                     DCAT -> CDIF (+ README, build_corpus.py, example corpora)
+├── DDI/  DDICodebook/  DDI-CDI/   DDI family -> CDIF
+├── ROCrate/                  CDIF <-> RO-Crate 1.2 (+ validator)
+├── mappings/                 SSSOM tables documenting each converter's mappings
+└── validation/               git submodule: the CDIF `validation` repo
+                              (detect_conformance.py, CDIF schemas, frame, tools)
 ```
 
 ## Mappings (SSSOM)

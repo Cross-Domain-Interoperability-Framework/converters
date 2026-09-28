@@ -18,7 +18,7 @@ The **RDF / JSON-LD** serialisation of DDI-CDI is a different reader and is not
 implemented; the dispatcher refuses it with a message saying so.
 
 Profile scope is decided **per content** via
-[`detect_conformance`](../../detect_conformance.py).
+[`detect_conformance`](../validation/detect_conformance.py).
 
 ## DDI-CDI XML in one paragraph
 

@@ -95,7 +95,7 @@ python ddi122_to_cdif.py input.xml --base-uri urn:mycat   # mint @id from IDNo
 ```
 
 Profile scope is **decided per content**: the full study + variable + file
-structure is mapped, then [`detect_conformance`](../../detect_conformance.py)
+structure is mapped, then [`detect_conformance`](../validation/detect_conformance.py)
 derives `dcterms:conformsTo` from what is actually present (the example files
 resolve to **core + discovery + data_description**).
 

@@ -40,7 +40,9 @@ from pathlib import Path
 # per-class content SHACL) instead of a hardcoded profile list, so the record
 # claims exactly the profiles it satisfies (and auto-detects data_description /
 # manifest / etc. per record).
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+# detect_conformance lives in the `validation` submodule at the repo root; when
+# the submodule is not initialized this falls back to the built-in conformsTo.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "validation"))
 try:
     from detect_conformance import detect_conformance, apply_conformance
     HAS_DETECT = True

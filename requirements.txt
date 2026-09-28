@@ -1,0 +1,24 @@
+# Runtime dependencies for the CDIF format converters.
+#
+# rdflib / pyshacl / requests are used by the validation submodule's
+# detect_conformance.py (content-derived conformsTo; requests fetches
+# building-block SHACL when no local _sources tree is present). rdflib also
+# parses non-JSON-LD DCAT/DDI serializations in build_corpus.py.
+rdflib
+pyshacl
+requests
+
+# pyld: RO-Crate conversion (expand/flatten/compact).
+pyld
+
+# jsonschema: --validate paths and the build_corpus.py schema check.
+jsonschema
+
+# PyYAML: build_corpus.load_context and mapping-worksheet tooling.
+PyYAML
+
+# openpyxl: converters/DCAT/make_coverage_xlsx.py (profile-coverage workbook).
+openpyxl
+
+# Optional: only for validating Croissant round-trip example output.
+#   pip install mlcroissant

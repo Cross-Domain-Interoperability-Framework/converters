@@ -41,12 +41,12 @@ import json
 import sys
 from pathlib import Path
 
-# detect_conformance lives at the validation/ root (one level up from soso/). It
+# detect_conformance lives in the `validation` submodule at the repo root. It
 # derives dcterms:conformsTo from the record's actual content (presence ASK +
-# per-class content SHACL, with a remote-SHACL fallback). Best-effort: if it or
-# its rdflib/pyshacl deps are unavailable, conversion falls back to the
-# profile-based default conformsTo.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+# per-class content SHACL, with a remote-SHACL fallback). Best-effort: if the
+# submodule is not initialized (or its rdflib/pyshacl deps are unavailable),
+# conversion falls back to the profile-based default conformsTo.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "validation"))
 try:
     from detect_conformance import detect_conformance, apply_conformance
     _HAVE_DETECT = True

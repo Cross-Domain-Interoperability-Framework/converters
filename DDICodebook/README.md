@@ -16,7 +16,7 @@ python ddi25_to_cdif.py input.xml --base-uri urn:mycat   # mint @id from IDNo
 ```
 
 Profile scope is decided **per content** via
-[`detect_conformance`](../../detect_conformance.py): the example files resolve to
+[`detect_conformance`](../validation/detect_conformance.py): the example files resolve to
 **core + discovery + data_description**.
 
 ## Relationship to DDI 1.2.2

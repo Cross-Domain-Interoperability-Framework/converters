@@ -82,7 +82,7 @@ Croissant declares conformance as a single top-level `dct:conformsTo` URI
 (`http://mlcommons.org/croissant/1.1` or `/1.0`). CDIF requires a catalog record
 on `schema:subjectOf`. The inverse emits the current CDIF catalog-record shape
 (conformance URIs at **1.1**). `dcterms:conformsTo` is **derived from the record's
-actual content** by [`detect_conformance.py`](../detect_conformance.py) — a presence
+actual content** by [`detect_conformance.py`](../validation/detect_conformance.py) — a presence
 SPARQL ASK per profile, gated by that profile's content SHACL — rather than a
 hardcoded list. In practice this means:
 

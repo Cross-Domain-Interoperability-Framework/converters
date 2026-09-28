@@ -122,7 +122,7 @@ Google Dataset Search accepts either namespace.
 
 ```bash
 # CDIF output -> CDIF Discovery schema
-python ../../tools/FrameAndValidate.py cdif-record.json -v --schema ../../CDIFDiscoverySchema.json --frame ../../CDIF-frame-2026.jsonld
+python ../validation/tools/FrameAndValidate.py cdif-record.json -v --schema ../validation/CDIFDiscoverySchema.json --frame ../validation/CDIF-frame-2026.jsonld
 
 # SOSO output -> SOSO v1.3 SHACL (use --https output so the shapes target it)
 #   shapes: https://github.com/ESIPFed/science-on-schema.org/blob/v1.3-SHACL/validation/shapegraphs/soso_common_v1.3.0.ttl
