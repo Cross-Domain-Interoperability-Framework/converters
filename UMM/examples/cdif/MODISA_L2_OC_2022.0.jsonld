@@ -1,0 +1,683 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "ummc": "https://cdn.earthdata.nasa.gov/umm/collection/v1.18.6#"
+  },
+  "@id": "https://doi.org/10.5067/AQUA/MODIS/L2/OC/2022.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "https://registry.identifiers.org/registry/doi",
+    "schema:value": "doi:10.5067/AQUA/MODIS/L2/OC/2022.0",
+    "schema:url": "https://doi.org/10.5067/AQUA/MODIS/L2/OC/2022.0"
+  },
+  "schema:sameAs": [
+    "https://cmr.earthdata.nasa.gov/search/concepts/C3380708980-OB_CLOUD"
+  ],
+  "schema:alternateName": "MODISA_L2_OC",
+  "schema:version": "2022.0",
+  "schema:name": "Aqua MODIS Level-2 Regional  Ocean Color (OC) Data, version 2022.0",
+  "schema:description": "The Ocean Color (OC) data suite provides calibrated, atmospherically corrected ocean-optics measurements and derived biogeophysical products. This data suite includes the Apparent Optical Properties (AOP) and provides satellite-derived measures of the interaction between solar radiation and the upper ocean. AOPs are “apparent” because they depend not only on the inherent optical properties (IOPs) of seawater and its constituents but also on the ambient light field. These variables are critical for studying light penetration, primary productivity, and biogeochemical cycling.\n\n Geophysical variables in this suite include:\n  - Kd_490 - Diffuse attenuation coefficient at 490 nm, KD2 algorithm (m⁻¹)\n  - Rrs - Remote sensing reflectance (sr⁻¹)\n  - angstrom - Aerosol Angstrom exponent, 443 to 865 nm\n  - chlor_a - Chlorophyll Concentration, OCI Algorithm (mg m⁻³)\n- l2_flags - Level-2 Processing Flags\n- aot_869 - Aerosol optical thickness at 869 nm\n- ipar - Instantaneous Photosynthetically Available Radiation (einstein m⁻² s⁻¹)\n- nflh - Normalized Fluorescence Line Height (W m⁻² um⁻¹ sr⁻¹)\n- par - Photosynthetically Available Radiation, R. Frouin (einstein m⁻² day⁻¹)\n- pic - Calcite Concentration, Balch and Gordon (mol m⁻³)\n- poc - Particulate Organic Carbon, D. Stramski, 2007 (443/555 version) (mg m⁻³)",
+  "schema:inLanguage": "en",
+  "schema:dateModified": "2025-01-23T00:00:00Z",
+  "schema:dateCreated": "2025-01-23T00:00:00Z",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "Ocean Biology Distributed Active Archive Center (OB.DAAC), Global Change Data Center, Earth Sciences Division, Science and Exploration Directorate, Goddard Space Flight Center, NASA",
+    "schema:alternateName": "NASA/GSFC/SED/ESD/GCDC/OB.DAAC",
+    "schema:contactPoint": {
+      "@type": [
+        "schema:ContactPoint"
+      ],
+      "schema:email": "sdps@oceancolor.gsfc.nasa.gov"
+    }
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Ocean Biology Distributed Active Archive Center (OB.DAAC), Global Change Data Center, Earth Sciences Division, Science and Exploration Directorate, Goddard Space Flight Center, NASA",
+      "schema:alternateName": "NASA/GSFC/SED/ESD/GCDC/OB.DAAC",
+      "schema:contactPoint": {
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:email": "sdps@oceancolor.gsfc.nasa.gov"
+      }
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "PROCESSOR",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Ocean Biology Processing Group",
+        "schema:alternateName": "OBPG"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "DISTRIBUTOR",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Ocean Biology Distributed Active Archive Center (OB.DAAC), Global Change Data Center, Earth Sciences Division, Science and Exploration Directorate, Goddard Space Flight Center, NASA",
+        "schema:alternateName": "NASA/GSFC/SED/ESD/GCDC/OB.DAAC",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "sdps@oceancolor.gsfc.nasa.gov"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "ARCHIVER",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Ocean Biology Distributed Active Archive Center (OB.DAAC), Global Change Data Center, Earth Sciences Division, Science and Exploration Directorate, Goddard Space Flight Center, NASA",
+        "schema:alternateName": "NASA/GSFC/SED/ESD/GCDC/OB.DAAC",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "sdps@oceancolor.gsfc.nasa.gov"
+        }
+      }
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Ocean Optics > Ocean Color",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Ocean Optics > Reflectance",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Atmosphere > Aerosols > Aerosol Optical Depth/Thickness",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Atmosphere > Aerosols > Aerosol Optical Depth/Thickness > Angstrom Exponent",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Ocean Optics > Chlorophyll > Chlorophyll Concentration",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Ocean Optics > Attenuation/Transmission",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Ocean Chemistry > Organic Carbon",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Ocean Chemistry > Inorganic Carbon",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Ocean Optics > Fluorescence",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Ocean Optics > Photosynthetically Active Radiation",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "OCEANS",
+      "schema:inDefinedTermSet": "https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_TopicCategoryCode"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Observing System, Aqua",
+      "schema:termCode": "Aqua",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Moderate-Resolution Imaging Spectroradiometer",
+      "schema:termCode": "MODIS",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Processing level 2",
+      "schema:termCode": "2",
+      "schema:inDefinedTermSet": "https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Kd_490",
+      "schema:alternateName": "Diffuse attenuation coefficient at 490 nm, KD2 algorithm",
+      "schema:description": "Diffuse attenuation coefficient at 490 nm, KD2 algorithm",
+      "schema:unitText": "m^-1",
+      "schema:minValue": 0.01,
+      "schema:maxValue": 6.0,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959066-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Rrs_412",
+      "schema:alternateName": "Remote sensing reflectance at 412 nm",
+      "schema:description": "Remote sensing reflectance at 412 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_ratio_of_upwelling_radiance_emerging_from_sea_water_to_downwelling_radiative_flux_in_air/",
+      "schema:unitText": "sr^-1",
+      "schema:minValue": -0.01,
+      "schema:maxValue": 0.1,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959099-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Rrs_443",
+      "schema:alternateName": "Remote sensing reflectance at 443 nm",
+      "schema:description": "Remote sensing reflectance at 443 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_ratio_of_upwelling_radiance_emerging_from_sea_water_to_downwelling_radiative_flux_in_air/",
+      "schema:unitText": "sr^-1",
+      "schema:minValue": -0.01,
+      "schema:maxValue": 0.1,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959102-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Rrs_469",
+      "schema:alternateName": "Remote sensing reflectance at 469 nm",
+      "schema:description": "Remote sensing reflectance at 469 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_ratio_of_upwelling_radiance_emerging_from_sea_water_to_downwelling_radiative_flux_in_air/",
+      "schema:unitText": "sr^-1",
+      "schema:minValue": -0.01,
+      "schema:maxValue": 0.1,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959108-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Rrs_488",
+      "schema:alternateName": "Remote sensing reflectance at 488 nm",
+      "schema:description": "Remote sensing reflectance at 488 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_ratio_of_upwelling_radiance_emerging_from_sea_water_to_downwelling_radiative_flux_in_air/",
+      "schema:unitText": "sr^-1",
+      "schema:minValue": -0.01,
+      "schema:maxValue": 0.1,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959118-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Rrs_531",
+      "schema:alternateName": "Remote sensing reflectance at 531 nm",
+      "schema:description": "Remote sensing reflectance at 531 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_ratio_of_upwelling_radiance_emerging_from_sea_water_to_downwelling_radiative_flux_in_air/",
+      "schema:unitText": "sr^-1",
+      "schema:minValue": -0.01,
+      "schema:maxValue": 0.1,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959126-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Rrs_547",
+      "schema:alternateName": "Remote sensing reflectance at 547 nm",
+      "schema:description": "Remote sensing reflectance at 547 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_ratio_of_upwelling_radiance_emerging_from_sea_water_to_downwelling_radiative_flux_in_air/",
+      "schema:unitText": "sr^-1",
+      "schema:minValue": -0.01,
+      "schema:maxValue": 0.1,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959130-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Rrs_555",
+      "schema:alternateName": "Remote sensing reflectance at 555 nm",
+      "schema:description": "Remote sensing reflectance at 555 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_ratio_of_upwelling_radiance_emerging_from_sea_water_to_downwelling_radiative_flux_in_air/",
+      "schema:unitText": "sr^-1",
+      "schema:minValue": -0.01,
+      "schema:maxValue": 0.1,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959142-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Rrs_645",
+      "schema:alternateName": "Remote sensing reflectance at 645 nm",
+      "schema:description": "Remote sensing reflectance at 645 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_ratio_of_upwelling_radiance_emerging_from_sea_water_to_downwelling_radiative_flux_in_air/",
+      "schema:unitText": "sr^-1",
+      "schema:minValue": -0.01,
+      "schema:maxValue": 0.1,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959151-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Rrs_667",
+      "schema:alternateName": "Remote sensing reflectance at 667 nm",
+      "schema:description": "Remote sensing reflectance at 667 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_ratio_of_upwelling_radiance_emerging_from_sea_water_to_downwelling_radiative_flux_in_air/",
+      "schema:unitText": "sr^-1",
+      "schema:minValue": -0.01,
+      "schema:maxValue": 0.1,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959161-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/Rrs_678",
+      "schema:alternateName": "Remote sensing reflectance at 678 nm",
+      "schema:description": "Remote sensing reflectance at 678 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_ratio_of_upwelling_radiance_emerging_from_sea_water_to_downwelling_radiative_flux_in_air/",
+      "schema:unitText": "sr^-1",
+      "schema:minValue": -0.01,
+      "schema:maxValue": 0.1,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959175-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/angstrom",
+      "schema:alternateName": "Aerosol Angstrom exponent, 443 to 865 nm",
+      "schema:description": "Aerosol Angstrom exponent, 443 to 865 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/aerosol_angstrom_exponent/",
+      "schema:minValue": -0.5,
+      "schema:maxValue": 3.0,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959051-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/aot_869",
+      "schema:alternateName": "Aerosol optical thickness at 869 nm",
+      "schema:description": "Aerosol optical thickness at 869 nm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/atmosphere_optical_thickness_due_to_ambient_aerosol/",
+      "schema:minValue": 0.0,
+      "schema:maxValue": 3.0,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959054-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/chlor_a",
+      "schema:alternateName": "Chlorophyll Concentration, OCI Algorithm",
+      "schema:description": "Chlorophyll Concentration, OCI Algorithm",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/mass_concentration_of_chlorophyll_in_sea_water/",
+      "schema:unitText": "mg m^-3",
+      "schema:minValue": 0.0010000000474974513,
+      "schema:maxValue": 100.0,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959057-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/ipar",
+      "schema:alternateName": "Instantaneous Photosynthetically Available Radiation",
+      "schema:description": "Instantaneous Photosynthetically Available Radiation",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/downwelling_photosynthetic_photon_radiance_in_sea_water/",
+      "schema:unitText": "micromol m^-2 s^-1",
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959059-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/l2_flags",
+      "schema:alternateName": "Level-2 Processing Flags",
+      "schema:description": "Level-2 Processing Flags",
+      "schema:minValue": -2147483648,
+      "schema:maxValue": 2147483647,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959071-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/nflh",
+      "schema:alternateName": "Normalized Fluorescence Line Height",
+      "schema:description": "Normalized Fluorescence Line Height",
+      "schema:unitText": "W m^-2 um^-1 sr^-1",
+      "schema:minValue": -3.5e-05,
+      "schema:maxValue": 5.000005,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959075-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/par",
+      "schema:alternateName": "Photosynthetically Available Radiation, R. Frouin",
+      "schema:description": "Photosynthetically Available Radiation, R. Frouin",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_downwelling_photosynthetic_photon_flux_in_air/",
+      "schema:unitText": "mol m^-2 day^-1",
+      "schema:minValue": -3e-06,
+      "schema:maxValue": 130.000003,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959079-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/pic",
+      "schema:alternateName": "Calcite Concentration, Balch and Gordon",
+      "schema:description": "Calcite Concentration, Balch and Gordon",
+      "schema:unitText": "mol m^-3",
+      "schema:minValue": -0.0,
+      "schema:maxValue": 0.125,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959087-OB_CLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geophysical_data/poc",
+      "schema:alternateName": "Particulate Organic Carbon, D. Stramski, 2007 (443/555 version)",
+      "schema:description": "Particulate Organic Carbon, D. Stramski, 2007 (443/555 version)",
+      "schema:unitText": "mg m^-3",
+      "schema:minValue": -9.5e-05,
+      "schema:maxValue": 999.99992,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V3476959092-OB_CLOUD"
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "prov:Activity"
+      ],
+      "schema:name": "Data acquisition",
+      "prov:used": [
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Moderate-Resolution Imaging Spectroradiometer on Earth Observing System, Aqua"
+        }
+      ]
+    }
+  ],
+  "schema:creativeWorkStatus": "ACTIVE",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-90 -180 90 180"
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "GEOGRAPHIC REGION > GLOBAL OCEAN"
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2002-07-04T00:00:00Z/.."
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "Earthdata Search",
+      "schema:url": "https://search.earthdata.nasa.gov/search/granules?p=C3380708980-OB_CLOUD",
+      "schema:description": "Earthdata Search allows users to search, discover, visualize, refine, and access NASA Earth Observation data.",
+      "schema:encodingFormat": [
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "DIRECT DOWNLOAD",
+      "schema:url": "https://oceandata.sci.gsfc.nasa.gov/directdataaccess/Level-2/Aqua-MODIS/",
+      "schema:description": "NASA's Ocean Color Web - Data Distribution Site",
+      "schema:encodingFormat": [
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "AWS S3 direct access (us-west-2)",
+      "schema:description": "Direct in-region access from AWS us-west-2. S3 prefixes: s3://ob-cumulus-prod-public/. Temporary credentials: https://obdaac-tea.earthdatacloud.nasa.gov/s3credentials",
+      "schema:url": "https://obdaac-tea.earthdatacloud.nasa.gov/s3credentialsREADME",
+      "schema:encodingFormat": [
+        "application/x-netcdf"
+      ]
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "Processing History",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://oceancolor.gsfc.nasa.gov/data/reprocessing/",
+        "schema:name": "View the version history of this product."
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "General Documentation",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://oceancolor.gsfc.nasa.gov/files/obdaac-ancillary-data-sources.pdf",
+        "schema:name": "This document decribes ancillary data types and usage in OB.DAAC datasets."
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "VIEW RELATED INFORMATION",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/Aqua",
+        "schema:name": "Aqua Homepage"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "VIEW RELATED INFORMATION",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.earthdata.nasa.gov/data/instruments/MODIS",
+        "schema:name": "MODIS Homepage"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "DATA RECIPE",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://nasa.github.io/oceandata-notebooks/",
+        "schema:name": "Satellite data procesing can be difficult. We're here to help! Visit the Oceandata Help Hub to navigate learning content for accessing visualizing, and analyzing data products."
+      }
+    }
+  ],
+  "dcterms:bibliographicCitation": "Aqua MODIS Level-2 Regional  Ocean Color (OC) Data, version 2022.0. Version 2022.0. NASA Ocean Biology Distributed Active Archive Center (OB.DAAC). https://doi.org/10.5067/AQUA/MODIS/L2/OC/2022.0.",
+  "schema:url": "https://doi.org/10.5067/AQUA/MODIS/L2/OC/2022.0",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://cmr.earthdata.nasa.gov/search/concepts/C3380708980-OB_CLOUD.umm_json",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "CMR metadata record for: Aqua MODIS Level-2 Regional  Ocean Color (OC) Data, version 2022.0",
+    "schema:about": {
+      "@id": "https://doi.org/10.5067/AQUA/MODIS/L2/OC/2022.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      }
+    ],
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "NASA Common Metadata Repository (CMR)",
+      "schema:url": "https://cmr.earthdata.nasa.gov/search"
+    },
+    "schema:description": "Converted from UMM-C 1.18.6 to CDIF by umm_to_cdif.py. Unmapped UMM-C properties preserved as ummc: JSON literals.",
+    "prov:wasDerivedFrom": {
+      "@id": "https://cdn.earthdata.nasa.gov/umm/collection/v1.18.6"
+    },
+    "schema:dateModified": "2026-06-03T14:39:43Z"
+  },
+  "ummc:SpatialExtent": {
+    "@type": "@json",
+    "@value": {
+      "GranuleSpatialRepresentation": "GEODETIC"
+    }
+  },
+  "ummc:StandardProduct": true,
+  "ummc:SpatialInformation": {
+    "@type": "@json",
+    "@value": {
+      "SpatialCoverageType": "HORIZONTAL",
+      "VerticalCoordinateSystem": {
+        "AltitudeSystemDefinition": {
+          "DatumName": "EPSG4326"
+        }
+      }
+    }
+  },
+  "ummc:CollectionDataType": "SCIENCE_QUALITY",
+  "ummc:ArchiveAndDistributionInformation": {
+    "@type": "@json",
+    "@value": {
+      "FileDistributionInformation": [
+        {
+          "Format": "netCDF-4"
+        }
+      ]
+    }
+  }
+}

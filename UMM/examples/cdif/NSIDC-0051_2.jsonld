@@ -1,0 +1,848 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "ummc": "https://cdn.earthdata.nasa.gov/umm/collection/v1.18.6#"
+  },
+  "@id": "https://doi.org/10.5067/MPYG15WAA4WX",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "https://registry.identifiers.org/registry/doi",
+    "schema:value": "doi:10.5067/MPYG15WAA4WX",
+    "schema:url": "https://doi.org/10.5067/MPYG15WAA4WX"
+  },
+  "schema:sameAs": [
+    "https://cmr.earthdata.nasa.gov/search/concepts/C3177837840-NSIDC_CPRD"
+  ],
+  "schema:alternateName": "NSIDC-0051",
+  "schema:version": "2",
+  "schema:name": "Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data V002",
+  "schema:description": "This data set is generated from brightness temperature data and is designed to provide a consistent time series of sea ice concentrations spanning the coverage of several passive microwave instruments.The data are provided in the polar stereographic projection at a grid cell size of 25 x 25 km.  Data coverage is from 26 October 1978 to 31 December 2025.\n\nPurpose: Scientific Research\n\nVersion description: Conversion to netCDF format.",
+  "schema:dateCreated": "2022-09-01T21:18:35Z",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NASA NSIDC DAAC",
+        "schema:url": "https://nsidc.org/daac/"
+      }
+    ]
+  },
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "NASA NSIDC DAAC",
+    "schema:telephone": "1 303 492 6199",
+    "schema:contactPoint": {
+      "@type": [
+        "schema:ContactPoint"
+      ],
+      "schema:email": "nsidc@nsidc.org"
+    },
+    "schema:url": "https://nsidc.org/daac",
+    "schema:address": {
+      "@type": [
+        "schema:PostalAddress"
+      ],
+      "schema:streetAddress": "National Snow and Ice Data Center, CIRES, 449 UCB, University of Colorado",
+      "schema:addressLocality": "Boulder",
+      "schema:addressRegion": "CO",
+      "schema:postalCode": "80309-0449",
+      "schema:addressCountry": "USA"
+    }
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "NASA NSIDC DAAC",
+      "schema:telephone": "1 303 492 6199",
+      "schema:contactPoint": {
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:email": "nsidc@nsidc.org"
+      },
+      "schema:url": "https://nsidc.org/daac",
+      "schema:address": {
+        "@type": [
+          "schema:PostalAddress"
+        ],
+        "schema:streetAddress": "National Snow and Ice Data Center, CIRES, 449 UCB, University of Colorado",
+        "schema:addressLocality": "Boulder",
+        "schema:addressRegion": "CO",
+        "schema:postalCode": "80309-0449",
+        "schema:addressCountry": "USA"
+      }
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "ARCHIVER",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NASA NSIDC DAAC",
+        "schema:telephone": "1 303 492 6199",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "nsidc@nsidc.org"
+        },
+        "schema:url": "https://nsidc.org/daac",
+        "schema:address": {
+          "@type": [
+            "schema:PostalAddress"
+          ],
+          "schema:streetAddress": "National Snow and Ice Data Center, CIRES, 449 UCB, University of Colorado",
+          "schema:addressLocality": "Boulder",
+          "schema:addressRegion": "CO",
+          "schema:postalCode": "80309-0449",
+          "schema:addressCountry": "USA"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "DISTRIBUTOR",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NASA NSIDC DAAC",
+        "schema:telephone": "1 303 492 6199",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "nsidc@nsidc.org"
+        },
+        "schema:url": "https://nsidc.org/daac",
+        "schema:address": {
+          "@type": [
+            "schema:PostalAddress"
+          ],
+          "schema:streetAddress": "National Snow and Ice Data Center, CIRES, 449 UCB, University of Colorado",
+          "schema:addressLocality": "Boulder",
+          "schema:addressRegion": "CO",
+          "schema:postalCode": "80309-0449",
+          "schema:addressCountry": "USA"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "PROCESSOR",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NASA NSIDC DAAC",
+        "schema:url": "https://nsidc.org/daac/"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "ORIGINATOR",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NASA NSIDC DAAC",
+        "schema:url": "https://nsidc.org/daac/"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "Technical Contact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "NSIDC User Services",
+        "schema:givenName": "NSIDC",
+        "schema:familyName": "Services",
+        "schema:telephone": "1 303 492 6199",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "nsidc@nsidc.org"
+        },
+        "schema:address": {
+          "@type": [
+            "schema:PostalAddress"
+          ],
+          "schema:streetAddress": "CIRES, 449 UCB, University of Colorado",
+          "schema:addressLocality": "Boulder",
+          "schema:addressRegion": "CO",
+          "schema:postalCode": "80309-0449",
+          "schema:addressCountry": "USA"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "Technical Contact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Nicolo DiGirolamo",
+        "schema:givenName": "Nicolo",
+        "schema:familyName": "DiGirolamo",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "nicolo.e.digirolamo@nasa.gov"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "Technical Contact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Claire L. Parkinson",
+        "schema:givenName": "Claire",
+        "schema:familyName": "Parkinson",
+        "schema:telephone": "1 301 614 5715",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "clairep@neptune.gsfc.nasa.gov"
+        },
+        "schema:address": {
+          "@type": [
+            "schema:PostalAddress"
+          ],
+          "schema:streetAddress": "Laboratory for Hydrospheric Processes, NASA/Goddard Space Flight Center, Code 971",
+          "schema:addressLocality": "Greenbelt",
+          "schema:addressRegion": "MD",
+          "schema:postalCode": "20771"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "Technical Contact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Donald J. Cavalieri",
+        "schema:givenName": "Donald",
+        "schema:familyName": "Cavalieri",
+        "schema:telephone": "1 301 614 5901",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "Donald.J.Cavalieri@nasa.gov"
+        },
+        "schema:address": {
+          "@type": [
+            "schema:PostalAddress"
+          ],
+          "schema:streetAddress": "NASA/GSFC, Mail Code: 615",
+          "schema:addressLocality": "Greenbelt",
+          "schema:addressRegion": "MD",
+          "schema:postalCode": "20771",
+          "schema:addressCountry": "USA"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "Technical Contact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Per Gloersen",
+        "schema:givenName": "Per",
+        "schema:familyName": "Gloersen",
+        "schema:telephone": "1 301 614 5710",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "per.gloersen@gsfc.nasa.gov"
+        },
+        "schema:address": {
+          "@type": [
+            "schema:PostalAddress"
+          ],
+          "schema:streetAddress": "Laboratory for Hydrospheric Processes, NASA/Goddard Space Flight Center, Code 971",
+          "schema:addressLocality": "Greenbelt",
+          "schema:addressRegion": "MD",
+          "schema:postalCode": "20771"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "Technical Contact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "H. Jay Zwally",
+        "schema:givenName": "H.",
+        "schema:familyName": "Zwally",
+        "schema:telephone": "1 301 614 5643",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "Jay.Zwally@nasa.gov"
+        },
+        "schema:address": {
+          "@type": [
+            "schema:PostalAddress"
+          ],
+          "schema:streetAddress": "Laboratory for Hydrospheric Processes, NASA/Goddard Space Flight Center, Code 971",
+          "schema:addressLocality": "Greenbelt",
+          "schema:addressRegion": "MD",
+          "schema:postalCode": "20771",
+          "schema:addressCountry": "USA"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "User Services",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NASA National Snow and Ice Data Center Distributed Active Archive Center",
+        "schema:address": {
+          "@type": [
+            "schema:PostalAddress"
+          ],
+          "schema:addressLocality": "Boulder",
+          "schema:addressRegion": "Colorado",
+          "schema:addressCountry": "USA"
+        }
+      }
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "UseConstraints: These data are freely, openly, and fully available to use without restrictions, provided that you cite the data according to the recommended citation at https://nsidc.org/about/use_copyright.html. For more information on the NASA EOSDIS Data Use Policy, see https://earthdata.nasa.gov/earth-observation-data/data-use-policy.",
+    "AccessConstraints: These data are freely, openly, and fully accessible, provided that you are logged into your NASA Earthdata profile (https://urs.earthdata.nasa.gov/)."
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE > CRYOSPHERE > SEA ICE > SEA ICE CONCENTRATION",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "CLIMATOLOGY/METEOROLOGY/ATMOSPHERE",
+      "schema:inDefinedTermSet": "https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_TopicCategoryCode"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "OCEANS",
+      "schema:inDefinedTermSet": "https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_TopicCategoryCode"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Defense Meteorological Satellite Program-F11",
+      "schema:termCode": "DMSP 5D-2/F11",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Defense Meteorological Satellite Program-F13",
+      "schema:termCode": "DMSP 5D-2/F13",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Defense Meteorological Satellite Program-F8",
+      "schema:termCode": "DMSP 5D-2/F8",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Defense Meteorological Satellite Program-F17",
+      "schema:termCode": "DMSP 5D-3/F17",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Nimbus-7",
+      "schema:termCode": "Nimbus-7",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Special Sensor Microwave/Imager",
+      "schema:termCode": "SSM/I",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Special Sensor Microwave Imager/Sounder",
+      "schema:termCode": "SSMIS",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Scanning Multichannel Microwave Radiometer",
+      "schema:termCode": "SMMR",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Long-Term Passive Microwave Data",
+      "schema:termCode": "PM-LT",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/projects"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Processing level 3",
+      "schema:termCode": "3",
+      "schema:inDefinedTermSet": "https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "SEA ICE CONCENTRATION",
+      "schema:description": "GCMD science keyword: EARTH SCIENCE > CRYOSPHERE > SEA ICE > SEA ICE CONCENTRATION"
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "prov:Activity"
+      ],
+      "schema:name": "Data acquisition",
+      "prov:used": [
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Special Sensor Microwave/Imager on Defense Meteorological Satellite Program-F11",
+          "schema:hasPart": [
+            {
+              "@type": [
+                "schema:Thing"
+              ],
+              "schema:name": "Special Sensor Microwave/Imager"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Special Sensor Microwave/Imager on Defense Meteorological Satellite Program-F13",
+          "schema:hasPart": [
+            {
+              "@type": [
+                "schema:Thing"
+              ],
+              "schema:name": "Special Sensor Microwave/Imager"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Special Sensor Microwave/Imager on Defense Meteorological Satellite Program-F8",
+          "schema:hasPart": [
+            {
+              "@type": [
+                "schema:Thing"
+              ],
+              "schema:name": "Special Sensor Microwave/Imager"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Special Sensor Microwave Imager/Sounder on Defense Meteorological Satellite Program-F17",
+          "schema:hasPart": [
+            {
+              "@type": [
+                "schema:Thing"
+              ],
+              "schema:name": "Special Sensor Microwave Imager/Sounder"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Scanning Multichannel Microwave Radiometer on Nimbus-7",
+          "schema:hasPart": [
+            {
+              "@type": [
+                "schema:Thing"
+              ],
+              "schema:name": "Scanning Multichannel Microwave Radiometer"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "schema:measurementTechnique": [
+    "instrument"
+  ],
+  "schema:creativeWorkStatus": "COMPLETE",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-90 -180 -39.23 180"
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "30.98 -180 90 180"
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "GEOGRAPHIC REGION > POLAR"
+    }
+  ],
+  "schema:temporalCoverage": [
+    "1978-10-26T00:00:00Z/2025-12-31T23:59:59Z"
+  ],
+  "schema:url": "https://doi.org/10.5067/MPYG15WAA4WX",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "Earthdata Search",
+      "schema:url": "https://search.earthdata.nasa.gov/search/granules?p=C3177837840-NSIDC_CPRD",
+      "schema:description": "Search and order NASA Earth Science data using spatial and temporal filters. Reformatting, reprojecting, and subsetting options are available for some data sets.",
+      "schema:encodingFormat": [
+        "image/png",
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "DIRECT DOWNLOAD",
+      "schema:url": "https://cmr.earthdata.nasa.gov/virtual-directory/collections/C3177837840-NSIDC_CPRD",
+      "schema:description": "Quickly download a few files using a web browser, or access data through a command-line utility such as WGET.",
+      "schema:encodingFormat": [
+        "image/png",
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "Data Access Tool",
+      "schema:url": "https://nsidc.org/data/data-access-tool/NSIDC-0051/versions/2/",
+      "schema:description": "Search data by spatial and/or temporal ranges or file name. Choose from various download options, including a Python script.",
+      "schema:encodingFormat": [
+        "image/png",
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "earthaccess",
+      "schema:url": "https://earthaccess.readthedocs.io/en/stable/",
+      "schema:description": "A Python library to search and access NASA Earth science data with just a few lines of code",
+      "schema:encodingFormat": [
+        "image/png",
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "AWS S3 direct access (us-west-2)",
+      "schema:description": "Direct in-region access from AWS us-west-2. S3 prefixes: nsidc-cumulus-prod-protected/PM/NSIDC-0051/2, nsidc-cumulus-prod-public/PM/NSIDC-0051/2. Temporary credentials: https://data.nsidc.earthdatacloud.nasa.gov/s3credentials",
+      "schema:url": "https://data.nsidc.earthdatacloud.nasa.gov/s3credentialsREADME",
+      "schema:encodingFormat": [
+        "image/png",
+        "application/x-netcdf"
+      ]
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "USER'S GUIDE",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://nsidc.org/sites/default/files/documents/user-guide/nsidc-0051-v002-userguide.pdf",
+        "schema:name": "Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Version 2 User Guide"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "GENERAL DOCUMENTATION",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://nsidc.org/sites/default/files/19960008457_2.pdf",
+        "schema:name": "An Improved Land Mask for the SSM/I Grid - NASA-TM-104625"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "INSTRUMENT/SENSOR CALIBRATION DOCUMENTATION",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://nsidc.org/sites/default/files/documents/technical-reference/smmr-ssmi-ssmis-sensors.pdf",
+        "schema:name": "SMMR, SSM/I, and SSMIS Sensors Summary"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "GENERAL DOCUMENTATION",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://nsidc.org/sites/default/files/nasa20technical20memorandum20104647_0.pdf",
+        "schema:name": "NASA Technical Memorandum 104647"
+      }
+    }
+  ],
+  "dcterms:bibliographicCitation": "Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data V002. Version 2. NASA National Snow and Ice Data Center Distributed Active Archive Center. https://doi.org/10.5067/MPYG15WAA4WX.",
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "GridResolution",
+      "schema:description": "Nominal grid resolution."
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "SIPSMetGenVersion",
+      "schema:description": "The version of the SIPSMetGen software used to produce the metadata file for this granule"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "identifier_product_doi",
+      "schema:description": "Digital object identifier that uniquely identifies this data product"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "identifier_product_doi_authority",
+      "schema:description": "URL of the digital object identifier resolving authority"
+    }
+  ],
+  "schema:dateModified": "2022-09-01T21:18:35Z",
+  "schema:subjectOf": {
+    "@id": "https://cmr.earthdata.nasa.gov/search/concepts/C3177837840-NSIDC_CPRD.umm_json",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "CMR metadata record for: Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data V002",
+    "schema:about": {
+      "@id": "https://doi.org/10.5067/MPYG15WAA4WX"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      }
+    ],
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "NASA Common Metadata Repository (CMR)",
+      "schema:url": "https://cmr.earthdata.nasa.gov/search"
+    },
+    "schema:description": "Converted from UMM-C 1.18.6 to CDIF by umm_to_cdif.py. Unmapped UMM-C properties preserved as ummc: JSON literals.",
+    "schema:dateModified": "2026-08-27T00:00:00Z",
+    "schema:dateCreated": "2022-09-01T00:00:00Z",
+    "prov:wasDerivedFrom": {
+      "@id": "https://cdn.earthdata.nasa.gov/umm/collection/v1.18.6"
+    }
+  },
+  "ummc:DataLanguage": "eng; usa",
+  "ummc:SpatialExtent": {
+    "@type": "@json",
+    "@value": {
+      "GranuleSpatialRepresentation": "GEODETIC",
+      "HorizontalSpatialDomain": {
+        "ZoneIdentifier": "Multiple EPSG codes (see User Guide)",
+        "ResolutionAndCoordinateSystem": {
+          "HorizontalDataResolution": {
+            "GriddedResolutions": [
+              {
+                "XDimension": 25.0,
+                "YDimension": 25.0,
+                "Unit": "Kilometers"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "ummc:StandardProduct": true,
+  "ummc:TemporalExtents": {
+    "@type": "@json",
+    "@value": [
+      {
+        "TemporalResolution": {
+          "Unit": "Varies"
+        }
+      }
+    ]
+  },
+  "ummc:ArchiveAndDistributionInformation": {
+    "@type": "@json",
+    "@value": {
+      "FileDistributionInformation": [
+        {
+          "FormatType": "Native",
+          "Format": "PNG",
+          "FormatDescription": "HTTPS"
+        },
+        {
+          "FormatType": "Native",
+          "Format": "netCDF-4",
+          "FormatDescription": "HTTPS"
+        }
+      ]
+    }
+  }
+}
