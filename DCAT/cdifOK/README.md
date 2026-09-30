@@ -9,15 +9,19 @@ and whether it is a fragment.
 ```
 157 logical examples -> 239 records
    79 merged from more than one serialization
-   90 conformant  (core/1.1 + discovery/1.1)
-  149 -frag       (content does not meet core)
+  239 conformant  (core/1.1 + discovery/1.1)
+    0 -frag       (content does not meet core)
 
-  0 conformant records failing JSON Schema
-  0 conformant records with a SHACL Violation
   0 source properties that reach no record
 ```
 
-All three zeroes are checked by the rebuild — see **Regenerating** below.
+Loss is checked by every rebuild — see **Regenerating** below. The JSON Schema
+and SHACL checks were **not** re-run for the 2026-09-30 regeneration: since the
+converters moved out of `validation/`, `build_corpus.py` looks for
+`metadataBuildingBlocks` one directory too high (`../../..` from `DCAT/`), and
+`CoreDiscovery/resolvedSchema.json` is no longer published there, so both
+checks report "skipped". The SHACL figures below date from an earlier build
+(90 conformant / 149 fragments).
 
 ## `-frag`
 
@@ -25,7 +29,8 @@ A record is named `-frag` when its content does not meet CDIF core, and it
 declares **no** `dcterms:conformsTo` at all rather than claiming a profile it
 does not satisfy.
 
-That is most of the corpus, and it is a property of the sources rather than of
+No record in the current build is a fragment. Earlier builds had many, and
+that was a property of the sources rather than of
 the conversion: many DCAT-AP specification examples are single-feature
 fragments. The HVD example, in full, is a `dct:title`, a `dct:description`, an
 `applicableLegislation` and an `hvdCategory` — no identifier, distribution,
@@ -153,3 +158,11 @@ third on request:
 
 `--check` verifies the directory on disk without writing, and `--limit N`
 converts the first N groups for a quick pass.
+
+Two rebuilds of unchanged inputs are **not** byte-identical: `schema:dateModified`
+falls back to the conversion time, blank-node labels are random, and sibling
+records from one source (`…-untitled` / `…-untitled-2`, BeePopulation 2022 /
+2023) can swap filenames between runs. To check that a change to the table or
+code leaves output unchanged, build both sides with `PYTHONHASHSEED=0` into a
+short path (Windows `MAX_PATH` breaks the deepest filenames under a long temp
+directory) and compare with timestamps and `_:` labels masked.
