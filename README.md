@@ -13,6 +13,7 @@ expose their conversion as an importable function.
 | [`croissant/ConvertToCroissant.py`](croissant/ConvertToCroissant.py) | CDIF → Croissant 1.1 | MLCommons Croissant |
 | [`croissant/ConvertFromCroissant.py`](croissant/ConvertFromCroissant.py) | Croissant → CDIF | MLCommons Croissant |
 | [`DCAT/dcat_to_cdif.py`](DCAT/dcat_to_cdif.py) | DCAT → CDIF | W3C DCAT |
+| [`UMM/umm_to_cdif.py`](UMM/umm_to_cdif.py) | NASA CMR UMM-C (file **or URL**) → CDIF core+discovery | NASA UMM-C JSON |
 | [`DDI/ddi_to_cdif.py`](DDI/ddi_to_cdif.py) | DDI Codebook 2.5 (Harvard Dataverse) → CDIF | DDI Codebook XML |
 | [`DDI/ddi122_to_cdif.py`](DDI/ddi122_to_cdif.py) | DDI 1.2.2 (ICPSR, source-agnostic) → CDIF | DDI XML |
 | [`DDICodebook/ddi25_to_cdif.py`](DDICodebook/ddi25_to_cdif.py) | DDI Codebook 2.5 (source-agnostic) → CDIF | DDI Codebook XML |
@@ -162,23 +163,43 @@ python validation/tools/FrameAndValidate.py out.json -v \
 mlcroissant validate --jsonld out-croissant.json
 ```
 
-## Layout
+## Repository layout
 
 ```
 converters/                  (repository root)
-├── README.md                 this file
-├── requirements.txt
-├── soso2cdif.py              SOSO file/URL -> CDIF (front-end for soso/)
-├── sssom_engine.py           shared table-driven mapping engine
-├── soso/                     CDIF <-> Science-on-Schema.org (+ README, examples)
-├── croissant/                CDIF <-> MLCommons Croissant (+ mapping docs, examples)
-├── DCAT/                     DCAT -> CDIF (+ README, build_corpus.py, example corpora)
-├── DDI/  DDICodebook/  DDI-CDI/   DDI family -> CDIF
-├── ROCrate/                  CDIF <-> RO-Crate 1.2 (+ validator)
-├── mappings/                 SSSOM tables documenting each converter's mappings
-└── validation/               git submodule: the CDIF `validation` repo
-                              (detect_conformance.py, CDIF schemas, frame, tools)
+├── soso2cdif.py             SOSO file/URL -> CDIF (front-end for soso/)
+├── sssom_engine.py          shared table-driven mapping engine
+├── soso/  croissant/  DCAT/  DDI/  DDICodebook/  DDI-CDI/  ROCrate/   the converters
+├── mappings/                SSSOM crosswalk tables for every converter
+└── validation/              git submodule: the CDIF `validation` repo
 ```
+
+### Root files
+
+| File | Description |
+|------|-------------|
+| `soso2cdif.py` | Front-end for the SOSO→CDIF engine: reads a SOSO record from a path or http(s) URL and writes CDIF (see below) |
+| `sssom_engine.py` | The shared table-driven mapping engine (`MappingSet`) that the DCAT/DDI/Croissant converters read their SSSOM tables through |
+| `requirements.txt` | Python dependencies (see [Setup](#setup)) |
+| `README.md`, `CLAUDE.md` | This file, and the project guide for Claude Code |
+| `.gitignore`, `.gitmodules` | Git configuration; `.gitmodules` declares the `validation` submodule |
+
+### Converter subdirectories
+
+Each holds its converter(s), a `README.md`, and (where useful) mapping docs and example corpora.
+
+| Directory | Contents |
+|-----------|----------|
+| [`soso/`](soso/) | `ConvertToSOSO.py` / `ConvertFromSOSO.py` (CDIF ↔ ESIP Science-on-Schema.org), the `check_soso_mappings.py` drift-checker, `examples/`, and `README.md` |
+| [`croissant/`](croissant/) | `ConvertToCroissant.py` / `ConvertFromCroissant.py` (CDIF ↔ MLCommons Croissant 1.1), `check_croissant_mappings.py`, the mapping docs `CDIFtoCroissant.md` / `CroissantToCDIF.md` (+ `AGENTS.md` and background `.docx` notes), and the `croissantExamples/` and `MLCroissantExamples/` corpora |
+| [`DCAT/`](DCAT/) | `dcat_to_cdif.py` (table-driven DCAT → CDIF), `build_corpus.py` (regression harness), `make_coverage_xlsx.py` + `dcat_profile_coverage.xlsx`, the `dcat-ap-vs-dcat-us.md` comparison, `README.md`, and the corpora: `dcat-examples/` (783 upstream files), `dcatExamplesOK/` (the 240 that describe a `dcat:Dataset`), and `cdifOK/` (the converted CDIF records) |
+| [`DDI/`](DDI/) | The DDI entry point `ddi2cdif.py` (flavor sniff + dispatch), the data-driven engine `ddi_sssom_to_cdif.py`, `ddi122_to_cdif.py` (1.2.2), the Harvard-Dataverse-specific `ddi_to_cdif.py`, `build_ddi_corpus.py`, the DDI Codebook 1.2.2 XSD, `Examples/`, and `README.md` |
+| [`DDICodebook/`](DDICodebook/) | `ddi25_to_cdif.py` (a thin DDI Codebook 2.5 shim over the engine), the 2.5 XSD, the `ddi25-additions-cdif-mapping.md` notes, `Examples/`, and `README.md` |
+| [`DDI-CDI/`](DDI-CDI/) | `ddicdi_to_cdif.py` (DDI-CDI 1.0 → CDIF), `Examples/`, and `README.md` |
+| [`ROCrate/`](ROCrate/) | `ConvertToROCrate.py` (CDIF → RO-Crate 1.2), `ROCrateToCDIF.py`, `ValidateROCrate.py` (structural + optional SHACL), example RO-Crate/CDIF records, `requirements.txt`, and `README.md` |
+| [`mappings/`](mappings/) | The SSSOM crosswalk tables (`*.sssom.tsv` + `.yml` sidecars) for every converter path, the alias tables, the compiled `ddi_mappings.json`, the sync scripts (`sync_sssom.py`, `sync_ddi_mappings.py`), `ddiwalk_lib.py`, and `README.md`. See the next section |
+| [`validation/`](validation/) | **git submodule** — the CDIF [`validation`](https://github.com/Cross-Domain-Interoperability-Framework/validation) repo, providing `detect_conformance.py`, the CDIF schemas, the frame, and `tools/`. Run `git submodule update --init` to populate it (see [Setup](#setup)) |
+| `.github/` | CI: `workflows/check-mappings.yml` runs the SOSO and Croissant mapping drift-checkers |
 
 ## Mappings (SSSOM)
 
