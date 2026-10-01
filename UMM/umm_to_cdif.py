@@ -228,9 +228,15 @@ def tf_describe(values, ctx):
     items) are listed as 'TYPE date'."""
     dated = ["%s %s" % (v.get("Type"), _date(v.get("Date")) or v.get("Date"))
              for v in values if isinstance(v, dict) and v.get("Date")]
-    text = "; ".join(dated) if dated else tf_text(values, ctx)
+    # 'Unknown' is dropped elsewhere as a placeholder, but in a labelled
+    # paragraph it is the answer (DOI.MissingReason = 'Unknown').
+    text = "; ".join(dated) if dated else next(
+        (str(v).strip() for v in values if isinstance(v, (str, int, float))
+         and (not _is_placeholder(str(v)) or str(v).strip().lower() == "unknown")),
+        None)
     if text:
-        return "%s: %s" % (ctx["rule"]["subject_label"].capitalize(), text)
+        label = ctx["rule"]["subject_label"]
+        return "%s: %s" % (label[:1].upper() + label[1:], text)
     return None
 
 
@@ -915,15 +921,10 @@ def _hoist_contacts(umm):
 
 def _place_value(container, target, value, transform):
     """Put `value` at `target`. Row order is precedence for scalar targets;
-    array targets accumulate; describe appends to schema:description."""
+    array targets accumulate. (describe values are appended by apply_table
+    after the table pass.)"""
     if value in (None, "", [], {}):
         return False
-    if transform == "describe":
-        if container.get(target):
-            container[target] += "\n\n" + value
-        else:
-            container[target] = value
-        return True
     if target in ARRAY_TARGETS:
         existing = container.setdefault(target, [])
         for item in _as_list(value):
@@ -946,6 +947,7 @@ def apply_table(rows, umm, meta, doc, record, kms, umm_vars=None):
     umm_vars = {"Variable": umm_vars or []}
     ctx = {"umm": umm, "meta": meta, "doc": doc, "kms": kms, "used_urls": set(),
            "umm_vars": umm_vars}
+    appended = []          # describe paragraphs, added after the table pass
     for rule in rows:
         transform = rule.get("transform", "")
         path = (rule.get("object_json_path") or "").strip()
@@ -964,10 +966,22 @@ def apply_table(rows, umm, meta, doc, record, kms, umm_vars=None):
         if not values:
             continue
         ctx.update(rule=rule, target=target)
-        if _place_value(container, target, shaper(values, ctx), transform):
+        shaped = shaper(values, ctx)
+        if transform == "describe":
+            placed = bool(shaped)
+            if placed:
+                appended.append((container, target, shaped))
+        else:
+            placed = _place_value(container, target, shaped, transform)
+        if placed:
             changes.append("%s -> %s" % (rule["subject_id"], rule["object_id"]))
             if rule["subject_id"].startswith("ummc:"):
                 consumed.add(rule["subject_id"].split(":", 1)[1].split(".")[0])
+    # Labelled paragraphs go after the main text (Abstract), so a describe row
+    # can sit anywhere in the table without taking the field first.
+    for container, target, text in appended:
+        container[target] = (container[target] + "\n\n" + text
+                             if container.get(target) else text)
     return consumed, changes
 
 
@@ -993,7 +1007,7 @@ def _residual_spatial(se):
 
 
 _RESIDUAL = {
-    "DOI": lambda v: v if not (v or {}).get("DOI") else None,
+    "DOI": lambda v: _without(v, "MissingReason") if not (v or {}).get("DOI") else None,
     "DataDates": lambda v: [d for d in _as_list(v) if d.get("Type") not in
                             ("CREATE", "UPDATE", "REVIEW", "DELETE")] or None,
     "AccessConstraints": lambda v: _without(v, "Description"),
