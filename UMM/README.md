@@ -110,3 +110,7 @@ fall back as described below.
 - **Passthrough**: UMM-C content with no CDIF slot is kept as `ummc:<Key>` JSON
   literals (`@type: @json`). For partly mapped keys (SpatialExtent,
   TemporalExtents, DOI, DataDates, …) only the unmapped remainder is kept.
+  `RelatedUrls` entries that no table row selects (e.g. a DistributionURL of
+  Type GET SERVICE) are kept as `ummc:RelatedUrls`. Which entries count as
+  matched comes from the rows' `subject_filter` values, so adding a row for a
+  new type takes those entries out of the passthrough.

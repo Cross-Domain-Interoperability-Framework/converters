@@ -1019,11 +1019,25 @@ _RESIDUAL = {
 }
 
 
-def _passthrough(umm, consumed, doc):
+def _unmatched_related_urls(urls, rows):
+    """RelatedUrls entries that no mapped ummc:RelatedUrls row selects, e.g.
+    a DistributionURL of Type 'GET SERVICE'. Read from the rows' own
+    subject_filter values, so a row added for a new type stops them being
+    passed through."""
+    filters = [_parse_filters(r.get("subject_filter")) for r in rows
+               if r.get("object_id") and TRANSFORMS.get(r.get("transform", ""))
+               and r["subject_id"].split(".")[0] == "ummc:RelatedUrls"]
+    return [u for u in _as_list(urls) if isinstance(u, dict)
+            and not any(_passes(u, f) for f in filters)] or None
+
+
+def _passthrough(umm, consumed, doc, rows=()):
     for key, value in umm.items():
         if key.startswith("_") or key == "MetadataSpecification":
             continue
-        if key in _RESIDUAL:
+        if key == "RelatedUrls":
+            value = _unmatched_related_urls(value, rows)
+        elif key in _RESIDUAL:
             value = _RESIDUAL[key](value)
         elif key in consumed:
             continue
@@ -1176,7 +1190,7 @@ def convert_umm_to_cdif(umm, meta=None, rows=None, detect=True, kms=None,
         subject["schema:dateModified"] = _date(meta["revision-date"])
     doc["schema:subjectOf"] = subject
 
-    _passthrough(umm, consumed, doc)
+    _passthrough(umm, consumed, doc, rows)
 
     # Declare the optional prefixes the record uses.
     text = json.dumps(doc)
