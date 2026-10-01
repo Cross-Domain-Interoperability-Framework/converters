@@ -1,0 +1,117 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "foaf": "http://xmlns.com/foaf/0.1/"
+  },
+  "@id": "http://metadata.psdi.ac.uk/psdi-dcat/data/optimade-odbx-odbx_main",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "open database of xtals: odbx",
+  "schema:description": "Description of provider (open database of xtals): A public database of crystal structures mostly derived from ab initio structure prediction from the group of Dr Andrew Morris at the University of Birmingham https://ajm143.github.io. Description of dataset (odbx): The Open Database of Xtals is run by the group of Dr Andrew Morris at the universities of Birmingham and Cambridge and is constructed using the matador library.",
+  "schema:identifier": "https://resources.psdi.ac.uk/data/optimade-odbx-odbx_main",
+  "schema:conditionsOfAccess": [
+    "dcterms:accessRights: http://purl.org/coar/access_right/c_abf2"
+  ],
+  "schema:additionalType": [
+    "http://purl.org/dc/dcmitype/Dataset"
+  ],
+  "dcterms:bibliographicCitation": "Please cite: open database of xtals: odbx. Online. Available from: https://resources.psdi.ac.uk/data/optimade-odbx-odbx_main. [accessed YYYY-MM-DD].",
+  "schema:isPartOf": [
+    "psdiDcat:resource-theme/e0ed08b6-6d44-4cc8-8385-4929078cd622"
+  ],
+  "schema:keywords": [
+    "OPTIMADE",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "DCATtheme",
+      "schema:identifier": "http://data.europa.eu/8mn/euroscivoc/61a310a8-87ce-448c-b5e5-28feab37defe",
+      "schema:name": "crystals"
+    }
+  ],
+  "schema:url": "https://data-search.psdi.ac.uk/find-a-substance?db=odbx.odbx_main",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data-search.psdi.ac.uk/find-a-substance?db=odbx.odbx_main",
+      "schema:name": "Search open database of xtals: odbx in PSDI Cross Data Search",
+      "schema:description": "Use PSDI Cross Data Search web user interface to search open database of xtals: odbx alongside other PSDI data sources by commonly defined fields."
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://optimade.odbx.science",
+      "schema:name": "OPTIMADE API for open database of xtals: odbx",
+      "schema:description": "Use this base_url when constructing OPTIMADE API queries for open database of xtals: odbx"
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://odbx.science",
+      "schema:name": "OPTIMADE homepage for open database of xtals: odbx",
+      "schema:description": "Homepage for open database of xtals: odbx as specified by OPTIMADE endpoint. OPTIMADE homepages give information about their datasets and often act as additional access points."
+    }
+  ],
+  "schema:dateModified": "2026-10-01T16:47:50Z",
+  "psdiDcatExt:logoURL": {
+    "rdfs:label": "OPTIMADE logo",
+    "@type": "rdfs:Resource",
+    "@id": "https://raw.githubusercontent.com/PSDI-UK/psdi-common-style/refs/heads/main/store/resource-catalogue-logos/optimade-r.png"
+  },
+  "dcat:inCatalog": {
+    "@id": "psdiDcat:resource-theme/33e34aed-745c-412c-8e90-f11bb2270a38"
+  },
+  "psdiDcatExt:furtherInformation": {
+    "@type": "foaf:Document",
+    "@id": "https://odbx.science",
+    "rdfs:label": "OPTIMADE homepage for odbx"
+  },
+  "psdiDcatExt:displayPriority": 3,
+  "rdfs:label": "odbx",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "@id": "http://metadata.psdi.ac.uk/psdi-dcat/data/optimade-odbx-odbx_main#metadata",
+    "schema:name": "Metadata record for: open database of xtals: odbx",
+    "schema:about": {
+      "@id": "http://metadata.psdi.ac.uk/psdi-dcat/data/optimade-odbx-odbx_main"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      }
+    ],
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "PSDI Resource Catalogue",
+      "schema:url": "https://metadata.psdi.ac.uk/"
+    },
+    "schema:description": "Converted from DCAT to CDIF core profile by dcat_to_cdif.py. Mappings applied: dcat:Distribution read as dcat:distribution; dcterms:title to schema:name; dcterms:description to schema:description; dcterms:identifier to schema:identifier; dcterms:accessRights to schema:conditionsOfAccess; dcterms:type to schema:additionalType; dcterms:bibliographicCitation to dcterms:bibliographicCitation; dcterms:isPartOf to schema:isPartOf; dcat:keyword to schema:keywords; dcat:theme to schema:keywords; dcat:landingPage to schema:url; dcat:distribution to schema:distribution; schema:dateModified set to the conversion time (no date in source). Unmapped DCAT properties preserved (open world)."
+  }
+}
