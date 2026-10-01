@@ -13,6 +13,9 @@ JSON to CDIF core + discovery JSON-LD. Tested on UMM-C 1.18.2 and 1.18.6.
   The sidecar documents the transform vocabulary and precedence rules. Rows are
   still marked tool-suggested (`author_id` claude, empty `reviewer_id`) until a
   curator reviews them.
+- Schemas: [`schemas/`](schemas/) holds the UMM-C v1.18.6 and UMM-Var v1.9.0
+  JSON Schemas the table is written against, in versioned folders, with
+  their upstream source.
 
 ## Usage
 
