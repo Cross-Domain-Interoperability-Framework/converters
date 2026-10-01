@@ -1,0 +1,218 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "http://metadata.psdi.ac.uk/psdi-dcat/data/530ae29a-89eb-4562-b918-1fb66d8bfdb2",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Catalysis Data Infrastructure (CDI) Data Objects",
+  "schema:description": "The Catalysis Data Infrastructure (CDI) Data Objects resource provides access to the UK Catalysis Hub (UKCH) published data objects that support research outputs. Through the CDI Portal, PSDI Cross Data Search and PSDI Index search users can search, explore, and reuse these data resources.\nIn the Catalysis Data Infrastructure (CDI) knowledge graph, data objects are linked with researchers, institutions, publications, and research themes, fostering data discovery, highlighting collaborations, and supporting analysis of data-driven research. CDI Data Objects can be extended to include domain-specific data resources such as chemical entities, materials, or analytical methods.",
+  "schema:identifier": "https://resources.psdi.ac.uk/data/530ae29a-89eb-4562-b918-1fb66d8bfdb2",
+  "schema:datePublished": "2022-10-14T00:00:00Z",
+  "schema:dateModified": "2026-01-23T00:00:00Z",
+  "schema:inLanguage": "en",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "PSDI",
+    "@id": "http://www.psdi.ac.uk/"
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Abraham Nieva De La Hidalga",
+        "@id": "http://orcid.org/0000-0001-7348-7612"
+      }
+    ]
+  },
+  "schema:license": [
+    "https://spdx.org/licenses/CC-BY-4.0.html"
+  ],
+  "schema:conditionsOfAccess": [
+    "dcterms:accessRights: http://purl.org/coar/access_right/c_abf2"
+  ],
+  "schema:additionalType": [
+    "http://purl.org/dc/dcmitype/Dataset"
+  ],
+  "dcterms:bibliographicCitation": "Please cite: Abraham Nieva De La Hidalga. Catalysis Data Infrastructure (CDI) Data Objects. Online. 14 October 2022. Available from: https://resources.psdi.ac.uk/data/530ae29a-89eb-4562-b918-1fb66d8bfdb2. [accessed YYYY-MM-DD].",
+  "schema:isPartOf": [
+    "psdiDcat:resource-theme/e0ed08b6-6d44-4cc8-8385-4929078cd622",
+    "psdiDcat:resource-theme/33e34aed-745c-412c-8e90-f11bb2270a38"
+  ],
+  "schema:keywords": [
+    "PSDI-pathfinder",
+    "publications",
+    "FAIR DO",
+    "publishing data",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "DCATtheme",
+      "schema:identifier": "http://data.europa.eu/8mn/euroscivoc/b3f4a4bc-41a0-4bd8-abff-f182893550c6",
+      "schema:name": "catalysis"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "DCATtheme",
+      "schema:identifier": "http://data.europa.eu/8mn/euroscivoc/e9da6561-23b9-48ac-9377-b68b13393e77",
+      "schema:name": "inorganic compounds"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "DCATtheme",
+      "schema:identifier": "http://metadata.psdi.ac.uk/psdi-voc-subject#psdiMultidisciplinary",
+      "schema:name": "Multidisciplinary"
+    }
+  ],
+  "schema:url": "http://cdi.ukcatalysishub.org/datasets",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "http://www.opengis.net/def/nil/OGC/0/missing",
+      "@id": "http://github.com/UK-Catalysis-Hub/ukcathubapp/issues",
+      "schema:contactPoint": {
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:url": "http://github.com/UK-Catalysis-Hub/ukcathubapp/issues"
+      }
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "http://cdi.ukcatalysishub.org/datasets",
+      "schema:name": "Explore Catalysis Data Infrastructure (CDI) Data Objects in Catalysis Data Infrastructure (CDI) Portal",
+      "schema:description": "The Catalysis Data Infrastructure (CDI) Portal allow Catalysis Data Infrastructure (CDI) Data Objects to be s explored, searched and displayed in summary dashboards.",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "http://cdi.ukcatalysishub.org"
+          }
+        },
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "http://cdi.ukcatalysishub.org/get_pubs.json"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data-search.psdi.ac.uk/find-a-substance/all-substance?db=psdi.cathub-datasets",
+      "schema:name": "Search Catalysis Data Infrastructure (CDI) Data Objects in PSDI Cross Data Search",
+      "schema:description": "Use PSDI Cross Data Search web user interface to search Catalysis Data Infrastructure (CDI) Data Objects alongside other PSDI data sources by commonly defined fields.",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "http://data-search.psdi.ac.uk"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://index.psdi.ac.uk/optimade/cathub-datasets",
+      "schema:name": "OPTIMADE API for Catalysis Data Infrastructure (CDI) Data Objects via PSDI Index Search",
+      "schema:description": "Use this base_url when constructing OPTIMADE API queries for Catalysis Data Infrastructure (CDI) Data Objects",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "https://metadata.psdi.ac.uk/optimade-index-metadb"
+          }
+        }
+      ]
+    }
+  ],
+  "rdfs:label": "CDI data objects",
+  "psdiDcatExt:logoURL": {
+    "rdfs:label": "Catalysis Hub CDI logo",
+    "@type": "rdfs:Resource",
+    "@id": "https://raw.githubusercontent.com/PSDI-UK/psdi-common-style/refs/heads/main/store/resource-catalogue-logos/catalysisDataInfrastructure-r.png"
+  },
+  "psdiDcatExt:displayPriority": 2.0,
+  "dcat:inCatalog": {
+    "@id": "psdiDcat:resource-theme/c670ea46-1db5-4439-9fef-a922c6452ebb"
+  },
+  "dcterms:accrualPeriodicity": {
+    "@type": "dcterms:Frequency",
+    "@id": "http://purl.org/cld/freq/continuous"
+  },
+  "schema:subjectOf": {
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "@id": "http://metadata.psdi.ac.uk/psdi-dcat/data/530ae29a-89eb-4562-b918-1fb66d8bfdb2#metadata",
+    "schema:name": "Metadata record for: Catalysis Data Infrastructure (CDI) Data Objects",
+    "schema:about": {
+      "@id": "http://metadata.psdi.ac.uk/psdi-dcat/data/530ae29a-89eb-4562-b918-1fb66d8bfdb2"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      }
+    ],
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "PSDI Resource Catalogue",
+      "schema:url": "https://metadata.psdi.ac.uk/"
+    },
+    "schema:description": "Converted from DCAT to CDIF core profile by dcat_to_cdif.py. Mappings applied: dcat:Distribution read as dcat:distribution; dcterms:title to schema:name; dcterms:description to schema:description; dcterms:identifier to schema:identifier; dcterms:issued to schema:datePublished; dcterms:modified to schema:dateModified; dcterms:language to schema:inLanguage; dcterms:publisher to schema:publisher; dcterms:creator to schema:creator; dcterms:license to schema:license; dcterms:accessRights to schema:conditionsOfAccess; dcterms:type to schema:additionalType; dcterms:bibliographicCitation to dcterms:bibliographicCitation; dcterms:isPartOf to schema:isPartOf; dcat:keyword to schema:keywords; dcat:theme to schema:keywords; dcat:landingPage to schema:url; dcat:contactPoint to schema:provider; dcat:distribution to schema:distribution. Unmapped DCAT properties preserved (open world)."
+  }
+}
