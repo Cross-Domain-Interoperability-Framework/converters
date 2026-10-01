@@ -2109,23 +2109,28 @@ def main():
         ) else "core"
         print(f"  [{i}] {profile_used:9s} {filename}: {title[:50]}")
 
-    # Validate if requested
+    # Validate if requested. The CDIF profile schemas, frame and the
+    # ConformanceValidate engine live in the `validation` submodule at the repo
+    # root; it frames each record and validates it against the schema for every
+    # profile the record declares. Degrades gracefully when the submodule is not
+    # initialized (run `git submodule update --init`) or its deps are missing.
     if args.validate:
+        _subm = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "validation")
         try:
-            from jsonschema import Draft202012Validator
+            sys.path.insert(0, _subm)
+            import ConformanceValidate as _cv
+            _resolver = _cv.build_resolver(
+                "local", os.path.join(_subm, "conformance-schema-map.json"),
+                None, False, False)
+            _frame = json.load(open(
+                os.path.join(_subm, "CDIF-frame-2026.jsonld"), encoding="utf-8"))
+        except Exception as exc:
+            print(f"\n  (validation skipped: {type(exc).__name__}: {exc}; run "
+                  f"`git submodule update --init` to enable --validate)")
+            _resolver = None
 
-            bb_dir = os.environ.get(
-                "CDIF_BB_DIR",
-                os.path.join(
-                    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                    "..", "metadataBuildingBlocks", "_sources",
-                ),
-            )
-            core_schema = json.load(open(
-                os.path.join(bb_dir, "cdifProperties/cdifCore/resolvedSchema.json"),
-                encoding="utf-8",
-            ))
-
+        if _resolver is not None:
             print("\nValidation:")
             for i in indices:
                 if i >= len(datasets):
@@ -2133,17 +2138,21 @@ def main():
                 title = _get_str(datasets[i].get("dcterms:title", "unknown"))
                 safe = re.sub(r"[^a-z0-9-]", "", title[:40].lower().replace(" ", "-"))
                 outpath = os.path.join(args.output, f"dcat-{safe}.jsonld")
-                if os.path.exists(outpath):
-                    doc = json.load(open(outpath, encoding="utf-8"))
-                    errors = list(Draft202012Validator(core_schema).iter_errors(doc))
-                    status = "PASS" if not errors else f"FAIL({len(errors)})"
-                    print(f"  {status:8s} dcat-{safe}.jsonld")
-                    if args.verbose:
-                        for e in errors[:3]:
-                            p = "/".join(str(x) for x in e.absolute_path) or "(root)"
-                            print(f"           {p}: {e.message[:120]}")
-        except ImportError:
-            print("  (jsonschema not installed, skipping validation)")
+                if not os.path.exists(outpath):
+                    continue
+                doc = json.load(open(outpath, encoding="utf-8"))
+                res = _cv.run_conformance(doc, _resolver, do_schema=True,
+                                          do_shacl=False, frame=_frame)
+                if not res["profiles"]:
+                    status = "NO-PROFILE"
+                else:
+                    v = res["total_violations"]
+                    status = "PASS" if v == 0 else f"FAIL({v})"
+                print(f"  {status:10s} dcat-{safe}.jsonld")
+                if args.verbose and res["profiles"]:
+                    for prof in res["profiles"]:
+                        for e in prof.get("schema", {}).get("errors", [])[:3]:
+                            print(f"           {str(e.get('message',''))[:120]}")
 
     return 0
 
