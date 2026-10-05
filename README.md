@@ -181,6 +181,7 @@ converters/                  (repository root)
 | `soso2cdif.py` | Front-end for the SOSO→CDIF engine: reads a SOSO record from a path or http(s) URL and writes CDIF (see below) |
 | `sssom_engine.py` | The shared table-driven mapping engine (`MappingSet`) that the DCAT/DDI/Croissant converters read their SSSOM tables through |
 | `requirements.txt` | Python dependencies (see [Setup](#setup)) |
+| `LICENSE`, `LICENSE-CC-BY-4.0` | Apache-2.0 (software) and CC BY 4.0 (mappings, docs, example metadata); see [License](#license) |
 | `README.md`, `CLAUDE.md` | This file, and the project guide for Claude Code |
 | `.gitignore`, `.gitmodules` | Git configuration; `.gitmodules` declares the `validation` submodule |
 
@@ -211,13 +212,18 @@ code. See [`mappings/README.md`](mappings/README.md).
 
 ## License
 
-The code and documentation in this repository are licensed under the
-[Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/);
-see [`LICENSE`](LICENSE).
+This repository is dual-licensed by content type:
+
+| Content | License |
+|---------|---------|
+| Software: the Python converters, checkers and scripts (`*.py`) and the CI workflow (`.github/`) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) — see [`LICENSE`](LICENSE) |
+| Mapping tables (`mappings/*.sssom.tsv` and their `.yml` sidecars, `mappings/ddi_mappings.json`), documentation (`*.md`), and the example metadata produced by these converters (e.g. `DCAT/cdifOK/`, the `cdif/` folders under each format's examples, the CDIF→Croissant output examples) | [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) — see [`LICENSE-CC-BY-4.0`](LICENSE-CC-BY-4.0) |
 
 Third-party material bundled here for testing and reference keeps its own
-license: the upstream example corpora (e.g. `DCAT/dcat-examples/`,
-`croissant/MLCroissantExamples/`, the format `Examples/` folders), the DDI
-Codebook XSDs, and the NASA UMM schemas under `UMM/schemas/`. The
+license: the upstream source examples (e.g. `DCAT/dcat-examples/`,
+`DCAT/dcatExamplesOK/`, `croissant/MLCroissantExamples/`,
+the harvested Croissant exports in `croissant/croissantExamples/`, the `XML/` source folders, the UMM-C source
+records, the RO-Crate inputs), the DDI Codebook XSDs, the NASA UMM schemas under
+`UMM/schemas/`, and the background `.docx` papers in `croissant/`. The
 [`validation/`](validation/) submodule is a separate repository with its own
 license.
