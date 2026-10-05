@@ -1,0 +1,934 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "ummc": "https://cdn.earthdata.nasa.gov/umm/collection/v1.18.6#"
+  },
+  "@id": "https://doi.org/10.5067/GHGMR-4FJ04",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "https://registry.identifiers.org/registry/doi",
+    "schema:value": "doi:10.5067/GHGMR-4FJ04",
+    "schema:url": "https://doi.org/10.5067/GHGMR-4FJ04"
+  },
+  "schema:sameAs": [
+    "https://cmr.earthdata.nasa.gov/search/concepts/C1996881146-POCLOUD"
+  ],
+  "schema:alternateName": "MUR-JPL-L4-GLOB-v4.1",
+  "schema:version": "4.1",
+  "schema:name": "GHRSST Level 4 MUR Global Foundation Sea Surface Temperature Analysis (v4.1)",
+  "schema:description": "A Group for High Resolution Sea Surface Temperature (GHRSST) Level 4 sea surface temperature analysis produced as a retrospective dataset (four day latency) and near-real-time dataset (one day latency) at the JPL Physical Oceanography DAAC using wavelets as basis functions in an optimal interpolation approach on a global 0.01 degree grid. The version 4 Multiscale Ultrahigh Resolution (MUR) L4 analysis is based upon nighttime GHRSST L2P skin and subskin SST observations from several instruments including the NASA Advanced Microwave Scanning Radiometer-EOS (AMSR-E), the JAXA Advanced Microwave Scanning Radiometer 2 on GCOM-W1, the Moderate Resolution Imaging Spectroradiometers (MODIS) on the NASA Aqua and Terra platforms, the US Navy microwave WindSat radiometer, the Advanced Very High Resolution Radiometer (AVHRR) on several NOAA satellites, and in situ SST observations from the NOAA iQuam project. The ice concentration data are from the archives at the EUMETSAT Ocean and Sea Ice Satellite Application Facility (OSI SAF) High Latitude Processing Center and are also used for an improved SST parameterization for the high-latitudes.  The dataset also contains additional variables for some granules including the SST anomaly (variable sst_anomaly) derived from a MUR climatology, and the temporal distance in hours to the nearest IR measurement for each pixel (variable dt_1km_data). Variable dt_1km_data first appears in the time series on October 4, 2015,  while sst_anomaly starts July 23, 2019.  This dataset was originally funded by the NASA MEaSUREs program (http://earthdata.nasa.gov/our-community/community-data-system-programs/measures-projects), and created by a team led by Dr. Toshio M. Chin from JPL. It adheres to the GHRSST Data Processing Specification (GDS) version 2 format specifications. Use the file global metadata \"history:\" attribute to determine if a granule is near-realtime or retrospective.",
+  "schema:inLanguage": "en",
+  "schema:dateModified": "2017-04-28T05:01:45Z",
+  "schema:dateCreated": "2014-10-31T16:30:37Z",
+  "schema:datePublished": "2015-03-11T00:00:00Z",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "JPL MUR MEaSUREs Project"
+      }
+    ]
+  },
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "Physical Oceanography Distributed Active Archive Center, Jet Propulsion Laboratory, NASA",
+    "schema:alternateName": "NASA/JPL/PODAAC",
+    "schema:contactPoint": {
+      "@type": [
+        "schema:ContactPoint"
+      ],
+      "schema:email": "podaac@podaac.jpl.nasa.gov"
+    },
+    "schema:url": "https://podaac.jpl.nasa.gov/"
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Physical Oceanography Distributed Active Archive Center, Jet Propulsion Laboratory, NASA",
+      "schema:alternateName": "NASA/JPL/PODAAC",
+      "schema:contactPoint": {
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:email": "podaac@podaac.jpl.nasa.gov"
+      },
+      "schema:url": "https://podaac.jpl.nasa.gov/"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "ARCHIVER",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Physical Oceanography Distributed Active Archive Center, Jet Propulsion Laboratory, NASA",
+        "schema:alternateName": "NASA/JPL/PODAAC",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "podaac@podaac.jpl.nasa.gov"
+        },
+        "schema:url": "https://www.earthdata.nasa.gov/centers/po-daac"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "PROCESSOR",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Jet Propulsion Laboratory, NASA",
+        "schema:alternateName": "NASA/JPL",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "podaac@podaac.jpl.nasa.gov"
+        },
+        "schema:url": "https://podaac.jpl.nasa.gov/missions"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "DISTRIBUTOR",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Physical Oceanography Distributed Active Archive Center, Jet Propulsion Laboratory, NASA",
+        "schema:alternateName": "NASA/JPL/PODAAC",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "podaac@podaac.jpl.nasa.gov"
+        },
+        "schema:url": "https://podaac.jpl.nasa.gov/"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "Science Contact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Toshio Mike Chin",
+        "schema:givenName": "Toshio",
+        "schema:familyName": "Chin",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "NASA Jet Propulsion Laboratory"
+        },
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "toshio.m.chin@jpl.nasa.gov"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "Data Center Contact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Help Desk",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "podaac@podaac.jpl.nasa.gov"
+        },
+        "schema:url": "https://www.earthdata.nasa.gov/centers/po-daac"
+      }
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE > OCEANS > OCEAN TEMPERATURE > SEA SURFACE TEMPERATURE > FOUNDATION SEA SURFACE TEMPERATURE",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    },
+    "GHRSST",
+    "sea surface temperature",
+    "Level 4",
+    "SST",
+    "surface temperature",
+    "MUR",
+    "foundation SST",
+    "SST anomaly",
+    "anomaly",
+    "Hourly - < Daily",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Observing System, Aqua",
+      "schema:termCode": "Aqua",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Coriolis",
+      "schema:termCode": "CORIOLIS",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Observing System, Terra (AM-1)",
+      "schema:termCode": "Terra",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "National Oceanic & Atmospheric Administration-19",
+      "schema:termCode": "NOAA-19",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Global Change Observation Mission 1st-Water",
+      "schema:termCode": "GCOM-W1",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Buoys",
+      "schema:termCode": "Buoys",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Moderate-Resolution Imaging Spectroradiometer",
+      "schema:termCode": "MODIS",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Advanced Microwave Scanning Radiometer-EOS",
+      "schema:termCode": "AMSR-E",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "WindSat",
+      "schema:termCode": "WINDSAT",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Advanced Very High Resolution Radiometer-3",
+      "schema:termCode": "AVHRR-3",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Advanced Microwave Scanning Radiometer 2",
+      "schema:termCode": "AMSR2",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DRIFTING BUOYS",
+      "schema:termCode": "DRIFTING BUOYS",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Group for High Resolution Sea Surface Temperature",
+      "schema:termCode": "GHRSST",
+      "schema:inDefinedTermSet": "https://cmr.earthdata.nasa.gov/kms/concepts/concept_scheme/projects"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Processing level 4",
+      "schema:termCode": "4",
+      "schema:inDefinedTermSet": "https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "analysed_sst",
+      "schema:alternateName": "analysed sea surface temperature",
+      "schema:description": "\"Final\" version using Multi-Resolution Variational Analysis (MRVA) method for interpolation",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_surface_foundation_temperature/",
+      "schema:unitText": "kelvin",
+      "schema:minValue": 265.383,
+      "schema:maxValue": 330.917,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V2028632042-POCLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "analysis_error",
+      "schema:alternateName": "estimated error standard deviation of analysed_sst",
+      "schema:description": "none",
+      "schema:unitText": "kelvin",
+      "schema:minValue": 0.0,
+      "schema:maxValue": 327.67,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V2028632044-POCLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "lat",
+      "schema:alternateName": "latitude",
+      "schema:description": "none",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/latitude/",
+      "schema:unitText": "degrees_north",
+      "schema:minValue": -90.0,
+      "schema:maxValue": 90.0,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V2112015422-POCLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "lon",
+      "schema:alternateName": "longitude",
+      "schema:description": "none",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/longitude/",
+      "schema:unitText": "degrees_east",
+      "schema:minValue": -180.0,
+      "schema:maxValue": 180.0,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V2112015425-POCLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mask",
+      "schema:alternateName": "sea/land field composite mask",
+      "schema:description": "mask can be used to further filter the data.",
+      "schema:minValue": 1,
+      "schema:maxValue": 31,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V2028668049-POCLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "sea_ice_fraction",
+      "schema:alternateName": "sea ice area fraction",
+      "schema:description": "ice data interpolated by a nearest neighbor approach.",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/sea ice area fraction/",
+      "schema:unitText": "fraction (between 0 and 1)",
+      "schema:minValue": 0.0,
+      "schema:maxValue": 1.0,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V2028632047-POCLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "sst_anomaly",
+      "schema:alternateName": "SST anomaly from a seasonal SST climatology based on the MUR data over 2003-2014 period",
+      "schema:description": "Anomaly reference to the day-of-year average between 2003 and 2014. This variable was added to granules in the MUR collection in July 2019.",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/surface_temperature_anomaly/",
+      "schema:unitText": "kelvin",
+      "schema:minValue": -32.767,
+      "schema:maxValue": 32.767,
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V2262655973-POCLOUD"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "time",
+      "schema:alternateName": "reference time of sst field",
+      "schema:description": "Nominal time of analyzed fields",
+      "schema:propertyID": "http://vocab.nerc.ac.uk/standard_name/time/",
+      "schema:unitText": "seconds since 1981-01-01 00:00:00 UTC",
+      "schema:url": "https://cmr.earthdata.nasa.gov/search/concepts/V2112015420-POCLOUD"
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "prov:Activity"
+      ],
+      "schema:name": "Data acquisition",
+      "prov:used": [
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Moderate-Resolution Imaging Spectroradiometer on Earth Observing System, Aqua"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Advanced Microwave Scanning Radiometer-EOS on Earth Observing System, Aqua"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "WindSat on Coriolis"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Moderate-Resolution Imaging Spectroradiometer on Earth Observing System, Terra (AM-1)"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Advanced Very High Resolution Radiometer-3 on National Oceanic & Atmospheric Administration-19"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "Advanced Microwave Scanning Radiometer 2 on Global Change Observation Mission 1st-Water"
+        },
+        {
+          "@type": [
+            "prov:Entity",
+            "schema:Thing"
+          ],
+          "schema:name": "DRIFTING BUOYS on Buoys"
+        }
+      ]
+    }
+  ],
+  "schema:creativeWorkStatus": "ACTIVE",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-90 -180 90 180"
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "GEOGRAPHIC REGION > GLOBAL"
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2002-05-31T21:00:00Z/.."
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "DIRECT DOWNLOAD",
+      "schema:url": "https://cmr.earthdata.nasa.gov/virtual-directory/collections/C1996881146-POCLOUD",
+      "schema:description": "HTTPS endpoint for data browse and download",
+      "schema:encodingFormat": [
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "Earthdata Search",
+      "schema:url": "https://search.earthdata.nasa.gov/search/granules?p=C1996881146-POCLOUD",
+      "schema:description": "Browse granule search results in Earthdata Search",
+      "schema:encodingFormat": [
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "VIRTUAL COLLECTION",
+      "schema:url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-docs/ghrsst/open/docs/MUR-JPL-L4-GLOB-v4.1_combined-ref.json",
+      "schema:description": "Virtual data set reference file for first decade of MUR record in JSON (experimental)",
+      "schema:encodingFormat": [
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "VIRTUAL COLLECTION",
+      "schema:url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-docs/ghrsst/open/docs/MUR-JPL-L4-GLOB-v4.1_combined-ref.parq.zip",
+      "schema:description": "Virtual data set reference file for first decade of MUR record in PARQUET (experimental)",
+      "schema:encodingFormat": [
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "Data Access Tool",
+      "schema:url": "https://github.com/podaac/data-subscriber",
+      "schema:description": "This dataset can be downloaded using the podaac-data-subscriber (the recommended tool for bulk downloading PO.DAAC data). It is a Python package for downloading one or many files using the command line interface. The URL redirects to the data-subscriber home page with instructions for utilizing the tool",
+      "schema:encodingFormat": [
+        "application/x-netcdf"
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "OPENDAP DATA",
+      "schema:serviceType": "OPENDAP DATA",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "https://opendap.earthdata.nasa.gov",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "schema:description": "This dataset can be accessed with the Open-source Project for a Network Data Access Protocol (OPeNDAP) API framework. This service enables variable and dimensional subsetting. The URL redirects to a page with information about utilizing the service."
+    },
+    {
+      "@type": [
+        "schema:DataDownload",
+        "schema:Collection"
+      ],
+      "schema:name": "AWS S3 direct access (us-west-2)",
+      "schema:description": "Direct in-region access from AWS us-west-2. S3 prefixes: podaac-ops-cumulus-public/MUR-JPL-L4-GLOB-v4.1/, podaac-ops-cumulus-protected/MUR-JPL-L4-GLOB-v4.1/. Temporary credentials: https://archive.podaac.earthdata.nasa.gov/s3credentials",
+      "schema:url": "https://archive.podaac.earthdata.nasa.gov/s3credentialsREADME",
+      "schema:encodingFormat": [
+        "application/x-netcdf"
+      ]
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "GOTO WEB TOOL: SUBSETTER",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://harmony.earthdata.nasa.gov/",
+        "schema:name": "This dataset can be accessed with the Harmony subsetter service to subset and regrid data on-the-fly. Several subsetting options are available such as spatial, variable, temporal, and vertical level. The URL redirects to a general page with information about utilizing the service. An example query:  https://harmony.earthdata.nasa.gov/C3378626164-POCLOUD/ogc-api-coverages/1.0.0/collections/all/coverage/rangeset?subset=lat(minLat:maxLat)&subset=lon(minLon:maxLon)&subset=time(startTime:stopTime)&format=application%2Fx-netcdf4"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "DATA CITATION GUIDELINES",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://podaac.jpl.nasa.gov/CitingPODAAC",
+        "schema:name": "Data Use and Citation Guidelines"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "GENERAL DOCUMENTATION",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://ghrsst.jpl.nasa.gov",
+        "schema:name": "Group for High Resolution Sea Surface Temperature Information"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "GENERAL DOCUMENTATION",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://earthdata.nasa.gov/esds/competitive-programs/measures/mur-sst",
+        "schema:name": "Homepage for the NASA MEaSUREs projects"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "PUBLICATIONS",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "http://journals.ametsoc.org/doi/abs/10.1175/1520-0426%281998%29015%3C0741:BSHWSS%3E2.0.CO;2",
+        "schema:name": "Chin T.M., Milliff R.F., Large W.G. (1998). Basin-scale, high-wavenumber sea surface wind fields from a multiresolution analysis of scatterometer data. Journal of Atmospheric and Oceanic Technology, 15: 741-763"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "USER'S GUIDE",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-docs/ghrsst/open/docs/GDS20r5.pdf",
+        "schema:name": "Documentation on the GDS version 2 format specification"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "DATA RECIPE",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://github.com/podaac/data-readers",
+        "schema:name": "Generic data readers"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "PUBLICATIONS",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://doi.org/10.1016/j.rse.2017.07.029",
+        "schema:name": "Chin, Toshio Michael, Jorge Vazquez-Cuervo, and Edward M. Armstrong. A multi-scale high-resolution analysis of global sea surface temperature. Remote sensing of environment 200 (2017): 154-169."
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "GENERAL DOCUMENTATION",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "http://www.ghrsst.org",
+        "schema:name": "GHRSST Project website"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "GENERAL DOCUMENTATION",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://podaac.jpl.nasa.gov/MEaSUREs-MUR",
+        "schema:name": "MUR Project homepage"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "DATA RECIPE",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://github.com/podaac/tutorials/blob/master/notebooks/SWOT-EA-2021/Colocate_satellite_insitu_ocean.ipynb",
+        "schema:name": "Jupyter python notebook to co-locate MUR and MODIS L2P satellite data with  Argo in-situ data for cross-validation"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "SOTO",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://soto.podaac.earthdatacloud.nasa.gov/?l=GHRSST_L4_MUR_Sea_Surface_Temperature,BlueMarble_ShadedRelief_Bathymetry,Coastlines_15m",
+        "schema:name": "SOTO (State of the Ocean) Visualization"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "GET RELATED VISUALIZATION",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://podaac.jpl.nasa.gov/Podaac/thumbnails/MUR-JPL-L4-GLOB-v4.1.jpg",
+        "schema:name": "Thumbnail"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "WORLDVIEW",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.earthdata.nasa.gov/data/tools/worldview",
+        "schema:name": "The Worldview tool from NASA's Earth Observing System Data and Information System (EOSDIS) provides the capability to interactively browse and visualize satellite imagery layers and then download the underlying data. Many of the layers are updated within three hours of observation. This link redirects to the Worldview home page - from there, users can launch the tool and search for this dataset."
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "citation online resource",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://podaac.jpl.nasa.gov/MEaSUREs-MUR"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "dcterms:isReferencedBy",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://doi.org/10.1016/j.rse.2017.07.029\r\n",
+        "schema:name": "Chin, T.M,  J. Vazquez-Cuervo, and E.M. Armstrong (2017)  A multi-scale high-resolution analysis of global sea surface temperature"
+      }
+    }
+  ],
+  "dcterms:bibliographicCitation": "JPL MUR MEaSUREs Project, JPL NASA, 2015-03-11, GHRSST Level 4 MUR Global Foundation Sea Surface Temperature Analysis (v4.1)",
+  "schema:isPartOf": {
+    "@type": [
+      "schema:CreativeWorkSeries"
+    ],
+    "schema:name": "GHRSST Level 4 MUR Global Foundation Sea Surface Temperature Analysis"
+  },
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "earliest_granule_start_time",
+      "schema:description": "Earliest Granule Start Time for dataset.",
+      "schema:value": "2002-06-01T09:00:00.000Z"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "latest_granule_end_time",
+      "schema:description": "Latest Granule Stop/End Time for dataset.",
+      "schema:value": "2021-01-25T09:00:00.000Z"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Series Name",
+      "schema:description": "Dataset citation series name",
+      "schema:value": "GHRSST Level 4 MUR Global Foundation Sea Surface Temperature Analysis"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Persistent ID",
+      "schema:description": "Dataset Persistent ID",
+      "schema:value": "PODAAC-GHGMR-4FJ04"
+    }
+  ],
+  "schema:url": "https://doi.org/10.5067/GHGMR-4FJ04",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://cmr.earthdata.nasa.gov/search/concepts/C1996881146-POCLOUD.umm_json",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "CMR metadata record for: GHRSST Level 4 MUR Global Foundation Sea Surface Temperature Analysis (v4.1)",
+    "schema:about": {
+      "@id": "https://doi.org/10.5067/GHGMR-4FJ04"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      }
+    ],
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "NASA Common Metadata Repository (CMR)",
+      "schema:url": "https://cmr.earthdata.nasa.gov/search"
+    },
+    "schema:description": "Converted from UMM-C 1.18.6 to CDIF by umm_to_cdif.py. Unmapped UMM-C properties preserved as ummc: JSON literals.",
+    "schema:dateModified": "2023-05-30T16:42:00Z",
+    "schema:dateCreated": "2021-04-07T16:30:00Z",
+    "prov:wasDerivedFrom": {
+      "@id": "https://cdn.earthdata.nasa.gov/umm/collection/v1.18.6"
+    }
+  },
+  "ummc:SpatialExtent": {
+    "@type": "@json",
+    "@value": {
+      "GranuleSpatialRepresentation": "CARTESIAN",
+      "HorizontalSpatialDomain": {
+        "ResolutionAndCoordinateSystem": {
+          "Description": "Projection Type: Cylindrical Lat-Lon, Projection Detail: Geolocation information included for each pixel",
+          "GeodeticModel": {
+            "HorizontalDatumName": "World Geodetic System 1984",
+            "EllipsoidName": "WGS 84",
+            "SemiMajorAxis": 6378137,
+            "DenominatorOfFlatteningRatio": 298.2572236
+          },
+          "HorizontalDataResolution": {
+            "GenericResolutions": [
+              {
+                "XDimension": 0.01,
+                "YDimension": 0.01,
+                "Unit": "Decimal Degrees"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "ummc:StandardProduct": false,
+  "ummc:ArchiveAndDistributionInformation": {
+    "@type": "@json",
+    "@value": {
+      "FileArchiveInformation": [
+        {
+          "Format": "netCDF-4",
+          "FormatType": "Native",
+          "AverageFileSize": 700,
+          "AverageFileSizeUnit": "MB",
+          "TotalCollectionFileSizeBeginDate": "2002-06-01T00:00:00.000Z"
+        }
+      ],
+      "FileDistributionInformation": [
+        {
+          "Format": "netCDF-4",
+          "FormatType": "Native",
+          "AverageFileSize": 700,
+          "AverageFileSizeUnit": "MB",
+          "TotalCollectionFileSizeBeginDate": "2002-06-01T00:00:00.000Z"
+        }
+      ]
+    }
+  }
+}

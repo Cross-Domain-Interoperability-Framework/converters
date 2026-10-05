@@ -1,0 +1,104 @@
+mapping_set_id: https://w3id.org/cdif/mappings/ummc-to-cdif
+mapping_set_title: NASA CMR UMM-C to CDIF
+mapping_set_description: |
+  Property correspondences for converting NASA Common Metadata Repository (CMR)
+  collection metadata in UMM-C JSON (v1.18.6) to a CDIF core/discovery record.
+  DRAFT for curator review: every row is tool-suggested (author_id = claude,
+  reviewer_id empty) until vetted. Rows whose comment starts OPEN QUESTION need
+  a decision before the converter is written.
+
+  subject_id values are dotted paths from the UMM-C collection root under the
+  minted prefix ummc: (UMM has no CURIEs for its fields). subject_filter
+  selects array members, e.g. subject_id ummc:DataCenters with subject_filter
+  Roles=DISTRIBUTOR (several filters are ';'-separated, outermost first; '|'
+  means any of). Filters live in their own column because brackets would make
+  subject_id an invalid CURIE. cmrmeta: names
+  fields of the CMR search-result envelope (item.meta), available only when the
+  input is a search result rather than a bare UMM-C document. ummvar: names
+  fields of the collection's associated UMM-Var records, which the converter
+  fetches from CMR. subject_class is
+  the UMM-C / UMM-Common schema definition the field sits on.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/UMM/umm_to_cdif.py
+mapping_date: 2026-09-29
+subject_source: https://cdn.earthdata.nasa.gov/umm/collection/v1.18.6
+object_source: https://w3id.org/cdif/discovery/1.1
+see_also:
+  - https://github.com/nasa/Common-Metadata-Repository/tree/master/umm-spec-lib/resources/json-schemas/collection/umm/v1.18.6
+  - https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_filter
+    property: https://w3id.org/cdif/mappings/subjectFilter
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+curie_map:
+  cmrmeta: https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html#
+  dcterms: http://purl.org/dc/terms/
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  ummc: https://cdn.earthdata.nasa.gov/umm/collection/v1.18.6#
+  ummcmn: https://cdn.earthdata.nasa.gov/umm/common/v1.18.6#
+  ummvar: https://cdn.earthdata.nasa.gov/umm/variable/v1.9.0#
+comment: |
+  transform names the shaper the converter will apply (the DCAT convention: a
+  function _tf_<name> in a _TRANSFORMS table; empty means a plain copy). Shared
+  with dcat_to_cdif.py: text, iri, date, langcode, list, describe,
+  prefixedtext, bbox, period, passthrough, *-part. New for UMM-C:
+
+    doi               DOI -> identifier PropertyValue; also mints @id
+    cmrid / cmrurl    CMR concept-id -> fallback identifier / schema:sameAs URL
+    otheridentifier   OtherIdentifiers -> '<Type>:<Identifier>' sameAs strings
+    associateddoi     AssociatedDOIs -> relatedLink LinkRole typed by UMM Type
+    boolean           -> a JSON boolean
+    datacenter        DataCenter -> schema:Organization (LongName, ShortName,
+                      contact information)
+    datacenterrole    DataCenter -> schema:Role(roleName = UMM roles) contributor
+    contact           ContactPerson/ContactGroup -> Person/Organization, wrapped
+                      in schema:Role when the target is schema:contributor
+    agentname         a bare name string -> schema:Organization
+    citationcreators  CollectionCitations.Creator string -> ordered @list
+    gcmdkeyword       ScienceKeywords -> DefinedTerm 'A > B > C' in the GCMD
+                      science keywords scheme (KMS URI with --kms)
+    gcmdplatform / gcmdinstrument / gcmdproject / gcmdlocation
+                      -> DefinedTerm (or Place, for locations) in that GCMD scheme
+    ummvar            associated UMM-Var record -> variableMeasured PropertyValue
+    variable          deepest science-keyword level -> variableMeasured, only
+                      when there are no UMM-Var records
+    isotopic          ISO 19115 topic category -> DefinedTerm
+    processinglevel   ProcessingLevel.Id -> DefinedTerm
+    acquisition       Platforms/Instruments -> prov:wasGeneratedBy activity
+    polygon / point / line / placename
+                      UMM geometries -> schema:Place
+    distribution      GET DATA RelatedUrl -> DataDownload + Collection
+    service           USE SERVICE API RelatedUrl -> schema:WebAPI
+    s3                DirectDistributionInformation -> DataDownload + Collection
+    relatedurl        RelatedUrl -> relatedLink LinkRole, relationship from
+                      Type/Subtype
+    image             browse/thumbnail RelatedUrl -> schema:ImageObject
+    citation          CollectionCitations -> bibliographicCitation string
+    seriesname        -> schema:CreativeWorkSeries
+    publication       PublicationReferences -> relatedLink (isReferencedBy)
+    additionalproperty AdditionalAttributes -> schema:PropertyValue
+    association       MetadataAssociations -> relatedLink
+    catalog-source    MetadataSpecification -> catalog record provenance
+
+  Row order is precedence: for a scalar target the first row to fill it wins
+  (identifier: DOI, else CMR concept-id; publisher: DISTRIBUTOR, else ARCHIVER,
+  else citation publisher). Array targets accumulate.
+
+  passthrough rows keep the UMM value on the record under its ummc: key (bound
+  in the emitted @context), since JSON-LD is open world and CDIF does not seal
+  the record.
+
+  Structural behaviour with no row: @id is https://doi.org/<DOI>, else the CMR
+  concept URL; a CDIF catalog record (schema:subjectOf) is added, with
+  schema:includedInDataCatalog = NASA CMR and dcterms:conformsTo derived from
+  content by detect_conformance; required gaps with no source fall back to the
+  OGC nil URI, as in dcat_to_cdif.py.
