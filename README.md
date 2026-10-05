@@ -208,3 +208,16 @@ mapping set for each converter path (`cdif→soso`, `soso→cdif`, `cdif→crois
 `croissant→cdif`, `dcat→cdif`, `ddi25→cdif`, `ddi122→cdif`) — the property-level
 correspondences each converter applies, hand-authored from the mapping docs and
 code. See [`mappings/README.md`](mappings/README.md).
+
+## License
+
+The code and documentation in this repository are licensed under the
+[Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/);
+see [`LICENSE`](LICENSE).
+
+Third-party material bundled here for testing and reference keeps its own
+license: the upstream example corpora (e.g. `DCAT/dcat-examples/`,
+`croissant/MLCroissantExamples/`, the format `Examples/` folders), the DDI
+Codebook XSDs, and the NASA UMM schemas under `UMM/schemas/`. The
+[`validation/`](validation/) submodule is a separate repository with its own
+license.
