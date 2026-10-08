@@ -117,8 +117,8 @@ statistics activities have none.
 ## Questions raised with the FAIR² maintainers
 
 Points that could not be settled from the specification are reported in
-[fair-squared/fair2-spec issue](https://github.com/fair-squared/fair2-spec/issues)
-<!-- TODO: replace with the issue URL once posted -->. In summary:
+[fair-squared/fair2-spec#7](https://github.com/fair-squared/fair2-spec/issues/7).
+In summary:
 
 - **Variables.** The FAIR² Data Dictionary says variables MUST use
   `schema:variableMeasured` with `skos:definition` and `qudt:unit`; every file
