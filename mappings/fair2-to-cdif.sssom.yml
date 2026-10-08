@@ -1,0 +1,89 @@
+mapping_set_id: https://w3id.org/cdif/mappings/fair2-to-cdif
+mapping_set_title: FAIR² (fair2.json) to CDIF
+mapping_set_description: |
+  Property correspondences for converting a FAIR² data package (a fair2.json
+  file, FAIR² spec v1.x) to a CDIF record. DRAFT for curator review: every row
+  is tool-suggested (author_id = claude, reviewer_id empty) until vetted. Rows
+  whose comment contains OPEN QUESTION need a decision.
+
+  FAIR² builds on MLCommons Croissant, so this table covers only what FAIR²
+  adds or uses differently. The Croissant core (name, description, license,
+  keywords, url, distribution / FileObject, recordSet / Field, ...) is mapped by
+  croissant-to-cdif.sssom.tsv through the Croissant converter; a source key this
+  table claims is withheld from that pass, so for a claimed key this table wins.
+
+  subject_id values are the IRIs the FAIR² @context expands each term to, with
+  schema.org (https) written sc: as in the Croissant table so it cannot clash
+  with the CDIF target prefix schema: (http). fair2json: names the fields of the
+  file-level _meta block, which sits outside the @graph and so has no IRI of
+  its own. subject_class is the FAIR² class the property sits on.
+license: https://creativecommons.org/licenses/by/4.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/FAIR2/fair2_to_cdif.py
+mapping_date: 2026-10-07
+subject_source: https://fair-squared.github.io/fair2-spec/
+object_source: https://w3id.org/cdif/discovery/1.1
+see_also:
+  - https://fair-squared.github.io/fair2-spec/specification/fair2-ontology/
+  - https://fair-squared.github.io/fair2-spec/specification/fair2json-format/
+  - https://github.com/fair-squared/fair2-spec
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+curie_map:
+  cr: http://mlcommons.org/croissant/
+  dct: http://purl.org/dc/terms/
+  dcterms: http://purl.org/dc/terms/
+  fair2: https://fair2.ai/ns/
+  fair2json: https://fair-squared.github.io/fair2-spec/specification/fair2json-format/#
+  prov: http://www.w3.org/ns/prov#
+  sc: https://schema.org/
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  senscience: http://senscience.ai/
+  skos: http://www.w3.org/2004/02/skos/core#
+comment: |
+  transform names the shaper in FAIR2/fair2_to_cdif.py (empty means a plain
+  copy):
+
+    text              copy a literal
+    iri               a string URL -> IRI reference
+    date              ISO 8601 date, normalized
+    doi               DOI URL -> schema:PropertyValue identifier
+    agent             Person/Organization -> CDIF agent with identifier and
+                      affiliation; ordered @list for creator
+    contributorrole   contributor + prov:hadRole -> schema:Role per role, with a
+                      DefinedTerm roleName (CRediT/CRO label and IRI)
+    grant             Grant -> schema:MonetaryGrant with funders
+    place             spatialCoverage Place tree -> flat list of schema:Place
+    accessrights      access-agreement DefinedTerm -> conditionsOfAccess text
+    article / archive / citation
+                      peer DataArticle / DataArchive node, or a citation URL ->
+                      relatedLink LinkRole
+    portal            DataPortal -> relatedLink LinkRole whose EntryPoint target
+                      is also typed schema:CreativeWork (name, description,
+                      identifier, version, authors)
+    changelog         changelog entry (schema:UpdateAction) -> completed
+                      [prov:Activity, schema:Action] in prov:wasGeneratedBy,
+                      prov:used = the version it revised
+    domain            subject domain -> DefinedTerm keyword
+    method            methodSection -> prov:wasGeneratedBy Action + HowTo
+    specref           subjectOf spec reference -> catalog record conformsTo
+    unittext / unitcode
+                      field unit -> schema:unitText / schema:unitCode
+    statmin / statmax field statistics 'min' / 'max' -> minValue / maxValue
+    passthrough       no CDIF term: keep the value under its fair2: key, with
+                      FAIR² terms expanded to CURIEs
+    unmapped          documented as not carried
+
+  object_json_path starting $.schema:subjectOf. places the value on the CDIF
+  catalog record rather than the dataset. Row order is precedence.
+
+  Structural behaviour with no row: the record @id is the FAIR² Dataset @id;
+  relative @ids resolve against the FAIR² @base, which is carried into the CDIF
+  @context; the catalog record's dcterms:conformsTo cdif: profiles are detected
+  from content by detect_conformance.

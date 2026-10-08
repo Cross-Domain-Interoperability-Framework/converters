@@ -29,6 +29,8 @@ embedded `#` header, runs the XSD-completeness check, and compiles
 | [`dcat-to-cdif.sssom.tsv`](dcat-to-cdif.sssom.tsv) | DCAT → CDIF | `DCAT/dcat_to_cdif.py` **(reads it)** | 174 |
 | [`dcat-aliases.sssom.tsv`](dcat-aliases.sssom.tsv) | source IRIs → the IRI the publisher meant | `DCAT/dcat_to_cdif.py` **(reads it)** | 25 |
 | [`ummc-to-cdif.sssom.tsv`](ummc-to-cdif.sssom.tsv) | NASA CMR UMM-C → CDIF | `UMM/umm_to_cdif.py` **(reads it)** | 90 (73 mapped) |
+| [`fair2-to-cdif.sssom.tsv`](fair2-to-cdif.sssom.tsv) | FAIR² extensions → CDIF (the Croissant core goes through `croissant-to-cdif`) | `FAIR2/fair2_to_cdif.py` **(reads it)** | 45 (43 mapped) |
+| [`fair2-aliases.sssom.tsv`](fair2-aliases.sssom.tsv) | legacy FAIR² source IRIs → the IRI the mapping table keys on | `FAIR2/fair2_to_cdif.py` **(reads it)** | 27 |
 | [`ddi-common-to-cdif.sssom.tsv`](ddi-common-to-cdif.sssom.tsv) | DDI Codebook (2.5 ∩ 1.2.2 common core) → CDIF | all three DDI converters | 210 (184 mapped) |
 | [`ddi25-to-cdif.sssom.tsv`](ddi25-to-cdif.sssom.tsv) | DDI Codebook 2.5 *extras* → CDIF | `DDI/ddi_to_cdif.py`, `DDICodebook/ddi25_to_cdif.py` | 137 (108 mapped) |
 | [`ddi122-to-cdif.sssom.tsv`](ddi122-to-cdif.sssom.tsv) | DDI Codebook 1.2.2 *extras* → CDIF | `DDI/ddi122_to_cdif.py` | 7 (1 mapped) |
