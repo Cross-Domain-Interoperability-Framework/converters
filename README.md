@@ -14,6 +14,7 @@ expose their conversion as an importable function.
 | [`croissant/ConvertFromCroissant.py`](croissant/ConvertFromCroissant.py) | Croissant → CDIF | MLCommons Croissant |
 | [`DCAT/dcat_to_cdif.py`](DCAT/dcat_to_cdif.py) | DCAT → CDIF | W3C DCAT |
 | [`UMM/umm_to_cdif.py`](UMM/umm_to_cdif.py) | NASA CMR UMM-C (file **or URL**) → CDIF core+discovery | NASA UMM-C JSON |
+| [`FAIR2/fair2_to_cdif.py`](FAIR2/fair2_to_cdif.py) | FAIR² `fair2.json` (file **or URL**) → CDIF (reuses the Croissant converter for the Croissant core) | FAIR² |
 | [`DDI/ddi_to_cdif.py`](DDI/ddi_to_cdif.py) | DDI Codebook 2.5 (Harvard Dataverse) → CDIF | DDI Codebook XML |
 | [`DDI/ddi122_to_cdif.py`](DDI/ddi122_to_cdif.py) | DDI 1.2.2 (ICPSR, source-agnostic) → CDIF | DDI XML |
 | [`DDICodebook/ddi25_to_cdif.py`](DDICodebook/ddi25_to_cdif.py) | DDI Codebook 2.5 (source-agnostic) → CDIF | DDI Codebook XML |
@@ -197,6 +198,7 @@ Each holds its converter(s), a `README.md`, and (where useful) mapping docs and 
 | [`DDI/`](DDI/) | The DDI entry point `ddi2cdif.py` (flavor sniff + dispatch), the data-driven engine `ddi_sssom_to_cdif.py`, `ddi122_to_cdif.py` (1.2.2), the Harvard-Dataverse-specific `ddi_to_cdif.py`, `build_ddi_corpus.py`, the DDI Codebook 1.2.2 XSD, `Examples/`, and `README.md` |
 | [`DDICodebook/`](DDICodebook/) | `ddi25_to_cdif.py` (a thin DDI Codebook 2.5 shim over the engine), the 2.5 XSD, the `ddi25-additions-cdif-mapping.md` notes, `Examples/`, and `README.md` |
 | [`DDI-CDI/`](DDI-CDI/) | `ddicdi_to_cdif.py` (DDI-CDI 1.0 → CDIF), `Examples/`, and `README.md` |
+| [`FAIR2/`](FAIR2/) | `fair2_to_cdif.py` (FAIR² → CDIF, a FAIR² extension pass over the Croissant converter), the FAIR² specification example and its conversion, and `README.md` |
 | [`ROCrate/`](ROCrate/) | `ConvertToROCrate.py` (CDIF → RO-Crate 1.2), `ROCrateToCDIF.py`, `ValidateROCrate.py` (structural + optional SHACL), example RO-Crate/CDIF records, `requirements.txt`, and `README.md` |
 | [`mappings/`](mappings/) | The SSSOM crosswalk tables (`*.sssom.tsv` + `.yml` sidecars) for every converter path, the alias tables, the compiled `ddi_mappings.json`, the sync scripts (`sync_sssom.py`, `sync_ddi_mappings.py`), `ddiwalk_lib.py`, and `README.md`. See the next section |
 | [`validation/`](validation/) | **git submodule** — the CDIF [`validation`](https://github.com/Cross-Domain-Interoperability-Framework/validation) repo, providing `detect_conformance.py`, the CDIF schemas, the frame, and `tools/`. Run `git submodule update --init` to populate it (see [Setup](#setup)) |
@@ -224,6 +226,6 @@ license: the upstream source examples (e.g. `DCAT/dcat-examples/`,
 `DCAT/dcatExamplesOK/`, `croissant/MLCroissantExamples/`,
 the harvested Croissant exports in `croissant/croissantExamples/`, the `XML/` source folders, the UMM-C source
 records, the RO-Crate inputs), the DDI Codebook XSDs, the NASA UMM schemas under
-`UMM/schemas/`, and the background `.docx` papers in `croissant/`. The
+`UMM/schemas/`, the FAIR² specification example in `FAIR2/examples/`, and the background `.docx` papers in `croissant/`. The
 [`validation/`](validation/) submodule is a separate repository with its own
 license.

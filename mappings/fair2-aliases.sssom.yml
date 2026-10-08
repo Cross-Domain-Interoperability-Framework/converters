@@ -1,0 +1,36 @@
+mapping_set_id: https://w3id.org/cdif/mappings/fair2-aliases
+mapping_set_title: FAIR² source-IRI aliases
+mapping_set_description: |
+  Property IRIs that legacy FAIR² exports use for a term the mapping table
+  knows under another IRI. fair2_to_cdif.py rewrites a source key through this
+  table before applying fair2-to-cdif.sssom.tsv, so the mapping table only ever
+  names one spelling of a property. When a file carries both an alias and the
+  canonical key, the canonical key wins.
+license: https://creativecommons.org/licenses/by/4.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/FAIR2/fair2_to_cdif.py
+mapping_date: 2026-10-07
+subject_source: https://sen.science/
+object_source: https://fair-squared.github.io/fair2-spec/
+curie_map:
+  dct: http://purl.org/dc/terms/
+  fair2: https://fair2.ai/ns/
+  mlc: https://UNDECLARED/mlc/
+  sc: https://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  senscience: http://senscience.ai/
+  skos: http://www.w3.org/2004/02/skos/core#
+comment: |
+  The rows come from the fair2.json files served for the eight Senscience
+  DOIs (prefix 10.71728) in October 2026. Those exports predate FAIR² v1.2:
+  several have no @graph, set @vocab to http://senscience.ai/ so that every
+  term their context leaves undeclared lands in that namespace, rename terms
+  (author, contribution, method), and misspell one (mnethodSection).
+
+  Two variant namespaces are folded onto fair2: in the converter rather than
+  here: https://fair2.ai/spec/fair2_context/ and https://fair2.ai/spec/fair2_context
+  (no trailing slash), which older exports declare as the fair2 prefix. They
+  name the same vocabulary under an earlier context URL.
+
+  mlc: is declared by no export; the one file that uses mlc:domain leaves the
+  prefix unbound, so the key is matched as the literal string 'mlc:domain'.

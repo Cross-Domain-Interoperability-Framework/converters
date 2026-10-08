@@ -1,0 +1,28 @@
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	comment
+sc:author	author	skos:exactMatch	sc:creator	creator	semapv:ManualMappingCuration	Pre-v1.2 Senscience exports list authors under author; v1.3 uses creator. Where a file has both, creator wins (in the exports seen they carry the same people).
+senscience:contribution	contribution	skos:closeMatch	sc:contributor	contributor	semapv:ManualMappingCuration	Legacy CRediT contributions: schema:Contribution nodes with prov:agent and prov:hadRole CURIEs. The contributorrole shaper reads both this shape and v1.3's Person + hadRole.
+fair2:contribution	contribution	skos:closeMatch	sc:contributor	contributor	semapv:ManualMappingCuration	As above, where the file's context declares contribution in a fair2 context namespace.
+senscience:method	method	skos:exactMatch	fair2:methodSection	methodSection	semapv:ManualMappingCuration	Legacy name for method sections; their steps sit under steps / substeps rather than step / substep, which the method shaper reads too.
+senscience:methodSection	methodSection	skos:exactMatch	fair2:methodSection	methodSection	semapv:ManualMappingCuration	Undeclared in the file's context, so it fell to the http://senscience.ai/ @vocab.
+fair2:mnethodSection	mnethodSection	skos:exactMatch	fair2:methodSection	methodSection	semapv:ManualMappingCuration	Misspelling in one Senscience export (10.71728/r1rj-f947).
+senscience:dataArticle	dataArticle	skos:exactMatch	fair2:dataArticle	dataArticle	semapv:ManualMappingCuration	Undeclared in the file's context, so it fell to the http://senscience.ai/ @vocab.
+senscience:changeLog	changeLog	skos:exactMatch	fair2:changeLog	changeLog	semapv:ManualMappingCuration	Undeclared in the file's context, so it fell to the http://senscience.ai/ @vocab.
+senscience:citationKey	citationKey	skos:exactMatch	fair2:citationKey	citationKey	semapv:ManualMappingCuration	Undeclared in the file's context, so it fell to the http://senscience.ai/ @vocab.
+senscience:domain	domain	skos:exactMatch	fair2:domain	domain	semapv:ManualMappingCuration	Undeclared in the file's context, so it fell to the http://senscience.ai/ @vocab.
+mlc:domain	domain	skos:exactMatch	fair2:domain	domain	semapv:ManualMappingCuration	One export writes mlc:domain with no mlc prefix declared.
+senscience:socialMedia	socialMedia	skos:exactMatch	fair2:socialMedia	socialMedia	semapv:ManualMappingCuration	Undeclared in the file's context, so it fell to the http://senscience.ai/ @vocab.
+senscience:dateUpdated	dateUpdated	skos:exactMatch	sc:dateUpdated	dateUpdated	semapv:ManualMappingCuration	schema.org term left undeclared, so it fell to the http://senscience.ai/ @vocab.
+senscience:identifier	identifier	skos:exactMatch	sc:identifier	identifier	semapv:ManualMappingCuration	schema.org term left undeclared, so it fell to the http://senscience.ai/ @vocab.
+senscience:spatialCoverage	spatialCoverage	skos:exactMatch	sc:spatialCoverage	spatialCoverage	semapv:ManualMappingCuration	schema.org term left undeclared, so it fell to the http://senscience.ai/ @vocab.
+senscience:temporalCoverage	temporalCoverage	skos:exactMatch	sc:temporalCoverage	temporalCoverage	semapv:ManualMappingCuration	schema.org term left undeclared, so it fell to the http://senscience.ai/ @vocab.
+senscience:subjectOf	subjectOf	skos:exactMatch	sc:subjectOf	subjectOf	semapv:ManualMappingCuration	schema.org term left undeclared, so it fell to the http://senscience.ai/ @vocab.
+senscience:abstract	abstract	skos:exactMatch	sc:abstract	abstract	semapv:ManualMappingCuration	schema.org term left undeclared, so it fell to the http://senscience.ai/ @vocab.
+senscience:keywords	keywords	skos:exactMatch	sc:keywords	keywords	semapv:ManualMappingCuration	schema.org term left undeclared. Mapped by the Croissant pass, which reads bare keys as schema.org.
+senscience:url	url	skos:exactMatch	sc:url	url	semapv:ManualMappingCuration	schema.org term left undeclared. Mapped by the Croissant pass, which reads bare keys as schema.org.
+senscience:title	title	skos:closeMatch	sc:name	name	semapv:ManualMappingCuration	A copy of name in the exports seen; name wins when both are present.
+sc:title	title	skos:closeMatch	sc:name	name	semapv:ManualMappingCuration	As above.
+dct:title	title	skos:closeMatch	sc:name	name	semapv:ManualMappingCuration	As above.
+senscience:alternateName	alternateName	skos:exactMatch	sc:alternateName	alternateName	semapv:ManualMappingCuration	Field level. schema.org term left undeclared, so it fell to the http://senscience.ai/ @vocab.
+senscience:unit	unit	skos:exactMatch	fair2:unit	unit	semapv:ManualMappingCuration	Field level. Legacy units are qudt:Unit nodes (@id, rdfs:label, qudt:symbol); the unit shapers read both shapes.
+senscience:statistics	statistics	skos:exactMatch	fair2:statistics	statistics	semapv:ManualMappingCuration	Field level. Legacy statistics are flat (count, min, max, ... as keys) or misspell variableMeasured as varriableMeasured; the min/max shapers read all three.
+senscience:isExperimentRelated	isExperimentRelated	skos:exactMatch	fair2:isExperimentRelated	isExperimentRelated	semapv:ManualMappingCuration	Field level. Undeclared in the file's context, so it fell to the http://senscience.ai/ @vocab.

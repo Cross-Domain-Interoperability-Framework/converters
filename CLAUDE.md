@@ -13,7 +13,9 @@ different roles — check which before editing either side:
 - **Table drives the converter (read at runtime):** DCAT (`dcat_to_cdif.py`
   reads the TSVs directly), UMM (`umm_to_cdif.py`, own `load_table`; `tf_*`
   functions are the shapers named in the `transform` column), Croissant (via
-  the shared `sssom_engine.py`), DDI (worksheets compiled to
+  the shared `sssom_engine.py`), FAIR² (`FAIR2/fair2_to_cdif.py`: runs the
+  Croissant converter on the keys `fair2-to-cdif.sssom.tsv` does not claim,
+  then applies that table), DDI (worksheets compiled to
   `mappings/ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py`). A
   mapping change for these is a table edit; code is only for structural
   shapers.
