@@ -72,6 +72,14 @@ CONTEXT = {
 }
 XSD_TYPE = {"numeric": "xsd:decimal", "character": "xsd:string"}
 LIST_LEAF = {"schema:keywords"}
+# a MIME media type, e.g. text/tab-separated-values or application/x-spss-sav
+MIME_RE = re.compile(r"^[a-z]+/[A-Za-z0-9][A-Za-z0-9!#$&^_.+-]*(\s*;.*)?$")
+
+
+def _as_list(value):
+    if value is None:
+        return []
+    return value if isinstance(value, list) else [value]
 # provenance / related-link target heads and the context key each builds
 PROV_HEADS = {"prov:wasGeneratedBy": "activity", "prov:wasDerivedFrom": "derived",
               "schema:relatedLink": "related"}
@@ -660,13 +668,14 @@ def convert(xml_path, doi_url=None, version="25", detect=True, verbose=False,
         if coll is not None:
             item["cdif:isDescribedBy_StatisticsCollection"] = coll
         # An Attribute component qualifies some other component -- CDIF requires
-        # cdi:qualifies on one, and DDI Codebook carries no such relationship,
+        # cdif:qualifies on one (cdi:qualifies until metadataBuildingBlocks
+        # 25378b9baf), and DDI Codebook carries no such relationship,
         # so the role (derived from intrvl=discrete) arrives without a target.
         # Say the target is knowably absent rather than emitting an Attribute
         # that qualifies nothing: without this every DDI record fails the
         # InstanceVariable shape and so cannot declare data_description at all.
-        if item.get("cdif:role") == "Attribute" and "cdi:qualifies" not in item:
-            item["cdi:qualifies"] = {"@id": NIL_MISSING}
+        if item.get("cdif:role") == "Attribute" and "cdif:qualifies" not in item:
+            item["cdif:qualifies"] = {"@id": NIL_MISSING}
         vitems.append(item)
     if vitems:
         doc["schema:variableMeasured"] = vitems
@@ -692,9 +701,38 @@ def convert(xml_path, doi_url=None, version="25", detect=True, verbose=False,
                 "schema:contentUrl": _furi if _furi.startswith(("http://", "https://"))
                 else NIL_MISSING}
         for (leaf, oid), paths in dist_by_leaf.items():
-            val = shape_dataset(leaf, oid, gather(fd, paths, maps, anchor="fileDscr"))
+            contribs = gather(fd, paths, maps, anchor="fileDscr")
+            if leaf.replace("[*]", "") == "schema:additionalProperty":
+                # one PropertyValue per value, named by the row's object_label
+                # (as build_activity does); counts are typed as numbers
+                for lbl, vs in contribs:
+                    for v in _as_list(vs):
+                        if v:
+                            v = v.strip()
+                            item.setdefault("schema:additionalProperty", []).append(
+                                {"@type": ["schema:PropertyValue"], "schema:name": lbl,
+                                 "schema:value": int(v) if v.isdigit() else v})
+                continue
+            if leaf.endswith("[*]"):              # a list target: distinct values
+                leaf, val = leaf[:-3], array_distinct(contribs)
+            else:
+                val = shape_dataset(leaf, oid, contribs)
             if val is not None:
                 set_nested(item, leaf.split("."), val)
+        # <fileType> holds a MIME type for some producers (Dataverse:
+        # "text/tab-separated-values") and a software name for others (Nesstar:
+        # "Nesstar 200801"). A MIME type says how to parse the file, which is
+        # schema:encodingFormat, not a kind of resource; only the rest stays
+        # schema:additionalType. Both are arrays in CDIF's dataDownload.
+        types = _as_list(item.pop("schema:additionalType", None))
+        mime = [t for t in types if isinstance(t, str) and MIME_RE.match(t.strip())]
+        other = [t for t in types if t not in mime]
+        if mime:
+            fmts = _as_list(item.get("schema:encodingFormat"))
+            item["schema:encodingFormat"] = fmts + [m.strip() for m in mime
+                                                    if m.strip() not in fmts]
+        if other:
+            item["schema:additionalType"] = other
         # merge in the structured column mapping for this file (delimited layout +
         # per-column links); files with no columns get neither, as they should.
         if i < len(struct_dists):

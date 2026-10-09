@@ -16,7 +16,7 @@ GDSC**) and converts it to **CDIF Core + Discovery** JSON-LD.
 Run, from the root of this repository:
 
 ```bash
-python harvesters/OHDSI/harvest_ohdsi_to_cdif.py     # OHDSIMetadata/ -> cdifMetadata/
+python OHDSI/harvest_ohdsi_to_cdif.py     # OHDSIMetadata/ -> cdifMetadata/
 ```
 
 This directory was the separate `OHDSI` repository until 2026-10-09.

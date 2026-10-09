@@ -601,8 +601,13 @@ def _tf_vcard(value, ds, rule, doc):
     otherwise, and guessing Organization made every named individual an
     institution. A contact with no name still carries its address, so the name
     becomes the nil URI rather than the node being dropped.
+
+    The exception is a contact that identifies no one: a bare vcard:Kind whose
+    only content is a URL (a contact form, an issue tracker). Making that a
+    Person would assert someone the source never names, so it becomes a
+    schema:relatedLink tagged with the property it came from instead.
     """
-    out = []
+    out, linked = [], False
     for contact in _as_list(value):
         if not isinstance(contact, dict):
             text = _get_str(contact)
@@ -619,6 +624,22 @@ def _tf_vcard(value, ds, rule, doc):
         email = contact.get("vcard:hasEmail") or contact.get("vcard:email")
         url = contact.get("vcard:hasURL") or contact.get("vcard:url")
         phone = contact.get("vcard:hasTelephone")
+        identifies = (name or email or phone or "Individual" in types
+                      or kind == "schema:Organization"
+                      or contact.get("vcard:hasAddress") or contact.get("vcard:hasUID"))
+        if url and not identifies:
+            link = _tf_iri(url, ds, rule, doc)
+            link = link[0] if isinstance(link, list) and link else link
+            if isinstance(link, str) and link:
+                rl = doc.setdefault("schema:relatedLink", [])
+                if not isinstance(rl, list):
+                    rl = doc["schema:relatedLink"] = [rl]
+                rl.append({"@type": ["schema:LinkRole"],
+                           "schema:linkRelationship": rule["subject_id"],
+                           "schema:target": {"@type": ["schema:EntryPoint"],
+                                             "schema:url": link}})
+                linked = True
+                continue
         agent = {"@type": [kind], "schema:name": name or NIL}
         if contact.get("@id") and _is_iri(contact["@id"]):
             agent["@id"] = contact["@id"]
@@ -667,7 +688,7 @@ def _tf_vcard(value, ds, rule, doc):
             agent["schema:department"] = {"@type": ["schema:Organization"],
                                           "schema:name": unit}
         out.append(agent)
-    return out or None
+    return out or (_CONSUMED if linked else None)
 
 
 def _tf_contributorid(value, ds, rule, doc):
@@ -864,7 +885,7 @@ def _tf_relatedlink(value, ds, rule, doc):
             target = target[0] if target else None
         if not target:
             continue
-        out.append({"schema:linkRelationship": rule["subject_id"],
+        out.append({"@type": ["schema:LinkRole"], "schema:linkRelationship": rule["subject_id"],
                     "schema:target": {"@type": ["schema:EntryPoint"],
                                       "schema:url": target}})
     return out or None
@@ -1007,7 +1028,7 @@ def _tf_generatedby(value, ds, rule, doc):
             tgt = _tf_iri(tgt, ds, rule, doc) if tgt else None
             tgt = tgt[0] if isinstance(tgt, list) and tgt else tgt
             if isinstance(tgt, str) and tgt:
-                link = {"schema:linkRelationship": "prov:qualifiedAssociation",
+                link = {"@type": ["schema:LinkRole"], "schema:linkRelationship": "prov:qualifiedAssociation",
                         "schema:target": {"@type": ["schema:EntryPoint"],
                                           "schema:url": tgt}}
                 rl = doc.setdefault("schema:relatedLink", [])
@@ -1130,7 +1151,7 @@ def _tf_rights(value, ds, rule, doc):
                 if u:
                     rl = doc.setdefault("schema:relatedLink", [])
                     if isinstance(rl, list):
-                        rl.append({"schema:linkRelationship": "odrs:attributionURL",
+                        rl.append({"@type": ["schema:LinkRole"], "schema:linkRelationship": "odrs:attributionURL",
                                    "schema:target": {"@type": ["schema:EntryPoint"],
                                                      "schema:url": u}})
         if not seen:
@@ -1156,7 +1177,7 @@ def _tf_homepage(value, ds, rule, doc):
         rl = doc.setdefault("schema:relatedLink", [])
         if not isinstance(rl, list):
             rl = doc["schema:relatedLink"] = [rl]
-        rl.append({"schema:linkRelationship": rule["subject_id"],
+        rl.append({"@type": ["schema:LinkRole"], "schema:linkRelationship": rule["subject_id"],
                    "schema:target": {"@type": ["schema:EntryPoint"],
                                      "schema:url": target}})
     return _CONSUMED

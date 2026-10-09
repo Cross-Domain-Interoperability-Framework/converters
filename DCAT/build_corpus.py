@@ -275,7 +275,7 @@ def shacl_bundle(cache):
     against.
     """
     import subprocess
-    mbb = (HERE / ".." / ".." / ".." / "metadataBuildingBlocks").resolve()
+    mbb = (HERE / ".." / ".." / "metadataBuildingBlocks").resolve()
     emitter = mbb / "tools" / "validate_shacl.py"
     if not emitter.exists():
         return None, "metadataBuildingBlocks not beside this repo (%s)" % mbb
@@ -462,7 +462,7 @@ def main():
         print("\n=== schema: records that do not validate ===")
         try:
             from jsonschema import Draft202012Validator
-            schema_path = (HERE / ".." / ".." / ".." / "metadataBuildingBlocks"
+            schema_path = (HERE / ".." / ".." / "metadataBuildingBlocks"
                            / "_sources" / "profiles" / "cdifCompositeProfile"
                            / "CoreDiscovery" / "resolvedSchema.json").resolve()
             validator = Draft202012Validator(
