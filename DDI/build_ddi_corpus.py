@@ -252,7 +252,7 @@ def dataset_node(document):
 
 
 def shacl_bundle(cache):
-    mbb = (CONVERTERS / ".." / ".." / "metadataBuildingBlocks").resolve()
+    mbb = (CONVERTERS / ".." / "metadataBuildingBlocks").resolve()
     emitter = mbb / "tools" / "validate_shacl.py"
     if not emitter.exists():
         return None, "metadataBuildingBlocks not beside this repo (%s)" % mbb
@@ -333,7 +333,7 @@ def main():
     print("=== schema: each record against the profile it declares ===")
     try:
         from jsonschema import Draft202012Validator
-        schema_path = (CONVERTERS / ".." / ".." / "metadataBuildingBlocks"
+        schema_path = (CONVERTERS / ".." / "metadataBuildingBlocks"
                        / "_sources" / "profiles" / "cdifCompositeProfile").resolve()
         _cache = {}
 

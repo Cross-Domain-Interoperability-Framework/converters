@@ -68,6 +68,7 @@ There is no unit-test suite. What exists:
   labels, sibling records swapping filenames); see
   [DCAT/cdifOK/README.md](DCAT/cdifOK/README.md#regenerating) for how to compare
   two builds.
-- The schema and SHACL checks currently report "skipped": `build_corpus.py`
-  still resolves `metadataBuildingBlocks` as `../../..` from `DCAT/`, a path from
-  before the converters moved out of `validation/`.
+- The schema and SHACL checks read `metadataBuildingBlocks` from a checkout
+  beside this repo (`../metadataBuildingBlocks`), not from the `validation`
+  submodule; without it they report "skipped". `DDI/build_ddi_corpus.py` does
+  the same.
