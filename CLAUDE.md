@@ -92,8 +92,10 @@ There is no unit-test suite. What exists:
   with `python DCAT/dcat_to_cdif.py DCAT/dcatExamplesOK/psdi/dataset-7e871747-1bd3-4abf-8fe3-dc4ec55b3771.jsonld --output DCAT/cdifOK/psdi --catalog-name "PSDI Resource Catalogue" --catalog-url "https://metadata.psdi.ac.uk/"`.
   A `build_corpus.py` run re-parses that source and writes the 50 again as
   `dataset-…__dcat-<slug>.jsonld` with a different catalog record and lost
-  labels; delete those, then regenerate `psdi/` with the command above or
-  `git checkout -- DCAT/cdifOK/psdi`.
+  labels, and rewrites their `INDEX.json` entries to match; delete those
+  files, then regenerate `psdi/` with the command above or
+  `git checkout -- DCAT/cdifOK/psdi`, and restore the psdi entries in
+  `DCAT/cdifOK/INDEX.json`.
 - The schema and SHACL checks read `metadataBuildingBlocks` from a checkout
   beside this repo (`../metadataBuildingBlocks`), not from the `validation`
   submodule; without it they report "skipped". `DDI/build_ddi_corpus.py` does

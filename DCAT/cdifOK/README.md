@@ -10,8 +10,10 @@ and whether it is a fragment.
 ([`../dcatExamplesOK/psdi/`](../dcatExamplesOK/psdi/)), made directly with
 `dcat_to_cdif.py --catalog-name "PSDI Resource Catalogue" --catalog-url
 https://metadata.psdi.ac.uk/` and named `dcat-<slug>.jsonld`. `build_corpus.py`
-does not reproduce them as committed (see [Regenerating](#regenerating)), and
-`INDEX.json` still lists them under its own naming.
+does not reproduce them as committed (see [Regenerating](#regenerating)).
+`INDEX.json` lists them under their committed names; a `build_corpus.py` run
+rewrites it with its own naming for them, so restore those entries along with
+`psdi/` itself.
 
 ```
 157 logical examples -> 239 records
