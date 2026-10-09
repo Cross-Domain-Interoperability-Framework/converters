@@ -23,12 +23,21 @@ expose their conversion as an importable function.
 | [`ROCrate/ROCrateToCDIF.py`](ROCrate/ROCrateToCDIF.py) | RO-Crate 1.2 → CDIF | RO-Crate |
 | [`ROCrate/ValidateROCrate.py`](ROCrate/ValidateROCrate.py) | RO-Crate structural + SHACL validator | RO-Crate |
 
-Related, but **not** a converter here: `geocodes_harvester.py` (in the
-[`validation`](https://github.com/Cross-Domain-Interoperability-Framework/validation)
-repo, bundled here as the `validation/` submodule) harvests SOSO records from the
-EarthCube GeoCodes SPARQL catalog and converts them to CDIF — it's a network
-harvester, not a general file converter. For converting a SOSO file or URL you
-already have, use `soso2cdif.py`.
+### Harvesters (`harvesters/`)
+
+Harvesters fetch records from a catalogue and convert them to CDIF. They differ
+from the converters above in where the input comes from, not in what they
+produce. For converting a SOSO file or URL you already have, use `soso2cdif.py`.
+
+| Path | Source | Notes |
+|------|--------|-------|
+| [`harvesters/geocodes_harvester.py`](harvesters/geocodes_harvester.py) | EarthCube GeoCodes SPARQL catalog → source landing-page JSON-LD → CDIF core/discovery | Moved from the `validation` repo |
+| [`harvesters/harvest_ohdsi_to_cdif.py`](harvesters/harvest_ohdsi_to_cdif.py) | OHDSI gaiaCatalog schema.org records → CDIF core/discovery (+ provenance) | Moved from the `OHDSI` repo, which keeps the corpus: by default it reads `../OHDSI/OHDSIMetadata/` and writes `../OHDSI/cdifMetadata/` |
+
+`geocodes_harvester.py` and `soso/ConvertFromSOSO.py` each carry their own copy
+of the schema.org prefixing step. The harvester's resolves unprefixed names
+through the source record's `@context`; the SOSO converter's still uses a fixed
+list of names and sends the rest to `unk:`.
 
 ## Setup
 
