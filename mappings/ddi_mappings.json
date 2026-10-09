@@ -590,9 +590,9 @@
     },
     "ddicb:fileDscr.fileTxt.fileStrc.recGrp.recDimnsn.varQnty": {
       "predicate_id": "skos:closeMatch",
-      "object_id": "schema:DataDownload",
-      "object_label": "countVariables",
-      "object_json_path": "$.schema:distribution[*].countColumns",
+      "object_id": "schema:additionalProperty",
+      "object_label": "number of variables per record",
+      "object_json_path": "$.schema:distribution[*].schema:additionalProperty",
       "comment": "DDI 2.5 <varQnty>: Number of variables. | DDI Codebook: the number of variables in the record group. --> @type = cdi:TabularTextDataSet   .countColumns"
     },
     "ddicb:fileDscr.fileTxt.fileStrc.recGrp.recDimnsn.caseQnty": {
@@ -618,16 +618,16 @@
     },
     "ddicb:fileDscr.fileTxt.dimensns.caseQnty": {
       "predicate_id": "skos:closeMatch",
-      "object_id": "schema:DataDownload",
-      "object_label": "countrows",
-      "object_json_path": "$.schema:distribution[*].countRows",
+      "object_id": "schema:additionalProperty",
+      "object_label": "number of cases",
+      "object_json_path": "$.schema:distribution[*].schema:additionalProperty",
       "comment": "DDI 2.5 <caseQnty>: Number of cases or observations in a dataset."
     },
     "ddicb:fileDscr.fileTxt.dimensns.varQnty": {
       "predicate_id": "skos:closeMatch",
-      "object_id": "schema:DataDownload",
-      "object_label": "countVariables",
-      "object_json_path": "$.schema:distribution[*].countColumns",
+      "object_id": "schema:additionalProperty",
+      "object_label": "number of variables",
+      "object_json_path": "$.schema:distribution[*].schema:additionalProperty",
       "comment": "DDI 2.5 <varQnty>: Number of variables."
     },
     "ddicb:fileDscr.fileTxt.dimensns.logRecL": {

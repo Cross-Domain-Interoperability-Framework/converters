@@ -702,6 +702,17 @@ def convert(xml_path, doi_url=None, version="25", detect=True, verbose=False,
                 else NIL_MISSING}
         for (leaf, oid), paths in dist_by_leaf.items():
             contribs = gather(fd, paths, maps, anchor="fileDscr")
+            if leaf.replace("[*]", "") == "schema:additionalProperty":
+                # one PropertyValue per value, named by the row's object_label
+                # (as build_activity does); counts are typed as numbers
+                for lbl, vs in contribs:
+                    for v in _as_list(vs):
+                        if v:
+                            v = v.strip()
+                            item.setdefault("schema:additionalProperty", []).append(
+                                {"@type": ["schema:PropertyValue"], "schema:name": lbl,
+                                 "schema:value": int(v) if v.isdigit() else v})
+                continue
             if leaf.endswith("[*]"):              # a list target: distinct values
                 leaf, val = leaf[:-3], array_distinct(contribs)
             else:
