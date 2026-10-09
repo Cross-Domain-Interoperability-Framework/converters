@@ -1376,10 +1376,10 @@
     },
     "ddi:stdyDscr.stdyInfo.exPostEvaluation.evaluator": {
       "predicate_id": "skos:closeMatch",
-      "object_id": "schema:name",
-      "object_label": "evaluatorName",
-      "object_json_path": "$.schema:contributor[role=evaluator].person.name",
-      "comment": "DDI 2.5 <evaluator>: Identifies persons or organizations involved in the evaluation. | DDI 2.5 (imported from DDI Lifecycle; GSBPM Evaluate phase): the organization or individual (by reference) that performed the post-completion evaluation, with an optional controlled-vocabulary role"
+      "object_id": "schema:contributor",
+      "object_label": "evaluator",
+      "object_json_path": "$.schema:contributor",
+      "comment": "DDI 2.5 <evaluator>: Identifies persons or organizations involved in the evaluation. | DDI 2.5 (imported from DDI Lifecycle; GSBPM Evaluate phase): the organization or individual (by reference) that performed the post-completion evaluation, with an optional controlled-vocabulary role | mapped -> schema:contributor Role: the element text is the agent (Person or Organization by name), affiliation -> schema:affiliation, abbr -> schema:alternateName; roleName = the role attribute, else \"evaluator\""
     },
     "ddi:stdyDscr.stdyInfo.exPostEvaluation.evaluationProcess": {
       "predicate_id": "skos:closeMatch",

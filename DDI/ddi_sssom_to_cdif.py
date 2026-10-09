@@ -57,6 +57,7 @@ from ddi122_to_cdif import (  # noqa: E402
     _var_signature, CodeListRegistry, _value_domains, _statistics_collection,
     parse_files as _parse_files, build_distributions as _build_dists,
     parse_access as _parse_access, first_text as _first_text, find as _find,
+    agent_node as _agent_node,
     NIL_MISSING,
 )
 
@@ -245,7 +246,21 @@ def build_contributors(root, maps, paths):
         role_name = maps[p]["object_label"] or "contributor"
         tag = p.split(".")[-1]
         elems = [n for n in descend(root, p.split(".")) if not isinstance(n, str)]
-        if tag == "producer":
+        if tag == "evaluator":
+            # <evaluator affiliation="A" abbr="X" role="R">Name</evaluator>: the
+            # text names the person or organization that evaluated the study;
+            # its role attribute, when given, is the more specific roleName.
+            for e in elems:
+                name = text_of(e)
+                if not name:
+                    continue
+                agent = _agent_node(name, e.get("affiliation"))
+                if (e.get("abbr") or "").strip():
+                    agent["schema:alternateName"] = e.get("abbr").strip()
+                roles.append({"@type": ["schema:Role"],
+                              "schema:roleName": (e.get("role") or "").strip() or role_name,
+                              "schema:contributor": agent})
+        elif tag == "producer":
             for e in elems:
                 name = text_of(e)
                 if not name:
