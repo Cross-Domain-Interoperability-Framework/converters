@@ -89,8 +89,8 @@ The source's `"Pseudo Code"` event is the natural home for
 
 ## Validation status (16/16)
 
-Validated with the tools in the `validation` (discovery) and `profile-provenance`
-repositories, checked out side by side:
+Validated with the `validation` submodule of this repository (discovery) and a
+`profile-provenance` checkout beside it (provenance):
 
 - **Discovery** — JSON Schema (`CDIFDiscoverySchema.json` via
   `tools/FrameAndValidate.py`): **16/16 pass**; SHACL
@@ -105,9 +105,9 @@ instrument category vocabulary) — the same profile as the CDIF repos' own
 passing corpora.
 
 ```bash
-# discovery — from the validation repo
-python tools/FrameAndValidate.py <file> -v --schema CDIFDiscoverySchema.json --frame CDIF-frame-2026.jsonld
-python ShaclValidation/ShaclJSONLDContext.py <file> ShaclValidation/CDIF-Discovery-Shapes.ttl
+# discovery — from the converters repo root, using the validation submodule
+python validation/tools/FrameAndValidate.py <file> -v --schema validation/CDIFDiscoverySchema.json --frame validation/CDIF-frame-2026.jsonld
+python validation/ShaclValidation/ShaclJSONLDContext.py <file> validation/ShaclValidation/CDIF-Discovery-Shapes.ttl
 # provenance — from the profile-provenance repo
 python FrameAndValidate.py <file> -v
 python ../validation/ShaclValidation/ShaclJSONLDContext.py <file> provenanceRules.shacl

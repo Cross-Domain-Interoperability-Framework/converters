@@ -52,12 +52,20 @@ pip install -r requirements.txt
 The [`validation`](https://github.com/Cross-Domain-Interoperability-Framework/validation)
 repo is bundled as a git submodule at [`validation/`](validation/). The
 `format → CDIF` converters import `detect_conformance` from it to set
-`conformsTo` from content, and the `--validate` / `build_corpus.py` schema checks
-read the CDIF schemas and frame from it. **The submodule is optional at runtime:**
-every converter guards the import, so conversion still works without it — the
-`conformsTo` declaration just falls back to the built-in default (and `--validate`
-falls back to fetching the schema from GitHub). Initialize the submodule to get
-content-derived conformance detection.
+`conformsTo` from content, and the converters' `--validate` options frame and
+validate with its `FrameAndValidate.py` / `ConformanceValidate.py` against the
+schemas and frame it carries. **The submodule is optional at runtime:** every
+converter guards the import, so conversion still works without it — the
+`conformsTo` declaration just falls back to the built-in default, and
+`--validate` is skipped. Initialize the submodule to get content-derived
+conformance detection and validation.
+
+The corpus regression builds (`DCAT/build_corpus.py`, `DDI/build_ddi_corpus.py`)
+validate against the building blocks themselves, so their schema and SHACL
+checks also need a
+[`metadataBuildingBlocks`](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks)
+checkout **beside** this repo (`../metadataBuildingBlocks`); without it they
+report those checks as skipped.
 
 ## The "detect conformance" convention (for `format → CDIF` converters)
 
@@ -72,10 +80,12 @@ beyond its base) gated by a content-SHACL validity check, and
 `detect_conformance` has a remote-SHACL fallback, so it works without a local
 building-blocks checkout.
 
-All six `format → CDIF` converters — **`ConvertFromSOSO.py`**,
-**`ConvertFromCroissant.py`**, **`dcat_to_cdif.py`**, **`ddi_to_cdif.py`**,
-**`DDI/ddi122_to_cdif.py`**, and **`DDICodebook/ddi25_to_cdif.py`** —
-run `detect_conformance` by default and write the detected `conformsTo` into the
+The `format → CDIF` converters — **`ConvertFromSOSO.py`** (and `soso2cdif.py`),
+**`ConvertFromCroissant.py`**, **`dcat_to_cdif.py`**, **`umm_to_cdif.py`**,
+**`fair2_to_cdif.py`**, and the DDI converters (**`ddi2cdif.py`** and the
+`ddi_sssom_to_cdif.py` engine behind it, **`ddi_to_cdif.py`**,
+**`ddi122_to_cdif.py`**, **`DDICodebook/ddi25_to_cdif.py`**,
+**`DDI-CDI/ddicdi_to_cdif.py`**) — run `detect_conformance` by default and write the detected `conformsTo` into the
 catalog record. Each takes a **`--static-conformance`** flag that skips detection
 and keeps the converter's built-in default instead (and detection degrades to
 the built-in default automatically if `detect_conformance` or its deps are
@@ -128,7 +138,8 @@ rewrites the `@context`, ensures CDIF-required fields where derivable, wraps
 creators in a JSON-LD `@list`, and **adds** the required catalog record — with
 `conformsTo` from `detect_conformance`. Mapping detail:
 [`soso/README.md`](soso/README.md) and the property-by-property comparison in
-`../../doc-corediscovery/documents/CDIF-Discovery-vs-SOSO-comparison.md`
+`../doc-corediscovery/documents/CDIF-Discovery-vs-SOSO-comparison.md` (in a sibling
+`doc-corediscovery` checkout)
 (ESIP issue #283).
 
 ## croissant/ — CDIF ↔ MLCommons Croissant
@@ -146,17 +157,44 @@ docs: [`croissant/CDIFtoCroissant.md`](croissant/CDIFtoCroissant.md) (forward) a
 `dcat_to_cdif.py` converts a DCAT JSON-LD catalog or dataset to CDIF schema.org
 form, mapping DCAT / Dublin Core properties to their schema.org equivalents per
 the CDIF DCAT implementation guide. It can list the datasets in a catalog,
-convert a selection, and optionally validate the output against the CDIF core
-schema. See [`DCAT/README.md`](DCAT/README.md).
+convert a selection, and optionally (`--validate`) frame and validate each record
+against the schema of every profile it declares. See
+[`DCAT/README.md`](DCAT/README.md).
 
-## DDI/ — DDI Codebook 2.5 → CDIF
+## UMM/ — NASA CMR UMM-C → CDIF
 
-`ddi_to_cdif.py` converts DDI Codebook 2.5 XML (e.g., a Harvard Dataverse DDI
-export) to CDIF DataDescription JSON-LD: study-level metadata → the dataset;
-`<var>` → `schema:variableMeasured` (`cdi:InstanceVariable`); `<fileDscr>` →
-`schema:DataDownload` (`cdi:TabularTextDataSet`) with CSVW properties; tab-file
-headers → physical mappings. `--doi` is required; `--fetch-headers` /
-`--fetch-file-meta` pull column headers and size/checksum from the Dataverse API.
+`umm_to_cdif.py` converts NASA Common Metadata Repository collection metadata
+(UMM-C JSON, from a file or a CMR search URL) to CDIF core + discovery, reading
+`mappings/ummc-to-cdif.sssom.tsv` at runtime. It can pull the collection's
+associated UMM-Var records as variables. See [`UMM/README.md`](UMM/README.md).
+
+## FAIR2/ — FAIR² → CDIF
+
+`fair2_to_cdif.py` converts a FAIR² data package (`fair2.json`, file or URL):
+the Croissant core goes through the Croissant converter, and what FAIR² adds
+through `mappings/fair2-to-cdif.sssom.tsv` (with an aliases table for older
+exports). See [`FAIR2/README.md`](FAIR2/README.md).
+
+## DDI/, DDICodebook/, DDI-CDI/ — DDI → CDIF
+
+`DDI/ddi2cdif.py` is the single entry point: it sniffs the DDI flavor and
+version and dispatches. DDI Codebook 1.2.2 and 2.5 go through one data-driven
+engine, `DDI/ddi_sssom_to_cdif.py`, which applies the DDI worksheets (compiled
+to `mappings/ddi_mappings.json`): study-level metadata → the dataset; `<var>` →
+`schema:variableMeasured` (`cdi:InstanceVariable`); `<fileDscr>` →
+`schema:DataDownload` (`cdi:TabularTextDataSet`) with physical mappings.
+`DDICodebook/ddi25_to_cdif.py` is a thin 2.5 shim over it, and
+`DDI/ddi_to_cdif.py` a Harvard-Dataverse layer that adds file size, checksum and
+column headers from the Dataverse API. DDI-CDI 1.0 XML goes to
+`DDI-CDI/ddicdi_to_cdif.py`. See [`DDI/README.md`](DDI/README.md).
+
+## OHDSI/ — OHDSI gaiaCatalog → CDIF
+
+`harvest_ohdsi_to_cdif.py` converts the schema.org records of the OHDSI
+gaiaCatalog (16 in `OHDSIMetadata/`) to CDIF core + discovery (+ provenance from
+their ETL action). It is hand-coded; `mappings/ohdsi-to-cdif.sssom.tsv`
+documents it and `check_ohdsi_mappings.py` keeps the two in step. See
+[`OHDSI/README.md`](OHDSI/README.md).
 
 ---
 
@@ -193,7 +231,7 @@ converters/                  (repository root)
 |------|-------------|
 | `soso2cdif.py` | Front-end for the SOSO→CDIF engine: reads a SOSO record from a path or http(s) URL and writes CDIF (see below) |
 | `schemaorg_names.py` | Resolves the unprefixed names in a schema.org record to CURIEs through the record's own `@context`; shared by `soso/ConvertFromSOSO.py` and `harvesters/geocodes_harvester.py` |
-| `sssom_engine.py` | The shared table-driven mapping engine (`MappingSet`) that the DCAT/DDI/Croissant converters read their SSSOM tables through |
+| `sssom_engine.py` | The shared table-driven mapping engine (`MappingSet`) that the Croissant and FAIR² converters read their SSSOM tables through (DCAT, UMM and DDI have their own readers) |
 | `requirements.txt` | Python dependencies (see [Setup](#setup)) |
 | `LICENSE`, `LICENSE-CC-BY-4.0` | Apache-2.0 (software) and CC BY 4.0 (mappings, docs, example metadata); see [License](#license) |
 | `README.md`, `CLAUDE.md` | This file, and the project guide for Claude Code |
@@ -207,24 +245,29 @@ Each holds its converter(s), a `README.md`, and (where useful) mapping docs and 
 |-----------|----------|
 | [`soso/`](soso/) | `ConvertToSOSO.py` / `ConvertFromSOSO.py` (CDIF ↔ ESIP Science-on-Schema.org), the `check_soso_mappings.py` drift-checker, `examples/`, and `README.md` |
 | [`croissant/`](croissant/) | `ConvertToCroissant.py` / `ConvertFromCroissant.py` (CDIF ↔ MLCommons Croissant 1.1), `check_croissant_mappings.py`, the mapping docs `CDIFtoCroissant.md` / `CroissantToCDIF.md` (+ `AGENTS.md` and background `.docx` notes), and the `croissantExamples/` and `MLCroissantExamples/` corpora |
-| [`DCAT/`](DCAT/) | `dcat_to_cdif.py` (table-driven DCAT → CDIF), `build_corpus.py` (regression harness), `make_coverage_xlsx.py` + `dcat_profile_coverage.xlsx`, the `dcat-ap-vs-dcat-us.md` comparison, `README.md`, and the corpora: `dcat-examples/` (783 upstream files), `dcatExamplesOK/` (the 240 that describe a `dcat:Dataset`), and `cdifOK/` (the converted CDIF records) |
+| [`DCAT/`](DCAT/) | `dcat_to_cdif.py` (table-driven DCAT → CDIF), `build_corpus.py` (regression harness), `make_coverage_xlsx.py` + `dcat_profile_coverage.xlsx`, the `dcat-ap-vs-dcat-us.md` comparison, `README.md`, and the corpora: `dcat-examples/` (783 upstream files), `dcatExamplesOK/` (the 239 that describe a `dcat:Dataset`, including the PSDI catalogue), and `cdifOK/` (289 converted CDIF records; the 50 in `cdifOK/psdi/` were made with `dcat_to_cdif.py`, not `build_corpus.py`) |
 | [`DDI/`](DDI/) | The DDI entry point `ddi2cdif.py` (flavor sniff + dispatch), the data-driven engine `ddi_sssom_to_cdif.py`, `ddi122_to_cdif.py` (1.2.2), the Harvard-Dataverse-specific `ddi_to_cdif.py`, `build_ddi_corpus.py`, the DDI Codebook 1.2.2 XSD, `Examples/`, and `README.md` |
 | [`DDICodebook/`](DDICodebook/) | `ddi25_to_cdif.py` (a thin DDI Codebook 2.5 shim over the engine), the 2.5 XSD, the `ddi25-additions-cdif-mapping.md` notes, `Examples/`, and `README.md` |
 | [`DDI-CDI/`](DDI-CDI/) | `ddicdi_to_cdif.py` (DDI-CDI 1.0 → CDIF), `Examples/`, and `README.md` |
+| [`UMM/`](UMM/) | `umm_to_cdif.py` (NASA CMR UMM-C → CDIF), the UMM-C and UMM-Var JSON Schemas under `schemas/`, example CMR records and their CDIF conversions under `examples/`, and `README.md` |
 | [`FAIR2/`](FAIR2/) | `fair2_to_cdif.py` (FAIR² → CDIF, a FAIR² extension pass over the Croissant converter), the FAIR² specification example and its conversion, and `README.md` |
-| [`OHDSI/`](OHDSI/) | `harvest_ohdsi_to_cdif.py` (OHDSI gaiaCatalog → CDIF), its corpus (`OHDSIMetadata/`, 16 source records, → `cdifMetadata/`), and `README.md`. Formerly the separate `OHDSI` repo |
+| [`OHDSI/`](OHDSI/) | `harvest_ohdsi_to_cdif.py` (OHDSI gaiaCatalog → CDIF), its corpus (`OHDSIMetadata/`, 16 source records, → `cdifMetadata/`), the `check_ohdsi_mappings.py` drift-checker, `README.md` and `AGENTS.md`. Formerly the separate `OHDSI` repo |
+| [`harvesters/`](harvesters/) | `geocodes_harvester.py`: EarthCube GeoCodes SPARQL catalogue → CDIF |
 | [`ROCrate/`](ROCrate/) | `ConvertToROCrate.py` (CDIF → RO-Crate 1.2), `ROCrateToCDIF.py`, `ValidateROCrate.py` (structural + optional SHACL), example RO-Crate/CDIF records, `requirements.txt`, and `README.md` |
 | [`mappings/`](mappings/) | The SSSOM crosswalk tables (`*.sssom.tsv` + `.yml` sidecars) for every converter path, the alias tables, the compiled `ddi_mappings.json`, the sync scripts (`sync_sssom.py`, `sync_ddi_mappings.py`), `ddiwalk_lib.py`, and `README.md`. See the next section |
 | [`validation/`](validation/) | **git submodule** — the CDIF [`validation`](https://github.com/Cross-Domain-Interoperability-Framework/validation) repo, providing `detect_conformance.py`, the CDIF schemas, the frame, and `tools/`. Run `git submodule update --init` to populate it (see [Setup](#setup)) |
-| `.github/` | CI: `workflows/check-mappings.yml` runs the SOSO and Croissant mapping drift-checkers |
+| `.github/` | CI: `workflows/check-mappings.yml` runs the SOSO, Croissant and OHDSI mapping drift-checkers |
 
 ## Mappings (SSSOM)
 
 [`mappings/`](mappings/) holds an [SSSOM](https://mapping-commons.github.io/sssom/)
-mapping set for each converter path (`cdif→soso`, `soso→cdif`, `cdif→croissant`,
-`croissant→cdif`, `dcat→cdif`, `ddi25→cdif`, `ddi122→cdif`) — the property-level
-correspondences each converter applies, hand-authored from the mapping docs and
-code. See [`mappings/README.md`](mappings/README.md).
+mapping set for each converter path — `cdif→soso`, `soso→cdif`, `cdif→croissant`,
+`croissant→cdif`, `dcat→cdif`, `ummc→cdif`, `fair2→cdif`, `ohdsi→cdif`, and the
+DDI worksheets (`ddi-common`, `ddi25`, `ddi122`) — plus alias tables for DCAT,
+Croissant and FAIR² that map variant source IRIs onto the ones a table names.
+DCAT, UMM, Croissant, FAIR² and DDI read their tables at runtime; the SOSO and
+OHDSI tables document hand-coded converters and are checked against them in CI.
+See [`mappings/README.md`](mappings/README.md).
 
 ## License
 

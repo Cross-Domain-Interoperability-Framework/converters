@@ -120,11 +120,14 @@ resolve to **core + discovery + data_description**).
 | `dataAccs/useStmt/citReq` | `dcterms:bibliographicCitation` |
 | `prodDate` / `version[@date]` / `collDate` end | `schema:dateModified` / `datePublished` |
 | `dataDscr/var` (+`labl`,`varFormat`,`intrvl`) | `schema:variableMeasured` / `cdi:InstanceVariable` (deduplicated by signature; `@id` = `#var/<name>[~N]`) |
+| `var[@intrvl]` | `cdif:role`: `contin` → Measure, `discrete` → Attribute. An Attribute must name what it qualifies (`cdif:qualifies`, formerly `cdi:qualifies`); DDI Codebook does not say, so it is the OGC nil "missing" IRI |
 | `var/catgry` (`catValu`/`labl`) | enumerated value domain → `cdi:takesSubstantiveValuesFrom` → `cdif:EnumerationDomain` → `cdif:references` a shared `skos:ConceptScheme` code list |
 | `var/catgry[@missing]` | `cdi:takesSentinelValuesFrom` → `cdif:SentinelValueDomain` |
 | `var/sumStat`, `var/catgry/catStat` | `cdif:isDescribedBy_StatisticsCollection` → `cdi:Statistics` (count/min/max, split by `cdi:computationBase`) + `cdi:CategoryStatistics` |
 | `var/sumStat[@type=min\|max]` | also `schema:minValue` / `schema:maxValue` |
 | `fileDscr` (+`fileName`,`dimensns`) | `schema:distribution` (`schema:DataDownload`) |
+| `fileTxt/fileType` | MIME types (e.g. Dataverse's `text/tab-separated-values`) → `schema:encodingFormat`; anything else (e.g. Nesstar's `Nesstar 200801`) → `schema:additionalType`. Both arrays |
+| `fileTxt/dimensns/caseQnty`, `varQnty`, `fileStrc/recGrp/recDimnsn/varQnty` | `schema:additionalProperty` PropertyValues "number of cases", "number of variables", "number of variables per record", with numeric values |
 | `docDscr` (producer/prodDate/version) | `schema:subjectOf` catalog record |
 
 ### Design decisions
@@ -260,13 +263,19 @@ and live under `../DDICodebook/Examples/XML/`.)
   `cdi:for` / `cdif:references` cross-references resolve within the `@graph`.
   (Both engines' outputs validate; their structured variable content is
   identical.)
-- **SHACL** (`../../ShaclValidation/CDIF-Discovery-Shapes.ttl`): **0 violations**;
+- **SHACL** (`../validation/ShaclValidation/CDIF-Discovery-Shapes.ttl`): **0 violations**;
   warnings are advisory (missing per-variable `propertyID`/physical data type,
   contact points).
+
+Regenerate and re-check all six DDI example outputs (these three and the three
+in `../DDICodebook/Examples/`) with `python DDI/build_ddi_corpus.py` from the
+repo root (`--check` verifies without writing). Its schema check validates each
+record against the profile it declares, reading the schemas from a
+`metadataBuildingBlocks` checkout beside this repo.
 
 > **Note on the CatalogRecord `additionalType` serialization:** the current
 > discovery SHACL excludes catalog-record nodes from the dataset mandatory shape
 > by matching the **IRI** `dcat:CatalogRecord`, so this converter serializes
 > `schema:additionalType` as `{"@id":"dcat:CatalogRecord"}` (not the bare string).
 > The older string form used elsewhere in the repo now trips five spurious
-> violations per record under the regenerated shapes — see the conversation notes.
+> violations per record under the regenerated shapes.

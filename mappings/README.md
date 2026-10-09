@@ -20,21 +20,26 @@ output matches `sync_sssom.py`'s), migrates a worksheet still carrying a legacy
 embedded `#` header, runs the XSD-completeness check, and compiles
 `ddi_mappings.json`. The converter-set *tables* are otherwise hand-maintained.
 
-| File | Direction | Converter | Mappings |
+Counts are rows, and in brackets the rows with a target (`object_id`), as of
+2026-10-09. **(reads it)** marks a table the converter reads at runtime; the
+others document a hand-coded converter and are checked against it in CI.
+
+| File | Direction | Converter | Rows (mapped) |
 |------|-----------|-----------|----------|
-| [`cdif-to-soso.sssom.tsv`](cdif-to-soso.sssom.tsv) | CDIF → SOSO | `soso/ConvertToSOSO.py` | 17 |
-| [`soso-to-cdif.sssom.tsv`](soso-to-cdif.sssom.tsv) | SOSO → CDIF | `soso/ConvertFromSOSO.py` | 14 |
-| [`cdif-to-croissant.sssom.tsv`](cdif-to-croissant.sssom.tsv) | CDIF → Croissant | `croissant/ConvertToCroissant.py` | 23 |
-| [`croissant-to-cdif.sssom.tsv`](croissant-to-cdif.sssom.tsv) | Croissant → CDIF | `croissant/ConvertFromCroissant.py` | 16 |
-| [`dcat-to-cdif.sssom.tsv`](dcat-to-cdif.sssom.tsv) | DCAT → CDIF | `DCAT/dcat_to_cdif.py` **(reads it)** | 174 |
-| [`dcat-aliases.sssom.tsv`](dcat-aliases.sssom.tsv) | source IRIs → the IRI the publisher meant | `DCAT/dcat_to_cdif.py` **(reads it)** | 25 |
-| [`ummc-to-cdif.sssom.tsv`](ummc-to-cdif.sssom.tsv) | NASA CMR UMM-C → CDIF | `UMM/umm_to_cdif.py` **(reads it)** | 90 (73 mapped) |
-| [`ohdsi-to-cdif.sssom.tsv`](ohdsi-to-cdif.sssom.tsv) | OHDSI gaiaCatalog (schema.org) → CDIF | `OHDSI/harvest_ohdsi_to_cdif.py` (documents it; checked by `OHDSI/check_ohdsi_mappings.py`) | 25 |
-| [`fair2-to-cdif.sssom.tsv`](fair2-to-cdif.sssom.tsv) | FAIR² extensions → CDIF (the Croissant core goes through `croissant-to-cdif`) | `FAIR2/fair2_to_cdif.py` **(reads it)** | 45 (43 mapped) |
+| [`cdif-to-soso.sssom.tsv`](cdif-to-soso.sssom.tsv) | CDIF → SOSO | `soso/ConvertToSOSO.py` (documents it; checked by `soso/check_soso_mappings.py`) | 18 |
+| [`soso-to-cdif.sssom.tsv`](soso-to-cdif.sssom.tsv) | SOSO → CDIF | `soso/ConvertFromSOSO.py` (documents it; checked by `soso/check_soso_mappings.py`) | 16 |
+| [`cdif-to-croissant.sssom.tsv`](cdif-to-croissant.sssom.tsv) | CDIF → Croissant | `croissant/ConvertToCroissant.py` **(reads it)** | 89 (49) |
+| [`croissant-to-cdif.sssom.tsv`](croissant-to-cdif.sssom.tsv) | Croissant → CDIF | `croissant/ConvertFromCroissant.py` **(reads it)** | 136 (73) |
+| [`croissant-aliases.sssom.tsv`](croissant-aliases.sssom.tsv) | variant Croissant source IRIs → the IRI the table keys on | both Croissant converters **(read it)** | 34 |
+| [`dcat-to-cdif.sssom.tsv`](dcat-to-cdif.sssom.tsv) | DCAT → CDIF | `DCAT/dcat_to_cdif.py` **(reads it)** | 255 (180) |
+| [`dcat-aliases.sssom.tsv`](dcat-aliases.sssom.tsv) | source IRIs → the IRI the publisher meant | `DCAT/dcat_to_cdif.py` **(reads it)** | 41 |
+| [`ummc-to-cdif.sssom.tsv`](ummc-to-cdif.sssom.tsv) | NASA CMR UMM-C → CDIF | `UMM/umm_to_cdif.py` **(reads it)** | 92 (76) |
+| [`fair2-to-cdif.sssom.tsv`](fair2-to-cdif.sssom.tsv) | FAIR² extensions → CDIF (the Croissant core goes through `croissant-to-cdif`) | `FAIR2/fair2_to_cdif.py` **(reads it)** | 46 (44) |
 | [`fair2-aliases.sssom.tsv`](fair2-aliases.sssom.tsv) | legacy FAIR² source IRIs → the IRI the mapping table keys on | `FAIR2/fair2_to_cdif.py` **(reads it)** | 27 |
-| [`ddi-common-to-cdif.sssom.tsv`](ddi-common-to-cdif.sssom.tsv) | DDI Codebook (2.5 ∩ 1.2.2 common core) → CDIF | all three DDI converters | 210 (184 mapped) |
-| [`ddi25-to-cdif.sssom.tsv`](ddi25-to-cdif.sssom.tsv) | DDI Codebook 2.5 *extras* → CDIF | `DDI/ddi_to_cdif.py`, `DDICodebook/ddi25_to_cdif.py` | 137 (108 mapped) |
-| [`ddi122-to-cdif.sssom.tsv`](ddi122-to-cdif.sssom.tsv) | DDI Codebook 1.2.2 *extras* → CDIF | `DDI/ddi122_to_cdif.py` | 7 (1 mapped) |
+| [`ohdsi-to-cdif.sssom.tsv`](ohdsi-to-cdif.sssom.tsv) | OHDSI gaiaCatalog (schema.org) → CDIF | `OHDSI/harvest_ohdsi_to_cdif.py` (documents it; checked by `OHDSI/check_ohdsi_mappings.py`) | 25 |
+| [`ddi-common-to-cdif.sssom.tsv`](ddi-common-to-cdif.sssom.tsv) | DDI Codebook (2.5 ∩ 1.2.2 common core) → CDIF | compiled to `ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py` **(reads it)** | 210 (184) |
+| [`ddi25-to-cdif.sssom.tsv`](ddi25-to-cdif.sssom.tsv) | DDI Codebook 2.5 *extras* → CDIF | as above, for 2.5 (`ddi2cdif.py`, `ddi_to_cdif.py`, `DDICodebook/ddi25_to_cdif.py`) | 137 (108) |
+| [`ddi122-to-cdif.sssom.tsv`](ddi122-to-cdif.sssom.tsv) | DDI Codebook 1.2.2 *extras* → CDIF | as above, for 1.2.2 | 7 (1) |
 
 Sets are keyed by **source vocabulary → target**, so the two DDI 2.5 converters
 (the Harvard-Dataverse `ddi_to_cdif.py` and the source-agnostic
@@ -42,7 +47,7 @@ Sets are keyed by **source vocabulary → target**, so the two DDI 2.5 converter
 
 ### The three DDI sets are comprehensive *worksheets*, factored common + version-specific
 
-Unlike the five converter-mapping sets above (which list only the property
+Unlike the converter-mapping sets above (which list only the property
 correspondences a converter applies), the DDI sets enumerate **every
 literal-valued element** the DDI Codebook XML Schema defines under the four main
 description branches (`stdyDscr`, `fileDscr`, `dataDscr`, `docDscr`) — whether or
@@ -101,29 +106,32 @@ structural work these conversions also require:
   `dcterms:conformsTo` derived from content, `@context` rewrites, nil
   placeholders for what the source is knowably silent about.
 
-So the pattern is a **hybrid**, and two converters now implement it properly:
-the table carries the term correspondences — the bulk and the tedium — and a
-short list of hand-written *shapers* carries the structure. Neither is
-generated code; both **read their table at runtime**, so the table and the
-behaviour cannot drift apart.
+So the pattern is a **hybrid**: the table carries the term correspondences —
+the bulk and the tedium — and a short list of hand-written *shapers* carries the
+structure. Five converters implement it and **read their table at runtime**, so
+the table and the behaviour cannot drift apart:
 
 | | how the table reaches the converter |
 |---|---|
 | DDI | `sync_ddi_mappings.py` compiles the worksheets to `ddi_mappings.json`; `DDI/ddi_sssom_to_cdif.py` applies it, with shapers `shape_place`, `shape_conditions`, `build_contributors`, `build_activity`, … |
-| DCAT | `DCAT/dcat_to_cdif.py` reads the TSVs directly, with shapers named by the `transform` column |
+| DCAT | `DCAT/dcat_to_cdif.py` reads the TSVs directly, with shapers (`_tf_<name>`) named by the `transform` column |
+| UMM | `UMM/umm_to_cdif.py` reads its TSV with its own loader; shapers are the `tf_<name>` functions |
+| Croissant | both converters apply their TSVs through the shared `sssom_engine.py` |
+| FAIR² | `FAIR2/fair2_to_cdif.py` runs the Croissant converter, then applies its own TSV through `sssom_engine.py` |
 
-The remaining sets (SOSO, Croissant) are still descriptive: the converter
-restates them, and editing the table documents an intended change rather than
-making one. Moving them to the same arrangement is the obvious next step. Until
-then a **drift-checker** guards each pair — `soso/check_soso_mappings.py` and
-`croissant/check_croissant_mappings.py` — verifying against the example corpus
-that the table and the converter still agree (every mapping the table asserts is
-one the converter makes, and every property the converter carries is in the
-table or a reported passthrough). Each exits non-zero on drift:
+The SOSO and OHDSI sets are descriptive: those converters are hand-coded and
+restate the tables, so editing a table documents an intended change rather than
+making one. Croissant reads its tables but still does much of its structural
+work in code. For all three a **drift-checker** verifies, against the example
+corpus, that the table and the converter still agree (every mapping the table
+asserts is one the converter makes, and every property the converter carries is
+in the table or a reported passthrough). Each exits non-zero on drift, and CI
+(`.github/workflows/check-mappings.yml`) runs them:
 
 ```bash
-python converters/soso/check_soso_mappings.py
-python converters/croissant/check_croissant_mappings.py
+python soso/check_soso_mappings.py
+python croissant/check_croissant_mappings.py
+python OHDSI/check_ohdsi_mappings.py
 ```
 
 ### What DCAT needed that DDI did not
@@ -150,7 +158,7 @@ untyped node behind, so unfiltered paths into such arrays are left unapplied
 and their values pass through instead.
 
 **Precedent — the XAS → CDIF profile work.** That effort built the same transform
-two ways (see [`../../../XAS-CDIF/release/xasToCdifWorkflows.md`](../../../XAS-CDIF/release/xasToCdifWorkflows.md)).
+two ways (see [`../../XAS-CDIF/release/xasToCdifWorkflows.md`](../../XAS-CDIF/release/xasToCdifWorkflows.md)).
 The original design was a **declarative RML mapping executed by a Java tool**
 (`rmlmapper`), packaged as an HTTP service
 ([`cdif-xas`](https://github.com/smrgeoinfo/cdif-xas)). A later **Python emitter
@@ -168,7 +176,8 @@ same hybrid philosophy — SSSOM for the alignments, Python for the structure.
 a `comment` carrying the per-mapping transform note, and `author_id` /
 `reviewer_id` (who authored / reviewed the mapping).
 
-The DCAT set adds two more, declared as `extension_definitions` in its `.yml`:
+The DCAT, Croissant, UMM, FAIR² and OHDSI sets add two more (UMM also adds
+`subject_filter`), declared as `extension_definitions` in each `.yml`:
 `subject_class` (the class the source property sits on, which disambiguates a
 property that means different things in different places) and `transform` (the
 shaper to apply; empty means a plain copy). Both are documented in
@@ -208,7 +217,7 @@ Replace the `SMR` placeholder with the curator's ORCID once available, e.g.:
 
 ```bash
 sed -i 's#https://w3id.org/cdif/agents/SMR#https://orcid.org/0000-0000-0000-0000#g' \
-    converters/mappings/ddi*-to-cdif.sssom.tsv
+    mappings/ddi*-to-cdif.sssom.tsv
 ```
 
 `object_json_path` is a **non-standard extension column** (declared in each set's
@@ -289,7 +298,9 @@ sssom validate cdif-to-soso.parsed.tsv
 sssom convert  cdif-to-soso.parsed.tsv -o cdif-to-soso.ttl
 ```
 
-The five converter sets validate clean. The three DDI worksheets are
+The SOSO, Croissant and DCAT sets validated clean when they were authored
+(2026-08); the UMM, FAIR² and OHDSI sets have not yet been run through
+`sssom validate`. The three DDI worksheets are
 comprehensive inventories, so `validate` reports their deliberately-unmapped rows
 (blank `predicate_id`/`object_id`) as skipped — expected, not an error.
 
@@ -300,6 +311,9 @@ These sets are curated by hand and reflect the converters at authoring time
 `.sssom.tsv` (and its `.sssom.yml` sidecar if a new prefix or metadata field is
 introduced). The authoritative narrative sources are each converter's mapping
 doc — `../soso/README.md` and
-`../../../doc-corediscovery/documents/CDIF-Discovery-vs-SOSO-comparison.md`
-(SOSO), `../croissant/CDIFtoCroissant.md` / `CroissantToCDIF.md`,
-`../DCAT/README.md`, and the `DDI/ddi_to_cdif.py` source.
+`../../doc-corediscovery/documents/CDIF-Discovery-vs-SOSO-comparison.md`
+(SOSO; in a sibling `doc-corediscovery` checkout),
+`../croissant/CDIFtoCroissant.md` / `CroissantToCDIF.md`, `../DCAT/README.md`,
+`../UMM/README.md`, `../FAIR2/README.md`, `../OHDSI/README.md`, and
+`../DDI/README.md` with the `DDI/ddi_sssom_to_cdif.py` engine. For a
+documentation-only set (SOSO, OHDSI) run its drift-checker after the change.

@@ -10,7 +10,7 @@ CDIF profiles each output claims.
 # run from the repo root
 python croissant/ConvertFromCroissant.py croissant/MLCroissantExamples/<name>.json \
   -o croissant/MLCroissantExamples/cdif-output/<name>-cdif.jsonld
-python ConformanceValidate.py croissant/MLCroissantExamples/cdif-output/<name>-cdif.jsonld \
+python validation/ConformanceValidate.py croissant/MLCroissantExamples/cdif-output/<name>-cdif.jsonld \
   --source local --no-shacl
 ```
 

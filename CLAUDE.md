@@ -27,8 +27,25 @@ different roles — check which before editing either side:
 - After editing a DDI `*.sssom.tsv` (in a text editor, not a spreadsheet), run
   `python mappings/sync_ddi_mappings.py` — it repairs the TSV, regenerates the
   sidecar and rebuilds `ddi_mappings.json`, which the converters actually read.
+  It rewrites every DDI table and sidecar with LF line endings even when their
+  content is unchanged; if `git diff --ignore-cr-at-eol` shows nothing for a
+  file, `git checkout --` it rather than committing line-ending churn.
+- In the DDI engine, a distribution-level target path ending `[*]` is written
+  as an array of distinct values, and a `schema:additionalProperty` target
+  becomes PropertyValues named by the row's `object_label` — so a new
+  per-file field needs no code, only a row with the right path.
 - The `validation/` submodule is optional at runtime: keep every
   `detect_conformance` import guarded so conversion works without it.
+- `detect_conformance` fetches its SHACL shapes from metadataBuildingBlocks
+  **main on GitHub**, so a converter's detected `conformsTo` can change with no
+  change in this repo — e.g. when a term moves namespace there
+  (`cdi:qualifies` became `cdif:qualifies`, and every DDI record silently lost
+  `data_description` until the engine followed). When a regenerated corpus
+  drops a profile, run detection verbosely on the committed record too before
+  blaming your change.
+- `schemaorg_names.py` is the one schema.org naming step for
+  `soso/ConvertFromSOSO.py` and `harvesters/geocodes_harvester.py`; change it
+  there, not in a caller.
 
 ## Checks
 
@@ -41,7 +58,7 @@ There is no unit-test suite. What exists:
 - Regression corpora: `python DCAT/build_corpus.py` (see below) and
   `python DDI/build_ddi_corpus.py`.
 - Validate one output: `python UMM/umm_to_cdif.py <in> -o out/ --validate`
-  (DCAT has the same flag), or
+  (DCAT and FAIR2 have the same flag), or
   `python validation/tools/FrameAndValidate.py out.json -v --schema validation/CDIFDiscoverySchema.json --frame validation/CDIF-frame-2026.jsonld`.
 
 ## Mapping tables (`mappings/*.sssom.tsv`)
@@ -68,7 +85,15 @@ There is no unit-test suite. What exists:
 - Output is not deterministic (conversion-time `dateModified`, random blank-node
   labels, sibling records swapping filenames); see
   [DCAT/cdifOK/README.md](DCAT/cdifOK/README.md#regenerating) for how to compare
-  two builds.
+  two builds. Matching records by `@id` after dropping `schema:dateModified` /
+  `sdDatePublished` and normalising `_:` labels isolates a real change; commit
+  only the records that actually changed rather than ~200 files of date churn.
+- `cdifOK/psdi/` (50 records) was **not** made by `build_corpus.py`: it was made
+  with `python DCAT/dcat_to_cdif.py DCAT/dcatExamplesOK/psdi/dataset-7e871747-1bd3-4abf-8fe3-dc4ec55b3771.jsonld --output DCAT/cdifOK/psdi --catalog-name "PSDI Resource Catalogue" --catalog-url "https://metadata.psdi.ac.uk/"`.
+  A `build_corpus.py` run re-parses that source and writes the 50 again as
+  `dataset-…__dcat-<slug>.jsonld` with a different catalog record and lost
+  labels; delete those, then regenerate `psdi/` with the command above or
+  `git checkout -- DCAT/cdifOK/psdi`.
 - The schema and SHACL checks read `metadataBuildingBlocks` from a checkout
   beside this repo (`../metadataBuildingBlocks`), not from the `validation`
   submodule; without it they report "skipped". `DDI/build_ddi_corpus.py` does

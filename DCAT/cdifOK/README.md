@@ -6,6 +6,13 @@ by [`../build_corpus.py`](../build_corpus.py), which drives
 subdirectories. `INDEX.json` lists every record with the sources it came from
 and whether it is a fragment.
 
+`psdi/` is separate: 50 records from the PSDI Resource Catalogue
+([`../dcatExamplesOK/psdi/`](../dcatExamplesOK/psdi/)), made directly with
+`dcat_to_cdif.py --catalog-name "PSDI Resource Catalogue" --catalog-url
+https://metadata.psdi.ac.uk/` and named `dcat-<slug>.jsonld`. `build_corpus.py`
+does not reproduce them as committed (see [Regenerating](#regenerating)), and
+`INDEX.json` still lists them under its own naming.
+
 ```
 157 logical examples -> 239 records
    79 merged from more than one serialization
@@ -15,13 +22,12 @@ and whether it is a fragment.
   0 source properties that reach no record
 ```
 
-Loss is checked by every rebuild — see **Regenerating** below. The JSON Schema
-and SHACL checks were **not** re-run for the 2026-09-30 regeneration: since the
-converters moved out of `validation/`, `build_corpus.py` looks for
-`metadataBuildingBlocks` one directory too high (`../../..` from `DCAT/`), and
-`CoreDiscovery/resolvedSchema.json` is no longer published there, so both
-checks report "skipped". The SHACL figures below date from an earlier build
-(90 conformant / 149 fragments).
+Loss and the JSON Schema check are run by every rebuild — see **Regenerating**
+below. As of the 2026-10-09 build, no source property is lost and no conformant
+record fails the CoreDiscovery schema. Both checks read `metadataBuildingBlocks`
+from a checkout beside this repo. The SHACL check is opt-in (`--shacl`) and was
+not re-run for that build: the [SHACL](#shacl) figures below date from an
+earlier build (90 conformant / 149 fragments).
 
 ## `-frag`
 
@@ -96,6 +102,8 @@ group parses but describes no `dcat:Dataset`.
 
 ## SHACL
 
+*From an earlier build (90 conformant / 149 fragments); not re-run since.*
+
 All **90 conformant records are clean of SHACL Violations**. All 149 fragments
 carry two, and both are what makes them fragments: no `dcterms:conformsTo` on
 the catalog record, and no identifier for the documented resource.
@@ -128,8 +136,14 @@ specifications and datatypes used (388). No converter can invent those.
 ## Regenerating
 
 ```bash
-python build_corpus.py
+python DCAT/build_corpus.py      # from the repo root
 ```
+
+A plain run also re-parses `../dcatExamplesOK/psdi/` and writes those records
+under its own naming (`psdi/dataset-…__dcat-<slug>.jsonld`) beside the committed
+ones. Remove those and regenerate `psdi/` the way it was made (see the
+[DCAT README](../README.md#example-psdi-resource-catalogue)), or restore it with
+`git checkout -- DCAT/cdifOK/psdi`.
 
 Rebuilds this directory and verifies two invariants on every run — both of
 which caught real bugs while the converter was being made table-driven — and a
@@ -137,9 +151,9 @@ third on request:
 
 - **loss** — every predicate asserted on a `dcat:Dataset` in the source graph
   is accounted for in the output: mapped through
-  [`../mappings/dcat-to-cdif.sssom.tsv`](../mappings/dcat-to-cdif.sssom.tsv),
+  [`../../mappings/dcat-to-cdif.sssom.tsv`](../../mappings/dcat-to-cdif.sssom.tsv),
   rewritten by
-  [`../mappings/dcat-aliases.sssom.tsv`](../mappings/dcat-aliases.sssom.tsv),
+  [`../../mappings/dcat-aliases.sssom.tsv`](../../mappings/dcat-aliases.sssom.tsv),
   or preserved verbatim. Comparison is on IRIs, resolving each record's own
   `@context`, because the converter mints a prefix for any vocabulary it passes
   through — HealthDCAT-AP arrives as `health:analytics`, not as the source IRI.

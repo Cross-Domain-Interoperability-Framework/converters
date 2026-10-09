@@ -30,13 +30,17 @@ profile) typed components; Croissant uses `RecordSet`/`Field` with extract pipel
 | `../mappings/croissant-to-cdif.sssom.tsv` | **The mapping, authoritative.** Both converters read it; the docs above describe it |
 | `../mappings/cdif-to-croissant.sssom.tsv` | The same, for the forward direction, incl. the rows recording what Croissant cannot carry |
 | `../mappings/croissant-aliases.sssom.tsv` | Spelling variants seen in the wild, folded onto the term the table keys on |
+| `check_croissant_mappings.py` | Drift check: the converters against their mapping tables over the example corpora (run in CI) |
+| `AGENTS.md` | Guide for coding agents working on these converters |
 | `croissantExamples/` | Example corpus (see below) |
+| `MLCroissantExamples/` | MLCommons Croissant examples used to test the inverse converter |
 
 ## Where the mapping lives
 
 Neither converter states a property correspondence in Python. Both read an
-SSSOM table in `../mappings/`, applied by the shared `converters/sssom_engine.py`
-— the same arrangement as the DCAT and DDI converters. Two extension columns do
+SSSOM table in `../mappings/`, applied by the shared `../sssom_engine.py` (which
+the FAIR² converter also uses; DCAT, UMM and DDI read their tables with their
+own code). Two extension columns do
 work plain SSSOM cannot:
 
 - **`subject_class`** — the class the property sits on. These vocabularies are
@@ -87,9 +91,9 @@ python -c "import mlcroissant as mlc; mlc.Dataset(jsonld='output-croissant.json'
 python croissant/ConvertFromCroissant.py input-croissant.json -o output.jsonld [-v]
 
 # Validate the CDIF output against the appropriate current profile schema, e.g.
-# (using the published release-repo FrameAndValidate + StructuredSchema):
-python <profile-datadescription>/FrameAndValidate.py output.jsonld --validate \
-  --schema cdifDataDescriptionStructuredSchema.json --frame cdifDataDescription-frame.jsonld
+# with the validation submodule (Discovery schema when there is no recordSet):
+python validation/tools/FrameAndValidate.py output.jsonld -v \
+  --schema validation/CDIFDataDescriptionSchema.json --frame validation/CDIF-frame-2026.jsonld
 ```
 
 The inverse is **lossy** by design — Croissant carries no equivalents for
@@ -177,7 +181,7 @@ pip install mlcroissant          # optional, for validating Croissant output
 - **Data types** map with the variable's logical type preferred over the
   mapping's storage token (`xsd:decimal`/`Numeric` → `sc:Float`, etc.).
 - **`schema:propertyID` / `cdif:uses`** → `cr:Field.equivalentProperty`.
-- **`cdi:qualifies`** is *not* mapped to `cr:Field.references` (it is
+- **`cdif:qualifies`** (formerly `cdi:qualifies`) is *not* mapped to `cr:Field.references` (it is
   metadata-about-data, not a foreign key; the true FK analog is `cdif:ForeignKey`).
 
 CDIF properties with no Croissant equivalent (`prov:*`, `dqv:*`,
@@ -196,7 +200,8 @@ ForeignKey, RepresentedVariable).
 - **`cdif/*.cdif.jsonld`** — the Croissant→CDIF conversions of those exports
   (with `cdif/README.md` and `cdif/_manifest.json` describing provenance).
 - **`<name>-croissant.json`** — five CDIF→Croissant converter-output examples
-  generated from ADA metadata in `../MetadataExamples/` / `../testJSONMetadata/`.
+  generated from ADA metadata in `../validation/MetadataExamples/` /
+  `../validation/testJSONMetadata/`.
 - **`minority-report-BI0104-croissant.json`** — a "semantic Croissant" export from
   the CODATA [minority-report](https://github.com/codata/the-minority-report) HIPS
   corpus (1 described CSV + 20 auxiliary files + 2 `isBasedOn` sources), with its
@@ -206,8 +211,8 @@ ForeignKey, RepresentedVariable).
 
 ## Test corpus note
 
-The CDIF test corpus in `../MetadataExamples/` and `../testJSONMetadata/` has
-been migrated to the current `cdif:` schema (see
-`../../tools/migrate_corpus_cdi_to_cdif.py`). All 84 files validate against the
+The CDIF test corpus in `../validation/MetadataExamples/` and
+`../validation/testJSONMetadata/` has been migrated to the current `cdif:` schema
+(see `../validation/tools/migrate_corpus_cdi_to_cdif.py`). All 84 files validate against the
 current Discovery / DataDescription schema, so they are valid current-schema
 inputs for `ConvertToCroissant.py`.

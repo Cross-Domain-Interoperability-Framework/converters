@@ -137,7 +137,8 @@ sampling *design numbers* stay as properties of the collection activity / datase
 
 > **Convention note.** The same `schema:object` + `schema:additionalType` pattern
 > is how the geochem building blocks represent the analyzed sample (see
-> `MetadataExamples/` and the ADA records under `testJSONMetadata/`); prefer it
+> `../validation/MetadataExamples/` and the ADA records under
+> `../validation/testJSONMetadata/`); prefer it
 > over a loose `additionalProperty` whenever the DDI element denotes *what was
 > sampled/analyzed* rather than a design parameter.
 
