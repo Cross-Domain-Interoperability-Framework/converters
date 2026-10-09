@@ -12,11 +12,20 @@ GDSC**) and converts it to **CDIF Core + Discovery** JSON-LD.
 | `OHDSIMetadata/` | Source `meta_json-ld_{table_id}.json` files as fetched from gaiaCatalog (16 datasets) |
 | `cdifMetadata/`  | Converted `cdif_{table_id}.json` — CDIF Discovery + Core conformant |
 | `harvest_ohdsi_to_cdif.py` | The converter |
+| `check_ohdsi_mappings.py` | Drift check: the converter against its mapping table |
+
+The property mapping is documented in
+[`../mappings/ohdsi-to-cdif.sssom.tsv`](../mappings/ohdsi-to-cdif.sssom.tsv)
+(with its `.yml` sidecar, which also lists what the converter synthesises).
+The converter is hand-coded and does not read the table, so
+`check_ohdsi_mappings.py` converts the corpus and fails if the two disagree; CI
+runs it with the SOSO and Croissant checks.
 
 Run, from the root of this repository:
 
 ```bash
 python OHDSI/harvest_ohdsi_to_cdif.py     # OHDSIMetadata/ -> cdifMetadata/
+python OHDSI/check_ohdsi_mappings.py      # table vs converter, over the corpus
 ```
 
 This directory was the separate `OHDSI` repository until 2026-10-09.

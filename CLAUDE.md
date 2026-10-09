@@ -19,8 +19,8 @@ different roles — check which before editing either side:
   `mappings/ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py`). A
   mapping change for these is a table edit; code is only for structural
   shapers.
-- **Table only documents the converter:** SOSO (and much of Croissant's
-  structure). Change the code and the table together; CI's drift-checkers
+- **Table only documents the converter:** SOSO, OHDSI (and much of
+  Croissant's structure). Change the code and the table together; CI's drift-checkers
   fail if they disagree.
 - Row order is precedence: for a scalar target the first row to fill it wins;
   array targets accumulate.
@@ -34,8 +34,9 @@ different roles — check which before editing either side:
 
 There is no unit-test suite. What exists:
 
-- `python soso/check_soso_mappings.py` and
-  `python croissant/check_croissant_mappings.py` — table/converter drift
+- `python soso/check_soso_mappings.py`,
+  `python croissant/check_croissant_mappings.py` and
+  `python OHDSI/check_ohdsi_mappings.py` — table/converter drift
   checks (the CI job in `.github/workflows/check-mappings.yml`); stdlib only.
 - Regression corpora: `python DCAT/build_corpus.py` (see below) and
   `python DDI/build_ddi_corpus.py`.

@@ -1,0 +1,66 @@
+mapping_set_id: https://w3id.org/cdif/mappings/ohdsi-to-cdif
+mapping_set_title: OHDSI gaiaCatalog (schema.org) to CDIF
+mapping_set_description: |
+  Property correspondences applied by OHDSI/harvest_ohdsi_to_cdif.py, which
+  converts the schema.org Dataset records of the OHDSI gaiaCatalog datastore
+  (University of Miami GDSC) to CDIF core + discovery (+ provenance).
+  DRAFT for curator review: rows are tool-suggested (author_id = claude,
+  reviewer_id empty).
+
+  This table DOCUMENTS the converter; it does not drive it. The converter is
+  hand-coded, so OHDSI/check_ohdsi_mappings.py runs it over the corpus in
+  OHDSI/OHDSIMetadata/ and fails when the two disagree: a source property no
+  row names, a row whose target the converter never writes, or an output
+  property no row or synthesised field accounts for.
+
+  The source sets @vocab to https://schema.org/, so its terms are written
+  sc: (as in the Croissant table) to keep them apart from the CDIF target
+  prefix schema: (http). subject_class sc:Action rows describe the ETL
+  potentialAction inside the source's about Events.
+license: https://creativecommons.org/licenses/by/4.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/OHDSI/harvest_ohdsi_to_cdif.py
+mapping_date: 2026-10-09
+subject_source: https://github.com/OHDSI/gaiaCatalog/tree/main/datastore/data
+object_source: https://w3id.org/cdif/discovery/1.1
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+curie_map:
+  prov: http://www.w3.org/ns/prov#
+  sc: https://schema.org/
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+comment: |
+  transform names the converter function that does the work:
+
+    text, date        copy (convert(): keys and types given schema:)
+    license           -> array; OGC nil "missing" when absent
+    list              -> one-element array
+    agent             convert_creators (default type schema:Organization)
+    place             convert_spatial_coverage (polygon -> box)
+    definedterm       convert_measurement_technique
+    propertyvalue     convert_additional_property (name from propertyID)
+    variable          convert_variables (strip whitespace, drop unnamed)
+    prefix            convert() only
+    idref             {@id} reference only
+    datadownload      convert_distribution (URL strings -> DataDownload)
+    etl / etlname / instrument / selfref
+                      find_etl_action + build_provenance_activity
+
+  Structural, with no row: the source @id becomes the record @id; @type
+  becomes ["schema:Dataset"]; @language becomes schema:inLanguage; @context
+  is replaced by the CDIF prefixes.
+
+  Synthesised, with no source property:
+    schema:identifier   PropertyValue {value: table id, url: source @id}
+    schema:subjectOf    the CDIF catalog record: about the dataset,
+                        sdDatePublished = harvest date, isBasedOn = the raw
+                        source file, dcterms:conformsTo core + discovery
+                        (+ provenance when the ETL activity is present).
+                        The conformance list is static, not detected.
