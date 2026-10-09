@@ -16,7 +16,8 @@ Mapping summary (current CDIF DataDescription / DataStructure schema, cdif: name
        cdi:hasIntendedDataType
   CDIF schema:propertyID / cdif:uses → cr:Field.equivalentProperty
   CDIF cdif:hasPrimaryKey          → cr:RecordSet.key
-  CDIF cdi:qualifies / ForeignKey  → cr:Field.references (FK analogy)
+  CDIF cdif:qualifies              → not mapped (metadata about another variable,
+                                     not a foreign key; see _convert_record_sets)
 
 Usage:
     python ConvertToCroissant.py input.jsonld [-o output.json] [-v]
@@ -519,7 +520,7 @@ def _convert_record_sets(tabular_files, var_index, cdif, verbose=False):
     Emits cr:RecordSet.key from the dataset-level cdif:hasPrimaryKey.
 
     Does NOT emit cr:Field.references. It once claimed to, from a variable's
-    cdi:qualifies, and that was wrong twice over: cdi:qualifies says a
+    cdif:qualifies (then cdi:qualifies), and that was wrong twice over: it says a
     variable is metadata ABOUT another, not that its values reference them,
     and mapping it crashed mlcroissant. The real foreign key is
     cdif:has_ForeignKey on the data structure, which this converter does not
