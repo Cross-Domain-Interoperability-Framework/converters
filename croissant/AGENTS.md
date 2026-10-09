@@ -1,7 +1,8 @@
 # AGENTS.md — CDIF ↔ Croissant conversion
 
 Scope-specific guide for `croissant/`. For repo-wide context see the root
-[`AGENTS.md`](../AGENTS.md); for the human-facing overview see [`README.md`](README.md).
+[`CLAUDE.md`](../CLAUDE.md) and [`README.md`](../README.md); for the human-facing
+overview of this directory see [`README.md`](README.md).
 
 ## What lives here
 
@@ -13,7 +14,7 @@ Scope-specific guide for `croissant/`. For repo-wide context see the root
 | `CroissantToCDIF.md` | Inverse property mapping |
 | `../mappings/{croissant-to-cdif,cdif-to-croissant}.sssom.tsv` | **The mappings themselves.** Edit these, not the Python |
 | `../mappings/croissant-aliases.sssom.tsv` | Wild spelling variants → the term the table keys on |
-| `../sssom_engine.py` | Shared table applier (DCAT and DDI use it too) |
+| `../sssom_engine.py` | Shared table applier (the FAIR² converter uses it too) |
 | `croissantExamples/` | Source Croissant exports (`*-croissant.json` / `*.croissant.jsonld`) |
 | `croissantExamples/cdif/` | Their CDIF conversions (`*-cdif.json` / `*.cdif.jsonld`) + `_manifest.json` |
 | `MLCroissantExamples/` | 14 HF/Kaggle/OpenML Croissant sources — the inverse-converter regression corpus |
@@ -22,7 +23,7 @@ Scope-specific guide for `croissant/`. For repo-wide context see the root
 
 `ConvertToCroissant.py` and `ConvertFromCroissant.py` state no property
 correspondence in code. Each reads its SSSOM table through
-`converters/sssom_engine.py`. **A change to what maps where belongs in the TSV.**
+`../sssom_engine.py`. **A change to what maps where belongs in the TSV.**
 Touch the Python only when the *shape* is wrong, and then only by adding or
 fixing a named transform.
 
@@ -104,9 +105,16 @@ leave them in the Python.
   `dqv:hasQualityMeasurement`, `schema:spatialCoverage/temporalCoverage`,
   `schema:measurementTechnique`, CSVW table blocks, or Data Structure component roles.
   Pass-through prefixes are merged into `@context` so anything hand-carried survives framing.
-- `cdi:qualifies` is **not** a foreign key — never map it to `cr:Field.references`.
+- `cdif:qualifies` (formerly `cdi:qualifies`) is **not** a foreign key — never map it to `cr:Field.references`.
 
 ## Verifying a change
+
+A change to a converter or either mapping table must keep the table/converter
+drift check passing (CI runs it):
+
+```bash
+python croissant/check_croissant_mappings.py
+```
 
 The inverse converter must not regress the 14-file corpus. Convert each and validate
 against its correct profile schema (DataDescription, or Discovery when the source has no

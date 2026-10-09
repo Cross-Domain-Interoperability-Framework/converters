@@ -17,7 +17,9 @@ Target profiles: **cdifCore + cdifDiscovery + cdifProvenance**.
 | `harvest_ohdsi_to_cdif.py` | The converter (single, self-contained script) |
 | `OHDSIMetadata/` | Source `meta_json-ld_{table_id}.json` (16 datasets, as harvested) |
 | `cdifMetadata/` | Output `cdif_{table_id}.json` (generated — do not hand-edit) |
-| `README.md` | Human-facing description + full mapping table + validation status |
+| `check_ohdsi_mappings.py` | Drift check: the converter against `../mappings/ohdsi-to-cdif.sssom.tsv` over the corpus (run in CI) |
+| `../mappings/ohdsi-to-cdif.sssom.tsv` (+ `.yml`) | The property mapping, in SSSOM. It documents the converter (which does not read it) |
+| `README.md` | Human-facing description, mapping summary, validation status |
 | `AGENTS.md` | This file |
 
 `cdifMetadata/` is **generated output**. Never edit those files by hand — change
@@ -79,14 +81,15 @@ methodology to map. Add it only if the source gains real pseudo-code.
 
 ## Validation — always run before committing regenerated output
 
-The CDIF tooling lives in the `validation` and `profile-provenance` repositories,
-checked out side by side (each command below is run from inside one). Both profiles must show **0 SHACL violations** and
+The Discovery checks use the `validation` submodule and run from the root of
+this repository; the provenance checks use a `profile-provenance` checkout beside
+it (run from inside that repo). Both profiles must show **0 SHACL violations** and
 **16/16 JSON Schema pass**:
 
 ```bash
-# Discovery (from the validation repo)
-python tools/FrameAndValidate.py <file> -v --schema CDIFDiscoverySchema.json --frame CDIF-frame-2026.jsonld
-python ShaclValidation/ShaclJSONLDContext.py <file> ShaclValidation/CDIF-Discovery-Shapes.ttl
+# Discovery (from the converters repo root, using the validation submodule)
+python validation/tools/FrameAndValidate.py <file> -v --schema validation/CDIFDiscoverySchema.json --frame validation/CDIF-frame-2026.jsonld
+python validation/ShaclValidation/ShaclJSONLDContext.py <file> validation/ShaclValidation/CDIF-Discovery-Shapes.ttl
 
 # Provenance (from the profile-provenance repo)
 python FrameAndValidate.py <file> -v
@@ -102,8 +105,10 @@ non-conformant and must be fixed in the converter.
 
 - Match the existing code style; keep the converter a single self-contained
   script with stdlib-only dependencies.
-- When you change the mapping, **regenerate `cdifMetadata/` and re-validate both
-  profiles** before committing; commit the regenerated output together with the
+- When you change the mapping, **update `../mappings/ohdsi-to-cdif.sssom.tsv`
+  to match and run `python OHDSI/check_ohdsi_mappings.py`** (CI fails on drift),
+  then **regenerate `cdifMetadata/` and re-validate both profiles** before
+  committing; commit the regenerated output together with the
   converter change.
 - `tz_2022_nbs` in the source is a **container** directory whose real dataset is
   the nested `tz_2022_nbs_districts` — that nested record is the one harvested.

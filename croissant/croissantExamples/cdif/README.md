@@ -1,8 +1,11 @@
 # CDIF outputs converted from Dataverse Croissant exports
 
-Generated 2026-05-27 from the 26 Croissant docs in `..\` (the parent
-`c:\tmp\croissant202605\`) using
-`C:\GithubC\CDIF\validation\croissant\ConvertFromCroissant.py`.
+Generated 2026-05-27 from the 26 Croissant docs in `../` using
+`croissant/ConvertFromCroissant.py` (then still inside the `validation` repo).
+The validation counts below record that run; the commands under
+[Reproducing](#reproducing) are for this repository as it is now. This folder
+also holds `minority-report-BI0104-cdif.json`, the conversion of the
+"semantic Croissant" example described in `../../README.md`.
 
 Source: Dataverse dev instance at `https://dataverse.dev1.codata.org`, official
 `croissant` exporter (MLCommons Croissant 1.0). Fetched and saved earlier in the
@@ -15,7 +18,7 @@ validation entirely.
 
 | Profile | Pass count | Datasets with `cr:RecordSet` in source? |
 |---|---|---|
-| **CDIFDataDescriptionSchema.json** | **17** | yes — Croissant `recordSet` produced `schema:variableMeasured` + `cdi:hasPhysicalMapping` |
+| **CDIFDataDescriptionSchema.json** | **17** | yes — Croissant `recordSet` produced `schema:variableMeasured` + `cdif:hasPhysicalMapping` |
 | **CDIFDiscoverySchema.json** | **9** | no — no Croissant fields, so CDIF DataDescription's required `schema:variableMeasured` is missing; the doc still validates as a CDIF Discovery doc |
 
 DataDescription (17): 6TYU3O, DASWFN, X1NGOC, RIB64Q, SPJJDT, T6XJID, GAFUDD,
@@ -33,33 +36,35 @@ SAFMQU, XAJSJ1.
 
 ## Reproducing
 
+From the root of this repository (needs `pyld` and `jsonschema`):
+
 ```bash
 # Convert one file
-python C:/GithubC/CDIF/validation/croissant/ConvertFromCroissant.py \
-    "C:/tmp/croissant202605/<file>.croissant.jsonld" \
-    -o "C:/tmp/croissant202605/cdif/<file>.cdif.jsonld"
+python croissant/ConvertFromCroissant.py \
+    croissant/croissantExamples/<file>.croissant.jsonld \
+    -o croissant/croissantExamples/cdif/<file>.cdif.jsonld
 
-# Validate (use the conda interpreter that has pyld + jsonschema)
-C:/Users/smrTu/miniconda3/python.exe \
-    C:/GithubC/CDIF/validation/FrameAndValidate.py \
-    "C:/tmp/croissant202605/cdif/<file>.cdif.jsonld" \
-    --frame C:/GithubC/CDIF/validation/CDIF-frame-2026.jsonld \
-    -v --schema C:/GithubC/CDIF/validation/CDIFDataDescriptionSchema.json
+# Validate with the validation submodule (Discovery schema when there is no recordSet)
+python validation/tools/FrameAndValidate.py \
+    croissant/croissantExamples/cdif/<file>.cdif.jsonld \
+    --frame validation/CDIF-frame-2026.jsonld \
+    -v --schema validation/CDIFDataDescriptionSchema.json
 ```
 
 ## Caveats
 
-- The conversion is **lossy** — see `C:\GithubC\CDIF\validation\croissant\CroissantToCDIF.md`
+- The conversion is **lossy** — see [`../../CroissantToCDIF.md`](../../CroissantToCDIF.md)
   for the full list of features Croissant doesn't carry (PROV, DQV, CSVW table
   block, spatial/temporal coverage, measurement technique, `cdi:role`).
-- The `subjectOf` block is a **stub** with both Discovery and DataDescription
-  conformance URIs. Real catalog-record fields (`schema:maintainer`,
+- In the 2026-05 run the `subjectOf` block was a **stub** with both Discovery
+  and DataDescription conformance URIs; the converter now sets `conformsTo` from
+  the record's content with `detect_conformance`. Real catalog-record fields (`schema:maintainer`,
   `schema:about`, `schema:sdDatePublished`) are filled in only as much as the
   Croissant source supports — typically `sdDatePublished` from `dateModified`.
 - `schema:identifier` is reconstructed from a DOI found by regex in the
   Croissant `citeAs` / `url` / `@id`. For the Dataverse exports here every
   dataset has a `doi:10.5072/FK2/…` so this succeeds for all 26.
-- `cdi:physicalDataType` is mapped from `cr:Field.dataType` via an
+- `cdif:physicalDataType` is mapped from `cr:Field.dataType` via an
   approximate inverse: `sc:Float` → `xsd:decimal` (the original `xsd:float` /
   `xsd:double` distinction is not recoverable from Croissant).
 - The 9 Discovery-only outputs simply have no `schema:variableMeasured` block.

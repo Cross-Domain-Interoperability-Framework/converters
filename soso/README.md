@@ -11,7 +11,7 @@ dropping) each side's required scaffolding.
 | `ConvertFromSOSO.py` | SOSO Dataset → CDIF core+discovery |
 
 The property-by-property mapping is documented authoritatively in
-[`doc-corediscovery/documents/CDIF-Discovery-vs-SOSO-comparison.md`](../../../doc-corediscovery/documents/CDIF-Discovery-vs-SOSO-comparison.md),
+[`doc-corediscovery/documents/CDIF-Discovery-vs-SOSO-comparison.md`](../../doc-corediscovery/documents/CDIF-Discovery-vs-SOSO-comparison.md),
 which tracks the ESIP discussion in
 [science-on-schema.org issue #283](https://github.com/ESIPFed/science-on-schema.org/issues/283).
 
@@ -21,7 +21,10 @@ which tracks the ESIP discussion in
 pip install pyshacl rdflib        # only needed to validate output; converters use stdlib
 ```
 
-The converters themselves are pure standard library (no dependencies).
+The converters themselves are pure standard library (no dependencies). Setting
+`conformsTo` from content uses `detect_conformance` from the `validation`
+submodule, which needs `rdflib` and `pyshacl`; without them the converter falls
+back to its built-in profile list.
 
 ## Usage
 
@@ -141,6 +144,7 @@ shacl_graph='soso_common_v1.3.0.ttl', inference='rdfs', advanced=True)[0])"
 soso/
 ├── ConvertToSOSO.py                 CDIF core+discovery -> SOSO
 ├── ConvertFromSOSO.py               SOSO -> CDIF core+discovery
+├── check_soso_mappings.py           drift check: converters vs the mapping tables
 ├── README.md                        this file
 └── examples/
     └── soso-dataset-example.json    a representative SOSO v1.3 Dataset record

@@ -8,6 +8,11 @@ shapes, fragments — which makes it awkward to draw dataset examples from.
 `INDEX.json` lists every file with how many `dcat:Dataset` subjects it holds and
 how it was detected.
 
+One further folder was added by hand and is not in `INDEX.json`: `psdi/` holds a
+saved copy of the PSDI Resource Catalogue
+(`https://metadata.psdi.ac.uk/psdi-dcat.jsonld`, a DCAT JSON-LD catalog with 50
+datasets), whose conversions are in [`../cdifOK/psdi/`](../cdifOK/psdi/).
+
 | profile | files |
 | --- | ---: |
 | `10-dcat-us-3.0` | 101 |
@@ -18,6 +23,7 @@ how it was detected.
 | `03-mobilitydcat-ap-1.1.0` | 5 |
 | `04-healthdcat-ap` | 4 |
 | `02-geodcat-ap` | 2 |
+| `psdi` (added separately) | 1 |
 
 The profile subdirectories are preserved. DCAT-AP and DCAT-US differ enough that
 which profile an example came from is part of what makes it useful, and

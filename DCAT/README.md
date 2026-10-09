@@ -13,8 +13,8 @@ This converter enables DCAT catalog records to be consumed by CDIF-aware tools b
 | Directory | What |
 |---|---|
 | [`dcat-examples/`](dcat-examples/) | 783 upstream files — DCAT-AP, its extensions and national derivatives, DCAT-US 3.0 and 1.1/POD, CKAN fixtures. Mixed purpose: catalogs, data services, vocabularies, SHACL shapes, fragments. |
-| [`dcatExamplesOK/`](dcatExamplesOK/) | The 238 of those that actually **describe a `dcat:Dataset`**, selected structurally (rdflib for RDF; POD JSON matched on its `dataset` array). |
-| [`cdifOK/`](cdifOK/) | 239 CDIF records converted from them by [`build_corpus.py`](build_corpus.py). All 239 are CDIF-core conformant, and all frame and validate. |
+| [`dcatExamplesOK/`](dcatExamplesOK/) | The 238 of those that actually **describe a `dcat:Dataset`**, selected structurally (rdflib for RDF; POD JSON matched on its `dataset` array), plus `psdi/`: the PSDI Resource Catalogue (one DCAT JSON-LD catalog, 50 datasets). |
+| [`cdifOK/`](cdifOK/) | 289 CDIF records: 239 converted from the upstream examples by [`build_corpus.py`](build_corpus.py), and the 50 in `cdifOK/psdi/` made directly with `dcat_to_cdif.py` (see [PSDI](#example-psdi-resource-catalogue)). All are CDIF-core conformant and validate against CoreDiscovery. |
 
 Each has a `README.md` and an `INDEX.json` recording provenance.
 
@@ -27,8 +27,9 @@ nor `adms:identifier`. Many DCAT-AP specification examples are otherwise single-
 fragments (a title, a description, one extension property), so before that fallback most
 of the corpus was `-frag`.
 
-**Merging.** The corpus ships many examples in more than one serialization, and 45 of the
-78 such pairs are **not the same graph** — the `.ttl` and `.jsonld` carry different
+**Merging.** The corpus ships many examples in more than one serialization (79 such
+groups in the current build; see [`cdifOK/README.md`](cdifOK/README.md)), and most are
+**not the same graph** — the `.ttl` and `.jsonld` carry different
 triples upstream. All serializations of one logical example are parsed into a single
 graph and converted once, so the converter sees the union.
 
@@ -154,7 +155,8 @@ where CDIF deliberately diverges it is documented in the row/`.yml` comments —
 the relation family (`dcterms:relation`, versioning, `references`, …) routes to
 `schema:relatedLink` with a `schema:linkRelationship` (preserving the relation
 semantics and generalizing the target to any `schema:CreativeWork`) rather than
-W3C's `schema:isRelatedTo`; `dcat:contactPoint` → `schema:provider`;
+W3C's `schema:isRelatedTo`; `dcat:contactPoint` → `schema:provider` (or, for a contact that identifies no
+one, a `schema:relatedLink`);
 `prov:wasGeneratedBy` is kept (DCAT-native) rather than inverted to
 `schema:result`; `dcat:endpointURL` lands in a WebAPI `schema:potentialAction`;
 `dcterms:accrualPeriodicity` stays a passthrough (`schema:repeatFrequency` is a
@@ -201,7 +203,9 @@ non-standardly on a `dcat:Dataset` — it fills the dataset's `schema:url` if no
 
 Shapers worth calling out: **`agent`** (FOAF → `schema:Person`/`Organization`),
 **`vcard`** (a contact → a `schema:provider` Organization/Person carrying a
-`schema:contactPoint` and a `schema:PostalAddress`), **`place`**/**`bbox`**
+`schema:contactPoint` and a `schema:PostalAddress`; a bare `vcard:Kind` whose only
+content is a URL — a contact form, an issue tracker — becomes a `schema:relatedLink`
+with `linkRelationship` `dcat:contactPoint` instead of an invented Person), **`place`**/**`bbox`**
 (spatial → `schema:Place`/GeoShape), **`period`** (temporal → an ISO 8601
 interval, reading `dcat:`/`schema:startDate`+`endDate` or `dcterms:start`+`end`),
 **`service`** (a `dcat:DataService` distribution → a `schema:WebAPI` whose
@@ -211,7 +215,7 @@ endpoint becomes a `schema:potentialAction` EntryPoint), **`generatedby`**
 equivalents and populating the shape-required `prov:used` from the activity's
 inputs; an activity with no usable input stays a plain `prov:Activity`), and
 **`relatedlink`** / **`attribution`** (the relation family and
-`prov:qualifiedAttribution` → role-tagged links / contributors).
+`prov:qualifiedAttribution` → `schema:LinkRole` links / contributors).
 
 ### `build_corpus.py` — the regression harness
 
@@ -223,6 +227,16 @@ verifies, and reports zero for both: **no source predicate reaches no record**
 (coverage — nothing silently dropped) and **every conformant record validates**
 against its declared CDIF profile. `--check` verifies without writing; plain
 run regenerates the corpus. Run it after any change to the table or the code.
+
+The schema and SHACL checks validate against the building blocks, so they need a
+`metadataBuildingBlocks` checkout beside this repo (`../metadataBuildingBlocks`
+from the repo root); without it they report "skipped". A plain run also
+re-parses `dcatExamplesOK/psdi/` and writes those 50 records under its own
+naming (`dataset-…__dcat-<slug>.jsonld`); the committed `cdifOK/psdi/` records
+were made with `dcat_to_cdif.py` (see [PSDI](#example-psdi-resource-catalogue)),
+so restore that folder or regenerate it the same way. Two builds are not
+byte-identical; [`cdifOK/README.md`](cdifOK/README.md#regenerating) says how to
+compare them.
 
 ## Usage
 
@@ -259,7 +273,7 @@ python DCAT/dcat_to_cdif.py catalog.jsonld \
 
 ### Example: PSDI Resource Catalogue
 
-The [PSDI](https://www.psdi.ac.uk/) (Physical Sciences Data Infrastructure) publishes a DCAT catalog at `https://metadata.psdi.ac.uk/psdi-dcat.jsonld` with 41 dataset records describing materials science databases (Cambridge Structural Database, AFLOW, Chemotion, OPTIMADE providers, etc.).
+The [PSDI](https://www.psdi.ac.uk/) (Physical Sciences Data Infrastructure) publishes a DCAT catalog at `https://metadata.psdi.ac.uk/psdi-dcat.jsonld` with 50 dataset records (as of the copy in `dcatExamplesOK/psdi/`) describing materials science databases (Cambridge Structural Database, AFLOW, Chemotion, OPTIMADE providers, etc.).
 
 ```bash
 # Download the catalog
@@ -275,6 +289,15 @@ python DCAT/dcat_to_cdif.py psdi-dcat.jsonld \
   --catalog-name "PSDI Resource Catalogue" \
   --catalog-url "https://metadata.psdi.ac.uk/" \
   --validate
+```
+
+The committed `cdifOK/psdi/` records are all 50, made from the saved copy:
+
+```bash
+python DCAT/dcat_to_cdif.py DCAT/dcatExamplesOK/psdi/dataset-7e871747-1bd3-4abf-8fe3-dc4ec55b3771.jsonld \
+  --output DCAT/cdifOK/psdi \
+  --catalog-name "PSDI Resource Catalogue" \
+  --catalog-url "https://metadata.psdi.ac.uk/"
 ```
 
 ## Output Format
@@ -294,21 +317,26 @@ spatial/temporal coverage or other discovery-level content, and further profiles
 (`data_description`, `provenance`, …) when the content warrants. Detection finding
 nothing means the declaration is **omitted**, not defaulted (the built-in claim
 applies only under `--static-conformance`, or when `detect_conformance` cannot be
-imported). See [`../../detect_conformance.py`](../validation/detect_conformance.py).
+imported). See [`../validation/detect_conformance.py`](../validation/detect_conformance.py).
 
 ## Requirements
 
 - Python 3.8+
 - `rdflib` — to parse non-JSON-LD serializations (`.ttl`/`.rdf`/`.xml`) and to
   merge them in `build_corpus.py`. `dcat_to_cdif.py` itself ingests JSON-LD.
-- `jsonschema` — optional, for `--validate` and the `build_corpus.py` schema check.
-- `detect_conformance.py` (repo root) — imported for content-derived `conformsTo`.
+- `jsonschema` — optional, for `--validate` and the `build_corpus.py` schema
+  check; the latter (and `--shacl`, which also needs `pyshacl`) also needs a
+  `metadataBuildingBlocks` checkout beside this repo.
+- `detect_conformance.py`, in the `validation` submodule
+  (`validation/detect_conformance.py`) — imported for content-derived `conformsTo`.
 
 ## Known limitations
 
 - `dcat:contactPoint` maps to `schema:provider` (CDIF's closest slot); the vcard
   contact is shaped to a `schema:Person`/`Organization` with a
-  `schema:contactPoint` (email/url/telephone) and a `schema:PostalAddress`.
+  `schema:contactPoint` (email/url/telephone) and a `schema:PostalAddress`. A
+  contact that identifies no one (a bare `vcard:Kind` with only a URL) becomes a
+  `schema:relatedLink` (`linkRelationship` `dcat:contactPoint`) instead.
   This diverges from W3C's direct `schema:contactPoint` — a deliberate choice.
 - Spatial coverage supports `dcat:bbox`, DCAT-US bounding-box coordinates and
   named places, but not every geometry type.

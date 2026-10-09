@@ -50,15 +50,15 @@ encoded in the sibling **`ucmism2m`** project
 | `InstanceVariable` | `schema:variableMeasured` / `cdi:InstanceVariable` |
 | `…/name/name` | `schema:name` |
 | `…/displayLabel/…/content` | `schema:description` |
-| `…/hasIntendedDataType/name` (SPSS/Stata format) | `cdi:intendedDataType` (`xsd:*`) |
-| `Measure`/`Identifier`/`Dimension`/`AttributeComponent` `_isDefinedBy_` the variable | `cdi:role` |
+| `…/hasIntendedDataType/name` (SPSS/Stata format) | `cdi:hasIntendedDataType` (`xsd:*`) |
+| `Measure`/`Identifier`/`Dimension`/`AttributeComponent` `_isDefinedBy_` the variable | `cdif:role` |
 | `PhysicalDataSet` (no download URL) | `schema:distribution` (`DataDownload`, `nil:missing`) |
 
 **Phase 3 (done — data structure):**
 
 | DDI-CDI | CDIF |
 |---------|------|
-| `WideDataStructure` / `LongDataStructure` / `DimensionalDataStructure` | `cdif:isStructuredBy` → `cdi:<X>DataStructure` (distribution typed `cdi:StructuredDataSet` / `cdi:LongStructureDataSet` / `cdi:DimensionalDataSet`) |
+| `WideDataStructure` / `LongDataStructure` / `DimensionalDataStructure` | `cdi:isStructuredBy` → `cdi:<X>DataStructure` (distribution typed `cdi:StructuredDataSet` / `cdi:LongStructureDataSet` / `cdi:DimensionalDataSet`) |
 | `DataStructure_has_DataStructureComponent` → `Identifier`/`Measure`/`Dimension`/`AttributeComponent` | `cdi:has_DataStructureComponent` → `cdi:<Component>` |
 | `DataStructureComponent_isDefinedBy_RepresentedVariable` | `cdif:isDefinedBy_RepresentedVariable` → `{@id}` of the variable |
 | `DataStructure_has_PrimaryKey` | `cdif:has_PrimaryKey` |
@@ -69,10 +69,10 @@ encoded in the sibling **`ucmism2m`** project
 
 | DDI-CDI | CDIF |
 |---------|------|
-| `InstanceVariable` -takesSubstantiveValuesFrom-> `SubstantiveValueDomain` | `cdif:hasValuesFrom` → `cdif:EnumerationDomain` (on the variable) |
-| `SubstantiveValueDomain` -takesValuesFrom-> `EnumerationDomain`/`CodeList` | `cdif:references` → `skos:ConceptScheme` |
+| `InstanceVariable` -takesSubstantiveValuesFrom-> `SubstantiveValueDomain` | `cdi:takesSubstantiveValuesFrom` → `cdif:SubstantiveValueDomain` (on the variable) |
+| `SubstantiveValueDomain` -takesValuesFrom-> `EnumerationDomain`/`CodeList` | `cdif:takesValuesFrom` → `cdif:EnumerationDomain` → `cdif:references` → `skos:ConceptScheme` |
 | `CodeList_has_Code` → `Code` -denotes-> `Category`, -uses-> `Notation` | `skos:hasTopConcept` → `skos:Concept` (`skos:notation` = notation, `skos:prefLabel` = category label) |
-| `ValueAndConceptDescription/classificationLevel` (Nominal/Continuous/…) | `cdif:classificationLevel` |
+| `ValueAndConceptDescription/classificationLevel` (Nominal/Continuous/…) | `cdi:classificationLevel` |
 
 Coded (Nominal) variables get their full concept list (e.g. `maritalb`:
 `1.0`→"Legally married", …); Continuous/identifier variables carry the
@@ -99,7 +99,7 @@ Lights up `Process_Example_CDI.xml` (58 steps, 13 inputs, agent, environment) �
 | DDI-CDI | CDIF |
 |---------|------|
 | `PhysicalSegmentLayout` `isDelimited` / `isFixedWidth` | `cdi:isDelimited` / `cdi:isFixedWidth` on the distribution |
-| `InstanceVariable_has_ValueMapping` → `ValueMapping`, positioned by `ValueMappingPosition/value` | `cdi:hasPhysicalMapping` entry: `cdi:index` (column), `schema:name`, `cdi:physicalDataType`, `cdi:formats_InstanceVariable` → the variable |
+| `InstanceVariable_has_ValueMapping` → `ValueMapping`, positioned by `ValueMappingPosition/value` | `cdif:hasPhysicalMapping` entry: `cdif:index` (column), `schema:name`, `cdif:physicalDataType`, `cdif:formats_InstanceVariable` → the variable |
 
 **Phase 6 (done — discovery enrichment + sentinel value domains):**
 
@@ -108,10 +108,11 @@ Lights up `Process_Example_CDI.xml` (58 steps, 13 inputs, agent, environment) �
 | `catalogDetails/title` (dataset-level, when present) | `schema:name` (else the DDI-CDI name / activity name / file stem) |
 | `PhysicalDataSet/physicalFileName` | `schema:name` of the distribution |
 | `DataStore/recordCount` | `schema:additionalProperty` ("record count") on the distribution |
-| `InstanceVariable` -takesSentinelValuesFrom-> `SentinelValueDomain` → CodeList | a second `cdif:hasValuesFrom` → `cdif:EnumerationDomain` with `cdif:valueType: "sentinel"` |
+| `InstanceVariable` -takesSentinelValuesFrom-> `SentinelValueDomain` → CodeList | `cdi:takesSentinelValuesFrom` → `cdif:SentinelValueDomain` → `cdif:takesValuesFrom` → `cdif:EnumerationDomain` |
 
-The substantive enumeration (phase 2) now also carries `cdif:valueType:
-"substantive"`, so each variable can list *both* domains, flagged by type — e.g.
+The two domains hang off different properties —
+`cdi:takesSubstantiveValuesFrom` and `cdi:takesSentinelValuesFrom` — so each
+variable can list *both*, and which is which is in the property name — e.g.
 Continuous `nwspol` has an empty substantive list but a 3-code sentinel list
 (Refusal / Don't know / No answer). This follows the CDIF value-domain guidance in
 [profile-datadescription#1](https://github.com/Cross-Domain-Interoperability-Framework/profile-datadescription/issues/1#issuecomment-5255033824):
