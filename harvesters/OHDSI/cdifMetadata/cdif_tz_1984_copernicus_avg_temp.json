@@ -1,0 +1,212 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "geosparql": "http://www.opengis.net/ont/geosparql#"
+  },
+  "@id": "https://gdsc.idsc.miami.edu/detail/tz_1984_copernicus_avg_temp",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "1984 Tanzania 2m Temperature Yearly Average (Copernicus)",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "tz_1984_copernicus_avg_temp",
+    "schema:url": "https://gdsc.idsc.miami.edu/detail/tz_1984_copernicus_avg_temp"
+  },
+  "schema:description": "A raster dataset with yearly averages of the 2m temperature from the ERA 5 renanalysis data from Copernicus satellite sensors for Tanzania. ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 8 decades. Data is available from 1940 onwards. ERA5 replaces the ERA-Interim reanalysis.",
+  "schema:dateModified": "2025-06-01",
+  "schema:datePublished": "2025-06-01",
+  "schema:version": "2026-05-26",
+  "schema:url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land",
+  "schema:license": [
+    "Open Data Commons Attribution License (ODC-By): http://opendatacommons.org/licenses/by/1.0/"
+  ],
+  "schema:inLanguage": "en",
+  "schema:keywords": [
+    "Tanzania",
+    "temperature"
+  ],
+  "schema:additionalType": [
+    "Raster Dataset"
+  ],
+  "schema:creator": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:sameAs": "https://ror.org/00yafkq43",
+      "@id": "https://ror.org/00yafkq43",
+      "schema:identifier": "https://ror.org/00yafkq43",
+      "schema:name": "Copernicus"
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "OHDSI"
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@id": "https://www.geonames.org/149590",
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "Tanzania"
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "bbox",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-12.125 28.875 -0.875 41.125"
+      }
+    }
+  ],
+  "schema:temporalCoverage": "1984-01-01/1984-12-31",
+  "schema:measurementTechnique": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "GIS Data Structure for Representation",
+      "schema:termCode": "raster"
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "https://dbpedia.org/resource/Ground_sample_distance",
+      "schema:value": 0.25,
+      "schema:unitText": "decimal degrees"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": "http://dbpedia.org/resource/Spatial_reference_system",
+      "schema:value": "https://epsg.io/4326",
+      "schema:name": "Spatial reference system"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "2m_temperature",
+      "schema:description": "Average yearly 2m temperature in Kelvin from Copernicus reanalysis era5 single levels",
+      "schema:propertyID": "35814756",
+      "qudt:dataType": "float",
+      "schema:unitCode": "9523",
+      "schema:unitText": "Kelvin",
+      "schema:minValue": "287.315857",
+      "schema:maxValue": "301.010986",
+      "schema:startDate": "1984-01-01",
+      "schema:endDate": "1984-12-31"
+    }
+  ],
+  "schema:includedInDataCatalog": [
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "@id": "https://gdsc.idsc.miami.edu",
+      "schema:name": "Geospatial Digital Special Collections",
+      "schema:url": "https://gdsc.idsc.miami.edu"
+    },
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "tz-climate-change",
+      "@id": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change",
+      "schema:url": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change"
+    }
+  ],
+  "schema:isBasedOn": [],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://gdsc.idsc.miami.edu/download/data/tz_1984_copernicus_avg_temp/?file=tz_1984_copernicus_avg_temp&format=tiff",
+      "schema:encodingFormat": [
+        "image/tiff"
+      ]
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:name": "ETL: github_code",
+      "schema:description": "Custom ETL process for 1984 Tanzania 2m Temperature Yearly Average (Copernicus)",
+      "schema:object": {
+        "@id": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land"
+      },
+      "prov:used": [
+        {
+          "schema:instrument": {
+            "@type": [
+              "schema:SoftwareApplication"
+            ],
+            "@id": "https://github.com/tibbben/copernicus_aggregate.git",
+            "schema:featureList": "python copernicus_aggregate.py '{\"table\": \"tz_1984_copernicus_avg_temp\", \"extension\": \"zip\", \"extent\": \"29|-12|41|-0.8\", \"attributes\": \"2m_temperature;Average yearly 2m temperature in Kelvin from Copernicus reanalysis era5 single levels;Copernicus;float;Kelvin;9523;287.315857;301.010986;1984-01-01;1984-12-31;35814756;2m_temperature@tz_1984_copernicus_avg_temp\", \"bands\": \"t2m\", \"format\": \"nc\"}' 1984",
+            "schema:downloadUrl": "https://github.com/tibbben/copernicus_aggregate.git",
+            "schema:name": "GDSC ETL tools (python copernicus_aggregate.py '{\"table\": \"tz_1984_copernicus_avg_temp\", \"extension\": \"zip\", \"extent\": \"29|-12|41|-0.8\", \"attributes\": \"2m_temperature;Average yearly 2m temperature in Kelvin from Copernicus reanalysis era5 single levels;Copernicus;float;Kelvin;9523;287.315857;301.010986;1984-01-01;1984-12-31;35814756;2m_temperature@tz_1984_copernicus_avg_temp\", \"bands\": \"t2m\", \"format\": \"nc\"}' 1984)"
+          }
+        }
+      ],
+      "schema:result": {
+        "@id": "https://gdsc.idsc.miami.edu/detail/tz_1984_copernicus_avg_temp"
+      }
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://gdsc.idsc.miami.edu/detail/tz_1984_copernicus_avg_temp#cdif-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:about": {
+      "@id": "https://gdsc.idsc.miami.edu/detail/tz_1984_copernicus_avg_temp"
+    },
+    "schema:description": "CDIF metadata record for '1984 Tanzania 2m Temperature Yearly Average (Copernicus)', harvested from the OHDSI gaiaCatalog datastore (meta_json-ld_tz_1984_copernicus_avg_temp.json) published by the University of Miami Geospatial Digital Special Collections (GDSC), and transformed to the CDIF Core and Discovery profiles. The source ETL activity is carried as prov:wasGeneratedBy (schema:Action); the placeholder pseudo-code event was omitted. Upstream lineage is retained via schema:isBasedOn where the source provided it.",
+    "schema:sdDatePublished": "2026-08-26",
+    "schema:isBasedOn": {
+      "@id": "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/data/tz_1984_copernicus_avg_temp/meta_json-ld_tz_1984_copernicus_avg_temp.json"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/1.1"
+      }
+    ]
+  }
+}

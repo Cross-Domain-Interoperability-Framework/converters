@@ -32,7 +32,7 @@ produce. For converting a SOSO file or URL you already have, use `soso2cdif.py`.
 | Path | Source | Notes |
 |------|--------|-------|
 | [`harvesters/geocodes_harvester.py`](harvesters/geocodes_harvester.py) | EarthCube GeoCodes SPARQL catalog → source landing-page JSON-LD → CDIF core/discovery | Moved from the `validation` repo |
-| [`harvesters/harvest_ohdsi_to_cdif.py`](harvesters/harvest_ohdsi_to_cdif.py) | OHDSI gaiaCatalog schema.org records → CDIF core/discovery (+ provenance) | Moved from the `OHDSI` repo, which keeps the corpus: by default it reads `../OHDSI/OHDSIMetadata/` and writes `../OHDSI/cdifMetadata/` |
+| [`harvesters/OHDSI/harvest_ohdsi_to_cdif.py`](harvesters/OHDSI/harvest_ohdsi_to_cdif.py) | OHDSI gaiaCatalog schema.org records → CDIF core/discovery (+ provenance) | With its corpus: `harvesters/OHDSI/OHDSIMetadata/` (16 source records) → `cdifMetadata/`. Formerly the separate `OHDSI` repo; see [`harvesters/OHDSI/README.md`](harvesters/OHDSI/README.md) |
 
 `geocodes_harvester.py` and `soso/ConvertFromSOSO.py` each carry their own copy
 of the schema.org prefixing step. The harvester's resolves unprefixed names

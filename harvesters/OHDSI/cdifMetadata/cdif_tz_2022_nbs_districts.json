@@ -1,0 +1,225 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "geosparql": "http://www.opengis.net/ont/geosparql#"
+  },
+  "@id": "https://gdsc.idsc.miami.edu/detail/tz_2022_nbs_districts",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Tanzania 2022 Districts (NBS)",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "tz_2022_nbs_districts",
+    "schema:url": "https://gdsc.idsc.miami.edu/detail/tz_2022_nbs_districts"
+  },
+  "schema:description": "Shapefile for Tanzania Districts from the 2022 Census",
+  "schema:dateModified": "2025-06-01",
+  "schema:datePublished": "2024-01-01",
+  "schema:version": "2026-05-26",
+  "schema:url": "https://microdata.nbs.go.tz/index.php/catalog/49/related-materials",
+  "schema:license": [
+    "http://www.opengis.net/def/nil/OGC/0/missing"
+  ],
+  "schema:inLanguage": "en",
+  "schema:keywords": [
+    "Tanania",
+    "Districs",
+    "Census"
+  ],
+  "schema:additionalType": [
+    "Vector Dataset"
+  ],
+  "schema:creator": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Tanzania National Bureau of Statistics"
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Tanzania National Bureau of Statistics"
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@id": "https://www.geonames.org/149590",
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "Tanzania"
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "bbox",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-11.760241 29.594677 -0.984775 40.44614"
+      }
+    }
+  ],
+  "schema:temporalCoverage": "2020-01-01/2022-12-31",
+  "schema:measurementTechnique": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "GIS Data Structure for Representation",
+      "schema:termCode": "vector"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "GIS Vector Geometery",
+      "schema:termCode": "multipolygon"
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": "http://dbpedia.org/resource/Spatial_reference_system",
+      "schema:value": "https://epsg.io/4326",
+      "schema:name": "Spatial reference system"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "dist_code",
+      "schema:description": "Unique district code",
+      "qudt:dataType": "numeric"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "dist_name",
+      "schema:description": "District names",
+      "qudt:dataType": "string"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "reg_code",
+      "schema:description": "unique code",
+      "qudt:dataType": "numeric"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "reg_name",
+      "schema:description": "name",
+      "qudt:dataType": "varchar"
+    }
+  ],
+  "schema:includedInDataCatalog": [
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "@id": "https://gdsc.idsc.miami.edu",
+      "schema:name": "Geospatial Digital Special Collections",
+      "schema:url": "https://gdsc.idsc.miami.edu"
+    },
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "tz-climate-change",
+      "@id": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change",
+      "schema:url": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change"
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://gdsc.idsc.miami.edu/download/data/tz_2022_nbs_districts/?file=tz_2022_nbs_districts&format=shp",
+      "schema:encodingFormat": [
+        "application/octet-stream; format=shapefile"
+      ]
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:name": "ETL: wget",
+      "schema:description": "ETL process for Tanzania 2022 Districts (NBS)",
+      "schema:object": {
+        "@id": "https://microdata.nbs.go.tz/index.php/catalog/49/related-materials"
+      },
+      "prov:used": [
+        {
+          "schema:instrument": {
+            "@type": [
+              "schema:SoftwareApplication"
+            ],
+            "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
+            "schema:featureList": "wget",
+            "schema:downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git",
+            "schema:name": "GDSC ETL tools (wget)"
+          }
+        }
+      ],
+      "schema:result": {
+        "@id": "https://gdsc.idsc.miami.edu/detail/tz_2022_nbs_districts"
+      }
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://gdsc.idsc.miami.edu/detail/tz_2022_nbs_districts#cdif-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:about": {
+      "@id": "https://gdsc.idsc.miami.edu/detail/tz_2022_nbs_districts"
+    },
+    "schema:description": "CDIF metadata record for 'Tanzania 2022 Districts (NBS)', harvested from the OHDSI gaiaCatalog datastore (meta_json-ld_tz_2022_nbs_districts.json) published by the University of Miami Geospatial Digital Special Collections (GDSC), and transformed to the CDIF Core and Discovery profiles. The source ETL activity is carried as prov:wasGeneratedBy (schema:Action); the placeholder pseudo-code event was omitted. Upstream lineage is retained via schema:isBasedOn where the source provided it.",
+    "schema:sdDatePublished": "2026-08-26",
+    "schema:isBasedOn": {
+      "@id": "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/data/tz_2022_nbs_districts/meta_json-ld_tz_2022_nbs_districts.json"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/1.1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "dct": "http://purl.org/dc/terms/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "quantitykind": "http://qudt.org/vocab/quantitykind/",
+    "unit": "http://qudt.org/vocab/unit/",
+    "xsd": "http://www.w3.org/2001/XMLSchema",
+    "extendedConstraintProperty": "http://codata.org/vocab/extendedConstraintProperty",
+    "sdmx": "https://sdmx.org"
+  },
+  "@type": "Dataset",
+  "@id": "https://gdsc.idsc.miami.edu/detail/tz_2022_nbs_districts",
+  "includedInDataCatalog": [
+    {
+      "@type": "DataCatalog",
+      "@id": "https://gdsc.idsc.miami.edu",
+      "name": "Geospatial Digital Special Collections",
+      "url": "https://gdsc.idsc.miami.edu"
+    },
+    {
+      "@type": "DataCatalog",
+      "name": "tz-climate-change",
+      "@id": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change",
+      "url": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change"
+    }
+  ],
+  "name": "Tanzania 2022 Districts (NBS)",
+  "creator": [
+    {
+      "name": "Tanzania National Bureau of Statistics"
+    }
+  ],
+  "url": "https://microdata.nbs.go.tz/index.php/catalog/49/related-materials",
+  "provider": [
+    {
+      "@type": "Organization",
+      "name": "Tanzania National Bureau of Statistics"
+    }
+  ],
+  "spatialCoverage": [
+    {
+      "@id": "https://www.geonames.org/149590",
+      "@type": "Place",
+      "name": "Tanzania"
+    },
+    {
+      "@type": "Place",
+      "name": "bbox",
+      "geo": {
+        "@type": "GeoShape",
+        "polygon": "29.594677 -11.760241 40.446140 -11.760241 40.446140 -0.984775 29.594677 -0.984775 29.594677 -11.760241"
+      }
+    }
+  ],
+  "temporalCoverage": "2020-01-01/2022-12-31",
+  "type": "Vector Dataset",
+  "datePublished": "2024-01-01",
+  "description": "Shapefile for Tanzania Districts from the 2022 Census",
+  "keywords": [
+    "Tanania",
+    "Districs",
+    "Census"
+  ],
+  "@language": "en",
+  "measurementTechnique": [
+    {
+      "@type": "DefinedTerm",
+      "description": "GIS Data Structure for Representation",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "dataRepresentation",
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "termCode": "raster"
+          },
+          {
+            "@type": "DefinedTerm",
+            "termCode": "vector"
+          },
+          {
+            "@type": "DefinedTerm",
+            "termCode": "table"
+          }
+        ]
+      },
+      "termCode": "vector"
+    },
+    {
+      "@type": "DefinedTerm",
+      "description": "GIS Vector Geometery",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "vectorGeometry",
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "termCode": "point"
+          },
+          {
+            "@type": "DefinedTerm",
+            "termCode": "line"
+          },
+          {
+            "@type": "DefinedTerm",
+            "termCode": "polygon"
+          }
+        ]
+      },
+      "termCode": "multipolygon"
+    }
+  ],
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://dbpedia.org/resource/Spatial_reference_system",
+      "value": "https://epsg.io/4326"
+    }
+  ],
+  "about": [
+    {
+      "@type": "Event",
+      "description": "Direct from source",
+      "name": "ETL process for Tanzania 2022 Districts (NBS)",
+      "potentialAction": {
+        "@type": "Action",
+        "name": "Pseudo Code",
+        "description": "TODO",
+        "result": {
+          "@type": "Dataset",
+          "encodingFormat": "shp",
+          "url": "https://gdsc.idsc.miami.edu/download/data/tz_2022_nbs_districts/?file=tz_2022_nbs_districts&format=shp"
+        }
+      }
+    },
+    {
+      "@type": "Event",
+      "description": "Direct from source",
+      "name": "ETL process for Tanzania 2022 Districts (NBS)",
+      "potentialAction": {
+        "@type": "Action",
+        "name": "wget",
+        "description": "ETL process for Tanzania 2022 Districts (NBS)",
+        "object": {
+          "@type": "Dataset",
+          "name": "Direct from source",
+          "producer": "Tanzania National Bureau of Statistics",
+          "url": "https://microdata.nbs.go.tz/index.php/catalog/49/related-materials"
+        },
+        "instrument": {
+          "@type": "SoftwareApplication",
+          "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
+          "featureList": "wget",
+          "downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git"
+        },
+        "result": {
+          "@type": "Dataset",
+          "name": "Tanzania 2022 Districts (NBS)",
+          "description": "Shapefile for Tanzania Districts from the 2022 Census",
+          "encodingFormat": "shp",
+          "url": "https://gdsc.idsc.miami.edu/download/data/tz_2022_nbs_districts/?file=tz_2022_nbs_districts&format=shp"
+        }
+      }
+    }
+  ],
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "dist_code",
+      "description": "Unique district code",
+      "qudt:dataType": "numeric"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "\ndist_name",
+      "description": " District names",
+      "qudt:dataType": "string"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "\nreg_code",
+      "description": " unique code",
+      "qudt:dataType": "numeric"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "\nreg_name",
+      "description": " name",
+      "qudt:dataType": "varchar"
+    }
+  ],
+  "distribution": [
+    "https://gdsc.idsc.miami.edu/download/data/tz_2022_nbs_districts/?file=tz_2022_nbs_districts&format=shp"
+  ],
+  "dateModified": "2025-06-01",
+  "version": "2026-05-26"
+}

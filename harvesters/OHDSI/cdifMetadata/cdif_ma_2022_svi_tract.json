@@ -1,0 +1,2052 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "geosparql": "http://www.opengis.net/ont/geosparql#"
+  },
+  "@id": "https://gdsc.idsc.miami.edu/detail/ma_2022_svi_tract",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "2022 Massachusetts CDC Social Vulnerability Index (tracts)",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "ma_2022_svi_tract",
+    "schema:url": "https://gdsc.idsc.miami.edu/detail/ma_2022_svi_tract"
+  },
+  "schema:description": "Social vulnerability refers to the potential negative effects on communities caused by external stresses on human health. Such stresses include natural or human-caused disasters, or disease outbreaks. Reducing social vulnerability can decrease both human suffering and economic loss.\n\nThe CDC/ATSDR Social Vulnerability Index (CDC/ATSDR SVI) uses 16 U.S. census variables to help local officials identify communities that may need support before, during, or after disasters.",
+  "schema:dateModified": "2022-02-08",
+  "schema:datePublished": "2020-10-22",
+  "schema:version": "2026-05-26",
+  "schema:url": "https://www.atsdr.cdc.gov/place-health/php/svi/svi-data-documentation-download.html",
+  "schema:license": [
+    "http://www.opengis.net/def/nil/OGC/0/missing"
+  ],
+  "schema:inLanguage": "en",
+  "schema:keywords": [
+    "Massachusetts",
+    "CDC",
+    "Vulnerability",
+    "Social Vulnerability Index",
+    "Census Tracts",
+    "Public-Safety"
+  ],
+  "schema:additionalType": [
+    "Vector Dataset"
+  ],
+  "schema:creator": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:sameAs": "https://ror.org/04hsdam77",
+      "@id": "https://ror.org/04hsdam77",
+      "schema:identifier": "https://ror.org/04hsdam77",
+      "schema:name": "Center for Disease Control"
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "CDC"
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@id": "https://www.geonames.org/6254926",
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "Massachusetts"
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "bbox",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "41.237964 -73.508142 42.886589 -69.928393"
+      }
+    }
+  ],
+  "schema:measurementTechnique": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "GIS Data Structure for Representation",
+      "schema:termCode": "vector"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "GIS Vector Geometery",
+      "schema:termCode": "multipolygon"
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": "http://dbpedia.org/resource/Spatial_reference_system",
+      "schema:value": "https://epsg.io/4269",
+      "schema:name": "Spatial reference system"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "area_sqmi",
+      "schema:description": "Tract area in square miles",
+      "schema:propertyID": "2052497175",
+      "qudt:dataType": "float8",
+      "schema:unitText": "square miles"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "county",
+      "schema:description": "County name",
+      "schema:propertyID": "2052499639",
+      "qudt:dataType": "varchar"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_afam",
+      "schema:description": "Adjunct variable - Black/African American, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499783",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_age17",
+      "schema:description": "Persons aged 17 and younger estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498115",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_age65",
+      "schema:description": "Persons aged 65 and older estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498113",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_aian",
+      "schema:description": "Adjunct variable - American Indian or Alaska Native, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499861",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_asian",
+      "schema:description": "Adjunct variable - Asian, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499833",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_crowd",
+      "schema:description": "At household level (occupied housing units), more people than rooms estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499828",
+      "qudt:dataType": "int4",
+      "schema:unitText": "housing units",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_daypop",
+      "schema:description": "Adjunct variable - Estimated daytime population, LandScan 2020",
+      "schema:propertyID": "2052499427",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_disabl",
+      "schema:description": "Civilian noninstitutionalized population with a disability estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499669",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_groupq",
+      "schema:description": "Persons in group quarters estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498109",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_hburd",
+      "schema:description": "Housing cost-burdened occupied housing units with annual income less than 5,000 (30%+ of income spent on housing costs) estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499085",
+      "qudt:dataType": "int4",
+      "schema:unitText": "housing units",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_hh",
+      "schema:description": "Households estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499093",
+      "qudt:dataType": "int4",
+      "schema:unitText": "households",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_hisp",
+      "schema:description": "Adjunct variable - Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499104",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_hu",
+      "schema:description": "Housing units estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499075",
+      "qudt:dataType": "int4",
+      "schema:unitText": "housing units",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_limeng",
+      "schema:description": "Persons (age 5+) who speak English \"less than well\" estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498117",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_minrty",
+      "schema:description": "Minority (Hispanic or Latino (of any race) -- Black and African American, Not Hispanic or Latino -- American Indian and Alaska Native, Not Hispanic or Latino -- Asian, Not Hispanic or Latino -- Native Hawaiian and Other Pacific Islander, Not Hispanic or Latino -- Two or More Races, Not Hispanic or Latino -- Other Races, Not Hispanic or Latino) estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498841",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_mobile",
+      "schema:description": "Mobile homes estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498834",
+      "qudt:dataType": "int4",
+      "schema:unitText": "mobile homes",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_munit",
+      "schema:description": "Housing in structures with 10 or more units estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499082",
+      "qudt:dataType": "int4",
+      "schema:unitText": "structures",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_nhpi",
+      "schema:description": "Adjunct variable - Native Hawaiian or Other Pacific Islander, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498764",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_nohsdp",
+      "schema:description": "Persons (age 25+) with no high school diploma estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498119",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_noint",
+      "schema:description": "Adjunct variable - Households without a computer with a broadband Internet subscription estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499089",
+      "qudt:dataType": "int4",
+      "schema:unitText": "households",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_noveh",
+      "schema:description": "Households with no vehicle available estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499091",
+      "qudt:dataType": "int4",
+      "schema:unitText": "households",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_otherrace",
+      "schema:description": "Adjunct variable - Some other race, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052497741",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_pov150",
+      "schema:description": "Persons below 150% poverty estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498111",
+      "qudt:dataType": "int4",
+      "schema:unitText": "households",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_sngpnt",
+      "schema:description": "Single-parent household with children under 18 estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052497778",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_totpop",
+      "schema:description": "Population estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498091",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_twomore",
+      "schema:description": "Adjunct variable - Two or more races, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052497160",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_unemp",
+      "schema:description": "Civilian (age 16+) unemployed estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052499671",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "e_uninsur",
+      "schema:description": "Uninsured in the total civilian noninstitutionalized population estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052497149",
+      "qudt:dataType": "int4",
+      "schema:unitText": "persons",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_afam",
+      "schema:description": "Adjunct variable - Percentage of Black/African American, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498571",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_age17",
+      "schema:description": "Percentage of persons aged 17 and younger estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498382",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_age65",
+      "schema:description": "Percentage of persons aged 65 and older estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498380",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_aian",
+      "schema:description": "Adjunct variable - Percentage of American Indian or Alaska Native, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498581",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_asian",
+      "schema:description": "Adjunct variable - Percentage of Asian, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498576",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_crowd",
+      "schema:description": "Percentage of occupied housing units with more people than rooms estimate",
+      "schema:propertyID": "2052498400",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_disabl",
+      "schema:description": "Percentage of civilian noninstitutionalized population with a disability estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498558",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_groupq",
+      "schema:description": "Percentage of persons in group quarters estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498376",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_hburd",
+      "schema:description": "Percentage of housing cost-burdened occupied housing units with annual income less than 5,000 (30%+ of income spent on housing costs) estimate, 2016-2020 ACS estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498464",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_hisp",
+      "schema:description": "Adjunct variable - Percentage of Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498520",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_limeng",
+      "schema:description": "Percentage of persons (age 5+) who speak English \"less than well\" estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498385",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_minrty",
+      "schema:description": "Percentage minority (Hispanic or Latino (of any race) -- Black and African American, Not Hispanic or Latino -- American Indian and Alaska Native, Not Hispanic or Latino -- Asian, Not Hispanic or Latino -- Native Hawaiian and Other Pacific Islander, Not Hispanic or Latino -- Two or More Races, Not Hispanic or Latino -- Other Races, Not Hispanic or Latino) estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498423",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_mobile",
+      "schema:description": "Percentage of mobile homes estimate",
+      "schema:propertyID": "2052498422",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_munit",
+      "schema:description": "Percentage of housing in structures with 10 or more units estimate",
+      "schema:propertyID": "2052498461",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_nhpi",
+      "schema:description": "Adjunct variable - Percentage of Native Hawaiian or Other Pacific Islander, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498418",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_nohsdp",
+      "schema:description": "Percentage of persons with no high school diploma (age 25+) estimate",
+      "schema:propertyID": "2052498369",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_noint",
+      "schema:description": "Adjunct variable - Percentage of households without a computer with a broadband Internet subscription estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498468",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_noveh",
+      "schema:description": "Percentage of households with no vehicle available estimate",
+      "schema:propertyID": "2052498477",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_otherrace",
+      "schema:description": "Adjunct variable - Percentage of some other race, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498246",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_pov150",
+      "schema:description": "Percentage of persons below 150% poverty estimate",
+      "schema:propertyID": "2052498378",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_sngpnt",
+      "schema:description": "Percentage of single-parent households with children under 18 estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498249",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_twomore",
+      "schema:description": "Adjunct variable - Percentage of two or more races, not Hispanic or Latino persons estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498228",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_unemp",
+      "schema:description": "Unemployment Rate estimate",
+      "schema:propertyID": "2052497153",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "ep_uninsur",
+      "schema:description": "Percentage uninsured in the total civilian noninstitutionalized population estimate, 2016-2020 ACS",
+      "schema:propertyID": "2052498200",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percent",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_age17",
+      "schema:description": "Percentile percentage of persons aged 17 and younger estimate",
+      "schema:propertyID": "2052498183",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_age65",
+      "schema:description": "Percentile percentage of persons aged 65 and older estimate",
+      "schema:propertyID": "2052498182",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_crowd",
+      "schema:description": "Percentile percentage households with more people than rooms estimate",
+      "schema:propertyID": "2052498195",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_disabl",
+      "schema:description": "Percentile percentage of civilian noninstitutionalized population with a disability estimate",
+      "schema:propertyID": "2052498186",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_groupq",
+      "schema:description": "Percentile percentage of persons in group quarters estimate",
+      "schema:propertyID": "2052498180",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_hburd",
+      "schema:description": "Percentile percentage of housing cost-burdened occupied housing units estimate",
+      "schema:propertyID": "2052498185",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_limeng",
+      "schema:description": "Percentile percentage of persons (age 5+) who speak English \"less than well\" estimate",
+      "schema:propertyID": "2052498184",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_minrty",
+      "schema:description": "Percentile percentage minority (Hispanic or Latino (of any race) -- Black and African American, Not Hispanic or Latino -- American Indian and Alaska Native, Not Hispanic or Latino -- Asian, Not Hispanic or Latino -- Native Hawaiian and Other Pacific Islander, Not Hispanic or Latino -- Two or More Races, Not Hispanic or Latino -- Other Races, Not Hispanic or Latino) estimate",
+      "schema:propertyID": "2052498189",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_mobile",
+      "schema:description": "Percentile percentage mobile homes estimate",
+      "schema:propertyID": "2052498188",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_munit",
+      "schema:description": "Percentile percentage housing in structures with 10 or more units estimate",
+      "schema:propertyID": "2052498193",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_nohsdp",
+      "schema:description": "Percentile percentage of persons with no high school diploma (age 25+) estimate",
+      "schema:propertyID": "2052498179",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_noveh",
+      "schema:description": "Percentile percentage households with no vehicle available estimate",
+      "schema:propertyID": "2052498194",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_pov150",
+      "schema:description": "Percentile percentage of persons below 150% poverty estimate",
+      "schema:propertyID": "2052498181",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_sngpnt",
+      "schema:description": "Percentile percentage of single-parent households with children under 18 estimate",
+      "schema:propertyID": "2052498178",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_unemp",
+      "schema:description": "Percentile percentage of civilian (age 16+) unemployed estimate",
+      "schema:propertyID": "2052498187",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "epl_uninsur",
+      "schema:description": "Percentile percentage of uninsured estimate",
+      "schema:propertyID": "2052498150",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_age17",
+      "schema:description": "Flag - the percentage of persons aged 17 and younger is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499366",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_age65",
+      "schema:description": "Flag - the percentage of persons aged 65 and older is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499365",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_crowd",
+      "schema:description": "Flag - the percentage of crowded households is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499372",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_disabl",
+      "schema:description": "Flag - the percentage of persons with a disability is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499362",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_groupq",
+      "schema:description": "Flag - the percentage of persons in group quarters is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499363",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_hburd",
+      "schema:description": "Flag - the percentage of housing cost-burdened occupied housing units is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499369",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_limeng",
+      "schema:description": "Flag - the percentage those with limited English is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499358",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_minrty",
+      "schema:description": "Flag - the percentage of minority is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499368",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_mobile",
+      "schema:description": "Flag - the percentage of mobile homes is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499367",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_munit",
+      "schema:description": "Flag - the percentage of households in multi-unit housing is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499371",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_nohsdp",
+      "schema:description": "Flag - the percentage of persons with no high school diploma is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499361",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_noveh",
+      "schema:description": "Flag - the percentage of households with no vehicles is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499370",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_pov150",
+      "schema:description": "Flag - the percentage of persons below 150% poverty is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499364",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_sngpnt",
+      "schema:description": "Flag - the percentage of single-parent households is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499360",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_theme1",
+      "schema:description": "Sum of flags for Socioeconomic Status theme",
+      "schema:propertyID": "2052497702",
+      "qudt:dataType": "int4",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_theme2",
+      "schema:description": "Sum of flags for Household Characteristics theme",
+      "schema:propertyID": "2052497705",
+      "qudt:dataType": "int4",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_theme3",
+      "schema:description": "Sum of flags for Racial and Ethnic Minority Status theme",
+      "schema:propertyID": "2052497703",
+      "qudt:dataType": "int4",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_theme4",
+      "schema:description": "Sum of flags for Housing Type/ Transportation theme",
+      "schema:propertyID": "2052497704",
+      "qudt:dataType": "int4",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_total",
+      "schema:description": "Sum of flags for the four themes",
+      "schema:propertyID": "2052497701",
+      "qudt:dataType": "int4",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_unemp",
+      "schema:description": "Flag - the percentage of civilian unemployed is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499373",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "f_uninsur",
+      "schema:description": "Flag - the percentage of uninsured is in the 90th percentile (1 = yes, 0 = no)",
+      "schema:propertyID": "2052499359",
+      "qudt:dataType": "boolean",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "fips",
+      "schema:description": "Tract-level FIPS code",
+      "schema:propertyID": "2052497174",
+      "qudt:dataType": "varchar",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "location",
+      "schema:description": "Text description of tract, county, state",
+      "qudt:dataType": "varchar",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_afam",
+      "schema:description": "Adjunct variable - Black/African American, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499782",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_age17",
+      "schema:description": "Persons aged 17 and younger estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498114",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_age65",
+      "schema:description": "Persons aged 65 and older estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498112",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_aian",
+      "schema:description": "Adjunct variable - American Indian or Alaska Native, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499860",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_asian",
+      "schema:description": "Adjunct variable - Asian, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499832",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_crowd",
+      "schema:description": "At household level (occupied housing units), more people than rooms estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499827",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_disabl",
+      "schema:description": "Civilian noninstitutionalized population with a disability estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499668",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_groupq",
+      "schema:description": "Persons in group quarters estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498108",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_hburd",
+      "schema:description": "Housing cost-burdened occupied housing units with annual income less than 5,000 (30%+ of income spent on housing costs) estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499084",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_hh",
+      "schema:description": "Households estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499092",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_hisp",
+      "schema:description": "Adjunct variable - Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499103",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_hu",
+      "schema:description": "Housing units estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499074",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_limeng",
+      "schema:description": "Persons (age 5+) who speak English \"less than well\" estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498116",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_minrty",
+      "schema:description": "Minority (Hispanic or Latino (of any race) -- Black and African American, Not Hispanic or Latino -- American Indian and Alaska Native, Not Hispanic or Latino -- Asian, Not Hispanic or Latino -- Native Hawaiian and Other Pacific Islander, Not Hispanic or Latino -- Two or More Races, Not Hispanic or Latino -- Other Races, Not Hispanic or Latino) estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052490073",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_mobile",
+      "schema:description": "Mobile homes estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498833",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_munit",
+      "schema:description": "Housing in structures with 10 or more units estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499081",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_nhpi",
+      "schema:description": "Adjunct variable - Native Hawaiian or Other Pacific Islander, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498763",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_nohsdp",
+      "schema:description": "Persons (age 25+) with no high school diploma estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498118",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_noint",
+      "schema:description": "Adjunct variable - Households without a computer with a broadband Internet subscription estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499088",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_noveh",
+      "schema:description": "Households with no vehicle available estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499090",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_otherrace",
+      "schema:description": "Adjunct variable - Some other race, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052497740",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_pov150",
+      "schema:description": "Persons below 150% poverty estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498110",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_sngpnt",
+      "schema:description": "Single-parent household with children under 18 estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052497777",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_totpop",
+      "schema:description": "Population estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498090",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_twomore",
+      "schema:description": "Adjunct variable - Two or more races, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052497159",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_unemp",
+      "schema:description": "Civilian (age 16+) unemployed estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052499670",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "m_uninsur",
+      "schema:description": "Uninsured in the total civilian noninstitutionalized population estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052497148",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_afam",
+      "schema:description": "Adjunct variable - Percentage of Black/African American, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498570",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_age17",
+      "schema:description": "Percentage of persons aged 17 and younger estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498381",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_age65",
+      "schema:description": "Percentage of persons aged 65 and older estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498379",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_aian",
+      "schema:description": "Adjunct variable - Percentage of American Indian or Alaska Native, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498580",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_asian",
+      "schema:description": "Adjunct variable - Percentage of Asian, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498575",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_crowd",
+      "schema:description": "Percentage of occupied housing units with more people than rooms estimate MOE",
+      "schema:propertyID": "2052498399",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_disabl",
+      "schema:description": "Percentage of civilian noninstitutionalized population with a disability estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498557",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_groupq",
+      "schema:description": "Percentage of persons in group quarters estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498375",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_hburd",
+      "schema:description": "Percentage of housing cost-burdened occupied housing units with annual income less than 5,000 (30%+ of income spent on housing costs) estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498463",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_hisp",
+      "schema:description": "Adjunct variable - Percentage of Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498519",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_limeng",
+      "schema:description": "Percentage of persons (age 5+) who speak English \"less than well\" estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498383",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_minrty",
+      "schema:description": "Percentage minority (Hispanic or Latino (of any race) -- Black and African American, Not Hispanic or Latino -- American Indian and Alaska Native, Not Hispanic or Latino -- Asian, Not Hispanic or Latino -- Native Hawaiian and Other Pacific Islander, Not Hispanic or Latino -- Two or More Races, Not Hispanic or Latino -- Other Races, Not Hispanic or Latino) estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498609",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_mobile",
+      "schema:description": "Percentage of mobile homes estimate MOE",
+      "schema:propertyID": "2052498421",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_munit",
+      "schema:description": "Percentage of housing in structures with 10 or more units estimate MOE",
+      "schema:propertyID": "2052498460",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_nhpi",
+      "schema:description": "Adjunct variable - Percentage of Native Hawaiian or Other Pacific Islander, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498417",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_nohsdp",
+      "schema:description": "Percentage of persons with no high school diploma (25+) estimate MOE",
+      "schema:propertyID": "2052498370",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_noint",
+      "schema:description": "Adjunct variable - Percentage of households without a computer with a broadband Internet subscription estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498467",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_noveh",
+      "schema:description": "Percentage of households with no vehicle available estimate MOE",
+      "schema:propertyID": "2052498476",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_otherrace",
+      "schema:description": "Adjunct variable - Percentage of some other race, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498245",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_pov150",
+      "schema:description": "Percentage of persons below 150% poverty estimate MOE",
+      "schema:propertyID": "2052498377",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_sngpnt",
+      "schema:description": "Percentage of single-parent households with children under 18 estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498248",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_twomore",
+      "schema:description": "Adjunct variable - Percentage of two or more races, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498227",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_unemp",
+      "schema:description": "Unemployment Rate estimate MOE",
+      "schema:propertyID": "2052497152",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "mp_uninsur",
+      "schema:description": "Percentage uninsured in the total civilian noninstitutionalized population estimate MOE, 2016-2020 ACS",
+      "schema:propertyID": "2052498199",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "rpl_theme1",
+      "schema:description": "Percentile ranking for Socioeconomic Status theme summary",
+      "schema:propertyID": "2052498129",
+      "qudt:dataType": "float8",
+      "schema:unitText": "moe",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "rpl_theme2",
+      "schema:description": "Percentile ranking for Household Characteristics theme summary",
+      "schema:propertyID": "2052498134",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "rpl_theme3",
+      "schema:description": "Percentile ranking for Racial and Ethnic Minority Status theme",
+      "schema:propertyID": "2052498130",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "rpl_theme4",
+      "schema:description": "Percentile ranking for Housing Type/ Transportation theme",
+      "schema:propertyID": "2052498133",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "rpl_themes",
+      "schema:description": "Overall percentile ranking",
+      "schema:propertyID": "2052498131",
+      "qudt:dataType": "float8",
+      "schema:unitText": "percentile",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "spl_theme1",
+      "schema:description": "Sum of series for Socioeconomic Status theme",
+      "schema:propertyID": "2052497697",
+      "qudt:dataType": "float8",
+      "schema:unitText": "svi index",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "spl_theme2",
+      "schema:description": "Sum of series for Household Characteristics theme",
+      "schema:propertyID": "2052497700",
+      "qudt:dataType": "float8",
+      "schema:unitText": "svi index",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "spl_theme3",
+      "schema:description": "Sum of series for Racial and Ethnic Minority Status theme",
+      "schema:propertyID": "2052497698",
+      "qudt:dataType": "float8",
+      "schema:unitText": "svi index",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "spl_theme4",
+      "schema:description": "Sum of series for Housing Type/ Transportation theme",
+      "schema:propertyID": "2052497699",
+      "qudt:dataType": "float8",
+      "schema:unitText": "svi index",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "spl_themes",
+      "schema:description": "Sum of series themes",
+      "qudt:dataType": "float8",
+      "schema:unitText": "svi index",
+      "schema:startDate": "2020-01-01",
+      "schema:endDate": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "st",
+      "schema:description": "State-level FIPS code",
+      "schema:propertyID": "2052497725",
+      "qudt:dataType": "varchar"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "st_abbr",
+      "schema:description": "State abbreviation",
+      "schema:propertyID": "2052497733",
+      "qudt:dataType": "varchar"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "state",
+      "schema:description": "State name",
+      "schema:propertyID": "2052497730",
+      "qudt:dataType": "varchar"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "stcnty",
+      "schema:description": "County-level FIPS code",
+      "schema:propertyID": "2052499638",
+      "qudt:dataType": "varchar"
+    }
+  ],
+  "schema:includedInDataCatalog": [
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "@id": "https://gdsc.idsc.miami.edu",
+      "schema:name": "Geospatial Digital Special Collections",
+      "schema:url": "https://gdsc.idsc.miami.edu"
+    },
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "mdc-health-outcomes",
+      "@id": "https://gdsc.idsc.miami.edu/?collection=mdc-health-outcomes",
+      "schema:url": "https://gdsc.idsc.miami.edu/?collection=mdc-health-outcomes"
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://gdsc.idsc.miami.edu/download/data/ma_2022_svi_tract/?file=ma_2022_svi_tract&format=sql",
+      "schema:encodingFormat": [
+        "application/sql"
+      ]
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:name": "ETL: wget",
+      "schema:description": "ETL process for 2022 Massachusetts CDC Social Vulnerability Index (tracts)",
+      "schema:object": {
+        "@id": "https://www.atsdr.cdc.gov/place-health/php/svi/svi-data-documentation-download.html"
+      },
+      "prov:used": [
+        {
+          "schema:instrument": {
+            "@type": [
+              "schema:SoftwareApplication"
+            ],
+            "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
+            "schema:featureList": "wget",
+            "schema:downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git",
+            "schema:name": "GDSC ETL tools (wget)"
+          }
+        }
+      ],
+      "schema:result": {
+        "@id": "https://gdsc.idsc.miami.edu/detail/ma_2022_svi_tract"
+      }
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://gdsc.idsc.miami.edu/detail/ma_2022_svi_tract#cdif-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:about": {
+      "@id": "https://gdsc.idsc.miami.edu/detail/ma_2022_svi_tract"
+    },
+    "schema:description": "CDIF metadata record for '2022 Massachusetts CDC Social Vulnerability Index (tracts)', harvested from the OHDSI gaiaCatalog datastore (meta_json-ld_ma_2022_svi_tract.json) published by the University of Miami Geospatial Digital Special Collections (GDSC), and transformed to the CDIF Core and Discovery profiles. The source ETL activity is carried as prov:wasGeneratedBy (schema:Action); the placeholder pseudo-code event was omitted. Upstream lineage is retained via schema:isBasedOn where the source provided it.",
+    "schema:sdDatePublished": "2026-08-26",
+    "schema:isBasedOn": {
+      "@id": "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/data/ma_2022_svi_tract/meta_json-ld_ma_2022_svi_tract.json"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/1.1"
+      }
+    ]
+  }
+}

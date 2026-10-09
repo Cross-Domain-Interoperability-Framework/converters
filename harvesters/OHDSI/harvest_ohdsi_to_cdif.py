@@ -3,9 +3,8 @@
 
 Reads the schema.org `meta_json-ld_{table_id}.json` files harvested from
 https://github.com/OHDSI/gaiaCatalog/tree/main/datastore/data (stored in
-OHDSIMetadata/ of the CDIF OHDSI repository) and writes CDIF-conformant
-documents to cdifMetadata/ there. By default both are found in a sibling
-checkout, ../OHDSI beside this converters repository.
+OHDSIMetadata/ beside this script) and writes CDIF-conformant documents to
+cdifMetadata/.
 
 The source documents are schema.org Dataset records authored with the default
 vocabulary set to https://schema.org/ (so property/type tokens are unprefixed).
@@ -25,9 +24,9 @@ declares cdifProvenance (https://w3id.org/cdif/provenance/1.1). Disable with
 `--no-provenance`.
 
 Usage:
-    python harvesters/harvest_ohdsi_to_cdif.py      # ../OHDSI/OHDSIMetadata -> ../OHDSI/cdifMetadata
-    python harvesters/harvest_ohdsi_to_cdif.py -i IN -o OUT
-    python harvesters/harvest_ohdsi_to_cdif.py --no-provenance   # discovery + core only
+    python harvesters/OHDSI/harvest_ohdsi_to_cdif.py      # OHDSIMetadata/ -> cdifMetadata/
+    python harvesters/OHDSI/harvest_ohdsi_to_cdif.py -i IN -o OUT
+    python harvesters/OHDSI/harvest_ohdsi_to_cdif.py --no-provenance   # discovery + core only
 """
 import argparse
 import datetime
@@ -432,13 +431,10 @@ def convert_document(src, source_filename, harvest_date, provenance=True):
 
 
 def main():
-    # The corpus stays in the OHDSI repository; this script lives in
-    # converters/harvesters/, so by default it reads and writes a sibling
-    # OHDSI checkout (CDIF/OHDSI beside CDIF/converters).
-    ohdsi = pathlib.Path(__file__).resolve().parent.parent.parent / "OHDSI"
+    here = pathlib.Path(__file__).resolve().parent
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("-i", "--indir", default=str(ohdsi / "OHDSIMetadata"))
-    ap.add_argument("-o", "--outdir", default=str(ohdsi / "cdifMetadata"))
+    ap.add_argument("-i", "--indir", default=str(here / "OHDSIMetadata"))
+    ap.add_argument("-o", "--outdir", default=str(here / "cdifMetadata"))
     ap.add_argument("--provenance", action=argparse.BooleanOptionalAction,
                     default=True,
                     help="map the source ETL action to prov:wasGeneratedBy and "

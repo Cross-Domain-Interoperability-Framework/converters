@@ -1,0 +1,536 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "geosparql": "http://www.opengis.net/ont/geosparql#"
+  },
+  "@id": "https://gdsc.idsc.miami.edu/detail/kenya_ppd_survey_2014",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Demographic, psychosocial and clinical factors associated with postpartum depression in Kenyan women",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "kenya_ppd_survey_2014",
+    "schema:url": "https://gdsc.idsc.miami.edu/detail/kenya_ppd_survey_2014"
+  },
+  "schema:description": "Demographic, psychosocial and clinical factors associated with postpartum depression in Kenyan women",
+  "schema:dateModified": "2018-01-01",
+  "schema:version": "2026-05-26",
+  "schema:url": "https://doi.org/10.1186/s12888-018-1904-7",
+  "schema:license": [
+    "Controlled access author permission required"
+  ],
+  "schema:inLanguage": "en",
+  "schema:keywords": [
+    "Postpartum Depression",
+    "Maternal Health",
+    "Kenya",
+    "Risk Factors",
+    "Edinburgh Postnatal Depression Scale (EPDS)",
+    "Perinatal Depression",
+    "Urban Health"
+  ],
+  "schema:additionalType": [
+    "statistical dataset"
+  ],
+  "schema:creator": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "APHRC"
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "APHRC"
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@id": "https://www.geonames.org/192950",
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "Kenya"
+    }
+  ],
+  "schema:temporalCoverage": "2014-03-15/2014-12-15",
+  "schema:measurementTechnique": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "GIS Data Structure for Representation",
+      "schema:termCode": "table"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "fact_id",
+      "schema:description": "Primary key for each observation row in the fact table",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "individual_id",
+      "schema:description": "Unique identifier for an individual participant",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "interview_id",
+      "schema:description": "Unique identifier for an interview",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "resident_episode_id",
+      "schema:description": "Unique identifier for a residency episode (person/household at a location within a wave)",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "population_study_id",
+      "schema:description": "Unique identifier for each population study",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "instrument_id",
+      "schema:description": "Unique identifier for each instrument (questionnaire/scale/form)",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "instrument_item_id",
+      "schema:description": "Unique identifier for each item (question) in an instrument",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "concept_id",
+      "schema:description": "The concept id of the answer to a question",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "value_type_concept_id",
+      "schema:description": "The concept id of the question",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "value_as_char",
+      "schema:description": "The actual answer of a question",
+      "qudt:dataType": "text",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "value_as_num",
+      "schema:description": "The actual answer of a question",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "value_as_concept",
+      "schema:description": "The inspire concept id of the answer to a question",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "individual_demographics_id",
+      "schema:description": "Unique ID of the an individual demographic",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "individual_concept_id",
+      "schema:description": "individual demographics concepts (marital status, level of education,etc.)",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "individual_concept_id_text",
+      "schema:description": "Text label for individual demographics",
+      "qudt:dataType": "text",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "household_id",
+      "schema:description": "Unique ID of the household",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "household_characteristics_concept_id",
+      "schema:description": "Household characteristic concepts (WIQ, family size,etc.)",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "household_characteristics_concept_text",
+      "schema:description": "Text label for household characteristic",
+      "qudt:dataType": "text",
+      "schema:startDate": "2008-02-15",
+      "schema:endDate": "2008-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "interview_id",
+      "schema:description": "Unique identifier for an interview",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2010-05-15",
+      "schema:endDate": "2011-09-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "resident_episode_id",
+      "schema:description": "Unique identifier for a residency episode",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2010-05-15",
+      "schema:endDate": "2011-09-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "value_as_char",
+      "schema:description": "The actual answer of a question",
+      "qudt:dataType": "text",
+      "schema:startDate": "2010-05-15",
+      "schema:endDate": "2011-09-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "value_as_num",
+      "schema:description": "The actual answer of a question",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2010-05-15",
+      "schema:endDate": "2011-09-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "value_as_concept",
+      "schema:description": "The inspire concept id of the answer to a question (Wave 2)",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2010-05-15",
+      "schema:endDate": "2011-09-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "household_characteristics_concept_text",
+      "schema:description": "Text label for household characteristic",
+      "qudt:dataType": "text",
+      "schema:startDate": "2010-05-15",
+      "schema:endDate": "2011-09-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "household_characteristics_concept_id",
+      "schema:description": "Household characteristic concepts",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2010-05-15",
+      "schema:endDate": "2011-09-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "individual_concept_id_text",
+      "schema:description": "Text label for individual demographics",
+      "qudt:dataType": "text",
+      "schema:startDate": "2010-05-15",
+      "schema:endDate": "2011-09-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "individual_concept_id",
+      "schema:description": "Individual demographics concepts",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2010-05-15",
+      "schema:endDate": "2011-09-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "concept_id",
+      "schema:description": "The concept id of the answer to a question",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2010-05-15",
+      "schema:endDate": "2011-09-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "interview_id",
+      "schema:description": "Unique identifier for an interview",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2012-05-15",
+      "schema:endDate": "2012-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "resident_episode_id",
+      "schema:description": "Unique identifier for a residency episode",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2012-05-15",
+      "schema:endDate": "2012-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "value_as_char",
+      "schema:description": "The actual answer of a question",
+      "qudt:dataType": "text",
+      "schema:startDate": "2012-05-15",
+      "schema:endDate": "2012-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "value_as_num",
+      "schema:description": "The actual answer of a question",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2012-05-15",
+      "schema:endDate": "2012-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "value_as_concept",
+      "schema:description": "The inspire concept id of the answer to a question",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2012-05-15",
+      "schema:endDate": "2012-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "household_characteristics_concept_text",
+      "schema:description": "Text label for household characteristic",
+      "qudt:dataType": "text",
+      "schema:startDate": "2012-05-15",
+      "schema:endDate": "2012-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "household_characteristics_concept_id",
+      "schema:description": "Household characteristic concepts",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2012-05-15",
+      "schema:endDate": "2012-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "individual_concept_id_text",
+      "schema:description": "Text label for individual demographics",
+      "qudt:dataType": "text",
+      "schema:startDate": "2012-05-15",
+      "schema:endDate": "2012-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "individual_concept_id",
+      "schema:description": "Individual demographics concepts",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2012-05-15",
+      "schema:endDate": "2012-12-15"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "concept_id",
+      "schema:description": "The concept id of the answer to a question",
+      "qudt:dataType": "integer",
+      "schema:startDate": "2012-05-15",
+      "schema:endDate": "2012-12-15"
+    }
+  ],
+  "schema:includedInDataCatalog": [
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "@id": "https://gdsc.idsc.miami.edu",
+      "schema:name": "Geospatial Digital Special Collections",
+      "schema:url": "https://gdsc.idsc.miami.edu"
+    },
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "aphrc",
+      "@id": "https://gdsc.idsc.miami.edu/?collection=aphrc",
+      "schema:url": "https://gdsc.idsc.miami.edu/?collection=aphrc"
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:name": "ETL: local",
+      "schema:description": "ETL process for Demographic, psychosocial and clinical factors associated with postpartum depression in Kenyan women",
+      "schema:object": {
+        "@id": "https://doi.org/10.1186/s12888-018-1904-7"
+      },
+      "prov:used": [
+        {
+          "schema:instrument": {
+            "@type": [
+              "schema:SoftwareApplication"
+            ],
+            "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
+            "schema:featureList": "local",
+            "schema:downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git",
+            "schema:name": "GDSC ETL tools (local)"
+          }
+        }
+      ],
+      "schema:result": {
+        "@id": "https://gdsc.idsc.miami.edu/detail/kenya_ppd_survey_2014"
+      }
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://gdsc.idsc.miami.edu/detail/kenya_ppd_survey_2014#cdif-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:about": {
+      "@id": "https://gdsc.idsc.miami.edu/detail/kenya_ppd_survey_2014"
+    },
+    "schema:description": "CDIF metadata record for 'Demographic, psychosocial and clinical factors associated with postpartum depression in Kenyan women', harvested from the OHDSI gaiaCatalog datastore (meta_json-ld_kenya_ppd_survey_2014.json) published by the University of Miami Geospatial Digital Special Collections (GDSC), and transformed to the CDIF Core and Discovery profiles. The source ETL activity is carried as prov:wasGeneratedBy (schema:Action); the placeholder pseudo-code event was omitted. Upstream lineage is retained via schema:isBasedOn where the source provided it.",
+    "schema:sdDatePublished": "2026-08-26",
+    "schema:isBasedOn": {
+      "@id": "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/data/kenya_ppd_survey_2014/meta_json-ld_kenya_ppd_survey_2014.json"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/1.1"
+      }
+    ]
+  }
+}

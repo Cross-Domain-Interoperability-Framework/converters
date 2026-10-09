@@ -1,0 +1,210 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "geosparql": "http://www.opengis.net/ont/geosparql#"
+  },
+  "@id": "https://gdsc.idsc.miami.edu/detail/tz_magu_dem_srtm",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Magu District DEM (SRTM)",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "tz_magu_dem_srtm",
+    "schema:url": "https://gdsc.idsc.miami.edu/detail/tz_magu_dem_srtm"
+  },
+  "schema:description": "An elevation raster dataset derived from the SRTM GL1 V3 dataset at 1 ARC second resolution (~30 meters). ",
+  "schema:dateModified": "2025-02-24",
+  "schema:datePublished": "2013-01-01",
+  "schema:version": "2026-05-26",
+  "schema:url": "https://lpdaac.usgs.gov/products/srtmgl1v003/",
+  "schema:license": [
+    "This data is open to the public and browse images are freely available without\nrestriction."
+  ],
+  "schema:inLanguage": "en",
+  "schema:keywords": [
+    "Tanzania",
+    "Magu District",
+    "Elevation",
+    "DEM"
+  ],
+  "schema:additionalType": [
+    "Raster Dataset"
+  ],
+  "schema:creator": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "NASA JPL"
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "NASA EOSDIS Land Processes Distributed Active Archive Center (LPDAAC)"
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@id": "https://www.geonames.org/155313",
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "Magu District"
+    },
+    {
+      "@id": "https://www.geonames.org/149590",
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "Tanzania"
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "bbox",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-3.089861 32.750139 -2.130139 34.039861"
+      }
+    }
+  ],
+  "schema:measurementTechnique": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "GIS Data Structure for Representation",
+      "schema:termCode": "raster"
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "https://dbpedia.org/resource/Ground_sample_distance",
+      "schema:value": 30.0,
+      "schema:unitText": "meters"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": "http://dbpedia.org/resource/Spatial_reference_system",
+      "schema:value": "https://epsg.io/4326",
+      "schema:name": "Spatial reference system"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "elevation",
+      "schema:description": "Mean elevation above sea level",
+      "qudt:dataType": "float",
+      "schema:unitText": "meters\n"
+    }
+  ],
+  "schema:includedInDataCatalog": [
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "@id": "https://gdsc.idsc.miami.edu",
+      "schema:name": "Geospatial Digital Special Collections",
+      "schema:url": "https://gdsc.idsc.miami.edu"
+    },
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "tz-climate-change",
+      "@id": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change",
+      "schema:url": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change"
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://gdsc.idsc.miami.edu/download/data/tz_magu_dem_srtm/?file=tz_magu_dem_srtm&format=tiff",
+      "schema:encodingFormat": [
+        "image/tiff"
+      ]
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "prov:Activity",
+        "schema:Action"
+      ],
+      "schema:name": "ETL: srtm_merge_and_crop",
+      "schema:description": "Custom ETL process for Magu District DEM (SRTM)",
+      "schema:object": {
+        "@id": "https://lpdaac.usgs.gov/products/srtmgl1v003/"
+      },
+      "prov:used": [
+        {
+          "schema:instrument": {
+            "@type": [
+              "schema:SoftwareApplication"
+            ],
+            "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
+            "schema:featureList": "S02E032.SRTMGL1 S02E033.SRTMGL1 S02E034.SRTMGL1 S03E032.SRTMGL1 S03E033.SRTMGL1 S03E034.SRTMGL1 S04E032.SRTMGL1 S04E033.SRTMGL1 S04E034.SRTMGL1 bbox;32.75;-3.09;34.04;-2.13",
+            "schema:downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git",
+            "schema:name": "GDSC ETL tools (S02E032.SRTMGL1 S02E033.SRTMGL1 S02E034.SRTMGL1 S03E032.SRTMGL1 S03E033.SRTMGL1 S03E034.SRTMGL1 S04E032.SRTMGL1 S04E033.SRTMGL1 S04E034.SRTMGL1 bbox;32.75;-3.09;34.04;-2.13)"
+          }
+        }
+      ],
+      "schema:result": {
+        "@id": "https://gdsc.idsc.miami.edu/detail/tz_magu_dem_srtm"
+      }
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://gdsc.idsc.miami.edu/detail/tz_magu_dem_srtm#cdif-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:about": {
+      "@id": "https://gdsc.idsc.miami.edu/detail/tz_magu_dem_srtm"
+    },
+    "schema:description": "CDIF metadata record for 'Magu District DEM (SRTM)', harvested from the OHDSI gaiaCatalog datastore (meta_json-ld_tz_magu_dem_srtm.json) published by the University of Miami Geospatial Digital Special Collections (GDSC), and transformed to the CDIF Core and Discovery profiles. The source ETL activity is carried as prov:wasGeneratedBy (schema:Action); the placeholder pseudo-code event was omitted. Upstream lineage is retained via schema:isBasedOn where the source provided it.",
+    "schema:sdDatePublished": "2026-08-26",
+    "schema:isBasedOn": {
+      "@id": "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/data/tz_magu_dem_srtm/meta_json-ld_tz_magu_dem_srtm.json"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/1.1"
+      }
+    ]
+  }
+}
