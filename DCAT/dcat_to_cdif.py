@@ -864,7 +864,7 @@ def _tf_relatedlink(value, ds, rule, doc):
             target = target[0] if target else None
         if not target:
             continue
-        out.append({"schema:linkRelationship": rule["subject_id"],
+        out.append({"@type": ["schema:LinkRole"], "schema:linkRelationship": rule["subject_id"],
                     "schema:target": {"@type": ["schema:EntryPoint"],
                                       "schema:url": target}})
     return out or None
@@ -1007,7 +1007,7 @@ def _tf_generatedby(value, ds, rule, doc):
             tgt = _tf_iri(tgt, ds, rule, doc) if tgt else None
             tgt = tgt[0] if isinstance(tgt, list) and tgt else tgt
             if isinstance(tgt, str) and tgt:
-                link = {"schema:linkRelationship": "prov:qualifiedAssociation",
+                link = {"@type": ["schema:LinkRole"], "schema:linkRelationship": "prov:qualifiedAssociation",
                         "schema:target": {"@type": ["schema:EntryPoint"],
                                           "schema:url": tgt}}
                 rl = doc.setdefault("schema:relatedLink", [])
@@ -1130,7 +1130,7 @@ def _tf_rights(value, ds, rule, doc):
                 if u:
                     rl = doc.setdefault("schema:relatedLink", [])
                     if isinstance(rl, list):
-                        rl.append({"schema:linkRelationship": "odrs:attributionURL",
+                        rl.append({"@type": ["schema:LinkRole"], "schema:linkRelationship": "odrs:attributionURL",
                                    "schema:target": {"@type": ["schema:EntryPoint"],
                                                      "schema:url": u}})
         if not seen:
@@ -1156,7 +1156,7 @@ def _tf_homepage(value, ds, rule, doc):
         rl = doc.setdefault("schema:relatedLink", [])
         if not isinstance(rl, list):
             rl = doc["schema:relatedLink"] = [rl]
-        rl.append({"schema:linkRelationship": rule["subject_id"],
+        rl.append({"@type": ["schema:LinkRole"], "schema:linkRelationship": rule["subject_id"],
                    "schema:target": {"@type": ["schema:EntryPoint"],
                                      "schema:url": target}})
     return _CONSUMED
