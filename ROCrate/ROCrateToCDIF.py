@@ -673,11 +673,12 @@ Examples:
             if args.schema:
                 schema_path = args.schema
             else:
-                # Per-profile schema lookup. The validation repo holds the
-                # Discovery and Complete validation schemas; the canonical
-                # cdifCore schema lives in the profile-core release repo
-                # (no CDIFCoreSchema.json in the validation repo today).
-                validation_dir = SCRIPT_DIR / ".." / ".." / "validation"
+                # Per-profile schema lookup. The validation repo -- bundled
+                # here as the validation/ submodule -- holds the Discovery and
+                # Complete validation schemas; the canonical cdifCore schema
+                # lives in the profile-core release repo, checked out beside
+                # this one (no CDIFCoreSchema.json in the validation repo today).
+                validation_dir = SCRIPT_DIR / ".." / "validation"
                 profile_core_dir = SCRIPT_DIR / ".." / ".." / "profile-core"
                 schema_filenames = {
                     "core": "cdifCoreStructuredSchema.json",
