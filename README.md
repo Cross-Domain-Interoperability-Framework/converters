@@ -34,10 +34,11 @@ produce. For converting a SOSO file or URL you already have, use `soso2cdif.py`.
 |------|--------|-------|
 | [`harvesters/geocodes_harvester.py`](harvesters/geocodes_harvester.py) | EarthCube GeoCodes SPARQL catalog → source landing-page JSON-LD → CDIF core/discovery | Moved from the `validation` repo |
 
-`geocodes_harvester.py` and `soso/ConvertFromSOSO.py` each carry their own copy
-of the schema.org prefixing step. The harvester's resolves unprefixed names
-through the source record's `@context`; the SOSO converter's still uses a fixed
-list of names and sends the rest to `unk:`.
+`geocodes_harvester.py` and `soso/ConvertFromSOSO.py` share one schema.org
+naming step, [`schemaorg_names.py`](schemaorg_names.py): an unprefixed name
+resolves through the source record's `@context` (a term it defines, or
+schema.org when the context makes that the default vocabulary) before falling
+back to a fixed list of schema.org names, and only then to `unk:`.
 
 ## Setup
 
@@ -191,6 +192,7 @@ converters/                  (repository root)
 | File | Description |
 |------|-------------|
 | `soso2cdif.py` | Front-end for the SOSO→CDIF engine: reads a SOSO record from a path or http(s) URL and writes CDIF (see below) |
+| `schemaorg_names.py` | Resolves the unprefixed names in a schema.org record to CURIEs through the record's own `@context`; shared by `soso/ConvertFromSOSO.py` and `harvesters/geocodes_harvester.py` |
 | `sssom_engine.py` | The shared table-driven mapping engine (`MappingSet`) that the DCAT/DDI/Croissant converters read their SSSOM tables through |
 | `requirements.txt` | Python dependencies (see [Setup](#setup)) |
 | `LICENSE`, `LICENSE-CC-BY-4.0` | Apache-2.0 (software) and CC BY 4.0 (mappings, docs, example metadata); see [License](#license) |
