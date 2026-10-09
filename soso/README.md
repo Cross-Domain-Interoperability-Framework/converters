@@ -54,7 +54,11 @@ accepts a SOSO Dataset (bare schema.org terms via `@vocab`) or an `@graph`.
 
 ### SOSO → CDIF (`ConvertFromSOSO.py`)
 
-- Prefixes property names with `schema:` (unrecognized names → `unk:`) and
+- Prefixes property names through the record's own `@context`: a term it
+  defines keeps that IRI; schema.org names, and every unprefixed name when the
+  context makes schema.org the default vocabulary, get `schema:`; anything
+  else goes to `unk:` (shared with the GeoCodes harvester in
+  [`../schemaorg_names.py`](../schemaorg_names.py)). It also
   normalizes `@type` to prefixed arrays.
 - Rewrites `@context` to CDIF prefix declarations
   (`schema`/`dcterms`/`dcat`/`prov`, canonical `http://schema.org/`).

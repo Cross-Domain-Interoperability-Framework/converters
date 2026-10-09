@@ -9,8 +9,11 @@ declares ``dcterms:conformsTo`` the CDIF core/discovery profiles).
 Both are schema.org profiles, so this is structural alignment plus supplying the
 CDIF-required scaffolding SOSO does not carry:
 
-  * property names prefixed with ``schema:`` (unknown names -> ``unk:``);
-    ``@type`` values normalized to arrays with the ``schema:`` prefix.
+  * property names prefixed: a name the source ``@context`` defines keeps its
+    IRI; schema.org names, and every unprefixed name when the source context
+    makes schema.org the default vocabulary, get ``schema:``; the rest
+    ``unk:``. ``@type`` values are resolved the same way, as arrays. The
+    resolution is shared with the GeoCodes harvester (``schemaorg_names.py``).
   * ``@context`` rewritten to CDIF prefix declarations
     (``schema``/``dcterms``/``dcat``/``prov``, canonical ``http://schema.org/``),
     preserving any extra prefixes the source used.
@@ -46,6 +49,10 @@ from pathlib import Path
 # per-class content SHACL, with a remote-SHACL fallback). Best-effort: if the
 # submodule is not initialized (or its rdflib/pyshacl deps are unavailable),
 # conversion falls back to the profile-based default conformsTo.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from schemaorg_names import (UNKNOWN_NS, UNKNOWN_PREFIX, prefix_keys,  # noqa: E402
+                             fix_types, source_vocabulary, source_prefixes)
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "validation"))
 try:
     from detect_conformance import detect_conformance, apply_conformance
@@ -60,117 +67,9 @@ CDIF_CONTEXT = {
     "prov": "http://www.w3.org/ns/prov#",
 }
 
-UNKNOWN_NS = "https://ex.org/unknown/"
-UNKNOWN_PREFIX = "unk"
 
 CORE_URI = "https://w3id.org/cdif/core/1.1"
 DISCOVERY_URI = "https://w3id.org/cdif/discovery/1.1"
-
-# schema.org property names to prefix with schema:
-SCHEMA_PROPS = {
-    "name", "description", "identifier", "url", "sameAs", "version",
-    "dateModified", "datePublished", "dateCreated", "license", "keywords",
-    "creator", "author", "publisher", "provider", "funder", "funding",
-    "distribution", "spatialCoverage", "temporalCoverage", "variableMeasured",
-    "measurementTechnique", "measurementMethod", "citation",
-    "isAccessibleForFree", "inLanguage", "includedInDataCatalog",
-    "additionalType", "alternateName", "abstract", "encodingFormat",
-    "contentUrl", "contentSize", "about", "givenName", "familyName",
-    "affiliation", "email", "telephone", "contactPoint", "contactType",
-    "address", "geo", "latitude", "longitude", "box", "polygon", "elevation",
-    "additionalProperty", "propertyID", "value", "unitText", "unitCode",
-    "minValue", "maxValue", "isBasedOn", "hasPart", "isPartOf", "mainEntity",
-    "subjectOf", "creativeWorkStatus", "thumbnailUrl", "audience", "size",
-    "conditionsOfAccess", "comment", "roleName", "contributor",
-    "locationCreated", "fileFormat", "usageInfo", "potentialAction",
-    "sdDatePublished", "maintainer", "serviceType", "termsOfService",
-    "urlTemplate", "httpMethod", "relatedLink", "temporal", "spatial",
-    "addressCountry", "addressLocality", "addressRegion", "availableLanguage",
-    "caption", "commentCount", "disambiguatingDescription", "image",
-    "inDefinedTermSet", "termCode", "parentOrganization", "postalCode",
-    "streetAddress",
-    # schema.org Action / provenance properties (open-world pass-through so
-    # provenance content beyond core+discovery round-trips as schema:, not unk:)
-    "agent", "object", "result", "instrument", "participant", "location",
-    "startTime", "endTime", "actionStatus", "actionProcess", "error", "target",
-    "step", "position", "startDate", "endDate", "category",
-}
-
-# schema.org type names
-SCHEMA_TYPES = {
-    "Person", "Organization", "Place", "GeoShape", "GeoCoordinates",
-    "PropertyValue", "CreativeWork", "DataDownload", "DataCatalog",
-    "ContactPoint", "MonetaryGrant", "FundingAgency", "ResearchProject",
-    "DigitalDocument", "Dataset", "Role", "DefinedTerm", "QuantitativeValue",
-    "PostalAddress", "ImageObject", "WebAPI", "SearchAction", "EntryPoint",
-    "Action", "Collection", "MediaObject", "SoftwareApplication",
-    "SoftwareSourceCode", "Product", "DefinedTermSet",
-}
-
-
-def _prefix_keys(obj, depth=0, assumed=None, unknown=None):
-    """Recursively prefix unprefixed property names: schema.org names -> schema:,
-    everything else unprefixed -> unk: (https://ex.org/unknown/)."""
-    if depth > 25:
-        return obj
-    if isinstance(obj, list):
-        return [_prefix_keys(i, depth + 1, assumed, unknown) for i in obj]
-    if not isinstance(obj, dict):
-        return obj
-    if assumed is None:
-        assumed = set()
-    if unknown is None:
-        unknown = set()
-    result = {}
-    for key, value in obj.items():
-        if key == "@context":
-            result[key] = value  # prefix declarations are not properties
-            continue
-        new_key = key
-        if not key.startswith("@") and ":" not in key and not key.startswith("http"):
-            if key in SCHEMA_PROPS:
-                new_key = "schema:" + key
-            elif key in SCHEMA_TYPES:
-                new_key = "schema:" + key
-                assumed.add(key)
-            else:
-                new_key = UNKNOWN_PREFIX + ":" + key
-                unknown.add(key)
-        result[new_key] = _prefix_keys(value, depth + 1, assumed, unknown)
-    return result
-
-
-def _fix_types(obj):
-    """Recursively normalize @type to arrays with the schema: prefix."""
-    if isinstance(obj, list):
-        return [_fix_types(i) for i in obj]
-    if not isinstance(obj, dict):
-        return obj
-    if "@type" in obj:
-        types = obj["@type"] if isinstance(obj["@type"], list) else [obj["@type"]]
-        type_map = {
-            "FundingAgency": "schema:Organization",
-            "schema:FundingAgency": "schema:Organization",
-            "sc:Dataset": "schema:Dataset",
-            "cr:FileObject": "schema:DataDownload",
-            "Grant": "schema:MonetaryGrant",
-        }
-        normalized = []
-        for t in types:
-            if t in type_map:
-                normalized.append(type_map[t])
-            elif t in SCHEMA_TYPES:
-                normalized.append("schema:" + t)
-            elif ":" not in str(t) and not str(t).startswith("http"):
-                normalized.append(UNKNOWN_PREFIX + ":" + t)
-            else:
-                normalized.append(t)
-        obj["@type"] = normalized
-    for k, v in obj.items():
-        if k != "@type":
-            obj[k] = _fix_types(v)
-    return obj
-
 
 def _extract_persons(obj):
     """Recursively pull Person/Org objects out of @list / Role wrappers."""
@@ -229,31 +128,33 @@ def convert_soso_to_cdif(soso, profile="discovery", source_label=None,
         doc["@context"] = wrap_ctx
     changes = []
 
-    # 1. Prefix property names.
+    # 1. Prefix property names. The source's own @context is read first: it
+    # is replaced in step 2, and it is what says whether an unprefixed name
+    # is schema.org.
+    schema_vocab, terms = source_vocabulary(doc.get("@context", {}))
     assumed, unknown = set(), set()
-    doc = _prefix_keys(doc, assumed=assumed, unknown=unknown)
+    doc = prefix_keys(doc, assumed=assumed, unknown=unknown,
+                      schema_vocab=schema_vocab, terms=terms)
     changes.append("Property names prefixed with schema:")
+    if schema_vocab:
+        changes.append("Unprefixed names resolved as schema.org, which the "
+                       "source @context makes the default vocabulary")
+    if terms:
+        changes.append("Names the source @context defines kept their own IRIs: "
+                       + ", ".join(f"{k} -> {v}" for k, v in sorted(terms.items())))
     if unknown:
         changes.append(f"Unknown properties assigned to unk: ({', '.join(sorted(unknown))})")
 
-    # 2. @context — CDIF prefixes + preserved extras.
-    orig = node.get("@context", {})
-    extra = {}
-    items = orig if isinstance(orig, list) else [orig]
-    for item in items:
-        if isinstance(item, dict):
-            for k, v in item.items():
-                if k not in ("@vocab", "@language", "schema", "dcterms",
-                             "dcat", "prov") and isinstance(v, str):
-                    extra[k] = v
-    ctx = {**CDIF_CONTEXT, **extra}
+    # 2. @context — CDIF prefixes + the source's other prefix declarations
+    # (term aliases were applied in step 1 and are not carried over).
+    ctx = {**CDIF_CONTEXT, **source_prefixes(node.get("@context", {}))}
     if unknown:
         ctx[UNKNOWN_PREFIX] = UNKNOWN_NS
     doc["@context"] = ctx
     changes.append("@context set to CDIF prefix declarations")
 
     # 3. Normalize types.
-    doc = _fix_types(doc)
+    doc = fix_types(doc, schema_vocab, terms)
     changes.append("@type values normalized to arrays with schema:")
 
     # 4. @id from url.
