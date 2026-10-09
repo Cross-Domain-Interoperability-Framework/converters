@@ -28,9 +28,9 @@ the converter and regenerate, or the next run will silently overwrite your edits
 From the root of the `converters` repository:
 
 ```bash
-python harvesters/OHDSI/harvest_ohdsi_to_cdif.py                 # OHDSIMetadata/ -> cdifMetadata/ (provenance on)
-python harvesters/OHDSI/harvest_ohdsi_to_cdif.py --no-provenance # discovery + core only
-python harvesters/OHDSI/harvest_ohdsi_to_cdif.py -i IN -o OUT    # custom dirs
+python OHDSI/harvest_ohdsi_to_cdif.py                 # OHDSIMetadata/ -> cdifMetadata/ (provenance on)
+python OHDSI/harvest_ohdsi_to_cdif.py --no-provenance # discovery + core only
+python OHDSI/harvest_ohdsi_to_cdif.py -i IN -o OUT    # custom dirs
 ```
 
 Dependencies (for the converter): none beyond the Python 3.9+ standard library.

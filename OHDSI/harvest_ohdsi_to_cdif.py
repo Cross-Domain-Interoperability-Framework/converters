@@ -24,9 +24,9 @@ declares cdifProvenance (https://w3id.org/cdif/provenance/1.1). Disable with
 `--no-provenance`.
 
 Usage:
-    python harvesters/OHDSI/harvest_ohdsi_to_cdif.py      # OHDSIMetadata/ -> cdifMetadata/
-    python harvesters/OHDSI/harvest_ohdsi_to_cdif.py -i IN -o OUT
-    python harvesters/OHDSI/harvest_ohdsi_to_cdif.py --no-provenance   # discovery + core only
+    python OHDSI/harvest_ohdsi_to_cdif.py      # OHDSIMetadata/ -> cdifMetadata/
+    python OHDSI/harvest_ohdsi_to_cdif.py -i IN -o OUT
+    python OHDSI/harvest_ohdsi_to_cdif.py --no-provenance   # discovery + core only
 """
 import argparse
 import datetime

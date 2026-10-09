@@ -19,6 +19,7 @@ expose their conversion as an importable function.
 | [`DDI/ddi122_to_cdif.py`](DDI/ddi122_to_cdif.py) | DDI 1.2.2 (ICPSR, source-agnostic) → CDIF | DDI XML |
 | [`DDICodebook/ddi25_to_cdif.py`](DDICodebook/ddi25_to_cdif.py) | DDI Codebook 2.5 (source-agnostic) → CDIF | DDI Codebook XML |
 | [`DDI-CDI/ddicdi_to_cdif.py`](DDI-CDI/ddicdi_to_cdif.py) | DDI-CDI 1.0 → CDIF *(phased; all six phases)* | DDI-CDI XML |
+| [`OHDSI/harvest_ohdsi_to_cdif.py`](OHDSI/harvest_ohdsi_to_cdif.py) | OHDSI gaiaCatalog schema.org records → CDIF core/discovery (+ provenance) | OHDSI gaiaCatalog |
 | [`ROCrate/ConvertToROCrate.py`](ROCrate/ConvertToROCrate.py) | CDIF → RO-Crate 1.2 | RO-Crate |
 | [`ROCrate/ROCrateToCDIF.py`](ROCrate/ROCrateToCDIF.py) | RO-Crate 1.2 → CDIF | RO-Crate |
 | [`ROCrate/ValidateROCrate.py`](ROCrate/ValidateROCrate.py) | RO-Crate structural + SHACL validator | RO-Crate |
@@ -32,7 +33,6 @@ produce. For converting a SOSO file or URL you already have, use `soso2cdif.py`.
 | Path | Source | Notes |
 |------|--------|-------|
 | [`harvesters/geocodes_harvester.py`](harvesters/geocodes_harvester.py) | EarthCube GeoCodes SPARQL catalog → source landing-page JSON-LD → CDIF core/discovery | Moved from the `validation` repo |
-| [`harvesters/OHDSI/harvest_ohdsi_to_cdif.py`](harvesters/OHDSI/harvest_ohdsi_to_cdif.py) | OHDSI gaiaCatalog schema.org records → CDIF core/discovery (+ provenance) | With its corpus: `harvesters/OHDSI/OHDSIMetadata/` (16 source records) → `cdifMetadata/`. Formerly the separate `OHDSI` repo; see [`harvesters/OHDSI/README.md`](harvesters/OHDSI/README.md) |
 
 `geocodes_harvester.py` and `soso/ConvertFromSOSO.py` each carry their own copy
 of the schema.org prefixing step. The harvester's resolves unprefixed names
@@ -179,7 +179,9 @@ mlcroissant validate --jsonld out-croissant.json
 converters/                  (repository root)
 ├── soso2cdif.py             SOSO file/URL -> CDIF (front-end for soso/)
 ├── sssom_engine.py          shared table-driven mapping engine
-├── soso/  croissant/  DCAT/  DDI/  DDICodebook/  DDI-CDI/  ROCrate/   the converters
+├── soso/  croissant/  DCAT/  UMM/  FAIR2/  OHDSI/        the converters
+├── DDI/  DDICodebook/  DDI-CDI/  ROCrate/                 the converters (cont.)
+├── harvesters/              catalogue harvesters (GeoCodes)
 ├── mappings/                SSSOM crosswalk tables for every converter
 └── validation/              git submodule: the CDIF `validation` repo
 ```
@@ -208,6 +210,7 @@ Each holds its converter(s), a `README.md`, and (where useful) mapping docs and 
 | [`DDICodebook/`](DDICodebook/) | `ddi25_to_cdif.py` (a thin DDI Codebook 2.5 shim over the engine), the 2.5 XSD, the `ddi25-additions-cdif-mapping.md` notes, `Examples/`, and `README.md` |
 | [`DDI-CDI/`](DDI-CDI/) | `ddicdi_to_cdif.py` (DDI-CDI 1.0 → CDIF), `Examples/`, and `README.md` |
 | [`FAIR2/`](FAIR2/) | `fair2_to_cdif.py` (FAIR² → CDIF, a FAIR² extension pass over the Croissant converter), the FAIR² specification example and its conversion, and `README.md` |
+| [`OHDSI/`](OHDSI/) | `harvest_ohdsi_to_cdif.py` (OHDSI gaiaCatalog → CDIF), its corpus (`OHDSIMetadata/`, 16 source records, → `cdifMetadata/`), and `README.md`. Formerly the separate `OHDSI` repo |
 | [`ROCrate/`](ROCrate/) | `ConvertToROCrate.py` (CDIF → RO-Crate 1.2), `ROCrateToCDIF.py`, `ValidateROCrate.py` (structural + optional SHACL), example RO-Crate/CDIF records, `requirements.txt`, and `README.md` |
 | [`mappings/`](mappings/) | The SSSOM crosswalk tables (`*.sssom.tsv` + `.yml` sidecars) for every converter path, the alias tables, the compiled `ddi_mappings.json`, the sync scripts (`sync_sssom.py`, `sync_ddi_mappings.py`), `ddiwalk_lib.py`, and `README.md`. See the next section |
 | [`validation/`](validation/) | **git submodule** — the CDIF [`validation`](https://github.com/Cross-Domain-Interoperability-Framework/validation) repo, providing `detect_conformance.py`, the CDIF schemas, the frame, and `tools/`. Run `git submodule update --init` to populate it (see [Setup](#setup)) |
