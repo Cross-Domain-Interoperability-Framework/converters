@@ -21,6 +21,7 @@ Usage:
 import json
 import argparse
 import sys
+import re
 from pathlib import Path
 from pyld import jsonld
 
@@ -466,8 +467,19 @@ def _create_subject_of(result, original_doc, profile):
     that describes the dataset. In CDIF, this maps to schema:subjectOf — a
     catalog record about the dataset.
     """
-    # Don't overwrite if subjectOf already exists
-    if result.get("schema:subjectOf"):
+    # Don't overwrite if subjectOf already exists (a crate made from a CDIF
+    # record carries its catalog record through), but do add the --profile
+    # claim to it: that is what the flag asserts, and keeping only the
+    # source's own claims left --profile core without the core URI.
+    existing = result.get("schema:subjectOf")
+    if existing:
+        if isinstance(existing, dict):
+            claims = existing.get("dcterms:conformsTo") or []
+            claims = claims if isinstance(claims, list) else [claims]
+            uri = CDIF_PROFILES.get(profile, CDIF_PROFILES["core"])
+            if not any((c.get("@id") if isinstance(c, dict) else c) == uri for c in claims):
+                claims.append({"@id": uri})
+            existing["dcterms:conformsTo"] = claims
         return result
 
     # Get the dataset @id from the result
@@ -553,8 +565,28 @@ def _create_subject_of(result, original_doc, profile):
     return result
 
 
+# A schema:additionalType / schema:propertyID value shaped like a URI or CURIE
+# must be an IRI reference ({"@id": ...}), not a string: as a string it is an
+# RDF literal, so "dcat:CatalogRecord" never marks the catalog record. This is
+# the CDIF IRI-lint rule (AdditionalTypeUriShouldBeIRIShape /
+# PropertyIDUriShouldBeIRIShape); free labels such as "MaterialSample" stay
+# strings. A crate made from a CDIF record carries its catalog record through
+# with the type as a plain string, which _create_subject_of does not rebuild.
+_IRI_LIKE = re.compile(r'^[A-Za-z][A-Za-z0-9+.\-]*:[^\s"]+$')
+_IRI_VALUED = ("schema:additionalType", "schema:propertyID")
+
+
+def _as_iri(value):
+    if isinstance(value, list):
+        return [_as_iri(v) for v in value]
+    if isinstance(value, str) and _IRI_LIKE.match(value):
+        return {"@id": value}
+    return value
+
+
 def _normalize(obj):
-    """Post-process: remove nulls, normalize @type to array, ensure array properties."""
+    """Post-process: remove nulls, normalize @type to array, ensure array
+    properties, and make URI-shaped additionalType / propertyID values IRIs."""
     if isinstance(obj, list):
         return [_normalize(item) for item in obj if item is not None]
 
@@ -574,6 +606,9 @@ def _normalize(obj):
             # @type should always be an array
             if key == "@type" and isinstance(new_value, str):
                 new_value = [new_value]
+
+            if key in _IRI_VALUED:
+                new_value = _as_iri(new_value)
 
             # Wrap single values where schema expects arrays
             if key in ARRAY_PROPERTIES and not isinstance(new_value, list):
@@ -673,11 +708,12 @@ Examples:
             if args.schema:
                 schema_path = args.schema
             else:
-                # Per-profile schema lookup. The validation repo holds the
-                # Discovery and Complete validation schemas; the canonical
-                # cdifCore schema lives in the profile-core release repo
-                # (no CDIFCoreSchema.json in the validation repo today).
-                validation_dir = SCRIPT_DIR / ".." / ".." / "validation"
+                # Per-profile schema lookup. The validation repo -- bundled
+                # here as the validation/ submodule -- holds the Discovery and
+                # Complete validation schemas; the canonical cdifCore schema
+                # lives in the profile-core release repo, checked out beside
+                # this one (no CDIFCoreSchema.json in the validation repo today).
+                validation_dir = SCRIPT_DIR / ".." / "validation"
                 profile_core_dir = SCRIPT_DIR / ".." / ".." / "profile-core"
                 schema_filenames = {
                     "core": "cdifCoreStructuredSchema.json",
