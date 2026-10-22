@@ -118,9 +118,9 @@ encoded in the sibling **`ucmism2m`** project
 
 | DDI-CDI | CDIF |
 |---------|------|
-| `WideDataStructure` / `LongDataStructure` / `DimensionalDataStructure` | `cdi:isStructuredBy` → `cdi:<X>DataStructure` (distribution typed `cdi:StructuredDataSet` / `cdi:LongStructureDataSet` / `cdi:DimensionalDataSet`) |
+| `WideDataStructure` / `LongDataStructure` / `DimensionalDataStructure` | `cdi:isStructuredBy` → `cdi:<X>DataStructure` on the distribution (no extra `@type`: `cdi:StructuredDataSet` marks a hierarchical XML/JSON file in CDIF) |
 | `DataStructure_has_DataStructureComponent` → `Identifier`/`Measure`/`Dimension`/`AttributeComponent` | `cdi:has_DataStructureComponent` → `cdi:<Component>` |
-| `DataStructureComponent_isDefinedBy_RepresentedVariable` | `cdif:isDefinedBy_RepresentedVariable` → `{@id}` of the variable |
+| `DataStructureComponent_isDefinedBy_RepresentedVariable` | `cdif:isDefinedBy_Variable` → `{@id}` of the variable |
 | `DataStructure_has_PrimaryKey` | `cdif:has_PrimaryKey` |
 
 `detect_conformance` now adds **`data_structure/1.1`** to the declared profiles.
@@ -197,10 +197,14 @@ A larger `Stata_Example.xml` (2 MB) is available upstream.
 
 ## Validation status
 
-- `cdif_SPSS_Example.json` — **Discovery + DataDescription JSON Schema pass**;
-  Discovery **and Complete** SHACL **0 violations** (warnings advisory:
-  per-variable propertyID, physical data type, contacts). conformsTo:
-  core + discovery + data_description + **data_structure**.
+- `cdif_SPSS_Example.json` — conformsTo core + discovery + data_description +
+  **data_structure**, matching detection. Core and discovery pass (JSON Schema
+  and SHACL). Against metadataBuildingBlocks as of 2026-10-22, data_description
+  and data_structure do **not**: the code lists (`skos:ConceptScheme`) lack the
+  `schema:identifier`, `schema:dateModified` and resolvable `@id` a CDIF code
+  list now requires, four have no `skos:hasTopConcept`, and the value domains and
+  the structure node fail their JSON Schema branches. Checked with
+  `validation/ConformanceValidate.py`.
 - `cdif_Process_Example.json` — **Discovery + Provenance JSON Schema pass**;
   Discovery and Provenance SHACL **0 violations**. conformsTo:
   core + discovery + **provenance** (a pure process/workflow, 0 variables).

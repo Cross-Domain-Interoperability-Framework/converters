@@ -25,8 +25,7 @@ STATUS — phased build toward the "broadest end-to-end" goal. Mapped so far:
                                                -> skos:ConceptScheme/Concept (phase 2, 6)
     ValueAndConceptDescription/classificationLevel -> cdif:classificationLevel(phase 2)
     catalogDetails/title, physicalFileName, recordCount -> discovery enrichment (phase 6)
-  WideDataStructure + components + PrimaryKey -> distribution cdi:*DataSet +
-                                               cdi:isStructuredBy /
+  WideDataStructure + components + PrimaryKey -> distribution cdi:isStructuredBy /
                                                cdi:has_DataStructureComponent  (phase 3)
 
   Activity (Sequence-invoked) + Step/Parameter/Organization/ProductionEnvironment
@@ -82,15 +81,9 @@ COMPONENT_ROLE = {
     "VariableValueComponent": "Measure",
 }
 
-# DDI-CDI DataStructure subtype -> CDIF structured-dataset @type on the distribution.
+# DDI-CDI DataStructure subtypes.
 STRUCTURE_TYPES = ("WideDataStructure", "LongDataStructure",
                    "DimensionalDataStructure", "DataStructure")
-DATASET_TYPE = {
-    "WideDataStructure": "cdi:StructuredDataSet",
-    "DataStructure": "cdi:StructuredDataSet",
-    "LongDataStructure": "cdi:LongStructureDataSet",
-    "DimensionalDataStructure": "cdi:DimensionalDataSet",
-}
 
 
 def local(elem):
@@ -295,16 +288,16 @@ def build_variable(iv, roles, index):
 
 def build_data_structure(objects, index):
     """Map the DDI-CDI DataStructure + its components + primary key to a CDIF
-    cdi:isStructuredBy node. Returns (structure_node, dataset_type) or (None, None).
+    cdi:isStructuredBy node. Returns the node, or None.
 
     DDI-CDI:  <WideDataStructure> has DataStructure_has_DataStructureComponent ->
               <MeasureComponent> isDefinedBy_RepresentedVariable -> <InstanceVariable>
     CDIF:     cdi:<X>DataStructure { cdi:has_DataStructureComponent: [
-                  cdi:<Component> { cdif:isDefinedBy_RepresentedVariable: {@id: var} } ] }
+                  cdi:<Component> { cdif:isDefinedBy_Variable: {@id: var} } ] }
     """
     struct = next((o for o in objects if local(o) in STRUCTURE_TYPES), None)
     if struct is None:
-        return None, None
+        return None
     stype = local(struct)
 
     components = []
@@ -317,7 +310,7 @@ def build_data_structure(objects, index):
         var_id = ref_target(
             child(cobj, "DataStructureComponent_isDefinedBy_RepresentedVariable"))
         if var_id:
-            comp["cdif:isDefinedBy_RepresentedVariable"] = {"@id": as_id(var_id)}
+            comp["cdif:isDefinedBy_Variable"] = {"@id": as_id(var_id)}
         components.append(comp)
 
     node = {"@type": ["cdi:" + stype], "@id": as_id(object_id(struct))}
@@ -328,7 +321,7 @@ def build_data_structure(objects, index):
     if pk_id:
         node["cdif:has_PrimaryKey"] = {"@id": as_id(pk_id)}
 
-    return node, DATASET_TYPE.get(stype, "cdi:StructuredDataSet")
+    return node
 
 
 def _activity_tree(main, index):
@@ -610,11 +603,13 @@ def convert(xml_path, explicit_id=None, base_uri="urn:ddi-cdi", detect=True):
         dist["schema:additionalProperty"] = [{
             "@type": ["schema:PropertyValue"],
             "schema:name": "record count", "schema:value": rc}]
-    # Phase 3 - data structure: type the distribution as a structured dataset and
-    # attach the DDI-CDI DataStructure + components via cdi:isStructuredBy.
-    structure, dataset_type = build_data_structure(objects, index)
+    # Phase 3 - data structure: attach the DDI-CDI DataStructure + components
+    # via cdi:isStructuredBy. No extra @type: data_structure asks only for a
+    # DataDownload with cdi:isStructuredBy, and cdi:StructuredDataSet would be
+    # wrong -- in CDIF it marks a hierarchical (XML/JSON) file whose mappings
+    # are LocatorMappings, not column mappings.
+    structure = build_data_structure(objects, index)
     if structure is not None:
-        dist["@type"] = ["schema:DataDownload", dataset_type]
         dist["cdi:isStructuredBy"] = structure
     # Phase 4 - physical mappings: variable -> column position/format.
     mappings, is_delim, is_fixed = build_physical_mappings(objects, index)

@@ -128,7 +128,7 @@ def build_data_structure(objects, index):
         node = {"@type": ["cdi:" + comp["@type"]], "@id": cid}
         var = comp.get("isDefinedBy_RepresentedVariable")
         if var:
-            node["cdif:isDefinedBy_RepresentedVariable"] = {"@id": var}
+            node["cdif:isDefinedBy_Variable"] = {"@id": var}
         components.append(node)
     node = {"@type": ["cdi:" + struct["@type"]], "@id": struct["@id"]}
     if components:
