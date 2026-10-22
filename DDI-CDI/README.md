@@ -51,6 +51,32 @@ Not carried over: the data sample (`DataPoint` / `InstanceValue`); the
 CDIF's `cdi:nullSequence` holds only one string; the character encoding. The
 source has no date, so `schema:dateModified` is the `1900-01-01` placeholder.
 
+### RepresentedVariables for the CODATA variableindex
+
+[`extract_represented_variables.py`](extract_represented_variables.py) builds one
+`cdi:RepresentedVariable` document per variable that a page of the
+[variableindex](https://ai.codata.org/variableindex) API lists, from the DDI-CDI
+JSON-LD export of that variable's file. The output validates against the
+metadataBuildingBlocks `cdifRepresentedVariable` schema.
+
+```bash
+curl -s "https://ai.codata.org/api/variableindex/data?limit=100&offset=0" -o page.json
+python extract_represented_variables.py Examples/107910_DVN_CWOZTP.jsonLD page.json -o Examples/representedVariables
+```
+
+| DDI-CDI JSON-LD | `cdi:RepresentedVariable` |
+|---|---|
+| `InstanceVariable` name / displayLabel / definition | `cdif:name` / `cdif:displayLabel` / `cdif:definition` |
+| `SubstantiveValueDomain/recommendedDataType` | `cdi:takesSubstantiveValuesFrom` → `cdif:SubstantiveValueDomain` `cdif:recommendedDataType` (`xsd:*`) |
+| `ValueAndConceptDescription/classificationLevel` | … `cdi:isDescribedBy` → `cdi:classificationLevel` |
+
+`Examples/representedVariables/` holds the 100 the index's first page lists, all
+from `V-Dem-CY-Full+Others-v13.csv`. Each `@id` is
+`<export URL>#representedVariable-<name>`, following the export's
+`#instanceVariable-<name>` pattern; the export does not contain these nodes, so
+the `@id` does not yet dereference to them. The export gives no concept links,
+so none carries the `cdif:uses_Concept` the building block's SHACL recommends.
+
 Profile scope is decided **per content** via
 [`detect_conformance`](../validation/detect_conformance.py).
 
