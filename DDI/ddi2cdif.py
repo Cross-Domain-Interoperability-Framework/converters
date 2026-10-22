@@ -11,10 +11,13 @@ Recognised flavors and where they go:
         version (which SSSOM worksheets to apply) is chosen from the sniff --
         a 1.x element set uses the 1.2.2 worksheets, a 2.x set the 2.5 worksheets.
 
-  - DDI-CDI (RDF / JSON-LD)  -> a **separate branch**. The DDI-CDI model is a
-        graph, not a codeBook XML tree, so it needs its own handler; that handler
-        is not implemented yet, and this dispatcher raises a clear error rather
-        than mis-parsing it as Codebook.
+  - DDI-CDI XML  ``<cdi:DDICDIModels>``  -> ``DDI-CDI/ddicdi_to_cdif.py``.
+
+  - DDI-CDI JSON-LD, compact form with a top-level ``DDICDIModels`` list (as the
+        CODATA export writes it)  -> ``DDI-CDI/ddicdi_jsonld_to_cdif.py``.
+        Other RDF / JSON-LD serialisations of DDI-CDI (expanded, ``@graph``,
+        Turtle) need a graph-based reader that is not implemented; this
+        dispatcher raises a clear error rather than mis-parsing them.
 
   - DDI Lifecycle 3.x  ``<DDIInstance>``  -> a different DDI product line from the
         Codebook engine; not supported.
@@ -39,6 +42,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ddi_sssom_to_cdif import convert as _convert_codebook  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / 'DDI-CDI'))
 from ddicdi_to_cdif import convert as _convert_ddicdi_xml  # noqa: E402
+from ddicdi_jsonld_to_cdif import convert as _convert_ddicdi_jsonld  # noqa: E402
 
 
 def _local(tag):
@@ -51,7 +55,8 @@ def _ns(tag):
 
 def sniff_flavor(path):
     """Return the DDI flavor of `path`: 'codebook-1.2.2', 'codebook-2.5',
-    'ddi-cdi', 'ddi-lifecycle-3', or 'unknown'."""
+    'ddi-cdi-xml', 'ddi-cdi-jsonld', 'ddi-cdi', 'ddi-lifecycle-3', or
+    'unknown'."""
     try:
         root = ET.parse(path).getroot()
     except (ET.ParseError, UnicodeDecodeError):
@@ -80,6 +85,8 @@ def sniff_flavor(path):
         doc = json.load(open(path, encoding="utf-8"))
     except Exception:
         return "unknown"
+    if isinstance(doc, dict) and isinstance(doc.get("DDICDIModels"), list):
+        return "ddi-cdi-jsonld"
     blob = json.dumps(doc)
     if '"cdi:' in blob or "DDI-CDI" in blob or "ddialliance.org/Specification/DDI-CDI" in blob:
         return "ddi-cdi"
@@ -128,12 +135,16 @@ def convert(path, explicit_id=None, base_uri="urn:ddi", detect=True):
     if flavor == "ddi-cdi-xml":
         return _convert_ddicdi_xml(path, explicit_id, base_uri="urn:ddi-cdi",
                                    detect=detect)
+    if flavor == "ddi-cdi-jsonld":
+        return _convert_ddicdi_jsonld(path, explicit_id, detect=detect)
     if flavor == "ddi-cdi":
         raise NotImplementedError(
-            "DDI-CDI in its RDF / JSON-LD serialisation detected. The XML "
-            "serialisation is handled by DDI-CDI/ddicdi_to_cdif.py, which this "
-            "dispatcher routes to; the RDF form needs a graph-based reader that "
-            "is not implemented yet.")
+            "DDI-CDI in an RDF / JSON-LD serialisation without a top-level "
+            "DDICDIModels list detected. The XML form and the compact JSON-LD "
+            "form are handled by DDI-CDI/ddicdi_to_cdif.py and "
+            "DDI-CDI/ddicdi_jsonld_to_cdif.py, which this dispatcher routes to; "
+            "other RDF forms need a graph-based reader that is not implemented "
+            "yet.")
     if flavor == "ddi-lifecycle-3":
         raise NotImplementedError(
             "DDI Lifecycle 3.x (<DDIInstance>) detected -- a different DDI "
@@ -173,7 +184,7 @@ def main():
     except (NotImplementedError, ValueError) as e:
         print(f"ddi2cdif: {e}", file=sys.stderr)
         sys.exit(2)
-    if source == "dataverse":
+    if source == "dataverse" and flavor in _CODEBOOK_VERSION:
         print("ddi2cdif: Dataverse export detected -- per-file download URLs are "
               "read from <fileDscr URI=...>. For live file size/checksum "
               "enrichment, use ddi_to_cdif.py --fetch-file-meta.", file=sys.stderr)

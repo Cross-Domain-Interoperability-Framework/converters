@@ -19,6 +19,7 @@ expose their conversion as an importable function.
 | [`DDI/ddi122_to_cdif.py`](DDI/ddi122_to_cdif.py) | DDI 1.2.2 (ICPSR, source-agnostic) → CDIF | DDI XML |
 | [`DDICodebook/ddi25_to_cdif.py`](DDICodebook/ddi25_to_cdif.py) | DDI Codebook 2.5 (source-agnostic) → CDIF | DDI Codebook XML |
 | [`DDI-CDI/ddicdi_to_cdif.py`](DDI-CDI/ddicdi_to_cdif.py) | DDI-CDI 1.0 → CDIF *(phased; all six phases)* | DDI-CDI XML |
+| [`DDI-CDI/ddicdi_jsonld_to_cdif.py`](DDI-CDI/ddicdi_jsonld_to_cdif.py) | DDI-CDI JSON-LD → CDIF | DDI-CDI 1.1beta compact JSON-LD (CODATA export) |
 | [`OHDSI/harvest_ohdsi_to_cdif.py`](OHDSI/harvest_ohdsi_to_cdif.py) | OHDSI gaiaCatalog schema.org records → CDIF core/discovery (+ provenance) | OHDSI gaiaCatalog |
 | [`ROCrate/ConvertToROCrate.py`](ROCrate/ConvertToROCrate.py) | CDIF → RO-Crate 1.2 | RO-Crate |
 | [`ROCrate/ROCrateToCDIF.py`](ROCrate/ROCrateToCDIF.py) | RO-Crate 1.2 → CDIF | RO-Crate |
@@ -85,7 +86,7 @@ The `format → CDIF` converters — **`ConvertFromSOSO.py`** (and `soso2cdif.py
 **`fair2_to_cdif.py`**, and the DDI converters (**`ddi2cdif.py`** and the
 `ddi_sssom_to_cdif.py` engine behind it, **`ddi_to_cdif.py`**,
 **`ddi122_to_cdif.py`**, **`DDICodebook/ddi25_to_cdif.py`**,
-**`DDI-CDI/ddicdi_to_cdif.py`**) — run `detect_conformance` by default and write the detected `conformsTo` into the
+**`DDI-CDI/ddicdi_to_cdif.py`**, **`DDI-CDI/ddicdi_jsonld_to_cdif.py`**) — run `detect_conformance` by default and write the detected `conformsTo` into the
 catalog record. Each takes a **`--static-conformance`** flag that skips detection
 and keeps the converter's built-in default instead (and detection degrades to
 the built-in default automatically if `detect_conformance` or its deps are
@@ -186,7 +187,8 @@ to `mappings/ddi_mappings.json`): study-level metadata → the dataset; `<var>` 
 `DDICodebook/ddi25_to_cdif.py` is a thin 2.5 shim over it, and
 `DDI/ddi_to_cdif.py` a Harvard-Dataverse layer that adds file size, checksum and
 column headers from the Dataverse API. DDI-CDI 1.0 XML goes to
-`DDI-CDI/ddicdi_to_cdif.py`. See [`DDI/README.md`](DDI/README.md).
+`DDI-CDI/ddicdi_to_cdif.py`, and DDI-CDI compact JSON-LD to
+`DDI-CDI/ddicdi_jsonld_to_cdif.py`. See [`DDI/README.md`](DDI/README.md).
 
 ## OHDSI/ — OHDSI gaiaCatalog → CDIF
 
@@ -248,7 +250,7 @@ Each holds its converter(s), a `README.md`, and (where useful) mapping docs and 
 | [`DCAT/`](DCAT/) | `dcat_to_cdif.py` (table-driven DCAT → CDIF), `build_corpus.py` (regression harness), `make_coverage_xlsx.py` + `dcat_profile_coverage.xlsx`, the `dcat-ap-vs-dcat-us.md` comparison, `README.md`, and the corpora: `dcat-examples/` (783 upstream files), `dcatExamplesOK/` (the 239 that describe a `dcat:Dataset`, including the PSDI catalogue), and `cdifOK/` (289 converted CDIF records; the 50 in `cdifOK/psdi/` were made with `dcat_to_cdif.py`, not `build_corpus.py`) |
 | [`DDI/`](DDI/) | The DDI entry point `ddi2cdif.py` (flavor sniff + dispatch), the data-driven engine `ddi_sssom_to_cdif.py`, `ddi122_to_cdif.py` (1.2.2), the Harvard-Dataverse-specific `ddi_to_cdif.py`, `build_ddi_corpus.py`, the DDI Codebook 1.2.2 XSD, `Examples/`, and `README.md` |
 | [`DDICodebook/`](DDICodebook/) | `ddi25_to_cdif.py` (a thin DDI Codebook 2.5 shim over the engine), the 2.5 XSD, the `ddi25-additions-cdif-mapping.md` notes, `Examples/`, and `README.md` |
-| [`DDI-CDI/`](DDI-CDI/) | `ddicdi_to_cdif.py` (DDI-CDI 1.0 → CDIF), `Examples/`, and `README.md` |
+| [`DDI-CDI/`](DDI-CDI/) | `ddicdi_to_cdif.py` (DDI-CDI 1.0 XML → CDIF), `ddicdi_jsonld_to_cdif.py` (DDI-CDI JSON-LD → CDIF), `Examples/`, and `README.md` |
 | [`UMM/`](UMM/) | `umm_to_cdif.py` (NASA CMR UMM-C → CDIF), the UMM-C and UMM-Var JSON Schemas under `schemas/`, example CMR records and their CDIF conversions under `examples/`, and `README.md` |
 | [`FAIR2/`](FAIR2/) | `fair2_to_cdif.py` (FAIR² → CDIF, a FAIR² extension pass over the Croissant converter), the FAIR² specification example and its conversion, and `README.md` |
 | [`OHDSI/`](OHDSI/) | `harvest_ohdsi_to_cdif.py` (OHDSI gaiaCatalog → CDIF), its corpus (`OHDSIMetadata/`, 16 source records, → `cdifMetadata/`), the `check_ohdsi_mappings.py` drift-checker, `README.md` and `AGENTS.md`. Formerly the separate `OHDSI` repo |

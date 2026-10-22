@@ -14,8 +14,42 @@ python ddicdi_to_cdif.py input.xml --id https://catalog.example/dataset/123
 `../DDI/ddi2cdif.py` also routes here: it sniffs a `<cdi:DDICDIModels>` root as
 `ddi-cdi-xml` and calls this converter, producing byte-identical output. Use the
 front door when you do not know the flavor up front, this script when you do.
-The **RDF / JSON-LD** serialisation of DDI-CDI is a different reader and is not
-implemented; the dispatcher refuses it with a message saying so.
+The **JSON-LD** serialisation has its own reader,
+[`ddicdi_jsonld_to_cdif.py`](ddicdi_jsonld_to_cdif.py) (below); the dispatcher
+sniffs a JSON document with a top-level `DDICDIModels` list as `ddi-cdi-jsonld`
+and routes it there. Other RDF / JSON-LD forms are still refused.
+
+## DDI-CDI JSON-LD → CDIF
+
+[`ddicdi_jsonld_to_cdif.py`](ddicdi_jsonld_to_cdif.py) reads the compact JSON-LD
+form (DDI-CDI 1.1beta context) written by the CODATA export
+(`https://ai.codata.org/export`): a Dublin Core / PROV header for one data file,
+plus a flat `DDICDIModels` list of objects linked by local `#…` ids. It reads
+the objects as plain JSON, indexed by `@id`, and reuses the XML converter's
+role and structure-type tables.
+
+```bash
+python ddicdi_jsonld_to_cdif.py Examples/107910_DVN_CWOZTP.jsonLD -o Examples/cdif/cdif_107910_DVN_CWOZTP.json
+```
+
+| DDI-CDI JSON-LD | CDIF |
+|---------|------|
+| header `dct:title` / `description` / `license` / `language` / `identifier` | `schema:name` / `description` / `license` / `inLanguage` / `identifier` |
+| header `dct:isPartOf` | `schema:isPartOf` (the Dataverse dataset DOI) |
+| header `prov:wasDerivedFrom` | `prov:wasDerivedFrom`, and the distribution's `schema:contentUrl` |
+| header `schema:contentSize` / `schema:checksum` | distribution `schema:contentSize` / `spdx:checksum` |
+| `InstanceVariable` name, `definition` (when it is not just the name) | `schema:variableMeasured` `schema:name` / `schema:description` |
+| `SubstantiveValueDomain/recommendedDataType` | variable `cdif:physicalDataType` (the `xsd:` IRI) |
+| `ValueAndConceptDescription/classificationLevel` | `cdi:classificationLevel` |
+| `MeasureComponent` etc. `isDefinedBy_RepresentedVariable` | `cdif:role` |
+| `TabularTextDataSet` `isDelimited` / `delimiter` / `hasHeader` / `headerRowCount` / `recordCount` | distribution `cdi:TabularTextDataSet` properties; `countRows` / `countColumns` |
+| `TextMapping` + `PhysicalMappingPosition` | `cdif:hasPhysicalMapping` (`cdif:TextMapping`: index, format, `physicalDataType`, `maximumLength`) |
+| `WideDataStructure` + components + `ComponentPosition` | `cdi:isStructuredBy` |
+
+Not carried over: the data sample (`DataPoint` / `InstanceValue`); the
+`nullSequence` list, which the export writes identically on every column and
+CDIF's `cdi:nullSequence` holds only one string; the character encoding. The
+source has no date, so `schema:dateModified` is the `1900-01-01` placeholder.
 
 Profile scope is decided **per content** via
 [`detect_conformance`](../validation/detect_conformance.py).

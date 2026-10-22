@@ -21,7 +21,8 @@ The DDI landscape it dispatches over is **three peers**:
 |------|---------|
 | **DDI Codebook** (1.2.2 **and** 2.5 — one product line, 2.5 ⊇ 1.2.2) | the data-driven engine below, version auto-chosen (`1.x → --version 122`, `2.x → 25`) |
 | **DDI-CDI** — **XML** (`<cdi:DDICDIModels>`) | routed to [`../DDI-CDI/ddicdi_to_cdif.py`](../DDI-CDI/ddicdi_to_cdif.py); the dispatcher's output is identical to calling that converter directly |
-| **DDI-CDI** — RDF / JSON-LD | a *separate* graph-based branch — not implemented; the dispatcher raises a clear error rather than mis-reading it as Codebook |
+| **DDI-CDI** — compact **JSON-LD** (top-level `DDICDIModels` list, as the CODATA export writes it) | routed to [`../DDI-CDI/ddicdi_jsonld_to_cdif.py`](../DDI-CDI/ddicdi_jsonld_to_cdif.py) |
+| **DDI-CDI** — other RDF / JSON-LD forms | a *separate* graph-based branch — not implemented; the dispatcher raises a clear error rather than mis-reading it as Codebook |
 | **DDI Lifecycle 3.x** (`<DDIInstance>`) | a different product line — not supported |
 
 Source-specific variants are **not** dispatched here: [`ddi_to_cdif.py`](ddi_to_cdif.py)
