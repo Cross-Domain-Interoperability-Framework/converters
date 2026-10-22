@@ -42,8 +42,7 @@ import json
 import sys
 from pathlib import Path
 
-from ddicdi_to_cdif import (CDI_CTX, COMPONENT_ROLE, DATASET_TYPE,
-                            STRUCTURE_TYPES, _HAVE_DETECT)
+from ddicdi_to_cdif import CDI_CTX, COMPONENT_ROLE, STRUCTURE_TYPES, _HAVE_DETECT
 if _HAVE_DETECT:
     from detect_conformance import detect_conformance, apply_conformance
 
@@ -117,7 +116,7 @@ def build_role_map(objects):
 def build_data_structure(objects, index):
     struct = next(iter(by_type(objects, *STRUCTURE_TYPES)), None)
     if struct is None:
-        return None, None
+        return None
     order = position_map(objects, "ComponentPosition")
     comp_ids = sorted(as_list(struct.get("has_DataStructureComponent")),
                       key=lambda c: order.get(c, 1_000_000))
@@ -137,7 +136,7 @@ def build_data_structure(objects, index):
     pk = struct.get("has_PrimaryKey")
     if pk:
         node["cdif:has_PrimaryKey"] = {"@id": pk}
-    return node, DATASET_TYPE.get(struct["@type"], "cdi:StructuredDataSet")
+    return node
 
 
 def build_physical_mappings(objects, index):
@@ -213,9 +212,12 @@ def build_distribution(header, objects, index, nvars):
         if counts:
             dist["schema:additionalProperty"] = counts
 
-    structure, dataset_type = build_data_structure(objects, index)
+    # The structure needs no extra @type: data_structure asks only for a
+    # DataDownload with cdi:isStructuredBy. cdi:StructuredDataSet would be wrong
+    # here -- in CDIF it marks a hierarchical (XML/JSON) file whose mappings are
+    # LocatorMappings, not a delimited file with TextMappings.
+    structure = build_data_structure(objects, index)
     if structure is not None:
-        dist["@type"].append(dataset_type)
         dist["cdi:isStructuredBy"] = structure
     mappings = build_physical_mappings(objects, index)
     if mappings:
