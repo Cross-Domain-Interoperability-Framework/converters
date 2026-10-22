@@ -85,6 +85,11 @@ COMPONENT_ROLE = {
 STRUCTURE_TYPES = ("WideDataStructure", "LongDataStructure",
                    "DimensionalDataStructure", "DataStructure")
 
+# What the dataset and its code lists carry when DDI-CDI gives no value: the
+# instance has no dates and no licence, and CDIF requires both.
+NIL_MISSING = "http://www.opengis.net/def/nil/OGC/0/missing"
+UNKNOWN_DATE = "1900-01-01"
+
 
 def local(elem):
     tag = elem.tag
@@ -180,12 +185,28 @@ def build_role_map(objects):
 
 def build_concept_scheme(codelist, index):
     """Map a DDI-CDI CodeList (CodeList_has_Code -> Code -> Category + Notation)
-    to a CDIF skos:ConceptScheme with skos:Concept entries."""
-    scheme_id = as_id(object_id(codelist))
+    to a CDIF codelist: a skos:ConceptScheme with skos:Concept entries.
+
+    CDIF requires a codelist to carry an identifier, a label, a modification
+    date, a licence and at least one concept. The identifier is the CodeList's
+    DDI identifier triple as a DDI URN (urn:ddi:<agency>:<id>:<version>); the
+    label is its name (DDI-CDI often names it after its own #id). DDI-CDI gives
+    no date or licence, so those take the same unknown values as the dataset.
+    Returns None for a CodeList with no codes -- an enumeration of nothing.
+    """
+    data_id = object_id(codelist)
+    scheme_id = as_id(data_id)
     scheme = {"@type": ["skos:ConceptScheme"], "@id": scheme_id}
+    ddi_id = child(child(codelist, "identifier"), "ddiIdentifier")
+    agency = text_at(ddi_id, "registrationAuthorityIdentifier")
+    version = text_at(ddi_id, "versionIdentifier")
+    local_id = data_id.lstrip("#")
+    scheme["schema:identifier"] = (f"urn:ddi:{agency}:{local_id}:{version}"
+                                   if agency and version else local_id)
     label = text_at(codelist, "name", "name")
-    if label and not label.startswith("#"):
-        scheme["skos:prefLabel"] = label
+    scheme["skos:prefLabel"] = label.lstrip("#") if label else local_id
+    scheme["schema:dateModified"] = UNKNOWN_DATE
+    scheme["schema:license"] = [NIL_MISSING]
 
     concepts = []
     for rel in children_named(codelist, "CodeList_has_Code"):
@@ -205,8 +226,9 @@ def build_concept_scheme(codelist, index):
         if prefl:
             concept["skos:prefLabel"] = prefl
         concepts.append(concept)
-    if concepts:
-        scheme["skos:hasTopConcept"] = concepts
+    if not concepts:
+        return None
+    scheme["skos:hasTopConcept"] = concepts
     return scheme
 
 
@@ -266,7 +288,8 @@ def build_variable(iv, roles, index):
     for codelist, vtype, level in value_domains(iv, index):
         if vtype == "substantive" and level:
             vm["cdi:classificationLevel"] = level
-        if codelist is None:
+        scheme = build_concept_scheme(codelist, index) if codelist is not None else None
+        if scheme is None:
             continue
         substantive = vtype == "substantive"
         domain = {
@@ -274,7 +297,7 @@ def build_variable(iv, roles, index):
                       else "cdif:SentinelValueDomain"],
             "cdif:takesValuesFrom": {
                 "@type": ["cdif:EnumerationDomain"],
-                "cdif:references": build_concept_scheme(codelist, index),
+                "cdif:references": scheme,
             },
         }
         if substantive:
@@ -317,11 +340,43 @@ def build_data_structure(objects, index):
     if components:
         node["cdi:has_DataStructureComponent"] = components
 
-    pk_id = ref_target(child(struct, "DataStructure_has_PrimaryKey"))
-    if pk_id:
-        node["cdif:has_PrimaryKey"] = {"@id": as_id(pk_id)}
+    key = build_primary_key(index.get(ref_target(
+        child(struct, "DataStructure_has_PrimaryKey"))), index)
+    if key is not None:
+        node["cdif:has_PrimaryKey"] = key
 
     return node
+
+
+def build_primary_key(pk, index):
+    """Map a DDI-CDI PrimaryKey to an inline cdif:Key (cdif:has_PrimaryKey takes
+    the Key itself, not a reference to it).
+
+    DDI-CDI:  PrimaryKey isComposedOf -> PrimaryKeyComponent correspondsTo ->
+              DataStructureComponent isDefinedBy_RepresentedVariable -> variable
+    CDIF:     cdif:Key { cdif:isComposedOf: [ cdi:ComponentPosition
+                  { cdi:indexes: {@id: variable}, cdi:value: 1-based position } ] }
+
+    Positions follow the order of the PrimaryKeyComponents in the source.
+    Returns None when no component resolves to a variable.
+    """
+    if pk is None:
+        return None
+    positions = []
+    for rel in children_named(pk, "PrimaryKey_isComposedOf_PrimaryKeyComponent"):
+        pkc = index.get(ref_target(rel))
+        comp = index.get(ref_target(
+            child(pkc, "PrimaryKeyComponent_correspondsTo_DataStructureComponent")))
+        var_id = ref_target(
+            child(comp, "DataStructureComponent_isDefinedBy_RepresentedVariable"))
+        if var_id:
+            positions.append({"@type": ["cdi:ComponentPosition"],
+                              "cdi:indexes": {"@id": as_id(var_id)},
+                              "cdi:value": len(positions) + 1})
+    if not positions:
+        return None
+    return {"@type": ["cdif:Key"], "@id": as_id(object_id(pk)),
+            "cdif:isComposedOf": positions}
 
 
 def _activity_tree(main, index):
@@ -585,8 +640,8 @@ def convert(xml_path, explicit_id=None, base_uri="urn:ddi-cdi", detect=True):
         "schema:name": name,
         "schema:identifier": {"@type": ["schema:PropertyValue"],
                               "schema:value": iri.split(":")[-1]},
-        "schema:dateModified": "1900-01-01",
-        "schema:license": ["http://www.opengis.net/def/nil/OGC/0/missing"],
+        "schema:dateModified": UNKNOWN_DATE,
+        "schema:license": [NIL_MISSING],
     }
     if variables:
         doc["schema:variableMeasured"] = variables

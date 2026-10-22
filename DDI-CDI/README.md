@@ -121,7 +121,7 @@ encoded in the sibling **`ucmism2m`** project
 | `WideDataStructure` / `LongDataStructure` / `DimensionalDataStructure` | `cdi:isStructuredBy` → `cdi:<X>DataStructure` on the distribution (no extra `@type`: `cdi:StructuredDataSet` marks a hierarchical XML/JSON file in CDIF) |
 | `DataStructure_has_DataStructureComponent` → `Identifier`/`Measure`/`Dimension`/`AttributeComponent` | `cdi:has_DataStructureComponent` → `cdi:<Component>` |
 | `DataStructureComponent_isDefinedBy_RepresentedVariable` | `cdif:isDefinedBy_Variable` → `{@id}` of the variable |
-| `DataStructure_has_PrimaryKey` | `cdif:has_PrimaryKey` |
+| `DataStructure_has_PrimaryKey` → `PrimaryKeyComponent` → component → variable | `cdif:has_PrimaryKey` → inline `cdif:Key` (`cdif:isComposedOf` → `cdi:ComponentPosition` with `cdi:indexes` the variable, `cdi:value` its 1-based position) |
 
 `detect_conformance` now adds **`data_structure/1.1`** to the declared profiles.
 
@@ -132,6 +132,9 @@ encoded in the sibling **`ucmism2m`** project
 | `InstanceVariable` -takesSubstantiveValuesFrom-> `SubstantiveValueDomain` | `cdi:takesSubstantiveValuesFrom` → `cdif:SubstantiveValueDomain` (on the variable) |
 | `SubstantiveValueDomain` -takesValuesFrom-> `EnumerationDomain`/`CodeList` | `cdif:takesValuesFrom` → `cdif:EnumerationDomain` → `cdif:references` → `skos:ConceptScheme` |
 | `CodeList_has_Code` → `Code` -denotes-> `Category`, -uses-> `Notation` | `skos:hasTopConcept` → `skos:Concept` (`skos:notation` = notation, `skos:prefLabel` = category label) |
+| `CodeList` identifier triple / `name` | `schema:identifier` (DDI URN `urn:ddi:<agency>:<id>:<version>`) / `skos:prefLabel` (the name, leading `#` dropped) |
+| _(no date or licence in DDI-CDI)_ | `schema:dateModified` `1900-01-01` and `schema:license` OGC `nil/missing`, the dataset's unknown values — CDIF requires both on a code list |
+| `CodeList` with no codes | not emitted (a CDIF code list needs at least one concept); the variable keeps its `cdi:classificationLevel` |
 | `ValueAndConceptDescription/classificationLevel` (Nominal/Continuous/…) | `cdi:classificationLevel` |
 
 Coded (Nominal) variables get their full concept list (e.g. `maritalb`:
@@ -173,7 +176,8 @@ Lights up `Process_Example_CDI.xml` (58 steps, 13 inputs, agent, environment) �
 The two domains hang off different properties —
 `cdi:takesSubstantiveValuesFrom` and `cdi:takesSentinelValuesFrom` — so each
 variable can list *both*, and which is which is in the property name — e.g.
-Continuous `nwspol` has an empty substantive list but a 3-code sentinel list
+Continuous `nwspol` has no substantive code list (DDI-CDI gives it an empty one,
+which is not carried over) but a 3-code sentinel list
 (Refusal / Don't know / No answer). This follows the CDIF value-domain guidance in
 [profile-datadescription#1](https://github.com/Cross-Domain-Interoperability-Framework/profile-datadescription/issues/1#issuecomment-5255033824):
 substantive always, sentinel when the source distinguishes it, so a processor need
@@ -198,13 +202,13 @@ A larger `Stata_Example.xml` (2 MB) is available upstream.
 ## Validation status
 
 - `cdif_SPSS_Example.json` — conformsTo core + discovery + data_description +
-  **data_structure**, matching detection. Core and discovery pass (JSON Schema
-  and SHACL). Against metadataBuildingBlocks as of 2026-10-22, data_description
-  and data_structure do **not**: the code lists (`skos:ConceptScheme`) lack the
-  `schema:identifier`, `schema:dateModified` and resolvable `@id` a CDIF code
-  list now requires, four have no `skos:hasTopConcept`, and the value domains and
-  the structure node fail their JSON Schema branches. Checked with
-  `validation/ConformanceValidate.py`.
+  **data_structure**, matching detection. Against metadataBuildingBlocks as of
+  2026-10-22: SHACL **0 violations** for all four (`validation/ConformanceValidate.py
+  --no-schema`), and the Discovery, DataDescription and DataStructure JSON Schemas
+  pass when framed with `validation/CDIF-frame-2026.jsonld`
+  (`validation/tools/FrameAndValidate.py`). `ConformanceValidate.py`'s own JSON
+  Schema pass reports the value domains as failing: its compaction context has
+  no `cdif:` prefix, so `cdif:` terms reach the schema as full IRIs.
 - `cdif_Process_Example.json` — **Discovery + Provenance JSON Schema pass**;
   Discovery and Provenance SHACL **0 violations**. conformsTo:
   core + discovery + **provenance** (a pure process/workflow, 0 variables).
