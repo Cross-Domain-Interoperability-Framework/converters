@@ -14,7 +14,7 @@ This converter enables DCAT catalog records to be consumed by CDIF-aware tools b
 |---|---|
 | [`dcat-examples/`](dcat-examples/) | 783 upstream files — DCAT-AP, its extensions and national derivatives, DCAT-US 3.0 and 1.1/POD, CKAN fixtures. Mixed purpose: catalogs, data services, vocabularies, SHACL shapes, fragments. |
 | [`dcatExamplesOK/`](dcatExamplesOK/) | The 238 of those that actually **describe a `dcat:Dataset`**, selected structurally (rdflib for RDF; POD JSON matched on its `dataset` array), plus `psdi/`: the PSDI Resource Catalogue (one DCAT JSON-LD catalog, 50 datasets). |
-| [`cdifOK/`](cdifOK/) | 289 CDIF records: 239 converted from the upstream examples by [`build_corpus.py`](build_corpus.py), and the 50 in `cdifOK/psdi/` made directly with `dcat_to_cdif.py` (see [PSDI](#example-psdi-resource-catalogue)). All are CDIF-core conformant and validate against CoreDiscovery. |
+| [`cdifOK/`](cdifOK/) | 289 CDIF records: 239 converted from the upstream examples by [`build_corpus.py`](build_corpus.py), and the 50 in `cdifOK/psdi/` made directly with `dcat_to_cdif.py` (see [PSDI](#example-psdi-resource-catalogue)). All are CDIF-core conformant, 47 of them discovery too, and each validates against the profile it declares. |
 
 Each has a `README.md` and an `INDEX.json` recording provenance.
 

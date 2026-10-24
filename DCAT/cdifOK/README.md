@@ -18,18 +18,26 @@ rewrites it with its own naming for them, so restore those entries along with
 ```
 157 logical examples -> 239 records
    79 merged from more than one serialization
-  239 conformant  (core/1.1 + discovery/1.1)
+  239 conformant  (47 core/1.1 + discovery/1.1, 192 core/1.1 only)
     0 -frag       (content does not meet core)
 
   0 source properties that reach no record
 ```
 
+Discovery is claimed only by a record that uses one of its enrichment
+properties (`measurementTechnique`, `variableMeasured`, `spatialCoverage`,
+`temporalCoverage`, `hasQualityMeasurement`), the rule `detect_conformance`
+follows since validation 512ee58; most DCAT records carry none of them. The 50
+`psdi/` records are core only.
+
 Loss and the JSON Schema check are run by every rebuild — see **Regenerating**
-below. As of the 2026-10-09 build, no source property is lost and no conformant
-record fails the CoreDiscovery schema. Both checks read `metadataBuildingBlocks`
-from a checkout beside this repo. The SHACL check is opt-in (`--shacl`) and was
-not re-run for that build: the [SHACL](#shacl) figures below date from an
-earlier build (90 conformant / 149 fragments).
+below. As of the 2026-10-24 build, no source property is lost and no conformant
+record fails the schema of the profile it declares. Both checks read
+`metadataBuildingBlocks` from a checkout beside this repo. The opt-in SHACL
+check (`--shacl`) was run for that build: 11 of 289 records have a Violation,
+all "If a schema:EntryPoint carries schema:url, it must resolve over http(s)",
+the same as before it; the per-message [SHACL](#shacl) figures below date from
+an earlier build (90 conformant / 149 fragments).
 
 ## `-frag`
 
@@ -159,12 +167,13 @@ third on request:
   or preserved verbatim. Comparison is on IRIs, resolving each record's own
   `@context`, because the converter mints a prefix for any vocabulary it passes
   through — HealthDCAT-AP arrives as `health:analytics`, not as the source IRI.
-- **schema** — every conformant record validates against the CoreDiscovery
-  profile. Fragments are expected to fail and are counted separately; a
-  *non*-fragment that fails means conformance was detected for content the
-  schema rejects.
-- **SHACL** (`--shacl`, opt-in) — every conformant record against the
-  CoreDiscovery shapes. Opt-in because it is slow and needs pyshacl plus
+- **schema** — every conformant record validates against the profile it
+  declares: the CoreDiscovery composite when it claims discovery, `cdifCore`
+  when it claims only core. Fragments are expected to fail and are counted
+  separately; a *non*-fragment that fails means conformance was detected for
+  content the schema rejects.
+- **SHACL** (`--shacl`, opt-in) — every conformant record against the shapes of
+  the profile it declares, chosen the same way. Opt-in because it is slow and needs pyshacl plus
   `metadataBuildingBlocks` beside this repo: the composite's own `rules.shacl`
   is **not self-contained**, so the bundle has to be assembled by following the
   `$ref` graph first. `build_corpus.py` shells out to that repo's
