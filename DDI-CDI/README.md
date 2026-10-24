@@ -203,12 +203,8 @@ A larger `Stata_Example.xml` (2 MB) is available upstream.
 
 - `cdif_SPSS_Example.json` — conformsTo core + discovery + data_description +
   **data_structure**, matching detection. Against metadataBuildingBlocks as of
-  2026-10-22: SHACL **0 violations** for all four (`validation/ConformanceValidate.py
-  --no-schema`), and the Discovery, DataDescription and DataStructure JSON Schemas
-  pass when framed with `validation/CDIF-frame-2026.jsonld`
-  (`validation/tools/FrameAndValidate.py`). `ConformanceValidate.py`'s own JSON
-  Schema pass reports the value domains as failing: its compaction context has
-  no `cdif:` prefix, so `cdif:` terms reach the schema as full IRIs.
+  2026-10-23: JSON Schema and SHACL pass for all four, **0 violations**
+  (`validation/ConformanceValidate.py`).
 - `cdif_Process_Example.json` — **Discovery + Provenance JSON Schema pass**;
   Discovery and Provenance SHACL **0 violations**. conformsTo:
   core + discovery + **provenance** (a pure process/workflow, 0 variables).
