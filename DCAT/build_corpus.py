@@ -38,9 +38,11 @@ made table-driven:
          mapped through the table, rewritten by the alias table, or preserved
          verbatim. A property that is neither is one the converter dropped.
 
-  schema every record validates against the CoreDiscovery profile, or is a
-         fragment. Fragments are expected to fail; a NON-fragment that fails
-         means conformance was detected for content the schema rejects.
+  schema every record validates against the profile it declares -- the
+         CoreDiscovery composite when it claims discovery, cdifCore when it
+         claims only core -- or is a fragment. Fragments are expected to fail;
+         a NON-fragment that fails means conformance was detected for content
+         the schema rejects.
 
 Usage:
     python build_corpus.py                 # rebuild and verify
@@ -151,6 +153,21 @@ def declared(record):
             if isinstance(c, dict) and c.get("@id")]
 
 
+# The metadataBuildingBlocks profile a record is verified against. Discovery is
+# detected by USE of its enrichment properties (validation 512ee58), so a record
+# without them declares only core and must be checked against core, not the
+# CoreDiscovery composite. A fragment declares nothing and keeps CoreDiscovery:
+# it is expected to fail either way.
+DISCOVERY = "https://w3id.org/cdif/discovery/1.1"
+PROFILE_BLOCKS = {"CoreDiscovery": "profiles/cdifCompositeProfile/CoreDiscovery",
+                  "cdifCore": "profiles/cdifProfile/cdifCore"}
+
+
+def profile_block(record):
+    claims = declared(record)
+    return "cdifCore" if claims and DISCOVERY not in claims else "CoreDiscovery"
+
+
 # ---------------------------------------------------------------------------
 # verification
 # ---------------------------------------------------------------------------
@@ -253,19 +270,21 @@ def check_loss(graph, records, context):
     return missing
 
 
-def check_schema(records, validator):
-    """(record, [messages]) for every record that does not validate."""
+def check_schema(records, validators):
+    """(record, [messages]) for every record that does not validate against
+    the profile it declares (validators: profile_block name -> validator)."""
     bad = []
     for name, record in records:
-        errors = [e.message for e in validator.iter_errors(record)]
+        errors = [e.message for e in validators[profile_block(record)].iter_errors(record)]
         if errors:
             bad.append((name, errors))
     return bad
 
 
 
-def shacl_bundle(cache):
-    """The assembled CoreDiscovery shapes graph, or None with a reason.
+def shacl_bundle(cache, block="CoreDiscovery"):
+    """The assembled shapes graph for a PROFILE_BLOCKS profile, or None with a
+    reason.
 
     The composite's own rules.shacl is NOT self-contained: it references shapes
     defined in the building blocks it composes, so pyshacl over that one file
@@ -280,7 +299,7 @@ def shacl_bundle(cache):
     if not emitter.exists():
         return None, "metadataBuildingBlocks not beside this repo (%s)" % mbb
     if not cache.exists():
-        target = mbb / "_sources/profiles/cdifCompositeProfile/CoreDiscovery"
+        target = mbb / "_sources" / PROFILE_BLOCKS[block]
         proc = subprocess.run(
             [sys.executable, str(emitter), str(target), "--emit-shapes", str(cache)],
             capture_output=True, text=True, cwd=str(mbb))
@@ -296,7 +315,9 @@ def shacl_bundle(cache):
 
 
 def check_shacl(index, out_root, shapes):
-    """(conformant with a Violation, fragments with one, warning messages)."""
+    """(conformant with a Violation, fragments with one, warning messages).
+    `shapes` maps a profile_block name to its shapes graph; each record is
+    checked against the profile it declares."""
     import rdflib
     from pyshacl import validate
     SH = rdflib.Namespace("http://www.w3.org/ns/shacl#")
@@ -306,8 +327,10 @@ def check_shacl(index, out_root, shapes):
         kind = "fragment" if entry["fragment"] else "conformant"
         data = rdflib.Graph()
         try:
-            data.parse(str(out_root / entry["cdif"]), format="json-ld")
-            _, report, _ = validate(data, shacl_graph=shapes, advanced=True,
+            path = out_root / entry["cdif"]
+            block = profile_block(json.loads(path.read_text(encoding="utf-8")))
+            data.parse(str(path), format="json-ld")
+            _, report, _ = validate(data, shacl_graph=shapes[block], advanced=True,
                                     inference="none")
         except Exception:
             continue
@@ -462,16 +485,16 @@ def main():
         print("\n=== schema: records that do not validate ===")
         try:
             from jsonschema import Draft202012Validator
-            schema_path = (HERE / ".." / ".." / "metadataBuildingBlocks"
-                           / "_sources" / "profiles" / "cdifCompositeProfile"
-                           / "CoreDiscovery" / "resolvedSchema.json").resolve()
-            validator = Draft202012Validator(
-                json.loads(schema_path.read_text(encoding="utf-8")))
+            sources = (HERE / ".." / ".." / "metadataBuildingBlocks" / "_sources").resolve()
+            validators = {
+                block: Draft202012Validator(json.loads(
+                    (sources / rel / "resolvedSchema.json").read_text(encoding="utf-8")))
+                for block, rel in PROFILE_BLOCKS.items()}
         except Exception as exc:
             print("  skipped (%s)" % exc)
         else:
             frag = {e["cdif"] for e in index if e["fragment"]}
-            bad = check_schema(records, validator)
+            bad = check_schema(records, validators)
             bad_conformant = [(n, m) for n, m in bad if n not in frag]
             print("  fragments failing (expected)      : %d"
                   % sum(1 for n, _ in bad if n in frag))
@@ -485,9 +508,15 @@ def main():
 
         if args.shacl:
             print("")
-            print("=== SHACL: CoreDiscovery shapes ===")
-            cache = HERE / ".shacl-coreDiscovery.ttl"
-            shapes, why = shacl_bundle(cache)
+            print("=== SHACL: shapes of each record's declared profile ===")
+            shapes, why = {}, None
+            for block, cache_name in (("CoreDiscovery", ".shacl-coreDiscovery.ttl"),
+                                      ("cdifCore", ".shacl-cdifCore.ttl")):
+                graph, reason = shacl_bundle(HERE / cache_name, block)
+                if graph is None:
+                    shapes, why = None, "%s: %s" % (block, reason)
+                    break
+                shapes[block] = graph
             if shapes is None:
                 print("  skipped (%s)" % why)
             else:
