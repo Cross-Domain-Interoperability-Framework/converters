@@ -1,0 +1,237 @@
+{
+  "@type": "Dataset",
+  "_id": "figshare_11302595",
+  "_ignored": [
+    "all.keyword"
+  ],
+  "_score": 4.8334117,
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Nawaz, Ahmad Ahsan"
+    },
+    {
+      "@type": "Person",
+      "name": "Urbanska, Marta"
+    },
+    {
+      "@type": "Person",
+      "name": "Herbig, Maik"
+    },
+    {
+      "@type": "Person",
+      "name": "Nötzel, Martin"
+    },
+    {
+      "@type": "Person",
+      "name": "Kräter, Martin"
+    },
+    {
+      "@type": "Person",
+      "name": "Rosendahl, Philipp"
+    },
+    {
+      "@type": "Person",
+      "name": "Herold, Christoph"
+    },
+    {
+      "@type": "Person",
+      "name": "Töpfner, Nicole"
+    },
+    {
+      "@type": "Person",
+      "name": "Kubankova, Marketa"
+    },
+    {
+      "@type": "Person",
+      "name": "Goswami, Ruchi"
+    },
+    {
+      "@type": "Person",
+      "name": "Abuhattum, Shada"
+    },
+    {
+      "@type": "Person",
+      "name": "Reichel, Felix"
+    },
+    {
+      "@type": "Person",
+      "name": "Müller, Paul"
+    },
+    {
+      "@type": "Person",
+      "name": "Taubenberger, Anna"
+    },
+    {
+      "@type": "Person",
+      "name": "Girardo, Salvatore"
+    },
+    {
+      "@type": "Person",
+      "name": "Jacobi, Angela"
+    },
+    {
+      "@type": "Person",
+      "name": "Guck, Jochen"
+    }
+  ],
+  "date": "2019-12-03",
+  "dateModified": "2019-12-03",
+  "datePublished": "2019-12-03",
+  "description": "This dataset contains results presented in \nNawaz, Urbanska, Herbig et al ‘Intelligent image-based deformation-assisted cell sorting with molecular specificity’ Nat Methods 17, 595–599 (2020)\nhttps://doi.org/10.1038/s41592-020-0831-y \n(preprint available at https://doi.org/10.1101/862227)\n and includes:\n(i) 29 '*.rtdc' files containing measurements performed with real time fluorescence and deformability cytometry [1,2]\n(ii) 1 '*.fcs' file containing a measurement performed with a standard flow cytometer (BD LSR II, BD Biosciences)\n(iii) 1 '*.xlsx' file containing results from AFM-based indentation experiments.\nSorting real-time fluorescence and deformability cytometry (soRT-FDC) is a robust sorting platform, combining image-based morphological cell analysis with mechanical characterisation and subsequent active sorting by feeding real-time fluorescence and deformability cytometry (RT-FDC) [2] information to a down-stream SSAW-based cell sorter [3].\nEach filename of this dataset starts with the name of the figure to which the datafile corresponds. The measured samples are briefly described below. The 'Initial' measurements refer to the samples used for sorting, and the 'Target' measurements to the samples collected in the target outlet after sorting. For more detailed description of samples please refer to the manuscript.\nThe '*.rtdc' files are HDF5 files and can be analysed using a Python library called dclab [4], or a software called Shape-Out [5]. They can also be opened using other HDF viewer programs.\nFor the correct assignment of sample names when loading multiple ‘’*.rtdc’ measurements from one folder, please use ShapeOut1.0.0 or above. \n\n[1] Otto et al., \"Real-time deformability cytometry: on-the-fly cell mechanical phenotyping\". Nature Methods, 12(3):199–202, 2015. https://doi.org/10.1038/nmeth.3281\n[2] Rosendahl et al., \"Real-time fluorescence and deformability cytometry\". Nature Methods, 15(5):355–358, 2018. https://doi.org/10.1038/nmeth.4639\n[3] Nawaz et al., “Acoustofluidic Fluorescence Activated Cell Sorter”. Analitycial Chemistry 87(24): 12051–12058, 2015. https://doi.org/10.1021/acs.analchem.5b02398\n[4] https://github.com/ZellMechanik-Dresden/dclab\n[5] https://github.com/ZellMechanik-Dresden/ShapeOut\n\n\nFigure1d_01_Beads_FL_Initial.rtdc, Figure1d_02_Beads_FL_Target.rtdc\nsample: 1:5 mixture of polyacrylamide microgel beads labeled with AlexaFluor488 and unlabeled ones, these beads were produced in house; sorted for fluorescence\nsorting gates: FL-1 maximum 1000 – 10000, area ratio: 1.0 - 1.1\n\n\nFigure1d_03_Beads_Size_Initial.rtdc, Figure1d_04_Beads_Size_Target.rtdc\nsample: 1:6 mixture of 13.79 ± 0.59 μm silica beads (SiO2-F-L3519-1; Microparticles, Germany) and 17.23 ± 0.24 μm poly(methyl methacrylate) beads (PMMM-F-B1423; Microparticles); sorted for size\nsorting gates: size 220 – 300 μm2, def 0.00 – 0.01, are ratio 1.0 – 1.1\n\n\nFigure1d_05_Beads_DefSize_Initial.rtdc, Figure1d_06_Beads_DefSize_Target.rtdc\nsample: a mixture of two polyacrylamide microgel bead populations of different stiffness, these beads were produced in house; sorted for deformation and size\nsorting gates: size 95 – 105 μm2, def 0.000 – 0.016, are ratio 1.0 – 1.1\n\n\nFigure2b_Blood_Initial_Inlet.rtdc\nsample: RBC-depleted blood sample analysed in the inlet region of the chip \n\n\nFigure2c_Blood_Initial_Channel.rtdc\nsample: RBC-depleted blood sample analysed in the usual ROI at the end of the constricting channel \n\n\nFigure2d_Blood_Target_RBCs.rtdc\nsample: RBC-depleted blood, sorted RBCs\nsorting gates: size 25 – 65 μm2, def 0.16 – 0.40, are ratio 1.0 – 1.1\n\n\nFigure2e_Blood_Target_ly.rtdc\nsample: RBC-depleted blood, sorted lymphocytes\nsorting gates: size 25 – 45 μm2, def 0.00 – 0.10, are ratio 1.0 – 1.1\n\n\nFigure2f_Blood_Target_my.rtdc\nsample: RBC-depleted blood, sorted myeloid cells\nsorting gates: size 53 – 120 μm2, def 0.00 – 0.15, are ratio 1.0 – 1.1\n\n\nFigure2g_Blood_Initial.rtdc, Figure2h_Blood_Target_neuBr.rtdc\nsample: RBC-depleted blood, brightness-based neutrophils sorting* \nsorting gates: size 56 – 100 μm2, brightness 75 – 78, are ratio 1.0 – 1.1\n>> this is also source data for Extended Fig. 8\n\n\nFigure3_Blood_DNN_Training(1).rtdc, Figure3_Blood_DNN_Training(2).rtdc\nsample: RBC-depleted blood, datasets for training of deep neural network (DNN)*\n\n\nFigure3_Blood_DNN_Validation.rtdc\nsample: RBC-depleted blood, dataset for validation of trained DNN*\n\n\nFigure3d_Blood_Initial.rtdc, Figure3e_Blood_Target_neuDNN.rtdc\nsample: RBC-depleted blood, DNN-based neutrophil sorting*\n\n\n*for identification of neutrophils (CD66+/CD14−), these samples were stained with APC-conjugated anti-human CD14 (dilution 1:20, #17- 809 0149-42, eBioscience, CA, USA; recorded with FL-3 channel) and PE-conjugated anti-human CD66a/c/e (dilution 1:40, 810 #34303, BioLegend, CA, USA; recorded with FL-2 channel); for cross-talk compensation of the fluorescence signal in channels FL-2 and FL-3 for these samples introduce the following correction factor in the ShapeOut software: spill from channel 2 to 3 = 0.025, spill from channel 3 to 2 = 0.100\n\n\nExtData_Fig2a_BeadMix_RT-FDC.rtdc, ExtData_Fig2b_BeadMix_soRT-FDC.rtdc, ExtData_Fig2c_BeadMix_FC.fcs\nsample: a mixture of 4 bead types with different diameter, each made of different material:\n9.78 ± 0.15 μm melamine beads (MF-FluoBlau-L948), \n13.79 ± 0.59 μm silica beads (SiO2-F-L3519-1),\n15.21 ± 0.31 μm polystyrene beads (PS/Q-F-KM194), \n17.23 ± 0.24 μm poly(methyl methacrylate) beads (PMMM-F-B1423), \nall purchased from Microparticles, Germany.\n\n\nExtData_Fig3a_Beads_FLDef_Initial.rtdc, ExtData_Fig3a_Beads_FLDef_Target.rtdc\nsample: a mixture of fluorescent and non-fluorescent polyacrylamide beads with different mechanical properties, these beads were produced in house; sorted for fluorescence and deformation\nsorting gates: FL-1 maximum 1000 – 10000, def 0.01 – 0.02, are ratio 1.0 – 1.1\n\n\nExtData_Fig3b_Beads_BrSize_Initial.rtdc, ExtData_Fig3b_Beads_BrSize_Target.rtdc\nsample: a mixture of 4 bead types as in Extended Data Fig. 2; sorted for brightness and size\nsorting gates: size 160 – 240 μm2, brightness 75 – 85, are ratio 1.0 – 1.1\n\n\nExtData_Fig4a_Kc167_HL60_Size_Initial.rtdc, ExtData_Fig4b_Kc167_HL60_Size_Target.rtdc\nsample: a mixture of Kc167 Drosophila cells and HL60/S4 human promyelocytic leukaemia cells, sorted for size\nsorting gates: size 25 – 77 μm2, def 0.00 – 0.15, are ratio 1.0 – 1.1\n\n\nExtData_Fig5a_RBC_Def_Initial.rtdc, ExtData_Fig5b_RBC_Def_Target1.rtdc, ExtData_Fig5c_RBC_Def_Target2.rtdc\nsample: blood anticoagulated with citrate, RBCs sorted for deformation \nsorting gates: def 0.15 – 0.40 (Target1) / def 0.00 – 0.10 (Target2), are ratio 1.0 – 1.2\n\n\nExtData_Fig7_AFM_AfterSorting.xlsx\nsample: HL60/S4 cells collected after sorting experiment; the initial sample was prepared as for the soRT-FDC experiment but not loaded onto the chip, the default sample was collected in the default outlet, i.e., run through the sorting chip but not exposed to SSAW, and the target sample corresponds to cells exposed to SSAW; reported values correspond to apparent Young’s modulus estimated from AFM indentation experiments\n\n\n",
+  "distribution": {
+    "@type": "DataDownload",
+    "contentUrl": "https://ndownloader.figshare.com/files/20032100"
+  },
+  "doi": "10.6084/m9.figshare.11302595.v3",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "@type": "Organization",
+        "alternateName": [
+          "Humboldt-Stiftung",
+          "Humboldt Foundation",
+          "AvH",
+          "Alexander von Humboldt Foundation",
+          "Humboldt Stiftung"
+        ],
+        "identifier": "100005156",
+        "name": "Alexander von Humboldt-Stiftung"
+      }
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "@type": "Organization",
+        "name": "ERC Starting Grant (starting grant “LightTouch” #282060 to J.G.)"
+      }
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "@type": "Organization",
+        "name": "LAPASO ITN project (EU FP7/2007-2013, #607350)"
+      }
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "@type": "Organization",
+        "name": "DKMS 461 ‘Mechthild Harf Research Grant’ (DKMS-SLS-MHG-2016-02 to A.J.)"
+      }
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "@type": "Organization",
+        "name": "German Research 462 Foundation (#GU 612/5-1 to J.G.)"
+      }
+    }
+  ],
+  "ibmGraniteEmbeddingModel": "ibm-granite/granite-embedding-125m-english;normalize=true",
+  "ibmGraniteEmbeddingTextHash": "sha256:235a21e8c7590b9abf2a3b81ef715a024db33ba71df7814765f51042993ff651",
+  "ibmGraniteEmbeddingTextVersion": "sample-summary-v1",
+  "identifier": "11302595",
+  "includedInDataCatalog": {
+    "@type": "DataCatalog",
+    "archivedAt": "https://figshare.com/articles/dataset/Sorting_real-time_fluorescence_and_deformability_cytometry_soRT-FDC_-_manuscript_data/11302595",
+    "name": "Figshare",
+    "url": "https://figshare.com",
+    "versionDate": "2026-10-23"
+  },
+  "keywords": [
+    "Haematology",
+    "Biological physics",
+    "Medical physics",
+    "mechanical phenotype",
+    "label-free cell sorting",
+    "standing surface acoustic waves",
+    "SSAW",
+    "artifical inteligence",
+    "deep neural networks",
+    "deformability cytometry",
+    "image-based sorting",
+    "Biological Physics",
+    "Medical Physics"
+  ],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "name": "Sorting real-time fluorescence and deformability cytometry (soRT-FDC) - manuscript data",
+  "sdPublisher": {
+    "@type": "DataCatalog",
+    "name": "figshare"
+  },
+  "topicCategory": [
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "@type": "SoftwareApplication",
+        "name": "Text2Term-assisted manual mapping"
+      },
+      "identifier": "EDAM.TOPIC:3306",
+      "isCurated": true,
+      "name": "Biophysics"
+    },
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "@type": "SoftwareApplication",
+        "name": "Text2Term-assisted manual mapping"
+      },
+      "identifier": "EDAM.TOPIC:3301",
+      "isCurated": true,
+      "name": "Microbiology"
+    },
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "@type": "SoftwareApplication",
+        "name": "Text2Term-assisted manual mapping"
+      },
+      "identifier": "EDAM.TOPIC:3172",
+      "isCurated": true,
+      "name": "Metabolomics"
+    },
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "@type": "SoftwareApplication",
+        "name": "Text2Term-assisted manual mapping"
+      },
+      "identifier": "EDAM.TOPIC:3474",
+      "isCurated": true,
+      "name": "Machine learning"
+    },
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "@type": "SoftwareApplication",
+        "name": "Text2Term-assisted manual mapping"
+      },
+      "identifier": "EDAM.TOPIC:3934",
+      "isCurated": true,
+      "name": "Cytometry"
+    },
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "@type": "SoftwareApplication",
+        "name": "Text2Term-assisted manual mapping"
+      },
+      "identifier": "EDAM.TOPIC:3408",
+      "isCurated": true,
+      "name": "Haematology"
+    },
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "@type": "SoftwareApplication",
+        "name": "Text2Term-assisted manual mapping"
+      },
+      "identifier": "EDAM.TOPIC:3360",
+      "isCurated": true,
+      "name": "Biomarkers"
+    }
+  ],
+  "url": "https://figshare.com/articles/dataset/Sorting_real-time_fluorescence_and_deformability_cytometry_soRT-FDC_-_manuscript_data/11302595"
+}
