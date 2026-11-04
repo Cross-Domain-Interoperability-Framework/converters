@@ -1,0 +1,44 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "niaid": "http://discovery.biothings.io/ns/niaid/"
+  },
+  "@id": "http://discovery.biothings.io/ns/niaid/",
+  "@graph": [
+    {
+      "@id": "niaid:Organization",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "An organization associated with a creator or funder of a dataset or computational tool",
+      "rdfs:label": "Organization",
+      "rdfs:subClassOf": {
+        "@id": "schema:Organization"
+      },
+      "schema:isPartOf": {
+        "@id": "http://discovery.biothings.io/ns/niaid/"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name of the organization",
+            "type": "string"
+          },
+          "parentOrganization": {
+            "description": "Name of the parent organization",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "recommended": [
+          "parentOrganization"
+        ]
+      }
+    }
+  ]
+}

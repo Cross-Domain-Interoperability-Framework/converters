@@ -1,0 +1,44 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "niaid": "http://discovery.biothings.io/ns/niaid/"
+  },
+  "@id": "http://discovery.biothings.io/ns/niaid/",
+  "@graph": [
+    {
+      "@id": "niaid:DataDownload",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A dataset in downloadable form.",
+      "rdfs:label": "DataDownload",
+      "rdfs:subClassOf": {
+        "@id": "schema:DataDownload"
+      },
+      "schema:isPartOf": {
+        "@id": "http://discovery.biothings.io/ns/niaid/"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "dateModified": {
+            "description": "date when the data download / file has been modified",
+            "type": "string",
+            "format": "date"
+          },
+          "contentUrl": {
+            "description": "Location (URL) from which the data can be downloaded",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "dateModified",
+          "contentUrl"
+        ]
+      }
+    }
+  ]
+}

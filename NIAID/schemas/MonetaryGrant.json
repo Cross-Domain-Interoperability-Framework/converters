@@ -1,0 +1,83 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "niaid": "http://discovery.biothings.io/ns/niaid/"
+  },
+  "@id": "http://discovery.biothings.io/ns/niaid/",
+  "@graph": [
+    {
+      "@id": "niaid:MonetaryGrant",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset or computational tool through some kind of financial contribution",
+      "rdfs:label": "MonetaryGrant",
+      "rdfs:subClassOf": {
+        "@id": "schema:MonetaryGrant"
+      },
+      "schema:isPartOf": {
+        "@id": "http://discovery.biothings.io/ns/niaid/"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "funder": {
+            "description": "An organization associated with a creator or funder of a dataset",
+            "oneOf": [{
+                "$ref": "#/definitions/funder"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/funder"
+                }
+              }
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "description about the funding award / grant"
+          },
+          "url": {
+            "type": "string",
+            "description": "award / grant URL"
+          },
+          "identifier": {
+            "type": "string",
+            "description": "Unique identifier(s) for the grant(s) used to fund the Dataset"
+          }
+        },
+        "required": [
+          "funder",
+          "identifier"
+        ],
+        "recommended": [
+          "description",
+          "url"
+        ],
+        "definitions": {
+          "funder": {
+            "type": "object",
+            "@type": "Organization",
+            "description": "Information about a single funder",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "An organization associated with a creator or funder of a dataset"
+              },
+              "parentOrganization": {
+                "type": "string",
+                "description": "name of the parent funding organization"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
