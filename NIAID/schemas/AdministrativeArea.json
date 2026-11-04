@@ -1,0 +1,140 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "niaid": "https://discovery.biothings.io/ns/niaid/"
+  },
+  "@id": "https://discovery.biothings.io/ns/niaid/",
+  "@graph": [{
+      "@id": "niaid:AdministrativeArea",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Geospatial location information.",
+      "rdfs:label": "AdministrativeArea",
+      "rdfs:subClassOf": {
+        "@id": "schema:AdministrativeArea"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/ns/niaid/"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "locationType": {
+            "description": "Categorization of how the location relates to the dataset or computational tool",
+            "owl:cardinality": "many",
+            "oneOf": [{
+                "type": "string",
+                "enum": [
+                  "residence",
+                  "exposure",
+                  "collection",
+                  "screening",
+                  "treatment",
+                  "study location",
+                  "other",
+                  "unknown"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "residence",
+                    "exposure",
+                    "collection",
+                    "screening",
+                    "treatment",
+                    "study location",
+                    "other",
+                    "unknown"
+                  ]
+                }
+              }
+            ]
+          },
+          "administrativeType": {
+            "description": "the type of administrative area",
+            "owl:cardinality": "one",
+            "type": "string",
+            "enum": [
+              "province",
+              "district",
+              "chiefdom",
+              "village",
+              "city",
+              "country",
+              "prefecture",
+              "sub-prefecture",
+              "clan",
+              "Federal Capital Territory",
+              "state",
+              "Local Government Area",
+              "ward"
+            ]
+          },
+          "alternateName": {
+            "description": "An alias for the location.",
+            "owl:cardinality": "many",
+            "oneOf": [{
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "identifier": {
+            "description": "An identifier for the location, preferably a Wikidata ID.",
+            "owl:cardinality": "one",
+            "type": "string"
+          },
+          "name": {
+            "description": "The name of the item.",
+            "owl:cardinality": "one",
+            "type": "string"
+          }
+        },
+        "recommended": [
+          "locationType",
+          "identifier",
+          "name",
+          "administrativeType"
+        ],
+        "optional": [
+          "alternateName"
+        ]
+      }
+    },
+    {
+      "@id": "niaid:locationType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Categorization of how the location relates to the dataset or computational tool",
+      "rdfs:label": "locationType",
+      "schema:domainIncludes": [{
+        "@id": "niaid:AdministrativeArea"
+      }],
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "niaid:administrativeType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Descriptive categorization of the level of Administrative Area",
+      "rdfs:label": "administrativeType",
+      "schema:domainIncludes": [{
+        "@id": "niaid:AdministrativeArea"
+      }],
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    }
+  ]
+}

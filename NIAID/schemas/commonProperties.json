@@ -1,0 +1,89 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "niaid": "https://discovery.biothings.io/ns/niaid/"
+  },
+  "@id": "https://discovery.biothings.io/ns/niaid/",
+  "@graph": [
+
+    {
+      "@id": "niaid:infectiousAgent",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Infectious agent(s) / pathogen(s) which are the focus of the dataset or tool (e.g. SARS-CoV-2)",
+      "rdfs:label": "infectiousAgent",
+      "schema:domainIncludes": [{
+          "@id": "niaid:Dataset"
+        },
+        {
+          "@id": "niaid:ComputationalTool"
+        }
+      ],
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      },
+      {
+        "@id": "schema:DefinedTerm"
+      }]
+    },
+    {
+      "@id": "niaid:healthCondition",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The infectious disease(s) / health condition(s) which are the focus of the dataset or computational tool (e.g. COVID-19, coronavirus)",
+      "rdfs:label": "healthCondition",
+      "schema:domainIncludes": [{
+          "@id": "niaid:Dataset"
+        },
+        {
+          "@id": "niaid:ComputationalTool"
+        }
+      ],
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      },
+      {
+        "@id": "schema:DefinedTerm"
+      }]
+    },
+    {
+      "@id": "niaid:funding",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset or computational tool through some kind of financial contribution",
+      "rdfs:label": "funding",
+      "schema:domainIncludes": [{
+          "@id": "niaid:Dataset"
+        },
+        {
+          "@id": "niaid:ComputationalTool"
+        }
+      ],
+      "schema:rangeIncludes": [{
+        "@id": "niaid:MonetaryGrant"
+      }],
+      "schema:sameAs": {
+        "@id": "schema:funding"
+      }
+    },
+    {
+      "@id": "niaid:species",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Species(es) from which dataset has been collected or for which the tool was designed or applied.",
+      "rdfs:label": "species",
+      "schema:domainIncludes": [{
+          "@id": "niaid:Dataset"
+        },
+        {
+          "@id": "niaid:ComputationalTool"
+        }
+      ],
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      },
+      {
+        "@id": "schema:DefinedTerm"
+      }]
+    }
+  ]
+}

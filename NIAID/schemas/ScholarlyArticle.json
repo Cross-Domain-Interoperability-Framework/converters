@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "niaid": "http://discovery.biothings.io/ns/niaid/"
+  },
+  "@id": "http://discovery.biothings.io/ns/niaid/",
+  "@graph": [{
+      "@id": "niaid:ScholarlyArticle",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A scholarly article in which the dataset or computational tool is cited.",
+      "rdfs:label": "ScholarlyArticle",
+      "rdfs:subClassOf": {
+        "@id": "schema:ScholarlyArticle"
+      },
+      "schema:isPartOf": {
+        "@id": "http://discovery.biothings.io/ns/niaid/"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name of the scholarly article",
+            "type": "string"
+          },
+          "doi": {
+            "description": "Digital Object Identifier (DOI) for the article",
+            "type": "string"
+          },
+          "pmid": {
+            "description": "PubMed ID (PMID) for the article",
+            "type": "string"
+          },
+          "pmcid": {
+            "description": "PubMed Central (PMC) ID for the article",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the article",
+            "type": "string"
+          },
+          "url": {
+            "description": "URL where the article can be found",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "recommended": [
+          "name",
+          "doi",
+          "pmid",
+          "pmcid"
+        ]
+      }
+    },
+    {
+      "@id": "niaid:doi",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Digital Object Identifier (DOI) for the article",
+      "rdfs:label": "doi",
+      "schema:domainIncludes": [{
+        "@id": "niaid:ScholarlyArticle"
+      }],
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "niaid:pmid",
+      "@type": "rdf:Property",
+      "rdfs:comment": "PubMed ID (PMID) for the article",
+      "rdfs:label": "pmid",
+      "schema:domainIncludes": [{
+        "@id": "niaid:ScholarlyArticle"
+      }],
+      "schema:rangeIncludes": [{
+        "@id": "schema:Number",
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "niaid:pmcid",
+      "@type": "rdf:Property",
+      "rdfs:comment": "PubMed Central (PMC) ID for the article",
+      "rdfs:label": "pmcid",
+      "schema:domainIncludes": [{
+        "@id": "niaid:ScholarlyArticle"
+      }],
+      "schema:rangeIncludes": [{
+        "@id": "schema:Number",
+        "@id": "schema:Text"
+      }]
+    }
+  ]
+}

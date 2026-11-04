@@ -1,0 +1,108 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "niaid": "http://discovery.biothings.io/ns/niaid/"
+  },
+  "@id": "http://discovery.biothings.io/ns/niaid/",
+  "@graph": [
+    {
+      "@id": "niaid:TemporalInterval",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Temporal information relevant to the dataset, NOT the dataset record.",
+      "rdfs:label": "TemporalInterval",
+      "rdfs:subClassOf": {
+        "@id": "schema:Schedule"
+      },
+      "schema:isPartOf": {
+        "@id": "http://discovery.biothings.io/ns/niaid/"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "temporalType": {
+            "description": "Categorization of how the location relates to the dataset or computational tool",
+            "owl:cardinality": "many",
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "exposure",
+                  "collection",
+                  "screening",
+                  "treatment",
+                  "study date",
+                  "other",
+                  "unknown"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "exposure",
+                    "collection",
+                    "screening",
+                    "treatment",
+                    "study date",
+                    "other",
+                    "unknown"
+                  ]
+                }
+              }
+            ]
+          },
+          "startDate": {
+            "description": "The start date of the temporal interval for the dataset",
+            "owl:cardinality": "one",
+            "type": "string",
+            "format": "date"
+          },
+          "name": {
+            "description": "String describing the temporal interval",
+            "owl:cardinality": "one",
+            "type": "string"
+          },
+          "endDate": {
+            "description": "The end date of the temporal interval for the dataset.",
+            "owl:cardinality": "one",
+            "type": "string",
+            "format": "date"
+          },
+          "duration": {
+            "description": "A time interval in ISO 8601 duration format.",
+            "owl:cardinality": "one",
+            "type": "string"
+          }
+        },
+        "recommended": [
+          "temporalType",
+          "startDate",
+          "endDate",
+          "duration"
+        ],
+        "optional": [
+          "name"
+        ]
+      }
+    },
+    {
+      "@id": "niaid:temporalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A categorization of a temporal relationship to a dataset, NOT the dataset record. Eg- data collection temporal interval, screening temporal interval, etc.",
+      "rdfs:label": "temporalType",
+      "schema:domainIncludes": [
+        {
+          "@id": "niaid:TemporalInterval"
+        }
+      ],
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    }
+  ]
+}
