@@ -1,0 +1,537 @@
+{
+  "note": "How asPublished/Dataset.schema.json differs from asSpecified/Dataset.schema.json, and which example records required each change. 'records' counts the records that failed the rule when it was relaxed; an earlier relaxation can hide later ones.",
+  "relaxations": [
+    {
+      "location": "/properties/includedInDataCatalog",
+      "change": "owl:cardinality one -> many: arrays allowed",
+      "records": 61,
+      "examples": [
+        "dde_0cf5149ad72810a2.json",
+        "dde_5ecff76765e122b0.json",
+        "dde_70c1f2ff47f753d5.json",
+        "dde_caa59808ae9d5fe9.json",
+        "dryad_c6c4bt8.json"
+      ]
+    },
+    {
+      "location": "/definitions/catalog",
+      "change": "not required: url",
+      "records": 58,
+      "examples": [
+        "accessclinicaldata_tb-portals-natural-history-study.json",
+        "dataverse_10.7910_dvn_07w79b.json",
+        "dataverse_10.7910_dvn_340ezh.json",
+        "dataverse_10.7910_dvn_6k4ab4.json",
+        "dataverse_10.7910_dvn_6kno9r.json"
+      ]
+    },
+    {
+      "location": "/definitions/citation",
+      "change": "not required: name",
+      "records": 52,
+      "examples": [
+        "accessclinicaldata_tb-portals-natural-history-study.json",
+        "clinepidb_ds_5c41b87221.json",
+        "dataverse_10.7910_dvn_07w79b.json",
+        "dataverse_10.7910_dvn_340ezh.json",
+        "dataverse_10.7910_dvn_6k4ab4.json"
+      ]
+    },
+    {
+      "location": "/properties/distribution/oneOf/1",
+      "change": "not required: dateModified",
+      "records": 42,
+      "examples": [
+        "dryad_c6c4bt8.json",
+        "dryad_h5486.json",
+        "dryad_h61cv.json",
+        "dryad_p49b1.json",
+        "dryad_p59n8.json"
+      ]
+    },
+    {
+      "location": "/properties/funding/oneOf/0",
+      "change": "not required: identifier",
+      "records": 42,
+      "examples": [
+        "dataverse_10.7910_dvn_07w79b.json",
+        "figshare_10932983.json",
+        "figshare_10933019.json",
+        "figshare_10933028.json",
+        "figshare_1098962.json"
+      ]
+    },
+    {
+      "location": "",
+      "change": "not required: distribution",
+      "records": 39,
+      "examples": [
+        "accessclinicaldata_tb-portals-natural-history-study.json",
+        "hca_0c3b7785-f74d-4091-8616-a68757e4c2a8.json",
+        "hca_0fd8f918-62d6-4b8b-ac35-4c53dd601f71.json",
+        "hca_16ed4ad8-7319-46b2-8859-6fe1c1d73a82.json",
+        "hca_23587fb3-1a4a-4f58-ad74-cc9a4cb4c254.json"
+      ]
+    },
+    {
+      "location": "",
+      "change": "not required: measurementTechnique",
+      "records": 38,
+      "examples": [
+        "accessclinicaldata_tb-portals-natural-history-study.json",
+        "dataverse_10.7910_dvn_07w79b.json",
+        "dataverse_10.7910_dvn_340ezh.json",
+        "dataverse_10.7910_dvn_6k4ab4.json",
+        "dataverse_10.7910_dvn_6kno9r.json"
+      ]
+    },
+    {
+      "location": "/properties/distribution/oneOf/0/items",
+      "change": "not required: dateModified",
+      "records": 38,
+      "examples": [
+        "dataverse_10.7910_dvn_07w79b.json",
+        "dataverse_10.7910_dvn_340ezh.json",
+        "dataverse_10.7910_dvn_6k4ab4.json",
+        "dataverse_10.7910_dvn_6kno9r.json",
+        "dataverse_10.7910_dvn_coio51.json"
+      ]
+    },
+    {
+      "location": "/properties/funding/oneOf/1/items",
+      "change": "not required: identifier",
+      "records": 37,
+      "examples": [
+        "9j98.json",
+        "9jbq.json",
+        "accessclinicaldata_tb-portals-natural-history-study.json",
+        "dataverse_10.7910_dvn_340ezh.json",
+        "dataverse_10.7910_dvn_6kno9r.json"
+      ]
+    },
+    {
+      "location": "/definitions/person/properties/affiliation",
+      "change": "type also array",
+      "records": 32,
+      "examples": [
+        "flow_fr-fcm-zzuc.json",
+        "tycho_ao.840539006.json",
+        "tycho_as.840539006.json",
+        "tycho_au.840539006.json",
+        "tycho_az.840539006.json"
+      ]
+    },
+    {
+      "location": "/definitions/creativework",
+      "change": "not required: name",
+      "records": 20,
+      "examples": [
+        "9j82.json",
+        "9j8n.json",
+        "9j8o.json",
+        "9j98.json",
+        "9jbq.json"
+      ]
+    },
+    {
+      "location": "/definitions/researchproject/properties/parentOrganization",
+      "change": "type also array",
+      "records": 19,
+      "examples": [
+        "ark_syn52623570.json",
+        "dde_0cf5149ad72810a2.json",
+        "dde_5ecff76765e122b0.json",
+        "dde_70c1f2ff47f753d5.json",
+        "dde_caa59808ae9d5fe9.json"
+      ]
+    },
+    {
+      "location": "/definitions/person",
+      "change": "not required: name",
+      "records": 16,
+      "examples": [
+        "node_oep00000195.json",
+        "phs002516.json",
+        "phs002533.json",
+        "phs002534.json",
+        "phs002537.json"
+      ]
+    },
+    {
+      "location": "/definitions/creativework/properties/name",
+      "change": "type also array",
+      "records": 15,
+      "examples": [
+        "phs002516.json",
+        "phs002533.json",
+        "phs002534.json",
+        "phs002537.json",
+        "phs002538.json"
+      ]
+    },
+    {
+      "location": "/properties/distribution/oneOf/0/items",
+      "change": "not required: contentUrl",
+      "records": 11,
+      "examples": [
+        "dataverse_10.7910_dvn_07w79b.json",
+        "dataverse_10.7910_dvn_340ezh.json",
+        "dataverse_10.7910_dvn_6k4ab4.json",
+        "dataverse_10.7910_dvn_6kno9r.json",
+        "dataverse_10.7910_dvn_coio51.json"
+      ]
+    },
+    {
+      "location": "/definitions/catalog/properties/versionDate",
+      "change": "format dropped (date)",
+      "records": 10,
+      "examples": [
+        "reframedb_a00230.json",
+        "sdy1149.json",
+        "sdy1164.json",
+        "sdy1176.json",
+        "sdy1190.json"
+      ]
+    },
+    {
+      "location": "/properties/doi",
+      "change": "type also array",
+      "records": 10,
+      "examples": [
+        "pxd016017.json",
+        "pxd019637.json",
+        "pxd022550.json",
+        "pxd027351.json",
+        "pxd031161.json"
+      ]
+    },
+    {
+      "location": "",
+      "change": "not required: funding",
+      "records": 5,
+      "examples": [
+        "malariagen_gambian-genome-variation-project-open-access-data.json",
+        "msv000102576.json",
+        "ndex_a3d84ced-f67c-11e9-bb65-0ac135e8bacf.json",
+        "ndex_aadfcaf5-f63a-11e9-bb65-0ac135e8bacf.json",
+        "pxd077284.json"
+      ]
+    },
+    {
+      "location": "/definitions/citation/properties/datePublished",
+      "change": "type also integer",
+      "records": 5,
+      "examples": [
+        "9j82.json",
+        "9j8n.json",
+        "9j8o.json",
+        "9j98.json",
+        "9jbq.json"
+      ]
+    },
+    {
+      "location": "/definitions/person/properties/url",
+      "change": "format dropped (uri)",
+      "records": 5,
+      "examples": [
+        "sdy1149.json",
+        "sdy1190.json",
+        "sdy1256.json",
+        "sdy1264.json",
+        "sdy1267.json"
+      ]
+    },
+    {
+      "location": "/properties/distribution/oneOf/1",
+      "change": "not required: contentUrl",
+      "records": 5,
+      "examples": [
+        "clinepidb_ds_5c41b87221.json",
+        "lds-1224.json",
+        "lds-1229.json",
+        "ndex_a3d84ced-f67c-11e9-bb65-0ac135e8bacf.json",
+        "ndex_aadfcaf5-f63a-11e9-bb65-0ac135e8bacf.json"
+      ]
+    },
+    {
+      "location": "/properties/license",
+      "change": "format dropped (uri)",
+      "records": 5,
+      "examples": [
+        "dataverse_10.7910_dvn_07w79b.json",
+        "dataverse_10.7910_dvn_6kno9r.json",
+        "dataverse_10.7910_dvn_ktfip5.json",
+        "ndex_a3d84ced-f67c-11e9-bb65-0ac135e8bacf.json",
+        "ndex_aadfcaf5-f63a-11e9-bb65-0ac135e8bacf.json"
+      ]
+    },
+    {
+      "location": "/definitions/citation/properties/url",
+      "change": "format dropped (uri)",
+      "records": 3,
+      "examples": [
+        "accessclinicaldata_tb-portals-natural-history-study.json",
+        "lds-1224.json",
+        "lds-1229.json"
+      ]
+    },
+    {
+      "location": "/properties/funding/oneOf/1/items",
+      "change": "not required: funder",
+      "records": 3,
+      "examples": [
+        "dryad_p79tm37.json",
+        "flow_fr-fcm-zzuc.json",
+        "pxd022550.json"
+      ]
+    },
+    {
+      "location": "/properties/healthCondition/anyOf/1/items",
+      "change": "type also object",
+      "records": 3,
+      "examples": [
+        "sdy1164.json",
+        "sdy1252.json",
+        "sdy2580.json"
+      ]
+    },
+    {
+      "location": "",
+      "change": "not required: date",
+      "records": 2,
+      "examples": [
+        "microbiome_gems1_case_control.json",
+        "reframedb_a00230.json"
+      ]
+    },
+    {
+      "location": "/properties/dateCreated",
+      "change": "format dropped (date)",
+      "records": 2,
+      "examples": [
+        "ndex_a3d84ced-f67c-11e9-bb65-0ac135e8bacf.json",
+        "ndex_aadfcaf5-f63a-11e9-bb65-0ac135e8bacf.json"
+      ]
+    },
+    {
+      "location": "/properties/dateModified",
+      "change": "format dropped (date)",
+      "records": 2,
+      "examples": [
+        "ndex_a3d84ced-f67c-11e9-bb65-0ac135e8bacf.json",
+        "ndex_aadfcaf5-f63a-11e9-bb65-0ac135e8bacf.json"
+      ]
+    },
+    {
+      "location": "/properties/distribution/oneOf/0/items/properties/contentUrl",
+      "change": "format dropped (uri)",
+      "records": 2,
+      "examples": [
+        "pxd077284.json",
+        "vdj_prjna272713.json"
+      ]
+    },
+    {
+      "location": "/properties/funding/oneOf/0",
+      "change": "not required: funder",
+      "records": 2,
+      "examples": [
+        "lds-1224.json",
+        "lds-1229.json"
+      ]
+    },
+    {
+      "location": "",
+      "change": "not required: author",
+      "records": 1,
+      "examples": [
+        "accessclinicaldata_tb-portals-natural-history-study.json"
+      ]
+    },
+    {
+      "location": "/definitions/citation/properties/datePublished",
+      "change": "format dropped (date)",
+      "records": 1,
+      "examples": [
+        "empiar-10514.json"
+      ]
+    },
+    {
+      "location": "/definitions/citation/properties/doi",
+      "change": "type also array",
+      "records": 1,
+      "examples": [
+        "empiar-10514.json"
+      ]
+    },
+    {
+      "location": "/properties/mainEntityOfPage/oneOf/0/items",
+      "change": "format dropped (uri)",
+      "records": 1,
+      "examples": [
+        "hca_53c53cd4-8127-4e12-bc7f-8fe1610a715c.json"
+      ]
+    },
+    {
+      "location": "/properties/temporalCoverage/oneOf/1/properties/endDate",
+      "change": "format dropped (date)",
+      "records": 1,
+      "examples": [
+        "clinepidb_ds_5c41b87221.json"
+      ]
+    },
+    {
+      "location": "/properties/temporalCoverage/oneOf/1/properties/startDate",
+      "change": "format dropped (date)",
+      "records": 1,
+      "examples": [
+        "clinepidb_ds_5c41b87221.json"
+      ]
+    }
+  ],
+  "undeclaredTopLevel": {
+    "_id": 140,
+    "_meta": 50,
+    "_score": 140,
+    "curatedBy": 14,
+    "ibmGraniteEmbeddingModel": 140,
+    "ibmGraniteEmbeddingTextHash": 140,
+    "ibmGraniteEmbeddingTextVersion": 140,
+    "_ignored": 119,
+    "additionalType": 1,
+    "disambiguatingDescription": 1,
+    "assayformat": 2,
+    "contributor": 1
+  },
+  "undeclaredNested": {
+    "activityCode": 150,
+    "alternateIdentifier": 1,
+    "applTypeCode": 150,
+    "augmented_recommended_ratio": 50,
+    "augmented_required_ratio": 50,
+    "classification": 252,
+    "collector": 1,
+    "commonName": 161,
+    "completeness": 50,
+    "contentSize": 105,
+    "correctionApproved": 23,
+    "country": 21,
+    "displayName": 253,
+    "employee": 65,
+    "fromEXTRACT": 31,
+    "fromGPT": 170,
+    "fromNCT": 19,
+    "fromPMID": 197,
+    "fullSupportYear": 150,
+    "icCode": 150,
+    "instrument": 14,
+    "lineage": 44,
+    "parent_taxon": 1639,
+    "projectNumSplit": 150,
+    "recommended_augmented_fields": 50,
+    "recommended_fields": 50,
+    "recommended_max_score": 50,
+    "recommended_score": 50,
+    "recommended_score_ratio": 50,
+    "required_augmented_fields": 50,
+    "required_fields": 50,
+    "required_max_score": 50,
+    "required_ratio": 50,
+    "required_score": 50,
+    "sameas": 18,
+    "sampleProcess": 1,
+    "sampleState": 1,
+    "serialNum": 150,
+    "suffixCode": 150,
+    "supportYear": 150,
+    "taxon": 1685,
+    "total_max_score": 50,
+    "total_recommended_augmented": 50,
+    "total_required_augmented": 50,
+    "total_score": 50,
+    "unitCode": 27
+  },
+  "cardinalityChanges": {
+    "Dataset": [
+      {
+        "location": "/properties/nctid",
+        "owl:cardinality": "many",
+        "change": "accepts an array, which the schema otherwise refused"
+      },
+      {
+        "location": "/properties/includedInDataCatalog",
+        "owl:cardinality": "one",
+        "change": "refuses arrays, which the schema otherwise accepted"
+      }
+    ],
+    "ComputationalTool": [
+      {
+        "location": "/properties/discussionUrl",
+        "owl:cardinality": "many",
+        "change": "accepts an array, which the schema otherwise refused"
+      },
+      {
+        "location": "/properties/thumbnailUrl",
+        "owl:cardinality": "many",
+        "change": "accepts an array, which the schema otherwise refused"
+      }
+    ],
+    "ResourceCatalog": [
+      {
+        "location": "/properties/includedInDataCatalog",
+        "owl:cardinality": "one",
+        "change": "refuses arrays, which the schema otherwise accepted"
+      }
+    ],
+    "DefinedTerm": [],
+    "Sample": [
+      {
+        "location": "/properties/includedInDataCatalog",
+        "owl:cardinality": "one",
+        "change": "refuses arrays, which the schema otherwise accepted"
+      },
+      {
+        "location": "/properties/sampleStorageTemperature",
+        "owl:cardinality": "one",
+        "change": "refuses arrays, which the schema otherwise accepted"
+      }
+    ],
+    "SampleCollection": [
+      {
+        "location": "/properties/includedInDataCatalog",
+        "owl:cardinality": "one",
+        "change": "refuses arrays, which the schema otherwise accepted"
+      },
+      {
+        "location": "/definitions/sample/properties/sampleStorageTemperature",
+        "owl:cardinality": "one",
+        "change": "refuses arrays, which the schema otherwise accepted"
+      }
+    ],
+    "DataCollection": [
+      {
+        "location": "/properties/includedInDataCatalog",
+        "owl:cardinality": "one",
+        "change": "refuses arrays, which the schema otherwise accepted"
+      }
+    ],
+    "SemanticTriple": [],
+    "Inference": [
+      {
+        "location": "/properties/measuredProperty",
+        "owl:cardinality": "one",
+        "change": "refuses arrays, which the schema otherwise accepted"
+      },
+      {
+        "location": "/properties/variableMeasured",
+        "owl:cardinality": "one",
+        "change": "refuses arrays, which the schema otherwise accepted"
+      },
+      {
+        "location": "/properties/identifier",
+        "owl:cardinality": "one",
+        "change": "refuses arrays, which the schema otherwise accepted"
+      }
+    ]
+  }
+}
