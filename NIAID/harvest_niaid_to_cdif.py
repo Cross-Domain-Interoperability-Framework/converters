@@ -79,7 +79,7 @@ NDE_NAMES = {
     "tripleObjectQualifier", "triplePredicate", "triplePredicateQualifier",
     "tripleSubject", "tripleSubjectQualifier", "Sample",
 } | {
-    "activityCode", "additionalPhenotype", "administrativeType",
+    "activityCode", "additionalPhenotype", "administrativeType", "assayformat",
     "alternateIdentifier", "altitude", "anatomicalStructure", "anatomicalSystem",
     "applTypeCode", "class", "classification", "collectionMethod", "collector",
     "commonName", "correctionApproved", "country", "dateCollected",
@@ -92,7 +92,7 @@ NDE_NAMES = {
     "sampleStorageTemperature", "schema", "serialNum", "sex", "sourceInfo",
     "studyID", "studyTitle", "suffixCode", "supportYear", "taxon", "temporalType",
     "versionDate", "SampleCollection", "TemporalInterval", "alternateNames",
-    "unlinkedHasPart",
+    "unlinkedHasPart", "temporalIntervals",
 }
 
 NAMING_CONTEXT = {"@vocab": "http://schema.org/", "nde": NDE_NS,
@@ -175,9 +175,13 @@ def _types(node):
 
 def _clean(obj):
     """Drop internal fields and empty strings; repair the source's `sameas`
-    spelling and scheme-less URLs (curatedBy has url "www.immport.org")."""
+    spelling and scheme-less URLs (curatedBy has url "www.immport.org"); remove
+    leftover CDATA markers from text (dbGaP descriptions hold stray "]]>", which
+    also breaks any tool that handles the JSON as XML)."""
     if isinstance(obj, list):
         return [_clean(v) for v in obj]
+    if isinstance(obj, str):
+        return obj.replace("<![CDATA[", "").replace("]]>", "")
     if not isinstance(obj, dict):
         return obj
     out = {}
@@ -326,6 +330,33 @@ def _resolve_works(obj):
             _resolve_works(value)
 
 
+def _shape_temporal(rec):
+    """schema:temporalCoverage becomes ISO 8601 interval strings, written as DCAT's
+    converter writes them (start/end, start/.., ../end). The portal's interval also
+    has a temporalType and name, and its duration is usually not an interval
+    ("24107 days, 0:00:00"), so an interval holding more than its dates is kept
+    whole as nde:temporalIntervals."""
+    strings, detailed = [], []
+    for span in _as_list(rec.get("temporalCoverage")):
+        if not isinstance(span, dict):
+            strings.append(span)
+            continue
+        start, end, duration = span.get("startDate"), span.get("endDate"), span.get("duration")
+        is_interval = isinstance(duration, str) and re.fullmatch(r"\d{4}[-\d]*/\d{4}[-\d]*", duration)
+        if start or end:
+            strings.append(f"{start or '..'}/{end or '..'}")
+        elif is_interval:
+            strings.append(duration)
+        if span.get("temporalType") or span.get("name") or (duration and not is_interval) \
+                or not (start or end or is_interval):
+            detailed.append(span)
+    rec.pop("temporalCoverage", None)
+    if strings:
+        rec["temporalCoverage"] = strings
+    if detailed:
+        rec["temporalIntervals"] = detailed
+
+
 def _shape_coverage_and_variables(rec):
     """Place and PropertyValue are what CDIF's schemas look for; the portal's
     more specific type (AdministrativeArea, DefinedTerm) is kept beside them."""
@@ -372,6 +403,7 @@ def _shape(rec):
     _shape_funding(rec)
     _shape_links(rec)
     _shape_coverage_and_variables(rec)
+    _shape_temporal(rec)
     _shape_distribution(rec)
 
     language = rec.get("inLanguage")

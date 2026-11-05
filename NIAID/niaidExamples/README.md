@@ -2,9 +2,14 @@
 
 Dataset records from the [NIAID Data Discovery Portal](https://data.niaid.nih.gov/)
 API (`https://api.data.niaid.nih.gov/v1/query`, index build 2026-10-28), saved
-exactly as the API returned them, one file per record, named from the record's
+as the API returned them, one file per record, named from the record's
 `_id`. They are third-party metadata aggregated by the portal from the
 repositories named in each record's `includedInDataCatalog`.
+
+One exception: the `description` of `phs000239`, `phs000257`, `phs001821` and
+`phs001846` (dbGaP) held stray `]]>` markers with no opening `<![CDATA[`, which
+are removed here because the sequence breaks tools that handle the JSON as XML.
+The harvester removes them too.
 
 [`INDEX.json`](INDEX.json) lists every file with its group, sources, metadata
 score, and whether it has `variableMeasured`, `conditionsOfAccess` and `usageInfo`.
