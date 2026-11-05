@@ -3,6 +3,7 @@
     "schema": "http://schema.org/",
     "dcterms": "http://purl.org/dc/terms/",
     "prov": "http://www.w3.org/ns/prov#",
+    "bios": "https://bioschemas.org/",
     "dcat": "http://www.w3.org/ns/dcat#",
     "qudt": "http://qudt.org/schema/qudt/",
     "geosparql": "http://www.opengis.net/ont/geosparql#"
@@ -37,14 +38,16 @@
   "schema:additionalType": [
     "Raster Dataset"
   ],
-  "schema:creator": [
-    {
-      "@type": [
-        "schema:Organization"
-      ],
-      "schema:name": "NASA JPL"
-    }
-  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NASA JPL"
+      }
+    ]
+  },
   "schema:provider": [
     {
       "@type": [
@@ -161,15 +164,17 @@
       },
       "prov:used": [
         {
-          "schema:instrument": {
-            "@type": [
-              "schema:SoftwareApplication"
-            ],
-            "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
-            "schema:featureList": "S02E032.SRTMGL1 S02E033.SRTMGL1 S02E034.SRTMGL1 S03E032.SRTMGL1 S03E033.SRTMGL1 S03E034.SRTMGL1 S04E032.SRTMGL1 S04E033.SRTMGL1 S04E034.SRTMGL1 bbox;32.75;-3.09;34.04;-2.13",
-            "schema:downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git",
-            "schema:name": "GDSC ETL tools (S02E032.SRTMGL1 S02E033.SRTMGL1 S02E034.SRTMGL1 S03E032.SRTMGL1 S03E033.SRTMGL1 S03E034.SRTMGL1 S04E032.SRTMGL1 S04E033.SRTMGL1 S04E034.SRTMGL1 bbox;32.75;-3.09;34.04;-2.13)"
-          }
+          "bios:computationalTool": [
+            {
+              "@type": [
+                "schema:SoftwareApplication"
+              ],
+              "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
+              "schema:featureList": "S02E032.SRTMGL1 S02E033.SRTMGL1 S02E034.SRTMGL1 S03E032.SRTMGL1 S03E033.SRTMGL1 S03E034.SRTMGL1 S04E032.SRTMGL1 S04E033.SRTMGL1 S04E034.SRTMGL1 bbox;32.75;-3.09;34.04;-2.13",
+              "schema:downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git",
+              "schema:name": "GDSC ETL tools (S02E032.SRTMGL1 S02E033.SRTMGL1 S02E034.SRTMGL1 S03E032.SRTMGL1 S03E033.SRTMGL1 S03E034.SRTMGL1 S04E032.SRTMGL1 S04E033.SRTMGL1 S04E034.SRTMGL1 bbox;32.75;-3.09;34.04;-2.13)"
+            }
+          ]
         }
       ],
       "schema:result": {
@@ -191,7 +196,7 @@
       "@id": "https://gdsc.idsc.miami.edu/detail/tz_magu_dem_srtm"
     },
     "schema:description": "CDIF metadata record for 'Magu District DEM (SRTM)', harvested from the OHDSI gaiaCatalog datastore (meta_json-ld_tz_magu_dem_srtm.json) published by the University of Miami Geospatial Digital Special Collections (GDSC), and transformed to the CDIF Core and Discovery profiles. The source ETL activity is carried as prov:wasGeneratedBy (schema:Action); the placeholder pseudo-code event was omitted. Upstream lineage is retained via schema:isBasedOn where the source provided it.",
-    "schema:sdDatePublished": "2026-08-26",
+    "schema:sdDatePublished": "2026-11-05",
     "schema:isBasedOn": {
       "@id": "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/data/tz_magu_dem_srtm/meta_json-ld_tz_magu_dem_srtm.json"
     },

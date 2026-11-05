@@ -52,6 +52,7 @@ OUT_CONTEXT = {
     "schema": SCHEMA,
     "dcterms": "http://purl.org/dc/terms/",
     "prov": "http://www.w3.org/ns/prov#",
+    "bios": "https://bioschemas.org/",
     "dcat": "http://www.w3.org/ns/dcat#",
     "qudt": "http://qudt.org/schema/qudt/",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
@@ -287,16 +288,20 @@ def build_provenance_activity(pa, dataset_id):
         name             -> schema:name ("ETL: <operation>")
         description      -> schema:description
         object (source)  -> schema:object   (reference to the upstream source URL)
-        instrument       -> prov:used[].schema:instrument (name ensured)
+        instrument       -> prov:used[].bios:computationalTool (name ensured)
         result (output)  -> schema:result   (reference to the generated dataset)
 
     object/result are emitted as {@id} references, not inline schema:Dataset
     nodes: the cdifProv convention keeps activity entities as references so they
     don't collide with the root schema:Dataset during discovery framing.
+
+    The source's instrument is a schema:SoftwareApplication (wget, python scripts).
+    CDIF's schema:instrument role is for a schema:Product + schema:Thing, and
+    bios:computationalTool is the role it names for software.
     """
-    instrument = convert(pa["instrument"])
-    if not instrument.get("schema:name"):
-        instrument["schema:name"] = _instrument_name(pa["instrument"])
+    tool = convert(pa["instrument"])
+    if not tool.get("schema:name"):
+        tool["schema:name"] = _instrument_name(pa["instrument"])
 
     activity = {
         "@type": ["prov:Activity", "schema:Action"],
@@ -310,7 +315,7 @@ def build_provenance_activity(pa, dataset_id):
     if source_ref:
         activity["schema:object"] = {"@id": source_ref}
 
-    activity["prov:used"] = [{"schema:instrument": instrument}]
+    activity["prov:used"] = [{"bios:computationalTool": [tool]}]
     activity["schema:result"] = {"@id": dataset_id}
     return activity
 
@@ -389,7 +394,9 @@ def convert_document(src, source_filename, harvest_date, provenance=True):
         doc["schema:additionalType"] = [src["type"]]
 
     if src.get("creator"):
-        doc["schema:creator"] = convert_creators(src["creator"], "schema:Organization")
+        # An @list, which CDIF requires to keep author order. A bare array of one
+        # only passes because framing collapses it to an object.
+        doc["schema:creator"] = {"@list": convert_creators(src["creator"], "schema:Organization")}
     if src.get("provider"):
         doc["schema:provider"] = convert_creators(src["provider"], "schema:Organization")
 

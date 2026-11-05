@@ -75,7 +75,7 @@ vocabulary set to `https://schema.org/` (unprefixed tokens). CDIF needs explicit
   | `name` | `schema:name` (`"ETL: <op>"`) |
   | `description` | `schema:description` |
   | `object` (source) | `schema:object` → `{@id}` ref to the source URL |
-  | `instrument` (SoftwareApplication) | `prov:used[].schema:instrument` (a `schema:name` is derived from `featureList`, required by SHACL) |
+  | `instrument` (SoftwareApplication) | `prov:used[].bios:computationalTool`, CDIF's role for software (a `schema:name` is derived from `featureList`, required by SHACL) |
   | `result` (output) | `schema:result` → `{@id}` ref to the generated dataset |
 
   `object`/`result` are emitted as `{@id}` references (not inline
