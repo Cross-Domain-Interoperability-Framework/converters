@@ -20,14 +20,12 @@
   "schema:name": "mnist",
   "schema:description": "\n\t\n\t\t\n\t\tDataset Card for MNIST\n\t\n\n\n\t\n\t\t\n\t\tDataset Summary\n\t\n\nThe MNIST dataset consists of 70,000 28x28 black-and-white images of handwritten digits extracted from two NIST databases. There are 60,000 images in the training dataset and 10,000 images in the validation dataset, one class per digit so a total of 10 classes, with 7,000 images (6,000 train images and 1,000 test images) per class.\nHalf of the image were drawn by Census Bureau employees and the other half by high school students… See the full description on the dataset page: https://huggingface.co/datasets/ylecun/mnist.",
   "schema:url": "https://huggingface.co/datasets/ylecun/mnist",
-  "schema:dateModified": "2024-08-08",
-  "schema:sameAs": "http://yann.lecun.com/exdb/mnist/",
-  "schema:identifier": "https://huggingface.co/datasets/ylecun/mnist",
   "schema:license": [
     {
       "@id": "https://choosealicense.com/licenses/mit/"
     }
   ],
+  "schema:dateModified": "2024-08-08",
   "schema:creator": {
     "@list": [
       {
@@ -54,17 +52,39 @@
     "Croissant",
     "🇺🇸 Region: US"
   ],
+  "schema:sameAs": [
+    "http://yann.lecun.com/exdb/mnist/"
+  ],
+  "schema:alternateName": [
+    "image-classification",
+    "multi-class-image-classification",
+    "expert-generated",
+    "found",
+    "monolingual",
+    "extended|other-nist",
+    "English",
+    "mit",
+    "10K - 100K",
+    "parquet",
+    "Image",
+    "Datasets",
+    "pandas",
+    "Polars",
+    "Croissant",
+    "🇺🇸 Region: US"
+  ],
+  "schema:identifier": "https://huggingface.co/datasets/ylecun/mnist",
   "schema:distribution": [
     {
       "@id": "parquet-files-for-config-mnist",
       "schema:encodingFormat": [
         "application/x-parquet"
       ],
+      "schema:description": "File set; includes: mnist/*/*.parquet",
       "@type": [
         "schema:DataDownload"
       ],
       "schema:contentUrl": "https://huggingface.co/datasets/ylecun/mnist/tree/refs%2Fconvert%2Fparquet",
-      "schema:description": "File set; includes: mnist/*/*.parquet",
       "cdif:hasPhysicalMapping": [
         {
           "cdif:index": 1,
@@ -156,8 +176,12 @@
   },
   "prov:wasDerivedFrom": [
     {
-      "@id": "http://mlcommons.org/croissant/1.1",
-      "schema:description": "Converted from Croissant 1.0 JSON-LD"
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Croissant 1.1",
+      "schema:url": "http://mlcommons.org/croissant/1.1",
+      "schema:description": "Converted from Croissant 1.1 JSON-LD"
     }
   ]
 }

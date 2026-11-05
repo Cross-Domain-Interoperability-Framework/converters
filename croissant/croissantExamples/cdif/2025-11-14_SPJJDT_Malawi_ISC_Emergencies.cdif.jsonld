@@ -22,29 +22,13 @@
   "schema:name": "Malawi ISC Emergencies",
   "schema:description": "Malawi test dataset",
   "schema:url": "https://doi.org/10.5072/FK2/SPJJDT",
-  "schema:datePublished": "2025-11-14",
-  "schema:dateModified": "2025-11-14",
-  "schema:includedInDataCatalog": {
-    "@type": "DataCatalog",
-    "name": "Root",
-    "url": "https://dataverse.dev.codata.org"
-  },
-  "schema:version": "1.0",
-  "schema:identifier": {
-    "@type": [
-      "schema:PropertyValue"
-    ],
-    "schema:propertyID": {
-      "@id": "https://registry.identifiers.org/registry/doi"
-    },
-    "schema:value": "10.5072/FK2/SPJJDT",
-    "schema:url": "https://doi.org/10.5072/FK2/SPJJDT"
-  },
   "schema:license": [
     {
       "@id": "http://creativecommons.org/publicdomain/zero/1.0"
     }
   ],
+  "schema:datePublished": "2025-11-14",
+  "schema:dateModified": "2025-11-14",
   "schema:creator": {
     "@list": [
       {
@@ -64,9 +48,21 @@
   "schema:keywords": [
     "Engineering"
   ],
+  "schema:version": "1.0",
+  "dcterms:bibliographicCitation": "@data{FK2/SPJJDT_2025,author = {Admin, Dataverse},publisher = {Root},title = {Malawi ISC Emergencies},year = {2025},url = {https://doi.org/10.5072/FK2/SPJJDT}}",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:value": "10.5072/FK2/SPJJDT",
+    "schema:url": "https://doi.org/10.5072/FK2/SPJJDT"
+  },
   "schema:distribution": [
     {
-      "@id": "All round Targets for OCV_20240603.xlsx",
+      "@id": "All_round_Targets_for_OCV_20240603.xlsx",
       "schema:name": "All round Targets for OCV_20240603.xlsx",
       "schema:encodingFormat": [
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
@@ -343,20 +339,39 @@
       ]
     }
   ],
-  "schema:relatedLink": [
+  "schema:hasPart": [
     {
       "@type": [
-        "schema:LinkRole"
+        "schema:CreativeWork"
       ],
-      "schema:linkRelationship": "related",
-      "schema:target": {
-        "@type": [
-          "schema:EntryPoint"
-        ],
-        "schema:name": "Daily_Cholera_Case and deaths_Data_2022 to 2025.xlsx",
-        "schema:url": "https://dataverse.dev.codata.org/api/access/datafile/17",
-        "schema:encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-      }
+      "@id": "Daily_Cholera_Case_and_deaths_Data_2022_to_2025.xlsx",
+      "schema:name": "Daily_Cholera_Case and deaths_Data_2022 to 2025.xlsx",
+      "schema:distribution": [
+        {
+          "@type": [
+            "schema:DataDownload"
+          ],
+          "schema:contentUrl": "https://dataverse.dev.codata.org/api/access/datafile/17",
+          "schema:encodingFormat": [
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          ],
+          "spdx:checksum": {
+            "@type": [
+              "spdx:Checksum"
+            ],
+            "spdx:checksumAlgorithm": "checksumAlgorithm_md5",
+            "spdx:checksumValue": "0c640062306f85082c022fd805328969"
+          },
+          "schema:size": {
+            "@type": [
+              "schema:QuantitativeValue"
+            ],
+            "schema:value": 1672029,
+            "schema:unitText": "byte"
+          }
+        }
+      ],
+      "schema:url": "https://dataverse.dev.codata.org/api/access/datafile/17"
     }
   ],
   "schema:variableMeasured": [
@@ -778,6 +793,13 @@
     },
     "@id": "https://doi.org/10.5072/FK2/SPJJDT/metadata",
     "schema:sdDatePublished": "2025-11-14",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Root",
+      "schema:url": "https://dataverse.dev.codata.org"
+    },
     "dcterms:conformsTo": [
       {
         "@id": "https://w3id.org/cdif/core/1.1"
@@ -787,12 +809,19 @@
       },
       {
         "@id": "https://w3id.org/cdif/data_description/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/manifest/1.1"
       }
     ]
   },
   "prov:wasDerivedFrom": [
     {
-      "@id": "http://mlcommons.org/croissant/1.1",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Croissant 1.0",
+      "schema:url": "http://mlcommons.org/croissant/1.0",
       "schema:description": "Converted from Croissant 1.0 JSON-LD"
     }
   ]

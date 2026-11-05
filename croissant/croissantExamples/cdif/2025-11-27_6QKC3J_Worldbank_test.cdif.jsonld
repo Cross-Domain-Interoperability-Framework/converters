@@ -22,29 +22,13 @@
   "schema:name": "Worldbank test",
   "schema:description": "test",
   "schema:url": "https://doi.org/10.5072/FK2/6QKC3J",
-  "schema:datePublished": "2025-11-27",
-  "schema:dateModified": "2025-11-27",
-  "schema:includedInDataCatalog": {
-    "@type": "DataCatalog",
-    "name": "Root",
-    "url": "https://dataverse.dev.codata.org"
-  },
-  "schema:version": "2.0",
-  "schema:identifier": {
-    "@type": [
-      "schema:PropertyValue"
-    ],
-    "schema:propertyID": {
-      "@id": "https://registry.identifiers.org/registry/doi"
-    },
-    "schema:value": "10.5072/FK2/6QKC3J",
-    "schema:url": "https://doi.org/10.5072/FK2/6QKC3J"
-  },
   "schema:license": [
     {
       "@id": "http://creativecommons.org/publicdomain/zero/1.0"
     }
   ],
+  "schema:datePublished": "2025-11-27",
+  "schema:dateModified": "2025-11-27",
   "schema:creator": {
     "@list": [
       {
@@ -64,6 +48,18 @@
   "schema:keywords": [
     "Arts and Humanities"
   ],
+  "schema:version": "2.0",
+  "dcterms:bibliographicCitation": "@data{FK2/6QKC3J_2025,author = {Admin, Dataverse},publisher = {Root},title = {Worldbank test},year = {2025},url = {https://doi.org/10.5072/FK2/6QKC3J}}",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:value": "10.5072/FK2/6QKC3J",
+    "schema:url": "https://doi.org/10.5072/FK2/6QKC3J"
+  },
   "schema:distribution": [
     {
       "@id": "API_NY.GDP.MKTP.CD_DS2_en_excel_v2_252652.xlsx",
@@ -579,20 +575,39 @@
       ]
     }
   ],
-  "schema:relatedLink": [
+  "schema:hasPart": [
     {
       "@type": [
-        "schema:LinkRole"
+        "schema:CreativeWork"
       ],
-      "schema:linkRelationship": "related",
-      "schema:target": {
-        "@type": [
-          "schema:EntryPoint"
-        ],
-        "schema:name": "API_NY.GDP.MKTP.CD_DS2_en_excel_v2_252652.xls",
-        "schema:url": "https://dataverse.dev.codata.org/api/access/datafile/45",
-        "schema:encodingFormat": "application/vnd.ms-excel"
-      }
+      "@id": "API_NY.GDP.MKTP.CD_DS2_en_excel_v2_252652.xls",
+      "schema:name": "API_NY.GDP.MKTP.CD_DS2_en_excel_v2_252652.xls",
+      "schema:distribution": [
+        {
+          "@type": [
+            "schema:DataDownload"
+          ],
+          "schema:contentUrl": "https://dataverse.dev.codata.org/api/access/datafile/45",
+          "schema:encodingFormat": [
+            "application/vnd.ms-excel"
+          ],
+          "spdx:checksum": {
+            "@type": [
+              "spdx:Checksum"
+            ],
+            "spdx:checksumAlgorithm": "checksumAlgorithm_md5",
+            "spdx:checksumValue": "e199df74d0f5eb8b166d0d0e93cf763c"
+          },
+          "schema:size": {
+            "@type": [
+              "schema:QuantitativeValue"
+            ],
+            "schema:value": 390144,
+            "schema:unitText": "byte"
+          }
+        }
+      ],
+      "schema:url": "https://dataverse.dev.codata.org/api/access/datafile/45"
     }
   ],
   "schema:variableMeasured": [
@@ -1508,6 +1523,13 @@
     },
     "@id": "https://doi.org/10.5072/FK2/6QKC3J/metadata",
     "schema:sdDatePublished": "2025-11-27",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Root",
+      "schema:url": "https://dataverse.dev.codata.org"
+    },
     "dcterms:conformsTo": [
       {
         "@id": "https://w3id.org/cdif/core/1.1"
@@ -1517,12 +1539,19 @@
       },
       {
         "@id": "https://w3id.org/cdif/data_description/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/manifest/1.1"
       }
     ]
   },
   "prov:wasDerivedFrom": [
     {
-      "@id": "http://mlcommons.org/croissant/1.1",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Croissant 1.0",
+      "schema:url": "http://mlcommons.org/croissant/1.0",
       "schema:description": "Converted from Croissant 1.0 JSON-LD"
     }
   ]

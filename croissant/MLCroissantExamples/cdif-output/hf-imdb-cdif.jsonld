@@ -20,14 +20,12 @@
   "schema:name": "imdb",
   "schema:description": "\n\t\n\t\t\n\t\tDataset Card for \"imdb\"\n\t\n\n\n\t\n\t\t\n\t\tDataset Summary\n\t\n\nLarge Movie Review Dataset.\nThis is a dataset for binary sentiment classification containing substantially more data than previous benchmark datasets. We provide a set of 25,000 highly polar movie reviews for training, and 25,000 for testing. There is additional unlabeled data for use as well.\n\n\t\n\t\t\n\t\tSupported Tasks and Leaderboards\n\t\n\nMore Information Needed\n\n\t\n\t\t\n\t\tLanguages\n\t\n\nMore Information Needed\n\n\t\n\t\t\n\t\tDataset Structure… See the full description on the dataset page: https://huggingface.co/datasets/stanfordnlp/imdb.",
   "schema:url": "https://huggingface.co/datasets/stanfordnlp/imdb",
-  "schema:dateModified": "2024-01-04",
-  "schema:sameAs": "http://ai.stanford.edu/~amaas/data/sentiment/",
-  "schema:identifier": "https://huggingface.co/datasets/stanfordnlp/imdb",
   "schema:license": [
     {
       "@id": "https://choosealicense.com/licenses/other/"
     }
   ],
+  "schema:dateModified": "2024-01-04",
   "schema:creator": {
     "@list": [
       {
@@ -39,7 +37,6 @@
   "schema:keywords": [
     "text-classification",
     "sentiment-classification",
-    "expert-generated",
     "expert-generated",
     "monolingual",
     "original",
@@ -54,6 +51,27 @@
     "Polars",
     "🇺🇸 Region: US"
   ],
+  "schema:sameAs": [
+    "http://ai.stanford.edu/~amaas/data/sentiment/"
+  ],
+  "schema:alternateName": [
+    "text-classification",
+    "sentiment-classification",
+    "expert-generated",
+    "monolingual",
+    "original",
+    "English",
+    "other",
+    "100K - 1M",
+    "parquet",
+    "Text",
+    "Datasets",
+    "pandas",
+    "Croissant",
+    "Polars",
+    "🇺🇸 Region: US"
+  ],
+  "schema:identifier": "https://huggingface.co/datasets/stanfordnlp/imdb",
   "schema:distribution": [
     {
       "@id": "parquet-files-for-config-plain_text",
@@ -160,7 +178,11 @@
   },
   "prov:wasDerivedFrom": [
     {
-      "@id": "http://mlcommons.org/croissant/1.1",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Croissant 1.0",
+      "schema:url": "http://mlcommons.org/croissant/1.0",
       "schema:description": "Converted from Croissant 1.0 JSON-LD"
     }
   ]

@@ -22,29 +22,13 @@
   "schema:name": "aut_core test",
   "schema:description": "aut_core test data",
   "schema:url": "https://doi.org/10.5072/FK2/RIB64Q",
-  "schema:datePublished": "2025-11-13",
-  "schema:dateModified": "2025-11-13",
-  "schema:includedInDataCatalog": {
-    "@type": "DataCatalog",
-    "name": "Root",
-    "url": "https://dataverse.dev.codata.org"
-  },
-  "schema:version": "1.0",
-  "schema:identifier": {
-    "@type": [
-      "schema:PropertyValue"
-    ],
-    "schema:propertyID": {
-      "@id": "https://registry.identifiers.org/registry/doi"
-    },
-    "schema:value": "10.5072/FK2/RIB64Q",
-    "schema:url": "https://doi.org/10.5072/FK2/RIB64Q"
-  },
   "schema:license": [
     {
       "@id": "http://creativecommons.org/publicdomain/zero/1.0"
     }
   ],
+  "schema:datePublished": "2025-11-13",
+  "schema:dateModified": "2025-11-13",
   "schema:creator": {
     "@list": [
       {
@@ -64,6 +48,18 @@
   "schema:keywords": [
     "Agricultural Sciences"
   ],
+  "schema:version": "1.0",
+  "dcterms:bibliographicCitation": "@data{FK2/RIB64Q_2025,author = {Admin, Dataverse},publisher = {Root},title = {aut_core test},year = {2025},url = {https://doi.org/10.5072/FK2/RIB64Q}}",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:value": "10.5072/FK2/RIB64Q",
+    "schema:url": "https://doi.org/10.5072/FK2/RIB64Q"
+  },
   "schema:distribution": [
     {
       "@id": "aut_core.csv",
@@ -352,6 +348,13 @@
     },
     "@id": "https://doi.org/10.5072/FK2/RIB64Q/metadata",
     "schema:sdDatePublished": "2025-11-13",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Root",
+      "schema:url": "https://dataverse.dev.codata.org"
+    },
     "dcterms:conformsTo": [
       {
         "@id": "https://w3id.org/cdif/core/1.1"
@@ -366,7 +369,11 @@
   },
   "prov:wasDerivedFrom": [
     {
-      "@id": "http://mlcommons.org/croissant/1.1",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Croissant 1.0",
+      "schema:url": "http://mlcommons.org/croissant/1.0",
       "schema:description": "Converted from Croissant 1.0 JSON-LD"
     }
   ]

@@ -22,29 +22,13 @@
   "schema:name": "Lunar Eclipse Data",
   "schema:description": "The lunar eclipse data starting from 1981",
   "schema:url": "https://doi.org/10.5072/FK2/ON7W1G",
-  "schema:datePublished": "2025-11-27",
-  "schema:dateModified": "2025-11-27",
-  "schema:includedInDataCatalog": {
-    "@type": "DataCatalog",
-    "name": "Root",
-    "url": "https://dataverse.dev.codata.org"
-  },
-  "schema:version": "1.0",
-  "schema:identifier": {
-    "@type": [
-      "schema:PropertyValue"
-    ],
-    "schema:propertyID": {
-      "@id": "https://registry.identifiers.org/registry/doi"
-    },
-    "schema:value": "10.5072/FK2/ON7W1G",
-    "schema:url": "https://doi.org/10.5072/FK2/ON7W1G"
-  },
   "schema:license": [
     {
       "@id": "http://creativecommons.org/publicdomain/zero/1.0"
     }
   ],
+  "schema:datePublished": "2025-11-27",
+  "schema:dateModified": "2025-11-27",
   "schema:creator": {
     "@list": [
       {
@@ -60,6 +44,18 @@
   "schema:keywords": [
     "Astronomy and Astrophysics"
   ],
+  "schema:version": "1.0",
+  "dcterms:bibliographicCitation": "@data{FK2/ON7W1G_2025,author = {Esen, Bora},publisher = {Root},title = {Lunar Eclipse Data},year = {2025},url = {https://doi.org/10.5072/FK2/ON7W1G}}",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:value": "10.5072/FK2/ON7W1G",
+    "schema:url": "https://doi.org/10.5072/FK2/ON7W1G"
+  },
   "schema:distribution": [
     {
       "@id": "lunar_eclipses_1981-2030.csv",
@@ -248,6 +244,13 @@
     },
     "@id": "https://doi.org/10.5072/FK2/ON7W1G/metadata",
     "schema:sdDatePublished": "2025-11-27",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Root",
+      "schema:url": "https://dataverse.dev.codata.org"
+    },
     "dcterms:conformsTo": [
       {
         "@id": "https://w3id.org/cdif/core/1.1"
@@ -262,7 +265,11 @@
   },
   "prov:wasDerivedFrom": [
     {
-      "@id": "http://mlcommons.org/croissant/1.1",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Croissant 1.0",
+      "schema:url": "http://mlcommons.org/croissant/1.0",
       "schema:description": "Converted from Croissant 1.0 JSON-LD"
     }
   ]
