@@ -171,7 +171,7 @@ def build_physical_mappings(objects, index):
 
 def count_property(name, concept, n):
     return {"@type": ["schema:PropertyValue"],
-            "schema:propertyID": [DDI_DISCOVERY + concept],
+            "schema:propertyID": [{"@id": DDI_DISCOVERY + concept}],
             "schema:name": name, "schema:value": n}
 
 
