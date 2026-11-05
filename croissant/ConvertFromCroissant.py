@@ -379,7 +379,9 @@ def _convert_agent(agent):
         types = _as_list(raw_type)
         prefixed = []
         for t in types:
-            if isinstance(t, str) and not t.startswith("schema:") and not t.startswith("http"):
+            if isinstance(t, str) and t.startswith("sc:"):
+                prefixed.append(f"schema:{t[3:]}")
+            elif isinstance(t, str) and not t.startswith("schema:") and not t.startswith("http"):
                 prefixed.append(f"schema:{t}")
             else:
                 prefixed.append(t)

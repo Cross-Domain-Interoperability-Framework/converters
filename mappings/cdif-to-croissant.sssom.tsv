@@ -20,6 +20,7 @@ dcterms:bibliographicCitation	bibliographicCitation	schema:Dataset	skos:closeMat
 schema:distribution	distribution	schema:Dataset	skos:exactMatch	cr:fileObject	distribution	$.distribution	distribution	semapv:ManualMappingCuration	A DataDownload becomes a cr:FileObject; an archive with parts becomes a FileObject plus a FileSet.
 schema:variableMeasured	variableMeasured	schema:Dataset	skos:closeMatch	cr:recordSet	recordSet	$.recordSet[*].field[*]	recordset	semapv:ManualMappingCuration	CDIF describes variables of the dataset; Croissant describes fields of a record set, so a record set is synthesised per tabular distribution.
 schema:subjectOf	subjectOf	schema:Dataset	skos:closeMatch				unmapped	semapv:ManualMappingCuration	The CDIF catalog record. Croissant has no equivalent; its own dct:conformsTo names the Croissant version, not a CDIF profile.
+odrl:hasPolicy	hasPolicy	schema:Dataset	skos:closeMatch				unmapped	semapv:ManualMappingCuration	ODRL policy reference, which the CDIF record carries from a Croissant source. Not carried back: the converter has no passthrough for it.
 schema:spatialCoverage	spatialCoverage	schema:Dataset	skos:closeMatch				unmapped	semapv:ManualMappingCuration	Croissant has no spatial vocabulary.
 schema:temporalCoverage	temporalCoverage	schema:Dataset	skos:closeMatch				unmapped	semapv:ManualMappingCuration	Croissant has no temporal vocabulary beyond the RAI collection timeframe.
 schema:measurementTechnique	measurementTechnique	schema:Dataset	skos:closeMatch				unmapped	semapv:ManualMappingCuration	No Croissant equivalent.
