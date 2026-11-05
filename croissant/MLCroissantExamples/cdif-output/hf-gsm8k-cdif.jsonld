@@ -20,14 +20,12 @@
   "schema:name": "gsm8k",
   "schema:description": "\n\t\n\t\t\n\t\tDataset Card for GSM8K\n\t\n\n\n\t\n\t\t\n\t\tDataset Summary\n\t\n\nGSM8K (Grade School Math 8K) is a dataset of 8.5K high quality linguistically diverse grade school math word problems. The dataset was created to support the task of question answering on basic mathematical problems that require multi-step reasoning.\n\nThese problems take between 2 and 8 steps to solve.\nSolutions primarily involve performing a sequence of elementary calculations using basic arithmetic operations (+ − ×÷) to reach the… See the full description on the dataset page: https://huggingface.co/datasets/openai/gsm8k.",
   "schema:url": "https://huggingface.co/datasets/openai/gsm8k",
-  "schema:dateModified": "2026-03-23",
-  "schema:sameAs": "https://openai.com/blog/grade-school-math/",
-  "schema:identifier": "https://huggingface.co/datasets/openai/gsm8k",
   "schema:license": [
     {
       "@id": "https://choosealicense.com/licenses/mit/"
     }
   ],
+  "schema:dateModified": "2026-03-23",
   "schema:creator": {
     "@list": [
       {
@@ -40,7 +38,6 @@
     "Benchmark",
     "eval-yaml",
     "text-generation",
-    "crowdsourced",
     "crowdsourced",
     "monolingual",
     "original",
@@ -57,17 +54,41 @@
     "🇺🇸 Region: US",
     "math-word-problems"
   ],
+  "schema:sameAs": [
+    "https://openai.com/blog/grade-school-math/"
+  ],
+  "schema:alternateName": [
+    "Benchmark",
+    "eval-yaml",
+    "text-generation",
+    "crowdsourced",
+    "monolingual",
+    "original",
+    "English",
+    "mit",
+    "10K - 100K",
+    "parquet",
+    "Text",
+    "Datasets",
+    "pandas",
+    "Polars",
+    "Croissant",
+    "arxiv:2110.14168",
+    "🇺🇸 Region: US",
+    "math-word-problems"
+  ],
+  "schema:identifier": "https://huggingface.co/datasets/openai/gsm8k",
   "schema:distribution": [
     {
       "@id": "parquet-files-for-config-main",
       "schema:encodingFormat": [
         "application/x-parquet"
       ],
+      "schema:description": "File set; includes: main/*/*.parquet",
       "@type": [
         "schema:DataDownload"
       ],
       "schema:contentUrl": "https://huggingface.co/datasets/openai/gsm8k/tree/refs%2Fconvert%2Fparquet",
-      "schema:description": "File set; includes: main/*/*.parquet",
       "cdif:hasPhysicalMapping": [
         {
           "cdif:index": 1,
@@ -97,11 +118,11 @@
       "schema:encodingFormat": [
         "application/x-parquet"
       ],
+      "schema:description": "File set; includes: socratic/*/*.parquet",
       "@type": [
         "schema:DataDownload"
       ],
       "schema:contentUrl": "https://huggingface.co/datasets/openai/gsm8k/tree/refs%2Fconvert%2Fparquet",
-      "schema:description": "File set; includes: socratic/*/*.parquet",
       "cdif:hasPhysicalMapping": [
         {
           "cdif:index": 1,
@@ -229,8 +250,12 @@
   },
   "prov:wasDerivedFrom": [
     {
-      "@id": "http://mlcommons.org/croissant/1.1",
-      "schema:description": "Converted from Croissant 1.0 JSON-LD"
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Croissant 1.1",
+      "schema:url": "http://mlcommons.org/croissant/1.1",
+      "schema:description": "Converted from Croissant 1.1 JSON-LD"
     }
   ]
 }

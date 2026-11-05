@@ -22,29 +22,13 @@
   "schema:name": "Test with real data",
   "schema:description": "Real dataset",
   "schema:url": "https://doi.org/10.5072/FK2/6TYU3O",
-  "schema:datePublished": "2025-11-11",
-  "schema:dateModified": "2025-11-11",
-  "schema:includedInDataCatalog": {
-    "@type": "DataCatalog",
-    "name": "Root",
-    "url": "https://dataverse.dev.codata.org"
-  },
-  "schema:version": "1.0",
-  "schema:identifier": {
-    "@type": [
-      "schema:PropertyValue"
-    ],
-    "schema:propertyID": {
-      "@id": "https://registry.identifiers.org/registry/doi"
-    },
-    "schema:value": "10.5072/FK2/6TYU3O",
-    "schema:url": "https://doi.org/10.5072/FK2/6TYU3O"
-  },
   "schema:license": [
     {
       "@id": "http://creativecommons.org/publicdomain/zero/1.0"
     }
   ],
+  "schema:datePublished": "2025-11-11",
+  "schema:dateModified": "2025-11-11",
   "schema:creator": {
     "@list": [
       {
@@ -64,6 +48,18 @@
   "schema:keywords": [
     "Earth and Environmental Sciences"
   ],
+  "schema:version": "1.0",
+  "dcterms:bibliographicCitation": "@data{FK2/6TYU3O_2025,author = {Admin, Dataverse},publisher = {Root},title = {Test with real data},year = {2025},url = {https://doi.org/10.5072/FK2/6TYU3O}}",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:value": "10.5072/FK2/6TYU3O",
+    "schema:url": "https://doi.org/10.5072/FK2/6TYU3O"
+  },
   "schema:distribution": [
     {
       "@id": "dataset_example.csv",
@@ -552,6 +548,13 @@
     },
     "@id": "https://doi.org/10.5072/FK2/6TYU3O/metadata",
     "schema:sdDatePublished": "2025-11-11",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Root",
+      "schema:url": "https://dataverse.dev.codata.org"
+    },
     "dcterms:conformsTo": [
       {
         "@id": "https://w3id.org/cdif/core/1.1"
@@ -566,7 +569,11 @@
   },
   "prov:wasDerivedFrom": [
     {
-      "@id": "http://mlcommons.org/croissant/1.1",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Croissant 1.0",
+      "schema:url": "http://mlcommons.org/croissant/1.0",
       "schema:description": "Converted from Croissant 1.0 JSON-LD"
     }
   ]

@@ -20,14 +20,12 @@
   "schema:name": "glue",
   "schema:description": "\n\t\n\t\t\n\t\tDataset Card for GLUE\n\t\n\n\n\t\n\t\t\n\t\tDataset Summary\n\t\n\nGLUE, the General Language Understanding Evaluation benchmark (https://gluebenchmark.com/) is a collection of resources for training, evaluating, and analyzing natural language understanding systems.\n\n\t\n\t\t\n\t\tSupported Tasks and Leaderboards\n\t\n\nThe leaderboard for the GLUE benchmark can be found at this address. It comprises the following tasks:\n\n\t\n\t\t\n\t\tax\n\t\n\nA manually-curated evaluation dataset for fine-grained analysis of system… See the full description on the dataset page: https://huggingface.co/datasets/nyu-mll/glue.",
   "schema:url": "https://huggingface.co/datasets/nyu-mll/glue",
-  "schema:dateModified": "2024-01-30",
-  "schema:sameAs": "https://gluebenchmark.com/",
-  "schema:identifier": "https://huggingface.co/datasets/nyu-mll/glue",
   "schema:license": [
     {
       "@id": "https://choosealicense.com/licenses/other/"
     }
   ],
+  "schema:dateModified": "2024-01-30",
   "schema:creator": {
     "@list": [
       {
@@ -44,11 +42,9 @@
     "sentiment-classification",
     "text-scoring",
     "other",
-    "other",
     "monolingual",
     "original",
     "English",
-    "other",
     "1M - 10M",
     "parquet",
     "Tabular",
@@ -63,6 +59,35 @@
     "coreference-nli",
     "paraphrase-identification"
   ],
+  "schema:sameAs": [
+    "https://gluebenchmark.com/"
+  ],
+  "schema:alternateName": [
+    "text-classification",
+    "acceptability-classification",
+    "natural-language-inference",
+    "semantic-similarity-scoring",
+    "sentiment-classification",
+    "text-scoring",
+    "other",
+    "monolingual",
+    "original",
+    "English",
+    "1M - 10M",
+    "parquet",
+    "Tabular",
+    "Text",
+    "Datasets",
+    "pandas",
+    "Croissant",
+    "Polars",
+    "arxiv:1804.07461",
+    "🇺🇸 Region: US",
+    "qa-nli",
+    "coreference-nli",
+    "paraphrase-identification"
+  ],
+  "schema:identifier": "https://huggingface.co/datasets/nyu-mll/glue",
   "schema:distribution": [
     {
       "@id": "parquet-files-for-config-ax",
@@ -1423,7 +1448,11 @@
   },
   "prov:wasDerivedFrom": [
     {
-      "@id": "http://mlcommons.org/croissant/1.1",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Croissant 1.0",
+      "schema:url": "http://mlcommons.org/croissant/1.0",
       "schema:description": "Converted from Croissant 1.0 JSON-LD"
     }
   ]

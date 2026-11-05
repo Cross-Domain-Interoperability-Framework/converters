@@ -20,14 +20,12 @@
   "schema:name": "squad",
   "schema:description": "\n\t\n\t\t\n\t\tDataset Card for SQuAD\n\t\n\n\n\t\n\t\t\n\t\tDataset Summary\n\t\n\nStanford Question Answering Dataset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles, where the answer to every question is a segment of text, or span, from the corresponding reading passage, or the question might be unanswerable.\nSQuAD 1.1 contains 100,000+ question-answer pairs on 500+ articles.\n\n\t\n\t\t\n\t\tSupported Tasks and Leaderboards\n\t\n\nQuestion Answering.… See the full description on the dataset page: https://huggingface.co/datasets/rajpurkar/squad.",
   "schema:url": "https://huggingface.co/datasets/rajpurkar/squad",
-  "schema:dateModified": "2024-03-04",
-  "schema:sameAs": "https://rajpurkar.github.io/SQuAD-explorer/",
-  "schema:identifier": "https://huggingface.co/datasets/rajpurkar/squad",
   "schema:license": [
     {
       "@id": "https://choosealicense.com/licenses/cc-by-sa-4.0/"
     }
   ],
+  "schema:dateModified": "2024-03-04",
   "schema:creator": {
     "@list": [
       {
@@ -39,7 +37,6 @@
   "schema:keywords": [
     "question-answering",
     "extractive-qa",
-    "crowdsourced",
     "crowdsourced",
     "found",
     "monolingual",
@@ -56,17 +53,40 @@
     "arxiv:1606.05250",
     "🇺🇸 Region: US"
   ],
+  "schema:sameAs": [
+    "https://rajpurkar.github.io/SQuAD-explorer/"
+  ],
+  "schema:alternateName": [
+    "question-answering",
+    "extractive-qa",
+    "crowdsourced",
+    "found",
+    "monolingual",
+    "extended|wikipedia",
+    "English",
+    "cc-by-sa-4.0",
+    "10K - 100K",
+    "parquet",
+    "Text",
+    "Datasets",
+    "pandas",
+    "Croissant",
+    "Polars",
+    "arxiv:1606.05250",
+    "🇺🇸 Region: US"
+  ],
+  "schema:identifier": "https://huggingface.co/datasets/rajpurkar/squad",
   "schema:distribution": [
     {
       "@id": "parquet-files-for-config-plain_text",
       "schema:encodingFormat": [
         "application/x-parquet"
       ],
+      "schema:description": "File set; includes: plain_text/*/*.parquet",
       "@type": [
         "schema:DataDownload"
       ],
       "schema:contentUrl": "https://huggingface.co/datasets/rajpurkar/squad/tree/refs%2Fconvert%2Fparquet",
-      "schema:description": "File set; includes: plain_text/*/*.parquet",
       "cdif:hasPhysicalMapping": [
         {
           "cdif:index": 1,
@@ -196,8 +216,12 @@
   },
   "prov:wasDerivedFrom": [
     {
-      "@id": "http://mlcommons.org/croissant/1.1",
-      "schema:description": "Converted from Croissant 1.0 JSON-LD"
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Croissant 1.1",
+      "schema:url": "http://mlcommons.org/croissant/1.1",
+      "schema:description": "Converted from Croissant 1.1 JSON-LD"
     }
   ]
 }
