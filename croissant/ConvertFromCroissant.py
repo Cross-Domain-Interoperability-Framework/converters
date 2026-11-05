@@ -1550,9 +1550,13 @@ def convert(croissant, verbose=False):
                    out["schema:subjectOf"].get("dcterms:conformsTo", [])]
             print(f"  conformsTo: {got}")
     # ---- Traceability: where did this come from --------------------------
+    source_uri = src_conforms if src_conforms in CROISSANT_SOURCE_URIS else CROISSANT_SOURCE_URI
+    source_version = source_uri.rsplit("/", 1)[-1]
     out.setdefault("prov:wasDerivedFrom", []).append(
-        {"@id": CROISSANT_SOURCE_URI,
-         "schema:description": "Converted from Croissant 1.0 JSON-LD"}
+        {"@type": ["schema:CreativeWork"],
+         "schema:name": f"Croissant {source_version}",
+         "schema:url": source_uri,
+         "schema:description": f"Converted from Croissant {source_version} JSON-LD"}
     )
 
     if verbose:
