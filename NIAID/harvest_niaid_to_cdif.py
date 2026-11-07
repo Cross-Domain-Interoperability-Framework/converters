@@ -97,6 +97,14 @@ UNTYPED_CLASS = {
     "projectNumSplit": "ndeapi:projectNumSplit", "sameas": "ndeapi:sameas",
     "spatialCoverage": "schema:AdministrativeArea",
 }
+# The NIAID type an untyped node under these properties is given before conversion,
+# because the cdifNIAID extension blocks for these types require @type.
+TYPE_WHEN_UNTYPED = {
+    "funding": "MonetaryGrant", "citation": "CreativeWork", "citedBy": "CreativeWork",
+    "includedInDataCatalog": "DataCatalog", "species": "DefinedTerm",
+    "infectiousAgent": "DefinedTerm", "healthCondition": "DefinedTerm",
+    "topicCategory": "DefinedTerm",
+}
 NDE_CLASSES = {"Sample", "SampleCollection", "DefinedTerm", "TemporalInterval"}
 # @type values that are not schema.org types. DefinedTerm is, so it is not listed.
 TYPE_NAMES = {
@@ -308,6 +316,8 @@ def _convert_value(value, key, notes):
     if isinstance(value, list):
         return [_convert_value(v, key, notes) for v in value]
     if isinstance(value, dict):
+        if not _types(value) and key in TYPE_WHEN_UNTYPED:
+            value = {"@type": TYPE_WHEN_UNTYPED[key], **value}
         return convert_node(value, class_of(value, key), notes)
     return value
 
@@ -876,6 +886,19 @@ def _keyword_about(value, node, rule, notes):
     return terms
 
 
+def _contributor_role(value, node, rule, notes):
+    """A person's role (NIAID gives one only on a dataset's authors and creators) as a
+    dataset contributor in that role, CDIF's pattern for roles: a schema:Role holding
+    the person. The person stays in the creator list, without the role."""
+    if not isinstance(value, str) or not value.strip():
+        return None
+    person = convert_node({k: v for k, v in node.items() if k != rule["subject_label"]},
+                          rule["subject_class"], notes)
+    if _says_nothing(person):
+        return None
+    return [{"@type": ["schema:Role"], "schema:roleName": value.strip(), "schema:contributor": person}]
+
+
 def _metadata_source(value, node, rule, notes):
     """A portal provenance flag (fromGPT, fromPMID, ...) as a sentence for the catalog
     record's description; repeats are dropped when the sentences are joined."""
@@ -990,7 +1013,7 @@ SHAPERS = {
     "linked_parts": _linked_parts, "unlinked_parts": _unlinked_parts,
     "bundle_parts": _bundle_parts, "part_downloads": _part_downloads, "link_role": _link_role, "unlinked_related": _unlinked_related,
     "keyword_about": _keyword_about, "derived_from": _derived_from,
-    "metadata_source": _metadata_source, "work_identifier": _work_identifier,
+    "metadata_source": _metadata_source, "contributor_role": _contributor_role, "work_identifier": _work_identifier,
     "work_url_or_given": _work_url_or_given, "place_name_term": _place_name_term, "place_code_alias": _place_code_alias, "place_identifier": _place_identifier,
     "iso_interval": _iso_interval, "interval_detail": _interval_detail, "place": _place_shaper,
     "property_value": _property_value, "term_array": _term_array,
