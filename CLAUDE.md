@@ -15,7 +15,9 @@ different roles — check which before editing either side:
   functions are the shapers named in the `transform` column), Croissant (via
   the shared `sssom_engine.py`), FAIR² (`FAIR2/fair2_to_cdif.py`: runs the
   Croissant converter on the keys `fair2-to-cdif.sssom.tsv` does not claim,
-  then applies that table), DDI (worksheets compiled to
+  then applies that table), NIAID (`NIAID/harvest_niaid_to_cdif.py`: rows by
+  `subject_class` in file order, shapers named in `transform`, and a name with
+  no row on its class takes the target the table gives it elsewhere), DDI (worksheets compiled to
   `mappings/ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py`). A
   mapping change for these is a table edit; code is only for structural
   shapers.
@@ -54,7 +56,9 @@ There is no unit-test suite. What exists:
 - `python soso/check_soso_mappings.py`,
   `python croissant/check_croissant_mappings.py` and
   `python OHDSI/check_ohdsi_mappings.py` — table/converter drift
-  checks (the CI job in `.github/workflows/check-mappings.yml`); stdlib only.
+  checks; `python NIAID/check_niaid_mappings.py` — the NIAID table's
+  transforms, prefixes and coverage of `NIAID/niaidExamples/` (all four are the
+  CI job in `.github/workflows/check-mappings.yml`); stdlib only.
 - Regression corpora: `python DCAT/build_corpus.py` (see below) and
   `python DDI/build_ddi_corpus.py`.
 - Validate one output: `python UMM/umm_to_cdif.py <in> -o out/ --validate`

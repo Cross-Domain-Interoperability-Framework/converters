@@ -37,6 +37,7 @@ others document a hand-coded converter and are checked against it in CI.
 | [`fair2-to-cdif.sssom.tsv`](fair2-to-cdif.sssom.tsv) | FAIR² extensions → CDIF (the Croissant core goes through `croissant-to-cdif`) | `FAIR2/fair2_to_cdif.py` **(reads it)** | 46 (44) |
 | [`fair2-aliases.sssom.tsv`](fair2-aliases.sssom.tsv) | legacy FAIR² source IRIs → the IRI the mapping table keys on | `FAIR2/fair2_to_cdif.py` **(reads it)** | 27 |
 | [`ohdsi-to-cdif.sssom.tsv`](ohdsi-to-cdif.sssom.tsv) | OHDSI gaiaCatalog (schema.org) → CDIF | `OHDSI/harvest_ohdsi_to_cdif.py` (documents it; checked by `OHDSI/check_ohdsi_mappings.py`) | 25 |
+| [`niaid-to-cdif.sssom.tsv`](niaid-to-cdif.sssom.tsv) | NIAID Data Discovery Portal → CDIF (cdifNIAID profile) | `NIAID/harvest_niaid_to_cdif.py` **(reads it)**; checked by `NIAID/check_niaid_mappings.py` | 289 (277) |
 | [`ddi-common-to-cdif.sssom.tsv`](ddi-common-to-cdif.sssom.tsv) | DDI Codebook (2.5 ∩ 1.2.2 common core) → CDIF | compiled to `ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py` **(reads it)** | 210 (184) |
 | [`ddi25-to-cdif.sssom.tsv`](ddi25-to-cdif.sssom.tsv) | DDI Codebook 2.5 *extras* → CDIF | as above, for 2.5 (`ddi2cdif.py`, `ddi_to_cdif.py`, `DDICodebook/ddi25_to_cdif.py`) | 137 (108) |
 | [`ddi122-to-cdif.sssom.tsv`](ddi122-to-cdif.sssom.tsv) | DDI Codebook 1.2.2 *extras* → CDIF | as above, for 1.2.2 | 7 (1) |
