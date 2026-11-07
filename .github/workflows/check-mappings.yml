@@ -1,4 +1,5 @@
-# Do the SOSO, Croissant and OHDSI mapping tables still describe what the converters do?
+# Do the SOSO, Croissant and OHDSI mapping tables still describe what the converters do,
+# and does the NIAID table, which drives its converter, cover the committed examples?
 #
 # These converters carry SSSOM tables that document, rather than drive, the
 # conversion (SOSO and OHDSI do not read their tables at all; Croissant reads
@@ -30,6 +31,10 @@ on:
       - "OHDSI/harvest_ohdsi_to_cdif.py"
       - "OHDSI/check_ohdsi_mappings.py"
       - "OHDSI/OHDSIMetadata/**"
+      - "NIAID/harvest_niaid_to_cdif.py"
+      - "NIAID/check_niaid_mappings.py"
+      - "NIAID/niaidExamples/**"
+      - "mappings/niaid-to-cdif.sssom.yml"
       - "sssom_engine.py"
       - "mappings/*.sssom.tsv"
       - ".github/workflows/check-mappings.yml"
@@ -47,6 +52,10 @@ on:
       - "OHDSI/harvest_ohdsi_to_cdif.py"
       - "OHDSI/check_ohdsi_mappings.py"
       - "OHDSI/OHDSIMetadata/**"
+      - "NIAID/harvest_niaid_to_cdif.py"
+      - "NIAID/check_niaid_mappings.py"
+      - "NIAID/niaidExamples/**"
+      - "mappings/niaid-to-cdif.sssom.yml"
       - "sssom_engine.py"
       - "mappings/*.sssom.tsv"
       - ".github/workflows/check-mappings.yml"
@@ -69,3 +78,6 @@ jobs:
 
       - name: Check the OHDSI mapping table against the converter
         run: python OHDSI/check_ohdsi_mappings.py
+
+      - name: Check the NIAID mapping table against the converter and examples
+        run: python NIAID/check_niaid_mappings.py
