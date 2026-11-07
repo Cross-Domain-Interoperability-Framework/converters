@@ -695,7 +695,38 @@ def _place_shaper(value, node, rule, notes):
                 place["schema:geo"] = place["schema:geo"][0]
             if [k for k in place if k != "@type"]:
                 places.append(place)
-    return places
+    return _merge_places(places)
+
+
+def _place_key(place):
+    """The identifier a place is known by: its own, or its name term's."""
+    name = place.get("schema:name")
+    ident = place.get("schema:identifier") or (name.get("schema:identifier")
+                                               if isinstance(name, dict) else None)
+    return json.dumps(ident, sort_keys=True) if ident else None
+
+
+def _merge_places(places):
+    """Places with the same identifier are one place (Project Tycho lists each country
+    twice: once by name, once by ISO code with the country name). The one named from a
+    country (its name term has a termCode) is kept, in the first one's position; any
+    property only the other has is added to it."""
+    merged, by_key = [], {}
+    for place in places:
+        key = _place_key(place)
+        if key is None or key not in by_key:
+            if key is not None:
+                by_key[key] = len(merged)
+            merged.append(place)
+            continue
+        i = by_key[key]
+        kept, other = merged[i], place
+        if isinstance(place.get("schema:name"), dict) and place["schema:name"].get("schema:termCode"):
+            kept, other = place, merged[i]
+        for k, v in other.items():
+            kept.setdefault(k, v)
+        merged[i] = kept
+    return merged
 
 
 def _property_value(value, node, rule, notes):
@@ -888,19 +919,32 @@ def _work_url_or_given(value, node, rule, notes):
 
 def _place_name_term(value, node, rule, notes):
     """An administrative area's name as a DefinedTerm, as the spatialExtent block allows
-    for a gazetteer name: with the area's identifier, and its locationType as about.
-    The identifier and locationType rows are consumed here. A name with neither stays a
-    string: a term holding only a name says nothing more."""
+    for a gazetteer name: with the area's identifier, and its locationType as about
+    (except the uninformative "other"). Where the portal gives a country (Project Tycho,
+    whose name is then the ISO 3166 code) the country is the name and the code its
+    termCode. The identifier, locationType and country rows are consumed here. A name
+    with nothing more to say stays a string."""
     if not isinstance(value, str) or not value.strip():
         return None
-    if not node.get("identifier") and not node.get("locationType"):
+    country = node.get("country") if isinstance(node.get("country"), str) else None
+    about = next((t for t in _as_list(node.get("locationType")) if isinstance(t, str)
+                  and t.strip() and t != "other"), None)
+    if not node.get("identifier") and not about and not country:
         return value
-    term = {"@type": ["schema:DefinedTerm"], "schema:name": value}
+    term = {"@type": ["schema:DefinedTerm"], "schema:name": country or value}
+    if country and country != value:
+        term["schema:termCode"] = value
     if node.get("identifier"):
         term["schema:identifier"] = _first_value(node["identifier"], node, rule, notes)
-    if node.get("locationType"):
-        term["schema:about"] = _as_list(node["locationType"])[0]
+    if about:
+        term["schema:about"] = about
     return term
+
+
+def _place_code_alias(value, node, rule, notes):
+    """With a country given, the area's own name (an ISO 3166 code) as an alternateName."""
+    name = node.get("name")
+    return name if isinstance(value, str) and isinstance(name, str) and name != value else None
 
 
 def _part_downloads(value, node, rule, notes):
@@ -947,7 +991,7 @@ SHAPERS = {
     "bundle_parts": _bundle_parts, "part_downloads": _part_downloads, "link_role": _link_role, "unlinked_related": _unlinked_related,
     "keyword_about": _keyword_about, "derived_from": _derived_from,
     "metadata_source": _metadata_source, "work_identifier": _work_identifier,
-    "work_url_or_given": _work_url_or_given, "place_name_term": _place_name_term, "place_identifier": _place_identifier,
+    "work_url_or_given": _work_url_or_given, "place_name_term": _place_name_term, "place_code_alias": _place_code_alias, "place_identifier": _place_identifier,
     "iso_interval": _iso_interval, "interval_detail": _interval_detail, "place": _place_shaper,
     "property_value": _property_value, "term_array": _term_array,
     "distribution_array": _distribution_array, "content_url_or_nil": _content_url_or_nil,
