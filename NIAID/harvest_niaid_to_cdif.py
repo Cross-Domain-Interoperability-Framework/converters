@@ -291,6 +291,10 @@ def _portal_uri(value, node, rule, notes):
     return _portal_url(value)
 
 
+def _portal_ref(value, node, rule, notes):
+    return {"@id": _portal_url(value)}
+
+
 def _portal_url(portal_id):
     return f"{PORTAL}resources?id={urllib.parse.quote(portal_id)}"
 
@@ -646,7 +650,7 @@ def _type_array(value, node, rule, notes):
 # The shapers the table's `transform` column names; "" is a plain copy.
 SHAPERS = {
     "": _copy, "array": _array, "first_value": _first_value, "type_array": _type_array,
-    "portal_uri": _portal_uri, "id_as_identifier": _id_as_identifier, "source_sameas": _source_sameas,
+    "portal_uri": _portal_uri, "portal_ref": _portal_ref,"id_as_identifier": _id_as_identifier, "source_sameas": _source_sameas,
     "doi_identifier": _doi_identifier, "extra_identifiers": _extra_identifiers,
     "creator_list": _creator_list, "author_beside_creator": _author_beside_creator,
     "agent_array": _agent_array, "first_alternate_name": _first_alternate_name,
@@ -706,7 +710,6 @@ def convert_record(hit, build=""):
         "schema:additionalType": [{"@id": "dcat:CatalogRecord"}],
         "@id": f"{dataset_id}#metadata" if dataset_id else "urn:cdif:metadata",
         "schema:name": f"Metadata record for: {(doc.get('schema:name') or 'dataset')[:120]}",
-        "schema:about": {"@id": dataset_id},
         "dcterms:conformsTo": [{"@id": CORE_URI}, {"@id": DISCOVERY_URI}],
     })
     record["schema:description"] = (
@@ -729,7 +732,10 @@ def convert_record(hit, build=""):
                 apply_conformance(doc, uris)
         except Exception as exc:
             changes.append(f"detect_cdif_conformance failed ({exc}); kept the default conformsTo")
-    record["dcterms:conformsTo"].append({"@id": NIAID_URI})
+    # Detection declares cdifNIAID where its registry has the class; a validation
+    # checkout without it, or detection off, still gets the claim.
+    if {"@id": NIAID_URI} not in record["dcterms:conformsTo"]:
+        record["dcterms:conformsTo"].append({"@id": NIAID_URI})
 
     for prop, why in (("schema:dateModified", "CDIF requires schema:dateModified; none derivable"),):
         if prop not in doc:
