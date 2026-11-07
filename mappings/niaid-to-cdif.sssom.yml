@@ -1,0 +1,104 @@
+mapping_set_id: https://w3id.org/cdif/mappings/niaid-to-cdif
+mapping_set_title: NIAID Data Discovery Portal to CDIF
+mapping_set_description: |
+  Property correspondences for converting Dataset records from the NIAID Data
+  Discovery Portal API to CDIF conforming to the cdifNIAID profile
+  (https://w3id.org/cdif/niaid/1.0). NIAID/harvest_niaid_to_cdif.py reads this
+  table at run time: a mapping change is a table edit. DRAFT for curator review:
+  every row is tool-suggested (author_id = claude, reviewer_id empty) until vetted.
+  Rows whose comment includes OPEN QUESTION need a decision.
+
+  Records use bare names. subject_id says what a bare name means: nde: when NIAID's
+  schema declares it, schema: when only schema.org could define it, and ndeapi: when
+  it comes from the API's records and NIAID's schema does not declare it.
+  subject_class is the node the name sits on: its @type, or for an untyped node the
+  class its parent property implies. ndeapi: classes name an untyped node with no
+  such class.
+
+  object_id: bios: where Bioschemas defines the same term (definitions compared),
+  nde: where NIAID's schema does, schema: for schema.org, and cdifniaid: for names
+  the portal uses that neither vocabulary declares, defined by the cdifNIAID
+  profile. profile names the building block that constrains the target.
+
+  Rows for a class run in file order, and the first row to fill a scalar target
+  wins; array targets gather every row's values. A name with no row on its class
+  uses the plain row the table gives it elsewhere. object_json_path starts $. for
+  the document root and @. for the node the row's subject_class maps to. Rows with
+  no object_id are not carried over.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/NIAID/harvest_niaid_to_cdif.py
+mapping_date: 2026-11-07
+subject_source: https://discovery.biothings.io/view/nde
+object_source: https://w3id.org/cdif/niaid/1.0
+see_also:
+  - https://github.com/NIAID-Data-Ecosystem/nde-schemas
+  - https://api.data.niaid.nih.gov/v1/spec
+  - https://github.com/BioSchemas/bioschemas-dde
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+  - slot_name: profile
+    property: https://w3id.org/cdif/mappings/profile
+curie_map:
+  bios: https://bioschemas.org/
+  cdifniaid: https://w3id.org/cdif/niaid/terms/
+  nde: https://discovery.biothings.io/ns/nde/
+  ndeapi: https://api.data.niaid.nih.gov/v1/
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+comment: |
+  transform names the shaper in harvest_niaid_to_cdif.py's SHAPERS; empty is a plain
+  copy, and check_niaid_mappings.py fails on a name the converter does not define.
+  license_or_nil and content_url_or_nil also run when the source has no value.
+
+    as_text                a number -> text
+    array                  a single value -> an array
+    first_value            a list -> its first value
+    type_array             @type -> an array of prefixed names
+    portal_uri             _id -> the portal address, the dataset @id
+    id_as_identifier       that address as identifier when there is no other
+    source_sameas          the repository url also in schema:sameAs
+    doi_identifier         DOI -> PropertyValue, else the first value
+    extra_identifiers      the other identifiers
+    creator_list           author or creator -> an @list of typed agents
+    author_beside_creator  author kept when there is also a creator
+    agent / agent_array    an agent or agents, typed when untyped
+    first_alternate_name   an agent's first alternateName
+    extra_alternate_names  the rest
+    org_name               drops a punctuation-only name
+    org_identifier         url as identifier for an unnamed organization
+    person_name            family, given when there is no name
+    nonempty_affiliation   text -> an Organization; drops an empty one
+    grant_per_funder       one grant per funder; drops empty grants
+    grant_identifier       text -> PropertyValue
+    work_url               url for a CreativeWork from its DOI, PMID or identifier
+    link_or_thing          CreativeWork with no url of any kind -> Thing
+    usage_with_url         usageInfo with a url
+    usage_to_access        url-less usageInfo -> an access statement
+    license_or_nil         array, or OGC nil with no licence or access statement
+    citation_link          url-less citation -> its text
+    linked_parts           hasPart with an address
+    unlinked_parts         hasPart with none
+    iso_interval           intervals -> ISO 8601 strings
+    interval_detail        an interval holding more than its dates
+    place                  adds schema:Place
+    property_value         adds schema:PropertyValue
+    term_array             adds schema:DefinedTerm to untyped terms
+    distribution_array     adds schema:DataDownload to untyped files
+    content_url_or_nil     OGC nil for a file with no address
+    url_as_content         url as contentUrl
+    archive_part           archive members given as objects
+    part_urls              archive members given only as URLs
+    keyword_split          text -> comma-split array
+    language_name          first value, as a name
+    date_fallback          dateModified from another date
+
+  Applied to every value, so not rows here (_clean): removing empty strings and
+  CDATA markers, adding https:// to a url starting www., stripping spaces from keys,
+  and dropping _id on nested nodes (see the nde:Sample _id row).
