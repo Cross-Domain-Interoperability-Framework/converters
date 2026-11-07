@@ -33,6 +33,7 @@ Usage:
 """
 import argparse
 import json
+import mimetypes
 import re
 import sys
 import time
@@ -56,6 +57,8 @@ API = "https://api.data.niaid.nih.gov/v1"
 PORTAL = "https://data.niaid.nih.gov/"
 NDE_NS = "https://discovery.biothings.io/ns/nde/"
 DOI_REGISTRY = "https://registry.identifiers.org/registry/doi"
+BIOPROJECT_REGISTRY = "https://registry.identifiers.org/registry/bioproject"
+BIOPROJECT_RE = re.compile(r"PRJ[DEN][A-Z]\d+$")
 OGC_NIL_MISSING = "http://www.opengis.net/def/nil/OGC/0/missing"
 
 # The index's own bookkeeping, not metadata about the dataset.
@@ -253,16 +256,50 @@ def convert_node(node, cls, notes):
     return out
 
 
-def _place(out, rule, value):
+DIST_PATH = "$.schema:distribution[0]."
+CONCAT_TRANSFORMS = {"concat_text", "metadata_source"}
+_DEFERRED = []  # (rule, value) for a row whose path leaves the node it was converted on
+
+
+def _place_deferred(doc):
+    """Rows on a nested class with a $. path write to the dataset; a $.schema:distribution[0].
+    path writes to the record's only distribution, and a bundle of archive parts makes
+    that distribution a schema:Collection."""
+    deferred, _DEFERRED[:] = list(_DEFERRED), []
+    for rule, value in deferred:
+        path = rule["object_json_path"]
+        if not path.startswith(DIST_PATH):
+            _place(doc, rule, value, root=True)
+            continue
+        dists = _as_list(doc.get("schema:distribution"))
+        if len(dists) != 1 or not isinstance(dists[0], dict):
+            continue  # the shaper only gives a value when there is exactly one
+        dist = dists[0]
+        _place(dist, dict(rule, object_json_path="@." + path[len(DIST_PATH):]), value, root=True)
+        if rule["object_id"] == "schema:hasPart":
+            dist["@type"] = _as_list(dist.get("@type")) + (
+                [] if "schema:Collection" in _as_list(dist.get("@type")) else ["schema:Collection"])
+
+
+def _place(out, rule, value, root=False):
     """Row order is precedence: a scalar target keeps the first value, and an array
-    target gathers every row's values."""
+    target gathers every row's values. A concat_text row joins its text onto what an
+    earlier row put there."""
     if value is None or value == "" or value == []:
         return
-    if rule["object_json_path"].startswith("$.schema:subjectOf."):
+    path = rule["object_json_path"]
+    if not root and path.startswith("$.") and (
+            rule["subject_class"] != ROOT_CLASS or path.startswith(DIST_PATH)):
+        _DEFERRED.append((rule, value))  # placed by _place_deferred once the root exists
+        return
+    if path.startswith("$.schema:subjectOf."):
         out = out.setdefault("schema:subjectOf", {})
     target = rule["object_id"]
     if target not in out or target == "@type":
         out[target] = value
+    elif rule["transform"] in CONCAT_TRANSFORMS and isinstance(out[target], str) \
+            and isinstance(value, str):
+        out[target] = _join_text(out[target].split("\n\n") + [value])
     elif isinstance(out[target], list) and isinstance(value, list):
         out[target] += [v for v in value if v not in out[target]]
 
@@ -283,6 +320,21 @@ def _array(value, node, rule, notes):
     return _as_list(_copy(value, node, rule, notes))
 
 
+def _join_text(parts):
+    """Distinct non-empty strings, in order, separated by a blank line."""
+    kept = []
+    for part in parts:
+        part = part.strip() if isinstance(part, str) else ""
+        if part and part not in kept:
+            kept.append(part)
+    return "\n\n".join(kept)
+
+
+def _concat_text(value, node, rule, notes):
+    """Every text value joined, rather than all but the first dropped."""
+    return _join_text(_as_list(value)) or None
+
+
 def _first_value(value, node, rule, notes):
     return value[0] if isinstance(value, list) and value else value
 
@@ -299,10 +351,6 @@ def _portal_url(portal_id):
     return f"{PORTAL}resources?id={urllib.parse.quote(portal_id)}"
 
 
-def _id_as_identifier(value, node, rule, notes):
-    return None if node.get("doi") or node.get("identifier") else _portal_url(value)
-
-
 def _source_sameas(value, node, rule, notes):
     return _as_list(value)
 
@@ -311,24 +359,64 @@ def _identifier_values(node):
     return _as_list(node.get("doi")) + _as_list(node.get("identifier"))
 
 
-def _doi_identifier(value, node, rule, notes):
-    """A DOI becomes the CDIF identifier; otherwise the first value given."""
-    values = _identifier_values(node)
-    doi = next((d for d in map(_bare_doi, values) if d), None)
+def _first_doi(node):
+    return next((d for d in map(_bare_doi, _identifier_values(node)) if d), None)
+
+
+def _bioproject(value):
+    match = BIOPROJECT_RE.match(value.strip()) if isinstance(value, str) else None
+    return match.group(0) if match else None
+
+
+def _primary(node):
+    """The value the CDIF identifier is made from, as (kind, value): the first DOI, else
+    the first BioProject accession, else the first identifier value, else None (the _id
+    row then gives the @id)."""
+    doi = _first_doi(node)
     if doi:
+        return "doi", doi
+    acc = next((a for a in map(_bioproject, _identifier_values(node)) if a), None)
+    if acc:
+        return "bioproject", acc
+    first = next((v for v in _as_list(node.get("identifier")) if isinstance(v, str) and v.strip()), None)
+    return ("identifier", first) if first else None
+
+
+def _is_primary(item, primary):
+    if not primary:
+        return False
+    kind, value = primary
+    if kind == "identifier":
+        return item == value
+    return (_bare_doi(item) if kind == "doi" else _bioproject(item)) == value
+
+
+def _id_as_identifier(value, node, rule, notes):
+    return None if _primary(node) else _portal_url(value)
+
+
+def _primary_identifier(value, node, rule, notes):
+    """A DOI, else a BioProject accession, as a PropertyValue naming its registry; else
+    the first identifier value as given."""
+    primary = _primary(node)
+    if not primary:
+        return None
+    kind, value = primary
+    if kind == "identifier":
+        return value
+    if kind == "doi":
         return {"@type": ["schema:PropertyValue"], "schema:propertyID": {"@id": DOI_REGISTRY},
-                "schema:value": doi, "schema:url": f"https://doi.org/{doi}"}
-    return _convert_value(values[0], "identifier", notes) if values else None
+                "schema:value": value, "schema:url": f"https://doi.org/{value}"}
+    return {"@type": ["schema:PropertyValue"], "schema:propertyID": {"@id": BIOPROJECT_REGISTRY},
+            "schema:value": value, "schema:url": f"https://www.ncbi.nlm.nih.gov/bioproject/{value}"}
 
 
 def _extra_identifiers(value, node, rule, notes):
-    """Further identifiers are kept rather than dropped by the single-value rule."""
-    values = _identifier_values(node)
-    doi = next((d for d in map(_bare_doi, values) if d), None)
-    primary = None if doi else (values[0] if values else None)
+    """Every identifier but the one used as the CDIF identifier."""
+    primary = _primary(node)
     extras = []
-    for item in values:
-        if isinstance(item, str) and item != primary and _bare_doi(item) != doi and item not in extras:
+    for item in _identifier_values(node):
+        if isinstance(item, str) and not _is_primary(item, primary) and item not in extras:
             extras.append(item)
     return extras
 
@@ -357,9 +445,19 @@ def _agents(value):
 
 def _creator_list(value, node, rule, notes):
     if rule["subject_label"] == "author" and node.get("creator"):
-        return None
-    agents = [_agent(item, notes) for item in _agents(value)]
+        return None  # the creator row adds the authors
+    items = _agents(value)
+    if rule["subject_label"] == "creator":
+        named = {_agent_name(i) for i in items}
+        items += [a for a in _agents(node.get("author")) if _agent_name(a) not in named]
+    agents = [_agent(item, notes) for item in items]
     return {"@list": [a for a in agents if not _says_nothing(a)]} if any(not _says_nothing(a) for a in agents) else None
+
+
+def _agent_name(item):
+    if isinstance(item, dict):
+        return str(item.get("name") or " ".join(filter(None, (item.get("givenName"), item.get("familyName"))))).strip().lower()
+    return str(item).strip().lower()
 
 
 def _author_beside_creator(value, node, rule, notes):
@@ -503,13 +601,47 @@ def _unaddressed(part):
         and not part.get("url") and not _link_url(part)
 
 
+def _typed_part(part, default):
+    if isinstance(part, dict) and not _types(part):
+        part = {"@type": default, **part}
+    return part
+
+
 def _linked_parts(value, node, rule, notes):
-    return _convert_value([p for p in _as_list(value) if not _unaddressed(p)], "hasPart", notes)
+    """Parts with their own address: the manifest's dataset-level parts, which must be
+    typed, so an untyped one is taken as a CreativeWork."""
+    parts = [_typed_part(p, "CreativeWork") for p in _as_list(value) if not _unaddressed(p)]
+    return _convert_value(parts, "hasPart", notes)
+
+
+def _single_distribution(node):
+    return len(_as_list(node.get("distribution"))) == 1
 
 
 def _unlinked_parts(value, node, rule, notes):
-    """A part with no address cannot be a CDIF manifest part."""
+    """Parts with no address, when there is no single distribution they could belong to."""
+    if _single_distribution(node):
+        return None
     return _convert_value([p for p in _as_list(value) if _unaddressed(p)], "hasPart", notes)
+
+
+def _bundle_parts(value, node, rule, notes):
+    """Parts with no address, when the record has exactly one distribution: files inside
+    that bundle, as the manifest's archive parts (a MediaObject with a name and format;
+    a format not given is guessed from the file name, else application/octet-stream)."""
+    if not _single_distribution(node):
+        return None
+    parts = []
+    for part in _as_list(value):
+        if not (_unaddressed(part) and isinstance(part, dict) and part.get("name")):
+            continue
+        out = _convert_value(part, "hasPart", notes)
+        out["@type"] = ["schema:MediaObject"]
+        if not out.get("schema:encodingFormat"):
+            out["schema:encodingFormat"] = [
+                mimetypes.guess_type(str(part["name"]))[0] or "application/octet-stream"]
+        parts.append(out)
+    return parts
 
 
 def _span_dates(span):
@@ -628,6 +760,156 @@ def _part_urls(value, node, rule, notes):
     return [part for part in _as_list(value) if isinstance(part, str)]
 
 
+def _link_role(value, node, rule, notes):
+    """Each linked value as a schema:relatedLink LinkRole, as dcat_to_cdif writes them.
+    linkRelationship is the item's own relationship where the portal gives one, else
+    the source property (the row's subject_id). An object's name and description go on
+    the LinkRole; an object with no address is left to the row after this one. Some
+    sources pack several URLs into one string, separated by commas or semicolons."""
+    links, seen = [], set()
+    for item in _as_list(value):
+        if isinstance(item, dict):
+            urls = [item.get("url") or _link_url(item)]
+        elif isinstance(item, str):
+            urls = re.split(r"[,;]\s*(?=[A-Za-z][A-Za-z0-9+.-]*://)", item)
+        else:
+            continue
+        for url in urls:
+            url = url.strip() if isinstance(url, str) else ""
+            if not url or url in seen:
+                continue
+            seen.add(url)
+            link = {"@type": ["schema:LinkRole"],
+                    "schema:linkRelationship": (item.get("relationship") if isinstance(item, dict)
+                                                else None) or rule["subject_id"],
+                    "schema:target": {"@type": ["schema:EntryPoint"], "schema:url": url}}
+            if isinstance(item, dict):
+                for key in ("name", "description"):
+                    if isinstance(item.get(key), str):
+                        link[f"schema:{key}"] = item[key]
+            links.append(link)
+    return links
+
+
+def _unlinked_related(value, node, rule, notes):
+    """The related resources link_role could not use: no address of any kind."""
+    return _convert_value([item for item in _as_list(value) if isinstance(item, dict)
+                           and not (item.get("url") or _link_url(item))], rule["subject_label"], notes)
+
+
+def _derived_from(value, node, rule, notes):
+    """prov:wasDerivedFrom takes a string, an @id or a labelled link: a source with an
+    address becomes a CreativeWork link (name, description, url), one without its name."""
+    out = []
+    for item in _as_list(value):
+        if isinstance(item, str) and item.strip():
+            out.append(item)
+            continue
+        if not isinstance(item, dict):
+            continue
+        url = item.get("url") or _link_url(item)
+        if url:
+            link = {"@type": ["schema:CreativeWork"], "schema:url": url}
+            for key in ("name", "description"):
+                if isinstance(item.get(key), str):
+                    link[f"schema:{key}"] = item[key]
+            out.append(link)
+        elif isinstance(item.get("name") or item.get("identifier"), str):
+            out.append(item.get("name") or item.get("identifier"))
+    return out
+
+
+KEYWORD_ABOUT = {"topicCategory": "topicCategory", "classification": "NIAID classification"}
+
+
+def _keyword_about(value, node, rule, notes):
+    """Keywords as DefinedTerms whose schema:about says which NIAID property they came
+    from (KEYWORD_ABOUT), so they stay distinguishable from the record's own keywords."""
+    terms = []
+    for item in _as_list(value):
+        if isinstance(item, dict):
+            term = _convert_value(item, rule["subject_label"], notes)
+        elif isinstance(item, str) and item.strip():
+            term = {"schema:name": item}
+        else:
+            continue
+        if not isinstance(term, dict) or _says_nothing(term):
+            continue
+        if not term.get("schema:name"):  # a DefinedTerm needs a name; a bare term URL is an IRI
+            if term.get("schema:url"):
+                terms.append({"@id": term["schema:url"]})
+            continue
+        term["@type"] = ["schema:DefinedTerm"]
+        term["schema:about"] = KEYWORD_ABOUT.get(rule["subject_label"], rule["subject_label"])
+        terms.append(term)
+    return terms
+
+
+def _metadata_source(value, node, rule, notes):
+    """A portal provenance flag (fromGPT, fromPMID, ...) as a sentence for the catalog
+    record's description; repeats are dropped when the sentences are joined."""
+    label = rule["subject_label"][len("from"):]
+    return f"Metadata source from {label}." if value is True and label else None
+
+
+PUBMED_REGISTRY = "https://registry.identifiers.org/registry/pubmed"
+
+
+def _work_identifier(value, node, rule, notes):
+    """A work's doi, pmid and identifier values as its schema:identifier: a DOI or PMID
+    as a PropertyValue naming its registry, anything else as given."""
+    ids = []
+    for item in _as_list(value):
+        if not isinstance(item, (str, int)) or isinstance(item, bool):
+            continue
+        item = str(item).strip()
+        doi = _bare_doi(item)
+        if doi:
+            ids.append({"@type": ["schema:PropertyValue"], "schema:propertyID": {"@id": DOI_REGISTRY},
+                        "schema:value": doi, "schema:url": f"https://doi.org/{doi}"})
+        elif rule["subject_label"] == "pmid" and item.isdigit():
+            ids.append({"@type": ["schema:PropertyValue"], "schema:propertyID": {"@id": PUBMED_REGISTRY},
+                        "schema:value": item, "schema:url": f"https://pubmed.ncbi.nlm.nih.gov/{item}/"})
+        elif item:
+            ids.append(item)
+    return ids
+
+
+def _place_identifier(value, node, rule, notes):
+    """An administrative area's identifier, when it has no name for place_name_term to
+    carry it in."""
+    return None if node.get("name") else _first_value(value, node, rule, notes)
+
+
+def _work_url_or_given(value, node, rule, notes):
+    """The work's url, else one made from its DOI, PMID or identifier."""
+    return value if isinstance(value, str) and value else _link_url(node)
+
+
+def _place_name_term(value, node, rule, notes):
+    """An administrative area's name as a DefinedTerm, as the spatialExtent block allows
+    for a gazetteer name: with the area's identifier, and its locationType as about.
+    The identifier and locationType rows are consumed here. A name with neither stays a
+    string: a term holding only a name says nothing more."""
+    if not isinstance(value, str) or not value.strip():
+        return None
+    if not node.get("identifier") and not node.get("locationType"):
+        return value
+    term = {"@type": ["schema:DefinedTerm"], "schema:name": value}
+    if node.get("identifier"):
+        term["schema:identifier"] = _first_value(node["identifier"], node, rule, notes)
+    if node.get("locationType"):
+        term["schema:about"] = _as_list(node["locationType"])[0]
+    return term
+
+
+def _part_downloads(value, node, rule, notes):
+    """File URLs listed on a distribution: each file can be fetched on its own, so each is
+    a dataset-level part (row path $.schema:hasPart), a DataDownload at that URL."""
+    return [{"@type": ["schema:DataDownload"], "schema:contentUrl": part}
+            for part in _as_list(value) if isinstance(part, str)]
+
+
 def _as_text(value, node, rule, notes):
     return str(value) if isinstance(value, (int, float)) and not isinstance(value, bool) else value
 
@@ -649,9 +931,10 @@ def _type_array(value, node, rule, notes):
 
 # The shapers the table's `transform` column names; "" is a plain copy.
 SHAPERS = {
-    "": _copy, "array": _array, "first_value": _first_value, "type_array": _type_array,
-    "portal_uri": _portal_uri, "portal_ref": _portal_ref,"id_as_identifier": _id_as_identifier, "source_sameas": _source_sameas,
-    "doi_identifier": _doi_identifier, "extra_identifiers": _extra_identifiers,
+    "": _copy, "array": _array, "first_value": _first_value, "concat_text": _concat_text, "type_array": _type_array,
+    "portal_uri": _portal_uri, "portal_ref": _portal_ref, "id_as_identifier": _id_as_identifier, "source_sameas": _source_sameas,
+    "primary_identifier": _primary_identifier,
+    "extra_identifiers": _extra_identifiers,
     "creator_list": _creator_list, "author_beside_creator": _author_beside_creator,
     "agent_array": _agent_array, "first_alternate_name": _first_alternate_name,
     "extra_alternate_names": _extra_alternate_names, "org_name": _org_name,
@@ -661,6 +944,10 @@ SHAPERS = {
     "usage_with_url": _usage_with_url, "usage_to_access": _usage_to_access,
     "license_or_nil": _license_or_nil, "citation_link": _citation_link,
     "linked_parts": _linked_parts, "unlinked_parts": _unlinked_parts,
+    "bundle_parts": _bundle_parts, "part_downloads": _part_downloads, "link_role": _link_role, "unlinked_related": _unlinked_related,
+    "keyword_about": _keyword_about, "derived_from": _derived_from,
+    "metadata_source": _metadata_source, "work_identifier": _work_identifier,
+    "work_url_or_given": _work_url_or_given, "place_name_term": _place_name_term, "place_identifier": _place_identifier,
     "iso_interval": _iso_interval, "interval_detail": _interval_detail, "place": _place_shaper,
     "property_value": _property_value, "term_array": _term_array,
     "distribution_array": _distribution_array, "content_url_or_nil": _content_url_or_nil,
@@ -669,7 +956,7 @@ SHAPERS = {
     "keyword_split": _keyword_split, "language_name": _language_name, "date_fallback": _copy,
 }
 # These rows also run when the source has no value, to say that it is missing.
-RUNS_WITHOUT_VALUE = {"license_or_nil", "content_url_or_nil"}
+RUNS_WITHOUT_VALUE = {"license_or_nil", "content_url_or_nil", "work_url_or_given"}
 
 
 def load_rules(path=TABLE):
@@ -685,7 +972,7 @@ def load_rules(path=TABLE):
             dropped.add(row["subject_label"])
     for row in load_table(path):   # a name mapped only on the root, or only by a shaper
         if row["object_id"] and row["subject_label"] not in by_name | {"@type": 0} \
-                and row["transform"] in ("", "array"):
+                and row["transform"] in ("", "array", "metadata_source"):
             by_name[row["subject_label"]] = row
     return rules, by_name, dropped
 
@@ -700,7 +987,9 @@ def convert_record(hit, build=""):
     if portal_id:
         rec["_id"] = portal_id
     changes = []
+    _DEFERRED.clear()
     doc = {"@context": dict(CDIF_CONTEXT), **convert_node(rec, ROOT_CLASS, changes)}
+    _place_deferred(doc)
     doc.setdefault("@type", ["schema:Dataset"])
 
     dataset_id = doc.get("@id", "")
@@ -712,13 +1001,14 @@ def convert_record(hit, build=""):
         "schema:name": f"Metadata record for: {(doc.get('schema:name') or 'dataset')[:120]}",
         "dcterms:conformsTo": [{"@id": CORE_URI}, {"@id": DISCOVERY_URI}],
     })
-    record["schema:description"] = (
+    record["schema:description"] = _join_text([
         "CDIF metadata harvested from the NIAID Data Discovery Portal API"
         + (f" (index build {build})" if build else "")
         + f", record {portal_id}, and converted by harvest_niaid_to_cdif.py. The "
           "portal aggregates this record from the repositories named in "
           "schema:includedInDataCatalog; nde: properties, including the portal's "
-          "term annotations, are as the portal publishes them.")
+          "term annotations, are as the portal publishes them.",
+        record.get("schema:description")])  # the from<LABEL> rows' sentences
     record["schema:includedInDataCatalog"] = {
         "@type": ["schema:DataCatalog"], "schema:name": "NIAID Data Discovery Portal",
         "schema:url": PORTAL}
