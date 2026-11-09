@@ -496,11 +496,50 @@ def _org_identifier(value, node, rule, notes):
     return value if not _has_name(node) and not node.get("identifier") else None
 
 
+DATE_SENTINEL = "1900-01-01"  # the "missing" date: CDIF requires dateModified
+NO_ZONE = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?")
+
+
+def _utc_datetime(value, node, rule, notes):
+    """A date-time with no time zone is taken as UTC ("Z"); dates and zoned times
+    are kept as they are."""
+    value = _convert_value(value, rule["subject_label"], notes)
+    if isinstance(value, list):
+        return [_utc_datetime(v, node, rule, notes) for v in value]
+    return value + "Z" if isinstance(value, str) and NO_ZONE.fullmatch(value) else value
+
+
+def _date_or_sentinel(value, node, rule, notes):
+    """The last dateModified fallback: with no date at all, the 1900-01-01 sentinel.
+    Earlier rows fill dateModified first, so the sentinel only lands when they did not."""
+    if value is not None:
+        return _utc_datetime(value, node, rule, notes)
+    if any(node.get(k) for k in ("dateModified", "date", "datePublished")):
+        return None
+    notes.append(f"no date in the record; dateModified is the sentinel {DATE_SENTINEL}")
+    return DATE_SENTINEL
+
+
 def _person_name(value, node, rule, notes):
     if node.get("name"):
         return None
     family, given = node.get("familyName", ""), node.get("givenName", "")
     return f"{family}, {given}" if family and given else family or given
+
+
+PERSON_NAMING = ("name", "familyName", "givenName", "identifier")
+
+
+def _name_or_missing(value, node, rule, notes):
+    """A person's name; one that has neither a name nor an identifier but says
+    something else (an affiliation, a role) is named "missing", as CDIF requires one
+    or the other. A person with nothing at all is still dropped."""
+    if value is not None:
+        return _convert_value(value, rule["subject_label"], notes)
+    if any(node.get(k) for k in PERSON_NAMING) or not [k for k in node if not k.startswith("@")]:
+        return None
+    notes.append("a person with no name or identifier is named \"missing\"")
+    return "missing"
 
 
 def _nonempty_affiliation(value, node, rule, notes):
@@ -1069,10 +1108,12 @@ SHAPERS = {
     "distribution_array": _distribution_array, "content_url_or_nil": _content_url_or_nil,
     "url_as_content": _url_as_content, "archive_part": _archive_part, "part_urls": _part_urls,
     "as_text": _as_text, "agent": _agent_one,
-    "keyword_split": _keyword_split, "language_name": _language_name, "date_fallback": _copy,
+    "keyword_split": _keyword_split, "language_name": _language_name, "date_fallback": _utc_datetime,
+    "utc_datetime": _utc_datetime, "date_or_sentinel": _date_or_sentinel, "name_or_missing": _name_or_missing,
 }
 # These rows also run when the source has no value, to say that it is missing.
-RUNS_WITHOUT_VALUE = {"license_or_nil", "content_url_or_nil", "work_url_or_given"}
+RUNS_WITHOUT_VALUE = {"license_or_nil", "content_url_or_nil", "work_url_or_given",
+                      "date_or_sentinel", "name_or_missing"}
 
 
 def load_rules(path=TABLE):
