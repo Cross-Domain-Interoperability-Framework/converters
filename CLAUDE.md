@@ -17,7 +17,8 @@ different roles — check which before editing either side:
   Croissant converter on the keys `fair2-to-cdif.sssom.tsv` does not claim,
   then applies that table), NIAID (`NIAID/harvest_niaid_to_cdif.py`: rows by
   `subject_class` in file order, shapers named in `transform`, and a name with
-  no row on its class takes the target the table gives it elsewhere), DDI (worksheets compiled to
+  no row on its class takes the target the table gives it elsewhere; see
+  `NIAID/AGENTS.md`), DDI (worksheets compiled to
   `mappings/ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py`). A
   mapping change for these is a table edit; code is only for structural
   shapers.
@@ -59,8 +60,12 @@ There is no unit-test suite. What exists:
   checks; `python NIAID/check_niaid_mappings.py` — the NIAID table's
   transforms, prefixes and coverage of `NIAID/niaidExamples/` (all four are the
   CI job in `.github/workflows/check-mappings.yml`); stdlib only.
-- Regression corpora: `python DCAT/build_corpus.py` (see below) and
-  `python DDI/build_ddi_corpus.py`.
+- Regression corpora: `python DCAT/build_corpus.py` (see below),
+  `python DDI/build_ddi_corpus.py` and `python NIAID/build_cdif_examples.py`.
+  The NIAID build writes `NIAID/cdifJSON-LD/` and validates each record
+  against the JSON Schema and SHACL of every profile it claims, read from
+  `../metadataBuildingBlocks` and from whichever branch is checked out there.
+  Its output is deterministic.
 - Validate one output: `python UMM/umm_to_cdif.py <in> -o out/ --validate`
   (DCAT and FAIR2 have the same flag), or
   `python validation/tools/FrameAndValidate.py out.json -v --schema validation/CDIFDiscoverySchema.json --frame validation/CDIF-frame-2026.jsonld`.
