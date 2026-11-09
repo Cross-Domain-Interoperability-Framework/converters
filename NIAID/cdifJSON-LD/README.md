@@ -36,14 +36,20 @@ cdifCore and niaidDataset. cdifNIAID has no SHACL of its own; its bundle is the 
 of cdifCore and the NIAID blocks. The w3id copies are not used: cdifNIAID is not
 published there yet, and the published core lags metadataBuildingBlocks main.
 
-127 of the 140 records pass every profile they claim. All 13 failures are in the
+Where the source leaves out something CDIF requires, the converter writes a sentinel
+value instead:
+
+- **A record with no date** (`microbiome_gems1_case_control`, `reframedb_a00230`):
+  `dateModified` is set to `1900-01-01`.
+- **A person with no name or identifier:** the person is named `missing`.
+- **A date-time with no time zone:** the date-time is taken as UTC (`Z`).
+
+129 of the 140 records pass every profile they claim. All 11 failures are in the
 source records, not the NIAID rules:
 
 | Records | Check | Problem |
 |---|---|---|
-| `microbiome_gems1_case_control` | core schema and SHACL | A contributor that is only an affiliation, with no name or identifier |
-| `reframedb_a00230` | core schema and SHACL | No `dateModified` can be derived from the record |
-| `ndex_a3d84ced-…`, `ndex_aadfcaf5-…` | core SHACL | `dateModified` with no time zone (`2026-07-23T21:49:03.653000`) |
+| `ndex_a3d84ced-…`, `ndex_aadfcaf5-…` | core SHACL | `dateModified` with fractional seconds (`2026-07-23T21:49:03.653000Z`), which core's date pattern does not allow |
 | `pxd077284`, `vdj_prjna272713` | core SHACL | A `contentUrl` with spaces in it, or a bare file name such as `SRR1767427_R1.fastq` |
 | `accessclinicaldata_tb-portals-…`, `lds-1224`, `lds-1229`, `malariagen_…` | core SHACL | A `url` with spaces in it, or a bare file name such as `LDG-1218_Protocol.pdf` |
 | `hca_0c3b7785-…`, `hca_23587fb3-…` | core SHACL | An EntryPoint `url` on `ftp://` (GEO downloads); the rule accepts only http(s) |
