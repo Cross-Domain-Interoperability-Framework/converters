@@ -56,8 +56,8 @@ curie_map:
 comment: |
   transform names the shaper in harvest_niaid_to_cdif.py's SHAPERS; empty is a plain
   copy, and check_niaid_mappings.py fails on a name the converter does not define.
-  license_or_nil, content_url_or_nil, date_or_sentinel and name_or_missing also run
-  when the source has no value.
+  license_or_nil, content_url_or_nil, date_or_sentinel, name_or_missing and
+  name_with_file also run when the source has no value.
 
     as_text                a number -> text
     array                  a single value -> an array
@@ -90,7 +90,8 @@ comment: |
     property_value         adds schema:PropertyValue
     term_array             adds schema:DefinedTerm to untyped terms
     distribution_array     adds schema:DataDownload to untyped files
-    content_url_or_nil     OGC nil for a file with no address
+    content_url_or_nil     OGC nil for a file with no address, or one given only a file name
+    url_or_nil             a url, or OGC nil when it is only a file name
     url_as_content         url as contentUrl
     archive_part           archive members given as objects
     part_urls              archive members given only as URLs
@@ -100,6 +101,7 @@ comment: |
     utc_datetime           a date-time with no time zone -> UTC (Z)
     date_or_sentinel       the last fallback; 1900-01-01 when the record has no date
     name_or_missing        a person's name; "missing" when it has no name or identifier
+    name_with_file         a name joined with the file name a bare url gave
 
   Applied to every value, so not rows here (_clean): removing empty strings and
   CDATA markers, adding https:// to a url starting www., stripping spaces from keys,
