@@ -79,6 +79,7 @@ CDIF_CONTEXT = {
     "prov": "http://www.w3.org/ns/prov#",
     "nde": NDE_NS,
     "bios": "https://bioschemas.org/",
+    "time": "http://www.w3.org/2006/time#",
     EXTENSION_PREFIX: "https://w3id.org/cdif/niaid/terms/",
 }
 
@@ -629,10 +630,14 @@ def _single_distribution(node):
 
 
 def _unlinked_parts(value, node, rule, notes):
-    """Parts with no address, when there is no single distribution they could belong to."""
+    """Parts with no address, when there is no single distribution they could belong to
+    (Pathoplexus sequences, BEI Resources reagents): dataset-level parts like the
+    addressed ones, whose schema:url is the OGC nil sentinel for a missing value."""
     if _single_distribution(node):
         return None
-    return _convert_value([p for p in _as_list(value) if _unaddressed(p)], "hasPart", notes)
+    return _convert_value([{**_typed_part(p, "CreativeWork"), "url": OGC_NIL_MISSING}
+                           for p in _as_list(value) if _unaddressed(p) and isinstance(p, dict)],
+                          "hasPart", notes)
 
 
 def _bundle_parts(value, node, rule, notes):
@@ -660,34 +665,46 @@ def _span_dates(span):
     return start, end, duration, is_interval
 
 
+XSD_DATE = re.compile(r"-?\d{4,}-\d{2}-\d{2}")
+# The portal's interval properties that say more than its dates, in the order they are
+# described, each labelled with its source property.
+INTERVAL_DETAIL = (("name", "nde:name"), ("duration", "nde:duration"), ("temporalType", "nde:temporalType"))
+
+
 def _iso_interval(value, node, rule, notes):
-    """schema:temporalCoverage as ISO 8601 interval strings, written as DCAT's converter
-    writes them (start/end, start/.., ../end)."""
-    strings = []
+    """schema:temporalCoverage: an interval with only dates as an ISO 8601 interval
+    string (start/end, start/.., ../end), as DCAT's converter writes them; one that
+    also has a name, a temporalType or a text duration ("24107 days, 0:00:00") as a
+    time:ProperInterval with calendar-date bounds, whose schema:description gives
+    those, labelled with the nde property each came from."""
+    out = []
     for span in _as_list(value):
         if not isinstance(span, dict):
-            strings.append(span)
+            out.append(span)
             continue
         start, end, duration, is_interval = _span_dates(span)
+        detail = [(label, span[key]) for key, label in INTERVAL_DETAIL
+                  if span.get(key) not in (None, "") and not (key == "duration" and is_interval)]
+        dated = [d for d in (start, end) if d]
+        if detail and dated and all(isinstance(d, str) and XSD_DATE.fullmatch(d) for d in dated):
+            interval = {"@type": ["time:ProperInterval"]}
+            if start:
+                interval["time:hasBeginning"] = {"@type": ["time:Instant"], "time:inXSDDate": start}
+            if end:
+                interval["time:hasEnd"] = {"@type": ["time:Instant"], "time:inXSDDate": end}
+            interval["schema:description"] = "; ".join(f"{label}: {v}" for label, v in detail)
+            out.append(interval)
+            continue
+        if detail and dated:
+            notes.append(f"temporalCoverage {span} has dates that are not xsd:dates; "
+                         "kept as an ISO interval string without its description")
         if start or end:
-            strings.append(f"{start or '..'}/{end or '..'}")
+            out.append(f"{start or '..'}/{end or '..'}")
         elif is_interval:
-            strings.append(duration)
-    return strings
-
-
-def _interval_detail(value, node, rule, notes):
-    """The portal's interval also has a temporalType and name, and its duration is
-    usually not an interval ("24107 days, 0:00:00"), so an interval holding more than
-    its dates is kept whole."""
-    detailed = []
-    for span in _as_list(value):
-        if isinstance(span, dict):
-            start, end, duration, is_interval = _span_dates(span)
-            if span.get("temporalType") or span.get("name") or (duration and not is_interval) \
-                    or not (start or end or is_interval):
-                detailed.append(span)
-    return _convert_value(detailed, "temporalCoverage", notes)
+            out.append(duration)
+        elif isinstance(span.get("name"), str) and span["name"].strip():
+            out.append(span["name"].strip())  # e.g. "2012-2015": the only date given
+    return out
 
 
 def _place_shaper(value, node, rule, notes):
@@ -832,10 +849,51 @@ def _link_role(value, node, rule, notes):
     return links
 
 
-def _unlinked_related(value, node, rule, notes):
-    """The related resources link_role could not use: no address of any kind."""
-    return _convert_value([item for item in _as_list(value) if isinstance(item, dict)
-                           and not (item.get("url") or _link_url(item))], rule["subject_label"], notes)
+def _related_url(item):
+    """An address for a related resource: its url; a DOI, PMID or URL-shaped identifier;
+    its code repository; or, for another portal record (named by identifier, with the
+    portal's relationship or its catalog), the portal page, whose id is the identifier
+    in lower case (NICHD_DASH_Dataset_416705 -> nichd_dash_dataset_416705)."""
+    url = item.get("url") or _link_url(item) or item.get("codeRepository")
+    if isinstance(url, list):
+        url = next((u for u in url if isinstance(u, str) and u), None)
+    if url:
+        return url
+    ident = next((i for i in _as_list(item.get("identifier")) if isinstance(i, str) and i.strip()), None)
+    if ident and (item.get("relationship") or item.get("includedInDataCatalog")):
+        return _portal_url(ident.strip().lower())
+    return None
+
+
+def _related_link(value, node, rule, notes):
+    """Each related resource as a schema:relatedLink LinkRole with linkRelationship
+    'related to' and the resource's address as target. The portal's own relationship
+    ("Datasets in the same study") goes in the LinkRole's description, with the
+    resource's name as its name. A resource with no address and nothing else to say
+    (an empty CreativeWork) is dropped."""
+    links, seen = [], set()
+    for item in _as_list(value):
+        if isinstance(item, str) and item.strip():
+            item = {"url": item.strip()}
+        if not isinstance(item, dict):
+            continue
+        url = _related_url(item)
+        if not url:
+            if [k for k in item if k != "@type"]:
+                notes.append(f"isRelatedTo item with no address dropped: {json.dumps(item)[:120]}")
+            continue
+        if url in seen:
+            continue
+        seen.add(url)
+        link = {"@type": ["schema:LinkRole"], "schema:linkRelationship": "related to",
+                "schema:target": {"@type": ["schema:EntryPoint"], "schema:url": url}}
+        if isinstance(item.get("name"), str) and item["name"].strip():
+            link["schema:name"] = item["name"].strip()
+        description = _join_text([item.get("relationship"), item.get("description")])
+        if description:
+            link["schema:description"] = description
+        links.append(link)
+    return links
 
 
 def _derived_from(value, node, rule, notes):
@@ -1011,11 +1069,11 @@ SHAPERS = {
     "usage_with_url": _usage_with_url, "usage_to_access": _usage_to_access,
     "license_or_nil": _license_or_nil, "citation_link": _citation_link,
     "linked_parts": _linked_parts, "unlinked_parts": _unlinked_parts,
-    "bundle_parts": _bundle_parts, "part_downloads": _part_downloads, "link_role": _link_role, "unlinked_related": _unlinked_related,
+    "bundle_parts": _bundle_parts, "part_downloads": _part_downloads, "link_role": _link_role, "related_link": _related_link,
     "keyword_about": _keyword_about, "derived_from": _derived_from,
     "metadata_source": _metadata_source, "contributor_role": _contributor_role, "work_identifier": _work_identifier,
     "work_url_or_given": _work_url_or_given, "place_name_term": _place_name_term, "place_code_alias": _place_code_alias, "place_identifier": _place_identifier,
-    "iso_interval": _iso_interval, "interval_detail": _interval_detail, "place": _place_shaper,
+    "iso_interval": _iso_interval, "place": _place_shaper,
     "property_value": _property_value, "term_array": _term_array,
     "distribution_array": _distribution_array, "content_url_or_nil": _content_url_or_nil,
     "url_as_content": _url_as_content, "archive_part": _archive_part, "part_urls": _part_urls,
