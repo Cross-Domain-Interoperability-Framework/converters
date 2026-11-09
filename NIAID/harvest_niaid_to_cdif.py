@@ -60,6 +60,7 @@ DOI_REGISTRY = "https://registry.identifiers.org/registry/doi"
 BIOPROJECT_REGISTRY = "https://registry.identifiers.org/registry/bioproject"
 BIOPROJECT_RE = re.compile(r"PRJ[DEN][A-Z]\d+$")
 OGC_NIL_MISSING = "http://www.opengis.net/def/nil/OGC/0/missing"
+URI_SCHEME = re.compile(r"[A-Za-z][A-Za-z0-9+.-]*:")
 
 # The index's own bookkeeping, not metadata about the dataset.
 INTERNAL_FIELDS = {"_id", "_score", "_ignored", "_meta", "_version", "@version",
@@ -104,7 +105,7 @@ TYPE_WHEN_UNTYPED = {
     "funding": "MonetaryGrant", "citation": "CreativeWork", "citedBy": "CreativeWork",
     "includedInDataCatalog": "DataCatalog", "species": "DefinedTerm",
     "infectiousAgent": "DefinedTerm", "healthCondition": "DefinedTerm",
-    "topicCategory": "DefinedTerm",
+    "topicCategory": "DefinedTerm", "additionalType": "DefinedTerm",
 }
 NDE_CLASSES = {"Sample", "SampleCollection", "DefinedTerm", "TemporalInterval"}
 # @type values that are not schema.org types. DefinedTerm is, so it is not listed.
@@ -571,6 +572,42 @@ def _grant_identifier(value, node, rule, notes):
     return _copy(value, node, rule, notes)
 
 
+def _bare_file(value):
+    """A url the portal gives as a file name only (`LDG-1218_Protocol.pdf`), with no
+    scheme to resolve it by."""
+    return isinstance(value, str) and bool(value.strip()) and not URI_SCHEME.match(value.strip())
+
+
+def _address(value, notes):
+    """A url, with any space in it percent-encoded, or the OGC nil value for one that is
+    only a file name. The file name is not lost: _name_with_file puts it in the node's
+    schema:name."""
+    if _bare_file(value):
+        notes.append(f"url {value.strip()!r} is a file name, not an address: it joins "
+                     "schema:name, and the url is the OGC nil value")
+        return OGC_NIL_MISSING
+    if isinstance(value, str) and " " in value.strip():
+        notes.append(f"url {value.strip()!r} has spaces; they are written as %20")
+        return value.strip().replace(" ", "%20")
+    return value
+
+
+def _file_names(node):
+    """The file names a node's url or contentUrl gives in place of an address."""
+    return list(dict.fromkeys(v.strip() for k in ("contentUrl", "url")
+                              for v in _as_list(node.get(k)) if _bare_file(v)))
+
+
+def _name_with_file(value, node, rule, notes):
+    """A name joined with the file name a bare url gave ("protocol: LDG-1218_Protocol.pdf"),
+    or the file name alone when there is no name."""
+    name = _convert_value(value, rule["subject_label"], notes) if value is not None else None
+    files = _file_names(node)
+    if not files or (name is not None and not isinstance(name, str)):
+        return name
+    return ": ".join(([name] if name else []) + files)
+
+
 def _link_url(work):
     """A URL for a CreativeWork from its own DOI, PMID or URL-shaped identifier."""
     doi = _bare_doi(work.get("doi") or "")
@@ -831,12 +868,16 @@ def _content_url_or_nil(value, node, rule, notes):
     """A file the portal names without an address gets the OGC nil value, so the file
     stays described and the missing URL is said rather than implied."""
     if value:
-        return value
+        return _address(value, notes)
     return None if node.get("url") else OGC_NIL_MISSING
 
 
+def _url_or_nil(value, node, rule, notes):
+    return _address(value, notes)
+
+
 def _url_as_content(value, node, rule, notes):
-    return None if node.get("contentUrl") else value
+    return None if node.get("contentUrl") else _address(value, [])
 
 
 def _archive_part(value, node, rule, notes):
@@ -937,12 +978,16 @@ def _derived_from(value, node, rule, notes):
             continue
         if not isinstance(item, dict):
             continue
-        url = item.get("url") or _link_url(item)
+        url = item.get("url")
+        url = (url if not _bare_file(url) else None) or _link_url(item) or url
         if url:
-            link = {"@type": ["schema:CreativeWork"], "schema:url": url}
-            for key in ("name", "description"):
-                if isinstance(item.get(key), str):
-                    link[f"schema:{key}"] = item[key]
+            link = {"@type": ["schema:CreativeWork"], "schema:url": _address(url, notes)}
+            name = _name_with_file(item.get("name") if isinstance(item.get("name"), str) else None,
+                                   item, {"subject_label": "name"}, notes)
+            if name:
+                link["schema:name"] = name
+            if isinstance(item.get("description"), str):
+                link["schema:description"] = item["description"]
             out.append(link)
         elif isinstance(item.get("name") or item.get("identifier"), str):
             out.append(item.get("name") or item.get("identifier"))
@@ -1025,8 +1070,11 @@ def _place_identifier(value, node, rule, notes):
 
 
 def _work_url_or_given(value, node, rule, notes):
-    """The work's url, else one made from its DOI, PMID or identifier."""
-    return value if isinstance(value, str) and value else _link_url(node)
+    """The work's url, else one made from its DOI, PMID or identifier; a url that is only
+    a file name gives way to those, else to the OGC nil value."""
+    if isinstance(value, str) and value and not _bare_file(value):
+        return _address(value, notes)
+    return _link_url(node) or (_address(value, notes) if value else None)
 
 
 def _place_name_term(value, node, rule, notes):
@@ -1110,10 +1158,11 @@ SHAPERS = {
     "as_text": _as_text, "agent": _agent_one,
     "keyword_split": _keyword_split, "language_name": _language_name, "date_fallback": _utc_datetime,
     "utc_datetime": _utc_datetime, "date_or_sentinel": _date_or_sentinel, "name_or_missing": _name_or_missing,
+    "name_with_file": _name_with_file, "url_or_nil": _url_or_nil,
 }
 # These rows also run when the source has no value, to say that it is missing.
 RUNS_WITHOUT_VALUE = {"license_or_nil", "content_url_or_nil", "work_url_or_given",
-                      "date_or_sentinel", "name_or_missing"}
+                      "date_or_sentinel", "name_or_missing", "name_with_file"}
 
 
 def load_rules(path=TABLE):

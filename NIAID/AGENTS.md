@@ -33,8 +33,9 @@ never committed and nothing reads it.
   converter doesn't define.
 - **Rows that run with no value:** a row is skipped when its source property is absent,
   unless its transform is in `RUNS_WITHOUT_VALUE`. That is how the sentinels work:
-  `license_or_nil`, `content_url_or_nil`, `date_or_sentinel` (`1900-01-01`) and
-  `name_or_missing` (a person named `missing`). Put such a row after the rows it falls
+  `license_or_nil`, `content_url_or_nil`, `date_or_sentinel` (`1900-01-01`),
+  `name_or_missing` (a person named `missing`) and `name_with_file` (a url that is only
+  a file name moves into the name; `_address` makes the url the OGC nil value). Put such a row after the rows it falls
   back from, and have the shaper return `None` when an earlier row has already filled
   the target.
 - **Deferred paths:** a `$.` path on a nested class writes to the dataset root, and a

@@ -148,7 +148,12 @@ Where a record lacks something CDIF requires, the harvester writes a sentinel va
 - a record with no date gets `dateModified` `1900-01-01`;
 - a person with no name or identifier is named `missing`;
 - a file or part with no address gets the OGC nil URL
-  `http://www.opengis.net/def/nil/OGC/0/missing`.
+  `http://www.opengis.net/def/nil/OGC/0/missing`;
+- a url or contentUrl that is only a file name gets the same nil URL, and the file
+  name joins the node's `schema:name` ("protocol: LDG-1218_Protocol.pdf").
+
+Spaces in a url or contentUrl are written as `%20`, and an untyped `additionalType` object
+is typed `schema:DefinedTerm`.
 
 A date-time with no time zone is taken as UTC.
 
