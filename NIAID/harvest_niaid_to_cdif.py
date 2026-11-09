@@ -483,14 +483,6 @@ def _agent_one(value, node, rule, notes):
     return _agent(value, notes) if not isinstance(value, list) else _agent_array(value, node, rule, notes)
 
 
-def _first_alternate_name(value, node, rule, notes):
-    return (value[0] if value else None) if isinstance(value, list) else value
-
-
-def _extra_alternate_names(value, node, rule, notes):
-    return value[1:] if isinstance(value, list) else None
-
-
 def _has_name(node):
     """A parsed affiliation can leave a name that is only punctuation."""
     return isinstance(node.get("name"), str) and bool(re.search(r"\w", node["name"]))
@@ -1061,8 +1053,7 @@ SHAPERS = {
     "primary_identifier": _primary_identifier,
     "extra_identifiers": _extra_identifiers,
     "creator_list": _creator_list, "author_beside_creator": _author_beside_creator,
-    "agent_array": _agent_array, "first_alternate_name": _first_alternate_name,
-    "extra_alternate_names": _extra_alternate_names, "org_name": _org_name,
+    "agent_array": _agent_array, "org_name": _org_name,
     "org_identifier": _org_identifier, "person_name": _person_name,
     "nonempty_affiliation": _nonempty_affiliation, "grant_per_funder": _grant_per_funder,
     "grant_identifier": _grant_identifier, "work_url": _work_url, "link_or_thing": _link_or_thing,
