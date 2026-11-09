@@ -1,0 +1,415 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "nde": "https://discovery.biothings.io/ns/nde/",
+    "bios": "https://bioschemas.org/",
+    "time": "http://www.w3.org/2006/time#",
+    "cdifniaid": "https://w3id.org/cdif/niaid/terms/"
+  },
+  "@type": [
+    "schema:Dataset"
+  ],
+  "@id": "https://data.niaid.nih.gov/resources?id=phs002539",
+  "schema:subjectOf": {
+    "schema:about": {
+      "@id": "https://data.niaid.nih.gov/resources?id=phs002539"
+    },
+    "schema:description": "CDIF metadata harvested from the NIAID Data Discovery Portal API (index build 2026-10-28), record phs002539, and converted by harvest_niaid_to_cdif.py. The portal aggregates this record from the repositories named in schema:includedInDataCatalog; nde: properties, including the portal's term annotations, are as the portal publishes them.\n\nMetadata source from EXTRACT.\n\nMetadata source from GPT.",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "@id": "https://data.niaid.nih.gov/resources?id=phs002539#metadata",
+    "schema:name": "Metadata record for: Large Scale Flu Surveillance Study (LSFS)",
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/niaid/1.0"
+      }
+    ],
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "NIAID Data Discovery Portal",
+      "schema:url": "https://data.niaid.nih.gov/"
+    },
+    "schema:sdDatePublished": "2026-10-28"
+  },
+  "schema:identifier": "phs002539",
+  "schema:dateModified": "2024-04-15",
+  "schema:datePublished": "2024-04-15",
+  "schema:dateCreated": "2021-11-15",
+  "nde:date": "2024-04-15",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "This was a decentralized study run on Evidation's Achievement platform"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:familyName": "Ramirez",
+        "schema:name": "Ramirez, Ernesto",
+        "schema:givenName": "Ernesto"
+      }
+    ]
+  },
+  "schema:conditionsOfAccess": [
+    "Restricted",
+    "General Research Use"
+  ],
+  "schema:description": "The purpose of this study was to better understand behavioral and physiological functioning in relation to recent self-reported influenza and influenza-like-illness (ILI), including coronavirus disease (COVID-19). Over 65,000 Achievement members responded to a weekly one-click survey asking if they had experienced ILI within the previous 7-day period. If they responded no, they were given the option to complete a survey about their risk factors and behavior. If they responded yes, they were given the option to complete a survey asking about the specifics of the incident. Participants were also asked to sync their wearable activity trackers and health apps in order for researchers to better understand changes in behavioral and physiological outcomes related to self-reported ILI experiences.",
+  "schema:funding": [
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NCI"
+      }
+    }
+  ],
+  "schema:healthCondition": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "2019 novel coronavirus infection",
+        "2019-nCoV infection",
+        "coronavirus disease 2019",
+        "severe acute respiratory syndrome coronavirus 2 infectious disease"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:dateModified": "2025-01-15",
+        "schema:name": "Biothings API",
+        "schema:url": "https://biothings.io/"
+      },
+      "schema:identifier": "0100096",
+      "schema:inDefinedTermSet": "MONDO",
+      "nde:isCurated": true,
+      "schema:name": "COVID-19",
+      "nde:originalName": "COVID-19",
+      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0100096"
+    }
+  ],
+  "schema:includedInDataCatalog": [
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:archivedAt": "https://radxdatahub.nih.gov/study/39",
+      "schema:name": "COVID Rapid Acceleration of Diagnostics (RADx) Data Hub",
+      "schema:url": "https://radxdatahub.nih.gov/",
+      "nde:versionDate": "2025-03-26"
+    },
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:archivedAt": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002539.v1.p1",
+      "schema:name": "NCBI Database of Genotypes and Phenotypes (NCBI dbGaP)",
+      "schema:url": "https://www.ncbi.nlm.nih.gov/gap/",
+      "nde:versionDate": "2026-10-14"
+    }
+  ],
+  "schema:infectiousAgent": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "Coronavirus group 1b",
+        "Coronavirus",
+        "Coronavirus group 1",
+        "Group 1 species"
+      ],
+      "schema:identifier": "693996",
+      "schema:inDefinedTermSet": "UniProt",
+      "nde:isCurated": false,
+      "schema:name": "Alphacoronavirus",
+      "nde:originalName": "coronavirus",
+      "schema:url": "https://www.uniprot.org/taxonomy/693996"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "2019-nCoV",
+        "Wuhan coronavirus",
+        "SARS-2",
+        "SARS-CoV2",
+        "Wuhan seafood market pneumonia virus",
+        "HCoV-19",
+        "COVID19",
+        "COVID-19 virus",
+        "Human coronavirus 2019",
+        "COVID-19"
+      ],
+      "cdifniaid:commonName": "2019-nCoV",
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:dateModified": "2025-02-09",
+        "schema:name": "Data Discovery Engine",
+        "schema:url": "https://discovery.biothings.io/"
+      },
+      "schema:identifier": "2697049",
+      "schema:inDefinedTermSet": "UniProt",
+      "nde:isCurated": true,
+      "schema:name": "Severe acute respiratory syndrome coronavirus 2",
+      "nde:originalName": "Severe acute respiratory syndrome coronavirus 2",
+      "schema:url": "https://www.uniprot.org/taxonomy/2697049"
+    }
+  ],
+  "schema:keywords": [
+    "Digital Health Applications",
+    "Influenza",
+    "Biosensor Technologies",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_3305",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Public health and epidemiology",
+      "schema:url": "http://edamontology.org/topic_3305",
+      "schema:about": "topicCategory"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_3344",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Biomedical science",
+      "schema:url": "http://edamontology.org/topic_3344",
+      "schema:about": "topicCategory"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_3324",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Infectious disease",
+      "schema:url": "http://edamontology.org/topic_3324",
+      "schema:about": "topicCategory"
+    },
+    {
+      "schema:name": "infectiousAgent",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "NIAID classification"
+    },
+    {
+      "schema:name": "host",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "NIAID classification"
+    }
+  ],
+  "schema:license": [
+    "https://sharing.nih.gov/accessing-data/accessing-genomic-data/how-to-request-and-access-datasets-from-dbgap"
+  ],
+  "schema:measurementTechnique": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "C17176",
+      "schema:inDefinedTermSet": "NCIT",
+      "nde:isCurated": true,
+      "schema:name": "survey",
+      "nde:originalName": "Survey",
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C17176"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "C15208",
+      "schema:inDefinedTermSet": "NCIT",
+      "nde:isCurated": true,
+      "schema:name": "Cohort Study",
+      "nde:originalName": "Longitudinal Cohort",
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C15208"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0010264",
+      "schema:inDefinedTermSet": "BAO",
+      "nde:isCurated": true,
+      "schema:name": "biosensor method",
+      "nde:originalName": "Biosensor",
+      "schema:url": "http://www.bioassayontology.org/bao#BAO_0010264"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "C17176",
+      "schema:inDefinedTermSet": "NCIT",
+      "nde:isCurated": true,
+      "schema:name": "survey",
+      "nde:originalName": "Questionnaire or Survey",
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C17176"
+    }
+  ],
+  "schema:name": "Large Scale Flu Surveillance Study (LSFS)",
+  "schema:sdPublisher": {
+    "@type": [
+      "schema:DataCatalog"
+    ],
+    "schema:name": "RADx DHT"
+  },
+  "nde:species": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "Human",
+        "Homo sapiens Linnaeus, 1758",
+        "human",
+        "Home sapiens",
+        "Homo sampiens",
+        "Homo sapeins",
+        "Homo sapian",
+        "Homo sapians",
+        "Homo sapien",
+        "Homo sapience",
+        "Homo sapiense",
+        "Homo sapients",
+        "Homo sapines",
+        "Homo spaiens",
+        "Homo spiens",
+        "Humo sapiens"
+      ],
+      "cdifniaid:commonName": "Human",
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:dateModified": "2023-10-05",
+        "schema:name": "PubTator",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/research/pubtator/api.html"
+      },
+      "schema:identifier": "9606",
+      "schema:inDefinedTermSet": "UniProt",
+      "nde:isCurated": true,
+      "schema:name": "Homo sapiens",
+      "nde:originalName": "homo sapiens",
+      "schema:url": "https://www.uniprot.org/taxonomy/9606"
+    }
+  ],
+  "schema:temporalCoverage": [
+    {
+      "@type": [
+        "time:ProperInterval"
+      ],
+      "time:hasBeginning": {
+        "@type": [
+          "time:Instant"
+        ],
+        "time:inXSDDate": "2020-09-14"
+      },
+      "time:hasEnd": {
+        "@type": [
+          "time:Instant"
+        ],
+        "time:inXSDDate": "2021-09-13"
+      },
+      "schema:description": "nde:temporalType: study date"
+    }
+  ],
+  "schema:url": "https://radxdatahub.nih.gov/study/39",
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue",
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "C16326",
+      "schema:inDefinedTermSet": "NCIT",
+      "nde:isCurated": true,
+      "schema:name": "Behavior",
+      "nde:originalName": "Behavioral",
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C16326"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue",
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0008002",
+      "schema:inDefinedTermSet": "EFO",
+      "nde:isCurated": true,
+      "schema:name": "physical activity measurement",
+      "nde:originalName": "Physical Activity",
+      "schema:url": "http://www.ebi.ac.uk/efo/EFO_0008002"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue",
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0000651",
+      "schema:inDefinedTermSet": "EFO",
+      "nde:isCurated": true,
+      "schema:name": "phenotype",
+      "nde:originalName": "Individual Phenotype",
+      "schema:url": "http://www.ebi.ac.uk/efo/EFO_0000651"
+    }
+  ]
+}

@@ -1,0 +1,408 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "nde": "https://discovery.biothings.io/ns/nde/",
+    "bios": "https://bioschemas.org/",
+    "time": "http://www.w3.org/2006/time#",
+    "cdifniaid": "https://w3id.org/cdif/niaid/terms/"
+  },
+  "@type": [
+    "schema:Dataset"
+  ],
+  "@id": "https://data.niaid.nih.gov/resources?id=phs002516",
+  "schema:subjectOf": {
+    "schema:about": {
+      "@id": "https://data.niaid.nih.gov/resources?id=phs002516"
+    },
+    "schema:description": "CDIF metadata harvested from the NIAID Data Discovery Portal API (index build 2026-10-28), record phs002516, and converted by harvest_niaid_to_cdif.py. The portal aggregates this record from the repositories named in schema:includedInDataCatalog; nde: properties, including the portal's term annotations, are as the portal publishes them.\n\nMetadata source from GPT.",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "@id": "https://data.niaid.nih.gov/resources?id=phs002516#metadata",
+    "schema:name": "Metadata record for: NIH Digital Health Solutions for COVID-19: IBM COVID-19 Contact Tracing and Data Exchange Tools",
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/niaid/1.0"
+      }
+    ],
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "NIAID Data Discovery Portal",
+      "schema:url": "https://data.niaid.nih.gov/"
+    },
+    "schema:sdDatePublished": "2026-10-28"
+  },
+  "schema:identifier": "phs002516",
+  "schema:dateModified": "2024-04-15",
+  "schema:datePublished": "2024-04-15",
+  "schema:dateCreated": "2021-11-15",
+  "nde:date": "2024-04-15",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:familyName": "Gibson",
+        "schema:name": "Gibson, Teresa",
+        "schema:givenName": "Teresa"
+      }
+    ]
+  },
+  "schema:conditionsOfAccess": [
+    "Restricted",
+    "General Research Use"
+  ],
+  "schema:description": "The goal of this project was to develop both contact tracing and secure data exchange tools. The contact tracing solution securely combines data from a variety of sources (including manual self-report data, mobile device surveys) to enable tracing of contacts with individuals that have tested positive for COVID-19 or have been exposed to COVID-19. The data exchange solution is a secure mechanism that empowers users to control the data they share in the course of their return to work, including the ability to provide a verifiable health status claim. These tools were used by an employer to evaluate the risk of allowing individuals to return to normal activities and also the ability to trace user contact with individuals diagnosed with, or suspected of having contracted, COVID-19.",
+  "schema:funding": [
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NCI"
+      }
+    }
+  ],
+  "schema:healthCondition": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "2019 novel coronavirus infection",
+        "2019-nCoV infection",
+        "coronavirus disease 2019",
+        "severe acute respiratory syndrome coronavirus 2 infectious disease"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:dateModified": "2025-01-15",
+        "schema:name": "Biothings API",
+        "schema:url": "https://biothings.io/"
+      },
+      "schema:identifier": "0100096",
+      "schema:inDefinedTermSet": "MONDO",
+      "nde:isCurated": true,
+      "schema:name": "COVID-19",
+      "nde:originalName": "COVID-19",
+      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0100096"
+    }
+  ],
+  "schema:includedInDataCatalog": [
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:archivedAt": "https://radxdatahub.nih.gov/study/32",
+      "schema:name": "COVID Rapid Acceleration of Diagnostics (RADx) Data Hub",
+      "schema:url": "https://radxdatahub.nih.gov/",
+      "nde:versionDate": "2025-03-26"
+    },
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:archivedAt": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002516.v1.p1",
+      "schema:name": "NCBI Database of Genotypes and Phenotypes (NCBI dbGaP)",
+      "schema:url": "https://www.ncbi.nlm.nih.gov/gap/",
+      "nde:versionDate": "2026-10-14"
+    }
+  ],
+  "schema:infectiousAgent": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "2019-nCoV",
+        "Wuhan coronavirus",
+        "SARS-2",
+        "SARS-CoV2",
+        "Wuhan seafood market pneumonia virus",
+        "HCoV-19",
+        "COVID19",
+        "COVID-19 virus",
+        "Human coronavirus 2019",
+        "COVID-19"
+      ],
+      "cdifniaid:commonName": "2019-nCoV",
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:dateModified": "2025-02-09",
+        "schema:name": "Data Discovery Engine",
+        "schema:url": "https://discovery.biothings.io/"
+      },
+      "schema:identifier": "2697049",
+      "schema:inDefinedTermSet": "UniProt",
+      "nde:isCurated": true,
+      "schema:name": "Severe acute respiratory syndrome coronavirus 2",
+      "nde:originalName": "Severe acute respiratory syndrome coronavirus 2",
+      "schema:url": "https://www.uniprot.org/taxonomy/2697049"
+    }
+  ],
+  "schema:keywords": [
+    "Digital Health Applications",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_3305",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Public health and epidemiology",
+      "schema:url": "http://edamontology.org/topic_3305",
+      "schema:about": "topicCategory"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_3063",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Medical informatics",
+      "schema:url": "http://edamontology.org/topic_3063",
+      "schema:about": "topicCategory"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_3263",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Data security",
+      "schema:url": "http://edamontology.org/topic_3263",
+      "schema:about": "topicCategory"
+    },
+    {
+      "schema:name": "infectiousAgent",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "NIAID classification"
+    },
+    {
+      "schema:name": "host",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "NIAID classification"
+    }
+  ],
+  "schema:license": [
+    "https://sharing.nih.gov/accessing-data/accessing-genomic-data/how-to-request-and-access-datasets-from-dbgap"
+  ],
+  "schema:measurementTechnique": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "C17176",
+      "schema:inDefinedTermSet": "NCIT",
+      "nde:isCurated": true,
+      "schema:name": "survey",
+      "nde:originalName": "Survey",
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C17176"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "C173558",
+      "schema:inDefinedTermSet": "NCIT",
+      "nde:isCurated": true,
+      "schema:name": "Contact Tracing",
+      "nde:originalName": "Contact Tracing",
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C173558"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "C183145",
+      "schema:inDefinedTermSet": "NCIT",
+      "nde:isCurated": true,
+      "schema:name": "Data Collection Platform Smartphone Application",
+      "nde:originalName": "Smartphone",
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C183145"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "C15208",
+      "schema:inDefinedTermSet": "NCIT",
+      "nde:isCurated": true,
+      "schema:name": "Cohort Study",
+      "nde:originalName": "Longitudinal Cohort",
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C15208"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "C17176",
+      "schema:inDefinedTermSet": "NCIT",
+      "nde:isCurated": true,
+      "schema:name": "survey",
+      "nde:originalName": "Questionnaire or Survey",
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C17176"
+    }
+  ],
+  "schema:name": "NIH Digital Health Solutions for COVID-19: IBM COVID-19 Contact Tracing and Data Exchange Tools",
+  "schema:sdPublisher": {
+    "@type": [
+      "schema:DataCatalog"
+    ],
+    "schema:name": "RADx DHT"
+  },
+  "nde:species": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "Human",
+        "Homo sapiens Linnaeus, 1758",
+        "human",
+        "Home sapiens",
+        "Homo sampiens",
+        "Homo sapeins",
+        "Homo sapian",
+        "Homo sapians",
+        "Homo sapien",
+        "Homo sapience",
+        "Homo sapiense",
+        "Homo sapients",
+        "Homo sapines",
+        "Homo spaiens",
+        "Homo spiens",
+        "Humo sapiens"
+      ],
+      "cdifniaid:commonName": "Human",
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:dateModified": "2023-10-05",
+        "schema:name": "PubTator",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/research/pubtator/api.html"
+      },
+      "schema:identifier": "9606",
+      "schema:inDefinedTermSet": "UniProt",
+      "nde:isCurated": true,
+      "schema:name": "Homo sapiens",
+      "nde:originalName": "homo sapiens",
+      "schema:url": "https://www.uniprot.org/taxonomy/9606"
+    }
+  ],
+  "schema:temporalCoverage": [
+    {
+      "@type": [
+        "time:ProperInterval"
+      ],
+      "time:hasBeginning": {
+        "@type": [
+          "time:Instant"
+        ],
+        "time:inXSDDate": "2020-09-14"
+      },
+      "time:hasEnd": {
+        "@type": [
+          "time:Instant"
+        ],
+        "time:inXSDDate": "2021-09-13"
+      },
+      "schema:description": "nde:temporalType: study date"
+    }
+  ],
+  "schema:url": "https://radxdatahub.nih.gov/study/32",
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue",
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Data Exchange Tools"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue",
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0009100",
+      "schema:inDefinedTermSet": "EFO",
+      "nde:isCurated": true,
+      "schema:name": "social domain measurement",
+      "nde:originalName": "Social",
+      "schema:url": "http://www.ebi.ac.uk/efo/EFO_0009100"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue",
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "C16326",
+      "schema:inDefinedTermSet": "NCIT",
+      "nde:isCurated": true,
+      "schema:name": "Behavior",
+      "nde:originalName": "Behavioral",
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C16326"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue",
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0000000",
+      "schema:inDefinedTermSet": "CMO",
+      "nde:isCurated": true,
+      "schema:name": "clinical measurement",
+      "nde:originalName": "Clinical",
+      "schema:url": "http://purl.obolibrary.org/obo/CMO_0000000"
+    }
+  ]
+}

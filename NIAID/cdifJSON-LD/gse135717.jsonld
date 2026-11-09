@@ -1,0 +1,575 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "nde": "https://discovery.biothings.io/ns/nde/",
+    "bios": "https://bioschemas.org/",
+    "time": "http://www.w3.org/2006/time#",
+    "cdifniaid": "https://w3id.org/cdif/niaid/terms/"
+  },
+  "@type": [
+    "schema:Dataset"
+  ],
+  "@id": "https://data.niaid.nih.gov/resources?id=gse135717",
+  "schema:subjectOf": {
+    "schema:about": {
+      "@id": "https://data.niaid.nih.gov/resources?id=gse135717"
+    },
+    "schema:description": "CDIF metadata harvested from the NIAID Data Discovery Portal API (index build 2026-10-28), record gse135717, and converted by harvest_niaid_to_cdif.py. The portal aggregates this record from the repositories named in schema:includedInDataCatalog; nde: properties, including the portal's term annotations, are as the portal publishes them.\n\nMetadata source from PMID.\n\nMetadata source from GPT.",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "@id": "https://data.niaid.nih.gov/resources?id=gse135717#metadata",
+    "schema:name": "Metadata record for: An Improved Platform for Functional Assessment of Large Protein Libraries in Mammalian Cells",
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/niaid/1.0"
+      }
+    ],
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "NIAID Data Discovery Portal",
+      "schema:url": "https://data.niaid.nih.gov/"
+    },
+    "schema:sdDatePublished": "2026-10-28"
+  },
+  "schema:identifier": "GSE135717",
+  "schema:dateModified": "2019-12-30",
+  "schema:datePublished": "2019-09-30",
+  "schema:dateCreated": "2019-08-12",
+  "nde:date": "2019-12-30",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Kenneth A Matreyek"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Douglas M Fowler"
+      }
+    ]
+  },
+  "schema:citation": [
+    {
+      "@type": [
+        "schema:ScholarlyArticle"
+      ],
+      "schema:author": [
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Matreyek KA"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Stephany JJ"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Chiasson MA"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Hasle N"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Fowler DM"
+        }
+      ],
+      "schema:datePublished": "2020-01-10",
+      "schema:identifier": "PMID:31612958",
+      "nde:journalName": "Nucleic acids research",
+      "schema:name": "An improved platform for functional assessment of large protein libraries in mammalian cells.",
+      "nde:pmid": "31612958",
+      "schema:url": "https://pubmed.ncbi.nlm.nih.gov/31612958/"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Open"
+  ],
+  "schema:description": "Multiplex genetic assays can simultaneously test thousands of genetic variants for a property of interest. However, limitations of existing multiplex assay methods in cultured mammalian cells hinder the breadth, speed, and scale of these experiments. Here, we describe a series of improvements that greatly enhance the capabilities of a Bxb1 recombinase-based landing pad system for conducting different types of multiplex genetic assays in various mammalian cell lines. We incorporate the landing pad into a lentiviral vector, easing the process of generating new landing pad cell lines. We also develop several new landing pad versions, including one where the Bxb1 recombinase is expressed from the landing pad itself, improving recombination efficiency more than 2-fold and permitting rapid prototyping of transgenic constructs. Other versions incorporate positive and negative selection markers that enable drug-based enrichment of recombinant cells, enabling the use of larger libraries and reducing costs. A version with dual convergent promoters allows enrichment of recombinant cells independent of transgene expression, permitting the assessment of libraries of transgenes that perturb cell growth and survival. Finally, we demonstrate these improvements by assessing the effects of a combinatorial library of oncogenes and tumor suppressors on cell growth. Collectively, these advancements make multiplex genetic assays in diverse cultured cell lines easier, cheaper and more effective, facilitating future studies probing how proteins impact cell function, using transgenic variant libraries tested individually or in combination. We created a molecular cloning framework that allows for combinatorial barcoding, expression, and sequencing of two distinct transgenes separated by a 2A element. Each transgene in each position was given a 16 nucleotide identifier sequence, separated by a 20 nucleotide constant region. Each 16 nucleotide identifier was composed of eight nucleotides of known sequence serving as a transgene identifier, flanked on either side by four degenerate nucleotides serving as unique plasmid identifier sequences. The plasmid preparation was sequenced in two seperate instances. We recombined the library into LLP-rEF1Î± cells (Fig 3a) and grew the cells for two weeks, enricheding recombined cells to ~40%. Genomic DNA was extracted from each cell pellet, and recombined plasmid barcodes were amplified and sequenced at high throughput. We performed a total of eight replicate experiments from two independent recombinations.",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135717"
+    }
+  ],
+  "schema:funding": [
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2022-11-30",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "NCI",
+          "Instituto Nacional del Cáncer"
+        ],
+        "schema:identifier": "https://ror.org/040gcmg81",
+        "schema:name": "National Cancer Institute",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1F30CA236335-01"
+      },
+      "schema:name": "Dissecting the role of PTEN in human disease by testing the effects of thousands of variants on multiple cellular phenotypes",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "F30",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "CA",
+        "cdifniaid:serialNum": "236335",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2018-12-01",
+      "schema:url": "https://reporter.nih.gov/project-details/9681597"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2018-08-31",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "NIGMS",
+          "U.S. National Institute of General Medical Sciences"
+        ],
+        "schema:identifier": "https://ror.org/04q48ey07",
+        "schema:name": "National Institute of General Medical Sciences",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1R01GM109110-01"
+      },
+      "schema:name": "Large-Scale Methods for Assessing the Consequences of Mutations in Proteins",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "R01",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "GM",
+        "cdifniaid:serialNum": "109110",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2014-09-01",
+      "schema:url": "https://reporter.nih.gov/project-details/8623504"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2023-02-28",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "The National Human Genome Research Institute",
+          "NIH/National Human Genome Research Institute",
+          "NHGRI"
+        ],
+        "schema:identifier": "https://ror.org/00baak391",
+        "schema:name": "National Human Genome Research Institute",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1RM1HG010461-01"
+      },
+      "schema:name": "Center for the Multiplexed Assessment of Phenotype",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "RM1",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "HG",
+        "cdifniaid:serialNum": "010461",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2019-05-08",
+      "schema:url": "https://reporter.nih.gov/project-details/9699803"
+    }
+  ],
+  "schema:healthCondition": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "tumour",
+        "tumor",
+        "neoplasm (disease)",
+        "neoplasia",
+        "neoplastic growth",
+        "neoplasm",
+        "tumor disease",
+        "tumour disease",
+        "neoplastic disease",
+        "disease of cellular proliferation"
+      ],
+      "schema:identifier": "0005070",
+      "schema:inDefinedTermSet": "MONDO",
+      "nde:isCurated": false,
+      "schema:name": "neoplasm",
+      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0005070"
+    }
+  ],
+  "schema:includedInDataCatalog": {
+    "@type": [
+      "schema:DataCatalog"
+    ],
+    "schema:archivedAt": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135717",
+    "schema:name": "NCBI Gene Expression Omnibus (NCBI GEO)",
+    "schema:url": "https://www.ncbi.nlm.nih.gov/geo/",
+    "nde:versionDate": "2026-10-04"
+  },
+  "schema:infectiousAgent": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "IAM 12119",
+        "Bacillus coli",
+        "Bacterium coli",
+        "Bacterium coli commune",
+        "Escherchia coli",
+        "Eschericia coli",
+        "Escherichia sp. MAR",
+        "bacterium E3",
+        "Escherichia/Shigella coli",
+        "Enterococcus coli",
+        "\"Bacillus coli\" Migula 1895",
+        "\"Bacterium coli commune\" Escherich 1885",
+        "\"Bacterium coli\" (Migula 1895) Lehmann and Neumann 1896",
+        "Escherichia coli (Migula 1895) Castellani and Chalmers 1919",
+        "bacterium 10a",
+        "strain U5/41",
+        "E. coli",
+        "ATCC 11775",
+        "CCUG 24",
+        "CCUG 29300",
+        "CIP 54.8",
+        "DSM 30083",
+        "JCM 1649",
+        "LMG 2092",
+        "LMG:2092",
+        "NBRC 102203",
+        "NCCB 54008",
+        "NCTC 9001",
+        "Escherichia sp. 3_2_53FAA",
+        "Achromobacter sp. ATCC 35328"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:dateModified": "2023-10-05",
+        "schema:name": "PubTator",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/research/pubtator/api.html"
+      },
+      "schema:identifier": "562",
+      "schema:inDefinedTermSet": "UniProt",
+      "nde:isCurated": true,
+      "schema:name": "Escherichia coli",
+      "nde:originalName": "escherichia coli",
+      "schema:url": "https://www.uniprot.org/taxonomy/562"
+    }
+  ],
+  "schema:measurementTechnique": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0000011",
+      "schema:inDefinedTermSet": "OBI",
+      "nde:isCurated": true,
+      "schema:name": "planned process",
+      "nde:originalName": "Other",
+      "schema:url": "https://ontobee.org/ontology/OBI?iri=http://purl.obolibrary.org/obo/OBI_0000011"
+    }
+  ],
+  "schema:name": "An Improved Platform for Functional Assessment of Large Protein Libraries in Mammalian Cells",
+  "nde:sample": {
+    "@type": [
+      "nde:SampleCollection"
+    ],
+    "schema:aggregateElement": {
+      "bios:sampleType": [
+        {
+          "@type": [
+            "schema:DefinedTerm"
+          ],
+          "schema:name": "SRA"
+        },
+        {
+          "@type": [
+            "schema:DefinedTerm"
+          ],
+          "schema:name": "genomic"
+        }
+      ],
+      "schema:url": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026870",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026871",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026872",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026873",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026874",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026875",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026876",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026877",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026878",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026879"
+      ]
+    },
+    "schema:itemListElement": [
+      {
+        "@type": [
+          "nde:Sample",
+          "bios:Sample"
+        ],
+        "schema:identifier": "GSM4026870",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026870"
+      },
+      {
+        "@type": [
+          "nde:Sample",
+          "bios:Sample"
+        ],
+        "schema:identifier": "GSM4026871",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026871"
+      },
+      {
+        "@type": [
+          "nde:Sample",
+          "bios:Sample"
+        ],
+        "schema:identifier": "GSM4026872",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026872"
+      },
+      {
+        "@type": [
+          "nde:Sample",
+          "bios:Sample"
+        ],
+        "schema:identifier": "GSM4026873",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026873"
+      },
+      {
+        "@type": [
+          "nde:Sample",
+          "bios:Sample"
+        ],
+        "schema:identifier": "GSM4026874",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026874"
+      },
+      {
+        "@type": [
+          "nde:Sample",
+          "bios:Sample"
+        ],
+        "schema:identifier": "GSM4026875",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026875"
+      },
+      {
+        "@type": [
+          "nde:Sample",
+          "bios:Sample"
+        ],
+        "schema:identifier": "GSM4026876",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026876"
+      },
+      {
+        "@type": [
+          "nde:Sample",
+          "bios:Sample"
+        ],
+        "schema:identifier": "GSM4026877",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026877"
+      },
+      {
+        "@type": [
+          "nde:Sample",
+          "bios:Sample"
+        ],
+        "schema:identifier": "GSM4026878",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026878"
+      },
+      {
+        "@type": [
+          "nde:Sample",
+          "bios:Sample"
+        ],
+        "schema:identifier": "GSM4026879",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4026879"
+      }
+    ],
+    "schema:numberOfItems": {
+      "@type": [
+        "schema:QuantitativeValue"
+      ],
+      "schema:unitText": "sample",
+      "schema:value": 10
+    }
+  },
+  "schema:sdPublisher": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Case Western Reserve University"
+    }
+  ],
+  "nde:species": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "Human",
+        "Homo sapiens Linnaeus, 1758",
+        "human",
+        "Home sapiens",
+        "Homo sampiens",
+        "Homo sapeins",
+        "Homo sapian",
+        "Homo sapians",
+        "Homo sapien",
+        "Homo sapience",
+        "Homo sapiense",
+        "Homo sapients",
+        "Homo sapines",
+        "Homo spaiens",
+        "Homo spiens",
+        "Humo sapiens"
+      ],
+      "cdifniaid:commonName": "Human",
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:dateModified": "2023-10-05",
+        "schema:name": "PubTator",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/research/pubtator/api.html"
+      },
+      "schema:identifier": "9606",
+      "schema:inDefinedTermSet": "UniProt",
+      "nde:isCurated": true,
+      "schema:name": "Homo sapiens",
+      "nde:originalName": "homo sapiens",
+      "schema:url": "https://www.uniprot.org/taxonomy/9606"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_0091",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Bioinformatics",
+      "schema:url": "http://edamontology.org/topic_0091",
+      "schema:about": "topicCategory"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_3047",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Molecular biology",
+      "schema:url": "http://edamontology.org/topic_3047",
+      "schema:about": "topicCategory"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_3053",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Genetics",
+      "schema:url": "http://edamontology.org/topic_3053",
+      "schema:about": "topicCategory"
+    },
+    {
+      "schema:name": "infectiousAgent",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "NIAID classification"
+    },
+    {
+      "schema:name": "host",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "NIAID classification"
+    }
+  ],
+  "schema:url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135717"
+}
