@@ -1,0 +1,975 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "nde": "https://discovery.biothings.io/ns/nde/",
+    "bios": "https://bioschemas.org/",
+    "time": "http://www.w3.org/2006/time#",
+    "cdifniaid": "https://w3id.org/cdif/niaid/terms/"
+  },
+  "@type": [
+    "schema:Dataset"
+  ],
+  "@id": "https://data.niaid.nih.gov/resources?id=pxd019637",
+  "schema:subjectOf": {
+    "schema:about": {
+      "@id": "https://data.niaid.nih.gov/resources?id=pxd019637"
+    },
+    "schema:description": "CDIF metadata harvested from the NIAID Data Discovery Portal API (index build 2026-10-28), record pxd019637, and converted by harvest_niaid_to_cdif.py. The portal aggregates this record from the repositories named in schema:includedInDataCatalog; nde: properties, including the portal's term annotations, are as the portal publishes them.\n\nMetadata source from PMID.\n\nMetadata source from GPT.",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "@id": "https://data.niaid.nih.gov/resources?id=pxd019637#metadata",
+    "schema:name": "Metadata record for: The Viral Polymerase Complex Mediates the Interaction of vRNPs with Recycling Endosomes During SeV Assembly",
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/niaid/1.0"
+      }
+    ],
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "NIAID Data Discovery Portal",
+      "schema:url": "https://data.niaid.nih.gov/"
+    },
+    "schema:sdDatePublished": "2026-10-28"
+  },
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:value": "10.6019/PXD019637",
+    "schema:url": "https://doi.org/10.6019/PXD019637"
+  },
+  "bios:alternateIdentifier": [
+    "PXD019637"
+  ],
+  "schema:dateModified": "2024-10-22",
+  "schema:datePublished": "2020-08-06",
+  "schema:dateCreated": "2020-06-08",
+  "nde:date": "2020-08-06",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Children's Hospital of Philadelphia"
+        },
+        "schema:identifier": "https://orcid.org/0000-0002-4125-2533",
+        "schema:name": "Katarzyna Kulej"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "The Perelman School of Medicine at the University of Pennsylvania Epigenetics Institute Department of Biochemistry and Biophysics Philadelphia, USA"
+        },
+        "schema:name": "Benjamin A. Garcia"
+      }
+    ]
+  },
+  "schema:citation": [
+    {
+      "@type": [
+        "schema:ScholarlyArticle"
+      ],
+      "schema:author": [
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Genoyer E"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Kulej K"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Hung CT"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Thibault PA"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Azarm K"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Takimoto T"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Garcia BA"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Lee B"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Lakdawala S"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Weitzman MD"
+        },
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Lopez CB"
+        }
+      ],
+      "schema:datePublished": "2020-08-25",
+      "nde:doi": "10.1128/mBio.02028-20",
+      "schema:identifier": "PMID:32843550",
+      "nde:journalName": "mBio",
+      "schema:name": "The Viral Polymerase Complex Mediates the Interaction of Viral Ribonucleoprotein Complexes with Recycling Endosomes during Sendai Virus Assembly.",
+      "nde:pmid": "32843550",
+      "schema:url": "https://pubmed.ncbi.nlm.nih.gov/32843550/"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Open"
+  ],
+  "schema:description": "Paramyxoviruses are negative sense single-stranded RNA viruses that comprise many important human and animal pathogens, including human parainfluenza viruses. These viruses bud from the plasma membrane of infected cells after the viral ribonucleoprotein complex (vRNP) is transported from the cytoplasm to the cell membrane via Rab11a marked recycling endosomes. The viral proteins that are critical for mediating this important initial step in viral assembly are unknown. Here we use the model paramyxovirus, murine parainfluenza virus 1, or Sendai virus (SeV), to investigate the roles of viral proteins in Rab11a-driven virion assembly. We previously reported that infection with SeV containing high levels of copy-back defective viral genomes (DVGs) generates heterogenous populations of cells, with cells enriched in full-length virus producing viral particles containing standard or defective viral genomes, while cells enriched in DVGs did not, despite high levels of defective viral genome replication. Here we take advantage of this heterogenous cell phenotype to identify proteins that mediate interaction of vRNPs with Rab11a. We examine the role of matrix protein and nucleoprotein and determine that they are not sufficient to drive interaction of vRNPs and recycling endosomes. Then, using a combination of mass spectrometry and comparative protein abundance and localization in DVG- and FL-high cells, we identify viral polymerase complex components L and, specifically, its cofactor C proteins as interactors with Rab11a. We find that accumulation of these proteins within the cell is the defining feature that differentiates cells that proceed to viral egress from cells which remain in replication phases.  Paramyxoviruses are a family of viruses that include a number of pathogens with significant burdens on human health. Particularly, human parainfluenza viruses are an important cause of pneumonia and bronchiolitis in children and do not have any vaccines or direct acting antivirals. These cytoplasmic replicating viruses bud from the plasma membrane and coopt cellular endosomal recycling pathways to traffic viral ribonucleoprotein complexes from the cytoplasm to the membrane of infected cells, yet the viral proteins required for viral engagement with the recycling endosome pathway is not known. Here we use the model paramyxovirus Sendai virus, or murine parainfluenza virus 1, to investigate the role of viral proteins in this initial step in viral assembly. We find that viral polymerase components large protein L and accessory C proteins are necessary for engagement with recycling endosomes. These findings are important in identifying viral targets for the development of antivirals.",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://www.omicsdi.org/ws/dataset/pride/PXD019637",
+      "schema:encodingFormat": [
+        "XML"
+      ]
+    }
+  ],
+  "schema:funding": [
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2005-07-31",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "National Institute of Allergy & Infectious Diseases",
+          "NIAID",
+          "Instituto Nacional de Alergias y Enfermedades Infecciosas"
+        ],
+        "schema:identifier": "https://ror.org/043z4tv69",
+        "schema:name": "National Institute of Allergy and Infectious Diseases",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1T32AI007647-01"
+      },
+      "schema:name": "TRAINING PROGRAM: MECHANISMS OF VIRUS-HOST INTERACTIONS",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "T32",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "AI",
+        "cdifniaid:serialNum": "007647",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2000-08-01",
+      "schema:url": "https://reporter.nih.gov/project-details/6154408"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2021-08-31",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "National Institute of Allergy & Infectious Diseases",
+          "NIAID",
+          "Instituto Nacional de Alergias y Enfermedades Infecciosas"
+        ],
+        "schema:identifier": "https://ror.org/043z4tv69",
+        "schema:name": "National Institute of Allergy and Infectious Diseases",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1R01AI123449-01A1"
+      },
+      "schema:name": "Tropism, pathogenicity, and potential for zoonotic spillover of emergent henipa- and henipa-like viruses",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "R01",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01A1",
+        "cdifniaid:icCode": "AI",
+        "cdifniaid:serialNum": "123449",
+        "cdifniaid:suffixCode": "A1",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2016-09-26",
+      "schema:url": "https://reporter.nih.gov/project-details/9238037"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NIAID NIH HHS"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "F31 AI133943"
+      }
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2020-08-31",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "NCI"
+        ],
+        "schema:employee": [
+          {
+            "@type": [
+              "schema:Person"
+            ],
+            "schema:familyName": "Mietz",
+            "schema:givenName": "Judy",
+            "schema:name": "Judy Mietz"
+          }
+        ],
+        "schema:identifier": "https://ror.org/03q21mh05",
+        "schema:name": "National Cancer Institute, Cairo University"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1P01CA196539-01"
+      },
+      "schema:name": "Oncohistones: Role of Histone H3 Mutations in the Oncogenesis of Pediatric Cancers",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "P01",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "CA",
+        "cdifniaid:serialNum": "196539",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2015-09-09",
+      "schema:url": "https://reporter.nih.gov/project-details/8934748"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NIAID NIH HHS"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "R01 AI055940"
+      }
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2022-04-30",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "National Institute of Allergy & Infectious Diseases",
+          "NIAID",
+          "Instituto Nacional de Alergias y Enfermedades Infecciosas"
+        ],
+        "schema:identifier": "https://ror.org/043z4tv69",
+        "schema:name": "National Institute of Allergy and Infectious Diseases",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1R01AI137062-01"
+      },
+      "schema:name": "Defective Viral genomes in RSV pathogenesis",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "R01",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "AI",
+        "cdifniaid:serialNum": "137062",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2018-05-03",
+      "schema:url": "https://reporter.nih.gov/project-details/9496994"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2011-07-31",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "NCRR"
+        ],
+        "schema:employee": [
+          {
+            "@type": [
+              "schema:Person"
+            ],
+            "schema:familyName": "Birken",
+            "schema:givenName": "Steven",
+            "schema:name": "Steven Birken"
+          }
+        ],
+        "schema:identifier": "https://ror.org/04pw6fb54",
+        "schema:name": "National Center for Research Resources",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1S10RR027128-01"
+      },
+      "schema:name": "FLIM system, resonant scanner, and UV laser for 2 photon microscope",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "S10",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "RR",
+        "cdifniaid:serialNum": "027128",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2010-08-01",
+      "schema:url": "https://reporter.nih.gov/project-details/7794472"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NIAID NIH HHS"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "R01 AI129988"
+      }
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2021-05-31",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "National Institute of Allergy & Infectious Diseases",
+          "NIAID",
+          "Instituto Nacional de Alergias y Enfermedades Infecciosas"
+        ],
+        "schema:identifier": "https://ror.org/043z4tv69",
+        "schema:name": "National Institute of Allergy and Infectious Diseases",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1R01AI125536-01"
+      },
+      "schema:name": "SUMO and ubiquitin modifications in henipavirus matrix trafficking and function",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "R01",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "AI",
+        "cdifniaid:serialNum": "125536",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2016-06-24",
+      "schema:url": "https://reporter.nih.gov/project-details/9159123"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2023-07-31",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "National Institute of Allergy & Infectious Diseases",
+          "NIAID",
+          "Instituto Nacional de Alergias y Enfermedades Infecciosas"
+        ],
+        "schema:identifier": "https://ror.org/043z4tv69",
+        "schema:name": "National Institute of Allergy and Infectious Diseases",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1R01AI134862-01A1"
+      },
+      "schema:name": "Mechanisms of DDO Adjuvancy",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "R01",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01A1",
+        "cdifniaid:icCode": "AI",
+        "cdifniaid:serialNum": "134862",
+        "cdifniaid:suffixCode": "A1",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2018-08-15",
+      "schema:url": "https://reporter.nih.gov/project-details/9593747"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2018-11-30",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "National Institute of Allergy & Infectious Diseases",
+          "NIAID",
+          "Instituto Nacional de Alergias y Enfermedades Infecciosas"
+        ],
+        "schema:employee": [
+          {
+            "@type": [
+              "schema:Person"
+            ],
+            "schema:familyName": "Park",
+            "schema:givenName": "Eun-Chung",
+            "schema:name": "Eun-Chung Park"
+          }
+        ],
+        "schema:identifier": "https://ror.org/043z4tv69",
+        "schema:name": "National Institute of Allergy and Infectious Diseases",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1R21AI127832-01"
+      },
+      "schema:name": "Mechanism for virus persistence after acute infections",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "R21",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "AI",
+        "cdifniaid:serialNum": "127832",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2016-12-15",
+      "schema:url": "https://reporter.nih.gov/project-details/9221735"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2020-03-31",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "National Institute of Allergy & Infectious Diseases",
+          "NIAID",
+          "Instituto Nacional de Alergias y Enfermedades Infecciosas"
+        ],
+        "schema:employee": [
+          {
+            "@type": [
+              "schema:Person"
+            ],
+            "schema:familyName": "Beisel",
+            "schema:givenName": "Christopher",
+            "schema:name": "Christopher Beisel"
+          }
+        ],
+        "schema:identifier": "https://ror.org/043z4tv69",
+        "schema:name": "National Institute of Allergy and Infectious Diseases",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1R01AI118891-01"
+      },
+      "schema:name": "Viral Modulation of Epigenetic Mechanisms",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "R01",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "AI",
+        "cdifniaid:serialNum": "118891",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2015-04-15",
+      "schema:url": "https://reporter.nih.gov/project-details/8941146"
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:endDate": "2018-07-31",
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:alternateName": [
+          "NIGMS",
+          "U.S. National Institute of General Medical Sciences"
+        ],
+        "schema:identifier": "https://ror.org/04q48ey07",
+        "schema:name": "National Institute of General Medical Sciences",
+        "schema:parentOrganization": "National Institutes of Health"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:value": "1R01GM110174-01"
+      },
+      "schema:name": "Understanding the Role of Combinatorial Histone PTM Patterns",
+      "cdifniaid:projectNumSplit": {
+        "cdifniaid:activityCode": "R01",
+        "cdifniaid:applTypeCode": "1",
+        "cdifniaid:fullSupportYear": "01",
+        "cdifniaid:icCode": "GM",
+        "cdifniaid:serialNum": "110174",
+        "cdifniaid:supportYear": "01"
+      },
+      "schema:startDate": "2014-08-15",
+      "schema:url": "https://reporter.nih.gov/project-details/8672940"
+    }
+  ],
+  "schema:healthCondition": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "arthropod-borne viral infection",
+        "arbovirus infection"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:dateModified": "2024-11-27",
+        "schema:name": "Biothings API",
+        "schema:url": "https://biothings.io/"
+      },
+      "schema:identifier": "0020731",
+      "schema:inDefinedTermSet": "MONDO",
+      "nde:isCurated": true,
+      "schema:name": "arbovirus infection",
+      "nde:originalName": "viral infectious disease",
+      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0020731"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "bronchiolitis (disease)",
+        "bronchiolitis",
+        "wheezy bronchitis"
+      ],
+      "schema:identifier": "0002465",
+      "schema:inDefinedTermSet": "MONDO",
+      "nde:isCurated": false,
+      "schema:name": "bronchiolitis",
+      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0002465"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0005249",
+      "schema:inDefinedTermSet": "MONDO",
+      "nde:isCurated": false,
+      "schema:name": "pneumonia",
+      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0005249"
+    }
+  ],
+  "schema:includedInDataCatalog": [
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:archivedAt": "https://www.omicsdi.org/dataset/pride/PXD019637",
+      "schema:name": "Omics Discovery Index (OmicsDI)",
+      "schema:url": "https://www.omicsdi.org/",
+      "nde:versionDate": "2026-10-23"
+    },
+    {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:archivedAt": "http://www.ebi.ac.uk/pride/archive/projects/PXD019637",
+      "schema:name": "ProteomeXchange",
+      "schema:url": "https://www.proteomexchange.org/",
+      "nde:versionDate": "2026-10-01"
+    }
+  ],
+  "schema:infectiousAgent": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "Sendai virus",
+        "murine parainfluenza virus 1"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:dateModified": "2023-10-05",
+        "schema:name": "PubTator",
+        "schema:url": "https://www.ncbi.nlm.nih.gov/research/pubtator/api.html"
+      },
+      "schema:identifier": "11191",
+      "schema:inDefinedTermSet": "UniProt",
+      "nde:isCurated": true,
+      "schema:name": "Murine respirovirus",
+      "nde:originalName": "murine respirovirus",
+      "schema:url": "https://www.uniprot.org/taxonomy/11191"
+    }
+  ],
+  "schema:keywords": [
+    "A549 cells",
+    "",
+    "Rab11a",
+    "Sendai virus cantell",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_3301",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Microbiology",
+      "schema:url": "http://edamontology.org/topic_3301",
+      "schema:about": "topicCategory"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_0091",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Bioinformatics",
+      "schema:url": "http://edamontology.org/topic_0091",
+      "schema:about": "topicCategory"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "nde:curatedBy": {
+        "@type": [
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "GPT-4o-mini",
+        "schema:url": "https://openai.com/index/chatgpt"
+      },
+      "schema:identifier": "topic_0781",
+      "schema:inDefinedTermSet": "EDAM",
+      "schema:name": "Virology",
+      "schema:url": "http://edamontology.org/topic_0781",
+      "schema:about": "topicCategory"
+    },
+    {
+      "schema:name": "infectiousAgent",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "NIAID classification"
+    },
+    {
+      "schema:name": "host",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:about": "NIAID classification"
+    }
+  ],
+  "schema:license": [
+    "https://www.proteomexchange.org/pxcollaborativeagreement_2024.pdf"
+  ],
+  "schema:measurementTechnique": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0003781",
+      "schema:inDefinedTermSet": "OBI",
+      "nde:isCurated": true,
+      "schema:name": "proteomics by mass spectrometry assay",
+      "nde:originalName": "Affinity purification coupled with mass spectrometry proteomics",
+      "schema:url": "http://purl.obolibrary.org/obo/OBI_0003781"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0002603",
+      "schema:inDefinedTermSet": "BAO",
+      "nde:isCurated": true,
+      "schema:name": "affinity purification method",
+      "nde:originalName": "Affinity purification coupled with mass spectrometry proteomics",
+      "schema:url": "http://www.bioassayontology.org/bao#BAO_0002603"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0000534",
+      "schema:inDefinedTermSet": "MMO",
+      "nde:isCurated": true,
+      "schema:name": "mass spectrometry",
+      "nde:originalName": "Mass Spectrometry",
+      "schema:url": "http://purl.obolibrary.org/obo/MMO_0000534"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0000470",
+      "schema:inDefinedTermSet": "OBI",
+      "nde:isCurated": true,
+      "schema:name": "mass spectrometry assay",
+      "nde:originalName": "Mass Spectrometry",
+      "schema:url": "http://purl.obolibrary.org/obo/OBI_0000470"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0000428",
+      "schema:inDefinedTermSet": "PRIDE",
+      "nde:isCurated": true,
+      "schema:name": "Bottom-up proteomics",
+      "nde:originalName": "Shotgun proteomics",
+      "schema:url": "http://purl.obolibrary.org/obo/PRIDE_0000428"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:identifier": "0003229",
+      "schema:inDefinedTermSet": "OBI",
+      "nde:isCurated": true,
+      "schema:name": "plasma proteomics assay",
+      "nde:originalName": "Shotgun proteomics",
+      "schema:url": "http://purl.obolibrary.org/obo/OBI_0003229"
+    }
+  ],
+  "schema:name": "The Viral Polymerase Complex Mediates the Interaction of vRNPs with Recycling Endosomes During SeV Assembly",
+  "schema:sameAs": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD019637"
+  ],
+  "nde:sample": {
+    "@type": [
+      "nde:Sample",
+      "bios:Sample"
+    ],
+    "schema:instrument": [
+      {
+        "@type": [
+          "schema:DefinedTerm"
+        ],
+        "schema:name": "Orbitrap Fusion"
+      }
+    ]
+  },
+  "schema:sdPublisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "Pride",
+    "schema:url": "https://www.omicsdi.org/dataset/pride/PXD019637"
+  },
+  "nde:species": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "Homo sapients",
+        "human",
+        "Homo sapiens Linnaeus, 1758",
+        "Homo sapians",
+        "Homo sapien",
+        "Homo sapian",
+        "Homo spaiens",
+        "Human",
+        "Homo sapines",
+        "Home sapiens",
+        "Homo sapience",
+        "Homo spiens",
+        "Homo sapeins",
+        "Homo sapiense",
+        "Humo sapiens",
+        "Homo sampiens"
+      ],
+      "cdifniaid:commonName": "Human",
+      "schema:identifier": "9606",
+      "schema:inDefinedTermSet": "UniProt",
+      "nde:isCurated": false,
+      "schema:name": "Homo sapiens",
+      "nde:originalName": "Homo Sapiens (human)",
+      "schema:url": "https://www.uniprot.org/taxonomy/9606"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:alternateName": [
+        "Vira",
+        "Viridae",
+        "viruses"
+      ],
+      "schema:identifier": "10239",
+      "schema:inDefinedTermSet": "UniProt",
+      "nde:isCurated": false,
+      "schema:name": "Viruses",
+      "schema:url": "https://www.uniprot.org/taxonomy/10239"
+    }
+  ],
+  "schema:url": "https://www.omicsdi.org/dataset/pride/PXD019637",
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "nde:usageInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.proteomexchange.org/docs/reprocessed_guidelines_px.pdf"
+      }
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "schema:name": "Proteomics",
+      "@type": [
+        "schema:PropertyValue"
+      ]
+    }
+  ]
+}

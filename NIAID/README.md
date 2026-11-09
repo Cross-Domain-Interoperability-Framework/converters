@@ -2,11 +2,12 @@
 
 **In development.** The harvester converts NIAID records to CDIF conforming to the
 draft `cdifNIAID` profile (`https://w3id.org/cdif/niaid/1.0`), which accounts for the
-extended attributes NIAID records use. The profile, the mapping table and this
-directory may all still change, and no mapping row has been reviewed.
+extended attributes NIAID records use. The mapping table has been reviewed, but the
+profile, the table and this directory may still change.
 
-No converted CDIF records are committed here; the profile's building blocks carry
-converted examples. To produce some (this queries the live API):
+[`cdifJSON-LD/`](cdifJSON-LD/README.md) holds the example records converted and
+validated; regenerate it with `python NIAID/build_cdif_examples.py`. To convert records
+from the live API:
 
 ```bash
 python NIAID/harvest_niaid_to_cdif.py --source "Harvard Dataverse" -n 20 -o out/
@@ -28,16 +29,19 @@ python NIAID/harvest_niaid_to_cdif.py --source "Harvard Dataverse" -n 20 -o out/
 | [`harvest_niaid_to_cdif.py`](harvest_niaid_to_cdif.py) | Harvests Dataset records from the API and converts them to CDIF JSON-LD |
 | [`../mappings/niaid-to-cdif.sssom.tsv`](../mappings/niaid-to-cdif.sssom.tsv) | The mapping table the harvester reads at run time (see [below](#mapping-table)) |
 | [`check_niaid_mappings.py`](check_niaid_mappings.py) | Checks the table against the harvester and the examples; run in CI |
-| [`build_nde_jsonschemas.py`](build_nde_jsonschemas.py) | Generates `jsonschema/` from the schemas and the example records |
-| [`schemas/`](schemas/) | Unmodified copies of NIAID's schemas |
-| [`jsonschema/`](jsonschema/README.md) | JSON Schemas for NIAID records, as specified and as published |
+| [`build_cdif_examples.py`](build_cdif_examples.py) | Converts `niaidExamples/` into `cdifJSON-LD/` and validates each record against the profiles it claims |
+| [`cdifJSON-LD/`](cdifJSON-LD/README.md) | The example records as CDIF, with `INDEX.json` giving each one's validation results |
+| [`build_nde_jsonschemas.py`](build_nde_jsonschemas.py) | Generates `jsonschema/` from NIAID's schema and the example records |
+| [`schemas/`](schemas/SOURCE.md) | NIAID's registered schema, `NDE_schema.jsonld`, unmodified |
+| [`jsonschema/`](jsonschema/README.md) | JSON Schemas for unconverted NIAID records, as specified and as published |
 | [`niaidExamples/`](niaidExamples/README.md) | Example records as the API returned them |
+| [`archive/`](archive/README.md) | NIAID's per-class schema sources, which nothing here reads |
 
 ## What NIAID's schemas say
 
 [`schemas/NDE_schema.jsonld`](schemas/NDE_schema.jsonld) is the schema as registered
-on the Data Discovery Engine, and the only file in `schemas/` the build reads. It has
-52 nodes:
+on the Data Discovery Engine. NIAID builds it from per-class source files, which are in
+[`archive/nde-schemas/`](archive/README.md). It has 52 nodes:
 
 - **9 classes:** `Dataset`, `ComputationalTool`, `ResourceCatalog`, `DefinedTerm`,
   `Sample`, `SampleCollection`, `DataCollection`, `SemanticTriple` and `Inference`.
@@ -81,6 +85,14 @@ be portal or source problems that should stay failures. See
 [`jsonschema/README.md`](jsonschema/README.md) for results on records outside the
 examples.
 
+Nothing validates unconverted records routinely. The harvester does not check its input
+against these schemas, and CI does not run `build_nde_jsonschemas.py`. The schemas are
+for checking records by hand, for example:
+
+```bash
+python -m jsonschema -i NIAID/niaidExamples/9j82.json NIAID/jsonschema/asPublished/Dataset.schema.json
+```
+
 ## Mapping table
 
 The harvester reads [`niaid-to-cdif.sssom.tsv`](../mappings/niaid-to-cdif.sssom.tsv)
@@ -102,14 +114,21 @@ stays in `schema:url` and is added to `schema:sameAs`.
 ## The cdifNIAID profile
 
 The profile lives in
-[metadataBuildingBlocks](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks)
-as three blocks:
+[metadataBuildingBlocks](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks):
 
 | Block | What it holds |
 |---|---|
 | `profiles/cdifCompositeProfile/cdifNIAID` | The profile: `cdifCore` plus `niaidDataset` |
-| `niaidProperties/niaidDataset` | NIAID's `nde:` terms, its term annotations, and the `cdifniaid:` terms |
+| `niaidProperties/niaidDataset` | NIAID's `nde:` terms on the dataset and its samples, and the `cdifniaid:` terms |
+| `niaidProperties/niaidDefinedTerm` | The term annotations (`nde:isCurated`, `nde:originalName`, `nde:curatedBy`, `cdifniaid:commonName`), on a `schema:DefinedTerm` |
+| `niaidProperties/niaidMonetaryGrant` | The parts of an NIH project number, on a `schema:MonetaryGrant` |
+| `niaidProperties/niaidCreativeWork` | `nde:pmid`, `nde:doi` and the journal names, on a cited work |
+| `niaidProperties/niaidPlace` | `nde:administrativeType`, on a `schema:Place` |
+| `niaidProperties/niaidDataCatalog` | `nde:versionDate` and `schema:archivedAt`, on a `schema:DataCatalog` |
 | `bioschemasProperties/bioschemasSample` | The Bioschemas sample terms NIAID uses |
+
+The five typed blocks require their type, so the harvester types the nodes the portal
+leaves untyped (grants, cited works, catalogs and terms).
 
 Each NIAID name maps to one of four namespaces:
 
@@ -118,16 +137,30 @@ Each NIAID name maps to one of four namespaces:
 - **`nde:`** where NIAID's schema declares it.
 - **`schema:`** for schema.org terms.
 - **`cdifniaid:`** (`https://w3id.org/cdif/niaid/terms/`) for names the portal uses that
-  neither vocabulary declares, such as `fromGPT` and the parts of an NIH project
-  number. `niaidDataset`'s description defines them.
+  neither vocabulary declares, such as the parts of an NIH project number.
+  `niaidDataset`'s description defines them.
 
 `cdifDiscovery` isn't part of the profile, because about one record in six has no
 discovery content; records that have it claim and pass discovery separately.
 
-Results on 576 records sampled from 48 sources, which the table and profile were not
-fitted to (2026-11-07): 522 (91%) pass every profile they claim, and 529 (92%) pass
-core and `cdifNIAID`. Most failures are in the source: 47 records have no date of any
-kind, which CDIF core requires for `schema:dateModified`.
+Where a record lacks something CDIF requires, the harvester writes a sentinel value:
+
+- a record with no date gets `dateModified` `1900-01-01`;
+- a person with no name or identifier is named `missing`;
+- a file or part with no address gets the OGC nil URL
+  `http://www.opengis.net/def/nil/OGC/0/missing`.
+
+A date-time with no time zone is taken as UTC.
+
+Results against the local `cdifNIAID` profile on 2026-11-09:
+
+- 576 of 576 records sampled from 48 sources pass. The table and profile were not
+  fitted to this sample.
+- 210 of 210 development records pass.
+
+The published core on w3id still rejects agents with several alternate names, until the
+release that carries that change. See [`cdifJSON-LD/README.md`](cdifJSON-LD/README.md)
+for the example records, checked with JSON Schema and SHACL.
 
 The portal's own bookkeeping is dropped: `_score`, `_ignored`, `_meta` and the
 `ibmGranite*` fields.
