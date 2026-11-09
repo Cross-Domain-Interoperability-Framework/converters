@@ -44,16 +44,17 @@ value instead:
 - **A person with no name or identifier:** the person is named `missing`.
 - **A date-time with no time zone:** the date-time is taken as UTC (`Z`).
 
-129 of the 140 records pass every profile they claim. All 11 failures are in the
+133 of the 140 records pass every profile they claim. All 7 failures are in the
 source records, not the NIAID rules:
 
 | Records | Check | Problem |
 |---|---|---|
-| `ndex_a3d84ced-…`, `ndex_aadfcaf5-…` | core SHACL | `dateModified` with fractional seconds (`2026-07-23T21:49:03.653000Z`), which core's date pattern does not allow |
 | `pxd077284`, `vdj_prjna272713` | core SHACL | A `contentUrl` with spaces in it, or a bare file name such as `SRR1767427_R1.fastq` |
-| `accessclinicaldata_tb-portals-…`, `lds-1224`, `lds-1229`, `malariagen_…` | core SHACL | A `url` with spaces in it, or a bare file name such as `LDG-1218_Protocol.pdf` |
-| `hca_0c3b7785-…`, `hca_23587fb3-…` | core SHACL | An EntryPoint `url` on `ftp://` (GEO downloads); the rule accepts only http(s) |
+| `accessclinicaldata_tb-portals-…`, `lds-1224`, `lds-1229`, `malariagen_…` | core SHACL | A `url` with spaces in it, or a bare file name such as `LDG-1218_Protocol.pdf`. In `lds-1224` and `lds-1229` that file name is the url of the `prov:wasDerivedFrom` CreativeWork, so that shape fails too |
 | `nichd_dash_dataset_1132` | manifest SHACL | An `additionalType` that looks like a CURIE but is a plain string |
+
+Fractional-second date-times (the two `ndex_` records) and `ftp://` EntryPoints (the two
+`hca_` records) passed only from metadataBuildingBlocks#73 onward; before it, 129 passed.
 
 [`INDEX.json`](INDEX.json) gives each failing record's first errors.
 
