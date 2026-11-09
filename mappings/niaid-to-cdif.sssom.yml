@@ -49,6 +49,7 @@ curie_map:
   cdifniaid: https://w3id.org/cdif/niaid/terms/
   nde: https://discovery.biothings.io/ns/nde/
   ndeapi: https://api.data.niaid.nih.gov/v1/
+  prov: http://www.w3.org/ns/prov#
   schema: http://schema.org/
   semapv: https://w3id.org/semapv/vocab/
   skos: http://www.w3.org/2004/02/skos/core#
@@ -64,7 +65,7 @@ comment: |
     portal_uri             _id -> the portal address, the dataset @id
     id_as_identifier       that address as identifier when there is no other
     source_sameas          the repository url also in schema:sameAs
-    doi_identifier         DOI -> PropertyValue, else the first value
+    primary_identifier     DOI, else BioProject accession -> PropertyValue; else the first identifier
     extra_identifiers      the other identifiers
     creator_list           author or creator -> an @list of typed agents
     author_beside_creator  author kept when there is also a creator
@@ -85,8 +86,7 @@ comment: |
     citation_link          url-less citation -> its text
     linked_parts           hasPart with an address
     unlinked_parts         hasPart with none
-    iso_interval           intervals -> ISO 8601 strings
-    interval_detail        an interval holding more than its dates
+    iso_interval           intervals -> ISO 8601 strings; with detail, calendar ProperIntervals
     place                  adds schema:Place
     property_value         adds schema:PropertyValue
     term_array             adds schema:DefinedTerm to untyped terms
