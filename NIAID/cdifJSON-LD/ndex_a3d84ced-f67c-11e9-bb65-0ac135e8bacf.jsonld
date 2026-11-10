@@ -71,7 +71,14 @@
     }
   ],
   "schema:conditionsOfAccess": [
-    "Open"
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Open",
+      "schema:description": "COAR access right: open access",
+      "schema:url": "http://purl.org/coar/access_right/c_abf2"
+    }
   ],
   "schema:description": "Results of enrichment analysis for B73 inbred line, V1 stage (the collar of the first leaf is visible). \nSignificantly enriched nodes are yellow-to-orange colored, according to decrease of adjusted p-value.\nAnalysis was performed using the BiNGO module of Cytoscape (Maere et al. 2005, https://doi.org/10.1093/bioinformatics/bti551)\n\nKey to node columns:X - sample set\nN - population set\nxx - number of genes from the sample set belonging to a given category\nnn - number of genes from the population set belonging to a given category\ndescription - Gene Ontology category name\npValue - raw p-value\nadjustedPValue - False Discovery Rate (0.05)\nadjusted p-value",
   "schema:distribution": [
@@ -104,6 +111,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Molecular interactions, pathways and networks",
       "schema:url": "http://edamontology.org/topic_0602",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_0602"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -121,6 +133,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Functional genomics",
       "schema:url": "http://edamontology.org/topic_0085",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_0085"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -138,6 +155,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Genomics",
       "schema:url": "http://edamontology.org/topic_0622",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_0622"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -155,6 +177,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Bioinformatics",
       "schema:url": "http://edamontology.org/topic_0091",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_0091"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -166,7 +193,18 @@
     }
   ],
   "schema:license": [
-    "Attribution 4.0 International (CC BY 4.0)"
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "CC-BY-4.0",
+      "schema:url": "https://spdx.org/licenses/CC-BY-4.0.html",
+      "schema:sameAs": [
+        {
+          "@id": "http://spdx.org/licenses/CC-BY-4.0"
+        }
+      ]
+    }
   ],
   "schema:measurementTechnique": [
     {
@@ -174,7 +212,12 @@
         "schema:DefinedTerm"
       ],
       "schema:name": "FAIRE-seq",
-      "schema:url": "http://www.ebi.ac.uk/efo/EFO_0004428"
+      "schema:url": "http://www.ebi.ac.uk/efo/EFO_0004428",
+      "schema:sameAs": [
+        {
+          "@id": "http://www.ebi.ac.uk/efo/EFO_0004428"
+        }
+      ]
     }
   ],
   "schema:name": "b73_v1_bp",
@@ -204,7 +247,12 @@
       "nde:isCurated": true,
       "schema:name": "Zea mays",
       "nde:originalName": "Zea mays",
-      "schema:url": "https://www.uniprot.org/taxonomy/4577"
+      "schema:url": "https://www.uniprot.org/taxonomy/4577",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_4577"
+        }
+      ]
     }
   ],
   "schema:url": "https://www.ndexbio.org/viewer/networks/a3d84ced-f67c-11e9-bb65-0ac135e8bacf",

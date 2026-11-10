@@ -69,7 +69,14 @@
     }
   ],
   "schema:conditionsOfAccess": [
-    "Restricted"
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Restricted",
+      "schema:description": "COAR access right: restricted access",
+      "schema:url": "http://purl.org/coar/access_right/c_16ec"
+    }
   ],
   "schema:description": "The Gambian Genome Variation Project (GGVP) is a collaboration of the  MRC Unit in The Gambia , the  Wellcome Sanger Institute , the  MRC Centre for Genomics and Global Health  at Oxford University, and the MalariaGEN Resource Centre. The purpose of the project was to support the discovery and understanding of genetic variants that influence human disease. Please see the 1000 Genomes FTP site for a full description of the data including terms of use.",
   "schema:distribution": [
@@ -132,7 +139,12 @@
       "nde:isCurated": true,
       "schema:name": "malaria",
       "nde:originalName": "Malaria",
-      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0005136"
+      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0005136",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/MONDO_0005136"
+        }
+      ]
     }
   ],
   "schema:includedInDataCatalog": {
@@ -201,7 +213,12 @@
       "nde:isCurated": false,
       "schema:name": "Homo sapiens",
       "nde:originalName": "human",
-      "schema:url": "https://www.uniprot.org/taxonomy/9606"
+      "schema:url": "https://www.uniprot.org/taxonomy/9606",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }
+      ]
     }
   ],
   "schema:url": "https://malariagen.net/data_package/gambian-genome-variation-project-open-access-data/"

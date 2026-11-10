@@ -62,6 +62,25 @@ BIOPROJECT_RE = re.compile(r"PRJ[DEN][A-Z]\d+$")
 OGC_NIL_MISSING = "http://www.opengis.net/def/nil/OGC/0/missing"
 URI_SCHEME = re.compile(r"[A-Za-z][A-Za-z0-9+.-]*:")
 
+
+def lookup_key(name):
+    """A name as the lookup tables key it: case, punctuation, '&' and spacing ignored,
+    and a trailing acronym in brackets and PubMed's ' NIH HHS' agency suffix dropped."""
+    name = re.sub(r"\s*\([A-Z]{2,10}\)\s*$", "", name)
+    key = re.sub(r"[^\w ]+", " ", name.replace("&", " and ").casefold())
+    key = re.sub(r"\s+", " ", key).strip()
+    return re.sub(r" nih hhs$", "", key)
+
+
+def _lookup(name):
+    path = Path(__file__).resolve().parent / name
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+
+
+# Exact-match tables made by build_lookups.py.
+FUNDER_ROR = _lookup("funder_ror.json")
+ISO3166 = _lookup("iso3166.json")
+
 # The index's own bookkeeping, not metadata about the dataset.
 INTERNAL_FIELDS = {"_id", "_score", "_ignored", "_meta", "_version", "@version",
                    "metadata_score", "ibmGraniteEmbedding",
@@ -563,7 +582,15 @@ def _grant_per_funder(value, node, rule, notes):
             grants += [{**grant, "funder": funder} for funder in funders]
         else:
             grants.append({**grant, "funder": funders[0]} if funders else grant)
-    return _convert_value(grants, "funding", notes)
+    converted = _convert_value(grants, "funding", notes)
+    for grant in _as_list(converted):
+        funder = grant.get("schema:funder") if isinstance(grant, dict) else None
+        if isinstance(funder, dict) and not funder.get("schema:identifier") \
+                and isinstance(funder.get("schema:name"), str):
+            ror = FUNDER_ROR.get(lookup_key(funder["schema:name"]))
+            if ror:
+                funder["schema:identifier"] = ror
+    return converted
 
 
 def _grant_identifier(value, node, rule, notes):
@@ -621,6 +648,49 @@ def _link_url(work):
     return None
 
 
+# Term urls that are already the ontology's IRI for the term.
+TERM_IRI_BASES = ("http://purl.obolibrary.org/obo/", "http://edamontology.org/",
+                  "http://www.ebi.ac.uk/efo/", "http://www.bioassayontology.org/bao#")
+
+
+def _term_iri(url):
+    """The ontology IRI for a term from its url, which is often a browser page for it
+    (Ontobee, OLS, the NCI EVS browser, UniProt's taxonomy, MeSH's HTML)."""
+    if not isinstance(url, str):
+        return None
+    url = url.strip()
+    parts = urllib.parse.urlsplit(url)
+    query = urllib.parse.parse_qs(parts.query)
+    host, path = parts.netloc.lower(), parts.path
+    # the iri parameter runs to the end: a BAO IRI's '#' is not the page's fragment
+    given = urllib.parse.unquote(url.split("iri=", 1)[1]) if "?iri=" in url or "&iri=" in url else None
+    if host == "ontobee.org" and given:
+        url = given
+    elif host == "www.ebi.ac.uk" and path.startswith("/ols4/"):
+        if given:
+            url = given
+        elif query.get("short_form", [""])[0].startswith("EFO_"):
+            url = "http://www.ebi.ac.uk/efo/" + query["short_form"][0]
+    elif host == "evsexplore.semantics.cancer.gov" and "/concept/ncit/" in path:
+        url = "http://purl.obolibrary.org/obo/NCIT_" + path.rsplit("/", 1)[-1]
+    elif host == "www.uniprot.org" and path.startswith("/taxonomy/"):
+        url = "http://purl.obolibrary.org/obo/NCBITaxon_" + path.rsplit("/", 1)[-1]
+    elif host == "id.nlm.nih.gov" and path.startswith("/mesh/"):
+        url = "http://id.nlm.nih.gov" + path.removesuffix(".html")
+    elif host == "edamontology.org":
+        url = "http://edamontology.org" + path
+    if url.startswith(TERM_IRI_BASES + ("http://id.nlm.nih.gov/mesh/",)) and " " not in url:
+        return url
+    return None
+
+
+def _term_same_as(value, node, rule, notes):
+    """A term's ontology IRI as a schema:sameAs reference, so the per-record term node
+    (which carries NIAID's annotations) links to the shared ontology term."""
+    iri = _term_iri(value)
+    return [{"@id": iri}] if iri else None
+
+
 def _work_url(value, node, rule, notes):
     if "CreativeWork" in _types(node) and not node.get("url"):
         return _link_url(node)
@@ -657,9 +727,63 @@ def _usage_to_access(value, node, rule, notes):
     return _access_statements(node)
 
 
+# The portal's three access levels, as COAR access rights (https://vocabularies.coar-repositories.org/access_rights/).
+# Closed is COAR's "metadata only access": the portal holds the record, not the data.
+ACCESS_LEVELS = {
+    "open": ("open access", "http://purl.org/coar/access_right/c_abf2"),
+    "restricted": ("restricted access", "http://purl.org/coar/access_right/c_16ec"),
+    "closed": ("metadata only access", "http://purl.org/coar/access_right/c_14cb"),
+}
+
+
+def _access_level(value, node, rule, notes):
+    """The portal's Open, Restricted or Closed becomes a labelled link to the COAR access
+    right; any other statement stays text."""
+    access = []
+    for item in _array(value, node, rule, notes):
+        level = ACCESS_LEVELS.get(item.strip().lower()) if isinstance(item, str) else None
+        if level:
+            access.append({"@type": ["schema:CreativeWork"], "schema:name": item.strip(),
+                           "schema:description": f"COAR access right: {level[0]}",
+                           "schema:url": level[1]})
+        else:
+            access.append(item)
+    return access
+
+
+CC_LICENSE = re.compile(r"https?://creativecommons\.org/licenses/(by(?:-nc)?(?:-sa|-nd)?)/(\d\.\d)", re.I)
+SPDX_PAGE = re.compile(r"https?://spdx\.org/licenses/([A-Za-z0-9.+-]+?)(?:\.html|\.json)?/?$")
+# License texts the portal gives that name one SPDX license exactly.
+SPDX_NAMES = {"attribution 4 0 international cc by 4 0": "CC-BY-4.0",
+              "https opensource org license mit": "MIT"}
+
+
+def _spdx_id(value):
+    """The SPDX identifier a license url or exact license name stands for, else None."""
+    text = value.strip()
+    match = CC_LICENSE.match(text)
+    if match:
+        return f"CC-{match.group(1).upper()}-{match.group(2)}"
+    if re.match(r"https?://creativecommons\.org/publicdomain/zero/1\.0/?(legalcode)?$", text, re.I):
+        return "CC0-1.0"
+    match = SPDX_PAGE.match(text)
+    return match.group(1) if match else SPDX_NAMES.get(lookup_key(text))
+
+
+def _spdx_license(item):
+    """A license that is an SPDX license becomes a labelled link named by its SPDX
+    identifier, at the url the portal gave (else SPDX's page), sameAs the SPDX IRI."""
+    spdx = _spdx_id(item) if isinstance(item, str) else None
+    if not spdx:
+        return item
+    url = item.strip() if URI_SCHEME.match(item.strip()) else f"https://spdx.org/licenses/{spdx}.html"
+    return {"@type": ["schema:CreativeWork"], "schema:name": spdx, "schema:url": url,
+            "schema:sameAs": [{"@id": f"http://spdx.org/licenses/{spdx}"}]}
+
+
 def _license_or_nil(value, node, rule, notes):
     if value is not None:
-        return _array(value, node, rule, notes)
+        return [_spdx_license(item) for item in _array(value, node, rule, notes)]
     return None if node.get("conditionsOfAccess") or _access_statements(node) else [OGC_NIL_MISSING]
 
 
@@ -788,6 +912,13 @@ def _place_shaper(value, node, rule, notes):
             place["@type"] = types if "schema:Place" in types else ["schema:Place"] + types
             if isinstance(place.get("schema:geo"), list) and place["schema:geo"]:
                 place["schema:geo"] = place["schema:geo"][0]
+            name = place.get("schema:name")
+            code = ISO3166.get(lookup_key(name)) if isinstance(name, str) else None
+            if code and not place.get("schema:identifier"):
+                # a place named exactly as a country gets the ISO 3166 code, as the
+                # portal's own country names carry it
+                place["schema:name"] = {"@type": ["schema:DefinedTerm"], "schema:name": name,
+                                        "schema:identifier": code}
             if [k for k in place if k != "@type"]:
                 places.append(place)
     return _merge_places(places)
@@ -1144,7 +1275,8 @@ SHAPERS = {
     "org_identifier": _org_identifier, "person_name": _person_name,
     "nonempty_affiliation": _nonempty_affiliation, "grant_per_funder": _grant_per_funder,
     "grant_identifier": _grant_identifier, "work_url": _work_url, "link_or_thing": _link_or_thing,
-    "usage_with_url": _usage_with_url, "usage_to_access": _usage_to_access,
+    "usage_with_url": _usage_with_url, "usage_to_access": _usage_to_access, "access_level": _access_level,
+    "term_same_as": _term_same_as,
     "license_or_nil": _license_or_nil, "citation_link": _citation_link,
     "linked_parts": _linked_parts, "unlinked_parts": _unlinked_parts,
     "bundle_parts": _bundle_parts, "part_downloads": _part_downloads, "link_role": _link_role, "related_link": _related_link,

@@ -244,7 +244,14 @@
     ]
   },
   "schema:conditionsOfAccess": [
-    "Closed"
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Closed",
+      "schema:description": "COAR access right: metadata only access",
+      "schema:url": "http://purl.org/coar/access_right/c_14cb"
+    }
   ],
   "schema:creditText": "Counts of COVID-19 reported in BURKINA FASO: 2020-2021(version 2.0, April 1, 2018): Project Tycho data release, DOI: 10.25337/T7/ptycho.v2.0/BF.840539006",
   "schema:description": "Project Tycho datasets contain case counts for reported disease conditions for countries around the world. The Project Tycho data curation team extracts these case counts from various reputable sources, typically from national or international health authorities, such as the US Centers for Disease Control or the World Health Organization. These original data sources include both open- and restricted-access sources. For restricted-access sources, the Project Tycho team has obtained permission for redistribution from data contributors. All datasets contain case count data that are identical to counts published in the original source and no counts have been modified in any way by the Project Tycho team, except for aggregation of individual case count data into daily counts when that was the best data available for a disease and location. The Project Tycho team has pre-processed datasets by adding new variables, such as standard disease and location identifiers, that improve data interpretability. We also formatted the data into a standard data format. All geographic locations at the country and admin1 level have been represented at the same geographic level as in the data source, provided an ISO code or codes could be identified, unless the data source specifies that the location is listed at an inaccurate geographical level. For more information about decisions made by the curation team, recommended data processing steps, and the data sources used, please see the README that is included in the dataset download ZIP file.",
@@ -302,7 +309,12 @@
       "nde:isCurated": true,
       "schema:name": "COVID-19",
       "nde:originalName": "COVID-19",
-      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0100096"
+      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0100096",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/MONDO_0100096"
+        }
+      ]
     }
   ],
   "schema:includedInDataCatalog": [
@@ -341,7 +353,12 @@
       "schema:inDefinedTermSet": "UniProt",
       "nde:isCurated": true,
       "schema:name": "Severe acute respiratory syndrome coronavirus 2",
-      "schema:url": "https://www.uniprot.org/taxonomy/2697049"
+      "schema:url": "https://www.uniprot.org/taxonomy/2697049",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_2697049"
+        }
+      ]
     }
   ],
   "prov:wasDerivedFrom": [
@@ -374,6 +391,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Public health and epidemiology",
       "schema:url": "http://edamontology.org/topic_3305",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3305"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -384,6 +406,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Infectious disease",
       "schema:url": "http://edamontology.org/topic_3324",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3324"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -395,7 +422,18 @@
     }
   ],
   "schema:license": [
-    "https://creativecommons.org/licenses/by/4.0/"
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "CC-BY-4.0",
+      "schema:url": "https://creativecommons.org/licenses/by/4.0/",
+      "schema:sameAs": [
+        {
+          "@id": "http://spdx.org/licenses/CC-BY-4.0"
+        }
+      ]
+    }
   ],
   "schema:measurementTechnique": [
     {
@@ -404,7 +442,12 @@
       ],
       "schema:identifier": "http://purl.obolibrary.org/obo/APOLLO_SV_00000545",
       "schema:name": "Surveillance",
-      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C15719"
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C15719",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCIT_C15719"
+        }
+      ]
     },
     {
       "@type": [
@@ -412,7 +455,12 @@
       ],
       "schema:identifier": "http://purl.bioontology.org/ontology/MESH/D018563",
       "schema:name": "Notification",
-      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C25297"
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C25297",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCIT_C25297"
+        }
+      ]
     }
   ],
   "schema:name": "Counts of COVID-19 reported in BURKINA FASO: 2020-2021",
@@ -475,7 +523,12 @@
       "nde:isCurated": true,
       "schema:name": "Homo sapiens",
       "nde:originalName": "Homo sapiens",
-      "schema:url": "https://www.uniprot.org/taxonomy/9606"
+      "schema:url": "https://www.uniprot.org/taxonomy/9606",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }
+      ]
     }
   ],
   "schema:temporalCoverage": [
@@ -521,7 +574,12 @@
       },
       "nde:isCurated": true,
       "schema:name": "Count of disease cases",
-      "schema:url": "http://purl.obolibrary.org/obo/APOLLO_SV_00000497"
+      "schema:url": "http://purl.obolibrary.org/obo/APOLLO_SV_00000497",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/APOLLO_SV_00000497"
+        }
+      ]
     },
     {
       "@type": [
@@ -529,7 +587,12 @@
         "schema:DefinedTerm"
       ],
       "schema:name": "Dead",
-      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C28554"
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C28554",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCIT_C28554"
+        }
+      ]
     },
     {
       "@type": [
@@ -537,7 +600,12 @@
         "schema:DefinedTerm"
       ],
       "schema:name": "Case",
-      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C49152"
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C49152",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCIT_C49152"
+        }
+      ]
     },
     {
       "@type": [
@@ -545,7 +613,12 @@
         "schema:DefinedTerm"
       ],
       "schema:name": "Cumulative incidence",
-      "schema:url": "http://purl.obolibrary.org/obo/EPO_0000061"
+      "schema:url": "http://purl.obolibrary.org/obo/EPO_0000061",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/EPO_0000061"
+        }
+      ]
     }
   ]
 }
