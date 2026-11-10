@@ -78,7 +78,7 @@ def _lookup(name):
 
 
 # Exact-match tables made by build_lookups.py.
-FUNDER_ROR = _lookup("funder_ror.json")
+ORG_ROR = _lookup("org_ror.json")
 ISO3166 = _lookup("iso3166.json")
 
 # The index's own bookkeeping, not metadata about the dataset.
@@ -481,7 +481,7 @@ def _creator_list(value, node, rule, notes):
     if rule["subject_label"] == "creator":
         named = {_agent_name(i) for i in items}
         items += [a for a in _agents(node.get("author")) if _agent_name(a) not in named]
-    agents = [_agent(item, notes) for item in items]
+    agents = [_with_ror(_agent(item, notes)) for item in items]
     return {"@list": [a for a in agents if not _says_nothing(a)]} if any(not _says_nothing(a) for a in agents) else None
 
 
@@ -584,13 +584,21 @@ def _grant_per_funder(value, node, rule, notes):
             grants.append({**grant, "funder": funders[0]} if funders else grant)
     converted = _convert_value(grants, "funding", notes)
     for grant in _as_list(converted):
-        funder = grant.get("schema:funder") if isinstance(grant, dict) else None
-        if isinstance(funder, dict) and not funder.get("schema:identifier") \
-                and isinstance(funder.get("schema:name"), str):
-            ror = FUNDER_ROR.get(lookup_key(funder["schema:name"]))
-            if ror:
-                funder["schema:identifier"] = ror
+        if isinstance(grant, dict):
+            _with_ror(grant.get("schema:funder"))
     return converted
+
+
+def _with_ror(org):
+    """An organization with a name and no identifier gets the ROR id of an organization
+    of the same name (org_ror.json, exact match)."""
+    if isinstance(org, dict) and not org.get("schema:identifier") \
+            and isinstance(org.get("schema:name"), str) \
+            and "schema:Organization" in _as_list(org.get("@type")):
+        ror = ORG_ROR.get(lookup_key(org["schema:name"]))
+        if ror:
+            org["schema:identifier"] = ror
+    return org
 
 
 def _grant_identifier(value, node, rule, notes):
@@ -650,7 +658,13 @@ def _link_url(work):
 
 # Term urls that are already the ontology's IRI for the term.
 TERM_IRI_BASES = ("http://purl.obolibrary.org/obo/", "http://edamontology.org/",
-                  "http://www.ebi.ac.uk/efo/", "http://www.bioassayontology.org/bao#")
+                  "http://www.ebi.ac.uk/efo/", "http://www.bioassayontology.org/bao#",
+                  "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#")
+# NCIT has two IRIs for a concept: OBO's and NCI's own, which NCI's EVS and the NIAID
+# Blueprint's CEDAR template and examples use. A term gets both, so it links up with
+# records written either way.
+NCIT_OBO = "http://purl.obolibrary.org/obo/NCIT_"
+NCIT_NCI = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#"
 
 
 def _term_iri(url):
@@ -688,7 +702,13 @@ def _term_same_as(value, node, rule, notes):
     """A term's ontology IRI as a schema:sameAs reference, so the per-record term node
     (which carries NIAID's annotations) links to the shared ontology term."""
     iri = _term_iri(value)
-    return [{"@id": iri}] if iri else None
+    if not iri:
+        return None
+    code = iri[len(NCIT_OBO):] if iri.startswith(NCIT_OBO) else \
+        iri[len(NCIT_NCI):] if iri.startswith(NCIT_NCI) else None
+    if code:
+        return [{"@id": NCIT_OBO + code}, {"@id": NCIT_NCI + code}]
+    return [{"@id": iri}]
 
 
 def _work_url(value, node, rule, notes):

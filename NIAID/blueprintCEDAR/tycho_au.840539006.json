@@ -1,0 +1,214 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "pav": "http://purl.org/pav/",
+    "schema": "http://schema.org/",
+    "oslc": "http://open-services.net/ns/core#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs:label": {
+      "@type": "xsd:string"
+    },
+    "schema:isBasedOn": {
+      "@type": "@id"
+    },
+    "schema:name": {
+      "@type": "xsd:string"
+    },
+    "schema:description": {
+      "@type": "xsd:string"
+    },
+    "pav:createdOn": {
+      "@type": "xsd:dateTime"
+    },
+    "pav:createdBy": {
+      "@type": "@id"
+    },
+    "pav:lastUpdatedOn": {
+      "@type": "xsd:dateTime"
+    },
+    "oslc:modifiedBy": {
+      "@type": "@id"
+    },
+    "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "identifier": "https://schema.org/identifier",
+    "name": "https://schema.org/name",
+    "description": "https://schema.org/description",
+    "dateCreated": "https://schema.org/dateCreated",
+    "Author(s)": "https://schema.org/author",
+    "funder": "https://schema.org/funder",
+    "funding": "https://schema.org/funding",
+    "measurementTechnique": "https://schema.org/measurementTechnique",
+    "distribution": "https://schema.org/distribution",
+    "citation": "https://schema.org/citation",
+    "infectiousAgent": "https://schema.org/infectiousAgent",
+    "host": "https://schema.org/taxonomicRange",
+    "healthCondition": "https://schema.org/healthCondition",
+    "conditionsOfAccess": "https://schema.org/conditionsOfAccess",
+    "License(s)": "https://schema.org/license",
+    "Spatial Coverage": "https://schema.org/spatialCoverage",
+    "Temporal Coverage": "https://schema.org/temporalCoverage"
+  },
+  "@id": "https://data.niaid.nih.gov/resources?id=tycho_au.840539006#niaid-blueprint",
+  "schema:isBasedOn": "https://repo.metadatacenter.org/templates/bf5c4fc0-8a01-488d-9151-31aae2635f7c",
+  "schema:name": "NIAID Blueprint metadata for https://data.niaid.nih.gov/resources?id=tycho_au.840539006",
+  "schema:description": "Written from the CDIF NIAID record by https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "pav:createdOn": "1900-01-01T00:00:00Z",
+  "pav:createdBy": "https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "pav:lastUpdatedOn": "1900-01-01T00:00:00Z",
+  "oslc:modifiedBy": "https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "type": {
+    "@id": "https://schema.org/Dataset",
+    "rdfs:label": "Dataset"
+  },
+  "identifier": {
+    "@id": "https://doi.org/10.25337/T7/ptycho.v2.0/AU.840539006"
+  },
+  "name": {
+    "@value": "Counts of COVID-19 reported in AUSTRALIA: 2019-2021"
+  },
+  "description": {
+    "@value": "Project Tycho datasets contain case counts for reported disease conditions for countries around the world. The Project Tycho data curation team extracts these case counts from various reputable sources, typically from national or international health authorities, such as the US Centers for Disease Control or the World Health Organization. These original data sources include both open- and restricted-access sources. For restricted-access sources, the Project Tycho team has obtained permission for redistribution from data contributors. All datasets contain case count data that are identical to counts published in the original source and no counts have been modified in any way by the Project Tycho team, except for aggregation of individual case count data into daily counts when that was the best data available for a disease and location. The Project Tycho team has pre-processed datasets by adding new variables, such as standard disease and location identifiers, that improve data interpretability. We also formatted the data into a standard data format. All geographic locations at the country and admin1 level have been represented at the same geographic level as in the data source, provided an ISO code or codes could be identified, unless the data source specifies that the location is listed at an inaccurate geographical level. For more information about decisions made by the curation team, recommended data processing steps, and the data sources used, please see the README that is included in the dataset download ZIP file."
+  },
+  "dateCreated": {
+    "@value": "2013-11-28",
+    "@type": "xsd:date"
+  },
+  "Author(s)": {
+    "accountablePerson": [
+      {}
+    ],
+    "sourceOrganization": [
+      {}
+    ],
+    "@context": {
+      "accountablePerson": "https://schema.org/accountablePerson",
+      "sourceOrganization": "http://schema.org/sourceOrganization"
+    },
+    "@id": "https://data.niaid.nih.gov/resources?id=tycho_au.840539006#niaid-blueprint-author-1"
+  },
+  "funder": [
+    {
+      "@id": "https://ror.org/04q48ey07",
+      "rdfs:label": "National Institute of General Medical Sciences"
+    }
+  ],
+  "funding": [
+    {
+      "@value": null
+    }
+  ],
+  "measurementTechnique": [
+    {
+      "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15719",
+      "rdfs:label": "Surveillance"
+    },
+    {
+      "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25297",
+      "rdfs:label": "Notification"
+    }
+  ],
+  "distribution": [
+    {
+      "@id": "https://www.tycho.pitt.edu/dataset/AU.840539006"
+    }
+  ],
+  "citation": [
+    {}
+  ],
+  "infectiousAgent": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_2697049",
+      "rdfs:label": "Severe acute respiratory syndrome coronavirus 2"
+    }
+  ],
+  "host": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_9606",
+      "rdfs:label": "Homo sapiens"
+    }
+  ],
+  "healthCondition": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/MONDO_0100096",
+      "rdfs:label": "COVID-19"
+    }
+  ],
+  "conditionsOfAccess": [
+    {
+      "@value": "http://purl.org/coar/access_right/c_14cb"
+    }
+  ],
+  "License(s)": [
+    {
+      "licenseIdentifierSelection": {
+        "@id": "http://spdx.org/licenses/CC-BY-4.0",
+        "rdfs:label": "CC-BY-4.0"
+      },
+      "licenseIdentifierIri": {},
+      "licenseTerms": {
+        "@value": null
+      },
+      "@context": {
+        "licenseIdentifierSelection": "https://schema.org/termCode",
+        "licenseIdentifierIri": "https://schema.org/identifier",
+        "licenseTerms": "https://schema.org/termsOfService"
+      },
+      "@id": "https://data.niaid.nih.gov/resources?id=tycho_au.840539006#niaid-blueprint-license-1"
+    }
+  ],
+  "Spatial Coverage": [
+    {
+      "addressCountry": [
+        {}
+      ],
+      "containedInPlace": [
+        {}
+      ],
+      "geo": [
+        {
+          "@value": null
+        }
+      ],
+      "applicableLocation": [
+        {
+          "@value": null
+        }
+      ],
+      "@context": {
+        "addressCountry": "https://schema.org/addressCountry",
+        "containedInPlace": "https://schema.org/containedInPlace",
+        "geo": "https://schema.org/geo",
+        "applicableLocation": "https://schema.org/applicableLocation"
+      },
+      "@id": "https://data.niaid.nih.gov/resources?id=tycho_au.840539006#niaid-blueprint-spatial-coverage-1"
+    }
+  ],
+  "Temporal Coverage": [
+    {
+      "startDate": {
+        "@value": "2019-12-30",
+        "@type": "xsd:date"
+      },
+      "startTime": {
+        "@value": null,
+        "@type": "xsd:time"
+      },
+      "endDate": {
+        "@value": "2021-07-31",
+        "@type": "xsd:date"
+      },
+      "endTime": {
+        "@value": null,
+        "@type": "xsd:time"
+      },
+      "@context": {
+        "startDate": "https://schema.org/startDate",
+        "startTime": "https://schema.org/startTime",
+        "endDate": "https://schema.org/endDate",
+        "endTime": "https://schema.org/endTime"
+      },
+      "@id": "https://data.niaid.nih.gov/resources?id=tycho_au.840539006#niaid-blueprint-temporal-coverage-1"
+    }
+  ]
+}
