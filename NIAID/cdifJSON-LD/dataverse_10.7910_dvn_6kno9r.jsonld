@@ -156,7 +156,12 @@
       "nde:isCurated": true,
       "schema:name": "COVID-19",
       "nde:originalName": "COVID-19",
-      "schema:url": "http://purl.obolibrary.org/obo/DOID_0080600"
+      "schema:url": "http://purl.obolibrary.org/obo/DOID_0080600",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/DOID_0080600"
+        }
+      ]
     }
   ],
   "schema:includedInDataCatalog": {
@@ -185,6 +190,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Gender medicine",
       "schema:url": "http://edamontology.org/topic_3410",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3410"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -202,6 +212,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Public health and epidemiology",
       "schema:url": "http://edamontology.org/topic_3305",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3305"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -219,6 +234,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Psychiatry",
       "schema:url": "http://edamontology.org/topic_3419",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3419"
+        }
+      ],
       "schema:about": "topicCategory"
     }
   ],
@@ -240,7 +260,13 @@
         "schema:Place",
         "schema:AdministrativeArea"
       ],
-      "schema:name": "Nepal"
+      "schema:name": {
+        "@type": [
+          "schema:DefinedTerm"
+        ],
+        "schema:name": "Nepal",
+        "schema:identifier": "NPL"
+      }
     }
   ],
   "schema:temporalCoverage": [

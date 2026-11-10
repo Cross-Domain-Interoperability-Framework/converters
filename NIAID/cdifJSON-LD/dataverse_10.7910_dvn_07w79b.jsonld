@@ -214,7 +214,12 @@
       "nde:isCurated": true,
       "schema:name": "B-lymphoblastic leukemia/lymphoma",
       "nde:originalName": "BalL",
-      "schema:url": "http://purl.obolibrary.org/obo/DOID_0080630"
+      "schema:url": "http://purl.obolibrary.org/obo/DOID_0080630",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/DOID_0080630"
+        }
+      ]
     }
   ],
   "schema:includedInDataCatalog": {
@@ -244,6 +249,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Nutritional science",
       "schema:url": "http://edamontology.org/topic_3390",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3390"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -261,6 +271,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Animal study",
       "schema:url": "http://edamontology.org/topic_3679",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3679"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -289,7 +304,13 @@
         "schema:Place",
         "schema:AdministrativeArea"
       ],
-      "schema:name": "Egypt"
+      "schema:name": {
+        "@type": [
+          "schema:DefinedTerm"
+        ],
+        "schema:name": "Egypt",
+        "schema:identifier": "EGY"
+      }
     }
   ],
   "nde:species": [
@@ -310,7 +331,12 @@
       "nde:isCurated": false,
       "schema:name": "Oreochromis niloticus",
       "nde:originalName": "Nile Tilapia",
-      "schema:url": "https://www.uniprot.org/taxonomy/8128"
+      "schema:url": "https://www.uniprot.org/taxonomy/8128",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_8128"
+        }
+      ]
     }
   ],
   "schema:temporalCoverage": [

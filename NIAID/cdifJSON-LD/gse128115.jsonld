@@ -223,7 +223,14 @@
     }
   ],
   "schema:conditionsOfAccess": [
-    "Open"
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Open",
+      "schema:description": "COAR access right: open access",
+      "schema:url": "http://purl.org/coar/access_right/c_abf2"
+    }
   ],
   "schema:description": "This project is part of the Malaria Host-Pathogen Interaction Center (MaHPIC) - a transdisciplinary malaria systems biology research program initially supported by an NIH/NIAID contract (# HHSN272201200031C, 2012-2017; see http://www.systemsbiology.emory.edu). The MaHPIC has continued with support from the Defense Advanced Research Project Agency (DARPA) and others. The MaHPIC generates many data types (e.g., clinical, hematological, parasitological, metabolomics, functional genomics, lipidomics, proteomics, immune response, telemetry) and mathematical models, to iteratively test and develop hypotheses related to the complex host-parasite dynamics in the course of malaria in non-human primates (NHPs), and metabolomics data via collaborations with investigators conducting clinical studies in malaria endemic countries, with the overarching goal of better understanding human disease, pathogenesis, and immunity. Curation and maintenance of all data and metadata are the responsibility of the MaHPIC. The E07 cohort was inoculated with freshly dissected P. knowlesi sporozoites on 11/01/16. However, for unexplained reasons blood-stage parasitemias did not occur. Consequently, the E07 cohort was reinoculated with cryopreserved P. knowlesi sporozoites. This inoculation was performed on 1/20/17.  Hence 'E07A' refers to samples and results from the failed inoculation from 11/01/16 and 'E07B' refers to samples and results from the successful inoculation on 1/20/17).  Telemetry devices (DSI, model L11) with blood pressure sensors and electrocardiogram (ECG) leads were surgically implanted in seven malaria-naive male long-tailed macaques (Macaca fascicularis), approximately five years of age.  After a resting period of three weeks, the telemetry implants were turned on and physiological data that include activity, temperature, ECG, and blood pressure were continuously collected.  After the E07A failed infection using a fresh preparation of salivary gland sporozoites, the implants were deactivated to preserve battery life. Between E07A and E07B, a single rhesus macaque (M. mulatta) was added to the cohort as an infection control with no telemetry implant.  At the start of E07B, telemetry implants were reactivated.  Ten days after reactivation all animals were inoculated intravenously with cryopreserved P. knowlesi Malayan strain salivary gland sporozoites, obtained from Anopheles dirus infected with parasites from the Pk1A+ clone and previously tested in E30 for their infectivity of macaques. The sporozoite stocks used were produced, isolated and cryopreserved at the Centers for Disease Control and Prevention, and then stored at Yerkes.  After inoculation, the macaques were profiled for clinical, hematological, parasitological, immunological, functional genomic, proteomic, and metabolomic measurements.  The experiment was designed with pathology studies and thus terminal necropsies, which were scheduled at the log phase of the infection, at the peak of parasitemias, at the middle of the chronic phase, or at the end of the follow-up period of 45 days after the inoculation of the sporozoites.  Capillary blood samples were collected daily for the measurement of complete blood counts (CBCs), reticulocytes, and parasitemias.  Capillary blood samples were collected every other day to obtain plasma for metabolomic analysis.  Venous blood and bone marrow samples were collected at six time points for functional genomic, targeted proteomic, targeted metabolomics, and immunological analyses.  Physiological data noted above were continuously captured via telemetry. Within the MaHPIC, this project is known as âExperiment 07 (E07A and 07B)â.  This dataset was produced by Dr. Steven E. Bosinger, Nirav Patel, and Gregory K Tharp at the Emory University Yerkes Genomics Core. To access other publicly available results from âE07' and other MaHPIC Experiments, including clinical results (specifics on drugs administered, diet, and veterinary interventions), and other omics, visit http://plasmodb.org/plasmo/mahpic.jsp .  This page will be updated as datasets are released to the public.  The experimental design and protocols for this study were approved by the Emory University Institutional Animal Care and Use Committee (IACUC) and the MRMC Office of Research Protection Animal Care and Use Review Office (ACURO).  This dataset contains results from both E07A and E07B.",
   "schema:distribution": [
@@ -260,7 +267,8 @@
         "@type": [
           "schema:Organization"
         ],
-        "schema:name": "NIAID NIH HHS"
+        "schema:name": "NIAID NIH HHS",
+        "schema:identifier": "https://ror.org/043z4tv69"
       },
       "schema:identifier": {
         "@type": [
@@ -316,7 +324,12 @@
       "schema:inDefinedTermSet": "MONDO",
       "nde:isCurated": false,
       "schema:name": "malaria",
-      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0005136"
+      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0005136",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/MONDO_0005136"
+        }
+      ]
     }
   ],
   "schema:includedInDataCatalog": {
@@ -352,7 +365,12 @@
       "nde:isCurated": true,
       "schema:name": "Plasmodium knowlesi (strain H)",
       "nde:originalName": "plasmodium knowlesi",
-      "schema:url": "https://www.uniprot.org/taxonomy/5851"
+      "schema:url": "https://www.uniprot.org/taxonomy/5851",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_5851"
+        }
+      ]
     }
   ],
   "schema:measurementTechnique": [
@@ -365,7 +383,12 @@
       "nde:isCurated": true,
       "schema:name": "high-throughput expression assay",
       "nde:originalName": "Expression profiling by high throughput sequencing",
-      "schema:url": "https://ontobee.org/ontology/MMO?iri=http://purl.obolibrary.org/obo/MMO_0000644"
+      "schema:url": "https://ontobee.org/ontology/MMO?iri=http://purl.obolibrary.org/obo/MMO_0000644",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/MMO_0000644"
+        }
+      ]
     },
     {
       "@type": [
@@ -376,7 +399,12 @@
       "nde:isCurated": true,
       "schema:name": "assay by high throughput sequencer",
       "nde:originalName": "Expression profiling by high throughput sequencing",
-      "schema:url": "http://www.ebi.ac.uk/efo/EFO_0002697"
+      "schema:url": "http://www.ebi.ac.uk/efo/EFO_0002697",
+      "schema:sameAs": [
+        {
+          "@id": "http://www.ebi.ac.uk/efo/EFO_0002697"
+        }
+      ]
     }
   ],
   "schema:name": "Malaria Host Pathogen Center Experiment 07A and 07B - Macaca fascicularis infected with Plasmodium knowlesi to produce and integrate clinical, hematological, parasitological, omics, telemetric and histopathological measures of acute primary infection.",
@@ -1504,7 +1532,12 @@
       "nde:isCurated": true,
       "schema:name": "Macaca mulatta",
       "nde:originalName": "macaca mulatta",
-      "schema:url": "https://www.uniprot.org/taxonomy/9544"
+      "schema:url": "https://www.uniprot.org/taxonomy/9544",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_9544"
+        }
+      ]
     },
     {
       "@type": [
@@ -1519,7 +1552,12 @@
       "schema:inDefinedTermSet": "UniProt",
       "nde:isCurated": false,
       "schema:name": "Macaca",
-      "schema:url": "https://www.uniprot.org/taxonomy/9539"
+      "schema:url": "https://www.uniprot.org/taxonomy/9539",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_9539"
+        }
+      ]
     },
     {
       "@type": [
@@ -1544,7 +1582,12 @@
       "schema:inDefinedTermSet": "UniProt",
       "nde:isCurated": false,
       "schema:name": "Macaca fascicularis",
-      "schema:url": "https://www.uniprot.org/taxonomy/9541"
+      "schema:url": "https://www.uniprot.org/taxonomy/9541",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_9541"
+        }
+      ]
     },
     {
       "@type": [
@@ -1573,7 +1616,12 @@
       "schema:inDefinedTermSet": "UniProt",
       "nde:isCurated": false,
       "schema:name": "Homo sapiens",
-      "schema:url": "https://www.uniprot.org/taxonomy/9606"
+      "schema:url": "https://www.uniprot.org/taxonomy/9606",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }
+      ]
     }
   ],
   "schema:keywords": [
@@ -1592,6 +1640,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Immunology",
       "schema:url": "http://edamontology.org/topic_0804",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_0804"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -1609,6 +1662,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Animal study",
       "schema:url": "http://edamontology.org/topic_3679",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3679"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -1626,6 +1684,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Omics",
       "schema:url": "http://edamontology.org/topic_3391",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3391"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {

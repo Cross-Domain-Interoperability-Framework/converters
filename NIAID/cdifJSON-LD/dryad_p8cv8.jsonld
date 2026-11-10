@@ -203,7 +203,14 @@
     }
   ],
   "schema:conditionsOfAccess": [
-    "Open"
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Open",
+      "schema:description": "COAR access right: open access",
+      "schema:url": "http://purl.org/coar/access_right/c_abf2"
+    }
   ],
   "schema:description": "Spatial synchrony, defined as correlated temporal fluctuations among populations, is a fundamental feature of population dynamics, but many aspects of synchrony remain poorly understood. Few studies have examined detailed geographical patterns of synchrony; instead most focus on how synchrony declines with increasing linear distance between locations, making the simplifying assumption that distance decay is isotropic. By synthesising and extending prior work, we show how geography of synchrony, a term which we use to refer to detailed spatial variation in patterns of synchrony, can be leveraged to understand ecological processes including identification of drivers of synchrony, a long-standing challenge. We focus on three main objectives: (1) showing conceptually and theoretically four mechanisms that can generate geographies of synchrony; (2) documenting complex and pronounced geographies of synchrony in two important study systems; and (3) demonstrating a variety of methods capable of revealing the geography of synchrony and, through it, underlying organism ecology. For example, we introduce a new type of network, the synchrony network, the structure of which provides ecological insight. By documenting the importance of geographies of synchrony, advancing conceptual frameworks, and demonstrating powerful methods, we aim to help elevate the geography of synchrony into a mainstream area of study and application.",
   "schema:distribution": [
@@ -239,7 +246,8 @@
         "@type": [
           "schema:Organization"
         ],
-        "schema:name": "Division of Environmental Biology"
+        "schema:name": "Division of Environmental Biology",
+        "schema:identifier": "https://ror.org/03g87he71"
       },
       "schema:identifier": {
         "@type": [
@@ -290,6 +298,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Ecology",
       "schema:url": "http://edamontology.org/topic_0610",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_0610"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -307,6 +320,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Taxonomy",
       "schema:url": "http://edamontology.org/topic_0637",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_0637"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -324,11 +342,27 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Environmental sciences",
       "schema:url": "http://edamontology.org/topic_3855",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3855"
+        }
+      ],
       "schema:about": "topicCategory"
     }
   ],
   "schema:license": [
-    "https://spdx.org/licenses/CC0-1.0.html"
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "CC0-1.0",
+      "schema:url": "https://spdx.org/licenses/CC0-1.0.html",
+      "schema:sameAs": [
+        {
+          "@id": "http://spdx.org/licenses/CC0-1.0"
+        }
+      ]
+    }
   ],
   "schema:name": "The geography of spatial synchrony",
   "schema:spatialCoverage": [
@@ -337,7 +371,13 @@
         "schema:Place",
         "schema:AdministrativeArea"
       ],
-      "schema:name": "USA"
+      "schema:name": {
+        "@type": [
+          "schema:DefinedTerm"
+        ],
+        "schema:name": "USA",
+        "schema:identifier": "USA"
+      }
     },
     {
       "@type": [

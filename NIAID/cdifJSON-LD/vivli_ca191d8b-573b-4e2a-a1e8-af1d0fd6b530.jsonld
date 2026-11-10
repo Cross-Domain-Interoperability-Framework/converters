@@ -67,7 +67,14 @@
   "schema:dateCreated": "2021-06-23",
   "nde:date": "2024-11-26",
   "schema:conditionsOfAccess": [
-    "Restricted"
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Restricted",
+      "schema:description": "COAR access right: restricted access",
+      "schema:url": "http://purl.org/coar/access_right/c_16ec"
+    }
   ],
   "schema:creator": {
     "@list": [
@@ -134,7 +141,12 @@
       "nde:isCurated": true,
       "schema:name": "ulcerative colitis",
       "nde:originalName": "Ulcerative Colitis",
-      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0005101"
+      "schema:url": "http://purl.obolibrary.org/obo/MONDO_0005101",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/MONDO_0005101"
+        }
+      ]
     }
   ],
   "schema:includedInDataCatalog": {
@@ -175,6 +187,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Preclinical and clinical studies",
       "schema:url": "http://edamontology.org/topic_3379",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3379"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -192,6 +209,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Gastroenterology",
       "schema:url": "http://edamontology.org/topic_3409",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3409"
+        }
+      ],
       "schema:about": "topicCategory"
     },
     {
@@ -209,6 +231,11 @@
       "schema:inDefinedTermSet": "EDAM",
       "schema:name": "Drug development",
       "schema:url": "http://edamontology.org/topic_3373",
+      "schema:sameAs": [
+        {
+          "@id": "http://edamontology.org/topic_3373"
+        }
+      ],
       "schema:about": "topicCategory"
     }
   ],
@@ -221,7 +248,12 @@
       "schema:inDefinedTermSet": "NCIT",
       "nde:isCurated": false,
       "schema:name": "Parallel Study",
-      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C82639"
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C82639",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCIT_C82639"
+        }
+      ]
     },
     {
       "@type": [
@@ -231,7 +263,12 @@
       "schema:inDefinedTermSet": "NCIT",
       "nde:isCurated": false,
       "schema:name": "Randomized Clinical Trial",
-      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C15417"
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C15417",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCIT_C15417"
+        }
+      ]
     },
     {
       "@type": [
@@ -241,7 +278,12 @@
       "schema:inDefinedTermSet": "NCIT",
       "nde:isCurated": false,
       "schema:name": "Blinded Clinical Study",
-      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C70840"
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C70840",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCIT_C70840"
+        }
+      ]
     }
   ],
   "schema:name": "Dataset from A Phase III, Randomized Multi-centre, Double-blind, Parallel Group, Active Comparator Study to Compare the Efficacy and Safety of SPD476 (Mesalazine)2.4g/Day Once Daily With Asacol 1.6g/Day Twice Daily in the Maintenance of Remission in Patients With Ulcerative Colitis",
@@ -274,7 +316,12 @@
       "schema:inDefinedTermSet": "NCIT",
       "schema:name": "Study Subject",
       "schema:termCode": "NCIT_C41189",
-      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C41189"
+      "schema:url": "http://purl.obolibrary.org/obo/NCIT_C41189",
+      "schema:sameAs": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/NCIT_C41189"
+        }
+      ]
     },
     "bios:sex": "All"
   },
@@ -306,7 +353,13 @@
         "schema:Place",
         "schema:AdministrativeArea"
       ],
-      "schema:name": "Czechia"
+      "schema:name": {
+        "@type": [
+          "schema:DefinedTerm"
+        ],
+        "schema:name": "Czechia",
+        "schema:identifier": "CZE"
+      }
     },
     {
       "@type": [
@@ -365,7 +418,13 @@
         "schema:Place",
         "schema:AdministrativeArea"
       ],
-      "schema:name": "Korea, Republic of"
+      "schema:name": {
+        "@type": [
+          "schema:DefinedTerm"
+        ],
+        "schema:name": "Korea, Republic of",
+        "schema:identifier": "KOR"
+      }
     },
     {
       "@type": [
