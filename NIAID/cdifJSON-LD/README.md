@@ -61,6 +61,29 @@ Fractional-second date-times (the two `ndex_` records) and `ftp://` EntryPoints 
 `hca_` records) pass from metadataBuildingBlocks#73 onward, and the `ftp://` citation in
 `malariagen_…` from metadataBuildingBlocks#74.
 
+From converters#26, the converter also links values to shared identifiers and
+vocabularies, as NIAID's Blueprint for Digital Objects asks. It matches exactly, or
+leaves the value as it was:
+
+| Value | Written as | Records |
+|---|---|---|
+| Access level Open, Restricted or Closed | A `schema:CreativeWork` link to the COAR access right (open access, restricted access, metadata only access), named with the portal's word | 114 |
+| An annotated term (species, infectious agent, health condition, technique, keyword) | The term keeps its own node, with `schema:sameAs {"@id": ...}` the ontology IRI read from its url; a UniProt taxonomy page becomes the NCBITaxon IRI | 132 |
+| An NCIT term | Both NCIT IRIs as `sameAs`: OBO's (`…/obo/NCIT_C…`) and NCI's own (`…/Thesaurus.owl#C…`), which the Blueprint's CEDAR template uses (converters#28) | 79 |
+| A Creative Commons or SPDX license, or a license text naming one | A link named by the SPDX identifier (`CC-BY-4.0`), `sameAs` the SPDX IRI | 52 licenses |
+| A funder, or (from converters#28) an organization creator, with no identifier | The ROR id of an organization of the same name (`../org_ror.json`) | 507 of 566 funders have a ROR id; 8 organization creators gained one |
+| A place named as a country (`Kenya`, `Czechia`, `Korea, Republic of`) | The ISO 3166 alpha-3 code on its name term (`../iso3166.json`) | 127 of 151 places have a code |
+
+The cdifNIAID SHACL warns, without failing a record, for each of the Blueprint's 17
+elements a record lacks (metadataBuildingBlocks#78). In two records the portal gives
+India the code `IOT` (British Indian Ocean Territory), which is kept as given.
+
+[`../blueprintCEDAR/`](../blueprintCEDAR/README.md) holds these records written as
+instances of GO FAIR US's CEDAR template for the
+[NIAID Blueprint](https://doi.org/10.5281/zenodo.17161561). All 140 are valid against
+the template's JSON Schema, and its INDEX reports how complete each is against the
+Blueprint.
+
 [`INDEX.json`](INDEX.json) gives each record's results, and the first errors of any that fail.
 
 ## Regenerating
