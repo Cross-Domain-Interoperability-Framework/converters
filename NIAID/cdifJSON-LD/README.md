@@ -33,8 +33,9 @@ against each one.
 For cdifNIAID the schema is
 `_sources/profiles/cdifCompositeProfile/cdifNIAID/resolvedSchema.json`, which combines
 cdifCore and niaidDataset. cdifNIAID has no SHACL of its own; its bundle is the rules
-of cdifCore and the NIAID blocks. The w3id copies are not used: cdifNIAID is not
-published there yet, and the published core lags metadataBuildingBlocks main.
+of cdifCore and the NIAID blocks. The w3id copies are not used: cdifNIAID is published
+at `https://w3id.org/cdif/niaid/1.0`, but the published core lags metadataBuildingBlocks
+main.
 
 Where the source leaves out something CDIF requires, the converter writes a sentinel
 value instead:

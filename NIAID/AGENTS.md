@@ -79,9 +79,10 @@ never committed and nothing reads it.
   uses whatever metadataBuildingBlocks branch is checked out.
 - **Output is deterministic:** the build date is fixed, and SHACL results are sorted.
   Commit a rebuild separately, with a `[generated]` subject.
-- **Not the w3id schemas:** cdifNIAID isn't published on w3id yet, and the published
-  core lags metadataBuildingBlocks main until the release repos' `updates` branches are
-  released. A record can pass locally and fail against w3id.
+- **Not the w3id schemas:** cdifNIAID is published at `https://w3id.org/cdif/niaid/1.0`
+  (from profile-niaid main), but the build validates against metadataBuildingBlocks,
+  because the published core lags its main until the release repos' `updates` branches
+  are released. A record can pass locally and fail against w3id.
 - **Bad source metadata:** some failures can't be fixed in conversion and are listed in
   `cdifJSON-LD/README.md`. Examples are URLs with spaces and bare file names given as
   URLs.
