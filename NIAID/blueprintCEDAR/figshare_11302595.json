@@ -1,0 +1,195 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "pav": "http://purl.org/pav/",
+    "schema": "http://schema.org/",
+    "oslc": "http://open-services.net/ns/core#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs:label": {
+      "@type": "xsd:string"
+    },
+    "schema:isBasedOn": {
+      "@type": "@id"
+    },
+    "schema:name": {
+      "@type": "xsd:string"
+    },
+    "schema:description": {
+      "@type": "xsd:string"
+    },
+    "pav:createdOn": {
+      "@type": "xsd:dateTime"
+    },
+    "pav:createdBy": {
+      "@type": "@id"
+    },
+    "pav:lastUpdatedOn": {
+      "@type": "xsd:dateTime"
+    },
+    "oslc:modifiedBy": {
+      "@type": "@id"
+    },
+    "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "identifier": "https://schema.org/identifier",
+    "name": "https://schema.org/name",
+    "description": "https://schema.org/description",
+    "dateCreated": "https://schema.org/dateCreated",
+    "Author(s)": "https://schema.org/author",
+    "funder": "https://schema.org/funder",
+    "funding": "https://schema.org/funding",
+    "measurementTechnique": "https://schema.org/measurementTechnique",
+    "distribution": "https://schema.org/distribution",
+    "citation": "https://schema.org/citation",
+    "infectiousAgent": "https://schema.org/infectiousAgent",
+    "host": "https://schema.org/taxonomicRange",
+    "healthCondition": "https://schema.org/healthCondition",
+    "conditionsOfAccess": "https://schema.org/conditionsOfAccess",
+    "License(s)": "https://schema.org/license",
+    "Spatial Coverage": "https://schema.org/spatialCoverage",
+    "Temporal Coverage": "https://schema.org/temporalCoverage"
+  },
+  "@id": "https://data.niaid.nih.gov/resources?id=figshare_11302595#niaid-blueprint",
+  "schema:isBasedOn": "https://repo.metadatacenter.org/templates/bf5c4fc0-8a01-488d-9151-31aae2635f7c",
+  "schema:name": "NIAID Blueprint metadata for https://data.niaid.nih.gov/resources?id=figshare_11302595",
+  "schema:description": "Written from the CDIF NIAID record by https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "pav:createdOn": "1900-01-01T00:00:00Z",
+  "pav:createdBy": "https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "pav:lastUpdatedOn": "1900-01-01T00:00:00Z",
+  "oslc:modifiedBy": "https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "type": {
+    "@id": "https://schema.org/Dataset",
+    "rdfs:label": "Dataset"
+  },
+  "identifier": {
+    "@id": "https://doi.org/10.6084/m9.figshare.11302595.v3"
+  },
+  "name": {
+    "@value": "Sorting real-time fluorescence and deformability cytometry (soRT-FDC) - manuscript data"
+  },
+  "description": {
+    "@value": "This dataset contains results presented in \nNawaz, Urbanska, Herbig et al ‘Intelligent image-based deformation-assisted cell sorting with molecular specificity’ Nat Methods 17, 595–599 (2020)\nhttps://doi.org/10.1038/s41592-020-0831-y \n(preprint available at https://doi.org/10.1101/862227)\n and includes:\n(i) 29 '*.rtdc' files containing measurements performed with real time fluorescence and deformability cytometry [1,2]\n(ii) 1 '*.fcs' file containing a measurement performed with a standard flow cytometer (BD LSR II, BD Biosciences)\n(iii) 1 '*.xlsx' file containing results from AFM-based indentation experiments.\nSorting real-time fluorescence and deformability cytometry (soRT-FDC) is a robust sorting platform, combining image-based morphological cell analysis with mechanical characterisation and subsequent active sorting by feeding real-time fluorescence and deformability cytometry (RT-FDC) [2] information to a down-stream SSAW-based cell sorter [3].\nEach filename of this dataset starts with the name of the figure to which the datafile corresponds. The measured samples are briefly described below. The 'Initial' measurements refer to the samples used for sorting, and the 'Target' measurements to the samples collected in the target outlet after sorting. For more detailed description of samples please refer to the manuscript.\nThe '*.rtdc' files are HDF5 files and can be analysed using a Python library called dclab [4], or a software called Shape-Out [5]. They can also be opened using other HDF viewer programs.\nFor the correct assignment of sample names when loading multiple ‘’*.rtdc’ measurements from one folder, please use ShapeOut1.0.0 or above. \n\n[1] Otto et al., \"Real-time deformability cytometry: on-the-fly cell mechanical phenotyping\". Nature Methods, 12(3):199–202, 2015. https://doi.org/10.1038/nmeth.3281\n[2] Rosendahl et al., \"Real-time fluorescence and deformability cytometry\". Nature Methods, 15(5):355–358, 2018. https://doi.org/10.1038/nmeth.4639\n[3] Nawaz et al., “Acoustofluidic Fluorescence Activated Cell Sorter”. Analitycial Chemistry 87(24): 12051–12058, 2015. https://doi.org/10.1021/acs.analchem.5b02398\n[4] https://github.com/ZellMechanik-Dresden/dclab\n[5] https://github.com/ZellMechanik-Dresden/ShapeOut\n\n\nFigure1d_01_Beads_FL_Initial.rtdc, Figure1d_02_Beads_FL_Target.rtdc\nsample: 1:5 mixture of polyacrylamide microgel beads labeled with AlexaFluor488 and unlabeled ones, these beads were produced in house; sorted for fluorescence\nsorting gates: FL-1 maximum 1000 – 10000, area ratio: 1.0 - 1.1\n\n\nFigure1d_03_Beads_Size_Initial.rtdc, Figure1d_04_Beads_Size_Target.rtdc\nsample: 1:6 mixture of 13.79 ± 0.59 μm silica beads (SiO2-F-L3519-1; Microparticles, Germany) and 17.23 ± 0.24 μm poly(methyl methacrylate) beads (PMMM-F-B1423; Microparticles); sorted for size\nsorting gates: size 220 – 300 μm2, def 0.00 – 0.01, are ratio 1.0 – 1.1\n\n\nFigure1d_05_Beads_DefSize_Initial.rtdc, Figure1d_06_Beads_DefSize_Target.rtdc\nsample: a mixture of two polyacrylamide microgel bead populations of different stiffness, these beads were produced in house; sorted for deformation and size\nsorting gates: size 95 – 105 μm2, def 0.000 – 0.016, are ratio 1.0 – 1.1\n\n\nFigure2b_Blood_Initial_Inlet.rtdc\nsample: RBC-depleted blood sample analysed in the inlet region of the chip \n\n\nFigure2c_Blood_Initial_Channel.rtdc\nsample: RBC-depleted blood sample analysed in the usual ROI at the end of the constricting channel \n\n\nFigure2d_Blood_Target_RBCs.rtdc\nsample: RBC-depleted blood, sorted RBCs\nsorting gates: size 25 – 65 μm2, def 0.16 – 0.40, are ratio 1.0 – 1.1\n\n\nFigure2e_Blood_Target_ly.rtdc\nsample: RBC-depleted blood, sorted lymphocytes\nsorting gates: size 25 – 45 μm2, def 0.00 – 0.10, are ratio 1.0 – 1.1\n\n\nFigure2f_Blood_Target_my.rtdc\nsample: RBC-depleted blood, sorted myeloid cells\nsorting gates: size 53 – 120 μm2, def 0.00 – 0.15, are ratio 1.0 – 1.1\n\n\nFigure2g_Blood_Initial.rtdc, Figure2h_Blood_Target_neuBr.rtdc\nsample: RBC-depleted blood, brightness-based neutrophils sorting* \nsorting gates: size 56 – 100 μm2, brightness 75 – 78, are ratio 1.0 – 1.1\n>> this is also source data for Extended Fig. 8\n\n\nFigure3_Blood_DNN_Training(1).rtdc, Figure3_Blood_DNN_Training(2).rtdc\nsample: RBC-depleted blood, datasets for training of deep neural network (DNN)*\n\n\nFigure3_Blood_DNN_Validation.rtdc\nsample: RBC-depleted blood, dataset for validation of trained DNN*\n\n\nFigure3d_Blood_Initial.rtdc, Figure3e_Blood_Target_neuDNN.rtdc\nsample: RBC-depleted blood, DNN-based neutrophil sorting*\n\n\n*for identification of neutrophils (CD66+/CD14−), these samples were stained with APC-conjugated anti-human CD14 (dilution 1:20, #17- 809 0149-42, eBioscience, CA, USA; recorded with FL-3 channel) and PE-conjugated anti-human CD66a/c/e (dilution 1:40, 810 #34303, BioLegend, CA, USA; recorded with FL-2 channel); for cross-talk compensation of the fluorescence signal in channels FL-2 and FL-3 for these samples introduce the following correction factor in the ShapeOut software: spill from channel 2 to 3 = 0.025, spill from channel 3 to 2 = 0.100\n\n\nExtData_Fig2a_BeadMix_RT-FDC.rtdc, ExtData_Fig2b_BeadMix_soRT-FDC.rtdc, ExtData_Fig2c_BeadMix_FC.fcs\nsample: a mixture of 4 bead types with different diameter, each made of different material:\n9.78 ± 0.15 μm melamine beads (MF-FluoBlau-L948), \n13.79 ± 0.59 μm silica beads (SiO2-F-L3519-1),\n15.21 ± 0.31 μm polystyrene beads (PS/Q-F-KM194), \n17.23 ± 0.24 μm poly(methyl methacrylate) beads (PMMM-F-B1423), \nall purchased from Microparticles, Germany.\n\n\nExtData_Fig3a_Beads_FLDef_Initial.rtdc, ExtData_Fig3a_Beads_FLDef_Target.rtdc\nsample: a mixture of fluorescent and non-fluorescent polyacrylamide beads with different mechanical properties, these beads were produced in house; sorted for fluorescence and deformation\nsorting gates: FL-1 maximum 1000 – 10000, def 0.01 – 0.02, are ratio 1.0 – 1.1\n\n\nExtData_Fig3b_Beads_BrSize_Initial.rtdc, ExtData_Fig3b_Beads_BrSize_Target.rtdc\nsample: a mixture of 4 bead types as in Extended Data Fig. 2; sorted for brightness and size\nsorting gates: size 160 – 240 μm2, brightness 75 – 85, are ratio 1.0 – 1.1\n\n\nExtData_Fig4a_Kc167_HL60_Size_Initial.rtdc, ExtData_Fig4b_Kc167_HL60_Size_Target.rtdc\nsample: a mixture of Kc167 Drosophila cells and HL60/S4 human promyelocytic leukaemia cells, sorted for size\nsorting gates: size 25 – 77 μm2, def 0.00 – 0.15, are ratio 1.0 – 1.1\n\n\nExtData_Fig5a_RBC_Def_Initial.rtdc, ExtData_Fig5b_RBC_Def_Target1.rtdc, ExtData_Fig5c_RBC_Def_Target2.rtdc\nsample: blood anticoagulated with citrate, RBCs sorted for deformation \nsorting gates: def 0.15 – 0.40 (Target1) / def 0.00 – 0.10 (Target2), are ratio 1.0 – 1.2\n\n\nExtData_Fig7_AFM_AfterSorting.xlsx\nsample: HL60/S4 cells collected after sorting experiment; the initial sample was prepared as for the soRT-FDC experiment but not loaded onto the chip, the default sample was collected in the default outlet, i.e., run through the sorting chip but not exposed to SSAW, and the target sample corresponds to cells exposed to SSAW; reported values correspond to apparent Young’s modulus estimated from AFM indentation experiments"
+  },
+  "dateCreated": {
+    "@value": "2019-12-03",
+    "@type": "xsd:date"
+  },
+  "Author(s)": {
+    "accountablePerson": [
+      {}
+    ],
+    "sourceOrganization": [
+      {}
+    ],
+    "@context": {
+      "accountablePerson": "https://schema.org/accountablePerson",
+      "sourceOrganization": "http://schema.org/sourceOrganization"
+    },
+    "@id": "https://data.niaid.nih.gov/resources?id=figshare_11302595#niaid-blueprint-author-1"
+  },
+  "funder": [
+    {}
+  ],
+  "funding": [
+    {
+      "@value": null
+    }
+  ],
+  "measurementTechnique": [
+    {}
+  ],
+  "distribution": [
+    {
+      "@id": "https://ndownloader.figshare.com/files/20032100"
+    }
+  ],
+  "citation": [
+    {}
+  ],
+  "infectiousAgent": [
+    {}
+  ],
+  "host": [
+    {}
+  ],
+  "healthCondition": [
+    {}
+  ],
+  "conditionsOfAccess": [
+    {
+      "@value": null
+    }
+  ],
+  "License(s)": [
+    {
+      "licenseIdentifierSelection": {
+        "@id": "http://spdx.org/licenses/CC0-1.0",
+        "rdfs:label": "CC0-1.0"
+      },
+      "licenseIdentifierIri": {},
+      "licenseTerms": {
+        "@value": null
+      },
+      "@context": {
+        "licenseIdentifierSelection": "https://schema.org/termCode",
+        "licenseIdentifierIri": "https://schema.org/identifier",
+        "licenseTerms": "https://schema.org/termsOfService"
+      },
+      "@id": "https://data.niaid.nih.gov/resources?id=figshare_11302595#niaid-blueprint-license-1"
+    }
+  ],
+  "Spatial Coverage": [
+    {
+      "addressCountry": [
+        {}
+      ],
+      "containedInPlace": [
+        {}
+      ],
+      "geo": [
+        {
+          "@value": null
+        }
+      ],
+      "applicableLocation": [
+        {
+          "@value": null
+        }
+      ],
+      "@id": "https://data.niaid.nih.gov/resources?id=figshare_11302595#niaid-blueprint-spatial-coverage-1",
+      "@context": {
+        "addressCountry": "https://schema.org/addressCountry",
+        "containedInPlace": "https://schema.org/containedInPlace",
+        "geo": "https://schema.org/geo",
+        "applicableLocation": "https://schema.org/applicableLocation"
+      }
+    }
+  ],
+  "Temporal Coverage": [
+    {
+      "startDate": {
+        "@value": null,
+        "@type": "xsd:date"
+      },
+      "startTime": {
+        "@value": null,
+        "@type": "xsd:time"
+      },
+      "endDate": {
+        "@value": null,
+        "@type": "xsd:date"
+      },
+      "endTime": {
+        "@value": null,
+        "@type": "xsd:time"
+      },
+      "@id": "https://data.niaid.nih.gov/resources?id=figshare_11302595#niaid-blueprint-temporal-coverage-1",
+      "@context": {
+        "startDate": "https://schema.org/startDate",
+        "startTime": "https://schema.org/startTime",
+        "endDate": "https://schema.org/endDate",
+        "endTime": "https://schema.org/endTime"
+      }
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "pav": "http://purl.org/pav/",
+    "schema": "http://schema.org/",
+    "oslc": "http://open-services.net/ns/core#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs:label": {
+      "@type": "xsd:string"
+    },
+    "schema:isBasedOn": {
+      "@type": "@id"
+    },
+    "schema:name": {
+      "@type": "xsd:string"
+    },
+    "schema:description": {
+      "@type": "xsd:string"
+    },
+    "pav:createdOn": {
+      "@type": "xsd:dateTime"
+    },
+    "pav:createdBy": {
+      "@type": "@id"
+    },
+    "pav:lastUpdatedOn": {
+      "@type": "xsd:dateTime"
+    },
+    "oslc:modifiedBy": {
+      "@type": "@id"
+    },
+    "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "identifier": "https://schema.org/identifier",
+    "name": "https://schema.org/name",
+    "description": "https://schema.org/description",
+    "dateCreated": "https://schema.org/dateCreated",
+    "Author(s)": "https://schema.org/author",
+    "funder": "https://schema.org/funder",
+    "funding": "https://schema.org/funding",
+    "measurementTechnique": "https://schema.org/measurementTechnique",
+    "distribution": "https://schema.org/distribution",
+    "citation": "https://schema.org/citation",
+    "infectiousAgent": "https://schema.org/infectiousAgent",
+    "host": "https://schema.org/taxonomicRange",
+    "healthCondition": "https://schema.org/healthCondition",
+    "conditionsOfAccess": "https://schema.org/conditionsOfAccess",
+    "License(s)": "https://schema.org/license",
+    "Spatial Coverage": "https://schema.org/spatialCoverage",
+    "Temporal Coverage": "https://schema.org/temporalCoverage"
+  },
+  "@id": "https://data.niaid.nih.gov/resources?id=pxd022550#niaid-blueprint",
+  "schema:isBasedOn": "https://repo.metadatacenter.org/templates/bf5c4fc0-8a01-488d-9151-31aae2635f7c",
+  "schema:name": "NIAID Blueprint metadata for https://data.niaid.nih.gov/resources?id=pxd022550",
+  "schema:description": "Written from the CDIF NIAID record by https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "pav:createdOn": "1900-01-01T00:00:00Z",
+  "pav:createdBy": "https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "pav:lastUpdatedOn": "1900-01-01T00:00:00Z",
+  "oslc:modifiedBy": "https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "type": {
+    "@id": "https://schema.org/Dataset",
+    "rdfs:label": "Dataset"
+  },
+  "identifier": {
+    "@id": "https://doi.org/10.6019/PXD022550"
+  },
+  "name": {
+    "@value": "Cov-MS: a community-based template assay for clinical MS-based protein detection in Sars-Cov-2 patients"
+  },
+  "description": {
+    "@value": "Rising population density and global mobility are among the reasons why pathogens such as SARS-CoV-2, the virus that causes COVID-19, spread so rapidly across the globe. The policy response to such pandemics will always have to include accurate monitoring of the spread, as this provides one of the few alternatives to total lockdown. However, COVID-19 diagnosis is currently performed almost exclusively by Reverse Transcription Polymerase Chain Reaction (RT-PCR). Although this is efficient, automatable and acceptably cheap, reliance on one type of technology comes with serious caveats, as illustrated by recurring reagent and test shortages. We, therefore, developed an alternative diagnostic test that detects proteolytically digested SARS-CoV-2 proteins using Mass Spectrometry (MS). We established the Cov-MS consortium, consisting of fifteen academic labs and several industrial partners to increase applicability, accessibility, sensitivity and robustness of this kind of Sars-Cov-2 detection. This in turn gave rise to the Cov-MS Digital Incubator that allows labs to join the effort, navigate and share their optimizations, and translate the assay into their clinic. As this test relies on viral proteins instead of RNA, it provides an orthogonal and complementary approach to RT-PCR, using other reagents that are relatively inexpensive and widely available, as well as orthogonally skilled personnel and different instruments."
+  },
+  "dateCreated": {
+    "@value": "2020-11-16",
+    "@type": "xsd:date"
+  },
+  "Author(s)": {
+    "accountablePerson": [
+      {
+        "@id": "https://orcid.org/0000-0002-9801-3509",
+        "rdfs:label": "Maarten Dhaenens"
+      }
+    ],
+    "sourceOrganization": [
+      {}
+    ],
+    "@context": {
+      "accountablePerson": "https://schema.org/accountablePerson",
+      "sourceOrganization": "http://schema.org/sourceOrganization"
+    },
+    "@id": "https://data.niaid.nih.gov/resources?id=pxd022550#niaid-blueprint-author-1"
+  },
+  "funder": [
+    {}
+  ],
+  "funding": [
+    {
+      "@value": "1Z01BC009263-14"
+    }
+  ],
+  "measurementTechnique": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/MMO_0000534",
+      "rdfs:label": "mass spectrometry"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/OBI_0000470",
+      "rdfs:label": "mass spectrometry assay"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/PRIDE_0000428",
+      "rdfs:label": "Bottom-up proteomics"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/OBI_0003229",
+      "rdfs:label": "plasma proteomics assay"
+    }
+  ],
+  "distribution": [
+    {
+      "@id": "https://www.omicsdi.org/ws/dataset/pride/PXD022550"
+    }
+  ],
+  "citation": [
+    {
+      "@id": "https://pubmed.ncbi.nlm.nih.gov/34254058/"
+    }
+  ],
+  "infectiousAgent": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_292360",
+      "rdfs:label": "SARS Coronavirus CDC#200301157"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_2697049",
+      "rdfs:label": "Severe acute respiratory syndrome coronavirus 2"
+    }
+  ],
+  "host": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_9606",
+      "rdfs:label": "Homo sapiens"
+    }
+  ],
+  "healthCondition": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/MONDO_0100096",
+      "rdfs:label": "COVID-19"
+    },
+    {
+      "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C171532",
+      "rdfs:label": "Severe Acute Respiratory Syndrome Coronavirus 2 Measurement"
+    }
+  ],
+  "conditionsOfAccess": [
+    {
+      "@value": "http://purl.org/coar/access_right/c_abf2"
+    }
+  ],
+  "License(s)": [
+    {
+      "licenseIdentifierSelection": {},
+      "licenseIdentifierIri": {
+        "@id": "https://www.proteomexchange.org/pxcollaborativeagreement_2024.pdf"
+      },
+      "licenseTerms": {
+        "@value": null
+      },
+      "@context": {
+        "licenseIdentifierSelection": "https://schema.org/termCode",
+        "licenseIdentifierIri": "https://schema.org/identifier",
+        "licenseTerms": "https://schema.org/termsOfService"
+      },
+      "@id": "https://data.niaid.nih.gov/resources?id=pxd022550#niaid-blueprint-license-1"
+    }
+  ],
+  "Spatial Coverage": [
+    {
+      "addressCountry": [
+        {}
+      ],
+      "containedInPlace": [
+        {}
+      ],
+      "geo": [
+        {
+          "@value": null
+        }
+      ],
+      "applicableLocation": [
+        {
+          "@value": null
+        }
+      ],
+      "@id": "https://data.niaid.nih.gov/resources?id=pxd022550#niaid-blueprint-spatial-coverage-1",
+      "@context": {
+        "addressCountry": "https://schema.org/addressCountry",
+        "containedInPlace": "https://schema.org/containedInPlace",
+        "geo": "https://schema.org/geo",
+        "applicableLocation": "https://schema.org/applicableLocation"
+      }
+    }
+  ],
+  "Temporal Coverage": [
+    {
+      "startDate": {
+        "@value": null,
+        "@type": "xsd:date"
+      },
+      "startTime": {
+        "@value": null,
+        "@type": "xsd:time"
+      },
+      "endDate": {
+        "@value": null,
+        "@type": "xsd:date"
+      },
+      "endTime": {
+        "@value": null,
+        "@type": "xsd:time"
+      },
+      "@id": "https://data.niaid.nih.gov/resources?id=pxd022550#niaid-blueprint-temporal-coverage-1",
+      "@context": {
+        "startDate": "https://schema.org/startDate",
+        "startTime": "https://schema.org/startTime",
+        "endDate": "https://schema.org/endDate",
+        "endTime": "https://schema.org/endTime"
+      }
+    }
+  ]
+}

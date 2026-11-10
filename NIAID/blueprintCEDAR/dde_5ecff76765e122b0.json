@@ -1,0 +1,240 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "pav": "http://purl.org/pav/",
+    "schema": "http://schema.org/",
+    "oslc": "http://open-services.net/ns/core#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs:label": {
+      "@type": "xsd:string"
+    },
+    "schema:isBasedOn": {
+      "@type": "@id"
+    },
+    "schema:name": {
+      "@type": "xsd:string"
+    },
+    "schema:description": {
+      "@type": "xsd:string"
+    },
+    "pav:createdOn": {
+      "@type": "xsd:dateTime"
+    },
+    "pav:createdBy": {
+      "@type": "@id"
+    },
+    "pav:lastUpdatedOn": {
+      "@type": "xsd:dateTime"
+    },
+    "oslc:modifiedBy": {
+      "@type": "@id"
+    },
+    "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "identifier": "https://schema.org/identifier",
+    "name": "https://schema.org/name",
+    "description": "https://schema.org/description",
+    "dateCreated": "https://schema.org/dateCreated",
+    "Author(s)": "https://schema.org/author",
+    "funder": "https://schema.org/funder",
+    "funding": "https://schema.org/funding",
+    "measurementTechnique": "https://schema.org/measurementTechnique",
+    "distribution": "https://schema.org/distribution",
+    "citation": "https://schema.org/citation",
+    "infectiousAgent": "https://schema.org/infectiousAgent",
+    "host": "https://schema.org/taxonomicRange",
+    "healthCondition": "https://schema.org/healthCondition",
+    "conditionsOfAccess": "https://schema.org/conditionsOfAccess",
+    "License(s)": "https://schema.org/license",
+    "Spatial Coverage": "https://schema.org/spatialCoverage",
+    "Temporal Coverage": "https://schema.org/temporalCoverage"
+  },
+  "@id": "https://data.niaid.nih.gov/resources?id=dde_5ecff76765e122b0#niaid-blueprint",
+  "schema:isBasedOn": "https://repo.metadatacenter.org/templates/bf5c4fc0-8a01-488d-9151-31aae2635f7c",
+  "schema:name": "NIAID Blueprint metadata for https://data.niaid.nih.gov/resources?id=dde_5ecff76765e122b0",
+  "schema:description": "Written from the CDIF NIAID record by https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "pav:createdOn": "1900-01-01T00:00:00Z",
+  "pav:createdBy": "https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "pav:lastUpdatedOn": "1900-01-01T00:00:00Z",
+  "oslc:modifiedBy": "https://github.com/Cross-Domain-Interoperability-Framework/converters/tree/main/NIAID",
+  "type": {
+    "@id": "https://schema.org/Dataset",
+    "rdfs:label": "Dataset"
+  },
+  "identifier": {
+    "@id": "https://doi.org/10.5281/zenodo.15284815"
+  },
+  "name": {
+    "@value": "Protective envelope-dimer epitope-like antibodies are elicited against dengue virus in children following infection and vaccination"
+  },
+  "description": {
+    "@value": "This dataset contains all study data for Mpingabo et al. (2025; PMICID: 12351287). The dataset originates from a longitudinal cohort of DENV vaccinated (n = 164) and unvaccinated children (n = 88) recruited during a mass vaccination program in Cebu, Philippines in 2017. The accompanying data file contains baseline and follow-up measures collected 17 to 28 months after the initial campaign. Data from an additional 50 participants with primary DENV immunity are also included.\nThe measures included in this dataset include DENV EDE antibody measures for all four serotypes, as well as neutralizing titers, E protein binding data, and seroconversion probabilities. Measures are provided for baseline and follow-up, and standardized and transformed versions of each measure are provided (e.g., IC50, Z scores, EC50, difference scores). Demographic information (age, sex) is provided for participants, as well as infection type (primary vs. secondary), infection severity, breakthrough infections, vaccination response, and hospitalization status. Yellow fever virus detection measures are also included.\nThe “Dictionary” tab in the data file provides comprehensive descriptions for each measure included in the dataset. Measures are also tabbed out to correspond to the figures in the Mpingabo et al. (2025) publication (i.e., Fig 2C and S5, Fig S9, Fig S10)."
+  },
+  "dateCreated": {
+    "@value": "2025-10-30",
+    "@type": "xsd:date"
+  },
+  "Author(s)": {
+    "accountablePerson": [
+      {}
+    ],
+    "sourceOrganization": [
+      {}
+    ],
+    "@context": {
+      "accountablePerson": "https://schema.org/accountablePerson",
+      "sourceOrganization": "http://schema.org/sourceOrganization"
+    },
+    "@id": "https://data.niaid.nih.gov/resources?id=dde_5ecff76765e122b0#niaid-blueprint-author-1"
+  },
+  "funder": [
+    {
+      "@id": "https://ror.org/043z4tv69",
+      "rdfs:label": "National Institute of Allergy and Infectious Diseases"
+    }
+  ],
+  "funding": [
+    {
+      "@value": "1U19AI181960-01"
+    }
+  ],
+  "measurementTechnique": [
+    {
+      "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C102632",
+      "rdfs:label": "Enzyme-linked Immunosorbent Spot Assay"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/OBI_0003797",
+      "rdfs:label": "bacterial neutralization assay"
+    },
+    {
+      "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16553",
+      "rdfs:label": "ELISA"
+    },
+    {
+      "@id": "http://www.ebi.ac.uk/efo/EFO_0030057",
+      "rdfs:label": "Luminex multi-analyte profiling"
+    }
+  ],
+  "distribution": [
+    {
+      "@id": "https://doi.org/10.5281/zenodo.15284815"
+    }
+  ],
+  "citation": [
+    {
+      "@id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12351287/#S10"
+    }
+  ],
+  "infectiousAgent": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_11053",
+      "rdfs:label": "Dengue virus type 1"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_11060",
+      "rdfs:label": "Dengue virus type 2"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_11069",
+      "rdfs:label": "Dengue virus type 3"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_11070",
+      "rdfs:label": "Dengue virus type 4"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_11052",
+      "rdfs:label": "Dengue virus group"
+    }
+  ],
+  "host": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_9606",
+      "rdfs:label": "Homo sapiens"
+    }
+  ],
+  "healthCondition": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/MONDO_0005502",
+      "rdfs:label": "dengue disease"
+    }
+  ],
+  "conditionsOfAccess": [
+    {
+      "@value": "http://purl.org/coar/access_right/c_abf2"
+    }
+  ],
+  "License(s)": [
+    {
+      "licenseIdentifierSelection": {
+        "@id": "http://spdx.org/licenses/CC-BY-4.0",
+        "rdfs:label": "CC-BY-4.0"
+      },
+      "licenseIdentifierIri": {},
+      "licenseTerms": {
+        "@value": null
+      },
+      "@context": {
+        "licenseIdentifierSelection": "https://schema.org/termCode",
+        "licenseIdentifierIri": "https://schema.org/identifier",
+        "licenseTerms": "https://schema.org/termsOfService"
+      },
+      "@id": "https://data.niaid.nih.gov/resources?id=dde_5ecff76765e122b0#niaid-blueprint-license-1"
+    }
+  ],
+  "Spatial Coverage": [
+    {
+      "addressCountry": [
+        {}
+      ],
+      "containedInPlace": [
+        {}
+      ],
+      "geo": [
+        {
+          "@value": null
+        }
+      ],
+      "applicableLocation": [
+        {
+          "@value": null
+        }
+      ],
+      "@context": {
+        "addressCountry": "https://schema.org/addressCountry",
+        "containedInPlace": "https://schema.org/containedInPlace",
+        "geo": "https://schema.org/geo",
+        "applicableLocation": "https://schema.org/applicableLocation"
+      },
+      "@id": "https://data.niaid.nih.gov/resources?id=dde_5ecff76765e122b0#niaid-blueprint-spatial-coverage-1"
+    }
+  ],
+  "Temporal Coverage": [
+    {
+      "startDate": {
+        "@value": "2016-11-01",
+        "@type": "xsd:date"
+      },
+      "startTime": {
+        "@value": null,
+        "@type": "xsd:time"
+      },
+      "endDate": {
+        "@value": "2023-06-30",
+        "@type": "xsd:date"
+      },
+      "endTime": {
+        "@value": null,
+        "@type": "xsd:time"
+      },
+      "@context": {
+        "startDate": "https://schema.org/startDate",
+        "startTime": "https://schema.org/startTime",
+        "endDate": "https://schema.org/endDate",
+        "endTime": "https://schema.org/endTime"
+      },
+      "@id": "https://data.niaid.nih.gov/resources?id=dde_5ecff76765e122b0#niaid-blueprint-temporal-coverage-1"
+    }
+  ]
+}
