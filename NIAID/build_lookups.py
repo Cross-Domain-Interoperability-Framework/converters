@@ -1,9 +1,11 @@
 """Build the two lookup tables the converter reads, both keyed by lookup_key() in
 harvest_niaid_to_cdif.py and matched exactly:
 
-funder_ror.json -- funder names -> ROR ids, for funders the portal names without one:
+org_ror.json -- organization names -> ROR ids, for funders and organization creators
+  the portal names without one:
   1. organizations in niaidExamples/ that carry a ROR id: their name and alternateNames;
-  2. the ROR API (https://api.ror.org/v2), for the funder names in niaidExamples/ that
+  2. the ROR API (https://api.ror.org/v2), for the funder and creator organization
+     names in niaidExamples/ that
      (1) leaves unmatched: a ROR record is taken only when one of its names equals ours.
   A name that leads to two ROR ids is dropped.
 
@@ -73,9 +75,11 @@ def funder_table():
             for name in [node.get("name")] + as_list(node.get("alternateName")):
                 if isinstance(name, str):
                     found[lookup_key(name)].add(ror)
-        for funder in as_list(node.get("funder")):
-            if isinstance(funder, dict) and not ror_of(funder) and isinstance(funder.get("name"), str):
-                funders.add(funder["name"])
+        orgs = as_list(node.get("funder")) + [a for k in ("creator", "author") for a in as_list(node.get(k))
+                                             if isinstance(a, dict) and a.get("@type") == "Organization"]
+        for org in orgs:
+            if isinstance(org, dict) and not ror_of(org) and isinstance(org.get("name"), str):
+                funders.add(org["name"])
 
     for path in sorted(EXAMPLES.glob("*.json")):
         if path.name != "INDEX.json":
@@ -112,4 +116,4 @@ def write(name, table):
 
 if __name__ == "__main__":
     write("iso3166.json", country_table())
-    write("funder_ror.json", funder_table())
+    write("org_ror.json", funder_table())

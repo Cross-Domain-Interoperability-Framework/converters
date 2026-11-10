@@ -54,7 +54,9 @@ record's group.
 | [`check_niaid_mappings.py`](check_niaid_mappings.py) | Checks the table against the harvester and the examples; run in CI |
 | [`build_cdif_examples.py`](build_cdif_examples.py) | Converts `niaidExamples/` into `cdifJSON-LD/` and validates each record against the profiles it claims |
 | [`cdifJSON-LD/`](cdifJSON-LD/README.md) | The example records as CDIF, with `INDEX.json` giving each one's validation results |
-| [`build_lookups.py`](build_lookups.py) | Builds `funder_ror.json` and `iso3166.json`, the exact-match tables for funder ROR ids and country codes |
+| [`cdif_to_blueprint.py`](cdif_to_blueprint.py) | Writes CDIF records as instances of the NIAID Blueprint's CEDAR template, validates them against its JSON Schema, and reports how complete each is against the Blueprint |
+| [`blueprintCEDAR/`](blueprintCEDAR/README.md) | The example records as Blueprint (CEDAR) instances, with `INDEX.json` giving each one's completeness |
+| [`build_lookups.py`](build_lookups.py) | Builds `org_ror.json` and `iso3166.json`, the exact-match tables for organization ROR ids and country codes |
 | [`build_nde_jsonschemas.py`](build_nde_jsonschemas.py) | Generates `jsonschema/` from NIAID's schema and the example records |
 | [`schemas/`](schemas/SOURCE.md) | NIAID's registered schema, `NDE_schema.jsonld`, unmodified |
 | [`jsonschema/`](jsonschema/README.md) | JSON Schemas for unconverted NIAID records, as specified and as published |
@@ -170,14 +172,15 @@ open access, restricted access and metadata only access, keeping the portal's wo
 the link's name. Other access statements stay text.
 
 Three changes bring records closer to the identifiers the
-NIAID Blueprint for Digital Objects (v2, 26 September 2025) asks for, each by exact match only:
+[NIAID Blueprint for Digital Objects](https://doi.org/10.5281/zenodo.17161561) (v2, 26 September 2025) asks for, each by exact match only:
 
 - **License → SPDX:** a Creative Commons license URL, an SPDX page, or a license text
   that names one SPDX license (e.g. "Attribution 4.0 International (CC BY 4.0)") becomes
   a labelled link named by the SPDX identifier (`CC-BY-4.0`), at the URL given, with
   `schema:sameAs` the SPDX IRI.
-- **Funder → ROR:** a funder with no identifier gets the ROR id of an organization with
-  the same name, from [`funder_ror.json`](funder_ror.json).
+- **Organization → ROR:** a funder or organization creator with no identifier gets the
+  ROR id of an organization with the same name, from [`org_ror.json`](org_ror.json).
+  (The Blueprint asks for ORCID for people and ROR for organizations.)
 - **Country → ISO 3166:** a place whose name is exactly a country's gets the country's
   alpha-3 code (the portal's form) as its name term's identifier, from
   [`iso3166.json`](iso3166.json).
@@ -190,7 +193,10 @@ PubMed's " NIH HHS" suffix.
 A term's `schema:url` is often a browser page for it (Ontobee, OLS, the NCI EVS
 browser, UniProt's taxonomy, MeSH's HTML). The converter reads the ontology IRI from it
 (a UniProt taxon becomes its NCBITaxon IRI) and adds it as `schema:sameAs`
-`{"@id": ...}`. The term stays a node of its own record: as the IRI's `@id` it would
+`{"@id": ...}`. An NCIT term gets both of NCIT's IRIs, OBO's
+(`http://purl.obolibrary.org/obo/NCIT_C16585`) and NCI's own
+(`http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16585`, which the Blueprint's
+CEDAR template uses), so the term links up with records written either way. The term stays a node of its own record: as the IRI's `@id` it would
 gather every record's `nde:originalName`, `nde:isCurated` and `nde:curatedBy` onto the
 one shared term.
 
