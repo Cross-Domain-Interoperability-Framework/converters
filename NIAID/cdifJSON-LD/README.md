@@ -76,8 +76,10 @@ leaves the value as it was:
 | A place named as a country (`Kenya`, `Czechia`, `Korea, Republic of`) | The ISO 3166 alpha-3 code on its name term (`../iso3166.json`) | 127 of 151 places have a code |
 
 The cdifNIAID SHACL warns, without failing a record, for each of the Blueprint's 17
-elements a record lacks (metadataBuildingBlocks#78). In two records the portal gives
-India the code `IOT` (British Indian Ocean Territory), which is kept as given.
+elements a record lacks (metadataBuildingBlocks#78). In two records (`vivli_40b1791e…`,
+`vivli_ca191d8b…`) the portal gives India the code `IOT` (British Indian Ocean
+Territory); the converter corrects a code that contradicts an exact country name, so
+they carry `IND`.
 
 [`../blueprintCEDAR/`](../blueprintCEDAR/README.md) holds these records written as
 instances of GO FAIR US's CEDAR template for the
