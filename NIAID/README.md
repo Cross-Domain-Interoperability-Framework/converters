@@ -183,7 +183,9 @@ Three changes bring records closer to the identifiers the
   (The Blueprint asks for ORCID for people and ROR for organizations.)
 - **Country → ISO 3166:** a place whose name is exactly a country's gets the country's
   alpha-3 code (the portal's form) as its name term's identifier, from
-  [`iso3166.json`](iso3166.json).
+  [`iso3166.json`](iso3166.json). Where the portal gives an area named exactly as a
+  country another country's alpha-3 code ("India" with `IOT`, British Indian Ocean
+  Territory), the code is corrected to the name's (`IND`) and the change noted.
 
 [`build_lookups.py`](build_lookups.py) builds both tables. Funder names come from the ROR
 ids the portal's own records give and from the ROR API, and country names from Unicode

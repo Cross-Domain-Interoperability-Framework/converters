@@ -93,11 +93,24 @@ def funder_table():
     return {key: rors.pop() for key, rors in sorted(found.items()) if key and len(rors) == 1}
 
 
+# Alpha-3 codes ISO 3166-3 has withdrawn. CLDR's aliases keep some beside the current
+# code (FXX beside FRA, ZAR beside COD, TMP beside TLS, BUR, DDR, YMD), so they are
+# dropped, and a country left with two codes is an error rather than a guess.
+FORMER_ALPHA3 = {"AFI", "ANT", "ATB", "ATN", "BUR", "BYS", "CSK", "CTE", "DDR", "DHY", "FXX",
+                 "GEL", "HVO", "JTN", "MID", "NHB", "NTZ", "PCI", "PUS", "RHO", "SCG", "SKM",
+                 "TMP", "VDR", "WAK", "YMD", "YUG", "ZAR"}
+
+
 def country_table():
     from babel import Locale
     from babel.core import get_global
-    alpha3 = {two[0]: three for three, two in get_global("territory_aliases").items()
-              if len(three) == 3 and three.isalpha() and len(two) == 1}
+    codes = defaultdict(set)
+    for three, two in get_global("territory_aliases").items():
+        if len(three) == 3 and three.isalpha() and len(two) == 1 and three not in FORMER_ALPHA3:
+            codes[two[0]].add(three)
+    clash = {two: sorted(c) for two, c in codes.items() if len(c) > 1}
+    assert not clash, f"several current alpha-3 codes for one country: {clash}"
+    alpha3 = {two: c.pop() for two, c in codes.items()}
     table = {}
     for two, name in Locale("en").territories.items():
         if two in alpha3:

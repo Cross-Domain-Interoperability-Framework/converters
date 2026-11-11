@@ -80,6 +80,7 @@ def _lookup(name):
 # Exact-match tables made by build_lookups.py.
 ORG_ROR = _lookup("org_ror.json")
 ISO3166 = _lookup("iso3166.json")
+ISO3166_CODES = set(ISO3166.values())
 
 # The index's own bookkeeping, not metadata about the dataset.
 INTERNAL_FIELDS = {"_id", "_score", "_ignored", "_meta", "_version", "@version",
@@ -1246,10 +1247,24 @@ def _place_name_term(value, node, rule, notes):
     if country and country != value:
         term["schema:termCode"] = value
     if node.get("identifier"):
-        term["schema:identifier"] = _first_value(node["identifier"], node, rule, notes)
+        term["schema:identifier"] = _checked_country_code(
+            term["schema:name"], _first_value(node["identifier"], node, rule, notes), notes)
     if about:
         term["schema:about"] = about
     return term
+
+
+def _checked_country_code(name, code, notes):
+    """A country's ISO 3166 alpha-3 code, corrected when the portal gives another
+    country's: an area named exactly "India" with the code IOT (British Indian Ocean
+    Territory) gets IND. Only a valid alpha-3 code that contradicts an exact country
+    name is changed; any other identifier is kept."""
+    want = ISO3166.get(lookup_key(name)) if isinstance(name, str) else None
+    if want and isinstance(code, str) and code in ISO3166_CODES and code != want:
+        notes.append(f"{name!r} is given the ISO 3166 code {code}, which is another country's; "
+                     f"written as {want}")
+        return want
+    return code
 
 
 def _place_code_alias(value, node, rule, notes):
