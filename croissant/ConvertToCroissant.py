@@ -732,9 +732,12 @@ def _x_provtext(value, cdif, rule, cr):
     closeMatch rather than an exact one.
 
     Activities in the wild come two ways: with a description or name, and with
-    nothing but `prov:used` node references. The second is resolved against
-    the document when it names something the document also describes, and
-    falls back to the reference itself rather than dropping the activity.
+    nothing but references to what they used -- `prov:used` (CDIF core) or the
+    cdifProv `schema:instrument` / `schema:object` items. The second is resolved
+    against the document when it names something the document also describes,
+    and falls back to the reference itself rather than dropping the activity.
+    The structured activity itself is still carried verbatim by the
+    prov:wasGeneratedBy passthrough.
     """
     index = {}
     for node in _walk_nodes(cdif):
@@ -754,7 +757,8 @@ def _x_provtext(value, cdif, rule, cr):
             statements.append(prose)
             continue
         used = []
-        for item in _as_list(act.get("prov:used")):
+        for item in (_as_list(act.get("schema:instrument")) + _as_list(act.get("schema:object"))
+                     + _as_list(act.get("prov:used"))):
             ref = item.get("@id") if isinstance(item, dict) else item
             if isinstance(item, dict):
                 ref = _get(item, "schema:name") or ref

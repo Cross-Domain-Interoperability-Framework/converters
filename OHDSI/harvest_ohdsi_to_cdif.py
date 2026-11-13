@@ -44,6 +44,7 @@ SRC_RAW = "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/da
 CDIF_CORE = "https://w3id.org/cdif/core/1.1"
 CDIF_DISCOVERY = "https://w3id.org/cdif/discovery/1.1"
 CDIF_PROVENANCE = "https://w3id.org/cdif/provenance/1.1"
+WIKIDATA_SOFTWARE = "https://www.wikidata.org/entity/Q7397"   # kind term for schema:instrument software
 
 # CDIF-standard placeholder for "license not stated" (OGC nil value).
 LICENSE_MISSING = "http://www.opengis.net/def/nil/OGC/0/missing"
@@ -288,7 +289,7 @@ def build_provenance_activity(pa, dataset_id):
         name             -> schema:name ("ETL: <operation>")
         description      -> schema:description
         object (source)  -> schema:object   (reference to the upstream source URL)
-        instrument       -> prov:used[].bios:computationalTool (name ensured)
+        instrument       -> schema:instrument[] (software: Wikidata Q7397 kind, name ensured)
         result (output)  -> schema:result   (reference to the generated dataset)
 
     object/result are emitted as {@id} references, not inline schema:Dataset
@@ -296,12 +297,14 @@ def build_provenance_activity(pa, dataset_id):
     don't collide with the root schema:Dataset during discovery framing.
 
     The source's instrument is a schema:SoftwareApplication (wget, python scripts).
-    CDIF's schema:instrument role is for a schema:Product + schema:Thing, and
-    bios:computationalTool is the role it names for software.
+    cdifProv records instruments, software and reagents alike in
+    schema:instrument; the Wikidata software term in schema:additionalType says
+    which kind it is.
     """
     tool = convert(pa["instrument"])
     if not tool.get("schema:name"):
         tool["schema:name"] = _instrument_name(pa["instrument"])
+    tool["schema:additionalType"] = [{"@id": WIKIDATA_SOFTWARE}]
 
     activity = {
         "@type": ["prov:Activity", "schema:Action"],
@@ -315,7 +318,7 @@ def build_provenance_activity(pa, dataset_id):
     if source_ref:
         activity["schema:object"] = {"@id": source_ref}
 
-    activity["prov:used"] = [{"bios:computationalTool": [tool]}]
+    activity["schema:instrument"] = [tool]
     activity["schema:result"] = {"@id": dataset_id}
     return activity
 

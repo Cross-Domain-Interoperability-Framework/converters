@@ -573,32 +573,55 @@ def tf_processinglevel(values, ctx):
                   code=level)]
 
 
+WIKIDATA_INSTRUMENT = "https://www.wikidata.org/entity/Q3099911"
+
+
 def tf_acquisition(values, ctx):
-    used = []
+    """Platforms + instruments -> one 'Data acquisition' activity.
+
+    Each instrument becomes a cdifProv schema:instrument item (a schema:Product
+    whose schema:additionalType names the Wikidata measuring-instrument kind),
+    and the activity is then a schema:Action. A platform with no instrument
+    has only a name, so it stays a core prov:used string; an activity with
+    nothing but those is a plain prov:Activity.
+    """
+    used, instruments = [], []
     for p in values:
         if not isinstance(p, dict):
             continue
         plat = p.get("LongName") or p.get("ShortName")
         insts = [i for i in _as_list(p.get("Instruments"))
                  if not _is_placeholder(i.get("ShortName"))]
-        if not insts:
-            ent = {"@type": ["prov:Entity", "schema:Thing"], "schema:name": plat}
-            if p.get("Type"):
-                ent["schema:description"] = "Platform type: " + p["Type"]
-            used.append(ent)
+        if not insts and plat:
+            used.append("%s (platform type: %s)" % (plat, p["Type"])
+                        if p.get("Type") else plat)
         for i in insts:
-            ent = {"@type": ["prov:Entity", "schema:Thing"],
+            ent = {"@type": ["schema:Product"],
+                   "schema:additionalType": [{"@id": WIKIDATA_INSTRUMENT}],
                    "schema:name": "%s on %s" % (i.get("LongName") or i["ShortName"], plat)}
-            parts = [{"@type": ["schema:Thing"],
-                      "schema:name": c.get("LongName") or c.get("ShortName")}
-                     for c in _as_list(i.get("ComposedOf")) if c.get("ShortName")]
+            parts = []
+            for c in _as_list(i.get("ComposedOf")):
+                if not c.get("ShortName"):
+                    continue
+                label = c.get("LongName") or c["ShortName"]
+                # schema:name is required with a 3-character minimum; a shorter
+                # code (a Sentinel-1 beam mode 'EW', 'S1') is qualified by the
+                # instrument's short name ('C-SAR EW')
+                if len(label) < 3:
+                    label = "%s %s" % (i["ShortName"], label)
+                parts.append({"@type": ["schema:Product"], "schema:name": label})
             if parts:
                 ent["schema:hasPart"] = parts
-            used.append(ent)
-    if not used:
+            instruments.append(ent)
+    if not used and not instruments:
         return None
-    return [{"@type": ["prov:Activity"],
-             "schema:name": "Data acquisition", "prov:used": used}]
+    act = {"@type": ["prov:Activity"], "schema:name": "Data acquisition"}
+    if instruments:
+        act["@type"] = ["schema:Action", "prov:Activity"]
+        act["schema:instrument"] = instruments
+    if used:
+        act["prov:used"] = used
+    return [act]
 
 
 # --- extents ----------------------------------------------------------------

@@ -128,9 +128,10 @@ schema:about	about	sc:Dataset	skos:closeMatch				passthrough	semapv:ManualMappin
 schema:maintainer	maintainer	sc:Dataset	skos:closeMatch				passthrough	semapv:ManualMappingCuration	Present on schema:Dataset nodes in the corpus; carried verbatim, no CDIF term.
 schema:sdDatePublished	sdDatePublished	sc:Dataset	skos:closeMatch				passthrough	semapv:ManualMappingCuration	Present on schema:Dataset nodes; carried verbatim, no CDIF term.
 schema:additionalType	additionalType	sc:Thing	skos:closeMatch				passthrough	semapv:ManualMappingCuration	On schema:Thing nodes; carried within its parent.
-schema:location	location	sc:Event	skos:closeMatch				passthrough	semapv:ManualMappingCuration	On schema:Event nodes; carried within its parent.
-schema:mainEntity	mainEntity	sc:Event	skos:closeMatch				passthrough	semapv:ManualMappingCuration	On schema:Event nodes; carried within its parent.
-schema:startDate	startDate	sc:Event	skos:closeMatch				passthrough	semapv:ManualMappingCuration	On schema:Event nodes; carried within its parent.
+schema:location	location	sc:Action	skos:closeMatch				passthrough	semapv:ManualMappingCuration	On the schema:Action (cdifProv activity) nodes inside prov:wasGeneratedBy; carried within its parent.
+schema:object	object	sc:Action	skos:closeMatch				passthrough	semapv:ManualMappingCuration	On the schema:Action (cdifProv activity) nodes inside prov:wasGeneratedBy; carried within its parent.
+schema:startTime	startTime	sc:Action	skos:closeMatch				passthrough	semapv:ManualMappingCuration	On the schema:Action (cdifProv activity) nodes inside prov:wasGeneratedBy; carried within its parent.
+schema:instrument	instrument	sc:Action	skos:closeMatch				passthrough	semapv:ManualMappingCuration	On the schema:Action (cdifProv activity) nodes inside prov:wasGeneratedBy; carried within its parent.
 schema:termCode	termCode	sc:DefinedTerm	skos:closeMatch				passthrough	semapv:ManualMappingCuration	On schema:DefinedTerm nodes; carried within its parent.
 schema:roleName	roleName	sc:Role	skos:closeMatch				passthrough	semapv:ManualMappingCuration	On schema:Role nodes; carried within its parent.
 cr:dataType	dataType	cr:RecordSet	skos:closeMatch				passthrough	semapv:ManualMappingCuration	dataType on a RecordSet marks an enumeration; no CDIF slot (the Field-level row carries physical type).

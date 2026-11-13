@@ -122,21 +122,28 @@
   "prov:wasGeneratedBy": [
     {
       "@type": [
-        "schema:Event",
+        "schema:Action",
         "xas:AnalysisEvent",
         "prov:Activity"
       ],
-      "schema:startDate": "2024-06-11T15:56:28.141287Z",
+      "schema:startTime": "2024-06-11T15:56:28.141287Z",
       "schema:identifier": "20231214_mc-icp-ms_llnl_orex-803015-101_1",
-      "prov:used": [
+      "schema:instrument": [
         {
           "@type": [
-            "schema:Thing",
+            "schema:Product",
             "prov:Entity",
             "nxs:BaseClass/NXinstrument"
           ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
           "schema:name": "Neoma",
-          "schema:identifier": "Neoma-LLNL"
+          "schema:identifier": [
+            "Neoma-LLNL"
+          ]
         }
       ],
       "schema:location": {
@@ -148,7 +155,7 @@
         "schema:name": "Lawrence Livermore National Laboratory/Dept of Energy",
         "schema:alternateName": "LLNL"
       },
-      "schema:mainEntity": [
+      "schema:object": [
         {
           "@type": [
             "schema:Thing",

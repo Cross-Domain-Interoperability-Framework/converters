@@ -212,21 +212,28 @@
   "prov:wasGeneratedBy": [
     {
       "@type": [
-        "schema:Event",
+        "schema:Action",
         "xas:AnalysisEvent",
         "prov:Activity"
       ],
-      "schema:startDate": "2023-11-25T18:00:00Z",
+      "schema:startTime": "2023-11-25T18:00:00Z",
       "schema:identifier": "20231125_tof-sims_cuwa_orex-501070-0_1",
-      "prov:used": [
+      "schema:instrument": [
         {
           "@type": [
-            "schema:Thing",
+            "schema:Product",
             "prov:Entity",
             "nxs:BaseClass/NXinstrument"
           ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
           "schema:name": "IONTOF M6",
-          "schema:identifier": "IONTOFM6"
+          "schema:identifier": [
+            "IONTOFM6"
+          ]
         }
       ],
       "schema:location": {
@@ -238,7 +245,7 @@
         "schema:name": "Curtin University",
         "schema:alternateName": "CUWA"
       },
-      "schema:mainEntity": [
+      "schema:object": [
         {
           "@type": [
             "schema:Thing",

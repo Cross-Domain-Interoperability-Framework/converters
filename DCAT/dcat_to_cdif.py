@@ -947,13 +947,14 @@ def _tf_generatedby(value, ds, rule, doc):
     """wasGeneratedBy -> a cdifProvActivity (schema:Action + prov:Activity).
 
     Map the source activity's PROV terms to their schema.org equivalents inside
-    the activity node, and satisfy the shape's required prov:used from the
-    activity's used resources plus its input entities (schema:object /
-    prov:wasDerivedFrom -- an activity's input, per CDIF, is schema:object;
-    prov:wasDerivedFrom itself stays a dataset property). An activity that
-    yields no prov:used is kept as a bare reference so it does not trip the
-    cdifProvActivity shape (which requires prov:used); a nameless HowTo built
-    from prov:hadPlan gets the OGC nil sentinel for its required schema:name.
+    the activity node. Its input entities (schema:object, prov:wasDerivedFrom,
+    and any prov:used resource described in place without an @id) become
+    schema:object -- an activity's input, per CDIF; prov:wasDerivedFrom itself
+    stays a dataset property. prov:used keeps what CDIF core allows there:
+    IRIs, names and {@id} references. A cdifProvActivity needs an input or a
+    plan (DCAT has no instrument), so an activity with neither stays a plain
+    prov:Activity; a nameless HowTo built from prov:hadPlan gets the OGC nil
+    sentinel for its required schema:name.
     """
     out = []
     for node in _as_list(value):
@@ -969,9 +970,15 @@ def _tf_generatedby(value, ds, rule, doc):
         act = {"@type": ["schema:Action", "prov:Activity"]}
         if isinstance(node.get("@id"), str) and _is_iri(node["@id"]):
             act["@id"] = node["@id"]
-        used = list(_as_list(node.get("prov:used")))
-        for k in ("schema:object", "prov:wasDerivedFrom"):   # inputs satisfy prov:used
-            used += list(_as_list(node.get(k)))
+        used, inputs = [], []
+        for u in _as_list(node.get("prov:used")):
+            if isinstance(u, dict) and "@id" not in u:      # described in place: an input
+                inputs.append(u if u.get("@type") else {"@type": ["prov:Entity"], **u})
+            else:
+                used.append(u)
+        for k in ("schema:object", "prov:wasDerivedFrom"):
+            r = _tf_iri(node.get(k), ds, rule, doc) if node.get(k) is not None else None
+            inputs += [x for x in _as_list(r) if x not in inputs]
         for src, dst in (("prov:startedAtTime", "schema:startTime"),
                          ("schema:startTime", "schema:startTime"),
                          ("prov:endedAtTime", "schema:endTime"),
@@ -985,11 +992,8 @@ def _tf_generatedby(value, ds, rule, doc):
             act["schema:agent"] = shaped[0]
             if len(shaped) > 1:
                 act["schema:participant"] = shaped[1:]
-        obj = node.get("schema:object")
-        if obj is not None:
-            r = _tf_iri(obj, ds, rule, doc)
-            if r:
-                act["schema:object"] = r
+        if inputs:
+            act["schema:object"] = inputs
         gen = node.get("prov:generated") or node.get("schema:result")
         if gen is not None:
             r = _tf_iri(gen, ds, rule, doc)
@@ -1034,14 +1038,13 @@ def _tf_generatedby(value, ds, rule, doc):
                 rl = doc.setdefault("schema:relatedLink", [])
                 if isinstance(rl, list):
                     rl.append(link)
-        if not used:
-            # No resource to satisfy the required prov:used, so this is not a
-            # full cdifProvActivity: keep it a plain prov:Activity (drop the
-            # schema:Action claim) carrying whatever mapped onto it.
+        if used:
+            act["prov:used"] = used
+        if not inputs and "schema:actionProcess" not in act:
+            # Neither an input nor a plan, so this is not a cdifProvActivity:
+            # keep it a plain prov:Activity (drop the schema:Action claim)
+            # carrying whatever mapped onto it.
             act["@type"] = ["prov:Activity"]
-            out.append(act)
-            continue
-        act["prov:used"] = used
         out.append(act)
     return out or None
 

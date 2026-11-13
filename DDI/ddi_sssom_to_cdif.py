@@ -29,7 +29,7 @@ Concatenation convention (from the worksheet)
 Several DDI fields on one scalar target are joined with newlines, each line
 prefixed by that mapping's `object_label` ("label: value"), empties skipped,
 identical values de-duplicated. A lone contributor is placed as a plain value.
-List targets (keywords, spatialCoverage, additionalProperty, prov:used,
+List targets (keywords, spatialCoverage, additionalProperty, schema:instrument,
 relatedLink) collect items instead of concatenating.
 
 Malformed object_json_path values (unbalanced brackets, embedded quotes/commas
@@ -355,7 +355,7 @@ def gather(elem, subj_paths, mapping, anchor=""):
 def build_activity(root, items, maps, skipped):
     """items: list of subject paths whose target head is prov:wasGeneratedBy."""
     act = {"@type": ["schema:Action", "prov:Activity"]}
-    frame = {}  # the single "used" entity assembled from direct prov:used subfields (sample frame)
+    frame = {}  # the single input entity assembled from schema:object subfields (sample frame)
     groups = {}
     for path in items:
         _, leaf = split_target(maps[path]["object_json_path"])
@@ -372,26 +372,26 @@ def build_activity(root, items, maps, skipped):
                 for v in vs:
                     act.setdefault("schema:additionalProperty", []).append(
                         {"@type": ["schema:PropertyValue"], "schema:name": lbl, "schema:value": v})
-        elif keys and keys[0] == "prov:used":
-            if "schema:instrument" in keys:                       # instrument wrapper, one per value
-                for v in vals:
-                    act.setdefault("prov:used", []).append(
-                        {"schema:instrument": {"@type": ["schema:Thing"], "schema:name": v}})
-            elif "bios:computationalTool" in keys:                # software/tool, one per value
-                for v in vals:
-                    act.setdefault("prov:used", []).append(
-                        {"bios:computationalTool": {"schema:name": v}})
-            else:                                                 # direct subfield of the used entity
-                prop = keys[-1]
-                if prop == "schema:conditionsOfAccess":
-                    val = shape_conditions(contribs)
-                elif prop == "schema:contributor":
-                    val = [{"@type": ["schema:Person"], "schema:name": x}
-                           for x in flat_values(contribs)] or None
-                else:
-                    val = concat(contribs)
-                if val is not None:
-                    frame[prop] = val
+        elif keys and keys[0] == "schema:instrument":
+            # instrument or software, one item per value; the row's
+            # [schema:additionalType = wd:Q...] filter names the kind
+            for p in paths:
+                rdf_type, kind = instrument_kind(maps[p]["object_json_path"])
+                for v in flat_values(gather(root, [p], maps)):
+                    act.setdefault("schema:instrument", []).append(
+                        {"@type": [rdf_type], "schema:additionalType": [{"@id": kind}],
+                         "schema:name": v})
+        elif keys and keys[0] == "schema:object":                 # subfield of the input entity
+            prop = keys[-1]
+            if prop == "schema:conditionsOfAccess":
+                val = shape_conditions(contribs)
+            elif prop == "schema:contributor":
+                val = [{"@type": ["schema:Person"], "schema:name": x}
+                       for x in flat_values(contribs)] or None
+            else:
+                val = concat(contribs)
+            if val is not None:
+                frame[prop] = val
         elif keys and keys[0] == "schema:actionProcess":
             sub = "schema:step" if keys[-1] == "schema:step" else "schema:description"
             val = concat(contribs)
@@ -406,10 +406,24 @@ def build_activity(root, items, maps, skipped):
             val = concat(contribs)
             set_nested(act, list(keys), val)
     if frame:
-        act.setdefault("prov:used", []).append(
-            {"@type": ["schema:CreativeWork", "prov:Entity"],
-             "schema:additionalType": "sampleFrame", **frame})
+        act["schema:object"] = [{"@type": ["schema:CreativeWork", "prov:Entity"],
+                                 "schema:additionalType": "sampleFrame", **frame}]
+    if not any(k in act for k in ("schema:instrument", "schema:object", "schema:actionProcess")):
+        act["@type"] = ["prov:Activity"]   # nothing a cdifProv Action needs: core activity only
     return act
+
+
+# Wikidata kind terms for a schema:instrument item, keyed by the term a row's
+# [schema:additionalType = wd:Q...] filter names; value is (@type, kind IRI).
+INSTRUMENT_KINDS = {
+    "wd:Q3099911": ("schema:Product", "https://www.wikidata.org/entity/Q3099911"),
+    "wd:Q7397": ("schema:SoftwareApplication", "https://www.wikidata.org/entity/Q7397"),
+}
+
+
+def instrument_kind(json_path):
+    m = re.search(r"\[\s*schema:additionalType\s*=\s*([^\]\s]+)\s*\]", json_path)
+    return INSTRUMENT_KINDS[m.group(1) if m else "wd:Q3099911"]
 
 
 def parse_role(leaf):
