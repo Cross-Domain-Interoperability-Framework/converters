@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build converters/DCAT/dcat_profile_coverage.xlsx: which DCAT profile in
+"""Build converters/DCAT/docs/dcat_profile_coverage.xlsx: which DCAT profile in
 dcatExamplesOK uses each dcat-to-cdif SSSOM subject_id, plus a profile summary
 and the corpus-only ('wild') predicates. Regenerated from the live table+corpus.
 """
@@ -13,7 +13,7 @@ logging.getLogger("rdflib").setLevel(logging.CRITICAL); warnings.filterwarnings(
 HERE = Path(__file__).resolve().parent            # converters/DCAT
 MAP = str(HERE.parent / "mappings")
 CORPUS = str(HERE / "dcatExamplesOK")
-OUT = str(HERE / "dcat_profile_coverage.xlsx")
+OUT = str(HERE / "docs" / "dcat_profile_coverage.xlsx")
 RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
 PROFILES = [("01-dcat-ap","DCAT-AP"),("02-geodcat-ap","GeoDCAT-AP"),
     ("03-mobilitydcat-ap-1.1.0","MobilityDCAT-AP"),("04-healthdcat-ap","HealthDCAT-AP"),

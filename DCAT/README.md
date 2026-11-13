@@ -57,7 +57,11 @@ CDIF home is preserved (open world), and each profile's namespace is declared in
 | **DCAT-US 3.0** | `10-dcat-us-3.0` | `http://resources.data.gov/ontology/dcat-us#` (`dcat-us:`) | <https://doi-do.github.io/dcat-us/> · <https://resources.data.gov/resources/dcat-us/> |
 | **DCAT-US 1.1 / Project Open Data** (JSON, not RDF) | `11-dcat-us-1.1-pod` | `https://project-open-data.cio.gov/v1.1/schema#` (`pod:`) | <https://resources.data.gov/resources/dcat-us/> · <https://project-open-data.cio.gov/v1.1/schema/> |
 
-[`dcat-ap-vs-dcat-us.md`](dcat-ap-vs-dcat-us.md) compares the two governance lines
+[`docs/CDIF-DCAT-requirements-coverage.md`](docs/CDIF-DCAT-requirements-coverage.md)
+assesses each requirement in the W3C *Dataset Exchange Use Cases and Requirements* against
+DCAT 3 and the CDIF building blocks.
+
+[`docs/dcat-ap-vs-dcat-us.md`](docs/dcat-ap-vs-dcat-us.md) compares the two governance lines
 (DCAT-AP vs DCAT-US) in depth — requirements, extension surfaces, deployment maturity,
 and how each reaches schema.org — for the reasoning behind the mapping choices.
 
