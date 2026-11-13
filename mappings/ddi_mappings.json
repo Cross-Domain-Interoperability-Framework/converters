@@ -74,8 +74,8 @@
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:name",
       "object_label": "software",
-      "object_json_path": "$.prov:wasGeneratedBy.prov:used.bios:computationalTool.schema:name",
-      "comment": "DDI 2.5 <software>: Software used to produce the work. | DDI Codebook: software used to produce the study/dataset."
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:instrument[*][schema:additionalType = wd:Q7397].schema:name",
+      "comment": "DDI 2.5 <software>: Software used to produce the work. | DDI Codebook: software used to produce the study/dataset. -> a schema:instrument item on the activity, a schema:SoftwareApplication with the Wikidata software kind (Q7397) in schema:additionalType"
     },
     "ddicb:stdyDscr.citation.prodStmt.fundAg": {
       "predicate_id": "skos:exactMatch",
@@ -312,8 +312,8 @@
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:instrument",
       "object_label": "dataCollectionInstrument",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:instrument",
-      "comment": "DDI 2.5 <resInstru>: The type of data collection instrument used (Structured, Semi-structured, or Unstructured). | DDI: research instrument -> prov:used instrument on the collection Activity"
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:instrument[*][schema:additionalType = wd:Q3099911].schema:name",
+      "comment": "DDI 2.5 <resInstru>: The type of data collection instrument used (Structured, Semi-structured, or Unstructured). | DDI: research instrument -> a schema:instrument item on the collection Activity, a schema:Product with the Wikidata measuring-instrument kind (Q3099911) in schema:additionalType"
     },
     "ddicb:stdyDscr.method.dataColl.sources.dataSrc": {
       "predicate_id": "skos:closeMatch",
@@ -1455,91 +1455,91 @@
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:name",
       "object_label": "sampleFrameName",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:name",
-      "comment": "DDI 2.5 <sampleFrameName>: Name of the sample frame. | DDI 2.5 (imported from DDI Lifecycle): the name of the sampling frame from which the sample was drawn --> prov:used value is @type [\"schema:CreativeWork\", \"prov:Entity\"], and has schema:additionalType = \"sampleFrame\""
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:name",
+      "comment": "DDI 2.5 <sampleFrameName>: Name of the sample frame. | DDI 2.5 (imported from DDI Lifecycle): the name of the sampling frame from which the sample was drawn --> the activity input (schema:object) is @type [\"schema:CreativeWork\", \"prov:Entity\"], and has schema:additionalType = \"sampleFrame\""
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.labl": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:alternateName",
       "object_label": "sampleFrameLabel",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:alternateName",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:alternateName",
       "comment": "DDI 2.5 <labl>: A short description or label for the parent element. | DDI 2.5: a label for the sampling frame --> prov:Entity[schema:additionalType = \"samplingFrame\"].schema:alternateName"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.txt": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:description",
       "object_label": "sampleFrameDescription",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:description",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:description",
       "comment": "DDI 2.5 <txt>: Lengthier description of the parent element. | DDI 2.5: descriptive text about the sampling frame --> concatenate on prov:Entity[schema:additionalType = \"samplingFrame\"].schema:description"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.validPeriod": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:description",
       "object_label": "sampleFrameValidPeriod",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:description",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:description",
       "comment": "DDI 2.5 <validPeriod>: Defines a time period for the validity of the sampling frame. | DDI 2.5: the period during which the sampling frame is valid  --> concatenate on prov:Entity[schema:additionalType = \"samplingFrame\"].description"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.custodian": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:owner",
       "object_label": "sampleFrameCustodian",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:owner",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:owner",
       "comment": "DDI 2.5 <custodian>: The agency or individual responsible for creating or maintaining the sample frame. | DDI 2.5: the agency or person that maintains/holds the sampling frame -->prov:Entity[schema:additionalType = \"samplingFrame\"].schema:owner"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.useStmt.confDec": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:conditionsOfAccess",
       "object_label": "sampleFrameConfidentiality",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:conditionsOfAccess",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:conditionsOfAccess",
       "comment": "DDI 2.5 <confDec>: Determines whether signing of a confidentiality declaration is needed to access a resource. | DDI 2.5: use statement - whether a confidentiality declaration must be signed to access the sampling frame  -->prov:Entity[schema:additionalType = \"samplingFrame\"].schema:conditionsOfAccess[*]"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.useStmt.specPerm": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:conditionsOfAccess",
       "object_label": "sampleFrameSpecialPermissions",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:conditionsOfAccess",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:conditionsOfAccess",
       "comment": "DDI 2.5 <specPerm>: Determines whether any special permissions are required to access a resource. | DDI 2.5: use statement - whether special permissions are required to access the sampling frame -->prov:Entity[schema:additionalType = \"samplingFrame\"].schema:conditionsOfAccess[*]"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.useStmt.restrctn": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:conditionsOfAccess",
       "object_label": "sampleFrameRestrictions",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:conditionsOfAccess",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:conditionsOfAccess",
       "comment": "DDI 2.5 <restrctn>: Any restrictions on access to or use of the collection. | DDI 2.5: use statement - restrictions on access to or use of the sampling frame  -->prov:Entity[schema:additionalType = \"samplingFrame\"].schema:conditionsOfAccess[*]"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.useStmt.contact": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:contributor",
       "object_label": "sampleFrameContact",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:contributor",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:contributor",
       "comment": "DDI 2.5 <contact>: Names and addresses of individuals responsible for the work who serve as resource persons for user inquiries. | DDI 2.5: use statement - contact person(s) for questions about accessing/using the sampling frame  -->prov:Entity[schema:additionalType = \"samplingFrame\"].schema:contributor[role = \"Point of Contact\"]"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.useStmt.citReq": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:conditionsOfAccess",
       "object_label": "sampleFrameCitationRequirements",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:conditionsOfAccess",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:conditionsOfAccess",
       "comment": "DDI 2.5 <citReq>: Text of the requirement that a data collection be cited properly in works based on it. | DDI 2.5: use statement - the citation requirement for using the sampling frame"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.useStmt.deposReq": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:conditionsOfAccess",
       "object_label": "sampleFrameDepositRequirements",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:conditionsOfAccess",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:conditionsOfAccess",
       "comment": "DDI 2.5 <deposReq>: Information regarding user responsibility for informing archives of their use of the data. | DDI 2.5: use statement - requirement to deposit derived works/results based on the sampling frame -->prov:Entity[schema:additionalType = \"samplingFrame\"].schema:conditionsOfAccess[*]"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.useStmt.conditions": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:conditionsOfAccess",
       "object_label": "sampleFrameGeneralRestrictions",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:conditionsOfAccess",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:conditionsOfAccess",
       "comment": "DDI 2.5 <conditions>: Indicates any additional information that will assist users in understanding the access and use conditions of a data collection. | DDI 2.5: use statement - general conditions under which the sampling frame may be used -->prov:Entity[schema:additionalType = \"samplingFrame\"].schema:conditionsOfAccess[*]"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.useStmt.disclaimer": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:conditionsOfAccess",
       "object_label": "sampleFrameDisclaimer",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:conditionsOfAccess",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:conditionsOfAccess",
       "comment": "DDI 2.5 <disclaimer>: Information regarding responsibility for uses of the data collection. | DDI 2.5: use statement - disclaimer of liability for use of the sampling frame -->prov:Entity[schema:additionalType = \"samplingFrame\"].schema:conditionsOfAccess[*]"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.universe": {
@@ -1567,14 +1567,14 @@
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:description",
       "object_label": "sampleFrameReferencePeriod",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:description",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:description",
       "comment": "DDI 2.5 <referencePeriod>: Indicates the period of time in which the sampling frame was actually used for the study. | DDI 2.5: the reference period (point or range in time) to which the sampling frame applies -->concatenate on prov:Entity[schema:additionalType = \"samplingFrame\"].schema:description"
     },
     "ddi:stdyDscr.method.dataColl.sampleFrame.updateProcedure": {
       "predicate_id": "skos:closeMatch",
       "object_id": "schema:description",
       "object_label": "sampleFrameUpdateProcedure",
-      "object_json_path": "$.prov:wasGeneratedBy[*].prov:used[*].schema:description",
+      "object_json_path": "$.prov:wasGeneratedBy[*].schema:object[*].schema:description",
       "comment": "DDI 2.5 <updateProcedure>: Description of how and with what frequency the sample frame is updated. | DDI 2.5: the procedure used to update/maintain the sampling frame->concatenate on prov:Entity[schema:additionalType = \"samplingFrame\"].schema:description"
     },
     "ddi:stdyDscr.method.dataColl.targetSampleSize.sampleSize": {
