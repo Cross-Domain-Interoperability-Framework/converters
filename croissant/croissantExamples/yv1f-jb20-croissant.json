@@ -212,21 +212,28 @@
   "prov:wasGeneratedBy": [
     {
       "@type": [
-        "schema:Event",
+        "schema:Action",
         "xas:AnalysisEvent",
         "prov:Activity"
       ],
-      "schema:startDate": "2023-11-21T14:15:09.935669Z",
+      "schema:startTime": "2023-11-21T14:15:09.935669Z",
       "schema:identifier": "20231121_gc-ms_gsfc_orex-803003-0_1",
-      "prov:used": [
+      "schema:instrument": [
         {
           "@type": [
-            "schema:Thing",
+            "schema:Product",
             "prov:Entity",
             "nxs:BaseClass/NXinstrument"
           ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
           "schema:name": "Thermo TSQ9610 with Trace 1610 with pyroprobe",
-          "schema:identifier": "TSQ9610"
+          "schema:identifier": [
+            "TSQ9610"
+          ]
         }
       ],
       "schema:location": {
@@ -238,7 +245,7 @@
         "schema:name": "NASA Goddard Space Flight Center",
         "schema:alternateName": "GSFC"
       },
-      "schema:mainEntity": [
+      "schema:object": [
         {
           "@type": [
             "schema:Thing",

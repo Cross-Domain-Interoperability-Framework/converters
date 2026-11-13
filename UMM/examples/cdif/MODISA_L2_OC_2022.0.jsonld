@@ -467,14 +467,19 @@
   "prov:wasGeneratedBy": [
     {
       "@type": [
+        "schema:Action",
         "prov:Activity"
       ],
       "schema:name": "Data acquisition",
-      "prov:used": [
+      "schema:instrument": [
         {
           "@type": [
-            "prov:Entity",
-            "schema:Thing"
+            "schema:Product"
+          ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
           ],
           "schema:name": "Moderate-Resolution Imaging Spectroradiometer on Earth Observing System, Aqua"
         }
@@ -636,6 +641,9 @@
       },
       {
         "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/1.1"
       }
     ],
     "schema:includedInDataCatalog": {

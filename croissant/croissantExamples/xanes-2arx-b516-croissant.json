@@ -112,21 +112,28 @@
   "prov:wasGeneratedBy": [
     {
       "@type": [
-        "schema:Event",
+        "schema:Action",
         "xas:AnalysisEvent",
         "prov:Activity"
       ],
-      "schema:startDate": "2024-10-27T12:00:00Z",
+      "schema:startTime": "2024-10-27T12:00:00Z",
       "schema:identifier": "20241027_xanes_als_orex-800055-125_1",
-      "prov:used": [
+      "schema:instrument": [
         {
           "@type": [
-            "schema:Thing",
+            "schema:Product",
             "prov:Entity",
             "nxs:BaseClass/NXinstrument"
           ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
           "schema:name": "ALS STXM beamline 5.3.2.2",
-          "schema:identifier": "ALSSTXM"
+          "schema:identifier": [
+            "ALSSTXM"
+          ]
         }
       ],
       "schema:location": {
@@ -138,7 +145,7 @@
         "schema:name": "Advanced Light Source at Lawrence Berkeley National Laboratory",
         "schema:alternateName": "ALS"
       },
-      "schema:mainEntity": [
+      "schema:object": [
         {
           "@type": [
             "schema:Thing",

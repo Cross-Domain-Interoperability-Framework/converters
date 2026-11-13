@@ -270,7 +270,6 @@ left blank where the target is a separate node/document (e.g. a code-list
   | property | from | appears in |
   |---|---|---|
   | `schema:isPartOf` | `ddi-common`, `ddi25` | the series a study belongs to |
-  | `bios:computationalTool` | `ddi-common` | analysis software named in the method description |
   | `schema:dateCreated` | `ddi-common`, `ddi25` | study creation date, distinct from `datePublished` |
   | `dcterms:bibliographicCitation` | `ddi-common`, `ddi25` | the citation string the producer supplies |
   | `schema:copyrightNotice` | `ddi-common`, `ddi25` | rights text that is not a licence URI |

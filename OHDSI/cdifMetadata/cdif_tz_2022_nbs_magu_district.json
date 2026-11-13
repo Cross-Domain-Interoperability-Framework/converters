@@ -189,17 +189,18 @@
       "schema:object": {
         "@id": "https://microdata.nbs.go.tz/index.php/catalog/49/related-materials"
       },
-      "prov:used": [
+      "schema:instrument": [
         {
-          "bios:computationalTool": [
+          "@type": [
+            "schema:SoftwareApplication"
+          ],
+          "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
+          "schema:featureList": "reg_code;=;'19';AND dist_code;=;'02'",
+          "schema:downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git",
+          "schema:name": "GDSC ETL tools (reg_code;=;'19';AND dist_code;=;'02')",
+          "schema:additionalType": [
             {
-              "@type": [
-                "schema:SoftwareApplication"
-              ],
-              "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
-              "schema:featureList": "reg_code;=;'19';AND dist_code;=;'02'",
-              "schema:downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git",
-              "schema:name": "GDSC ETL tools (reg_code;=;'19';AND dist_code;=;'02')"
+              "@id": "https://www.wikidata.org/entity/Q7397"
             }
           ]
         }
@@ -223,7 +224,7 @@
       "@id": "https://gdsc.idsc.miami.edu/detail/tz_2022_nbs_magu_district"
     },
     "schema:description": "CDIF metadata record for 'Tanzania 2022 Magu District (NBS)', harvested from the OHDSI gaiaCatalog datastore (meta_json-ld_tz_2022_nbs_magu_district.json) published by the University of Miami Geospatial Digital Special Collections (GDSC), and transformed to the CDIF Core and Discovery profiles. The source ETL activity is carried as prov:wasGeneratedBy (schema:Action); the placeholder pseudo-code event was omitted. Upstream lineage is retained via schema:isBasedOn where the source provided it.",
-    "schema:sdDatePublished": "2026-11-05",
+    "schema:sdDatePublished": "2026-11-13",
     "schema:isBasedOn": {
       "@id": "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/data/tz_2022_nbs_magu_district/meta_json-ld_tz_2022_nbs_magu_district.json"
     },

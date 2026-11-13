@@ -65,8 +65,10 @@ Each source doc has two `about` Events: a `"Pseudo Code"`/`"TODO"` placeholder
 (dropped) and a real ETL action (`curl`/`wget`/`local`/`srtm_merge_and_crop`/…)
 with `object`+`instrument`+`result`. The real action becomes a dual-typed
 `["prov:Activity","schema:Action"]` activity: `object` → `schema:object` (`{@id}`
-ref to the source URL), `instrument` → `prov:used[].schema:instrument` (a
-`schema:name` is derived because SHACL requires one), `result` → `schema:result`
+ref to the source URL), `instrument` → `schema:instrument[]` (software, so
+`schema:additionalType` carries the Wikidata software kind
+`https://www.wikidata.org/entity/Q7397`; a `schema:name` is derived because the
+schema and SHACL require one), `result` → `schema:result`
 (`{@id}` ref to the generated dataset).
 
 **Critical invariant:** `schema:object`/`schema:result` are `{@id}` **references**,

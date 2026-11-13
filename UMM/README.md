@@ -58,7 +58,8 @@ fall back as described below.
   `doc-corediscovery/examples/ncei-ghrsst-mur-sst.jsonld`.
 - [`examples/cdif/`](examples/cdif/): the converted records. All 23 frame and
   validate against `CDIFDiscoverySchema.json`, and conformance detection finds
-  core + discovery for each.
+  core + discovery for each, plus provenance for the eight whose platforms name
+  instruments (see Platforms and instruments below).
 
 ## Mapping decisions
 
@@ -71,6 +72,14 @@ fall back as described below.
   data center, and otherwise leaves out `schema:creator`. Authors that appear
   only inside `OtherCitationDetails` (e.g. Daymet) are not parsed out; that
   string goes to `dcterms:bibliographicCitation` verbatim.
+- **Platforms and instruments**: one `prov:wasGeneratedBy` activity, "Data
+  acquisition". Each instrument is a `schema:instrument` item (`schema:Product`,
+  `schema:additionalType` the Wikidata measuring-instrument kind
+  `https://www.wikidata.org/entity/Q3099911`, named "INSTRUMENT on PLATFORM",
+  `ComposedOf` sensors as `schema:hasPart`), which makes the activity a
+  `schema:Action` (cdifProv). A platform with no instrument has only a name, so
+  it stays a CDIF core `prov:used` string, and an activity with nothing else is
+  a plain `prov:Activity`.
 - **Agents**: `schema:publisher` is the first DISTRIBUTOR data center, else the
   first ARCHIVER. Every data center role and every contact (including contacts
   nested in data centers) becomes a `schema:contributor` `schema:Role`.

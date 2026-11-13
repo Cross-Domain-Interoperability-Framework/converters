@@ -162,21 +162,28 @@
   "prov:wasGeneratedBy": [
     {
       "@type": [
-        "schema:Event",
+        "schema:Action",
         "xas:AnalysisEvent",
         "prov:Activity"
       ],
-      "schema:startDate": "2024-01-28T14:06:04.101222Z",
+      "schema:startTime": "2024-01-28T14:06:04.101222Z",
       "schema:identifier": "20230928_xrd_jsc-ares_orex-500005-0_1",
-      "prov:used": [
+      "schema:instrument": [
         {
           "@type": [
-            "schema:Thing",
+            "schema:Product",
             "prov:Entity",
             "nxs:BaseClass/NXinstrument"
           ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
           "schema:name": "(JSC-ARES)Malvern PANalytical XPert Pro XRD",
-          "schema:identifier": "MPANX-JSC-ARES"
+          "schema:identifier": [
+            "MPANX-JSC-ARES"
+          ]
         }
       ],
       "schema:location": {
@@ -188,7 +195,7 @@
         "schema:name": "NASA Johnson Space Center",
         "schema:alternateName": "JSC-ARES"
       },
-      "schema:mainEntity": [
+      "schema:object": [
         {
           "@type": [
             "schema:Thing",

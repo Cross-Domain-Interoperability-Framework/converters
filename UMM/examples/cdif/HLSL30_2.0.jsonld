@@ -501,20 +501,25 @@
   "prov:wasGeneratedBy": [
     {
       "@type": [
+        "schema:Action",
         "prov:Activity"
       ],
       "schema:name": "Data acquisition",
-      "prov:used": [
+      "schema:instrument": [
         {
           "@type": [
-            "prov:Entity",
-            "schema:Thing"
+            "schema:Product"
+          ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
           ],
           "schema:name": "Operational Land Imager on LANDSAT-8",
           "schema:hasPart": [
             {
               "@type": [
-                "schema:Thing"
+                "schema:Product"
               ],
               "schema:name": "Operational Land Imager"
             }
@@ -522,14 +527,18 @@
         },
         {
           "@type": [
-            "prov:Entity",
-            "schema:Thing"
+            "schema:Product"
+          ],
+          "schema:additionalType": [
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
           ],
           "schema:name": "Operational Land Imager on LANDSAT-9",
           "schema:hasPart": [
             {
               "@type": [
-                "schema:Thing"
+                "schema:Product"
               ],
               "schema:name": "Operational Land Imager"
             }
@@ -1029,6 +1038,9 @@
       },
       {
         "@id": "https://w3id.org/cdif/discovery/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/1.1"
       }
     ],
     "schema:includedInDataCatalog": {

@@ -109,8 +109,9 @@ comment: |
     rightsholder    dcterms:rightsHolder agent -> a schema:contributor wrapped
                     in a schema:Role (roleName='rightsHolder')
     generatedby     prov:wasGeneratedBy -> a cdifProvActivity: PROV terms mapped
-                    to schema.org, input entities into the required prov:used;
-                    an activity with no usable input stays a plain prov:Activity
+                    to schema.org, input entities into schema:object, prov:used
+                    kept for IRIs / {@id} refs; an activity with neither an input
+                    nor a plan stays a plain prov:Activity
     rights          dcterms:rights -> a labelled conditionsOfAccess entry; an
                     odrs:RightsStatement fans its dataLicense / attributionText /
                     attributionURL out to license / creditText / relatedLink

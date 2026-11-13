@@ -1992,17 +1992,18 @@
       "schema:object": {
         "@id": "https://www.atsdr.cdc.gov/place-health/php/svi/svi-data-documentation-download.html"
       },
-      "prov:used": [
+      "schema:instrument": [
         {
-          "bios:computationalTool": [
+          "@type": [
+            "schema:SoftwareApplication"
+          ],
+          "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
+          "schema:featureList": "wget",
+          "schema:downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git",
+          "schema:name": "GDSC ETL tools (wget)",
+          "schema:additionalType": [
             {
-              "@type": [
-                "schema:SoftwareApplication"
-              ],
-              "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
-              "schema:featureList": "wget",
-              "schema:downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git",
-              "schema:name": "GDSC ETL tools (wget)"
+              "@id": "https://www.wikidata.org/entity/Q7397"
             }
           ]
         }
@@ -2026,7 +2027,7 @@
       "@id": "https://gdsc.idsc.miami.edu/detail/ma_2020_svi_tract"
     },
     "schema:description": "CDIF metadata record for '2020 Massachusetts CDC Social Vulnerability Index (tracts)', harvested from the OHDSI gaiaCatalog datastore (meta_json-ld_ma_2020_svi_tract.json) published by the University of Miami Geospatial Digital Special Collections (GDSC), and transformed to the CDIF Core and Discovery profiles. The source ETL activity is carried as prov:wasGeneratedBy (schema:Action); the placeholder pseudo-code event was omitted. Upstream lineage is retained via schema:isBasedOn where the source provided it.",
-    "schema:sdDatePublished": "2026-11-05",
+    "schema:sdDatePublished": "2026-11-13",
     "schema:isBasedOn": {
       "@id": "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/data/ma_2020_svi_tract/meta_json-ld_ma_2020_svi_tract.json"
     },

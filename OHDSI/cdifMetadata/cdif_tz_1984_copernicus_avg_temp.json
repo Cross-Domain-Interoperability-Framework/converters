@@ -164,17 +164,18 @@
       "schema:object": {
         "@id": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land"
       },
-      "prov:used": [
+      "schema:instrument": [
         {
-          "bios:computationalTool": [
+          "@type": [
+            "schema:SoftwareApplication"
+          ],
+          "@id": "https://github.com/tibbben/copernicus_aggregate.git",
+          "schema:featureList": "python copernicus_aggregate.py '{\"table\": \"tz_1984_copernicus_avg_temp\", \"extension\": \"zip\", \"extent\": \"29|-12|41|-0.8\", \"attributes\": \"2m_temperature;Average yearly 2m temperature in Kelvin from Copernicus reanalysis era5 single levels;Copernicus;float;Kelvin;9523;287.315857;301.010986;1984-01-01;1984-12-31;35814756;2m_temperature@tz_1984_copernicus_avg_temp\", \"bands\": \"t2m\", \"format\": \"nc\"}' 1984",
+          "schema:downloadUrl": "https://github.com/tibbben/copernicus_aggregate.git",
+          "schema:name": "GDSC ETL tools (python copernicus_aggregate.py '{\"table\": \"tz_1984_copernicus_avg_temp\", \"extension\": \"zip\", \"extent\": \"29|-12|41|-0.8\", \"attributes\": \"2m_temperature;Average yearly 2m temperature in Kelvin from Copernicus reanalysis era5 single levels;Copernicus;float;Kelvin;9523;287.315857;301.010986;1984-01-01;1984-12-31;35814756;2m_temperature@tz_1984_copernicus_avg_temp\", \"bands\": \"t2m\", \"format\": \"nc\"}' 1984)",
+          "schema:additionalType": [
             {
-              "@type": [
-                "schema:SoftwareApplication"
-              ],
-              "@id": "https://github.com/tibbben/copernicus_aggregate.git",
-              "schema:featureList": "python copernicus_aggregate.py '{\"table\": \"tz_1984_copernicus_avg_temp\", \"extension\": \"zip\", \"extent\": \"29|-12|41|-0.8\", \"attributes\": \"2m_temperature;Average yearly 2m temperature in Kelvin from Copernicus reanalysis era5 single levels;Copernicus;float;Kelvin;9523;287.315857;301.010986;1984-01-01;1984-12-31;35814756;2m_temperature@tz_1984_copernicus_avg_temp\", \"bands\": \"t2m\", \"format\": \"nc\"}' 1984",
-              "schema:downloadUrl": "https://github.com/tibbben/copernicus_aggregate.git",
-              "schema:name": "GDSC ETL tools (python copernicus_aggregate.py '{\"table\": \"tz_1984_copernicus_avg_temp\", \"extension\": \"zip\", \"extent\": \"29|-12|41|-0.8\", \"attributes\": \"2m_temperature;Average yearly 2m temperature in Kelvin from Copernicus reanalysis era5 single levels;Copernicus;float;Kelvin;9523;287.315857;301.010986;1984-01-01;1984-12-31;35814756;2m_temperature@tz_1984_copernicus_avg_temp\", \"bands\": \"t2m\", \"format\": \"nc\"}' 1984)"
+              "@id": "https://www.wikidata.org/entity/Q7397"
             }
           ]
         }
@@ -198,7 +199,7 @@
       "@id": "https://gdsc.idsc.miami.edu/detail/tz_1984_copernicus_avg_temp"
     },
     "schema:description": "CDIF metadata record for '1984 Tanzania 2m Temperature Yearly Average (Copernicus)', harvested from the OHDSI gaiaCatalog datastore (meta_json-ld_tz_1984_copernicus_avg_temp.json) published by the University of Miami Geospatial Digital Special Collections (GDSC), and transformed to the CDIF Core and Discovery profiles. The source ETL activity is carried as prov:wasGeneratedBy (schema:Action); the placeholder pseudo-code event was omitted. Upstream lineage is retained via schema:isBasedOn where the source provided it.",
-    "schema:sdDatePublished": "2026-11-05",
+    "schema:sdDatePublished": "2026-11-13",
     "schema:isBasedOn": {
       "@id": "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/data/tz_1984_copernicus_avg_temp/meta_json-ld_tz_1984_copernicus_avg_temp.json"
     },

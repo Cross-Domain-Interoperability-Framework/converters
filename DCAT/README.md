@@ -216,8 +216,9 @@ interval, reading `dcat:`/`schema:startDate`+`endDate` or `dcterms:start`+`end`)
 endpoint becomes a `schema:potentialAction` EntryPoint), **`generatedby`**
 (`prov:wasGeneratedBy` → a `cdifProvActivity`: dual-typed
 `["schema:Action","prov:Activity"]`, mapping the PROV terms to their schema.org
-equivalents and populating the shape-required `prov:used` from the activity's
-inputs; an activity with no usable input stays a plain `prov:Activity`), and
+equivalents, its inputs into `schema:object` and its `prov:used` IRIs and
+`{@id}` references kept in `prov:used`; an activity with neither an input nor a
+plan stays a plain `prov:Activity`), and
 **`relatedlink`** / **`attribution`** (the relation family and
 `prov:qualifiedAttribution` → `schema:LinkRole` links / contributors).
 
@@ -347,8 +348,9 @@ imported). See [`../validation/detect_conformance.py`](../validation/detect_conf
 - Temporal coverage reads `dcat:`/`schema:startDate`+`endDate` and
   `dcterms:start`+`end`; unusual temporal extents may need review.
 - Provenance: a `prov:wasGeneratedBy` activity is shaped into a `cdifProvActivity`
-  only when it has a resource for the shape-required `prov:used` (a `prov:used`
-  value or an input entity); an activity carrying only agent/time stays a plain
+  only when it has what that shape requires and DCAT can supply -- an input
+  (`schema:object`) or a plan (`schema:actionProcess`); `prov:used` alone does
+  not make one. An activity carrying only agent/time/`prov:used` stays a plain
   `prov:Activity` reference rather than being forced (or fabricated) into one.
 - Catalog-of-catalogs inputs are traversed recursively; every `dcat:Dataset` at
   any depth is found and converted.
