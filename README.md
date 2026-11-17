@@ -13,6 +13,7 @@ expose their conversion as an importable function.
 | [`croissant/ConvertToCroissant.py`](croissant/ConvertToCroissant.py) | CDIF → Croissant 1.1 | MLCommons Croissant |
 | [`croissant/ConvertFromCroissant.py`](croissant/ConvertFromCroissant.py) | Croissant → CDIF | MLCommons Croissant |
 | [`DCAT/dcat_to_cdif.py`](DCAT/dcat_to_cdif.py) | DCAT → CDIF | W3C DCAT |
+| [`DCAT/cdif_to_dcat.py`](DCAT/cdif_to_dcat.py) | CDIF → DCAT 3 (JSON-LD `@graph`: Dataset, CatalogRecord, Catalog) | W3C DCAT |
 | [`UMM/umm_to_cdif.py`](UMM/umm_to_cdif.py) | NASA CMR UMM-C (file **or URL**) → CDIF core+discovery | NASA UMM-C JSON |
 | [`FAIR2/fair2_to_cdif.py`](FAIR2/fair2_to_cdif.py) | FAIR² `fair2.json` (file **or URL**) → CDIF (reuses the Croissant converter for the Croissant core) | FAIR² |
 | [`DDI/ddi_to_cdif.py`](DDI/ddi_to_cdif.py) | DDI Codebook 2.5 (Harvard Dataverse) → CDIF | DDI Codebook XML |
@@ -153,13 +154,14 @@ DataDescription/Discovery and sets `conformsTo` via `detect_conformance`. Mappin
 docs: [`croissant/CDIFtoCroissant.md`](croissant/CDIFtoCroissant.md) (forward) and
 [`croissant/CroissantToCDIF.md`](croissant/CroissantToCDIF.md) (inverse).
 
-## DCAT/ — DCAT → CDIF
+## DCAT/ — DCAT ↔ CDIF
 
 `dcat_to_cdif.py` converts a DCAT JSON-LD catalog or dataset to CDIF schema.org
 form, mapping DCAT / Dublin Core properties to their schema.org equivalents per
 the CDIF DCAT implementation guide. It can list the datasets in a catalog,
 convert a selection, and optionally (`--validate`) frame and validate each record
-against the schema of every profile it declares. See
+against the schema of every profile it declares. `cdif_to_dcat.py` goes the other
+way, CDIF to W3C DCAT 3, driven by `mappings/cdif-to-dcat.sssom.tsv`. See
 [`DCAT/README.md`](DCAT/README.md).
 
 ## UMM/ — NASA CMR UMM-C → CDIF

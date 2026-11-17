@@ -1,0 +1,75 @@
+mapping_set_id: https://w3id.org/cdif/mappings/cdif-to-dcat
+mapping_set_title: CDIF to W3C DCAT 3
+mapping_set_description: |
+  Property correspondences applied by cdif_to_dcat.py (CDIF JSON-LD -> W3C DCAT 3
+  JSON-LD). This table is the authority: the converter reads it rather than
+  restating it in code. It is the inverse direction of dcat-to-cdif.sssom.tsv,
+  curated rather than inverted mechanically: several DCAT properties map to one
+  CDIF property there (nine to schema:relatedLink), so each CDIF property here
+  names the one DCAT property it is written as.
+
+  subject_* is the CDIF side; subject_class is the kind of CDIF node the property
+  sits on (schema:Dataset is the record's root; dcat:CatalogRecord is the CDIF
+  catalog record in schema:subjectOf). object_json_path names the DCAT node the
+  value is written to: $dataset, $record (the dcat:CatalogRecord), $catalog, or @
+  (the DCAT node made from the CDIF node of subject_class). transform names the
+  shaper in cdif_to_dcat.py. Rows for a class run in file order. A CDIF property
+  with no row is kept on the dcat:Dataset unchanged (open world).
+
+  The output is one JSON-LD @graph: the dcat:Dataset, a dcat:CatalogRecord whose
+  foaf:primaryTopic is the dataset, and, where the record names them, the
+  dcat:Catalog nodes holding the record (dcat:record) and the dataset
+  (dcat:dataset). Distributions, agents, places and periods are nested nodes.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/DCAT/cdif_to_dcat.py
+mapping_date: 2026-11-17
+subject_source: https://w3id.org/cdif/core/1.1
+object_source: http://www.w3.org/ns/dcat#
+see_also:
+  - https://www.w3.org/TR/vocab-dcat-3/
+  - https://w3c.github.io/dxwg/dcat/#dcat-sdo
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  text            the value as a string (a list keeps every value)
+  date            an ISO 8601 date; the 1900-01-01 sentinel is dropped
+  iri             {"@id": url}; the OGC nil URL is dropped
+  ref             an @id reference, or the value unchanged when it is not an IRI
+  copy            the value unchanged (same vocabulary on both sides)
+  identifier      dcterms:identifier text, plus an adms:Identifier for a PropertyValue
+  otheridentifier each sameAs as an adms:Identifier
+  keyword         text -> dcat:keyword; a DefinedTerm with an IRI -> dcat:theme skos:Concept
+  license         a URL or labelled link -> dcterms:LicenseDocument
+  rights          text or a labelled link -> dcterms:RightsStatement
+  agent           Person / Organization / Role -> foaf:Agent (prov:qualifiedAttribution for a Role)
+  contact         an agent -> vcard:Kind
+  place           schema:Place -> dcterms:Location (dcat:bbox / dcat:centroid as WKT)
+  period          an ISO interval or time:ProperInterval -> dcterms:PeriodOfTime
+  type            an IRI type -> {"@id"}; a text type is kept as schema:additionalType
+  relatedlink     LinkRole -> dcat:Relationship; a plain link -> dcterms:relation
+  citation        text -> dcterms:bibliographicCitation; a work with an address -> dcterms:isReferencedBy
+  distribution    DataDownload -> dcat:Distribution; WebAPI -> dcat:Distribution with dcat:accessService
+  download        dcat:downloadURL and dcat:accessURL
+  mediatype       a MIME type -> dcat:mediaType IANA IRI; other formats -> dcterms:format
+  bytes           an integer byte count -> dcat:byteSize
+  mbox            an e-mail address -> mailto: IRI
+  record          schema:subjectOf -> the dcat:CatalogRecord
+  catalogmember   includedInDataCatalog -> dcat:Catalog with dcat:dataset
+  catalogrecord   the record's includedInDataCatalog -> dcat:Catalog with dcat:record and dcat:dataset
+curie_map:
+  adms: http://www.w3.org/ns/adms#
+  dcat: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  foaf: http://xmlns.com/foaf/0.1/
+  org: http://www.w3.org/ns/org#
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  spdx: http://spdx.org/rdf/terms#

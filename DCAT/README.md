@@ -335,6 +335,51 @@ imported). See [`../validation/detect_conformance.py`](../validation/detect_conf
 - `detect_conformance.py`, in the `validation` submodule
   (`validation/detect_conformance.py`) — imported for content-derived `conformsTo`.
 
+## CDIF → DCAT (`cdif_to_dcat.py`)
+
+The reverse converter writes a CDIF record as W3C DCAT 3 JSON-LD: one `@graph` with
+
+- a **`dcat:Dataset`** made from the record's root;
+- a **`dcat:CatalogRecord`** made from the CDIF catalog record in `schema:subjectOf`
+  (its `dcterms:conformsTo`, dates and description), whose **`foaf:primaryTopic`** is
+  the dataset;
+- a **`dcat:Catalog`** for the catalog the metadata came from (the catalog record's
+  `schema:includedInDataCatalog`), with `dcat:record` → the record and
+  `dcat:dataset` → the dataset, and one for each catalog holding the dataset (the
+  dataset's `schema:includedInDataCatalog`), with `dcat:dataset`.
+
+Distributions (`dcat:Distribution`; a `schema:WebAPI` becomes one whose
+`dcat:accessService` is a `dcat:DataService`), agents (`foaf:Person` /
+`foaf:Organization`; a `schema:Role` a `prov:qualifiedAttribution`), contacts
+(`vcard:Kind`), places (`dcterms:Location` with `dcat:bbox` / `dcat:centroid` as WKT),
+periods (`dcterms:PeriodOfTime`), licences (`dcterms:LicenseDocument`), access rights
+(`dcterms:RightsStatement`) and themes (`skos:Concept`) are nested nodes. Ordered
+authors stay an RDF list (`@list`).
+
+The mapping is [`../mappings/cdif-to-dcat.sssom.tsv`](../mappings/cdif-to-dcat.sssom.tsv),
+read at run time; its sidecar lists the shapers. It is curated, not the forward table
+inverted: several DCAT properties map to one CDIF property there (nine to
+`schema:relatedLink`), so each CDIF property here names the one DCAT property it is
+written as. A CDIF property with no row, or whose value has no DCAT form (a text
+`additionalType`, a content size not in bytes), stays on the DCAT node unchanged, with
+its prefix kept in the `@context` (open world).
+
+```bash
+python DCAT/cdif_to_dcat.py record.jsonld -o out/
+python DCAT/cdif_to_dcat.py NIAID/cdifJSON-LD -o out/ --validate   # directories are read recursively
+```
+
+`--validate` parses each output as RDF and checks that the dataset is typed and that
+the record's `foaf:primaryTopic` is the dataset.
+
+**Round trip.** [`check_cdif_to_dcat.py`](check_cdif_to_dcat.py) converts each record
+CDIF → DCAT → CDIF (back through `dcat_to_cdif.py`) and compares key fields. On the
+NIAID and `cdifOK/` corpora (429 records) all 429 round-trip, and name, description,
+identifier, url, both dates, keywords, creators and distribution URLs survive in every
+record that has them. A licence given only as free text (4 records) is written as a
+`dcterms:LicenseDocument` with an `rdfs:label`, which `dcat_to_cdif.py` does not read
+back: it maps licence IRIs only.
+
 ## Known limitations
 
 - `dcat:contactPoint` maps to `schema:provider` (CDIF's closest slot); the vcard
