@@ -590,7 +590,11 @@ def _tf_concept(value, ds, rule, doc):
 
 
 def _tf_agent(value, ds, rule, doc):
-    got = [convert_agent(a) for a in _as_list(value)]
+    # An RDF list ({"@list": [...]}, as cdif_to_dcat.py writes ordered authors) is
+    # unwrapped to its agents, in order, not taken as one agent.
+    items = value["@list"] if isinstance(value, dict) and "@list" in value else _as_list(value)
+    items = [i for v in items for i in (v["@list"] if isinstance(v, dict) and "@list" in v else [v])]
+    got = [convert_agent(a) for a in items]
     return [a for a in got if a] or None
 
 
