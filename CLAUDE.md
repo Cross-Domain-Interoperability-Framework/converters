@@ -11,7 +11,8 @@ Each converter path has an SSSOM table in `mappings/`, but tables play
 different roles — check which before editing either side:
 
 - **Table drives the converter (read at runtime):** DCAT (`dcat_to_cdif.py`
-  reads the TSVs directly), UMM (`umm_to_cdif.py`, own `load_table`; `tf_*`
+  reads the TSVs directly; `cdif_to_dcat.py` reads `cdif-to-dcat.sssom.tsv`,
+  its shapers the `tf_*` functions named in `transform`), UMM (`umm_to_cdif.py`, own `load_table`; `tf_*`
   functions are the shapers named in the `transform` column), Croissant (via
   the shared `sssom_engine.py`), FAIR² (`FAIR2/fair2_to_cdif.py`: runs the
   Croissant converter on the keys `fair2-to-cdif.sssom.tsv` does not claim,

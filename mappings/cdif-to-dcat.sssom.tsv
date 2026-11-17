@@ -1,0 +1,69 @@
+subject_id	subject_label	subject_class	predicate_id	object_id	object_label	object_json_path	transform	mapping_justification	comment
+schema:name	name	schema:Dataset	skos:exactMatch	dcterms:title	title	$dataset	text	semapv:ManualMappingCuration	
+schema:alternateName	alternateName	schema:Dataset	skos:closeMatch	dcterms:alternative	alternative	$dataset	text	semapv:ManualMappingCuration	
+schema:description	description	schema:Dataset	skos:exactMatch	dcterms:description	description	$dataset	text	semapv:ManualMappingCuration	
+schema:identifier	identifier	schema:Dataset	skos:exactMatch	dcterms:identifier	identifier	$dataset	identifier	semapv:ManualMappingCuration	The identifier's URL (else its value) as dcterms:identifier; a PropertyValue also becomes an adms:Identifier.
+schema:sameAs	sameAs	schema:Dataset	skos:closeMatch	adms:identifier	identifier	$dataset	otheridentifier	semapv:ManualMappingCuration	Other identifiers of the dataset, as DCAT records them.
+schema:datePublished	datePublished	schema:Dataset	skos:exactMatch	dcterms:issued	issued	$dataset	date	semapv:ManualMappingCuration	
+schema:dateModified	dateModified	schema:Dataset	skos:exactMatch	dcterms:modified	modified	$dataset	date	semapv:ManualMappingCuration	The 1900-01-01 sentinel CDIF converters write for an unknown date is not carried over.
+schema:dateCreated	dateCreated	schema:Dataset	skos:closeMatch	dcterms:created	created	$dataset	date	semapv:ManualMappingCuration	
+schema:inLanguage	inLanguage	schema:Dataset	skos:exactMatch	dcterms:language	language	$dataset	text	semapv:ManualMappingCuration	
+schema:version	version	schema:Dataset	skos:exactMatch	dcat:version	version	$dataset	text	semapv:ManualMappingCuration	
+schema:url	url	schema:Dataset	skos:exactMatch	dcat:landingPage	landingPage	$dataset	iri	semapv:ManualMappingCuration	
+schema:keywords	keywords	schema:Dataset	skos:exactMatch	dcat:keyword	keyword	$dataset	keyword	semapv:ManualMappingCuration	Text keywords are dcat:keyword; a DefinedTerm with an IRI is a dcat:theme skos:Concept (see the keyword shaper).
+schema:license	license	schema:Dataset	skos:exactMatch	dcterms:license	license	$dataset	license	semapv:ManualMappingCuration	
+schema:conditionsOfAccess	conditionsOfAccess	schema:Dataset	skos:closeMatch	dcterms:accessRights	accessRights	$dataset	rights	semapv:ManualMappingCuration	
+schema:creator	creator	schema:Dataset	skos:exactMatch	dcterms:creator	creator	$dataset	agent	semapv:ManualMappingCuration	An @list keeps its order.
+schema:contributor	contributor	schema:Dataset	skos:exactMatch	dcterms:contributor	contributor	$dataset	agent	semapv:ManualMappingCuration	A schema:Role becomes a prov:qualifiedAttribution with dcat:hadRole.
+schema:publisher	publisher	schema:Dataset	skos:exactMatch	dcterms:publisher	publisher	$dataset	agent	semapv:ManualMappingCuration	
+schema:provider	provider	schema:Dataset	skos:closeMatch	dcat:contactPoint	contactPoint	$dataset	contact	semapv:ManualMappingCuration	Inverse of the forward mapping dcat:contactPoint -> schema:provider: a vcard:Kind.
+schema:spatialCoverage	spatialCoverage	schema:Dataset	skos:closeMatch	dcterms:spatial	spatial	$dataset	place	semapv:ManualMappingCuration	
+schema:temporalCoverage	temporalCoverage	schema:Dataset	skos:closeMatch	dcterms:temporal	temporal	$dataset	period	semapv:ManualMappingCuration	
+schema:additionalType	additionalType	schema:Dataset	skos:closeMatch	dcterms:type	type	$dataset	type	semapv:ManualMappingCuration	IRI types only; a text type stays as schema:additionalType.
+schema:relatedLink	relatedLink	schema:Dataset	skos:closeMatch	dcat:qualifiedRelation	qualifiedRelation	$dataset	relatedlink	semapv:ManualMappingCuration	A link with a relationship is a dcat:Relationship (dcterms:relation, dcat:hadRole); without one, dcterms:relation.
+schema:citation	citation	schema:Dataset	skos:closeMatch	dcterms:bibliographicCitation	bibliographicCitation	$dataset	citation	semapv:ManualMappingCuration	Text is dcterms:bibliographicCitation; a cited work with an address is dcterms:isReferencedBy.
+schema:hasPart	hasPart	schema:Dataset	skos:closeMatch	dcterms:hasPart	hasPart	$dataset	ref	semapv:ManualMappingCuration	
+schema:isPartOf	isPartOf	schema:Dataset	skos:closeMatch	dcterms:isPartOf	isPartOf	$dataset	ref	semapv:ManualMappingCuration	
+dcterms:conformsTo	conformsTo	schema:Dataset	skos:exactMatch	dcterms:conformsTo	conformsTo	$dataset	ref	semapv:ManualMappingCuration	
+prov:wasGeneratedBy	wasGeneratedBy	schema:Dataset	skos:exactMatch	prov:wasGeneratedBy	wasGeneratedBy	$dataset	copy	semapv:ManualMappingCuration	PROV on both sides.
+prov:wasDerivedFrom	wasDerivedFrom	schema:Dataset	skos:exactMatch	prov:wasDerivedFrom	wasDerivedFrom	$dataset	copy	semapv:ManualMappingCuration	PROV on both sides.
+schema:distribution	distribution	schema:Dataset	skos:exactMatch	dcat:distribution	distribution	$dataset	distribution	semapv:ManualMappingCuration	A DataDownload is a dcat:Distribution; a WebAPI is a Distribution whose dcat:accessService is a dcat:DataService.
+schema:includedInDataCatalog	includedInDataCatalog	schema:Dataset	skos:closeMatch	dcat:dataset	dataset	$dataset	catalogmember	semapv:ManualMappingCuration	Each catalog holding the dataset is a dcat:Catalog listing it with dcat:dataset.
+schema:subjectOf	subjectOf	schema:Dataset	skos:exactMatch	foaf:primaryTopic	primaryTopic	$dataset	record	semapv:ManualMappingCuration	The CDIF catalog record is a dcat:CatalogRecord whose foaf:primaryTopic is the dataset.
+dcterms:conformsTo	conformsTo	dcat:CatalogRecord	skos:exactMatch	dcterms:conformsTo	conformsTo	$record	ref	semapv:ManualMappingCuration	The CDIF profiles the metadata conforms to.
+schema:sdDatePublished	sdDatePublished	dcat:CatalogRecord	skos:closeMatch	dcterms:modified	modified	$record	date	semapv:ManualMappingCuration	
+schema:dateModified	dateModified	dcat:CatalogRecord	skos:exactMatch	dcterms:modified	modified	$record	date	semapv:ManualMappingCuration	
+schema:datePublished	datePublished	dcat:CatalogRecord	skos:exactMatch	dcterms:issued	issued	$record	date	semapv:ManualMappingCuration	
+schema:name	name	dcat:CatalogRecord	skos:exactMatch	dcterms:title	title	$record	text	semapv:ManualMappingCuration	
+schema:description	description	dcat:CatalogRecord	skos:exactMatch	dcterms:description	description	$record	text	semapv:ManualMappingCuration	
+schema:maintainer	maintainer	dcat:CatalogRecord	skos:closeMatch	dcterms:publisher	publisher	$record	agent	semapv:ManualMappingCuration	The agent maintaining the metadata.
+schema:includedInDataCatalog	includedInDataCatalog	dcat:CatalogRecord	skos:exactMatch	dcat:record	record	$record	catalogrecord	semapv:ManualMappingCuration	The catalog the metadata came from is a dcat:Catalog with dcat:record (this record) and dcat:dataset (the dataset).
+schema:contentUrl	contentUrl	schema:DataDownload	skos:exactMatch	dcat:downloadURL	downloadURL	@	download	semapv:ManualMappingCuration	Also dcat:accessURL, which DCAT expects on every distribution. The OGC nil URL is not carried over.
+schema:url	url	schema:DataDownload	skos:closeMatch	dcat:accessURL	accessURL	@	iri	semapv:ManualMappingCuration	
+schema:name	name	schema:DataDownload	skos:exactMatch	dcterms:title	title	@	text	semapv:ManualMappingCuration	
+schema:description	description	schema:DataDownload	skos:exactMatch	dcterms:description	description	@	text	semapv:ManualMappingCuration	
+schema:encodingFormat	encodingFormat	schema:DataDownload	skos:exactMatch	dcat:mediaType	mediaType	@	mediatype	semapv:ManualMappingCuration	A MIME type is dcat:mediaType (its IANA IRI); any other format is dcterms:format.
+schema:contentSize	contentSize	schema:DataDownload	skos:exactMatch	dcat:byteSize	byteSize	@	bytes	semapv:ManualMappingCuration	Bytes only; other units stay as schema:contentSize.
+schema:license	license	schema:DataDownload	skos:closeMatch	dcterms:license	license	@	license	semapv:ManualMappingCuration	
+schema:conditionsOfAccess	conditionsOfAccess	schema:DataDownload	skos:closeMatch	dcterms:accessRights	accessRights	@	rights	semapv:ManualMappingCuration	
+dcterms:conformsTo	conformsTo	schema:DataDownload	skos:exactMatch	dcterms:conformsTo	conformsTo	@	ref	semapv:ManualMappingCuration	
+spdx:checksum	checksum	schema:DataDownload	skos:exactMatch	spdx:checksum	checksum	@	copy	semapv:ManualMappingCuration	SPDX on both sides.
+schema:dateModified	dateModified	schema:DataDownload	skos:exactMatch	dcterms:modified	modified	@	date	semapv:ManualMappingCuration	
+schema:url	url	schema:WebAPI	skos:closeMatch	dcat:endpointURL	endpointURL	@	iri	semapv:ManualMappingCuration	
+schema:name	name	schema:WebAPI	skos:exactMatch	dcterms:title	title	@	text	semapv:ManualMappingCuration	
+schema:description	description	schema:WebAPI	skos:exactMatch	dcterms:description	description	@	text	semapv:ManualMappingCuration	
+schema:documentation	documentation	schema:WebAPI	skos:closeMatch	dcat:endpointDescription	endpointDescription	@	iri	semapv:ManualMappingCuration	
+dcterms:conformsTo	conformsTo	schema:WebAPI	skos:exactMatch	dcterms:conformsTo	conformsTo	@	ref	semapv:ManualMappingCuration	
+schema:name	name	schema:Person	skos:exactMatch	foaf:name	name	@	text	semapv:ManualMappingCuration	
+schema:email	email	schema:Person	skos:closeMatch	foaf:mbox	mbox	@	mbox	semapv:ManualMappingCuration	As a mailto: IRI.
+schema:url	url	schema:Person	skos:closeMatch	foaf:homepage	homepage	@	iri	semapv:ManualMappingCuration	
+schema:affiliation	affiliation	schema:Person	skos:closeMatch	org:memberOf	memberOf	@	agent	semapv:ManualMappingCuration	
+schema:name	name	schema:Organization	skos:exactMatch	foaf:name	name	@	text	semapv:ManualMappingCuration	
+schema:alternateName	alternateName	schema:Organization	skos:closeMatch	skos:altLabel	altLabel	@	text	semapv:ManualMappingCuration	
+schema:email	email	schema:Organization	skos:closeMatch	foaf:mbox	mbox	@	mbox	semapv:ManualMappingCuration	As a mailto: IRI.
+schema:url	url	schema:Organization	skos:closeMatch	foaf:homepage	homepage	@	iri	semapv:ManualMappingCuration	
+schema:parentOrganization	parentOrganization	schema:Organization	skos:closeMatch	org:subOrganizationOf	subOrganizationOf	@	agent	semapv:ManualMappingCuration	
+schema:name	name	schema:DataCatalog	skos:exactMatch	dcterms:title	title	@	text	semapv:ManualMappingCuration	
+schema:description	description	schema:DataCatalog	skos:exactMatch	dcterms:description	description	@	text	semapv:ManualMappingCuration	
+schema:url	url	schema:DataCatalog	skos:closeMatch	foaf:homepage	homepage	@	iri	semapv:ManualMappingCuration	
+schema:publisher	publisher	schema:DataCatalog	skos:exactMatch	dcterms:publisher	publisher	@	agent	semapv:ManualMappingCuration	
