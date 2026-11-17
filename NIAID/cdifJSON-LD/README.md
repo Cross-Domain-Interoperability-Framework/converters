@@ -7,9 +7,9 @@ source file, with the same name.
 The converter writes each record's conformance claims. They sit in the catalog record's
 `dcterms:conformsTo`:
 
-- **Every record:** CDIF core (`https://w3id.org/cdif/core/1.1`) and the cdifNIAID
+- **Every record:** CDIF core (`https://w3id.org/cdif/core/2.0`) and the cdifNIAID
   profile (`https://w3id.org/cdif/niaid/1.0`).
-- **Some records:** `discovery/1.1` and `manifest/1.1`, where their content supports
+- **Some records:** `discovery/2.0` and `manifest/2.0`, where their content supports
   those profiles.
 
 [`INDEX.json`](INDEX.json) lists each record's claims and whether it validates

@@ -89,8 +89,8 @@ INTERNAL_FIELDS = {"_id", "_score", "_ignored", "_meta", "_version", "@version",
                    "ibmGraniteEmbeddingTextVersion"}
 
 TABLE = ROOT / "mappings" / "niaid-to-cdif.sssom.tsv"
-CORE_URI = "https://w3id.org/cdif/core/1.1"
-DISCOVERY_URI = "https://w3id.org/cdif/discovery/1.1"
+CORE_URI = "https://w3id.org/cdif/core/2.0"
+DISCOVERY_URI = "https://w3id.org/cdif/discovery/2.0"
 NIAID_URI = "https://w3id.org/cdif/niaid/1.0"
 EXTENSION_PREFIX = "cdifniaid"
 CDIF_CONTEXT = {

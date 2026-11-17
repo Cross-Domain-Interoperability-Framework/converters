@@ -13,7 +13,7 @@ best guess; the great majority have since been implemented (see the status
 summary below). What remains genuinely outstanding is small.
 
 CDIF profiles referenced: **Discovery** (schema.org), **DataDescription**
-(`cdi:InstanceVariable`), **DataStructure** (`data_structure/1.1` — dimensional /
+(`cdi:InstanceVariable`), **DataStructure** (`data_structure/2.0` — dimensional /
 tabular / long, DDI-CDI `*DataStructure`), **Provenance** (`cdifProv`:
 `schema:Action`+`prov:Activity`), **Codelist / ConceptScheme** (`skos`), plus
 **DQV** (`dqv:*`) and **geosparql**/`schema:GeoShape` for geometry.

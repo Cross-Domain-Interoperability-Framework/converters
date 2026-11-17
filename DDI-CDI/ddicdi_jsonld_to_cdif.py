@@ -240,9 +240,9 @@ def build_catalog_record(dataset_iri, name, source_conforms):
         "schema:about": {"@id": dataset_iri},
         "schema:description": note,
         "dcterms:conformsTo": [
-            {"@id": "https://w3id.org/cdif/core/1.1"},
-            {"@id": "https://w3id.org/cdif/discovery/1.1"},
-            {"@id": "https://w3id.org/cdif/data_description/1.1"}],
+            {"@id": "https://w3id.org/cdif/core/2.0"},
+            {"@id": "https://w3id.org/cdif/discovery/2.0"},
+            {"@id": "https://w3id.org/cdif/data_description/2.0"}],
     }
 
 

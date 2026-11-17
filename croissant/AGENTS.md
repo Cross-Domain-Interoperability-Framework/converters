@@ -86,7 +86,7 @@ leave them in the Python.
 - **conformsTo is content-derived**, not hardcoded: `detect_conformance.apply_conformance`
   sets `schema:subjectOf/dcterms:conformsTo` from what the output actually contains
   (so a variable-less dataset drops `data_description`, a Kaggle archive gains
-  `manifest/1.1`). Do **not** reintroduce a static core/discovery heuristic.
+  `manifest/2.0`). Do **not** reintroduce a static core/discovery heuristic.
 - **`schema:identifier` is required by core.** It is resolved in priority order:
   DOI (via `_convert_identifier` from `citeAs`/`url`/`@id`) → plain `identifier` /
   `https://schema.org/identifier` / `http://schema.org/identifier` value → landing-page

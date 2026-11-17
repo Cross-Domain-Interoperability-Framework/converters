@@ -123,7 +123,7 @@ encoded in the sibling **`ucmism2m`** project
 | `DataStructureComponent_isDefinedBy_RepresentedVariable` | `cdif:isDefinedBy_Variable` → `{@id}` of the variable |
 | `DataStructure_has_PrimaryKey` → `PrimaryKeyComponent` → component → variable | `cdif:has_PrimaryKey` → inline `cdif:Key` (`cdif:isComposedOf` → `cdi:ComponentPosition` with `cdi:indexes` the variable, `cdi:value` its 1-based position) |
 
-`detect_conformance` now adds **`data_structure/1.1`** to the declared profiles.
+`detect_conformance` now adds **`data_structure/2.0`** to the declared profiles.
 
 **Phase 2 (done — value domains + code lists):**
 
@@ -155,7 +155,7 @@ deferred to a later pass.
 | `ProductionEnvironment/name` | `schema:location` |
 
 Lights up `Process_Example_CDI.xml` (58 steps, 13 inputs, agent, environment) →
-`detect_conformance` adds **`provenance/1.1`**.
+`detect_conformance` adds **`provenance/2.0`**.
 
 **Phase 4 (done — physical mappings):**
 

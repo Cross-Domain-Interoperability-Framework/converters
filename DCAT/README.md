@@ -317,7 +317,7 @@ Each converted record is a CDIF-conformant JSON-LD file with:
 - unmapped DCAT properties preserved verbatim with their original prefixes
 
 The `dcterms:conformsTo` set is **derived from the record's content** by
-`detect_conformance` — e.g. `core/1.1` plus `discovery/1.1` when the record has
+`detect_conformance` — e.g. `core/2.0` plus `discovery/2.0` when the record has
 spatial/temporal coverage or other discovery-level content, and further profiles
 (`data_description`, `provenance`, …) when the content warrants. Detection finding
 nothing means the declaration is **omitted**, not defaulted (the built-in claim

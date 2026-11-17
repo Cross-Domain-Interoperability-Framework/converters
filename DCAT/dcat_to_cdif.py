@@ -1978,9 +1978,9 @@ def convert_dcat_to_cdif(ds, catalog_name="", catalog_url="", profile="core",
     # --- subjectOf ---
     # 1.1 is the current series. These are only the fallback: detect_conformance
     # overrides them below from the record's actual content.
-    conformsTo = [{"@id": "https://w3id.org/cdif/core/1.1"}]
+    conformsTo = [{"@id": "https://w3id.org/cdif/core/2.0"}]
     if actual_profile == "discovery":
-        conformsTo.append({"@id": "https://w3id.org/cdif/discovery/1.1"})
+        conformsTo.append({"@id": "https://w3id.org/cdif/discovery/2.0"})
 
     # schema:url is a URI-typed slot; an empty string (or the [] it frames to)
     # is not a valid URI. We usually do not know the source catalog's URL, so
@@ -2132,7 +2132,7 @@ def main():
         with open(outpath, "w", encoding="utf-8") as f:
             json.dump(converted, f, indent=2, ensure_ascii=False)
 
-        profile_used = "discovery" if "https://w3id.org/cdif/discovery/1.1" in str(
+        profile_used = "discovery" if "https://w3id.org/cdif/discovery/2.0" in str(
             converted.get("schema:subjectOf", {}).get("dcterms:conformsTo", [])
         ) else "core"
         print(f"  [{i}] {profile_used:9s} {filename}: {title[:50]}")

@@ -61,7 +61,7 @@ python ROCrateToCDIF.py input-rocrate.jsonld -o out.json --validate --schema pat
 
 Options:
 - `-o, --output FILE` — write CDIF output to a file (default: stdout)
-- `--profile {core,discovery,complete}` — sets the `dcterms:conformsTo` URI inside `schema:subjectOf` (default `core`). URIs: `core` → `https://w3id.org/cdif/core/1.1`; `discovery` → `https://w3id.org/cdif/discovery/1.1`; `complete` → `https://w3id.org/cdif/complete/1.1` (the composite-document profile; not yet redirected at w3id, but the URI is the canonical pattern for when it is)
+- `--profile {core,discovery,complete}` — sets the `dcterms:conformsTo` URI inside `schema:subjectOf` (default `core`). URIs: `core` → `https://w3id.org/cdif/core/2.0`; `discovery` → `https://w3id.org/cdif/discovery/2.0`; `complete` → `https://w3id.org/cdif/complete/1.1` (the composite-document profile; not yet redirected at w3id, but the URI is the canonical pattern for when it is)
 - `--validate` — validate output against the CDIF JSON Schema
 - `--schema FILE|URL` — custom schema (default: auto-select `CDIFCompleteSchema.json` / `CDIFDiscoverySchema.json` from the `validation` submodule at the repo root (`cdifCoreStructuredSchema.json` for `core`, from a `profile-core` checkout beside this repo), falling back to fetching from the `Cross-Domain-Interoperability-Framework/validation` repo on `main`)
 - `-v, --verbose` — show progress messages
