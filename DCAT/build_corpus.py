@@ -158,7 +158,7 @@ def declared(record):
 # without them declares only core and must be checked against core, not the
 # CoreDiscovery composite. A fragment declares nothing and keeps CoreDiscovery:
 # it is expected to fail either way.
-DISCOVERY = "https://w3id.org/cdif/discovery/1.1"
+DISCOVERY = "https://w3id.org/cdif/discovery/2.0"
 PROFILE_BLOCKS = {"CoreDiscovery": "profiles/cdifCompositeProfile/CoreDiscovery",
                   "cdifCore": "profiles/cdifProfile/cdifCore"}
 

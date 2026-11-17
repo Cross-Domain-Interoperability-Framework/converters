@@ -71,10 +71,10 @@ CDIF_CONTEXT = {
 # fields). A record with no variableMeasured does not conform to — and must not
 # claim — the data_description profile.
 CDIF_CORE_DISCOVERY_CONFORMS_TO = [
-    "https://w3id.org/cdif/core/1.1",
-    "https://w3id.org/cdif/discovery/1.1",
+    "https://w3id.org/cdif/core/2.0",
+    "https://w3id.org/cdif/discovery/2.0",
 ]
-CDIF_DATA_DESCRIPTION_CONFORMS_TO = "https://w3id.org/cdif/data_description/1.1"
+CDIF_DATA_DESCRIPTION_CONFORMS_TO = "https://w3id.org/cdif/data_description/2.0"
 
 # Accept either Croissant version on input; the converter is version-agnostic
 # for the lossless subset it handles.

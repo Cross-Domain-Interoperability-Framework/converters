@@ -68,8 +68,8 @@ CDIF_CONTEXT = {
 }
 
 
-CORE_URI = "https://w3id.org/cdif/core/1.1"
-DISCOVERY_URI = "https://w3id.org/cdif/discovery/1.1"
+CORE_URI = "https://w3id.org/cdif/core/2.0"
+DISCOVERY_URI = "https://w3id.org/cdif/discovery/2.0"
 
 def _extract_persons(obj):
     """Recursively pull Person/Org objects out of @list / Role wrappers."""

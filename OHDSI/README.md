@@ -46,8 +46,8 @@ vocabulary set to `https://schema.org/` (unprefixed tokens). CDIF needs explicit
   `schema:additionalType: dcat:CatalogRecord`) with `schema:about` (→ the
   dataset), a harvest/transformation **note** (`schema:description`),
   `schema:sdDatePublished`, and **`dcterms:conformsTo`** →
-  `https://w3id.org/cdif/core/1.1` + `https://w3id.org/cdif/discovery/1.1`
-  (+ `https://w3id.org/cdif/provenance/1.1` when provenance is emitted).
+  `https://w3id.org/cdif/core/2.0` + `https://w3id.org/cdif/discovery/2.0`
+  (+ `https://w3id.org/cdif/provenance/2.0` when provenance is emitted).
 - **License** — carried through; when the source states none, the OGC nil value
   `http://www.opengis.net/def/nil/OGC/0/missing` is emitted so the CDIF
   license-or-conditionsOfAccess requirement is met.

@@ -111,8 +111,8 @@ Google Dataset Search accepts either namespace.
 
 ## Scope and limitations
 
-- **Core + Discovery only.** These converters target the CDIF `core/1.1` +
-  `discovery/1.1` properties. Higher-profile content (Data Description
+- **Core + Discovery only.** These converters target the CDIF `core/2.0` +
+  `discovery/2.0` properties. Higher-profile content (Data Description
   `cdi:InstanceVariable` variables, archive manifests, rich `prov:` provenance
   activities) is passed through open-world but not specifically mapped — a
   provenance `schema:Action`'s sub-properties survive a round trip as `schema:`

@@ -817,9 +817,9 @@ def build_catalog_record(docd, dataset_id, name, id_no, coded_vars,
         "schema:about": {"@id": dataset_id},
         "schema:description": note,
         "dcterms:conformsTo": [
-            {"@id": "https://w3id.org/cdif/core/1.1"},
-            {"@id": "https://w3id.org/cdif/discovery/1.1"},
-            {"@id": "https://w3id.org/cdif/data_description/1.1"}],
+            {"@id": "https://w3id.org/cdif/core/2.0"},
+            {"@id": "https://w3id.org/cdif/discovery/2.0"},
+            {"@id": "https://w3id.org/cdif/data_description/2.0"}],
     }
     if sd_date:
         rec["schema:sdDatePublished"] = sd_date

@@ -13,14 +13,14 @@ as arrays, an explicit `schema:identifier`, and a `schema:subjectOf`
 CatalogRecord carrying `dcterms:conformsTo`. This script performs that
 transformation.
 
-Target profiles: cdifCore (https://w3id.org/cdif/core/1.1) and
-cdifDiscovery (https://w3id.org/cdif/discovery/1.1). The per-variable
+Target profiles: cdifCore (https://w3id.org/cdif/core/2.0) and
+cdifDiscovery (https://w3id.org/cdif/discovery/2.0). The per-variable
 `variableMeasured` entries are plain schema:PropertyValue (discovery level, not
 cdi:InstanceVariable), so the document is not claimed as data_description.
 
 By default the source ETL `about` action (its object/instrument/result) is also
 mapped to a cdifProv `prov:wasGeneratedBy` activity and the document additionally
-declares cdifProvenance (https://w3id.org/cdif/provenance/1.1). Disable with
+declares cdifProvenance (https://w3id.org/cdif/provenance/2.0). Disable with
 `--no-provenance`.
 
 Usage:
@@ -41,9 +41,9 @@ SCHEMA = "http://schema.org/"
 SRC_REPO = "https://github.com/OHDSI/gaiaCatalog/tree/main/datastore/data"
 SRC_RAW = "https://raw.githubusercontent.com/OHDSI/gaiaCatalog/main/datastore/data"
 
-CDIF_CORE = "https://w3id.org/cdif/core/1.1"
-CDIF_DISCOVERY = "https://w3id.org/cdif/discovery/1.1"
-CDIF_PROVENANCE = "https://w3id.org/cdif/provenance/1.1"
+CDIF_CORE = "https://w3id.org/cdif/core/2.0"
+CDIF_DISCOVERY = "https://w3id.org/cdif/discovery/2.0"
+CDIF_PROVENANCE = "https://w3id.org/cdif/provenance/2.0"
 WIKIDATA_SOFTWARE = "https://www.wikidata.org/entity/Q7397"   # kind term for schema:instrument software
 
 # CDIF-standard placeholder for "license not stated" (OGC nil value).

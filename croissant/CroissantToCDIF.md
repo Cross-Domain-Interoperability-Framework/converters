@@ -87,11 +87,11 @@ SPARQL ASK per profile, gated by that profile's content SHACL — rather than a
 hardcoded list. In practice this means:
 
 - `core` + `discovery` — any named, identified dataset (the discovery baseline).
-- `data_description/1.1` — only when the record carries `cdi:InstanceVariable`-typed
+- `data_description/2.0` — only when the record carries `cdi:InstanceVariable`-typed
   variables. A source Croissant with no fields (e.g. an OpenML record set with zero
   `field`s) produces a discovery-level record that neither inserts an empty
   `schema:variableMeasured` nor claims `data_description`.
-- `manifest/1.1` — when an archive distribution carries member files (a
+- `manifest/2.0` — when an archive distribution carries member files (a
   `schema:DataDownload` with `schema:hasPart`), as Kaggle zip datasets do. Detected
   automatically; no source-specific special-casing.
 
@@ -101,10 +101,10 @@ hardcoded list. In practice this means:
   "schema:additionalType": ["dcat:CatalogRecord"],
   "schema:about": {"@id": "<dataset @id>"},
   "dcterms:conformsTo": [
-    {"@id": "https://w3id.org/cdif/core/1.1"},
-    {"@id": "https://w3id.org/cdif/discovery/1.1"}
-    // + data_description/1.1 when InstanceVariable variables are present
-    // + manifest/1.1 when an archive distribution has hasPart member files
+    {"@id": "https://w3id.org/cdif/core/2.0"},
+    {"@id": "https://w3id.org/cdif/discovery/2.0"}
+    // + data_description/2.0 when InstanceVariable variables are present
+    // + manifest/2.0 when an archive distribution has hasPart member files
   ]
 }
 ```
