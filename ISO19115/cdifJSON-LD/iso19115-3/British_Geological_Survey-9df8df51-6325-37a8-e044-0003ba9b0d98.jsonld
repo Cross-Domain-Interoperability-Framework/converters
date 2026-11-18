@@ -1,0 +1,281 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "http://data.bgs.ac.uk/id/dataHolding/13480103",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Geomagnetic Survey Data.",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "http://data.bgs.ac.uk/id/dataHolding/13480103",
+    "schema:url": "http://data.bgs.ac.uk/id/dataHolding/13480103"
+  },
+  "schema:dateCreated": "1900",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Enquiries",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "British Geological Survey"
+        },
+        "schema:email": "enquiries@bgs.ac.uk",
+        "schema:telephone": "+44 131 667 1000"
+      }
+    ]
+  },
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Enquiries",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "British Geological Survey"
+        },
+        "schema:email": "enquiries@bgs.ac.uk",
+        "schema:telephone": "+44 131 667 1000"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "custodian",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Enquiries",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "British Geological Survey"
+        },
+        "schema:email": "enquiries@bgs.ac.uk",
+        "schema:telephone": "+44 131 667 1000"
+      }
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Enquiries",
+      "schema:affiliation": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "British Geological Survey"
+      },
+      "schema:email": "enquiries@bgs.ac.uk",
+      "schema:telephone": "+44 131 667 1000"
+    }
+  ],
+  "schema:description": "Values of the geomagnetic field vector components computed from measurements made on land, at sea and in the air since 1900 all round the world. Repeat station data (collected at one location over many years and reduced to a magnetically quiet level) are an important part of this dataset. These data are useful for charting the Earth's magnetic field on time scales of years to decades.\n\nSupplemental information: Updated as data are received. https://geomag.bgs.ac.uk/data_service/home.html",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "geographicDataset",
+      "schema:termCode": "geographicDataset",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "geoscientificInformation",
+      "schema:termCode": "geoscientificInformation",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Geology",
+      "schema:inDefinedTermSet": "GEMET - INSPIRE themes, version 1.0",
+      "schema:url": "https://inspire.ec.europa.eu/theme/ge"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Monitoring",
+      "schema:inDefinedTermSet": "BGS Thesaurus of Geosciences"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Geophysics",
+      "schema:inDefinedTermSet": "BGS Thesaurus of Geosciences"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Geomagnetism",
+      "schema:inDefinedTermSet": "BGS Thesaurus of Geosciences"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "UK Location (INSPIRE)",
+      "schema:url": "https://www.data.gov.uk",
+      "schema:description": "keyword type: dataCentre"
+    },
+    "NERC_DDC"
+  ],
+  "schema:inLanguage": "en",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-90 -180 90 180"
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "WORLD [id=100000]"
+    }
+  ],
+  "schema:temporalCoverage": [
+    "1900/.."
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:spatialRepresentationType"
+        }
+      ],
+      "schema:name": "Spatial Representation Type",
+      "schema:value": "textTable"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:spatialResolution"
+        }
+      ],
+      "schema:name": "Spatial Resolution",
+      "schema:value": "1:1000000"
+    }
+  ],
+  "schema:image": [
+    {
+      "@type": [
+        "schema:ImageObject"
+      ],
+      "schema:contentUrl": "https://resources.bgs.ac.uk/images/geonetworkThumbs/9df8df51-6325-37a8-e044-0003ba9b0d98.png"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Academic use OK, commercial users should contact data originators (currently listed at http://www.geomag.bgs.ac.uk/gifs/datasuppliers.html)",
+    "The copyright of materials derived from the British Geological Survey's work is vested in the Natural Environment Research Council [NERC]. No part of this work may be reproduced or transmitted in any form or by any means, or stored in a retrieval system of any nature, without the prior permission of the copyright holder, via the BGS Intellectual Property Rights Manager. Use by customers of information provided by the BGS, is at the customer's own risk. In view of the disparate sources of information at BGS's disposal, including such material donated to BGS, that BGS accepts in good faith as being accurate, the Natural Environment Research Council (NERC) gives no warranty, expressed or implied, as to the quality or accuracy of the information supplied, or to the information's suitability for any use. NERC/BGS accepts no liability whatever in respect of loss, damage, injury or other occurence however caused.",
+    "Either: (i) the dataset is made freely available, e.g. via the Internet, for a restricted category of use (e.g. educational use only); or (ii) the dataset has not been formally approved by BGS for access and use by external clients under licence, but its use may be permitted under alternative formal arrangements; or (iii) the dataset contains 3rd party data or information obtained by BGS under terms and conditions that must be consulted in order to determine the permitted usage of the dataset. Refer to the BGS staff member responsible for the creation of the dataset if further advice is required. He / she should be familiar with the composition of the dataset, particularly with regard to 3rd party IPR contained in it, and any resultant use restrictions. This staff member should revert to the IPR Section (ipr@bgs.ac.uk) for advice, should the position not be clear."
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://geomag.bgs.ac.uk/data_service/data/surveydata.shtml",
+      "schema:name": "Magnetic Survey Data Form",
+      "schema:description": "request form for retrieving magnetic survey data",
+      "schema:encodingFormat": [
+        "Delimited ASCII"
+      ]
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "Lineage",
+      "schema:actionProcess": "Originally version of files obtained from U.S. Coast and Geodetic Survey. Updated directly from ASCII files supplied by originators or by keypunching from published or unpublished documents."
+    }
+  ],
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "http://data.bgs.ac.uk/id/dataHolding/13480103",
+  "schema:subjectOf": {
+    "@id": "http://data.bgs.ac.uk/id/dataHolding/13480103#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: Geomagnetic Survey Data.",
+    "schema:about": {
+      "@id": "http://data.bgs.ac.uk/id/dataHolding/13480103"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19115-3 to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "9df8df51-6325-37a8-e044-0003ba9b0d98",
+    "schema:inLanguage": "en",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "British Geological Survey",
+      "schema:email": "enquiries@bgs.ac.uk",
+      "schema:telephone": "+44 131 667 1000"
+    }
+  }
+}

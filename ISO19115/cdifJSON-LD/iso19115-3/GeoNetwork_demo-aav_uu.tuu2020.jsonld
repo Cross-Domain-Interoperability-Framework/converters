@@ -1,0 +1,270 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "urn:iso19115:aav_uu.tuu2020",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Tranches d'unité urbaine 2020",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "aav_uu.tuu2020"
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Insee"
+      }
+    ]
+  },
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "custodian",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Observatoire des territoires - ANCT ()"
+      }
+    }
+  ],
+  "schema:description": "Découpage : Commune (2025), Unité urbaine (2020)",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "geographicDataset",
+      "schema:termCode": "geographicDataset",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "society",
+      "schema:termCode": "society",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    "données ouvertes"
+  ],
+  "schema:inLanguage": "fr",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:description": "France, Guadeloupe, Guyane, Martinique, Mayotte, La Réunion",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "41.366 -5.1407 51.0892 9.5595"
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:description": "France, Guadeloupe, Guyane, Martinique, Mayotte, La Réunion",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "15.832 -61.8098 16.5145 -61.002"
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:description": "France, Guadeloupe, Guyane, Martinique, Mayotte, La Réunion",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "2.1113 -54.6016 5.7487 -51.6191"
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:description": "France, Guadeloupe, Guyane, Martinique, Mayotte, La Réunion",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "14.3947 -61.229 14.8787 -60.8105"
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:description": "France, Guadeloupe, Guyane, Martinique, Mayotte, La Réunion",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-13.0054 45.0183 -12.6366 45.3"
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:description": "France, Guadeloupe, Guyane, Martinique, Mayotte, La Réunion",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-21.3896 55.2165 -20.8718 55.8367"
+      }
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:spatialRepresentationType"
+        }
+      ],
+      "schema:name": "Spatial Representation Type",
+      "schema:value": "textTable"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:spatialResolution"
+        }
+      ],
+      "schema:name": "Spatial Resolution",
+      "schema:value": "1:5000"
+    }
+  ],
+  "schema:image": [
+    {
+      "@type": [
+        "schema:ImageObject"
+      ],
+      "schema:contentUrl": "https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/GC_make_map.php?width=800&lang=fr&indics=aav_uu.tuu2020&format=png&",
+      "schema:caption": "Aperçu",
+      "schema:encodingFormat": "png"
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/api/v1/functions/GC_API_download.php?lang=fr&type=stat&dataset=aav_uu&indic=tuu2020&nivgeo=com2025&format=xlsx",
+      "schema:name": "Télécharger les données au format XLSX",
+      "schema:description": "Obtenez un classeur excel contenant les dernières données \"Commune (2025)\"",
+      "schema:encodingFormat": [
+        "SVG",
+        "XLSX",
+        "CSV"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/api/v1/functions/GC_API_download.php?lang=fr&type=stat&dataset=aav_uu&indic=tuu2020&nivgeo=com2025&format=csv",
+      "schema:name": "Télécharger les données au format CSV",
+      "schema:description": "Obtenez un fichier csv contenant les dernières données \"Commune (2025)\"",
+      "schema:encodingFormat": [
+        "SVG",
+        "XLSX",
+        "CSV"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/GC_make_map.php?width=800&format=svg&lang=fr&indics=aav_uu.tuu2020&print=1&cosmetics=1",
+      "schema:name": "Téléchargement de la carte (SVG)",
+      "schema:description": "Impression de la carte vectorielle (SVG)",
+      "schema:encodingFormat": [
+        "SVG",
+        "XLSX",
+        "CSV"
+      ]
+    }
+  ],
+  "schema:url": "https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/index.php#c=indicator&i=aav_uu.tuu2020",
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "Lineage",
+      "schema:actionProcess": "Précisions : La notion d’unité urbaine repose sur la continuité du bâti et le nombre d’habitants. Les unités urbaines sont construites en France métropolitaine et dans les DOM d’après la définition suivante : une commune ou un ensemble de communes présentant une zone de bâti continu (pas de coupure de plus de 200 mètres entre deux constructions) qui compte au moins 2 000 habitants. Source : Insee Liens vers la documentation : En savoir plus sur les unités urbaines : https://www.insee.fr/fr/information/4802589"
+    }
+  ],
+  "schema:dateModified": "1900-01-01",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "urn:iso19115:aav_uu.tuu2020#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: Tranches d'unité urbaine 2020",
+    "schema:about": {
+      "@id": "urn:iso19115:aav_uu.tuu2020"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19115-3 to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "aav_uu.tuu2020",
+    "schema:inLanguage": "fr",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Observatoire des territoires - ANCT ()"
+    }
+  }
+}

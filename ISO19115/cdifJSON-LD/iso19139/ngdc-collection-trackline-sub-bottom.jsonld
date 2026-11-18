@@ -1,0 +1,494 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "https://doi.org/10.7289/V5CZ35DR",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:name": "Marine Trackline Geophysical Database for Sub-Bottom Seismic Data",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "doi:10.7289/V5CZ35DR",
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:url": "https://doi.org/10.7289/V5CZ35DR"
+  },
+  "schema:sameAs": [
+    "NCEI Metadata ID: gov.noaa.ncei:trackline-sub-bottom"
+  ],
+  "schema:datePublished": "2023-09-15",
+  "schema:dateCreated": "1979",
+  "schema:dateModified": "2023-09-15",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NOAA National Geophysical Data Center"
+      },
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "U.S. and Foreign Academic Institutions"
+      },
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "U.S. and Foreign Government Agencies"
+      },
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Private Companies"
+      }
+    ]
+  },
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "NOAA National Centers for Environmental Information"
+  },
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NOAA National Centers for Environmental Information",
+        "schema:email": "ncei.info@noaa.gov",
+        "schema:url": "https://www.ncei.noaa.gov/contact"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NOAA National Centers for Environmental Information",
+        "schema:email": "trackline.info@noaa.gov"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "NCEI GIS Team",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "NOAA National Centers for Environmental Information"
+        },
+        "schema:email": "ncei.gis@noaa.gov"
+      }
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "NOAA National Centers for Environmental Information",
+      "schema:email": "ncei.info@noaa.gov",
+      "schema:url": "https://www.ncei.noaa.gov/contact"
+    }
+  ],
+  "schema:description": "Marine Trackline Geophysical data represented by sub-bottom seismic data, which we sometimes also call chirp (based on its operating mode), uses a 3.5 kHz operating frequency. Research vessels use this technology to produce cross sections or vertical slices of the upper tens to hundreds of meters of the sediments below the seafloor.\n\nPurpose: Marine Research and Commercial Exploration",
+  "schema:creativeWorkStatus": "completed",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "geographicDataset",
+      "schema:termCode": "geographicDataset",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "oceans",
+      "schema:termCode": "oceans",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Bathymetry/Seafloor Topography > Water Depth",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Solid Earth > Seismology > Seismic Profile",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Bathymetry/Seafloor Topography > Bathymetry",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Bathymetry/Seafloor Topography > Seafloor Topography",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "INFOTERRA > Energy > Energy processes > Natural gas exploration",
+      "schema:inDefinedTermSet": "INFOTERRA Keyword Thesaurus",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "INFOTERRA > Energy > Energy processes > Oil exploration",
+      "schema:inDefinedTermSet": "INFOTERRA Keyword Thesaurus",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "INFOTERRA > Subject disciplines > Geophysics > Geophysics",
+      "schema:inDefinedTermSet": "INFOTERRA Keyword Thesaurus",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "NGDA",
+      "schema:inDefinedTermSet": "NGDA Portfolio Themes",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "National Geospatial Data Asset",
+      "schema:inDefinedTermSet": "NGDA Portfolio Themes",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Elevation Theme",
+      "schema:inDefinedTermSet": "NGDA Portfolio Themes",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "ICSU-WDS > International Council for Science - World Data System",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Project Keywords",
+      "schema:description": "keyword type: project"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Geographic Region > Global Ocean",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Vertical Location > Sea Floor",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Ocean > Arctic Ocean",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Ocean > Atlantic Ocean",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Ocean > Indian Ocean",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Ocean > Pacific Ocean",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Ocean > Southern Ocean",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Data Center Keywords",
+      "schema:description": "keyword type: dataCentre"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DATA ANALYSIS AND VISUALIZATION > GEOGRAPHIC INFORMATION SYSTEMS > WEB-BASED GEOGRAPHIC INFORMATION SYSTEMS",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Service Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DATA MANAGEMENT/DATA HANDLING > DATA SEARCH AND RETRIEVAL",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Service Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DATA ANALYSIS AND VISUALIZATION > VISUALIZATION/IMAGE PROCESSING",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Service Keywords",
+      "schema:description": "keyword type: theme"
+    }
+  ],
+  "schema:inLanguage": "en",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-90 -180 90 180"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "1967-01-01/.."
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:referenceSystemIdentifier"
+        }
+      ],
+      "schema:name": "Coordinate Reference System",
+      "schema:value": "Through the collection reference systems have vaired with time and location. Please see survey level metadata for detailed information."
+    }
+  ],
+  "schema:image": [
+    {
+      "@type": [
+        "schema:ImageObject"
+      ],
+      "schema:contentUrl": "https://ngdc.noaa.gov/mgg/image/trkmap256x235.gif",
+      "schema:caption": "Map showing a web mercator projection of the trackline web map data discovery portal.",
+      "schema:encodingFormat": "gif"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Distribution liability: NOAA and NCEI make no warranty, expressed or implied, regarding these data, nor does the fact of distribution constitute such a warranty. NOAA and NCEI cannot assume liability for any damages caused by any errors or omissions in these data. If appropriate, NCEI can only certify that the data it distributes are an authentic copy of the records that were accepted for inclusion in the NCEI archives.",
+    "Use liability: NOAA and NCEI cannot provide any warranty as to the accuracy, reliability, or completeness of furnished data. Users assume responsibility to determine the usability of these data. The user is responsible for the results of any application of this data for other than its intended purpose.",
+    "Not to be used for navigation. Although these data are of high quality and useful for planning and modeling purposes, they are not suitable for navigation. For navigation, please refer to the NOS nautical chart series.",
+    "Cite as: NOAA National Centers for Environmental Information. 1979: Marine Trackline Geophysical Database for Sub-Bottom Seismic Data. NOAA National Centers for Environmental Information. https://doi.org/doi:10.7289/V5CZ35DR. Accessed [date].",
+    "These data not to be used for navigation. Although these data are of high quality and useful for planning and modeling purposes, they are not suitable for navigation. For official navigation products, please refer to the U.S. nautical charts available from the NOAA Office of Coast Survey: http://www.nauticalcharts.noaa.gov."
+  ],
+  "schema:url": "https://www.ncei.noaa.gov/maps/trackline-geophysics/",
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "information",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.ncei.noaa.gov/products/marine-trackline-geophysical-data",
+        "schema:name": "Marine Geophysical Trackline Data Homepage",
+        "schema:description": "NCEI's Marine Trackline Geophysical database provides access to bathymetry, magnetics, gravity and seismic reflection data collected during marine cruises from 1939 to the present. Coverage is worldwide. Data sources include both US and non-US oceanographic institutions, universities, and government agencies."
+      }
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "NOAA created the National Centers for Environmental Information (NCEI) by merging NOAA's National Climatic Data Cente...",
+      "schema:actionProcess": "NOAA created the National Centers for Environmental Information (NCEI) by merging NOAA's National Climatic Data Center (NCDC), National Geophysical Data Center (NGDC), and National Oceanographic Data Center (NODC), including the National Coastal Data Development Center (NCDDC), per the Consolidated and Further Continuing Appropriations Act, 2015, Public Law 113-235. NCEI launched publicly on April 22, 2015.",
+      "schema:endTime": "2015-04-22T00:00:00"
+    },
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "Data acquisition",
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "SEISMIC REFLECTION PROFILERS",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "prov:wasDerivedFrom": [
+    "Data in this database is provided by the following institutions: Scripps Institution of Oceanography, Lamont-Doherty Geological Observatory, Geological Survey of Japan, Hydrographic Department of Japan, University of Hawaii, IFREMER, US National Oceanic and Atmospheric Administration, United States Geologic Survey, Woods Hole Oceanographic Institution, US Navy Naval Oceanographic Office, Ocean Drilling Program at Texas A and M, Bundesanstalt für Geowissenschaften und Rohstoffe, Bedford Institute of Oceanography, University of Texas Institute for Geophysics, Institute of Oceanographic Sciences UK, CNEXO, Oregon State University, Bureau of Mineral Resources Australia, Geophysics Division DSIR New Zealand, US Navy NORDA, Texas A and M University, Natural Environment Research Council UK, BNDO, GNS Science New Zealand, University of Tokyo, Geological Survey of Canada, Australian Geological Survey Organisation, GEOMER Data Bank ORSTOM Noumea, Kobe University, Canadian Hydrographic Service, Mobil, Hydrographic Department MSA, Institute of Marine Geology/Geophysics USSR, Oregon State University, United Kingdom Hydrographic Office, University of Rhode Island, Geological Survey of Ireland, GEOMAR Germany, NIWA New Zealand, Russian Academy of Science, South African Data Centre for Oceanography, University of Witwatersrand, Royal Netherlands Navy Hydrographic Service, Chiba University, Land Information New Zealand, Southampton Oceanography Centre, University of Cape Town, University of the Ryukyus, Bundesamt Seeschiffahrt Hydrographie, GuangZhou Marine Geological Survey MGMR, National Institute of Polar Research Japan, National Science Foundation, ORSTOM, Rice University, South African Geological Survey, University of Alabama, University of Cape Town, University of Texas at Austin, University of Rhode Island, BP Shell Todd, British Antarctic Survey, British Oceanographic Data Centre, Diamond Shamrock Petroleum, Far East Scientific Center, First Institute of Oceanography, SOA, Hamilton College, Institut de Physique du Globe de Paris, Jet Propulsion Laboratory, National Research Institute Oceanology South Africa, Petrocorp, Stewart Petroleum, Universite Francaise Pacifique Tahiti, University of California at San Diego"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "ArcGIS Map Service",
+    "schema:termCode": "ArcGIS Map Service"
+  },
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ArcGIS Server REST endpoint for dynamic map service",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://gis.ngdc.noaa.gov/arcgis/rest/services/web_mercator/trackline_combined_dynamic/MapServer"
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "WMS Get Capabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/trackline_combined_dynamic/MapServer/WMSServer?request=GetCapabilities&service=WMS"
+      }
+    }
+  ],
+  "schema:termsOfService": "not specified",
+  "schema:subjectOf": {
+    "@id": "https://doi.org/10.7289/V5CZ35DR#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: Marine Trackline Geophysical Database for Sub-Bottom Seismic Data",
+    "schema:about": {
+      "@id": "https://doi.org/10.7289/V5CZ35DR"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19115-2 (19139 encoding) to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "gov.noaa.ncei:trackline-sub-bottom",
+    "schema:dateModified": "2024-07-26",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "NOAA National Centers for Environmental Information",
+      "schema:email": "ncei.info@noaa.gov",
+      "schema:url": "https://www.ncei.noaa.gov/contact"
+    }
+  }
+}

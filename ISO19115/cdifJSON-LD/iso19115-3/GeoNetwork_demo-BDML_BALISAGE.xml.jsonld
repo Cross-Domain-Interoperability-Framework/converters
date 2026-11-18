@@ -1,0 +1,282 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "http://www.shom.fr/BDML/BALISAGE",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Balisage maritime (aides à la navigation)",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "http://www.shom.fr/BDML/BALISAGE",
+    "schema:url": "http://www.shom.fr/BDML/BALISAGE"
+  },
+  "schema:dateCreated": "2018-10-01",
+  "schema:dateModified": "2025-06-04",
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Shom",
+        "schema:email": "bps@shom.fr"
+      }
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Shom",
+      "schema:email": "data-support@shom.fr"
+    }
+  ],
+  "schema:description": "Le produit « Balisage maritime » contient une description des amers et des balises, fixes ou flottants, recensés dans la zone économique exclusive française. <br /> Version du 04 Juin 2025",
+  "schema:creditText": "©Shom",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "collection",
+      "schema:termCode": "collection",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Transportation",
+      "schema:termCode": "Transportation",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    "balisage",
+    "bouée",
+    "balise",
+    "amer",
+    "feu",
+    "phare",
+    "données ouvertes",
+    "Produit",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Réseaux de transport",
+      "schema:inDefinedTermSet": "https://www.eionet.europa.eu/gemet/en/inspire-themes/",
+      "schema:url": "http://inspire.ec.europa.eu/theme/tn",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Nationales",
+      "schema:inDefinedTermSet": "http://inspire.ec.europa.eu/metadata-codelist/SpatialScope",
+      "schema:url": "http://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Mobilité",
+      "schema:inDefinedTermSet": "http://publications.europa.eu/resource/dataset/high-value-dataset-category",
+      "schema:url": "http://data.europa.eu/bna/c_b79e35eb"
+    }
+  ],
+  "schema:inLanguage": "fr",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-90 -180 90 180"
+      }
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:spatialRepresentationType"
+        }
+      ],
+      "schema:name": "Spatial Representation Type",
+      "schema:value": "vector"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:referenceSystemIdentifier"
+        }
+      ],
+      "schema:name": "Coordinate Reference System",
+      "schema:value": "WGS 84 (EPSG:4326)",
+      "schema:url": "http://www.opengis.net/def/crs/EPSG/0/4326"
+    }
+  ],
+  "schema:image": [
+    {
+      "@type": [
+        "schema:ImageObject"
+      ],
+      "schema:contentUrl": "https://services.data.shom.fr/static/imagettes/MD/balisage.png",
+      "schema:caption": "thumbnail",
+      "schema:encodingFormat": "png"
+    },
+    {
+      "@type": [
+        "schema:ImageObject"
+      ],
+      "schema:contentUrl": "https://services.data.shom.fr/static/imagettes/MD/balisage.png",
+      "schema:caption": "large_thumbnail",
+      "schema:encodingFormat": "png"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Utilisation libre sous réserve de citer les sources de la manière suivante : \"Shom, 2025. https://dx.doi.org/10.17183/DOI_BALISAGE_MARITIME\"",
+    "Ne pas utiliser pour la navigation.",
+    "Licence Ouverte (version 2.0 d'avril 2017), définie par la mission Etalab.",
+    "access: license",
+    "Pas de restriction d'accès public.",
+    "security classification: unclassified"
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.shom.fr",
+      "schema:name": "Portail d'information géographique du Shom",
+      "schema:description": "Portail d'information géographique du Shom",
+      "schema:encodingFormat": [
+        "SHP",
+        "GeoPackage",
+        "GML"
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "BALISAGE_BDD_WMSV",
+      "schema:serviceType": "OGC Web Map Service",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "BALISAGE_BDD_WMSV",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "https://services.data.shom.fr/INSPIRE/wms/v?service=WMS&request=GetCapabilities&version=1.3.0",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "schema:description": "Access point / WMS Balisage maritime (aides à la navigation)"
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://services.data.shom.fr/INSPIRE/telechargement/prepackageGroup/BALISAGE_PACK_DL/prepackage/BALISAGE/file/BALISAGE.7z",
+      "schema:name": "Service de téléchargement Balisage maritime (aides à la navigation)",
+      "schema:encodingFormat": [
+        "SHP",
+        "GeoPackage",
+        "GML"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://diffusion.shom.fr",
+      "schema:name": "Espace de diffusion du Shom",
+      "schema:description": "Espace de diffusion du Shom",
+      "schema:encodingFormat": [
+        "SHP",
+        "GeoPackage",
+        "GML"
+      ]
+    }
+  ],
+  "schema:url": "https://data.shom.fr",
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "Lineage",
+      "schema:actionProcess": "Les informations concernant le balisage sont recueillies par le Shom et entretenues dans ses bases de données. Ces informations sont fournies par le bureau des Phares et balises de la Direction générale des affaires maritimes, de la pêche et de l'aquaculture (DGAMPA), mais également d’autres organismes comme les ports autonomes, les gestionnaires des ports, les collectivités locales, la Marine Nationale ou encore acquises directement en mer par les Groupes Hydro-Océanographiques du Shom."
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "http://www.shom.fr/BDML/BALISAGE#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: Balisage maritime (aides à la navigation)",
+    "schema:about": {
+      "@id": "http://www.shom.fr/BDML/BALISAGE"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19115-3 to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "BDML_BALISAGE.xml",
+    "schema:inLanguage": "fr",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Shom",
+      "schema:email": "data-support@shom.fr"
+    }
+  }
+}
