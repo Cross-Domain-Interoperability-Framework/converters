@@ -36,6 +36,7 @@ produce. For converting a SOSO file or URL you already have, use `soso2cdif.py`.
 | Path | Source | Notes |
 |------|--------|-------|
 | [`harvesters/geocodes_harvester.py`](harvesters/geocodes_harvester.py) | EarthCube GeoCodes SPARQL catalog → source landing-page JSON-LD → CDIF core/discovery | Moved from the `validation` repo |
+| [`harvesters/harvest_format_examples.py`](harvesters/harvest_format_examples.py) | re3data-sampled OAI-PMH / CSW endpoints, DataCite, DataONE, GBIF, EDI, WAFs → example records in each source format (ISO 19115-3, ISO 19139, DataCite, EML, FGDC, Dublin Core, WMS/WFS) | Writes each converter's `examples/` and an `INDEX.json` of sources; the endpoint inventory is in `harvesters/endpoints/` |
 
 `geocodes_harvester.py` and `soso/ConvertFromSOSO.py` share one schema.org
 naming step, [`schemaorg_names.py`](schemaorg_names.py): an unprefixed name
