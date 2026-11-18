@@ -1129,7 +1129,9 @@ def tf_lineage(values, ctx):
                 d = txt(kid(s, "description")) if s is not None else None
                 t = txt(kid(s, "sourceCitation", "CI_Citation", "title")) if s is not None else None
                 if d or t:
-                    objs.append({"@type": ["schema:CreativeWork"], "schema:name": t or d,
+                    # schema:Thing, not CreativeWork: CDIF's CreativeWork source
+                    # rule requires a url, which a lineage source rarely has
+                    objs.append({"@type": ["schema:Thing"], "schema:name": t or d,
                                  **({"schema:description": d} if d and t else {})})
             if objs:
                 act["schema:object"] = objs
@@ -1404,6 +1406,15 @@ def convert_iso_to_cdif(xml, rows=None, detect=True, catalog=None):
             record.get("schema:dateModified")
         doc["schema:dateModified"] = d or "1900-01-01"
         changes.append("schema:dateModified from %s" % ("another date" if d else "the sentinel"))
+    if re.match(r"^\d{4}$", doc["schema:dateModified"]):
+        # CDIF needs at least year and month: a fuller date if there is one,
+        # else the year padded to its first day
+        fuller = next((v for v in (doc.get("schema:datePublished"), doc.get("schema:dateCreated"),
+                                   record.get("schema:dateModified"))
+                       if isinstance(v, str) and len(v) >= 7), None)
+        doc["schema:dateModified"] = fuller or doc["schema:dateModified"] + "-01-01"
+        changes.append("schema:dateModified: year only, %s" % ("a fuller date used" if fuller
+                                                               else "padded to YYYY-01-01"))
     if not doc.get("schema:url"):
         rid = doc["@id"]
         doc["schema:url"] = rid if rid.startswith("http") else \

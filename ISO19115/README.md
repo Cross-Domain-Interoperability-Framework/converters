@@ -57,6 +57,7 @@ Where the source lacks something CDIF requires, the converter writes a sentinel:
 | Missing | Written |
 |---|---|
 | A revision date | The publication date, else the creation date, else the metadata date, else `1900-01-01` |
+| A year-only `dateModified` (`1886`) | A fuller date from the record if there is one, else the year padded to `YYYY-01-01`. CDIF needs at least a year and month. |
 | A licence and any access constraint | `schema:license` is the OGC nil URI `http://www.opengis.net/def/nil/OGC/0/missing` |
 | A service's operations | One `schema:Action` named `missing`, whose `urlTemplate` is the OGC nil URL |
 | An operation's connect point, or its name | The OGC nil URL, or `missing` |
@@ -67,6 +68,7 @@ Four fixes keep values valid:
 - A keyword code shorter than three characters (SeaDataNet's `13`) is also the term's `termCode`.
 - A codelist element's text (an EDMO code's organisation name) is preferred to its `codeListValue`.
 - A polygon's bounding box goes in `schema:geo`, with the polygon itself kept as geosparql WKT.
+- A process step's sources are `schema:Thing`s, not CreativeWorks. CDIF's rule for a CreativeWork source requires a url, which lineage sources rarely have.
 
 ## Examples and the build
 
