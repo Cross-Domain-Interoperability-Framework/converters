@@ -1,0 +1,858 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:esri_wms="http://www.esri.com/wms" xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" version="1.3.0">
+	<Service>
+		<Name>WMS</Name>
+		<Title>High Resolution, Airborne Magnetic, Radiometric, VLF Survey over north Midlands of GB</Title>
+		<Abstract>High Resolution, Airborne Magnetic, Radiometric, VLF Survey over north Midlands of GB. Your use of any information provided by the BGS is at your own risk. BGS gives no warranty, condition or representation as to the quality, accuracy or completeness of the information or its suitability for any use or purpose. All implied conditions relating to the quality or suitability of the information, and all liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.</Abstract>
+		<KeywordList>
+			<Keyword>Maps</Keyword>
+			<Keyword>Geology</Keyword>
+			<Keyword>United Kingdom</Keyword>
+			<Keyword>Geophysics</Keyword>
+			<Keyword>Magnetic</Keyword>
+			<Keyword>Radiometric</Keyword>
+			<Keyword>VLF Survey</Keyword>
+			<Keyword>OneGeology</Keyword>
+			<Keyword>MD_DATE@2022</Keyword>
+			<Keyword>MD_LANG@ENG</Keyword>
+		</KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson>Garry Baker</ContactPerson>
+				<ContactOrganization>British Geological Survey
+</ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactPosition>Head of BGS Data Centre
+</ContactPosition>
+			<ContactAddress>
+				<AddressType>postal
+</AddressType>
+				<Address>British Geological Survey Environmental Science Centre
+</Address>
+				<City>Keyworth
+</City>
+				<StateOrProvince>Nottingham
+</StateOrProvince>
+				<PostCode>NG12 5GG
+</PostCode>
+				<Country>UK</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone>+44 (0)115 936 3100
+</ContactVoiceTelephone>
+			<ContactFacsimileTelephone>+44 (0)115 936 3200
+</ContactFacsimileTelephone>
+			<ContactElectronicMailAddress>enquiries@bgs.ac.uk
+</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees>none</Fees>
+		<AccessConstraints>These data are delivered under the terms of the Open Government Licence (http://www.nationalarchives.gov.uk/doc/open-government-licence/), subject to the following acknowledgement accompanying the reproduced BGS materials: Contains British Geological Survey materials copyright NERC [year]. Contact us if you create something new and innovative that could benefit others usingbgsdata@bgs.ac.uk.
+</AccessConstraints>
+		<MaxWidth>4096</MaxWidth>
+		<MaxHeight>4096</MaxHeight>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/bmp</Format>
+				<Format>image/jpeg</Format>
+				<Format>image/tiff</Format>
+				<Format>image/png</Format>
+				<Format>image/png8</Format>
+				<Format>image/png24</Format>
+				<Format>image/png32</Format>
+				<Format>image/gif</Format>
+				<Format>image/svg+xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>application/vnd.esri.wms_raw_xml</Format>
+				<Format>application/vnd.esri.wms_featureinfo_xml</Format>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>application/geo+json</Format>
+				<Format>text/xml</Format>
+				<Format>text/html</Format>
+				<Format>text/plain</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+		</Request>
+		<Exception>
+			<Format>application/vnd.ogc.se_xml</Format>
+			<Format>application/vnd.ogc.se_inimage</Format>
+			<Format>application/vnd.ogc.se_blank</Format>
+			<Format>text/xml</Format>
+			<Format>XML</Format>
+		</Exception>
+		<inspire_vs:ExtendedCapabilities>
+			<inspire_common:MetadataUrl xsi:type="inspire_common:resourceLocatorType">
+				<inspire_common:URL>https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=266035a6-5cf1-64df-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;</inspire_common:URL>
+				<inspire_common:MediaType>application/xml</inspire_common:MediaType>
+			</inspire_common:MetadataUrl>
+			<inspire_common:SupportedLanguages>
+				<inspire_common:DefaultLanguage>
+					<inspire_common:Language>eng</inspire_common:Language>
+				</inspire_common:DefaultLanguage>
+			</inspire_common:SupportedLanguages>
+			<inspire_common:ResponseLanguage>
+				<inspire_common:Language>eng</inspire_common:Language>
+			</inspire_common:ResponseLanguage>
+		</inspire_vs:ExtendedCapabilities>
+		<Layer>
+			<Name>Midlands.HiRes1.Airborne.Magnetic.Radiometric.VLF.Survey.North.Midlands.GB</Name>
+			<Title>High Resolution, Airborne Magnetic, Radiometric, VLF Survey over north Midlands GB</Title>
+			<Abstract>The HiRES-1 project acquired airborne geophysical data during 1998. Coverage included the Central Midlands of England and into the associated Welsh Borderland. Survey flying for the collaborative BGS and World Geoscience Corporation Ltd (WGC) high resolution geophysical and environmental survey was completed in early September 1998. The data comprise multi-channel gamma ray spectrometer, magnetometer and dual frequency VLF-EM. Flight line spacing was 400 m with tie lines at 1200 m and the total area surveyed is some 14 000 km2. Flight-line orientations are W–E over the western survey area, SW–NE over the eastern area. Ground clearance was maintained at 90 m in rural areas, increasing to about 240 m in built-up zones. The project and data descriptions are provided in an internal BGS report: R J Peart, R J Cuss, D Beamish and D G Jones, 2003. The High Resolution Airborne Resource and Environmental Survey- Phase 1 (HiRES-1): background, data processing and dissemination and future prospects. British Geological Survey Internal Report, IR/03/112. 28pp.</Abstract>
+			<KeywordList>
+				<Keyword>Maps</Keyword>
+				<Keyword>Geology</Keyword>
+				<Keyword>United Kingdom</Keyword>
+				<Keyword>Geophysics</Keyword>
+				<Keyword>Magnetic</Keyword>
+				<Keyword>Radiometric</Keyword>
+				<Keyword>VLF Survey</Keyword>
+				<Keyword>OneGeology</Keyword>
+				<Keyword>continent@Europe</Keyword>
+				<Keyword>subcontinent@Northern Europe</Keyword>
+				<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+				<Keyword>subarea@GB-ENG</Keyword>
+				<Keyword>dataprovider@British Geological Survey</Keyword>
+				<Keyword>serviceprovider@British Geological Survey</Keyword>
+				<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+				<Keyword>DS_DATE@2022</Keyword>
+				<Keyword>thematic@Geophysics</Keyword>
+				<Keyword>thematic@Radiometry</Keyword>
+			</KeywordList>
+			<CRS>CRS:84</CRS>
+			<CRS>EPSG:4326</CRS>
+			<CRS>EPSG:4258</CRS>
+			<CRS>EPSG:27700</CRS>
+			<CRS>EPSG:3857</CRS>
+			<EX_GeographicBoundingBox>
+				<westBoundLongitude>-3.364403</westBoundLongitude>
+				<eastBoundLongitude>-0.309824</eastBoundLongitude>
+				<southBoundLatitude>52.699041</southBoundLatitude>
+				<northBoundLatitude>53.382349</northBoundLatitude>
+			</EX_GeographicBoundingBox>
+			<BoundingBox CRS="CRS:84" minx="-3.364403" miny="52.699041" maxx="-0.309824" maxy="53.382349"/>
+			<BoundingBox CRS="EPSG:4326" minx="52.699041" miny="-3.364403" maxx="53.382349" maxy="-0.309824"/>
+			<BoundingBox CRS="EPSG:4258" minx="52.699041" miny="-3.364403" maxx="53.382349" maxy="-0.309824"/>
+			<BoundingBox CRS="EPSG:27700" minx="309240.000000" miny="312600.000000" maxx="512439.730939" maxy="387307.208133"/>
+			<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Radiometric.URA</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Radiometric URA</Title>
+				<Abstract>Midlands HiRes1 Airborne Radiometric URA</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Radiometric</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>URA</Keyword>
+					<Keyword>Uranium</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Radiometry</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.364399</westBoundLongitude>
+					<eastBoundLongitude>-0.312405</eastBoundLongitude>
+					<southBoundLatitude>52.699077</southBoundLatitude>
+					<northBoundLatitude>53.382221</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.364399" miny="52.699077" maxx="-0.312405" maxy="53.382221"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699077" miny="-3.364399" maxx="53.382221" maxy="-0.312405"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699077" miny="-3.364399" maxx="53.382221" maxy="-0.312405"/>
+				<BoundingBox CRS="EPSG:27700" minx="309240.000000" miny="312600.000000" maxx="512268.329867" maxy="387292.888178"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Radiometric.URA</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Radiometric.URA" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Radiometric.TOT</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Radiometric TOT</Title>
+				<Abstract>Midlands HiRes1 Airborne Radiometric TOT</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Radiometric</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>TOT</Keyword>
+					<Keyword>Total count</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Radiometry</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.363789</westBoundLongitude>
+					<eastBoundLongitude>-0.313106</eastBoundLongitude>
+					<southBoundLatitude>52.699446</southBoundLatitude>
+					<northBoundLatitude>53.381937</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.363789" miny="52.699446" maxx="-0.313106" maxy="53.381937"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699446" miny="-3.363789" maxx="53.381937" maxy="-0.313106"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699446" miny="-3.363789" maxx="53.381937" maxy="-0.313106"/>
+				<BoundingBox CRS="EPSG:27700" minx="309280.000000" miny="312640.000000" maxx="512222.410133" maxy="387261.288400"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Radiometric.TOT</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Radiometric.TOT" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Radiometric.THO</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Radiometric THO</Title>
+				<Abstract>Midlands HiRes1 Airborne Radiometric THO</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Radiometric</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>THO</Keyword>
+					<Keyword>Thorium</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Radiometry</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.363789</westBoundLongitude>
+					<eastBoundLongitude>-0.313106</eastBoundLongitude>
+					<southBoundLatitude>52.699446</southBoundLatitude>
+					<northBoundLatitude>53.381937</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.363789" miny="52.699446" maxx="-0.313106" maxy="53.381937"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699446" miny="-3.363789" maxx="53.381937" maxy="-0.313106"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699446" miny="-3.363789" maxx="53.381937" maxy="-0.313106"/>
+				<BoundingBox CRS="EPSG:27700" minx="309280.000000" miny="312640.000000" maxx="512222.410133" maxy="387261.288400"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Radiometric.THO</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Radiometric.THO" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Radiometric.TERN</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Radiometric TERN</Title>
+				<Abstract>Midlands HiRes1 Airborne Radiometric TERN</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Radiometric</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>TERN</Keyword>
+					<Keyword>Ternary</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Radiometry</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.364399</westBoundLongitude>
+					<eastBoundLongitude>-0.312405</eastBoundLongitude>
+					<southBoundLatitude>52.699077</southBoundLatitude>
+					<northBoundLatitude>53.382221</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.364399" miny="52.699077" maxx="-0.312405" maxy="53.382221"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699077" miny="-3.364399" maxx="53.382221" maxy="-0.312405"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699077" miny="-3.364399" maxx="53.382221" maxy="-0.312405"/>
+				<BoundingBox CRS="EPSG:27700" minx="309240.000000" miny="312600.000000" maxx="512268.329867" maxy="387292.888178"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Radiometric.TERN</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Radiometric.TERN" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Radiometric.POT</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Radiometric POT</Title>
+				<Abstract>Midlands HiRes1 Airborne Radiometric POT</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Radiometric</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>POT</Keyword>
+					<Keyword>Potassium</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Radiometry</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.363789</westBoundLongitude>
+					<eastBoundLongitude>-0.313106</eastBoundLongitude>
+					<southBoundLatitude>52.699446</southBoundLatitude>
+					<northBoundLatitude>53.381937</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.363789" miny="52.699446" maxx="-0.313106" maxy="53.381937"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699446" miny="-3.363789" maxx="53.381937" maxy="-0.313106"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699446" miny="-3.363789" maxx="53.381937" maxy="-0.313106"/>
+				<BoundingBox CRS="EPSG:27700" minx="309280.000000" miny="312640.000000" maxx="512222.410133" maxy="387261.288400"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Radiometric.POT</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Radiometric.POT" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Radiometric.KTh</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Radiometric KTh</Title>
+				<Abstract>Midlands HiRes1 Airborne Radiometric KTh</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Radiometric</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>KTh</Keyword>
+					<Keyword>Potassium</Keyword>
+					<Keyword>Thorium</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Radiometry</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.364403</westBoundLongitude>
+					<eastBoundLongitude>-0.312399</eastBoundLongitude>
+					<southBoundLatitude>52.699077</southBoundLatitude>
+					<northBoundLatitude>53.382349</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.364403" miny="52.699077" maxx="-0.312399" maxy="53.382349"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699077" miny="-3.364403" maxx="53.382349" maxy="-0.312399"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699077" miny="-3.364403" maxx="53.382349" maxy="-0.312399"/>
+				<BoundingBox CRS="EPSG:27700" minx="309240.000000" miny="312600.000000" maxx="512268.329867" maxy="387307.208133"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Radiometric.KTh</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Radiometric.KTh" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Magnetic.TILT</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Magnetic TILT</Title>
+				<Abstract>Midlands HiRes1 Airborne Magnetic TILT</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Magnetic</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>TILT</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Geomagnetics</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.361768</westBoundLongitude>
+					<eastBoundLongitude>-0.310110</eastBoundLongitude>
+					<southBoundLatitude>52.699760</southBoundLatitude>
+					<northBoundLatitude>53.375132</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.361768" miny="52.699760" maxx="-0.310110" maxy="53.375132"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699760" miny="-3.361768" maxx="53.375132" maxy="-0.310110"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699760" miny="-3.361768" maxx="53.375132" maxy="-0.310110"/>
+				<BoundingBox CRS="EPSG:27700" minx="309400.000000" miny="312680.000000" maxx="512439.730939" maxy="386504.347280"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Magnetic.TILT</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Magnetic.TILT" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Magnetic.RTP_1VD</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Magnetic RTP_1VD</Title>
+				<Abstract>Midlands HiRes1 Airborne Magnetic RTP_1VD</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Magnetic</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>RTP_1VD</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Geomagnetics</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.361767</westBoundLongitude>
+					<eastBoundLongitude>-0.310188</eastBoundLongitude>
+					<southBoundLatitude>52.699761</southBoundLatitude>
+					<northBoundLatitude>53.375087</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.361767" miny="52.699761" maxx="-0.310188" maxy="53.375087"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699761" miny="-3.361767" maxx="53.375087" maxy="-0.310188"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699761" miny="-3.361767" maxx="53.375087" maxy="-0.310188"/>
+				<BoundingBox CRS="EPSG:27700" minx="309400.000000" miny="312680.000000" maxx="512434.669624" maxy="386499.285964"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Magnetic.RTP_1VD</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Magnetic.RTP_1VD" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Magnetic.RTP</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Magnetic RTP</Title>
+				<Abstract>Midlands HiRes1 Airborne Magnetic RTP</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Magnetic</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>RTP</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Geomagnetics</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.361767</westBoundLongitude>
+					<eastBoundLongitude>-0.310188</eastBoundLongitude>
+					<southBoundLatitude>52.699761</southBoundLatitude>
+					<northBoundLatitude>53.375087</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.361767" miny="52.699761" maxx="-0.310188" maxy="53.375087"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699761" miny="-3.361767" maxx="53.375087" maxy="-0.310188"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699761" miny="-3.361767" maxx="53.375087" maxy="-0.310188"/>
+				<BoundingBox CRS="EPSG:27700" minx="309400.000000" miny="312680.000000" maxx="512434.669624" maxy="386499.285964"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Magnetic.RTP</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Magnetic.RTP" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Magnetic.PSGRAV</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Magnetic PSGRAV</Title>
+				<Abstract>Midlands HiRes1 Airborne Magnetic PSGRAV</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Magnetic</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>PSGRAV</Keyword>
+					<Keyword>Pseudo Gravity</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Geomagnetics</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.361768</westBoundLongitude>
+					<eastBoundLongitude>-0.310110</eastBoundLongitude>
+					<southBoundLatitude>52.699760</southBoundLatitude>
+					<northBoundLatitude>53.375132</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.361768" miny="52.699760" maxx="-0.310110" maxy="53.375132"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699760" miny="-3.361768" maxx="53.375132" maxy="-0.310110"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699760" miny="-3.361768" maxx="53.375132" maxy="-0.310110"/>
+				<BoundingBox CRS="EPSG:27700" minx="309400.000000" miny="312680.000000" maxx="512439.730939" maxy="386504.347280"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Magnetic.PSGRAV</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Magnetic.PSGRAV" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Magnetic.HGPSGRAV</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Magnetic HGPSGRAV</Title>
+				<Abstract>Midlands HiRes1 Airborne Magnetic HGPSGRAV</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Magnetic</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>HGPSGRAV</Keyword>
+					<Keyword>HGM PS Gravity</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Geomagnetics</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.361768</westBoundLongitude>
+					<eastBoundLongitude>-0.310110</eastBoundLongitude>
+					<southBoundLatitude>52.699760</southBoundLatitude>
+					<northBoundLatitude>53.375132</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.361768" miny="52.699760" maxx="-0.310110" maxy="53.375132"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699760" miny="-3.361768" maxx="53.375132" maxy="-0.310110"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699760" miny="-3.361768" maxx="53.375132" maxy="-0.310110"/>
+				<BoundingBox CRS="EPSG:27700" minx="309400.000000" miny="312680.000000" maxx="512439.730939" maxy="386504.347280"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Magnetic.HGPSGRAV</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Magnetic.HGPSGRAV" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Midlands.HiRes1.Airborne.Magnetic.AS</Name>
+				<Title>GBR BGS Midlands HiRes1 Airborne Magnetic AS</Title>
+				<Abstract>Midlands HiRes1 Airborne Magnetic AS</Abstract>
+				<KeywordList>
+					<Keyword>Maps</Keyword>
+					<Keyword>Geology</Keyword>
+					<Keyword>United Kingdom</Keyword>
+					<Keyword>Geophysics</Keyword>
+					<Keyword>Magnetic</Keyword>
+					<Keyword>VLF Survey</Keyword>
+					<Keyword>AS</Keyword>
+					<Keyword>OneGeology</Keyword>
+					<Keyword>continent@Europe</Keyword>
+					<Keyword>subcontinent@Northern Europe</Keyword>
+					<Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+					<Keyword>subarea@GB-ENG</Keyword>
+					<Keyword>dataprovider@British Geological Survey</Keyword>
+					<Keyword>serviceprovider@British Geological Survey</Keyword>
+					<Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+					<Keyword>DS_DATE@2022</Keyword>
+					<Keyword>thematic@Geophysics</Keyword>
+					<Keyword>thematic@Geomagnetics</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:27700</CRS>
+				<CRS>EPSG:3857</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>-3.361767</westBoundLongitude>
+					<eastBoundLongitude>-0.310188</eastBoundLongitude>
+					<southBoundLatitude>52.699761</southBoundLatitude>
+					<northBoundLatitude>53.375087</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="-3.361767" miny="52.699761" maxx="-0.310188" maxy="53.375087"/>
+				<BoundingBox CRS="EPSG:4326" minx="52.699761" miny="-3.361767" maxx="53.375087" maxy="-0.310188"/>
+				<BoundingBox CRS="EPSG:4258" minx="52.699761" miny="-3.361767" maxx="53.375087" maxy="-0.310188"/>
+				<BoundingBox CRS="EPSG:27700" minx="309400.000000" miny="312680.000000" maxx="512434.669624" maxy="386499.285964"/>
+				<BoundingBox CRS="EPSG:3857" minx="-1945261.298110" miny="5414691.645640" maxx="1134858.947510" maxy="10211684.489360"/>
+				<MetadataURL type="TC211">
+					<Format>application/xml</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;ID=1722a574-9514-3b21-e054-002128a47908&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;version=2.0.2&amp;"/>
+				</MetadataURL>
+				<DataURL>
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.bgs.ac.uk/products/geophysics/hires.html"/>
+				</DataURL>
+				<Style>
+					<Name>inspire_common:DEFAULT</Name>
+					<Title>Midlands.HiRes1.Airborne.Magnetic.AS</Title>
+					<LegendURL width="100" height="48">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Midlands.HiRes1.Airborne.Magnetic.AS" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+		</Layer>
+	</Capability>
+</WMS_Capabilities>

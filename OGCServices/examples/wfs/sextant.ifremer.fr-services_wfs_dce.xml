@@ -1,0 +1,2063 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WFS_Capabilities xmlns="http://www.opengis.net/wfs" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.1.0/wfs.xsd" updateSequence="0" version="1.1.0">
+ <ows:ServiceIdentification>
+  <ows:Title>DCE</ows:Title>
+  <ows:ServiceType>WFS</ows:ServiceType>
+  <ows:ServiceTypeVersion>1.1.0</ows:ServiceTypeVersion>
+  <ows:Fees>conditions unknown</ows:Fees>
+  <ows:AccessConstraints>None</ows:AccessConstraints>
+ </ows:ServiceIdentification>
+ <ows:ServiceProvider>
+  <ows:ProviderName>Ifremer</ows:ProviderName>
+ </ows:ServiceProvider>
+ <ows:OperationsMetadata>
+  <ows:Operation name="GetCapabilities">
+   <ows:DCP>
+    <ows:HTTP>
+     <ows:Get xlink:href="https://sextant.ifremer.fr/services/wfs/dce"/>
+     <ows:Post xlink:href="https://sextant.ifremer.fr/services/wfs/dce"/>
+    </ows:HTTP>
+   </ows:DCP>
+   <ows:Parameter name="service">
+    <ows:Value>WFS</ows:Value>
+   </ows:Parameter>
+   <ows:Parameter name="AcceptVersions">
+    <ows:Value>1.1.0</ows:Value>
+    <ows:Value>1.0.0</ows:Value>
+   </ows:Parameter>
+   <ows:Parameter name="AcceptFormats">
+    <ows:Value>text/xml</ows:Value>
+   </ows:Parameter>
+  </ows:Operation>
+  <ows:Operation name="DescribeFeatureType">
+   <ows:DCP>
+    <ows:HTTP>
+     <ows:Get xlink:href="https://sextant.ifremer.fr/services/wfs/dce"/>
+     <ows:Post xlink:href="https://sextant.ifremer.fr/services/wfs/dce"/>
+    </ows:HTTP>
+   </ows:DCP>
+   <ows:Parameter name="outputFormat">
+    <ows:Value>XMLSCHEMA</ows:Value>
+    <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+    <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+   </ows:Parameter>
+  </ows:Operation>
+  <ows:Operation name="GetFeature">
+   <ows:DCP>
+    <ows:HTTP>
+     <ows:Get xlink:href="https://sextant.ifremer.fr/services/wfs/dce"/>
+     <ows:Post xlink:href="https://sextant.ifremer.fr/services/wfs/dce"/>
+    </ows:HTTP>
+   </ows:DCP>
+   <ows:Parameter name="outputFormat">
+    <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+    <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+    <ows:Value>application/vnd.geo+json</ows:Value>
+   <ows:Value>SHP</ows:Value><ows:Value>TAB</ows:Value><ows:Value>MIF</ows:Value><ows:Value>KML</ows:Value><ows:Value>GPKG</ows:Value><ows:Value>GPX</ows:Value><ows:Value>ODS</ows:Value><ows:Value>XLSX</ows:Value><ows:Value>CSV</ows:Value><ows:Value>FGB</ows:Value></ows:Parameter>
+   <ows:Parameter name="resultType">
+    <ows:Value>results</ows:Value>
+    <ows:Value>hits</ows:Value>
+   </ows:Parameter>
+  </ows:Operation>
+  <ows:Operation name="Transaction">
+   <ows:DCP>
+    <ows:HTTP>
+     <ows:Get xlink:href="https://sextant.ifremer.fr/services/wfs/dce"/>
+     <ows:Post xlink:href="https://sextant.ifremer.fr/services/wfs/dce"/>
+    </ows:HTTP>
+   </ows:DCP>
+   <ows:Parameter name="inputFormat">
+    <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+    <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+    <ows:Value>application/vnd.geo+json</ows:Value>
+   </ows:Parameter>
+  </ows:Operation>
+ </ows:OperationsMetadata>
+ <FeatureTypeList>
+  <Operations>
+   <Operation>Query</Operation>
+  </Operations>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_MACROALGUES_INTERDITAL</Name>
+   <Title>Macroalgues (domaine intertidal)</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.959994 46.230833</ows:LowerCorner>
+    <ows:UpperCorner>-1.419999 48.890892</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_COMPLEMENT_INTERTIDAL</Name>
+   <Title>Complément Macroalgues (domaine intertidal)</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.516667 47.501416</ows:LowerCorner>
+    <ows:UpperCorner>-2.63355 48.725478</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_MACROALGUES_SUBTIDAL</Name>
+   <Title>Macroalgues (domaine subtidal)</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.14172 46.24763</ows:LowerCorner>
+    <ows:UpperCorner>-1.59216 48.88877</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_ENQUETE_MACROALGUES</Name>
+   <Title>Enquête - Macroalgues (domaine subtidal)</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-3.888274 46.720882</ows:LowerCorner>
+    <ows:UpperCorner>-2.017073 48.756181</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_CHIMIE_EAU</Name>
+   <Title>Chimie eau</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.049082 46.278148</ows:LowerCorner>
+    <ows:UpperCorner>-1.082481 48.870717</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_CHIMIE_COQUILLAGE</Name>
+   <Title>OSPAR - Chimie coquillages</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.609307 46.163319</ows:LowerCorner>
+    <ows:UpperCorner>-1.162945 48.820696</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_COMPLEMENT_CHIMIE_EAU</Name>
+   <Title>Complément - 2008-2009 - Chimie eau</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.533382 46.056243</ows:LowerCorner>
+    <ows:UpperCorner>-1.207083 48.814847</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_CHIMIE_SEDIMENT</Name>
+   <Title>Complément - 2008-2009 - Chimie sédiment</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.534853 46.301454</ows:LowerCorner>
+    <ows:UpperCorner>-1.275493 48.82319</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_CHIMIE_SEDIMENT</Name>
+   <Title>Chimie sédiment</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.586126 46.166631</ows:LowerCorner>
+    <ows:UpperCorner>-1.0746 48.833135</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_PHYSICO_CHIMIE</Name>
+   <Title>Physico-chimie</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.115 46.278148</ows:LowerCorner>
+    <ows:UpperCorner>-1.082481 48.870717</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_CHIMIE_IMPOSEX</Name>
+   <Title>OSPAR - Chimie Imposex</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.774398 46.109153</ows:LowerCorner>
+    <ows:UpperCorner>-1.144051 48.727179</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_INVERTEBRES_INTERTIDAL</Name>
+   <Title>Invertébrés (domaine intertidal)</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.7647 46.207528</ows:LowerCorner>
+    <ows:UpperCorner>-1.423817 48.823584</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_INVERTEBRES_SUBTIDAL</Name>
+   <Title>Invertébrés (domaine subtidal)</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.893783 46.212311</ows:LowerCorner>
+    <ows:UpperCorner>-1.283503 48.708333</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_ENQUETE_INVERTEBRES</Name>
+   <Title>Enquête - Invertébrés (domaine intertidal)</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-1.838 48.626</ows:LowerCorner>
+    <ows:UpperCorner>-1.656889 48.641927</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_COMPLEMENT_MAERL</Name>
+   <Title>Complément - Maërl</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.854266 47.04815</ows:LowerCorner>
+    <ows:UpperCorner>-2.237082 48.787283</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_HERBIERS_ZOSTERA_MARINA</Name>
+   <Title>Herbiers à Zostera (Zostera) marina</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.949865 47.613053</ows:LowerCorner>
+    <ows:UpperCorner>-2.038885 48.878013</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_HERBIERS_ZOSTERA_NOLTEI</Name>
+   <Title>Herbiers à Zostera (Zosterella) noltei</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-3.103874 46.207528</ows:LowerCorner>
+    <ows:UpperCorner>-1.269656 48.773489</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_PHYTOPLANCTON</Name>
+   <Title>Phytoplancton</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.115 46.278148</ows:LowerCorner>
+    <ows:UpperCorner>-1.37695 48.870717</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_POISSONS</Name>
+   <Title>Poissons</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-4.558089 46.276461</ows:LowerCorner>
+    <ows:UpperCorner>-1.163187 48.776408</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2010_P</Name>
+   <Title>Loire Bretagne - Macroalgues opportunistes 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=f2f64b31-72e5-4e2f-af38-ede5f83c12b7&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2011_P</Name>
+   <Title>Loire Bretagne - Macroalgues opportunistes 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=f2f64b31-72e5-4e2f-af38-ede5f83c12b7&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2012_P</Name>
+   <Title>Loire Bretagne - Macroalgues opportunistes 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=f2f64b31-72e5-4e2f-af38-ede5f83c12b7&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2013_P</Name>
+   <Title>Loire Bretagne - Macroalgues opportunistes 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=f2f64b31-72e5-4e2f-af38-ede5f83c12b7&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2010_P</Name>
+   <Title>Loire Bretagne - Angiospermes 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=ec33f840-9f48-4c9b-9049-258af209b50f&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2011_P</Name>
+   <Title>Loire Bretagne - Angiospermes 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=ec33f840-9f48-4c9b-9049-258af209b50f&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2012_P</Name>
+   <Title>Loire Bretagne - Angiospermes 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=ec33f840-9f48-4c9b-9049-258af209b50f&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2013_P</Name>
+   <Title>Loire Bretagne - Angiospermes 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=ec33f840-9f48-4c9b-9049-258af209b50f&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2010_P</Name>
+   <Title>Loire Bretagne - Autres polluants 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=274bd074-b242-46df-b736-82ad1de8511d&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2011_P</Name>
+   <Title>Loire Bretagne - Autres polluants 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=274bd074-b242-46df-b736-82ad1de8511d&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2012_P</Name>
+   <Title>Loire Bretagne - Autres polluants 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=274bd074-b242-46df-b736-82ad1de8511d&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2013_P</Name>
+   <Title>Loire Bretagne - Autres polluants 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=274bd074-b242-46df-b736-82ad1de8511d&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2010_P</Name>
+   <Title>Loire Bretagne - Contaminants chimiques 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=f4f5e052-90f7-45a1-9f94-8dab4c8d5103&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2011_P</Name>
+   <Title>Loire Bretagne - Contaminants chimiques 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=f4f5e052-90f7-45a1-9f94-8dab4c8d5103&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2012_P</Name>
+   <Title>Loire Bretagne - Contaminants chimiques 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=f4f5e052-90f7-45a1-9f94-8dab4c8d5103&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2013_P</Name>
+   <Title>Loire Bretagne - Contaminants chimiques 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=f4f5e052-90f7-45a1-9f94-8dab4c8d5103&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2010_P</Name>
+   <Title>Loire Bretagne - Hydromorphologie 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=c3ea23e8-bb8b-490e-8342-b35ceba96551&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2011_P</Name>
+   <Title>Loire Bretagne - Hydromorphologie 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=c3ea23e8-bb8b-490e-8342-b35ceba96551&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2012_P</Name>
+   <Title>Loire Bretagne - Hydromorphologie 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=c3ea23e8-bb8b-490e-8342-b35ceba96551&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2013_P</Name>
+   <Title>Loire Bretagne - Hydromorphologie 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=c3ea23e8-bb8b-490e-8342-b35ceba96551&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_IMPOSEX_2013_P</Name>
+   <Title>Loire Bretagne - Imposex 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=e0f71ebb-4a10-4f65-97b0-1f210f5f0e89&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2010_P</Name>
+   <Title>Loire Bretagne - Invertebrés benthiques 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=3d6fe887-5240-424a-a3c0-240023b386fe&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2011_P</Name>
+   <Title>Loire Bretagne - Etat écologique 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=3d6fe887-5240-424a-a3c0-240023b386fe&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2012_P</Name>
+   <Title>Loire Bretagne - Etat écologique 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=3d6fe887-5240-424a-a3c0-240023b386fe&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2013_P</Name>
+   <Title>Loire Bretagne - Etat écologique 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=3d6fe887-5240-424a-a3c0-240023b386fe&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2011_P</Name>
+   <Title>Loire Bretagne - Invertebrés benthiques 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=3d6fe887-5240-424a-a3c0-240023b386fe&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2013_P</Name>
+   <Title>Loire Bretagne - Invertebrés benthiques 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=3d6fe887-5240-424a-a3c0-240023b386fe&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2012_P</Name>
+   <Title>Loire Bretagne - Invertebrés benthiques 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=3d6fe887-5240-424a-a3c0-240023b386fe&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2010_P</Name>
+   <Title>Loire Bretagne - Invertebrés benthiques intertidaux 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=4b1d7cf5-facc-4187-a3bf-a31ebd22349f&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2011_P</Name>
+   <Title>Loire Bretagne - Invertebrés benthiques intertidaux 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=4b1d7cf5-facc-4187-a3bf-a31ebd22349f&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2012_P</Name>
+   <Title>Loire Bretagne - Invertebrés benthiques intertidaux 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=4b1d7cf5-facc-4187-a3bf-a31ebd22349f&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2013_P</Name>
+   <Title>Loire Bretagne - Invertebrés benthiques intertidaux 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=4b1d7cf5-facc-4187-a3bf-a31ebd22349f&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2010_P</Name>
+   <Title>Loire Bratagne - Invertebrés benthiques subtidaux 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=05c54353-2b25-4375-a4eb-6ff6dc0d5ad5&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2011_P</Name>
+   <Title>Loire Bratagne - Invertebrés benthiques subtidaux 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=05c54353-2b25-4375-a4eb-6ff6dc0d5ad5&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2012_P</Name>
+   <Title>Loire Bratagne - Invertebrés benthiques subtidaux 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="TC211" format="text/xml">https://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=05c54353-2b25-4375-a4eb-6ff6dc0d5ad5&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2013_P</Name>
+   <Title>Loire Bratagne - Invertebrés benthiques subtidaux 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=05c54353-2b25-4375-a4eb-6ff6dc0d5ad5&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2010_P</Name>
+   <Title>Loire Bretagne - Macroalgues intertidales 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=7be1ba7f-5892-4974-869a-047ae2ee3cb1&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2011_P</Name>
+   <Title>Loire Bretagne - Macroalgues intertidales 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=7be1ba7f-5892-4974-869a-047ae2ee3cb1&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2012_P</Name>
+   <Title>Loire Bretagne - Macroalgues intertidales 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=7be1ba7f-5892-4974-869a-047ae2ee3cb1&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2010_P</Name>
+   <Title>Loire Bretagne - Macroalgues subtidales 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=9fafc2e3-a69e-4c58-b7af-5a3b389613ac&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2011_P</Name>
+   <Title>Loire Bretagne - Macroalgues subtidales 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=9fafc2e3-a69e-4c58-b7af-5a3b389613ac&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2012_P</Name>
+   <Title>Loire Bretagne - Macroalgues subtidales 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=9fafc2e3-a69e-4c58-b7af-5a3b389613ac&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2010_P</Name>
+   <Title>Loire Bretagne - Macroalgues 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=d54d9fea-5eb0-4938-8572-0c74951b117e&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2011_P</Name>
+   <Title>Loire Bretagne - Macroalgues 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=d54d9fea-5eb0-4938-8572-0c74951b117e&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2012_P</Name>
+   <Title>Loire Bretagne - Macroalgues 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=d54d9fea-5eb0-4938-8572-0c74951b117e&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2013_P</Name>
+   <Title>Loire Bretagne - Macroalgues 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=d54d9fea-5eb0-4938-8572-0c74951b117e&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2013_P</Name>
+   <Title>Loire Bretagne - Macroalgues intertidales 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=7be1ba7f-5892-4974-869a-047ae2ee3cb1&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2013_P</Name>
+   <Title>Loire Bretagne - Macroalgues subtidales 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=9fafc2e3-a69e-4c58-b7af-5a3b389613ac&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2013_P</Name>
+   <Title>Loire Bretagne - Maerl 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=43932028-a8b6-4709-9650-e9d2bb10fd36&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2011_P</Name>
+   <Title>Loire Bretagne - Maerl 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=43932028-a8b6-4709-9650-e9d2bb10fd36&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2012_P</Name>
+   <Title>Loire Bretagne - Maerl 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=43932028-a8b6-4709-9650-e9d2bb10fd36&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2010_P</Name>
+   <Title>Loire Bretagne - Maerl 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=43932028-a8b6-4709-9650-e9d2bb10fd36&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2013_P</Name>
+   <Title>Loire Bretagne - Etat chimique 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=a3ef08c8-2944-43fc-8c39-929ad9da623a&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2011_P</Name>
+   <Title>Loire Bretagne - Etat chimique 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=a3ef08c8-2944-43fc-8c39-929ad9da623a&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2010_P</Name>
+   <Title>Loire Bretagne - Etat chimique 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=a3ef08c8-2944-43fc-8c39-929ad9da623a&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2012_P</Name>
+   <Title>Loire Bretagne - Etat chimique 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=a3ef08c8-2944-43fc-8c39-929ad9da623a&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_ECOLOGIQUE_2010_P</Name>
+   <Title>Loire Bretagne - Etat écologique 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=8e453b70-de76-4202-be4d-5e4dacc0b497&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2010_P</Name>
+   <Title>Loire Bretagne - Etat global 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=44898c09-9324-499b-8e51-82b7a80410ab&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2012_P</Name>
+   <Title>Loire Bretagne - Etat global 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=44898c09-9324-499b-8e51-82b7a80410ab&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2013_P</Name>
+   <Title>Loire Bretagne - Etat global 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=44898c09-9324-499b-8e51-82b7a80410ab&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2011_P</Name>
+   <Title>Loire Bretagne - Etat global 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=44898c09-9324-499b-8e51-82b7a80410ab&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2013_P</Name>
+   <Title>Loire Bretagne - Métaux lourds 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=d6b206de-3d01-4cbf-b4ed-325845509268&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2010_P</Name>
+   <Title>Loire Bretagne - Métaux lourds 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=d6b206de-3d01-4cbf-b4ed-325845509268&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2011_P</Name>
+   <Title>Loire Bretagne - Métaux lourds 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=d6b206de-3d01-4cbf-b4ed-325845509268&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2012_P</Name>
+   <Title>Loire Bretagne - Métaux lourds 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=d6b206de-3d01-4cbf-b4ed-325845509268&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2013_P</Name>
+   <Title>Loire Bretagne - Nutriments 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=29ac29fa-a9f9-444f-a3ed-6d03bff8a879&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2012_P</Name>
+   <Title>Loire Bretagne - Nutriments 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=29ac29fa-a9f9-444f-a3ed-6d03bff8a879&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2011_P</Name>
+   <Title>Loire Bretagne - Nutriments 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=29ac29fa-a9f9-444f-a3ed-6d03bff8a879&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2010_P</Name>
+   <Title>Loire Bretagne - Nutriments 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=29ac29fa-a9f9-444f-a3ed-6d03bff8a879&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2010_P</Name>
+   <Title>Loire bretagne - Oxygène dissous 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=5f80e6ee-e0bb-4e5d-878d-26be9638d7ea&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2011_P</Name>
+   <Title>Loire bretagne - Oxygène dissous 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=5f80e6ee-e0bb-4e5d-878d-26be9638d7ea&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2013_P</Name>
+   <Title>Loire bretagne - Oxygène dissous 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=5f80e6ee-e0bb-4e5d-878d-26be9638d7ea&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2012_P</Name>
+   <Title>Loire bretagne - Oxygène dissous 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=5f80e6ee-e0bb-4e5d-878d-26be9638d7ea&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2011_P</Name>
+   <Title>Loire Bretagne - Pesticides 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=955a56f8-35e4-4ede-8cdb-15fbbf826c76&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2010_P</Name>
+   <Title>Loire Bretagne - Pesticides 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=955a56f8-35e4-4ede-8cdb-15fbbf826c76&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2012_P</Name>
+   <Title>Loire Bretagne - Pesticides 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=955a56f8-35e4-4ede-8cdb-15fbbf826c76&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2013_P</Name>
+   <Title>Loire Bretagne - Pesticides 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=955a56f8-35e4-4ede-8cdb-15fbbf826c76&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2011_P</Name>
+   <Title>Loire Bretagne - Phytoplancton 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=04e6aa07-edc5-4da1-82c2-ac622b45c15e&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2010_P</Name>
+   <Title>Loire Bretagne - Phytoplancton 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=04e6aa07-edc5-4da1-82c2-ac622b45c15e&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2012_P</Name>
+   <Title>Loire Bretagne - Phytoplancton 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=04e6aa07-edc5-4da1-82c2-ac622b45c15e&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2013_P</Name>
+   <Title>Loire Bretagne - Phytoplancton 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=04e6aa07-edc5-4da1-82c2-ac622b45c15e&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2010_P</Name>
+   <Title>Loire Bretagne - Poissons 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=fdb50100-7240-4ca4-851a-031ba4783ee2&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2011_P</Name>
+   <Title>Loire Bretagne - Poissons 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=fdb50100-7240-4ca4-851a-031ba4783ee2&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2012_P</Name>
+   <Title>Loire Bretagne - Poissons 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=fdb50100-7240-4ca4-851a-031ba4783ee2&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2013_P</Name>
+   <Title>Loire Bretagne - Poissons 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=fdb50100-7240-4ca4-851a-031ba4783ee2&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2010_P</Name>
+   <Title>Loire Bretagne - Polluants industriels 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=7372867a-4bd8-4957-ad78-8ab27e6bb5e8&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2012_P</Name>
+   <Title>Loire Bretagne - Polluants industriels 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=7372867a-4bd8-4957-ad78-8ab27e6bb5e8&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2013_P</Name>
+   <Title>Loire Bretagne - Polluants industriels 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=7372867a-4bd8-4957-ad78-8ab27e6bb5e8&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2011_P</Name>
+   <Title>Loire Bretagne - Polluants industriels 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=7372867a-4bd8-4957-ad78-8ab27e6bb5e8&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2013_P</Name>
+   <Title>Loire Bretagne - Polluants spécifiques 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=dc76ad66-ad93-4159-b12c-14ea1e07d12d&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2011_P</Name>
+   <Title>Loire Bretagne - Polluants spécifiques 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=dc76ad66-ad93-4159-b12c-14ea1e07d12d&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2010_P</Name>
+   <Title>Loire Bretagne - Polluants spécifiques 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=dc76ad66-ad93-4159-b12c-14ea1e07d12d&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2012_P</Name>
+   <Title>Loire Bretagne - Polluants spécifiques 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=dc76ad66-ad93-4159-b12c-14ea1e07d12d&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2013_P</Name>
+   <Title>Loire Bretagne - Salinité 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=4f54f4a3-8469-46e2-8bcc-b32be1f921a5&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2010_P</Name>
+   <Title>Loire Bretagne - Salinité 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=4f54f4a3-8469-46e2-8bcc-b32be1f921a5&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2011_P</Name>
+   <Title>Loire Bretagne - Salinité 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=4f54f4a3-8469-46e2-8bcc-b32be1f921a5&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2012_P</Name>
+   <Title>Loire Bretagne - Salinité 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=4f54f4a3-8469-46e2-8bcc-b32be1f921a5&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2013_P</Name>
+   <Title>Loire Bretagne - Température 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=77fbccf1-b34b-4624-8d12-c70cbf1319f6&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2010_P</Name>
+   <Title>Loire Bretagne - Température 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=77fbccf1-b34b-4624-8d12-c70cbf1319f6&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2011_P</Name>
+   <Title>Loire Bretagne - Température 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=77fbccf1-b34b-4624-8d12-c70cbf1319f6&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2012_P</Name>
+   <Title>Loire Bretagne - Température 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=77fbccf1-b34b-4624-8d12-c70cbf1319f6&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2011_P</Name>
+   <Title>Loire Bretagne - Transparence 2011</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=af3f8ee4-b3ad-419d-b59c-4c7bf17fd956&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2013_P</Name>
+   <Title>Loire Bretagne - Transparence 2013</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=af3f8ee4-b3ad-419d-b59c-4c7bf17fd956&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2012_P</Name>
+   <Title>Loire Bretagne - Transparence 2012</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=af3f8ee4-b3ad-419d-b59c-4c7bf17fd956&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+  <FeatureType>
+   <Name>ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2010_P</Name>
+   <Title>Loire Bretagne - Transparence 2010</Title>
+   <DefaultSRS>urn:ogc:def:crs:EPSG::27572</DefaultSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::2975</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::4326</OtherSRS>
+   <OtherSRS>urn:ogc:def:crs:EPSG::3857</OtherSRS>
+   <Operations>
+    <Operation>Query</Operation>
+   </Operations>
+   <ows:WGS84BoundingBox dimensions="2">
+    <ows:LowerCorner>-5.463641 45.816975</ows:LowerCorner>
+    <ows:UpperCorner>-1.225226 49.00509</ows:UpperCorner>
+   </ows:WGS84BoundingBox>
+   <MetadataURL type="" format="">http://sextant.ifremer.fr/geonetwork/srv/fre/csw?request=GetRecordById&amp;elementSetName=full&amp;service=CSW&amp;version=2.0.2&amp;id=af3f8ee4-b3ad-419d-b59c-4c7bf17fd956&amp;OutputSchema=http://www.isotc211.org/2005/gmd</MetadataURL>
+  </FeatureType>
+ </FeatureTypeList>
+ <ogc:Filter_Capabilities>
+  <ogc:Spatial_Capabilities>
+   <ogc:GeometryOperands>
+    <ogc:GeometryOperand>gml:Point</ogc:GeometryOperand>
+    <ogc:GeometryOperand>gml:LineString</ogc:GeometryOperand>
+    <ogc:GeometryOperand>gml:Polygon</ogc:GeometryOperand>
+    <ogc:GeometryOperand>gml:Envelope</ogc:GeometryOperand>
+   </ogc:GeometryOperands>
+   <ogc:SpatialOperators>
+    <ogc:SpatialOperator name="Equals"/>
+    <ogc:SpatialOperator name="Disjoint"/>
+    <ogc:SpatialOperator name="Touches"/>
+    <ogc:SpatialOperator name="Within"/>
+    <ogc:SpatialOperator name="Overlaps"/>
+    <ogc:SpatialOperator name="Crosses"/>
+    <ogc:SpatialOperator name="Intersects"/>
+    <ogc:SpatialOperator name="Contains"/>
+    <ogc:SpatialOperator name="BBOX"/>
+   </ogc:SpatialOperators>
+  </ogc:Spatial_Capabilities>
+  <ogc:Scalar_Capabilities>
+   <ogc:LogicalOperators/>
+   <ogc:ComparisonOperators>
+    <ogc:ComparisonOperator>LessThan</ogc:ComparisonOperator>
+    <ogc:ComparisonOperator>GreaterThan</ogc:ComparisonOperator>
+    <ogc:ComparisonOperator>LessThanEqualTo</ogc:ComparisonOperator>
+    <ogc:ComparisonOperator>GreaterThanEqualTo</ogc:ComparisonOperator>
+    <ogc:ComparisonOperator>EqualTo</ogc:ComparisonOperator>
+    <ogc:ComparisonOperator>Like</ogc:ComparisonOperator>
+    <ogc:ComparisonOperator>Between</ogc:ComparisonOperator>
+   </ogc:ComparisonOperators>
+  </ogc:Scalar_Capabilities>
+  <ogc:Id_Capabilities>
+   <ogc:FID/>
+  </ogc:Id_Capabilities>
+ </ogc:Filter_Capabilities>
+</WFS_Capabilities>

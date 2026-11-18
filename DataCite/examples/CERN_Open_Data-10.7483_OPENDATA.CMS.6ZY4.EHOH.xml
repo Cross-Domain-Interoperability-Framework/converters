@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource xmlns="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.3/metadata.xsd">
+          <identifier identifierType="DOI">10.7483/OPENDATA.CMS.6ZY4.EHOH</identifier>
+          <creators>
+            <creator>
+              <creatorName>CMS collaboration</creatorName>
+            </creator>
+          </creators>
+          <titles>
+            <title>/Commissioning/Run2010A-Apr21ReReco-v1/AOD</title>
+          </titles>
+          <publisher>CERN Open Data Portal</publisher>
+          <publicationYear>2019</publicationYear>
+          <subjects>
+            <subject>CERN-LHC</subject>
+            <subject>CMS</subject>
+          </subjects>
+          <language>en</language>
+          <resourceType resourceTypeGeneral="Dataset">Dataset</resourceType>
+          <rightsList>
+            <rights>open access</rights>
+          </rightsList>
+          <descriptions>
+            <description descriptionType="Abstract">&lt;p&gt;Commissioning primary dataset in AOD format from RunA of 2010&lt;/p&gt; &lt;p&gt;The list of validated runs, which must be applied to all analyses, can be found in&lt;/p&gt;</description>
+            <description descriptionType="Methods">Events stored in this primary dataset were selected by various triggers during the commissioning period.  Data taking / HLT
+The collision data were assigned to different RAW datasets using the following HLT configuration.
+Data processing / RECO
+This primary AOD dataset was processed from the RAW dataset by the following step:
+        Step: RECO
+        Release: CMSSW_4_2_1_patch1
+        Global tag: FT_R_42_V10A::All
+        The configuration file for RECO step can be generated with the cmsDriver command line script in the corresponding CMSSW release area:
+  cmsDriver.py reco -s RAW2DIGI,L1Reco,RECO --data --conditions FT_R_42_V10A::All --eventcontent AOD --no_exec --python reco_cmsdriver2010.py   HLT trigger paths The possible HLT trigger paths in this dataset are: HLT_Activity_CSC      HLT_Activity_DT      HLT_Activity_DT_Tuned      HLT_Activity_Ecal      HLT_Activity_EcalREM      HLT_Activity_L1A      HLT_Activity_PixelClusters      HLT_IsoTrackHB      HLT_IsoTrackHE      HLT_L1_BptxXOR_BscMinBiasOR      HLT_MultiVertex6      HLT_MultiVertex8_L1ETT60      HLT_MultiVertex6_v2      HLT_MultiVertex8_L1ETT60_v2      HLT_IsoTrackHB_v2      HLT_IsoTrackHE_v3      HLT_IsoTrackHE_v2      HLT_IsoTrackHE_v2</description>
+            <description descriptionType="Other">You can access these data through the CMS Virtual Machine. See the instructions for setting up the Virtual Machine and getting started in</description>
+          </descriptions>
+        </resource>
+      

@@ -1,0 +1,739 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wfs:WFS_Capabilities xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:ms="http://mapserver.gis.umn.edu/mapserver" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:inspire_dls="http://inspire.ec.europa.eu/schemas/inspire_dls/1.0" xmlns="http://www.opengis.net/wfs/2.0" version="2.0.0" updateSequence="20250131121700" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://inspire.ec.europa.eu/schemas/inspire_dls/1.0 http://inspire.ec.europa.eu/schemas/inspire_dls/1.0/inspire_dls.xsd http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd">
+  <ows:ServiceIdentification>
+    <ows:Title>BGS OneGeology Europe geology</ows:Title>
+    <ows:Abstract>The 1:50k GeoSure (natural ground stability) data covering the map sheets for Loughborough and Kilmarnock are available in this OGC WMS service for your personal, non-commercial use only and is being served as a contribution to the OneGeology Europe initiative. For information about more of the British Geological Survey's maps and other digital products please visit https://www.bgs.ac.uk/geological-data/datasets/digital-data-product-development/</ows:Abstract>
+    <ows:Keywords>
+      <ows:Keyword>OneGeology</ows:Keyword>
+      <ows:Keyword>MD_LANG@ENG</ows:Keyword>
+      <ows:Keyword>MD_DATE@2019-01-22</ows:Keyword>
+    </ows:Keywords>
+    <ows:ServiceType codeSpace="OGC">WFS</ows:ServiceType>
+    <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+    <ows:Fees>none</ows:Fees>
+    <ows:AccessConstraints>The data are available for free download on the basis it is only used for your personal, teaching, and research purposes - provided all are non-commercial in nature as described on https://www.bgs.ac.uk/bgs-intellectual-property-rights/using-bgs-copyright-material/. Where commercial use is required, licences are available from the British Geological Survey (BGS). Your use of any information provided by the BGS is at your own risk. BGS gives no warranty, condition or representation as to the quality, accuracy or completeness of the information or its suitability for any use or purpose. All implied conditions relating to the quality or suitability of the information, and all liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <ows:ServiceProvider>
+    <ows:ProviderName>British Geological Survey (BGS)</ows:ProviderName>
+    <ows:ProviderSite xlink:type="simple" xlink:href="https://www.bgs.ac.uk/geological-data/datasets/digital-data-product-development/"/>
+    <ows:ServiceContact>
+      <ows:IndividualName>Mr Garry Baker</ows:IndividualName>
+      <ows:PositionName>Chief Digital Officer</ows:PositionName>
+      <ows:ContactInfo>
+        <ows:Phone>
+          <ows:Voice>+44 (0)115 936 3100</ows:Voice>
+          <ows:Facsimile>+44 (0)115 936 3200</ows:Facsimile>
+        </ows:Phone>
+        <ows:Address>
+          <ows:DeliveryPoint>Nicker Hill</ows:DeliveryPoint>
+          <ows:City>Keyworth</ows:City>
+          <ows:AdministrativeArea>Nottinghamshire</ows:AdministrativeArea>
+          <ows:PostalCode>NG12 5GG</ows:PostalCode>
+          <ows:Country>United Kingdom</ows:Country>
+          <ows:ElectronicMailAddress>enquiries@bgs.ac.uk</ows:ElectronicMailAddress>
+        </ows:Address>
+        <ows:OnlineResource xlink:type="simple" xlink:href="https://www.bgs.ac.uk/geological-data/datasets/digital-data-product-development/"/>
+        <ows:HoursOfService>Mon-Fri, 09:00-17:00</ows:HoursOfService>
+        <ows:ContactInstructions/>
+      </ows:ContactInfo>
+      <ows:Role>pointOfContact</ows:Role>
+    </ows:ServiceContact>
+  </ows:ServiceProvider>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="AcceptVersions">
+        <ows:AllowedValues>
+          <ows:Value>2.0.0</ows:Value>
+          <ows:Value>1.1.0</ows:Value>
+          <ows:Value>1.0.0</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="AcceptFormats">
+        <ows:AllowedValues>
+          <ows:Value>text/xml</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="Sections">
+        <ows:AllowedValues>
+          <ows:Value>ServiceIdentification</ows:Value>
+          <ows:Value>ServiceProvider</ows:Value>
+          <ows:Value>OperationsMetadata</ows:Value>
+          <ows:Value>FeatureTypeList</ows:Value>
+          <ows:Value>Filter_Capabilities</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="DescribeFeatureType">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="outputFormat">
+        <ows:AllowedValues>
+          <ows:Value>application/gml+xml; version=3.2</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="GetFeature">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="outputFormat">
+        <ows:AllowedValues>
+          <ows:Value>application/gml+xml; version=3.2</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="GetPropertyValue">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="outputFormat">
+        <ows:AllowedValues>
+          <ows:Value>application/gml+xml; version=3.2</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="ListStoredQueries">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="DescribeStoredQueries">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Parameter name="version">
+      <ows:AllowedValues>
+        <ows:Value>2.0.0</ows:Value>
+        <ows:Value>1.1.0</ows:Value>
+        <ows:Value>1.0.0</ows:Value>
+      </ows:AllowedValues>
+    </ows:Parameter>
+    <ows:Constraint name="ImplementsBasicWFS">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsTransactionalWFS">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsLockingWFS">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="KVPEncoding">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="XMLEncoding">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="SOAPEncoding">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsInheritance">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsRemoteResolve">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsResultPaging">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsStandardJoins">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsSpatialJoins">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsTemporalJoins">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsFeatureVersioning">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ManageStoredQueries">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="PagingIsTransactionSafe">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="QueryExpressions">
+      <ows:AllowedValues>
+        <ows:Value>wfs:Query</ows:Value>
+        <ows:Value>wfs:StoredQuery</ows:Value>
+      </ows:AllowedValues>
+    </ows:Constraint>
+    <ows:ExtendedCapabilities>
+      <inspire_dls:ExtendedCapabilities>
+        <inspire_common:MetadataUrl xsi:type="inspire_common:resourceLocatorType">
+          <inspire_common:URL>https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;ID=f00173da-bb16-4be8-a612-3fd5aa6c7040&amp;version=2.0.2&amp;</inspire_common:URL>
+          <inspire_common:MediaType>application/xml</inspire_common:MediaType>
+        </inspire_common:MetadataUrl>
+        <inspire_common:SupportedLanguages>
+          <inspire_common:DefaultLanguage>
+            <inspire_common:Language>eng</inspire_common:Language>
+          </inspire_common:DefaultLanguage>
+        </inspire_common:SupportedLanguages>
+        <inspire_common:ResponseLanguage>
+          <inspire_common:Language>eng</inspire_common:Language>
+        </inspire_common:ResponseLanguage>
+        <inspire_dls:SpatialDataSetIdentifier>
+          <inspire_common:Code/>
+        </inspire_dls:SpatialDataSetIdentifier>
+      </inspire_dls:ExtendedCapabilities>
+    </ows:ExtendedCapabilities>
+  </ows:OperationsMetadata>
+  <FeatureTypeList>
+    <FeatureType>
+      <Name>ms:GBR_Loughborough_BGS_50K_SolubleRocks</Name>
+      <Title>GBR Loughborough BGS 1:50K soluble rocks</Title>
+      <Abstract>GBR Loughborough BGS 1:50K soluble rocks</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>OneGeology</ows:Keyword>
+        <ows:Keyword>thematic@Geology</ows:Keyword>
+        <ows:Keyword>thematic@Geologic hazards</ows:Keyword>
+        <ows:Keyword>GeoSure</ows:Keyword>
+        <ows:Keyword>soluble rocks</ows:Keyword>
+        <ows:Keyword>subarea@Loughborough</ows:Keyword>
+        <ows:Keyword>Natural ground stability</ows:Keyword>
+        <ows:Keyword>continent@Europe</ows:Keyword>
+        <ows:Keyword>subcontinent@Northern Europe</ows:Keyword>
+        <ows:Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</ows:Keyword>
+        <ows:Keyword>dataprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>serviceprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>DS_TOPIC@geoscientificinformation</ows:Keyword>
+        <ows:Keyword>DS_DATE@2009-03-09</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::27700</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3031</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3413</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-1.537317 52.758311</ows:LowerCorner>
+        <ows:UpperCorner>-1.195709 52.908884</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603030.html"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:GBR_Loughborough_BGS_50K_ShrinkSwell</Name>
+      <Title>GBR Loughborough BGS 1:50K shrink swell</Title>
+      <Abstract>GBR Loughborough BGS 1:50K shrink swell</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>OneGeology</ows:Keyword>
+        <ows:Keyword>thematic@Geology</ows:Keyword>
+        <ows:Keyword>thematic@Geologic hazards</ows:Keyword>
+        <ows:Keyword>GeoSure</ows:Keyword>
+        <ows:Keyword>shrink swell</ows:Keyword>
+        <ows:Keyword>subarea@Loughborough</ows:Keyword>
+        <ows:Keyword>Natural ground stability</ows:Keyword>
+        <ows:Keyword>continent@Europe</ows:Keyword>
+        <ows:Keyword>subcontinent@Northern Europe</ows:Keyword>
+        <ows:Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</ows:Keyword>
+        <ows:Keyword>dataprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>serviceprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>DS_TOPIC@geoscientificinformation</ows:Keyword>
+        <ows:Keyword>DS_DATE@2009-03-09</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::27700</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3031</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3413</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-1.629976 52.739146</ows:LowerCorner>
+        <ows:UpperCorner>-1.195225 52.917249</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603028.html"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:GBR_Loughborough_BGS_50K_RunningSand</Name>
+      <Title>GBR Loughborough BGS 1:50K running sand</Title>
+      <Abstract>GBR Loughborough BGS 1:50K running sand</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>OneGeology</ows:Keyword>
+        <ows:Keyword>thematic@Geology</ows:Keyword>
+        <ows:Keyword>thematic@Geologic hazards</ows:Keyword>
+        <ows:Keyword>GeoSure</ows:Keyword>
+        <ows:Keyword>running sand</ows:Keyword>
+        <ows:Keyword>subarea@Loughborough</ows:Keyword>
+        <ows:Keyword>Natural ground stability</ows:Keyword>
+        <ows:Keyword>continent@Europe</ows:Keyword>
+        <ows:Keyword>subcontinent@Northern Europe</ows:Keyword>
+        <ows:Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</ows:Keyword>
+        <ows:Keyword>dataprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>serviceprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>DS_TOPIC@geoscientificinformation</ows:Keyword>
+        <ows:Keyword>DS_DATE@2009-03-09</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::27700</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3031</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3413</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-1.629976 52.739146</ows:LowerCorner>
+        <ows:UpperCorner>-1.195225 52.917249</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603027.html"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:GBR_Loughborough_BGS_50K_Landslides</Name>
+      <Title>GBR Loughborough BGS 1:50K landslides</Title>
+      <Abstract>GBR Loughborough BGS 1:50K landslides</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>OneGeology</ows:Keyword>
+        <ows:Keyword>thematic@Geology</ows:Keyword>
+        <ows:Keyword>thematic@Geologic hazards</ows:Keyword>
+        <ows:Keyword>GeoSure</ows:Keyword>
+        <ows:Keyword>Landslides</ows:Keyword>
+        <ows:Keyword>Slope Instability</ows:Keyword>
+        <ows:Keyword>subarea@Loughborough</ows:Keyword>
+        <ows:Keyword>Natural ground stability</ows:Keyword>
+        <ows:Keyword>continent@Europe</ows:Keyword>
+        <ows:Keyword>subcontinent@Northern Europe</ows:Keyword>
+        <ows:Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</ows:Keyword>
+        <ows:Keyword>dataprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>serviceprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>DS_TOPIC@geoscientificinformation</ows:Keyword>
+        <ows:Keyword>DS_DATE@2009-03-09</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::27700</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3031</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3413</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-1.629976 52.739146</ows:LowerCorner>
+        <ows:UpperCorner>-1.195225 52.917249</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603029.html"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:GBR_Loughborough_BGS_50K_CompressibleGround</Name>
+      <Title>GBR Loughborough BGS 1:50K Compressible Ground</Title>
+      <Abstract>GBR Loughborough BGS 1:50K Compressible Ground</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>OneGeology</ows:Keyword>
+        <ows:Keyword>thematic@Geology</ows:Keyword>
+        <ows:Keyword>thematic@Geologic hazards</ows:Keyword>
+        <ows:Keyword>GeoSure</ows:Keyword>
+        <ows:Keyword>Compressible Ground</ows:Keyword>
+        <ows:Keyword>subarea@Loughborough</ows:Keyword>
+        <ows:Keyword>Natural ground stability</ows:Keyword>
+        <ows:Keyword>continent@Europe</ows:Keyword>
+        <ows:Keyword>subcontinent@Northern Europe</ows:Keyword>
+        <ows:Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</ows:Keyword>
+        <ows:Keyword>dataprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>serviceprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>DS_TOPIC@geoscientificinformation</ows:Keyword>
+        <ows:Keyword>DS_DATE@2009-03-09</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::27700</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3031</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3413</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-1.629976 52.739146</ows:LowerCorner>
+        <ows:UpperCorner>-1.195225 52.917249</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603026.html"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:GBR_Kilmarnock_BGS_50K_SolubleRocks</Name>
+      <Title>GBR Kilmarnock BGS 1:50K soluble rocks</Title>
+      <Abstract>GBR Kilmarnock BGS 1:50K soluble rocks</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>OneGeology</ows:Keyword>
+        <ows:Keyword>thematic@Geology</ows:Keyword>
+        <ows:Keyword>thematic@Geologic hazards</ows:Keyword>
+        <ows:Keyword>GeoSure</ows:Keyword>
+        <ows:Keyword>soluble rocks</ows:Keyword>
+        <ows:Keyword>subarea@Kilmarnock</ows:Keyword>
+        <ows:Keyword>Natural ground stability</ows:Keyword>
+        <ows:Keyword>continent@Europe</ows:Keyword>
+        <ows:Keyword>subcontinent@Northern Europe</ows:Keyword>
+        <ows:Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</ows:Keyword>
+        <ows:Keyword>dataprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>serviceprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>DS_TOPIC@geoscientificinformation</ows:Keyword>
+        <ows:Keyword>DS_DATE@2009-03-09</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::27700</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3031</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3413</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-4.523977 55.538103</ows:LowerCorner>
+        <ows:UpperCorner>-4.215973 55.793293</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603030.html"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:GBR_Kilmarnock_BGS_50K_ShrinkSwell</Name>
+      <Title>GBR Kilmarnock BGS 1:50K shrink swell</Title>
+      <Abstract>GBR Kilmarnock BGS 1:50K shrink swell</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>OneGeology</ows:Keyword>
+        <ows:Keyword>thematic@Geology</ows:Keyword>
+        <ows:Keyword>thematic@Geologic hazards</ows:Keyword>
+        <ows:Keyword>GeoSure</ows:Keyword>
+        <ows:Keyword>shrink swell</ows:Keyword>
+        <ows:Keyword>subarea@Kilmarnock</ows:Keyword>
+        <ows:Keyword>Natural ground stability</ows:Keyword>
+        <ows:Keyword>continent@Europe</ows:Keyword>
+        <ows:Keyword>subcontinent@Northern Europe</ows:Keyword>
+        <ows:Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</ows:Keyword>
+        <ows:Keyword>dataprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>serviceprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>DS_TOPIC@geoscientificinformation</ows:Keyword>
+        <ows:Keyword>DS_DATE@2009-03-09</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::27700</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3031</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3413</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-4.524706 55.532280</ows:LowerCorner>
+        <ows:UpperCorner>-4.215438 55.793395</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603028.html"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:GBR_Kilmarnock_BGS_50K_RunningSand</Name>
+      <Title>GBR Kilmarnock BGS 1:50K running sand</Title>
+      <Abstract>GBR Kilmarnock BGS 1:50K running sand</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>OneGeology</ows:Keyword>
+        <ows:Keyword>thematic@Geology</ows:Keyword>
+        <ows:Keyword>thematic@Geologic hazards</ows:Keyword>
+        <ows:Keyword>GeoSure</ows:Keyword>
+        <ows:Keyword>running sand</ows:Keyword>
+        <ows:Keyword>subarea@Kilmarnock</ows:Keyword>
+        <ows:Keyword>Natural ground stability</ows:Keyword>
+        <ows:Keyword>continent@Europe</ows:Keyword>
+        <ows:Keyword>subcontinent@Northern Europe</ows:Keyword>
+        <ows:Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</ows:Keyword>
+        <ows:Keyword>dataprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>serviceprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>DS_TOPIC@geoscientificinformation</ows:Keyword>
+        <ows:Keyword>DS_DATE@2009-03-09</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::27700</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3031</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3413</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-4.524706 55.532280</ows:LowerCorner>
+        <ows:UpperCorner>-4.215438 55.793395</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603027.html"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:GBR_Kilmarnock_BGS_50K_Landslides</Name>
+      <Title>GBR Kilmarnock BGS 1:50K landslides</Title>
+      <Abstract>GBR Kilmarnock BGS 1:50K landslides</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>OneGeology</ows:Keyword>
+        <ows:Keyword>thematic@Geology</ows:Keyword>
+        <ows:Keyword>thematic@Geologic hazards</ows:Keyword>
+        <ows:Keyword>GeoSure</ows:Keyword>
+        <ows:Keyword>Landslides</ows:Keyword>
+        <ows:Keyword>Slope Instability</ows:Keyword>
+        <ows:Keyword>subarea@Kilmarnock</ows:Keyword>
+        <ows:Keyword>Natural ground stability</ows:Keyword>
+        <ows:Keyword>continent@Europe</ows:Keyword>
+        <ows:Keyword>subcontinent@Northern Europe</ows:Keyword>
+        <ows:Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</ows:Keyword>
+        <ows:Keyword>dataprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>serviceprovider@British Geological Survey</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::27700</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3031</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3413</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-4.524706 55.532280</ows:LowerCorner>
+        <ows:UpperCorner>-4.215438 55.793395</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603029.html"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:GBR_Kilmarnock_BGS_50K_CompressibleGround</Name>
+      <Title>GBR Kilmarnock BGS 1:50K Compressible Ground</Title>
+      <Abstract>GBR Kilmarnock BGS 1:50K Compressible Ground</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>OneGeology</ows:Keyword>
+        <ows:Keyword>thematic@Geology</ows:Keyword>
+        <ows:Keyword>thematic@Geologic hazards</ows:Keyword>
+        <ows:Keyword>GeoSure</ows:Keyword>
+        <ows:Keyword>Compressible Ground</ows:Keyword>
+        <ows:Keyword>subarea@Kilmarnock</ows:Keyword>
+        <ows:Keyword>Natural ground stability</ows:Keyword>
+        <ows:Keyword>continent@Europe</ows:Keyword>
+        <ows:Keyword>subcontinent@Northern Europe</ows:Keyword>
+        <ows:Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</ows:Keyword>
+        <ows:Keyword>dataprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>serviceprovider@British Geological Survey</ows:Keyword>
+        <ows:Keyword>DS_TOPIC@geoscientificinformation</ows:Keyword>
+        <ows:Keyword>DS_DATE@2009-03-09</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::27700</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3031</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3413</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-4.524706 55.532280</ows:LowerCorner>
+        <ows:UpperCorner>-4.215438 55.793395</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603026.html"/>
+    </FeatureType>
+  </FeatureTypeList>
+  <fes:Filter_Capabilities>
+    <fes:Conformance>
+      <fes:Constraint name="ImplementsQuery">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsAdHocQuery">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsFunctions">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsResourceId">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinStandardFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsStandardFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinSpatialFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsSpatialFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinTemporalFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsTemporalFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsVersionNav">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsSorting">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsExtendedOperators">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinimumXPath">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsSchemaElementFunc">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+    </fes:Conformance>
+    <fes:Id_Capabilities>
+      <fes:ResourceIdentifier name="fes:ResourceId"/>
+    </fes:Id_Capabilities>
+    <fes:Scalar_Capabilities>
+      <fes:LogicalOperators/>
+      <fes:ComparisonOperators>
+        <fes:ComparisonOperator name="PropertyIsEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsNotEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsLessThan"/>
+        <fes:ComparisonOperator name="PropertyIsGreaterThan"/>
+        <fes:ComparisonOperator name="PropertyIsLessThanOrEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsGreaterThanOrEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsLike"/>
+        <fes:ComparisonOperator name="PropertyIsBetween"/>
+      </fes:ComparisonOperators>
+    </fes:Scalar_Capabilities>
+    <fes:Spatial_Capabilities>
+      <fes:GeometryOperands>
+        <fes:GeometryOperand name="gml:Point"/>
+        <fes:GeometryOperand name="gml:MultiPoint"/>
+        <fes:GeometryOperand name="gml:LineString"/>
+        <fes:GeometryOperand name="gml:MultiLineString"/>
+        <fes:GeometryOperand name="gml:Curve"/>
+        <fes:GeometryOperand name="gml:MultiCurve"/>
+        <fes:GeometryOperand name="gml:Polygon"/>
+        <fes:GeometryOperand name="gml:MultiPolygon"/>
+        <fes:GeometryOperand name="gml:Surface"/>
+        <fes:GeometryOperand name="gml:MultiSurface"/>
+        <fes:GeometryOperand name="gml:Box"/>
+        <fes:GeometryOperand name="gml:Envelope"/>
+      </fes:GeometryOperands>
+      <fes:SpatialOperators>
+        <fes:SpatialOperator name="Equals"/>
+        <fes:SpatialOperator name="Disjoint"/>
+        <fes:SpatialOperator name="Touches"/>
+        <fes:SpatialOperator name="Within"/>
+        <fes:SpatialOperator name="Overlaps"/>
+        <fes:SpatialOperator name="Crosses"/>
+        <fes:SpatialOperator name="Intersects"/>
+        <fes:SpatialOperator name="Contains"/>
+        <fes:SpatialOperator name="DWithin"/>
+        <fes:SpatialOperator name="Beyond"/>
+        <fes:SpatialOperator name="BBOX"/>
+      </fes:SpatialOperators>
+    </fes:Spatial_Capabilities>
+    <fes:Temporal_Capabilities>
+      <fes:TemporalOperands>
+        <fes:TemporalOperand name="gml:TimePeriod"/>
+        <fes:TemporalOperand name="gml:TimeInstant"/>
+      </fes:TemporalOperands>
+      <fes:TemporalOperators>
+        <fes:TemporalOperator name="During"/>
+      </fes:TemporalOperators>
+    </fes:Temporal_Capabilities>
+  </fes:Filter_Capabilities>
+</wfs:WFS_Capabilities>

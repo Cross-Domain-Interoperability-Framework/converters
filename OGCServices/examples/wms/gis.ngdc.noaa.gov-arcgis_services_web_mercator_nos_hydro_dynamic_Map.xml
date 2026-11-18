@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:esri_wms="http://www.esri.com/wms" version="1.3.0" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+  <Service>
+    <Name>WMS</Name>
+    <Title>web_mercator_nos_hydro_dynamic</Title>
+    <Abstract>WMS</Abstract>
+    <KeywordList><Keyword></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson></ContactPerson>
+        <ContactOrganization></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition></ContactPosition>
+      <ContactAddress>
+        <AddressType></AddressType>
+        <Address></Address>
+        <City></City>
+        <StateOrProvince></StateOrProvince>
+        <PostCode></PostCode>
+        <Country></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone></ContactVoiceTelephone>
+      <ContactFacsimileTelephone></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees></Fees>
+    <AccessConstraints></AccessConstraints>
+    <MaxWidth>4096</MaxWidth>
+    <MaxHeight>4096</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.esri.wms_raw_xml</Format>
+        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>application/geo+json</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <esri_wms:GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </esri_wms:GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+      <Title>Layers</Title>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.999990</westBoundLongitude><eastBoundLongitude>179.999990</eastBoundLongitude><southBoundLatitude>-85.000000</southBoundLatitude><northBoundLatitude>85.000000</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.999990" miny="-85.000000" maxx="179.999990" maxy="85.000000"/>
+<BoundingBox CRS="EPSG:4326" minx="-85.000000" miny="-179.999990" maxx="85.000000" maxy="179.999990"/>
+<BoundingBox CRS="EPSG:3857" minx="-20037507.229594" miny="-19971868.880409" maxx="20037507.229594" maxy="19971868.880409"/>
+<BoundingBox CRS="EPSG:102100" minx="-20037507.229594" miny="-19971868.880409" maxx="20037507.229594" maxy="19971868.880409"/>
+      <Layer queryable="1">
+        <Name>0</Name>
+        <Title>Surveys without Digital Sounding Data</Title>
+        <Abstract></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.990000</westBoundLongitude><eastBoundLongitude>179.990000</eastBoundLongitude><southBoundLatitude>-14.298979</southBoundLatitude><northBoundLatitude>78.000000</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.990000" miny="-14.298979" maxx="179.990000" maxy="78.000000"/>
+<BoundingBox CRS="EPSG:4326" minx="-14.298979" miny="-179.990000" maxx="78.000000" maxy="179.990000"/>
+<BoundingBox CRS="EPSG:3857" minx="-20036395.147881" miny="-1608540.115581" maxx="20036395.147881" maxy="14368684.282800"/>
+<BoundingBox CRS="EPSG:102100" minx="-20036395.147881" miny="-1608540.115581" maxx="20036395.147881" maxy="14368684.282800"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Surveys without Digital Sounding Data</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0" xlink:type="simple"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>1</Name>
+        <Title>Surveys with Digital Sounding Data</Title>
+        <Abstract></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.999989</westBoundLongitude><eastBoundLongitude>179.999970</eastBoundLongitude><southBoundLatitude>-17.560483</southBoundLatitude><northBoundLatitude>80.005966</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.999989" miny="-17.560483" maxx="179.999970" maxy="80.005966"/>
+<BoundingBox CRS="EPSG:4326" minx="-17.560483" miny="-179.999989" maxx="80.005966" maxy="179.999970"/>
+<BoundingBox CRS="EPSG:3857" minx="-20037507.067162" miny="-1986167.344778" maxx="20037504.980941" maxy="15542537.002690"/>
+<BoundingBox CRS="EPSG:102100" minx="-20037507.067162" miny="-1986167.344778" maxx="20037504.980941" maxy="15542537.002690"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Surveys with Digital Sounding Data</Title>
+          <LegendURL width="96" height="180">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=1" xlink:type="simple"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>2</Name>
+        <Title>Surveys with BAGs</Title>
+        <Abstract></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-177.503125</westBoundLongitude><eastBoundLongitude>166.663506</eastBoundLongitude><southBoundLatitude>-17.560483</southBoundLatitude><northBoundLatitude>80.005966</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-177.503125" miny="-17.560483" maxx="166.663506" maxy="80.005966"/>
+<BoundingBox CRS="EPSG:4326" minx="-17.560483" miny="-177.503125" maxx="80.005966" maxy="166.663506"/>
+<BoundingBox CRS="EPSG:3857" minx="-19759557.489215" miny="-1986167.344778" maxx="18552896.599812" maxy="15542537.002690"/>
+<BoundingBox CRS="EPSG:102100" minx="-19759557.489215" miny="-1986167.344778" maxx="18552896.599812" maxy="15542537.002690"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Surveys with BAGs</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=2" xlink:type="simple"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

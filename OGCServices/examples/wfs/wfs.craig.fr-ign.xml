@@ -1,0 +1,1876 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wfs:WFS_Capabilities xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:ign="http://mapserver.gis.umn.edu/mapserver" xmlns="http://www.opengis.net/wfs/2.0" version="2.0.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+  <ows:ServiceIdentification>
+    <ows:Title>Service de téléchargement (WFS) des données IGN sur Auvergne-Rhône-Alpes: BD Topo/BD Forêt</ows:Title>
+    <ows:Abstract>Ce service de téléchargement (WFS) permet d'accéder depuis un SIG aux données spatiales vectorielles et attributaires de la BD Topo et BD Forêt de l'IGN (millésime 2026) sur la région Auvergne-Rhône-Alpes. Il est conseillé d'utiliser des filtres attributaires ou spatiaux pour limiter le volume de données demandé.</ows:Abstract>
+    <ows:Keywords>
+      <ows:Keyword>IGN</ows:Keyword>
+      <ows:Keyword>BD TOPO</ows:Keyword>
+      <ows:Keyword>boundaries</ows:Keyword>
+      <ows:Keyword>location</ows:Keyword>
+      <ows:Keyword>transportation</ows:Keyword>
+      <ows:Keyword>utilitiesCommunication</ows:Keyword>
+      <ows:Keyword>BD FORET</ows:Keyword>
+      <ows:Keyword>biota</ows:Keyword>
+      <ows:Keyword>environment</ows:Keyword>
+      <ows:Keyword>planningCadastre</ows:Keyword>
+      <ows:Keyword>OGC:WFS</ows:Keyword>
+      <ows:Keyword>WFS 1.1.0</ows:Keyword>
+      <ows:Keyword>WFS 2.0.0</ows:Keyword>
+      <ows:Keyword>wfs.craig.fr</ows:Keyword>
+      <ows:Keyword>wfs.craig.fr/ign</ows:Keyword>
+    </ows:Keywords>
+    <ows:ServiceType codeSpace="OGC">WFS</ows:ServiceType>
+    <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+    <ows:Fees>None</ows:Fees>
+    <ows:AccessConstraints>Service accessible sans limite d'accès</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <ows:ServiceProvider>
+    <ows:ProviderName>Centre Régional Auvergne-Rhône-Alpes de l'Information Géographique (CRAIG)</ows:ProviderName>
+    <ows:ProviderSite xlink:type="simple" xlink:href="http://www.craig.fr"/>
+    <ows:ServiceContact>
+      <ows:IndividualName>Landry BREUIL</ows:IndividualName>
+      <ows:PositionName>Responsable Informatique</ows:PositionName>
+      <ows:ContactInfo>
+        <ows:Phone>
+          <ows:Voice>+33972622531</ows:Voice>
+          <ows:Facsimile/>
+          <!--WARNING: Optional metadata "ows_contactfacsimiletelephone" was missing for ows:Facsimile-->
+        </ows:Phone>
+        <ows:Address>
+          <ows:DeliveryPoint>Hôtel de région - 59, boulevard Léon Jouhaux</ows:DeliveryPoint>
+          <ows:City>Clermont-Ferrand</ows:City>
+          <ows:AdministrativeArea>Auvergne Rhône-Alpes</ows:AdministrativeArea>
+          <ows:PostalCode>63050</ows:PostalCode>
+          <ows:Country>France</ows:Country>
+          <ows:ElectronicMailAddress>admin@craig.fr</ows:ElectronicMailAddress>
+        </ows:Address>
+        <ows:OnlineResource xlink:type="simple" xlink:href="http://www.craig.fr"/>
+        <ows:HoursOfService>24/7</ows:HoursOfService>
+        <ows:ContactInstructions>mail preferred, during hours of service</ows:ContactInstructions>
+      </ows:ContactInfo>
+      <ows:Role>staff</ows:Role>
+    </ows:ServiceContact>
+  </ows:ServiceProvider>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="AcceptVersions">
+        <ows:AllowedValues>
+          <ows:Value>2.0.0</ows:Value>
+          <ows:Value>1.1.0</ows:Value>
+          <ows:Value>1.0.0</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="AcceptFormats">
+        <ows:AllowedValues>
+          <ows:Value>text/xml</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="Sections">
+        <ows:AllowedValues>
+          <ows:Value>ServiceIdentification</ows:Value>
+          <ows:Value>ServiceProvider</ows:Value>
+          <ows:Value>OperationsMetadata</ows:Value>
+          <ows:Value>FeatureTypeList</ows:Value>
+          <ows:Value>Filter_Capabilities</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="DescribeFeatureType">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="outputFormat">
+        <ows:AllowedValues>
+          <ows:Value>application/gml+xml; version=3.2</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="GetFeature">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="outputFormat">
+        <ows:AllowedValues>
+          <ows:Value>application/gml+xml; version=3.2</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+          <ows:Value>application/json</ows:Value>
+          <ows:Value>SHAPE-ZIP</ows:Value>
+          <ows:Value>geopackage</ows:Value>
+          <ows:Value>FLATGEOBUF</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="GetPropertyValue">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="outputFormat">
+        <ows:AllowedValues>
+          <ows:Value>application/gml+xml; version=3.2</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="ListStoredQueries">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="DescribeStoredQueries">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="https://wfs.craig.fr/ign?language=fra&amp;"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Parameter name="version">
+      <ows:AllowedValues>
+        <ows:Value>2.0.0</ows:Value>
+        <ows:Value>1.1.0</ows:Value>
+        <ows:Value>1.0.0</ows:Value>
+      </ows:AllowedValues>
+    </ows:Parameter>
+    <ows:Constraint name="ImplementsBasicWFS">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsTransactionalWFS">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsLockingWFS">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="KVPEncoding">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="XMLEncoding">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="SOAPEncoding">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsInheritance">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsRemoteResolve">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsResultPaging">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsStandardJoins">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsSpatialJoins">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsTemporalJoins">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsFeatureVersioning">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ManageStoredQueries">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="PagingIsTransactionSafe">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="QueryExpressions">
+      <ows:AllowedValues>
+        <ows:Value>wfs:Query</ows:Value>
+        <ows:Value>wfs:StoredQuery</ows:Value>
+      </ows:AllowedValues>
+    </ows:Constraint>
+  </ows:OperationsMetadata>
+  <FeatureTypeList>
+    <FeatureType>
+      <Name>ign:dallage_scan_25_par_annee</Name>
+      <Title>Dallage Scan 25 (avec années d'éditions au 2022-04-01)</Title>
+      <Abstract>Dallage du scan 25 avec métadonnées (années d'édition, date d'actualisation et d'intégration, etc) sur la région complète</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.949961 43.991584</ows:LowerCorner>
+        <ows:UpperCorner>7.327327 46.860164</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://wfs.craig.fr/ign?language=fra&amp;request=GetMetadata&amp;layer=dallage_scan_25_par_annee"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_troncon_de_route</Name>
+      <Title>Tronçons de routes</Title>
+      <Abstract>Tronçons de routes du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_point_de_repere</Name>
+      <Title>Point de repère PK</Title>
+      <Abstract>Points de repère du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_section_de_points_de_repere</Name>
+      <Title>Section de point de repère PK</Title>
+      <Abstract>Sections de points de repère du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_route_numerotee_ou_nommee</Name>
+      <Title>Routes numérotées ou nommées</Title>
+      <Abstract>Routes numérotées ou nommées du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_voie_nommee</Name>
+      <Title>Voies nommées</Title>
+      <Abstract>Voies nommées du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_equipement</Name>
+      <Title>Equipement de transport</Title>
+      <Abstract>Equipements du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_troncon_de_voie_ferree</Name>
+      <Title>Troncons de voie ferrée</Title>
+      <Abstract>Troncons de voie ferrée du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_par_cable</Name>
+      <Title>Transport par câble</Title>
+      <Abstract>Transport par câble du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_voie_ferree_nommee</Name>
+      <Title>Voies ferrées nommées</Title>
+      <Abstract>Voires ferrées nommées du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_point_du_reseau</Name>
+      <Title>Barrières/passages à niveaux</Title>
+      <Abstract>Points du réseau du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_aerodrome</Name>
+      <Title>Aérodrome</Title>
+      <Abstract>Aérodromes du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_piste_aerodrome</Name>
+      <Title>Piste d'aérodrome</Title>
+      <Abstract>Pistes d'aérodromes du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:transport_itineraire_autre</Name>
+      <Title>Itinéraires autre</Title>
+      <Abstract>Itinéraires autre du thême transport de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:services_et_activites_canalisations</Name>
+      <Title>Canalisations</Title>
+      <Abstract>Canalisations du thême services et activités de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:services_et_activites_poste_de_transformation</Name>
+      <Title>Postes de transformation</Title>
+      <Abstract>Postes de transformation du thême services et activités de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:services_et_activites_ligne_electrique</Name>
+      <Title>Lignes électriques</Title>
+      <Abstract>Lignes électriques du thême services et activités de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:hydrographie_troncon_hydrographique</Name>
+      <Title>Tronçons hydrographiques</Title>
+      <Abstract>Tronçons du thême hydrographie de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:hydrographie_cours_d_eau</Name>
+      <Title>Cours d'eau</Title>
+      <Abstract>Cours d'eau du thême hydrographie de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:hydrographie_noeud_hydrographique</Name>
+      <Title>Noeuds hydrographiques</Title>
+      <Abstract>Noeuds du thême hydrographie de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:hydrographie_surface_eau</Name>
+      <Title>Surfaces hydrographiques</Title>
+      <Abstract>Surfaces hydrographiques du thême hydrographie de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:hydrographie_bassin_versant</Name>
+      <Title>Bassins versants</Title>
+      <Abstract>Bassins versants du thême hydrographie de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:hydrographie_plan_d_eau</Name>
+      <Title>Plans d'eau</Title>
+      <Abstract>Plans d'eau du thême hydrographie de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:hydrographie_detail</Name>
+      <Title>Détail Hydrographique</Title>
+      <Abstract>Détails du thême hydrographie de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:ocsol_zone_de_vegetation</Name>
+      <Title>Zones de végétation</Title>
+      <Abstract>Zones de végétation du thême occupation du sol de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:ocsol_haie</Name>
+      <Title>Haies</Title>
+      <Abstract>Haies du thême occupation du sol de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bati_batiment</Name>
+      <Title>Bâtiments</Title>
+      <Abstract>Bâtiments du thême bâti de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bati_cimetiere</Name>
+      <Title>Cimetières</Title>
+      <Abstract>Cimetières du thême bâti de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bati_construction_lineaire</Name>
+      <Title>Constructions linéaires</Title>
+      <Abstract>Constructions linéaires du thême bâti de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bati_construction_ponctuelle</Name>
+      <Title>Constructions ponctuelles</Title>
+      <Abstract>Constructions ponctuelles du thême bâti de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bati_construction_surfacique</Name>
+      <Title>Constructions surfaciques</Title>
+      <Abstract>Constructions surfaciques du thême bâti de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bati_reservoir</Name>
+      <Title>Réservoirs</Title>
+      <Abstract>Réservoirs du thême bâti de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bati_terrain_sport</Name>
+      <Title>Terrains de sport</Title>
+      <Abstract>Terrains de sport du thême bâti de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bati_ligne_orographie</Name>
+      <Title>Lignes orographiques</Title>
+      <Abstract>Lignes orographiques du thême bâti de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bati_pylone</Name>
+      <Title>Pylônes</Title>
+      <Abstract>Pylônes du thême bâti de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:administratif_commune</Name>
+      <Title>Communes</Title>
+      <Abstract>Communes du thême administratif de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:administratif_commune_associee</Name>
+      <Title>Communes associées</Title>
+      <Abstract>Communes associées du thême administratif de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:administratif_region</Name>
+      <Title>Régions</Title>
+      <Abstract>Régions du thême administratif de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:administratif_departement</Name>
+      <Title>Départements</Title>
+      <Abstract>Départements du thême administratif de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:administratif_arrondissement</Name>
+      <Title>Arrondissements</Title>
+      <Abstract>Arrondissements du thême administratif de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:administratif_epci</Name>
+      <Title>EPCI</Title>
+      <Abstract>EPCI du thême administratif de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:administratif_arrondissement_municipal</Name>
+      <Title>Arrondissements Municipaux</Title>
+      <Abstract>Arrondissements municipaux du thême administratif de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:services_et_activites_zone_d_activite_ou_d_interet</Name>
+      <Title>Zones d'activités ou d'intêret</Title>
+      <Abstract>Zones d'activités ou d'intêret du thême services et activités de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:services_et_activites_erp</Name>
+      <Title>ERP</Title>
+      <Abstract>ERP du thême services et activités de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:zones_reglementees_parc_ou_reserve</Name>
+      <Title>Parcs ou réserves</Title>
+      <Abstract>Parcs ou réserves du thême zones reglementées de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:zones_reglementees_foret_publique</Name>
+      <Title>Forêts publiques</Title>
+      <Abstract>Forêts publiques du thême zones reglementées de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:lieux_nommes_zone_d_habitation</Name>
+      <Title>Zones d'habitation</Title>
+      <Abstract>Zones d'habitation du thême lieux nommés de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:lieux_nommes_lieu_dit_non_habite</Name>
+      <Title>Lieux-dits non habités</Title>
+      <Abstract>Lieux-dits non habités du thême lieux nommés de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:lieux_nommes_detail_orographique</Name>
+      <Title>Détails orographiques</Title>
+      <Abstract>Détails orographiques du thême lieux nommés de la BDTopo IGN</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>1.553869 43.717238</ows:LowerCorner>
+        <ows:UpperCorner>7.465592 46.950200</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bdforet_v1</Name>
+      <Title>BD Forêt V1</Title>
+      <Abstract>Couche BD Forêt V1</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>2.031390 44.068786</ows:LowerCorner>
+        <ows:UpperCorner>7.254336 46.804034</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/970c1563-b317-49d2-ac2a-a71a9393299f/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/970c1563-b317-49d2-ac2a-a71a9393299f" about="metadata in datahub"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ign:bdforet_v2</Name>
+      <Title>BD Forêt V2</Title>
+      <Abstract>Couche BD Forêt V2</Abstract>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::2154</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3785</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::900913</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4171</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3945</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3946</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json</Format>
+        <Format>SHAPE-ZIP</Format>
+        <Format>geopackage</Format>
+        <Format>FLATGEOBUF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>2.030768 44.069046</ows:LowerCorner>
+        <ows:UpperCorner>7.254416 46.805061</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ids.craig.fr/geocat/srv/api/records/e8ac430c-07c0-48aa-a910-f19dd675677f/formatters/xml" about="XML metadata view"/>
+      <MetadataURL xlink:href="https://ids.craig.fr/datahub/dataset/e8ac430c-07c0-48aa-a910-f19dd675677f" about="metadata in datahub"/>
+    </FeatureType>
+  </FeatureTypeList>
+  <fes:Filter_Capabilities>
+    <fes:Conformance>
+      <fes:Constraint name="ImplementsQuery">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsAdHocQuery">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsFunctions">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsResourceId">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinStandardFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsStandardFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinSpatialFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsSpatialFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinTemporalFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsTemporalFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsVersionNav">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsSorting">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsExtendedOperators">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinimumXPath">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsSchemaElementFunc">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+    </fes:Conformance>
+    <fes:Id_Capabilities>
+      <fes:ResourceIdentifier name="fes:ResourceId"/>
+    </fes:Id_Capabilities>
+    <fes:Scalar_Capabilities>
+      <fes:LogicalOperators/>
+      <fes:ComparisonOperators>
+        <fes:ComparisonOperator name="PropertyIsEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsNotEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsLessThan"/>
+        <fes:ComparisonOperator name="PropertyIsGreaterThan"/>
+        <fes:ComparisonOperator name="PropertyIsLessThanOrEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsGreaterThanOrEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsLike"/>
+        <fes:ComparisonOperator name="PropertyIsBetween"/>
+      </fes:ComparisonOperators>
+    </fes:Scalar_Capabilities>
+    <fes:Spatial_Capabilities>
+      <fes:GeometryOperands>
+        <fes:GeometryOperand name="gml:Point"/>
+        <fes:GeometryOperand name="gml:MultiPoint"/>
+        <fes:GeometryOperand name="gml:LineString"/>
+        <fes:GeometryOperand name="gml:MultiLineString"/>
+        <fes:GeometryOperand name="gml:Curve"/>
+        <fes:GeometryOperand name="gml:MultiCurve"/>
+        <fes:GeometryOperand name="gml:Polygon"/>
+        <fes:GeometryOperand name="gml:MultiPolygon"/>
+        <fes:GeometryOperand name="gml:Surface"/>
+        <fes:GeometryOperand name="gml:MultiSurface"/>
+        <fes:GeometryOperand name="gml:Box"/>
+        <fes:GeometryOperand name="gml:Envelope"/>
+      </fes:GeometryOperands>
+      <fes:SpatialOperators>
+        <fes:SpatialOperator name="Equals"/>
+        <fes:SpatialOperator name="Disjoint"/>
+        <fes:SpatialOperator name="Touches"/>
+        <fes:SpatialOperator name="Within"/>
+        <fes:SpatialOperator name="Overlaps"/>
+        <fes:SpatialOperator name="Crosses"/>
+        <fes:SpatialOperator name="Intersects"/>
+        <fes:SpatialOperator name="Contains"/>
+        <fes:SpatialOperator name="DWithin"/>
+        <fes:SpatialOperator name="Beyond"/>
+        <fes:SpatialOperator name="BBOX"/>
+      </fes:SpatialOperators>
+    </fes:Spatial_Capabilities>
+    <fes:Temporal_Capabilities>
+      <fes:TemporalOperands>
+        <fes:TemporalOperand name="gml:TimePeriod"/>
+        <fes:TemporalOperand name="gml:TimeInstant"/>
+      </fes:TemporalOperands>
+      <fes:TemporalOperators>
+        <fes:TemporalOperator name="During"/>
+      </fes:TemporalOperators>
+    </fes:Temporal_Capabilities>
+  </fes:Filter_Capabilities>
+</wfs:WFS_Capabilities>
