@@ -1,0 +1,101 @@
+mapping_set_id: https://w3id.org/cdif/mappings/iso19115-3-to-cdif
+mapping_set_title: ISO 19115-3 to CDIF
+mapping_set_description: |
+  Property correspondences applied by ISO19115/iso_to_cdif.py (ISO 19115-3 XML ->
+  CDIF JSON-LD). This table drives the converter: it is read at runtime, and
+  each transform names a shaper (tf_<transform>) in iso_to_cdif.py. The
+  iso19115-3 and iso19139 tables have the same rows in the same order and
+  differ only in subject_xpath (and subject_id / subject_class, which name the
+  ISO element in that encoding's namespace); keep them aligned.
+
+  subject_xpath is an XPath 1.0 expression from the metadata root element
+  (MD_Metadata / MI_Metadata), using the prefixes in curie_map; it may use
+  predicates (role codes, date types) and '|' unions. subject_id is the ISO
+  element the row reads, as a CURIE; subject_class is the ISO class it sits on.
+  object_json_path is where the value lands: $.<property> on the dataset, or
+  $.schema:subjectOf.<property> on the catalog record. Rows run in file order:
+  for a scalar target the first row to fill it wins; array targets accumulate.
+
+  Where ISO has no CDIF property the rows follow the GeoNetwork DDE conventions
+  (core-geonetwork iso19115-3.2018 formatter/cdif and convert/fromJsonCdif.xsl)
+  and the DDE building blocks (https://usgin.github.io/ddeBuildingBlocks/):
+  supplementalInformation sections, codeSpace 'sameAs' identifiers, archive
+  members as 'inapplicable' online resources, and dde: PropertyValues for
+  spatial representation, reference systems and vertical extent.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/ISO19115/iso_to_cdif.py
+mapping_date: 2026-11-18
+subject_source: https://standards.iso.org/iso/19115/-3/
+object_source: https://w3id.org/cdif/core/2.0
+see_also:
+  - https://github.com/geonetwork/core-geonetwork/tree/main/schemas/iso19115-3.2018/src/main/plugin/iso19115-3.2018
+  - https://github.com/usgin/metadataTransforms
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_xpath
+    property: https://w3id.org/cdif/mappings/subjectXPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  text            the first non-empty value
+  texts           every distinct value
+  describe        appended to the description as '<subject_label>: ...'
+  date            an ISO date or date-time in the CDIF pattern (a time with no zone is UTC)
+  lang            an ISO 639-2 LanguageCode -> BCP 47 for the common languages
+  identifier      the first MD_Identifier whose codeSpace is not 'sameAs' -> PropertyValue
+  sameas          every other identifier -> a URL (a DOI as https://doi.org/) or the code
+  recordid        the metadata record's identifier
+  agent           CI_Responsibility / CI_ResponsibleParty -> Person / Organization
+  contributor     an agent in a schema:Role named by the ISO role code
+  funder          an agent -> MonetaryGrant with that funder
+  scope           MD_ScopeCode -> dde:codelist/ResourceTypeCode DefinedTerm, else ISO MD_ScopeCode
+  topic           MD_TopicCategoryCode -> dde:codelist/TopicCategoryCode DefinedTerm
+  keywords        MD_Keywords -> DefinedTerms in the thesaurus, or strings
+  bbox            EX_GeographicBoundingBox -> Place with a GeoShape box
+  polygon         gml polygon -> Place with a geosparql WKT POLYGON
+  geodescription  EX_GeographicDescription -> named Place
+  temporal        gml TimePeriod / TimeInstant -> ISO 8601 interval or date
+  vertical        EX_VerticalExtent -> dde:verticalExtent PropertyValue
+  spatialreptype  -> dde:spatialRepresentationType PropertyValue
+  resolution      MD_Resolution -> dde:spatialResolution PropertyValue
+  refsys          MD_ReferenceSystem -> dde:referenceSystemIdentifier / dde:referenceSystemType
+  image           MD_BrowseGraphic -> ImageObject
+  license         a licence URL in the legal constraints -> CreativeWork
+  access          constraint texts and restriction codes -> conditionsOfAccess
+  associated      associated resource / aggregation -> LinkRole
+  supp_funding    supplementalInformation 'FUNDING:' -> MonetaryGrant
+  supp_technique  supplementalInformation 'MEASUREMENT TECHNIQUE:'
+  supp_principles supplementalInformation 'PUBLISHING PRINCIPLES:'
+  supp_rest       the rest of supplementalInformation, appended to the description
+  landing         an information / browse online resource -> url
+  metadatalinkage the metadata record's online location
+  distribution    CI_OnlineResource -> DataDownload, WebAPI, or an archive member
+  onlinelink      any other online resource -> LinkRole
+  variable        MD_SampleDimension / MD_Band / FC_FeatureAttribute -> PropertyValue
+  lineage         LI_Lineage -> prov:Activity per statement and process step
+  source          LI_Source -> prov:wasDerivedFrom CreativeWork
+  acquisition     MI_AcquisitionInformation -> a cdifProv acquisition Action
+  servicetype     srv:serviceType -> DefinedTerm (the record becomes a WebAPI)
+  operation       SV_OperationMetadata -> Action (sentinels for a missing name or URL)
+  operateson      srv:operatesOn -> schema:dataset
+  termsofservice  MD_StandardOrderProcess -> termsOfService text
+curie_map:
+  cit: http://standards.iso.org/iso/19115/-3/cit/2.0
+  gex: http://standards.iso.org/iso/19115/-3/gex/1.0
+  gfc: http://standards.iso.org/iso/19110/gfc/1.1
+  mac: http://standards.iso.org/iso/19115/-3/mac/2.0
+  mco: http://standards.iso.org/iso/19115/-3/mco/1.0
+  mdb: http://standards.iso.org/iso/19115/-3/mdb/2.0
+  mrc: http://standards.iso.org/iso/19115/-3/mrc/2.0
+  mrd: http://standards.iso.org/iso/19115/-3/mrd/1.0
+  mri: http://standards.iso.org/iso/19115/-3/mri/1.0
+  mrl: http://standards.iso.org/iso/19115/-3/mrl/2.0
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  srv: http://standards.iso.org/iso/19115/-3/srv/2.1

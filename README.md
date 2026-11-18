@@ -15,6 +15,7 @@ expose their conversion as an importable function.
 | [`DCAT/dcat_to_cdif.py`](DCAT/dcat_to_cdif.py) | DCAT → CDIF | W3C DCAT |
 | [`DCAT/cdif_to_dcat.py`](DCAT/cdif_to_dcat.py) | CDIF → DCAT 3 (JSON-LD `@graph`: Dataset, CatalogRecord, Catalog) | W3C DCAT |
 | [`UMM/umm_to_cdif.py`](UMM/umm_to_cdif.py) | NASA CMR UMM-C (file **or URL**) → CDIF core+discovery | NASA UMM-C JSON |
+| [`ISO19115/iso_to_cdif.py`](ISO19115/iso_to_cdif.py) | ISO 19115-3 and ISO 19139 / 19115-2 XML (file, URL or CSW response) → CDIF (table-driven; DDE conventions where ISO has no CDIF property) | ISO 19115 XML |
 | [`FAIR2/fair2_to_cdif.py`](FAIR2/fair2_to_cdif.py) | FAIR² `fair2.json` (file **or URL**) → CDIF (reuses the Croissant converter for the Croissant core) | FAIR² |
 | [`DDI/ddi_to_cdif.py`](DDI/ddi_to_cdif.py) | DDI Codebook 2.5 (Harvard Dataverse) → CDIF | DDI Codebook XML |
 | [`DDI/ddi122_to_cdif.py`](DDI/ddi122_to_cdif.py) | DDI 1.2.2 (ICPSR, source-agnostic) → CDIF | DDI XML |

@@ -19,7 +19,9 @@ different roles — check which before editing either side:
   then applies that table), NIAID (`NIAID/harvest_niaid_to_cdif.py`: rows by
   `subject_class` in file order, shapers named in `transform`, and a name with
   no row on its class takes the target the table gives it elsewhere; see
-  `NIAID/AGENTS.md`), DDI (worksheets compiled to
+  `NIAID/AGENTS.md`), ISO 19115 (`ISO19115/iso_to_cdif.py`: two tables,
+  `iso19115-3-to-cdif` and `iso19139-to-cdif`, with the same rows in the same
+  order and different `subject_xpath`s — keep them aligned), DDI (worksheets compiled to
   `mappings/ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py`). A
   mapping change for these is a table edit; code is only for structural
   shapers.
