@@ -13,6 +13,9 @@ Formats and where each lands (one XML file per record, plus INDEX.json):
   oai_dc       DublinCore/examples/oai_dc/      OAI-PMH simple Dublin Core
   csw_record   DublinCore/examples/csw_record/  OGC csw:Record
   wms / wfs    OGCServices/examples/{wms,wfs}/  GetCapabilities documents
+  sdmx         SDMX/examples/                   SDMX-ML 2.1 Structure messages: a
+                                                dataflow with its DSD, concept
+                                                schemes and codelists
 
 Stages (each writes a JSON file under harvesters/endpoints/, so a later stage
 can be rerun alone):
@@ -58,7 +61,7 @@ PARSER = etree.XMLParser(resolve_entities=False, no_network=True, huge_tree=Fals
                          remove_blank_text=False)
 MAX_BYTES = 5_000_000
 REPO_CAP = 5            # records per repository per format, so no catalog dominates
-CAPABILITIES_MAX = 1_000_000   # WMS/WFS capabilities larger than this are not kept
+CAPABILITIES_MAX = 1_000_000   # WMS/WFS capabilities and SDMX messages larger than this are not kept
 TODAY = _dt.date.today().isoformat()
 
 OUT = {
@@ -71,6 +74,7 @@ OUT = {
     "csw_record": ROOT / "DublinCore" / "examples" / "csw_record",
     "wms": ROOT / "OGCServices" / "examples" / "wms",
     "wfs": ROOT / "OGCServices" / "examples" / "wfs",
+    "sdmx": ROOT / "SDMX" / "examples",
 }
 
 # root element (namespace, local name) -> format
@@ -85,6 +89,7 @@ ROOT_FORMAT = {
     (None, "WMT_MS_Capabilities"): "wms",
     ("http://www.opengis.net/wfs", "WFS_Capabilities"): "wfs",
     ("http://www.opengis.net/wfs/2.0", "WFS_Capabilities"): "wfs",
+    ("http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message", "Structure"): "sdmx",
     (None, "metadata"): "fgdc",                      # FGDC CSDGM has no namespace
 }
 
@@ -344,7 +349,7 @@ class Corpus:
         if name in self.files:
             return False
         data = etree.tostring(el, xml_declaration=True, encoding="UTF-8")
-        if self.fmt in ("wms", "wfs") and len(data) > CAPABILITIES_MAX:
+        if self.fmt in ("wms", "wfs", "sdmx") and len(data) > CAPABILITIES_MAX:
             return False
         (self.dir / name).write_bytes(data)
         self.files.add(name)
@@ -686,13 +691,82 @@ def harvest_ogc(corpora, rng, eps=()):
         time.sleep(0.3)
 
 
+SDMX_STRUCTURE_XML = "application/vnd.sdmx.structure+xml;version=2.1"
+GDS = "https://gds.sdmx.io"
+
+
+def _sdmx_roots(service):
+    """Candidate SDMX-REST 2.1 roots of a GDS service: base + the 1.x
+    endpoint path, then the base alone (some services list a label, not a path)."""
+    base = service["base"].rstrip("/") + "/"
+    roots = []
+    for e in service.get("endpoints", []):
+        if str(e.get("api_version", "")).startswith("1."):
+            roots.append(urllib.parse.urljoin(base, (e.get("url") or "").strip("/") + "/"))
+    roots.append(base)
+    return list(dict.fromkeys(roots))
+
+
+def harvest_sdmx(corpus, rng):
+    """SDMX: the services registered in the SDMX Global Discovery Service
+    (gds.sdmx.io/service/*/*/*/). From each, up to REPO_CAP random dataflows,
+    each fetched with its references, so one SDMX-ML 2.1 Structure message
+    holds the dataflow, its data structure definition and the concept schemes
+    and codelists it uses (detail=referencepartial trims codelists to the
+    codes the dataflow's constraints allow, where the service supports it)."""
+    services = json.loads(get(GDS + "/service/*/*/*/", timeout=90,
+                              accept="application/json")[0])["structures"]["services"]
+    rng.shuffle(services)
+    print("sdmx: %d services in the GDS" % len(services))
+    for svc in services:
+        if corpus.full:
+            break
+        repo = "%s %s" % (svc["agencyID"], svc["id"])
+        for root in _sdmx_roots(svc):
+            try:
+                x = parse(get(root + "dataflow/all/all/latest", {"detail": "allstubs"}, timeout=120,
+                              accept=SDMX_STRUCTURE_XML)[0])
+            except Exception as exc:
+                print("  %s: no dataflow list at %s (%s)" % (repo, root, str(exc)[:60]))
+                continue
+            flows = [(f.get("agencyID"), f.get("id"), f.get("version"))
+                     for f in x.iter("{*}Dataflow") if f.get("id")]
+            print("  %s: %d dataflows at %s" % (repo, len(flows), root))
+            rng.shuffle(flows)
+            got = 0
+            for agency, fid, ver in flows[:REPO_CAP * 3]:
+                if got >= REPO_CAP or corpus.full:
+                    break
+                url = "%sdataflow/%s/%s/%s" % (root, agency, fid, ver)
+                el = None
+                for params in ({"references": "all", "detail": "referencepartial"},
+                               {"references": "descendants"}, {"references": "children"}):
+                    try:
+                        el = parse(get(url, params, timeout=120, accept=SDMX_STRUCTURE_XML)[0])
+                        break
+                    except Exception:
+                        continue
+                # a dataflow with no data structure (a registry's test flow) is no example
+                if el is None or next(el.iter("{*}DataStructure"), None) is None:
+                    continue
+                req = url + "?" + urllib.parse.urlencode(params)
+                if corpus.add(el, svc["agencyID"], root, req, repo,
+                              "%s-%s-%s" % (agency, fid, ver), "sdmx-rest"):
+                    got += 1
+                time.sleep(0.5)
+            break                                    # one working root per service
+
+
 def stage_harvest(per_format, only=None):
     rng = random.Random(SEED)
     eps = json.loads((STATE / "endpoint-formats.json").read_text(encoding="utf-8"))["endpoints"]
     fmts = only or list(OUT)
     corpora = {f: Corpus(f, per_format) for f in fmts}
     harvest_local(corpora)
-    harvest_wafs(corpora, rng)
+    if {"iso19139", "iso19115-3", "fgdc"} & set(corpora):
+        harvest_wafs(corpora, rng)
+    if "sdmx" in corpora:
+        harvest_sdmx(corpora["sdmx"], rng)
     harvest_endpoints({f: c for f, c in corpora.items() if f not in ("wms", "wfs")}, eps, rng)
     if "eml" in corpora:
         for fn in (harvest_edi, harvest_gbif):
