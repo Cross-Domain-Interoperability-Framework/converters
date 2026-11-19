@@ -1,0 +1,857 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/"
+  },
+  "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Foreign trade - Region of Brussels - Capital - National concept - Part XV to XVII",
+  "schema:alternateName": [
+    "Commerce extérieur - Bruxelles-Capital - Concept national - Partie XV à XVII",
+    "Buitenlandse handel -Brussels Hoofdstedelijk gewest - Nationaal concept - Deel XV to XVII"
+  ],
+  "schema:description": "Belgium’s foreign trade statistics based on the \"Region of Brussels-Capital - National concept.\" It includes import and export data by product categories, trading partners, and trade flows - Part XV to XVII.",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "SDMX URN",
+    "schema:value": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=BE2:DF_EXTTRADEBXNAT_Part_XV_to_XVII(1.0)",
+    "schema:url": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0"
+  },
+  "schema:version": "1.0",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "BE2"
+  },
+  "schema:variableMeasured": [
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#REPORTING",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REPORTING",
+      "schema:description": "SDMX Dimension REPORTING",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).REPORTING"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_BE_AREA",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_BE_AREA(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_BE_AREA/1.0"
+          }
+        }
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#COUNTRY",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "COUNTRY",
+      "schema:description": "SDMX Dimension COUNTRY",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).COUNTRY"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_EXT_AREA",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_EXT_AREA(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_EXT_AREA/1.0"
+          }
+        }
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#PRODUCT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PRODUCT",
+      "schema:description": "SDMX Dimension PRODUCT",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).PRODUCT"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_EXTTRADE_PRODUCT_HS",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_EXTTRADE_PRODUCT_HS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_EXTTRADE_PRODUCT_HS/1.0"
+          }
+        }
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#FLOW",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FLOW",
+      "schema:description": "SDMX Dimension FLOW",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).FLOW"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_FLOW",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_FLOW(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_FLOW/1.0"
+          }
+        }
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#CONCEPT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONCEPT",
+      "schema:description": "SDMX Dimension CONCEPT",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).CONCEPT"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_CONCEPT",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_CONCEPT(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_CONCEPT/1.0"
+          }
+        }
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#DATATYPE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "DATATYPE",
+      "schema:description": "SDMX Dimension DATATYPE",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).DATATYPE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_DATATYPE",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_DATATYPE(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_DATATYPE/1.0"
+          }
+        }
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#FREQ",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FREQ",
+      "schema:description": "SDMX Dimension FREQ",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).FREQ"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_FREQ",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_FREQ(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_FREQ/1.0"
+          }
+        }
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#TIME_PERIOD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_PERIOD",
+      "schema:description": "SDMX TimeDimension TIME_PERIOD",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).TIME_PERIOD"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "ObservationalTimePeriod"
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#OBS_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_STATUS",
+      "schema:description": "SDMX Attribute OBS_STATUS",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).OBS_STATUS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_OBS_STATUS",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_OBS_STATUS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_OBS_STATUS/1.0"
+          }
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#CONF_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONF_STATUS",
+      "schema:description": "SDMX Attribute CONF_STATUS",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).CONF_STATUS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_CONF_STATUS",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_CONF_STATUS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_CONF_STATUS/1.0"
+          }
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#UNIT_MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MEASURE",
+      "schema:description": "SDMX Attribute UNIT_MEASURE",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).UNIT_MEASURE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_UNIT",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_UNIT(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_UNIT/1.0"
+          }
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#REPORTING"
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#UNIT_MULT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MULT",
+      "schema:description": "SDMX Attribute UNIT_MULT",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).UNIT_MULT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_UNIT_MULT",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_UNIT_MULT(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_UNIT_MULT/1.0"
+          }
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#EMBARGO_TIME",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "EMBARGO_TIME",
+      "schema:description": "SDMX Attribute EMBARGO_TIME",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).EMBARGO_TIME"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:dateTime",
+      "cdif:qualifies": {
+        "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#DECIMALS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "DECIMALS",
+      "schema:description": "SDMX Attribute DECIMALS",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).DECIMALS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_DECIMALS",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BE2:CL_DECIMALS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/codelist/BE2/CL_DECIMALS/1.0"
+          }
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#OBS_VALUE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_VALUE",
+      "schema:description": "SDMX PrimaryMeasure OBS_VALUE",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BE2:CS_EXT_PROD_DISS(1.0).OBS_VALUE"
+      },
+      "cdif:role": "Measure",
+      "cdif:physicalDataType": "xsd:double"
+    }
+  ],
+  "schema:url": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "SDMX-ML data for BE2,DF_EXTTRADEBXNAT_Part_XV_to_XVII,1.0",
+      "schema:contentUrl": "https://nsidisseminate-stat.nbb.be/rest/v1/data/BE2,DF_EXTTRADEBXNAT_Part_XV_to_XVII,1.0/all",
+      "schema:encodingFormat": [
+        "application/vnd.sdmx.genericdata+xml;version=2.1"
+      ],
+      "schema:description": "SDMX-REST data query for the whole dataflow; add a series key in place of 'all', startPeriod/endPeriod, or an Accept header (e.g. application/vnd.sdmx.data+csv) to narrow or reformat it.",
+      "cdi:isStructuredBy": {
+        "@type": [
+          "cdi:DimensionalDataStructure"
+        ],
+        "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=BE2:DS_EXTTRADEBXNAT(1.0)",
+        "cdi:has_DataStructureComponent": [
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).REPORTING",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#REPORTING"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).COUNTRY",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#COUNTRY"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).PRODUCT",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#PRODUCT"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).FLOW",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#FLOW"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).CONCEPT",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#CONCEPT"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).DATATYPE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#DATATYPE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).FREQ",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#FREQ"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=BE2:DS_EXTTRADEBXNAT(1.0).TIME_PERIOD",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#TIME_PERIOD"
+            }
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BE2:DS_EXTTRADEBXNAT(1.0).OBS_STATUS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#OBS_STATUS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=BE2:DS_EXTTRADEBXNAT(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BE2:DS_EXTTRADEBXNAT(1.0).CONF_STATUS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#CONF_STATUS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=BE2:DS_EXTTRADEBXNAT(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BE2:DS_EXTTRADEBXNAT(1.0).UNIT_MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#UNIT_MEASURE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).REPORTING"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).COUNTRY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).PRODUCT"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).FLOW"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).CONCEPT"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).DATATYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).FREQ"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BE2:DS_EXTTRADEBXNAT(1.0).UNIT_MULT",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#UNIT_MULT"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).DATATYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).CONCEPT"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).FLOW"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).PRODUCT"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).COUNTRY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BE2:DS_EXTTRADEBXNAT(1.0).REPORTING"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BE2:DS_EXTTRADEBXNAT(1.0).EMBARGO_TIME",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#EMBARGO_TIME"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=BE2:DS_EXTTRADEBXNAT(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BE2:DS_EXTTRADEBXNAT(1.0).DECIMALS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#DECIMALS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=BE2:DS_EXTTRADEBXNAT(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:MeasureComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=BE2:DS_EXTTRADEBXNAT(1.0).OBS_VALUE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#OBS_VALUE"
+            }
+          }
+        ],
+        "cdif:has_PrimaryKey": {
+          "@type": [
+            "cdif:Key"
+          ],
+          "cdif:isComposedOf": [
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#REPORTING"
+              },
+              "cdi:value": 1
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#COUNTRY"
+              },
+              "cdi:value": 2
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#PRODUCT"
+              },
+              "cdi:value": 3
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#FLOW"
+              },
+              "cdi:value": 4
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#CONCEPT"
+              },
+              "cdi:value": 5
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#DATATYPE"
+              },
+              "cdi:value": 6
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#FREQ"
+              },
+              "cdi:value": 7
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0#TIME_PERIOD"
+              },
+              "cdi:value": 8
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "schema:dateModified": "1900-01-01",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0?references=all&detail=referencepartial",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "SDMX structure metadata for: Foreign trade - Region of Brussels - Capital - National concept - Part XV to XVII",
+    "schema:about": {
+      "@id": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_structure/2.0"
+      }
+    ],
+    "schema:description": "Converted from an SDMX-ML 2.1 structure message (dataflow and data structure definition) to CDIF by sdmx_to_cdif.py.",
+    "schema:dateModified": "2026-11-19T00:02:30+00:00",
+    "schema:url": "https://nsidisseminate-stat.nbb.be/rest/v1/dataflow/BE2/DF_EXTTRADEBXNAT_Part_XV_to_XVII/1.0?references=all&detail=referencepartial"
+  }
+}

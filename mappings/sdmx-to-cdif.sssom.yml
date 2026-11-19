@@ -1,0 +1,61 @@
+mapping_set_id: https://w3id.org/cdif/mappings/sdmx-to-cdif
+mapping_set_title: SDMX-ML 2.1 structure (dataflow and data structure definition) to CDIF
+mapping_set_description: |
+  Property correspondences applied by SDMX/sdmx_to_cdif.py (SDMX-ML 2.1
+  structure message -> CDIF JSON-LD, one record per dataflow). This table drives
+  the converter: it is read at runtime, and each transform names a shaper
+  (tf_<transform>) in sdmx_to_cdif.py.
+
+  subject_xpath is an XPath 1.0 expression from the str:Dataflow element, using
+  the prefixes in curie_map (mes: message, str: structure, com: common; Ref is
+  unqualified). $df is the dataflow and $dsd the data structure definition it
+  references; a row using $dsd is skipped when the message has no DSD. Absolute
+  paths reach the rest of the message (provision agreements, categorisations,
+  constraints). object_json_path is where the value lands: $.<property> on the
+  dataset, or $.schema:subjectOf.<property> on the catalog record. Rows run in
+  file order: for a scalar target the first row to fill it wins; array targets
+  accumulate.
+
+  The DSD's components become cdi:InstanceVariables and the DSD a
+  cdi:DimensionalDataStructure on the data distribution: SDMX's dimensional
+  model is the one DDI-CDI's DimensionalDataStructure describes.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/SDMX/sdmx_to_cdif.py
+mapping_date: 2026-11-18
+subject_source: http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure
+object_source: https://w3id.org/cdif/core/2.0
+see_also:
+  - https://github.com/sdmx-twg/sdmx-ml-v2_1
+  - https://github.com/sdmx-twg/sdmx-rest
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_xpath
+    property: https://w3id.org/cdif/mappings/subjectXPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  name            the English text of com:Name / com:Description elements, else the first
+  othernames      every other language's text
+  text            the first non-empty value
+  urn             the dataflow URN -> PropertyValue (url: the dataflow's REST URL)
+  date            a date or date-time in the CDIF pattern (dd/mm/yyyy LAST_UPDATE; no zone is UTC)
+  agency          an agency id -> the Agency and its contacts, as an Organization
+  dataprovider    DataProvider Refs -> Organizations
+  category        Category Refs -> DefinedTerms in their category scheme
+  timerange       com:TimeRange -> ISO 8601 interval
+  extresource     EXT_RESOURCE annotation 'label|url|image' -> LinkRole
+  variable        DSD components -> cdi:InstanceVariables with role, concept and value domain
+  resturl         the dataflow's SDMX-REST URL
+  distribution    the SDMX-REST data query -> DataDownload with the DSD as cdi:DimensionalDataStructure
+  structureurl    the structure query the message answers
+curie_map:
+  com: http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common
+  mes: http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  str: http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure

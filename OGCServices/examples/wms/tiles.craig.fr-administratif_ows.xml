@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:sld="http://www.opengis.net/sld" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3.0" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/sld_capabilities.xsd">
+<Service>
+  <Name>WMS</Name>
+  <Title>Service de consultation (WMS, WMTS) des limites administratives sur la région Auvergne-Rhône-Alpes</Title>
+  <Abstract>Les couches ont été produites à partir des données Admin Express IGN sur les 12 départements de la région</Abstract>
+  <KeywordList>
+    <Keyword vocabulary="GEMET">Administrative units</Keyword>
+    <Keyword vocabulary="ISO">boundaries</Keyword>
+    <Keyword vocabulary="ISO">location</Keyword>
+    <Keyword>IGN</Keyword>
+    <Keyword>Admin Express</Keyword>
+    <Keyword>Auvergne-Rhône-Alpes</Keyword>
+    <Keyword>OGC:WMS</Keyword>
+    <Keyword>WMS 1.3.0</Keyword>
+    <Keyword>WMTS 1.0.0</Keyword>
+    <Keyword>Service d'accès aux limites administratives</Keyword>
+    <Keyword>CRAIG</Keyword>
+    <Keyword>tiles.craig.fr</Keyword>
+    <Keyword>tiles.craig.fr/administratif</Keyword>
+  </KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://tiles.craig.fr/administratif/ows"/>
+  <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>Landry Breuil</ContactPerson>
+        <ContactOrganization>Centre Régional Auvergne-Rhône-Alpes de l'Information Géographique (CRAIG)</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>Responsable Informatique</ContactPosition>
+      <ContactAddress>
+        <AddressType>postal</AddressType>
+        <Address>Hôtel de région - 59, boulevard Léon Jouhaux</Address>
+        <City>Clermont-Ferrand</City>
+        <StateOrProvince/>
+        <PostCode>63050</PostCode>
+        <Country>France</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone/>
+      <ContactFacsimileTelephone/>
+      <ContactElectronicMailAddress>admin@craig.fr</ContactElectronicMailAddress>
+  </ContactInformation>
+    <Fees>None</Fees>
+    <AccessConstraints>Le service est disponible en libre accès</AccessConstraints>
+    <MaxWidth>4000</MaxWidth>
+    <MaxHeight>4000</MaxHeight>
+</Service>
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xlink:href="https://tiles.craig.fr/administratif/ows?"/></Get>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/png</Format>
+      <Format>image/jpeg</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xlink:href="https://tiles.craig.fr/administratif/ows?"/></Get>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/plain</Format>
+      <Format>text/html</Format>
+      <Format>text/xml</Format>
+      <Format>application/json</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xlink:href="https://tiles.craig.fr/administratif/ows?"/></Get>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+    <sld:GetLegendGraphic>
+      <Format>image/png</Format>
+      <Format>image/jpeg</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xlink:href="https://tiles.craig.fr/administratif/ows?"/></Get>
+        </HTTP>
+      </DCPType>
+    </sld:GetLegendGraphic>
+  </Request>
+  <Exception>
+    <Format>XML</Format>
+    <Format>INIMAGE</Format>
+    <Format>BLANK</Format>
+  </Exception>
+  <Layer queryable="1">
+    <Title>Service de consultation (WMS, WMTS) des limites administratives sur la région Auvergne-Rhône-Alpes</Title>
+    <CRS>EPSG:2154</CRS>
+    <CRS>EPSG:4326</CRS>
+    <CRS>CRS:84</CRS>
+    <CRS>EPSG:4258</CRS>
+    <CRS>EPSG:3857</CRS>
+    <CRS>EPSG:3945</CRS>
+    <CRS>EPSG:3946</CRS>
+    <EX_GeographicBoundingBox>
+      <westBoundLongitude>-180</westBoundLongitude>
+      <eastBoundLongitude>180</eastBoundLongitude>
+      <southBoundLatitude>-85.0511287798066</southBoundLatitude>
+      <northBoundLatitude>85.0511287798066</northBoundLatitude>
+    </EX_GeographicBoundingBox>
+    <BoundingBox CRS="CRS:84" minx="-180" miny="-85.0511287798066" maxx="180" maxy="85.0511287798066"/>
+    <BoundingBox CRS="EPSG:3857" minx="-20037508.342789244" miny="-20037508.342789248" maxx="20037508.342789244" maxy="20037508.342789248"/>
+    <BoundingBox CRS="EPSG:4326" minx="-85.0511287798066" miny="-180.0" maxx="85.0511287798066" maxy="180.0"/>
+    <Layer queryable="1">
+      <Name>commune</Name>
+      <Title>Communes</Title>
+      <Abstract>Communes (Admin Express 2026 IGN)</Abstract>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-180</westBoundLongitude>
+        <eastBoundLongitude>180</eastBoundLongitude>
+        <southBoundLatitude>-85.0511287798066</southBoundLatitude>
+        <northBoundLatitude>85.0511287798066</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="-180" miny="-85.0511287798066" maxx="180" maxy="85.0511287798066"/>
+      <BoundingBox CRS="EPSG:3857" minx="-20037508.342789244" miny="-20037508.342789244" maxx="20037508.342789244" maxy="20037508.342789244"/>
+      <BoundingBox CRS="EPSG:4326" minx="-85.0511287798066" miny="-180.0" maxx="85.0511287798066" maxy="180.0"/>
+      <Attribution>
+        <Title>©IGN 2026</Title>
+        <OnlineResource xlink:href="https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_ADMIN-EXPRESS"/>
+        <LogoURL width="227" height="241">
+          <Format>image/jpeg</Format>
+          <OnlineResource xlink:href="https://tiles.craig.fr/static/logos/ign.jpg"/>
+        </LogoURL>
+      </Attribution>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/xml</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"/>
+      </MetadataURL>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/html</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"/>
+      </MetadataURL>
+      <Style>
+        <Name>default</Name>
+        <Title>default</Title>
+        <LegendURL width="102" height="20">
+          <Format>image/png</Format>
+          <OnlineResource xlink:type="simple" xlink:href="https://tiles.craig.fr/administratif/ows?format=image%2Fpng&amp;layer=commune&amp;sld_version=1.1.0&amp;request=GetLegendGraphic&amp;service=WMS&amp;version=1.1.1&amp;styles="/>
+        </LegendURL>
+      </Style>
+    </Layer>
+    <Layer queryable="1">
+      <Name>chef_lieu_commune</Name>
+      <Title>Chef-lieux de commune</Title>
+      <Abstract>Chef-lieux de commune (Admin Express 2026 IGN)</Abstract>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-180</westBoundLongitude>
+        <eastBoundLongitude>180</eastBoundLongitude>
+        <southBoundLatitude>-85.0511287798066</southBoundLatitude>
+        <northBoundLatitude>85.0511287798066</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="-180" miny="-85.0511287798066" maxx="180" maxy="85.0511287798066"/>
+      <BoundingBox CRS="EPSG:3857" minx="-20037508.342789244" miny="-20037508.342789244" maxx="20037508.342789244" maxy="20037508.342789244"/>
+      <BoundingBox CRS="EPSG:4326" minx="-85.0511287798066" miny="-180.0" maxx="85.0511287798066" maxy="180.0"/>
+      <Attribution>
+        <Title>©IGN 2026</Title>
+        <OnlineResource xlink:href="https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_ADMIN-EXPRESS"/>
+        <LogoURL width="227" height="241">
+          <Format>image/jpeg</Format>
+          <OnlineResource xlink:href="https://tiles.craig.fr/static/logos/ign.jpg"/>
+        </LogoURL>
+      </Attribution>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/xml</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"/>
+      </MetadataURL>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/html</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"/>
+      </MetadataURL>
+      <Style>
+        <Name>default</Name>
+        <Title>default</Title>
+        <LegendURL width="168" height="72">
+          <Format>image/png</Format>
+          <OnlineResource xlink:type="simple" xlink:href="https://tiles.craig.fr/administratif/ows?format=image%2Fpng&amp;layer=chef_lieu_commune&amp;sld_version=1.1.0&amp;request=GetLegendGraphic&amp;service=WMS&amp;version=1.1.1&amp;styles="/>
+        </LegendURL>
+      </Style>
+    </Layer>
+    <Layer queryable="1">
+      <Name>epci</Name>
+      <Title>EPCI</Title>
+      <Abstract>Etablissements publics de coopération intercommunale (Admin Express 2026 IGN)</Abstract>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-180</westBoundLongitude>
+        <eastBoundLongitude>180</eastBoundLongitude>
+        <southBoundLatitude>-85.0511287798066</southBoundLatitude>
+        <northBoundLatitude>85.0511287798066</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="-180" miny="-85.0511287798066" maxx="180" maxy="85.0511287798066"/>
+      <BoundingBox CRS="EPSG:3857" minx="-20037508.342789244" miny="-20037508.342789244" maxx="20037508.342789244" maxy="20037508.342789244"/>
+      <BoundingBox CRS="EPSG:4326" minx="-85.0511287798066" miny="-180.0" maxx="85.0511287798066" maxy="180.0"/>
+      <Attribution>
+        <Title>©IGN 2026</Title>
+        <OnlineResource xlink:href="https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_ADMIN-EXPRESS"/>
+        <LogoURL width="227" height="241">
+          <Format>image/jpeg</Format>
+          <OnlineResource xlink:href="https://tiles.craig.fr/static/logos/ign.jpg"/>
+        </LogoURL>
+      </Attribution>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/xml</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"/>
+      </MetadataURL>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/html</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"/>
+      </MetadataURL>
+      <Style>
+        <Name>default</Name>
+        <Title>default</Title>
+        <LegendURL width="64" height="20">
+          <Format>image/png</Format>
+          <OnlineResource xlink:type="simple" xlink:href="https://tiles.craig.fr/administratif/ows?format=image%2Fpng&amp;layer=epci&amp;sld_version=1.1.0&amp;request=GetLegendGraphic&amp;service=WMS&amp;version=1.1.1&amp;styles="/>
+        </LegendURL>
+      </Style>
+    </Layer>
+    <Layer queryable="1">
+      <Name>canton</Name>
+      <Title>Cantons</Title>
+      <Abstract>Cantons (Admin Express 2026 IGN)</Abstract>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-180</westBoundLongitude>
+        <eastBoundLongitude>180</eastBoundLongitude>
+        <southBoundLatitude>-85.0511287798066</southBoundLatitude>
+        <northBoundLatitude>85.0511287798066</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="-180" miny="-85.0511287798066" maxx="180" maxy="85.0511287798066"/>
+      <BoundingBox CRS="EPSG:3857" minx="-20037508.342789244" miny="-20037508.342789244" maxx="20037508.342789244" maxy="20037508.342789244"/>
+      <BoundingBox CRS="EPSG:4326" minx="-85.0511287798066" miny="-180.0" maxx="85.0511287798066" maxy="180.0"/>
+      <Attribution>
+        <Title>©IGN 2026</Title>
+        <OnlineResource xlink:href="https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_ADMIN-EXPRESS"/>
+        <LogoURL width="227" height="241">
+          <Format>image/jpeg</Format>
+          <OnlineResource xlink:href="https://tiles.craig.fr/static/logos/ign.jpg"/>
+        </LogoURL>
+      </Attribution>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/xml</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"/>
+      </MetadataURL>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/html</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"/>
+      </MetadataURL>
+      <Style>
+        <Name>default</Name>
+        <Title>default</Title>
+        <LegendURL width="82" height="20">
+          <Format>image/png</Format>
+          <OnlineResource xlink:type="simple" xlink:href="https://tiles.craig.fr/administratif/ows?format=image%2Fpng&amp;layer=canton&amp;sld_version=1.1.0&amp;request=GetLegendGraphic&amp;service=WMS&amp;version=1.1.1&amp;styles="/>
+        </LegendURL>
+      </Style>
+    </Layer>
+    <Layer queryable="1">
+      <Name>departement</Name>
+      <Title>Départements</Title>
+      <Abstract>Départements (Admin Express 2026 IGN)</Abstract>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-180</westBoundLongitude>
+        <eastBoundLongitude>180</eastBoundLongitude>
+        <southBoundLatitude>-85.0511287798066</southBoundLatitude>
+        <northBoundLatitude>85.0511287798066</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="-180" miny="-85.0511287798066" maxx="180" maxy="85.0511287798066"/>
+      <BoundingBox CRS="EPSG:3857" minx="-20037508.342789244" miny="-20037508.342789244" maxx="20037508.342789244" maxy="20037508.342789244"/>
+      <BoundingBox CRS="EPSG:4326" minx="-85.0511287798066" miny="-180.0" maxx="85.0511287798066" maxy="180.0"/>
+      <Attribution>
+        <Title>©IGN 2026</Title>
+        <OnlineResource xlink:href="https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_ADMIN-EXPRESS"/>
+        <LogoURL width="227" height="241">
+          <Format>image/jpeg</Format>
+          <OnlineResource xlink:href="https://tiles.craig.fr/static/logos/ign.jpg"/>
+        </LogoURL>
+      </Attribution>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/xml</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"/>
+      </MetadataURL>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/html</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"/>
+      </MetadataURL>
+      <Style>
+        <Name>default</Name>
+        <Title>default</Title>
+        <LegendURL width="122" height="23">
+          <Format>image/png</Format>
+          <OnlineResource xlink:type="simple" xlink:href="https://tiles.craig.fr/administratif/ows?format=image%2Fpng&amp;layer=departement&amp;sld_version=1.1.0&amp;request=GetLegendGraphic&amp;service=WMS&amp;version=1.1.1&amp;styles="/>
+        </LegendURL>
+      </Style>
+    </Layer>
+    <Layer queryable="1">
+      <Name>region</Name>
+      <Title>Régions</Title>
+      <Abstract>Régions (Admin Express 2026 IGN)</Abstract>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-180</westBoundLongitude>
+        <eastBoundLongitude>180</eastBoundLongitude>
+        <southBoundLatitude>-85.0511287798066</southBoundLatitude>
+        <northBoundLatitude>85.0511287798066</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="-180" miny="-85.0511287798066" maxx="180" maxy="85.0511287798066"/>
+      <BoundingBox CRS="EPSG:3857" minx="-20037508.342789244" miny="-20037508.342789244" maxx="20037508.342789244" maxy="20037508.342789244"/>
+      <BoundingBox CRS="EPSG:4326" minx="-85.0511287798066" miny="-180.0" maxx="85.0511287798066" maxy="180.0"/>
+      <Attribution>
+        <Title>©IGN 2026</Title>
+        <OnlineResource xlink:href="https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_ADMIN-EXPRESS"/>
+        <LogoURL width="227" height="241">
+          <Format>image/jpeg</Format>
+          <OnlineResource xlink:href="https://tiles.craig.fr/static/logos/ign.jpg"/>
+        </LogoURL>
+      </Attribution>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/xml</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"/>
+      </MetadataURL>
+      <MetadataURL type="ISO19115:2003">
+        <Format>text/html</Format>
+        <OnlineResource xlink:href="https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"/>
+      </MetadataURL>
+      <Style>
+        <Name>default</Name>
+        <Title>default</Title>
+        <LegendURL width="80" height="23">
+          <Format>image/png</Format>
+          <OnlineResource xlink:type="simple" xlink:href="https://tiles.craig.fr/administratif/ows?format=image%2Fpng&amp;layer=region&amp;sld_version=1.1.0&amp;request=GetLegendGraphic&amp;service=WMS&amp;version=1.1.1&amp;styles="/>
+        </LegendURL>
+      </Style>
+    </Layer>
+  </Layer>
+</Capability>
+</WMS_Capabilities>

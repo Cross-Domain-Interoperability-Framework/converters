@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:sld="http://www.opengis.net/sld" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" version="1.3.0" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/sld_capabilities.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd">
+	<Service>
+		<Name>WMS</Name>
+		<Title>Vervoersnetwerken - Wegen - Netwerk (INSPIRE geharmoniseerd) WMS</Title>
+		<Abstract>De wms Vervoersnetwerken - Wegen - Netwerk bevat het transportnetwerk en fysieke objecten die verbonden zijn aan transport over wegen.</Abstract>
+		<KeywordList>
+			<Keyword>Vervoersnetwerken</Keyword>
+			<Keyword>Nationaal</Keyword>
+			<Keyword>Hoofdwegen (richtlijn omgevingslawaai)</Keyword>
+			<Keyword>InfoMapAccesService</Keyword>
+			<Keyword>Vervoersnetwerk</Keyword>
+			<Keyword>Transport network</Keyword>
+			<Keyword>Knooppunten</Keyword>
+			<Keyword>Nodes</Keyword>
+			<Keyword>Wegen</Keyword>
+			<Keyword>Roads</Keyword>
+			<Keyword>Objecten</Keyword>
+			<Keyword>Objects</Keyword>
+			<Keyword>Kenmerken</Keyword>
+			<Keyword>Characteristics</Keyword>
+			<Keyword>HVD</Keyword>
+			<Keyword>Mobiliteit</Keyword>
+			<Keyword>infoMapAccessService</Keyword>
+		</KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.pdok.nl"/>
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson>KlantContactCenter PDOK</ContactPerson>
+				<ContactOrganization>PDOK</ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactPosition>pointOfContact</ContactPosition>
+			<ContactAddress>
+				<AddressType>Work</AddressType>
+				<Address/>
+				<City>Apeldoorn</City>
+				<StateOrProvince/>
+				<PostCode/>
+				<Country>Netherlands</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone/>
+			<ContactFacsimileTelephone/>
+			<ContactElectronicMailAddress>BeheerPDOK@kadaster.nl</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees>NONE</Fees>
+		<AccessConstraints>https://creativecommons.org/publicdomain/zero/1.0/deed.nl</AccessConstraints>
+		<MaxWidth>4000</MaxWidth>
+		<MaxHeight>4000</MaxHeight>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://service.pdok.nl/rws/vervoersnetwerken-wegen-netwerk/wms/v1_0?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/png</Format>
+				<Format>image/jpeg</Format>
+				<Format>image/png; mode=8bit</Format>
+				<Format>image/vnd.jpeg-png</Format>
+				<Format>image/vnd.jpeg-png8</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://service.pdok.nl/rws/vervoersnetwerken-wegen-netwerk/wms/v1_0?"/>
+						</Get>
+						<Post>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://service.pdok.nl/rws/vervoersnetwerken-wegen-netwerk/wms/v1_0"/>
+						</Post>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>application/json</Format>
+				<Format>application/json; subtype=geojson</Format>
+				<Format>application/vnd.ogc.gml</Format>
+				<Format>text/html</Format>
+				<Format>text/plain</Format>
+				<Format>text/xml</Format>
+				<Format>text/xml; subtype=gml/3.1.1</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://service.pdok.nl/rws/vervoersnetwerken-wegen-netwerk/wms/v1_0?"/>
+						</Get>
+						<Post>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://service.pdok.nl/rws/vervoersnetwerken-wegen-netwerk/wms/v1_0"/>
+						</Post>
+					</HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+		</Request>
+		<Exception>
+			<Format>XML</Format>
+			<Format>INIMAGE</Format>
+			<Format>BLANK</Format>
+		</Exception>
+		<inspire_vs:ExtendedCapabilities>
+			<inspire_common:MetadataUrl>
+				<inspire_common:URL>https://www.nationaalgeoregister.nl/geonetwork/srv/dut/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=53607349-a178-4129-b9c1-4d993b157fd6</inspire_common:URL>
+				<inspire_common:MediaType>application/vnd.ogc.csw.GetRecordByIdResponse_xml</inspire_common:MediaType>
+			</inspire_common:MetadataUrl>
+			<inspire_common:SupportedLanguages>
+				<inspire_common:DefaultLanguage>
+					<inspire_common:Language>dut</inspire_common:Language>
+				</inspire_common:DefaultLanguage>
+				<inspire_common:SupportedLanguage>
+					<inspire_common:Language>dut</inspire_common:Language>
+				</inspire_common:SupportedLanguage>
+			</inspire_common:SupportedLanguages>
+			<inspire_common:ResponseLanguage>
+				<inspire_common:Language>dut</inspire_common:Language>
+			</inspire_common:ResponseLanguage>
+		</inspire_vs:ExtendedCapabilities>
+		<Layer queryable="1">
+			<Title>Vervoersnetwerken - Wegen - Netwerk (INSPIRE geharmoniseerd) WMS</Title>
+			<Abstract>De wms Vervoersnetwerken - Wegen - Netwerk bevat het transportnetwerk en fysieke objecten die verbonden zijn aan transport over wegen.</Abstract>
+			<KeywordList>
+				<Keyword>Vervoersnetwerken</Keyword>
+				<Keyword>Nationaal</Keyword>
+				<Keyword>Hoofdwegen (richtlijn omgevingslawaai)</Keyword>
+				<Keyword>InfoMapAccesService</Keyword>
+				<Keyword>Vervoersnetwerk</Keyword>
+				<Keyword>Transport network</Keyword>
+				<Keyword>Knooppunten</Keyword>
+				<Keyword>Nodes</Keyword>
+				<Keyword>Wegen</Keyword>
+				<Keyword>Roads</Keyword>
+				<Keyword>Objecten</Keyword>
+				<Keyword>Objects</Keyword>
+				<Keyword>Kenmerken</Keyword>
+				<Keyword>Characteristics</Keyword>
+				<Keyword>HVD</Keyword>
+				<Keyword>Mobiliteit</Keyword>
+			</KeywordList>
+			<CRS>EPSG:4258</CRS>
+			<CRS>EPSG:28992</CRS>
+			<CRS>EPSG:25831</CRS>
+			<CRS>EPSG:25832</CRS>
+			<CRS>EPSG:3034</CRS>
+			<CRS>EPSG:3035</CRS>
+			<CRS>EPSG:3857</CRS>
+			<CRS>EPSG:4326</CRS>
+			<CRS>CRS:84</CRS>
+			<EX_GeographicBoundingBox>
+				<westBoundLongitude>2.52713</westBoundLongitude>
+				<eastBoundLongitude>7.37403</eastBoundLongitude>
+				<southBoundLatitude>50.2129</southBoundLatitude>
+				<northBoundLatitude>55.7212</northBoundLatitude>
+			</EX_GeographicBoundingBox>
+			<BoundingBox CRS="EPSG:4258" minx="2.35417303" miny="50.71447164" maxx="7.5553525" maxy="55.66948102"/>
+			<BoundingBox CRS="EPSG:28992" minx="-25000" miny="250000" maxx="280000" maxy="860000"/>
+			<BoundingBox CRS="EPSG:25831" minx="-470271" miny="5.56231e+06" maxx="795163" maxy="6.18197e+06"/>
+			<BoundingBox CRS="EPSG:25832" minx="62461.6" miny="5.56555e+06" maxx="397827" maxy="6.19042e+06"/>
+			<BoundingBox CRS="EPSG:3034" minx="2.61336e+06" miny="3.509e+06" maxx="3.22007e+06" maxy="3.84003e+06"/>
+			<BoundingBox CRS="EPSG:3035" minx="3.01676e+06" miny="3.81264e+06" maxx="3.64485e+06" maxy="4.15586e+06"/>
+			<BoundingBox CRS="EPSG:3857" minx="281318" miny="6.48322e+06" maxx="820873" maxy="7.50311e+06"/>
+			<BoundingBox CRS="EPSG:4326" minx="50.2129" miny="2.52713" maxx="55.7212" maxy="7.37403"/>
+			<BoundingBox CRS="CRS:84" minx="2.52713" miny="50.2129" maxx="7.37403" maxy="55.7212"/>
+			<MaxScaleDenominator>1.5e+07</MaxScaleDenominator>
+			<Layer queryable="1">
+				<Name>TN.RoadTransportNetwork.RoadArea</Name>
+				<Title>Weggebied</Title>
+				<Abstract>Oppervlak dat zich uitstrekt tot aan de grenzen van een weg, inclusief voertuiggebieden en andere delen daarvan.</Abstract>
+				<KeywordList>
+					<Keyword>Vervoersnetwerken</Keyword>
+					<Keyword>Nationaal</Keyword>
+					<Keyword>Wegen</Keyword>
+					<Keyword>Transport Network</Keyword>
+					<Keyword>Road Transport Network</Keyword>
+					<Keyword>Road Area</Keyword>
+				</KeywordList>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:28992</CRS>
+				<CRS>EPSG:25831</CRS>
+				<CRS>EPSG:25832</CRS>
+				<CRS>EPSG:3034</CRS>
+				<CRS>EPSG:3035</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2.52713</westBoundLongitude>
+					<eastBoundLongitude>7.37403</eastBoundLongitude>
+					<southBoundLatitude>50.2129</southBoundLatitude>
+					<northBoundLatitude>55.7212</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:4258" minx="2.35417303" miny="50.71447164" maxx="7.5553525" maxy="55.66948102"/>
+				<BoundingBox CRS="EPSG:28992" minx="-25000" miny="250000" maxx="280000" maxy="860000"/>
+				<BoundingBox CRS="EPSG:25831" minx="-470271" miny="5.56231e+06" maxx="795163" maxy="6.18197e+06"/>
+				<BoundingBox CRS="EPSG:25832" minx="62461.6" miny="5.56555e+06" maxx="397827" maxy="6.19042e+06"/>
+				<BoundingBox CRS="EPSG:3034" minx="2.61336e+06" miny="3.509e+06" maxx="3.22007e+06" maxy="3.84003e+06"/>
+				<BoundingBox CRS="EPSG:3035" minx="3.01676e+06" miny="3.81264e+06" maxx="3.64485e+06" maxy="4.15586e+06"/>
+				<BoundingBox CRS="EPSG:3857" minx="281318" miny="6.48322e+06" maxx="820873" maxy="7.50311e+06"/>
+				<BoundingBox CRS="EPSG:4326" minx="50.2129" miny="2.52713" maxx="55.7212" maxy="7.37403"/>
+				<BoundingBox CRS="CRS:84" minx="2.52713" miny="50.2129" maxx="7.37403" maxy="55.7212"/>
+				<AuthorityURL name="rws">
+					<OnlineResource xlink:href="https://www.rijkswaterstaat.nl"/>
+				</AuthorityURL>
+				<Identifier authority="rws">fece82a2-c7ee-4c41-b4ac-2aae04e67fba</Identifier>
+				<MetadataURL type="TC211">
+					<Format>text/plain</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.nationaalgeoregister.nl/geonetwork/srv/dut/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=f4520ae7-9229-4132-8d42-37b4f962212a"/>
+				</MetadataURL>
+				<Style>
+					<Name>TN.RoadTransportNetwork.RoadArea.Default</Name>
+					<Title>Road Area Default Style</Title>
+					<Abstract>The geometry is rendered using a grey (#A9A9A9) fill and a solid black (#000000) outline with a stroke width of 1 pixel.</Abstract>
+					<LegendURL width="78" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://service.pdok.nl/rws/vervoersnetwerken-wegen-netwerk/wms/v1_0/legend/TN.RoadTransportNetwork.RoadArea/TN.RoadTransportNetwork.RoadArea.Default.png"/>
+					</LegendURL>
+				</Style>
+				<MaxScaleDenominator>1.5e+07</MaxScaleDenominator>
+			</Layer>
+			<Layer queryable="1">
+				<Name>TN.RoadTransportNetwork.RoadNode</Name>
+				<Title>Wegknooppunt</Title>
+				<Abstract>Een punt object dat de of de verbinding weergeeft tussen twee road links of significant ruitmelijk object zoals een rotonde of een benzinestation</Abstract>
+				<KeywordList>
+					<Keyword>Vervoersnetwerken</Keyword>
+					<Keyword>Nationaal</Keyword>
+					<Keyword>Wegen</Keyword>
+					<Keyword>Generic Transport Node</Keyword>
+					<Keyword>Transport Networks</Keyword>
+				</KeywordList>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:28992</CRS>
+				<CRS>EPSG:25831</CRS>
+				<CRS>EPSG:25832</CRS>
+				<CRS>EPSG:3034</CRS>
+				<CRS>EPSG:3035</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2.52713</westBoundLongitude>
+					<eastBoundLongitude>7.37403</eastBoundLongitude>
+					<southBoundLatitude>50.2129</southBoundLatitude>
+					<northBoundLatitude>55.7212</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:4258" minx="2.35417303" miny="50.71447164" maxx="7.5553525" maxy="55.66948102"/>
+				<BoundingBox CRS="EPSG:28992" minx="-25000" miny="250000" maxx="280000" maxy="860000"/>
+				<BoundingBox CRS="EPSG:25831" minx="-470271" miny="5.56231e+06" maxx="795163" maxy="6.18197e+06"/>
+				<BoundingBox CRS="EPSG:25832" minx="62461.6" miny="5.56555e+06" maxx="397827" maxy="6.19042e+06"/>
+				<BoundingBox CRS="EPSG:3034" minx="2.61336e+06" miny="3.509e+06" maxx="3.22007e+06" maxy="3.84003e+06"/>
+				<BoundingBox CRS="EPSG:3035" minx="3.01676e+06" miny="3.81264e+06" maxx="3.64485e+06" maxy="4.15586e+06"/>
+				<BoundingBox CRS="EPSG:3857" minx="281318" miny="6.48322e+06" maxx="820873" maxy="7.50311e+06"/>
+				<BoundingBox CRS="EPSG:4326" minx="50.2129" miny="2.52713" maxx="55.7212" maxy="7.37403"/>
+				<BoundingBox CRS="CRS:84" minx="2.52713" miny="50.2129" maxx="7.37403" maxy="55.7212"/>
+				<AuthorityURL name="rws">
+					<OnlineResource xlink:href="https://www.rijkswaterstaat.nl"/>
+				</AuthorityURL>
+				<Identifier authority="rws">fece82a2-c7ee-4c41-b4ac-2aae04e67fba</Identifier>
+				<MetadataURL type="TC211">
+					<Format>text/plain</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.nationaalgeoregister.nl/geonetwork/srv/dut/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=f4520ae7-9229-4132-8d42-37b4f962212a"/>
+				</MetadataURL>
+				<Style>
+					<Name>TN.CommonTransportElements.TransportNode.Default</Name>
+					<Title>Generic Transport Node Default Style</Title>
+					<Abstract>Generic Transport Node Default Style</Abstract>
+					<LegendURL width="78" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://service.pdok.nl/rws/vervoersnetwerken-wegen-netwerk/wms/v1_0/legend/TN.RoadTransportNetwork.RoadNode/TN.CommonTransportElements.TransportNode.Default.png"/>
+					</LegendURL>
+				</Style>
+				<MaxScaleDenominator>1.5e+07</MaxScaleDenominator>
+			</Layer>
+			<Layer queryable="1">
+				<Name>TN.CommonTransportElements.MarkerPost</Name>
+				<Title>Markeerstok</Title>
+				<Abstract>Referentiemarkering in een vervoersnetwerk, meestal met regelmatige tussenpozen, die de afstand aangeeft vanaf het begin van de route, of een ander referentiepunt, tot het punt waar de markering zich bevindt.</Abstract>
+				<KeywordList>
+					<Keyword>Vervoersnetwerken</Keyword>
+					<Keyword>Nationaal</Keyword>
+					<Keyword>Wegen</Keyword>
+					<Keyword>Transport Networks</Keyword>
+					<Keyword>MarkerPost</Keyword>
+				</KeywordList>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:28992</CRS>
+				<CRS>EPSG:25831</CRS>
+				<CRS>EPSG:25832</CRS>
+				<CRS>EPSG:3034</CRS>
+				<CRS>EPSG:3035</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2.52713</westBoundLongitude>
+					<eastBoundLongitude>7.37403</eastBoundLongitude>
+					<southBoundLatitude>50.2129</southBoundLatitude>
+					<northBoundLatitude>55.7212</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:4258" minx="2.35417303" miny="50.71447164" maxx="7.5553525" maxy="55.66948102"/>
+				<BoundingBox CRS="EPSG:28992" minx="-25000" miny="250000" maxx="280000" maxy="860000"/>
+				<BoundingBox CRS="EPSG:25831" minx="-470271" miny="5.56231e+06" maxx="795163" maxy="6.18197e+06"/>
+				<BoundingBox CRS="EPSG:25832" minx="62461.6" miny="5.56555e+06" maxx="397827" maxy="6.19042e+06"/>
+				<BoundingBox CRS="EPSG:3034" minx="2.61336e+06" miny="3.509e+06" maxx="3.22007e+06" maxy="3.84003e+06"/>
+				<BoundingBox CRS="EPSG:3035" minx="3.01676e+06" miny="3.81264e+06" maxx="3.64485e+06" maxy="4.15586e+06"/>
+				<BoundingBox CRS="EPSG:3857" minx="281318" miny="6.48322e+06" maxx="820873" maxy="7.50311e+06"/>
+				<BoundingBox CRS="EPSG:4326" minx="50.2129" miny="2.52713" maxx="55.7212" maxy="7.37403"/>
+				<BoundingBox CRS="CRS:84" minx="2.52713" miny="50.2129" maxx="7.37403" maxy="55.7212"/>
+				<AuthorityURL name="rws">
+					<OnlineResource xlink:href="https://www.rijkswaterstaat.nl"/>
+				</AuthorityURL>
+				<Identifier authority="rws">fece82a2-c7ee-4c41-b4ac-2aae04e67fba</Identifier>
+				<MetadataURL type="TC211">
+					<Format>text/plain</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.nationaalgeoregister.nl/geonetwork/srv/dut/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=f4520ae7-9229-4132-8d42-37b4f962212a"/>
+				</MetadataURL>
+				<Style>
+					<Name>Default.Point</Name>
+					<Title>INSPIRE Default Point</Title>
+					<Abstract>INSPIRE Default Point</Abstract>
+					<LegendURL width="78" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://service.pdok.nl/rws/vervoersnetwerken-wegen-netwerk/wms/v1_0/legend/TN.CommonTransportElements.MarkerPost/Default.Point.png"/>
+					</LegendURL>
+				</Style>
+				<MaxScaleDenominator>1.5e+07</MaxScaleDenominator>
+			</Layer>
+			<Layer queryable="1">
+				<Name>TN.RoadTransportNetwork.RoadLink</Name>
+				<Title>Weglink</Title>
+				<Abstract>Een lineair ruimtelijk object dat de geometrie en connectiviteit van een wegennet tussen twee punten in het netwerk beschrijft. Wegverbindingen kunnen paden, fietspaden, enkelbaanswegen, meerbaanswegen en zelfs fictieve trajecten over verkeerspleinen voorstellen.</Abstract>
+				<KeywordList>
+					<Keyword>Vervoersnetwerken</Keyword>
+					<Keyword>Nationaal</Keyword>
+					<Keyword>Wegen</Keyword>
+					<Keyword>Transport Networks</Keyword>
+					<Keyword>RoadLink</Keyword>
+				</KeywordList>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:28992</CRS>
+				<CRS>EPSG:25831</CRS>
+				<CRS>EPSG:25832</CRS>
+				<CRS>EPSG:3034</CRS>
+				<CRS>EPSG:3035</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>2.52713</westBoundLongitude>
+					<eastBoundLongitude>7.37403</eastBoundLongitude>
+					<southBoundLatitude>50.2129</southBoundLatitude>
+					<northBoundLatitude>55.7212</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:4258" minx="2.35417303" miny="50.71447164" maxx="7.5553525" maxy="55.66948102"/>
+				<BoundingBox CRS="EPSG:28992" minx="-25000" miny="250000" maxx="280000" maxy="860000"/>
+				<BoundingBox CRS="EPSG:25831" minx="-470271" miny="5.56231e+06" maxx="795163" maxy="6.18197e+06"/>
+				<BoundingBox CRS="EPSG:25832" minx="62461.6" miny="5.56555e+06" maxx="397827" maxy="6.19042e+06"/>
+				<BoundingBox CRS="EPSG:3034" minx="2.61336e+06" miny="3.509e+06" maxx="3.22007e+06" maxy="3.84003e+06"/>
+				<BoundingBox CRS="EPSG:3035" minx="3.01676e+06" miny="3.81264e+06" maxx="3.64485e+06" maxy="4.15586e+06"/>
+				<BoundingBox CRS="EPSG:3857" minx="281318" miny="6.48322e+06" maxx="820873" maxy="7.50311e+06"/>
+				<BoundingBox CRS="EPSG:4326" minx="50.2129" miny="2.52713" maxx="55.7212" maxy="7.37403"/>
+				<BoundingBox CRS="CRS:84" minx="2.52713" miny="50.2129" maxx="7.37403" maxy="55.7212"/>
+				<AuthorityURL name="rws">
+					<OnlineResource xlink:href="https://www.rijkswaterstaat.nl"/>
+				</AuthorityURL>
+				<Identifier authority="rws">fece82a2-c7ee-4c41-b4ac-2aae04e67fba</Identifier>
+				<MetadataURL type="TC211">
+					<Format>text/plain</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.nationaalgeoregister.nl/geonetwork/srv/dut/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=f4520ae7-9229-4132-8d42-37b4f962212a"/>
+				</MetadataURL>
+				<Style>
+					<Name>TN.RoadTransportNetwork.RoadLink.Default</Name>
+					<Title>RoadLink Default Style</Title>
+					<Abstract>The geometry is rendered as a solid green line with a stroke width of 3 pixel (#008000). Ends are rounded and have a 2 pixel black casing (#000000).</Abstract>
+					<LegendURL width="78" height="20">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://service.pdok.nl/rws/vervoersnetwerken-wegen-netwerk/wms/v1_0/legend/TN.RoadTransportNetwork.RoadLink/TN.RoadTransportNetwork.RoadLink.Default.png"/>
+					</LegendURL>
+				</Style>
+				<MaxScaleDenominator>1.5e+07</MaxScaleDenominator>
+			</Layer>
+		</Layer>
+	</Capability>
+</WMS_Capabilities>

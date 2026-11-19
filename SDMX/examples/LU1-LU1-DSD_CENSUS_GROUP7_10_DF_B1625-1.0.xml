@@ -1,0 +1,2027 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Header>
+    <message:ID>IDREF100715</message:ID>
+    <message:Test>false</message:Test>
+    <message:Prepared>2026-11-19T00:03:16.3301946+00:00</message:Prepared>
+    <message:Sender id="Unknown"/>
+    <message:Receiver id="Unknown"/>
+  </message:Header>
+  <message:Structures>
+    <structure:Dataflows>
+      <structure:Dataflow id="DSD_CENSUS_GROUP7_10@DF_B1625" agencyID="LU1" version="1.0" isFinal="false">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>COMMUNE</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>CITIZEN</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>UNIT_MULT=0</common:AnnotationTitle>
+            <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>SEX=_T,AGE=_T</common:AnnotationTitle>
+            <common:AnnotationType>DEFAULT</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>GEO:LU1:HCL_CANTON(1.0).H</common:AnnotationTitle>
+            <common:AnnotationType>HIER_CONTEXT</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>100000</common:AnnotationTitle>
+            <common:AnnotationType>MAX_TABLE_DATA</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Population by canton and municipality, citizenship and sex</common:Name>
+        <common:Name xml:lang="fr">Population par canton et commune selon la nationalité et le sexe</common:Name>
+        <common:Description xml:lang="en">Publication date: 18/12/2024 - Periodicity: every 10 years - Author: STATEC, Census data - Category: Population and employment - Population - Keywords: population, sex, age, citizenship, census, demography</common:Description>
+        <common:Description xml:lang="fr">Date de publication: 18/12/2024 - Périodicité: Tous les 10 ans - Auteur: STATEC, Recensement de la population - Catégorie: Population et emploi - Population - Mots-clés: population, sexe, âge, nationalité, recensement, démographie</common:Description>
+        <structure:Structure>
+          <Ref id="DSD_CENSUS_GROUP7_10" version="1.0" agencyID="LU1" package="datastructure" class="DataStructure"/>
+        </structure:Structure>
+      </structure:Dataflow>
+    </structure:Dataflows>
+    <structure:CategorySchemes>
+      <structure:CategoryScheme id="LU1_CS" agencyID="LU1" version="1.0" isFinal="true" isPartial="true">
+        <common:Name xml:lang="en">Topics</common:Name>
+        <common:Name xml:lang="fr">Thèmes</common:Name>
+        <structure:Category id="B">
+          <common:Annotations>
+            <common:Annotation id="B">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">2</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Population and employment</common:Name>
+          <common:Name xml:lang="fr">Population et emploi</common:Name>
+          <common:Description xml:lang="en">Population et emploi</common:Description>
+          <common:Description xml:lang="fr">Population et emploi</common:Description>
+          <structure:Category id="B2">
+            <common:Annotations>
+              <common:Annotation id="B.B2">
+                <common:AnnotationType>ORDER</common:AnnotationType>
+                <common:AnnotationText xml:lang="en">2</common:AnnotationText>
+              </common:Annotation>
+            </common:Annotations>
+            <common:Name xml:lang="en">Census data</common:Name>
+            <common:Name xml:lang="fr">Recensement de la population</common:Name>
+            <common:Description xml:lang="en">Census data</common:Description>
+            <common:Description xml:lang="fr">Recensement de la population</common:Description>
+            <structure:Category id="B21">
+              <common:Annotations>
+                <common:Annotation id="B.B2.B21">
+                  <common:AnnotationType>ORDER</common:AnnotationType>
+                  <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+                </common:Annotation>
+              </common:Annotations>
+              <common:Name xml:lang="en">Census data 2021</common:Name>
+              <common:Name xml:lang="fr">Recensement 2021</common:Name>
+              <common:Description xml:lang="en">Census data 2021</common:Description>
+              <common:Description xml:lang="fr">Recensement 2021</common:Description>
+              <structure:Category id="B211">
+                <common:Name xml:lang="en">Population status</common:Name>
+                <common:Name xml:lang="fr">Etat de la population</common:Name>
+                <common:Description xml:lang="en">Population status</common:Description>
+                <common:Description xml:lang="fr">Etat de la population</common:Description>
+                <structure:Category id="B2111">
+                  <common:Name xml:lang="en">Demographic context</common:Name>
+                  <common:Name xml:lang="fr">Contexte démographique</common:Name>
+                  <common:Description xml:lang="en">Demographic context</common:Description>
+                  <common:Description xml:lang="fr">Contexte démographique</common:Description>
+                </structure:Category>
+              </structure:Category>
+            </structure:Category>
+          </structure:Category>
+        </structure:Category>
+      </structure:CategoryScheme>
+    </structure:CategorySchemes>
+    <structure:Categorisations>
+      <structure:Categorisation id="5311c78c-2447-7252-4281-04766a4b4ef0" agencyID="LU1" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">Category 'LU1:LU1_CS(1.0).B.B2.B21.B211.B2111' linking to Dataflow 'LU1:DSD_CENSUS_GROUP7_10@DF_B1625(1.0)'</common:Name>
+        <structure:Source>
+          <Ref id="DSD_CENSUS_GROUP7_10@DF_B1625" version="1.0" agencyID="LU1" package="datastructure" class="Dataflow"/>
+        </structure:Source>
+        <structure:Target>
+          <Ref id="B.B2.B21.B211.B2111" maintainableParentID="LU1_CS" maintainableParentVersion="1.0" agencyID="LU1" package="categoryscheme" class="Category"/>
+        </structure:Target>
+      </structure:Categorisation>
+    </structure:Categorisations>
+    <structure:Codelists>
+      <structure:Codelist isPartial="true" id="CL_AGE_CLASS" agencyID="LU1" version="1.2" isFinal="true">
+        <common:Name xml:lang="en">Age</common:Name>
+        <common:Name xml:lang="fr">Age</common:Name>
+        <common:Description xml:lang="en">add parents/craation of sub-groups</common:Description>
+        <common:Description xml:lang="fr">ajout de parents/création sous-groupes</common:Description>
+        <structure:Code id="_Z">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">7640</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">7640</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">not applicable</common:Name>
+          <common:Name xml:lang="fr">Pas applicable</common:Name>
+          <common:Description xml:lang="en">not applicable</common:Description>
+          <common:Description xml:lang="fr">Pas applicable</common:Description>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_CANTON_MUNICIPALITY" agencyID="LU1" version="2.0" isFinal="true">
+        <common:Name xml:lang="en">Canton and municipalities</common:Name>
+        <common:Name xml:lang="fr">Canton et municipalités</common:Name>
+        <common:Description xml:lang="fr">Mise à jour des codes et ajout des nouvelles communes Bous-Waldbredimus et</common:Description>
+        <structure:Code id="_T">
+          <common:Name xml:lang="en">Total</common:Name>
+          <common:Name xml:lang="fr">Total</common:Name>
+        </structure:Code>
+        <structure:Code id="LU00001">
+          <common:Name xml:lang="en">Canton Capellen</common:Name>
+          <common:Name xml:lang="fr">Canton Capellen</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00002">
+          <common:Name xml:lang="en">Canton Esch</common:Name>
+          <common:Name xml:lang="fr">Canton Esch</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00003">
+          <common:Name xml:lang="en">Canton Luxembourg</common:Name>
+          <common:Name xml:lang="fr">Canton Luxembourg</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00004">
+          <common:Name xml:lang="en">Canton Mersch</common:Name>
+          <common:Name xml:lang="fr">Canton Mersch</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00005">
+          <common:Name xml:lang="en">Canton Clervaux</common:Name>
+          <common:Name xml:lang="fr">Canton Clervaux</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00006">
+          <common:Name xml:lang="en">Canton Diekirch</common:Name>
+          <common:Name xml:lang="fr">Canton Diekirch</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00007">
+          <common:Name xml:lang="en">Canton Redange</common:Name>
+          <common:Name xml:lang="fr">Canton Redange</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00008">
+          <common:Name xml:lang="en">Canton Wiltz</common:Name>
+          <common:Name xml:lang="fr">Canton Wiltz</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00009">
+          <common:Name xml:lang="en">Canton Vianden</common:Name>
+          <common:Name xml:lang="fr">Canton Vianden</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00010">
+          <common:Name xml:lang="en">Canton Echternach</common:Name>
+          <common:Name xml:lang="fr">Canton Echternach</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00011">
+          <common:Name xml:lang="en">Canton Grevenmacher</common:Name>
+          <common:Name xml:lang="fr">Canton Grevenmacher</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU00012">
+          <common:Name xml:lang="en">Canton Remich</common:Name>
+          <common:Name xml:lang="fr">Canton Remich</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000101">
+          <common:Name xml:lang="en">Dippach</common:Name>
+          <common:Name xml:lang="fr">Dippach</common:Name>
+          <structure:Parent>
+            <Ref id="LU00001"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000102">
+          <common:Name xml:lang="en">Garnich</common:Name>
+          <common:Name xml:lang="fr">Garnich</common:Name>
+          <structure:Parent>
+            <Ref id="LU00001"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000103">
+          <common:Name xml:lang="en">Habscht</common:Name>
+          <common:Name xml:lang="fr">Habscht</common:Name>
+          <structure:Parent>
+            <Ref id="LU00001"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000104">
+          <common:Name xml:lang="en">Käerjeng</common:Name>
+          <common:Name xml:lang="fr">Käerjeng</common:Name>
+          <structure:Parent>
+            <Ref id="LU00001"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000105">
+          <common:Name xml:lang="en">Kehlen</common:Name>
+          <common:Name xml:lang="fr">Kehlen</common:Name>
+          <structure:Parent>
+            <Ref id="LU00001"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000106">
+          <common:Name xml:lang="en">Koerich</common:Name>
+          <common:Name xml:lang="fr">Koerich</common:Name>
+          <structure:Parent>
+            <Ref id="LU00001"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000107">
+          <common:Name xml:lang="en">Kopstal</common:Name>
+          <common:Name xml:lang="fr">Kopstal</common:Name>
+          <structure:Parent>
+            <Ref id="LU00001"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000108">
+          <common:Name xml:lang="en">Mamer</common:Name>
+          <common:Name xml:lang="fr">Mamer</common:Name>
+          <structure:Parent>
+            <Ref id="LU00001"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000110">
+          <common:Name xml:lang="en">Steinfort</common:Name>
+          <common:Name xml:lang="fr">Steinfort</common:Name>
+          <structure:Parent>
+            <Ref id="LU00001"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000201">
+          <common:Name xml:lang="en">Bettembourg</common:Name>
+          <common:Name xml:lang="fr">Bettembourg</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000202">
+          <common:Name xml:lang="en">Differdange</common:Name>
+          <common:Name xml:lang="fr">Differdange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000203">
+          <common:Name xml:lang="en">Dudelange</common:Name>
+          <common:Name xml:lang="fr">Dudelange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000204">
+          <common:Name xml:lang="en">Esch-sur-Alzette</common:Name>
+          <common:Name xml:lang="fr">Esch-sur-Alzette</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000205">
+          <common:Name xml:lang="en">Frisange</common:Name>
+          <common:Name xml:lang="fr">Frisange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000206">
+          <common:Name xml:lang="en">Kayl</common:Name>
+          <common:Name xml:lang="fr">Kayl</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000207">
+          <common:Name xml:lang="en">Leudelange</common:Name>
+          <common:Name xml:lang="fr">Leudelange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000208">
+          <common:Name xml:lang="en">Mondercange</common:Name>
+          <common:Name xml:lang="fr">Mondercange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000209">
+          <common:Name xml:lang="en">Pétange</common:Name>
+          <common:Name xml:lang="fr">Pétange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000210">
+          <common:Name xml:lang="en">Reckange-sur-Mess</common:Name>
+          <common:Name xml:lang="fr">Reckange-sur-Mess</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000211">
+          <common:Name xml:lang="en">Roeser</common:Name>
+          <common:Name xml:lang="fr">Roeser</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000212">
+          <common:Name xml:lang="en">Rumelange</common:Name>
+          <common:Name xml:lang="fr">Rumelange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000213">
+          <common:Name xml:lang="en">Sanem</common:Name>
+          <common:Name xml:lang="fr">Sanem</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000214">
+          <common:Name xml:lang="en">Schifflange</common:Name>
+          <common:Name xml:lang="fr">Schifflange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00002"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000301">
+          <common:Name xml:lang="en">Bertrange</common:Name>
+          <common:Name xml:lang="fr">Bertrange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000302">
+          <common:Name xml:lang="en">Contern</common:Name>
+          <common:Name xml:lang="fr">Contern</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000303">
+          <common:Name xml:lang="en">Hesperange</common:Name>
+          <common:Name xml:lang="fr">Hesperange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000304">
+          <common:Name xml:lang="en">Luxembourg</common:Name>
+          <common:Name xml:lang="fr">Luxembourg</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000305">
+          <common:Name xml:lang="en">Niederanven</common:Name>
+          <common:Name xml:lang="fr">Niederanven</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000306">
+          <common:Name xml:lang="en">Sandweiler</common:Name>
+          <common:Name xml:lang="fr">Sandweiler</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000307">
+          <common:Name xml:lang="en">Schuttrange</common:Name>
+          <common:Name xml:lang="fr">Schuttrange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000308">
+          <common:Name xml:lang="en">Steinsel</common:Name>
+          <common:Name xml:lang="fr">Steinsel</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000309">
+          <common:Name xml:lang="en">Strassen</common:Name>
+          <common:Name xml:lang="fr">Strassen</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000310">
+          <common:Name xml:lang="en">Walferdange</common:Name>
+          <common:Name xml:lang="fr">Walferdange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000311">
+          <common:Name xml:lang="en">Weiler-la-Tour</common:Name>
+          <common:Name xml:lang="fr">Weiler-la-Tour</common:Name>
+          <structure:Parent>
+            <Ref id="LU00003"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000401">
+          <common:Name xml:lang="en">Colmar-Berg</common:Name>
+          <common:Name xml:lang="fr">Colmar-Berg</common:Name>
+          <structure:Parent>
+            <Ref id="LU00004"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000402">
+          <common:Name xml:lang="en">Bissen</common:Name>
+          <common:Name xml:lang="fr">Bissen</common:Name>
+          <structure:Parent>
+            <Ref id="LU00004"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000403">
+          <common:Name xml:lang="en">Helperknapp</common:Name>
+          <common:Name xml:lang="fr">Helperknapp</common:Name>
+          <structure:Parent>
+            <Ref id="LU00004"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000404">
+          <common:Name xml:lang="en">Fischbach</common:Name>
+          <common:Name xml:lang="fr">Fischbach</common:Name>
+          <structure:Parent>
+            <Ref id="LU00004"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000405">
+          <common:Name xml:lang="en">Heffingen</common:Name>
+          <common:Name xml:lang="fr">Heffingen</common:Name>
+          <structure:Parent>
+            <Ref id="LU00004"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000406">
+          <common:Name xml:lang="en">Larochette</common:Name>
+          <common:Name xml:lang="fr">Larochette</common:Name>
+          <structure:Parent>
+            <Ref id="LU00004"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000407">
+          <common:Name xml:lang="en">Lintgen</common:Name>
+          <common:Name xml:lang="fr">Lintgen</common:Name>
+          <structure:Parent>
+            <Ref id="LU00004"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000408">
+          <common:Name xml:lang="en">Lorentzweiler</common:Name>
+          <common:Name xml:lang="fr">Lorentzweiler</common:Name>
+          <structure:Parent>
+            <Ref id="LU00004"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000409">
+          <common:Name xml:lang="en">Mersch</common:Name>
+          <common:Name xml:lang="fr">Mersch</common:Name>
+          <structure:Parent>
+            <Ref id="LU00004"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000410">
+          <common:Name xml:lang="en">Nommern</common:Name>
+          <common:Name xml:lang="fr">Nommern</common:Name>
+          <structure:Parent>
+            <Ref id="LU00004"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000501">
+          <common:Name xml:lang="en">Clervaux</common:Name>
+          <common:Name xml:lang="fr">Clervaux</common:Name>
+          <structure:Parent>
+            <Ref id="LU00005"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000502">
+          <common:Name xml:lang="en">Wincrange</common:Name>
+          <common:Name xml:lang="fr">Wincrange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00005"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000503">
+          <common:Name xml:lang="en">Parc Hosingen</common:Name>
+          <common:Name xml:lang="fr">Parc Hosingen</common:Name>
+          <structure:Parent>
+            <Ref id="LU00005"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000504">
+          <common:Name xml:lang="en">Troisvierges</common:Name>
+          <common:Name xml:lang="fr">Troisvierges</common:Name>
+          <structure:Parent>
+            <Ref id="LU00005"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000505">
+          <common:Name xml:lang="en">Weiswampach</common:Name>
+          <common:Name xml:lang="fr">Weiswampach</common:Name>
+          <structure:Parent>
+            <Ref id="LU00005"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000601">
+          <common:Name xml:lang="en">Bettendorf</common:Name>
+          <common:Name xml:lang="fr">Bettendorf</common:Name>
+          <structure:Parent>
+            <Ref id="LU00006"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000602">
+          <common:Name xml:lang="en">Bourscheid</common:Name>
+          <common:Name xml:lang="fr">Bourscheid</common:Name>
+          <structure:Parent>
+            <Ref id="LU00006"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000603">
+          <common:Name xml:lang="en">Diekirch</common:Name>
+          <common:Name xml:lang="fr">Diekirch</common:Name>
+          <structure:Parent>
+            <Ref id="LU00006"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000604">
+          <common:Name xml:lang="en">Erpeldange-sur-Sûre</common:Name>
+          <common:Name xml:lang="fr">Erpeldange-sur-Sûre</common:Name>
+          <structure:Parent>
+            <Ref id="LU00006"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000605">
+          <common:Name xml:lang="en">Ettelbruck</common:Name>
+          <common:Name xml:lang="fr">Ettelbruck</common:Name>
+          <structure:Parent>
+            <Ref id="LU00006"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000606">
+          <common:Name xml:lang="en">Feulen</common:Name>
+          <common:Name xml:lang="fr">Feulen</common:Name>
+          <structure:Parent>
+            <Ref id="LU00006"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000607">
+          <common:Name xml:lang="en">Mertzig</common:Name>
+          <common:Name xml:lang="fr">Mertzig</common:Name>
+          <structure:Parent>
+            <Ref id="LU00006"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000608">
+          <common:Name xml:lang="en">Reisdorf</common:Name>
+          <common:Name xml:lang="fr">Reisdorf</common:Name>
+          <structure:Parent>
+            <Ref id="LU00006"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000609">
+          <common:Name xml:lang="en">Schieren</common:Name>
+          <common:Name xml:lang="fr">Schieren</common:Name>
+          <structure:Parent>
+            <Ref id="LU00006"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000610">
+          <common:Name xml:lang="en">Vallée de l'Ernz</common:Name>
+          <common:Name xml:lang="fr">Vallée de l'Ernz</common:Name>
+          <structure:Parent>
+            <Ref id="LU00006"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000701">
+          <common:Name xml:lang="en">Beckerich</common:Name>
+          <common:Name xml:lang="fr">Beckerich</common:Name>
+          <structure:Parent>
+            <Ref id="LU00007"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000702">
+          <common:Name xml:lang="en">Preizerdaul</common:Name>
+          <common:Name xml:lang="fr">Preizerdaul</common:Name>
+          <structure:Parent>
+            <Ref id="LU00007"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000703">
+          <common:Name xml:lang="en">Ell</common:Name>
+          <common:Name xml:lang="fr">Ell</common:Name>
+          <structure:Parent>
+            <Ref id="LU00007"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000704">
+          <common:Name xml:lang="en">Rambrouch</common:Name>
+          <common:Name xml:lang="fr">Rambrouch</common:Name>
+          <structure:Parent>
+            <Ref id="LU00007"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000706">
+          <common:Name xml:lang="en">Redange-sur-Attert</common:Name>
+          <common:Name xml:lang="fr">Redange-sur-Attert</common:Name>
+          <structure:Parent>
+            <Ref id="LU00007"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000707">
+          <common:Name xml:lang="en">Saeul</common:Name>
+          <common:Name xml:lang="fr">Saeul</common:Name>
+          <structure:Parent>
+            <Ref id="LU00007"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000708">
+          <common:Name xml:lang="en">Useldange</common:Name>
+          <common:Name xml:lang="fr">Useldange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00007"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000709">
+          <common:Name xml:lang="en">Vichten</common:Name>
+          <common:Name xml:lang="fr">Vichten</common:Name>
+          <structure:Parent>
+            <Ref id="LU00007"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000705">
+          <common:Name xml:lang="en">Grosbous</common:Name>
+          <common:Name xml:lang="fr">Grosbous</common:Name>
+        </structure:Code>
+        <structure:Code id="LU0000710">
+          <common:Name xml:lang="en">Wahl</common:Name>
+          <common:Name xml:lang="fr">Wahl</common:Name>
+        </structure:Code>
+        <structure:Code id="LU0000801">
+          <common:Name xml:lang="en">Boulaide</common:Name>
+          <common:Name xml:lang="fr">Boulaide</common:Name>
+          <structure:Parent>
+            <Ref id="LU00008"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000802">
+          <common:Name xml:lang="en">Esch-sur-Sûre</common:Name>
+          <common:Name xml:lang="fr">Esch-sur-Sûre</common:Name>
+          <structure:Parent>
+            <Ref id="LU00008"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000804">
+          <common:Name xml:lang="en">Goesdorf</common:Name>
+          <common:Name xml:lang="fr">Goesdorf</common:Name>
+          <structure:Parent>
+            <Ref id="LU00008"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000805">
+          <common:Name xml:lang="en">Kiischpelt</common:Name>
+          <common:Name xml:lang="fr">Kiischpelt</common:Name>
+          <structure:Parent>
+            <Ref id="LU00008"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000806">
+          <common:Name xml:lang="en">Lac de la Haute-Sûre</common:Name>
+          <common:Name xml:lang="fr">Lac de la Haute-Sûre</common:Name>
+          <structure:Parent>
+            <Ref id="LU00008"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000807">
+          <common:Name xml:lang="en">Wiltz</common:Name>
+          <common:Name xml:lang="fr">Wiltz</common:Name>
+          <structure:Parent>
+            <Ref id="LU00008"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000808">
+          <common:Name xml:lang="en">Winseler</common:Name>
+          <common:Name xml:lang="fr">Winseler</common:Name>
+          <structure:Parent>
+            <Ref id="LU00008"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000901">
+          <common:Name xml:lang="en">Tandel</common:Name>
+          <common:Name xml:lang="fr">Tandel</common:Name>
+          <structure:Parent>
+            <Ref id="LU00009"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000902">
+          <common:Name xml:lang="en">Putscheid</common:Name>
+          <common:Name xml:lang="fr">Putscheid</common:Name>
+          <structure:Parent>
+            <Ref id="LU00009"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0000903">
+          <common:Name xml:lang="en">Vianden</common:Name>
+          <common:Name xml:lang="fr">Vianden</common:Name>
+          <structure:Parent>
+            <Ref id="LU00009"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001001">
+          <common:Name xml:lang="en">Beaufort</common:Name>
+          <common:Name xml:lang="fr">Beaufort</common:Name>
+          <structure:Parent>
+            <Ref id="LU00010"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001002">
+          <common:Name xml:lang="en">Bech</common:Name>
+          <common:Name xml:lang="fr">Bech</common:Name>
+          <structure:Parent>
+            <Ref id="LU00010"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001003">
+          <common:Name xml:lang="en">Berdorf</common:Name>
+          <common:Name xml:lang="fr">Berdorf</common:Name>
+          <structure:Parent>
+            <Ref id="LU00010"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001004">
+          <common:Name xml:lang="en">Consdorf</common:Name>
+          <common:Name xml:lang="fr">Consdorf</common:Name>
+          <structure:Parent>
+            <Ref id="LU00010"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001005">
+          <common:Name xml:lang="en">Echternach</common:Name>
+          <common:Name xml:lang="fr">Echternach</common:Name>
+          <structure:Parent>
+            <Ref id="LU00010"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001006">
+          <common:Name xml:lang="en">Rosport - Mompach</common:Name>
+          <common:Name xml:lang="fr">Rosport - Mompach</common:Name>
+          <structure:Parent>
+            <Ref id="LU00010"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001008">
+          <common:Name xml:lang="en">Waldbillig</common:Name>
+          <common:Name xml:lang="fr">Waldbillig</common:Name>
+          <structure:Parent>
+            <Ref id="LU00010"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001101">
+          <common:Name xml:lang="en">Betzdorf</common:Name>
+          <common:Name xml:lang="fr">Betzdorf</common:Name>
+          <structure:Parent>
+            <Ref id="LU00011"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001102">
+          <common:Name xml:lang="en">Biwer</common:Name>
+          <common:Name xml:lang="fr">Biwer</common:Name>
+          <structure:Parent>
+            <Ref id="LU00011"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001103">
+          <common:Name xml:lang="en">Flaxweiler</common:Name>
+          <common:Name xml:lang="fr">Flaxweiler</common:Name>
+          <structure:Parent>
+            <Ref id="LU00011"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001104">
+          <common:Name xml:lang="en">Grevenmacher</common:Name>
+          <common:Name xml:lang="fr">Grevenmacher</common:Name>
+          <structure:Parent>
+            <Ref id="LU00011"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001105">
+          <common:Name xml:lang="en">Junglinster</common:Name>
+          <common:Name xml:lang="fr">Junglinster</common:Name>
+          <structure:Parent>
+            <Ref id="LU00011"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001106">
+          <common:Name xml:lang="en">Manternach</common:Name>
+          <common:Name xml:lang="fr">Manternach</common:Name>
+          <structure:Parent>
+            <Ref id="LU00011"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001107">
+          <common:Name xml:lang="en">Mertert</common:Name>
+          <common:Name xml:lang="fr">Mertert</common:Name>
+          <structure:Parent>
+            <Ref id="LU00011"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001108">
+          <common:Name xml:lang="en">Wormeldange</common:Name>
+          <common:Name xml:lang="fr">Wormeldange</common:Name>
+          <structure:Parent>
+            <Ref id="LU00011"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001202">
+          <common:Name xml:lang="en">Dalheim</common:Name>
+          <common:Name xml:lang="fr">Dalheim</common:Name>
+          <structure:Parent>
+            <Ref id="LU00012"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001203">
+          <common:Name xml:lang="en">Lenningen</common:Name>
+          <common:Name xml:lang="fr">Lenningen</common:Name>
+          <structure:Parent>
+            <Ref id="LU00012"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001204">
+          <common:Name xml:lang="en">Mondorf-les-Bains</common:Name>
+          <common:Name xml:lang="fr">Mondorf-les-Bains</common:Name>
+          <structure:Parent>
+            <Ref id="LU00012"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001205">
+          <common:Name xml:lang="en">Remich</common:Name>
+          <common:Name xml:lang="fr">Remich</common:Name>
+          <structure:Parent>
+            <Ref id="LU00012"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001206">
+          <common:Name xml:lang="en">Schengen</common:Name>
+          <common:Name xml:lang="fr">Schengen</common:Name>
+          <structure:Parent>
+            <Ref id="LU00012"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001207">
+          <common:Name xml:lang="en">Stadtbredimus</common:Name>
+          <common:Name xml:lang="fr">Stadtbredimus</common:Name>
+          <structure:Parent>
+            <Ref id="LU00012"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LU0001201">
+          <common:Name xml:lang="en">Bous</common:Name>
+          <common:Name xml:lang="fr">Bous</common:Name>
+        </structure:Code>
+        <structure:Code id="LU0001208">
+          <common:Name xml:lang="en">Waldbredimus</common:Name>
+          <common:Name xml:lang="fr">Waldbredimus</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_CITIZEN" agencyID="LU1" version="1.2" isFinal="true">
+        <common:Name xml:lang="en">CL_CITIZEN</common:Name>
+        <common:Name xml:lang="fr">CL_CITIZEN</common:Name>
+        <common:Description xml:lang="en">Nationality of the persons</common:Description>
+        <common:Description xml:lang="fr">Nationalité des personnes</common:Description>
+        <structure:Code id="_T">
+          <common:Name xml:lang="en">Total</common:Name>
+          <common:Name xml:lang="fr">Total</common:Name>
+        </structure:Code>
+        <structure:Code id="NAT">
+          <common:Name xml:lang="en">Luxembourg</common:Name>
+          <common:Name xml:lang="fr">Luxembourg</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="FOR">
+          <common:Name xml:lang="fr">Etranger</common:Name>
+          <common:Name xml:lang="en">Foreign</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="EU_FOR">
+          <common:Name xml:lang="fr">Etranger (UE-27)</common:Name>
+          <common:Name xml:lang="en">Foreign (EU-27)</common:Name>
+          <structure:Parent>
+            <Ref id="FOR"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="NEU">
+          <common:Name xml:lang="fr">Etranger (non UE-27)</common:Name>
+          <common:Name xml:lang="en">Foreign (non EU-27)</common:Name>
+          <structure:Parent>
+            <Ref id="FOR"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="STLS">
+          <common:Name xml:lang="fr">Apatrides</common:Name>
+          <common:Name xml:lang="en">Stateless</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="UNK">
+          <common:Name xml:lang="fr">Indéterminé</common:Name>
+          <common:Name xml:lang="en">Not stated</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_FST" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Familly status</common:Name>
+        <common:Name xml:lang="fr">Statut de la famille</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_HAR" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Housing arrangements</common:Name>
+        <common:Name xml:lang="fr">Mode d’occupation du logement</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_HST" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Household status</common:Name>
+        <common:Name xml:lang="fr">Statut du ménage</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_ISCED11" agencyID="LU1" version="1.1" isFinal="true">
+        <common:Name xml:lang="en">Education level</common:Name>
+        <common:Name xml:lang="fr">Niveau d'éducation</common:Name>
+        <structure:Code id="_Z">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1200</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">1200</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_ISCO08" agencyID="LU1" version="1.1" isFinal="true">
+        <common:Name xml:lang="en">International Standard Classification of Occupations 2008 (ISCO-08)</common:Name>
+        <common:Name xml:lang="fr">International Standard Classification of Occupations 2008 (ISCO-08)</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_LMS" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Legal martial status</common:Name>
+        <common:Name xml:lang="fr">Statut marital légal</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_LOCALITY" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Size of the locality</common:Name>
+        <common:Name xml:lang="fr">Taille de la commune</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_LPW" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Location of place of work</common:Name>
+        <common:Name xml:lang="fr">Lieu de travail</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_MEASURE_CENSUS" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Measure for Census 2021</common:Name>
+        <common:Name xml:lang="fr">Mesure pour recensement 2021</common:Name>
+        <structure:Code id="POP">
+          <common:Name xml:lang="en">Population</common:Name>
+          <common:Name xml:lang="fr">Population</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_NACE_R2" agencyID="LU1" version="1.2" isFinal="true">
+        <common:Name xml:lang="en">Economic activity (NACE Rev.2)</common:Name>
+        <common:Name xml:lang="fr">Activité économique (NACE Rév.2)</common:Name>
+        <structure:Code id="_Z">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">999999</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">999999</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_POB" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Country/place of birth</common:Name>
+        <common:Name xml:lang="fr">Pays de naissance</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_ROY" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Place of usual residence one year prior to the census</common:Name>
+        <common:Name xml:lang="fr">Lieu de résidence habituelle un an avant le recensement</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_SEX" agencyID="LU1" version="1.1" isFinal="true">
+        <common:Name xml:lang="en">SEX</common:Name>
+        <common:Name xml:lang="fr">CL_SEX</common:Name>
+        <common:Description xml:lang="en">Sex of the person</common:Description>
+        <common:Description xml:lang="fr">Sexe la personne</common:Description>
+        <structure:Code id="_T">
+          <common:Name xml:lang="en">Total</common:Name>
+          <common:Name xml:lang="fr">Total</common:Name>
+          <common:Description xml:lang="en">Used for expressing totals.</common:Description>
+        </structure:Code>
+        <structure:Code id="F">
+          <common:Name xml:lang="en">Female</common:Name>
+          <common:Name xml:lang="fr">Femme</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="M">
+          <common:Name xml:lang="fr">Homme</common:Name>
+          <common:Name xml:lang="en">Male</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_SIE" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Status in employment</common:Name>
+        <common:Name xml:lang="fr">Statut dans l'emploi</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_UNIT_MEASURE" agencyID="LU1" version="1.2" isFinal="true">
+        <common:Name xml:lang="en">Unit of measure</common:Name>
+        <common:Description xml:lang="en">Common codelist used by all Statec units</common:Description>
+        <structure:Code id="PERS">
+          <common:Name xml:lang="fr">Personnes</common:Name>
+          <common:Name xml:lang="en">Persons</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_UNIT_MULT" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Codelist for Unit multiplier</common:Name>
+        <common:Name xml:lang="fr">Codelist pour Multiplicateur d'unité</common:Name>
+        <structure:Code id="0">
+          <common:Name xml:lang="fr">Unités</common:Name>
+          <common:Name xml:lang="en">Units</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_WSTATUS" agencyID="LU1" version="1.2" isFinal="true">
+        <common:Name xml:lang="en">Current activity status</common:Name>
+        <common:Name xml:lang="fr">Statut professionnel</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_YAE" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Year of arrival in the country since 1980</common:Name>
+        <common:Name xml:lang="fr">Année d'arrivée dans le pays depuis 1980</common:Name>
+        <common:Description xml:lang="fr">Annotations ORDER pour version FR à ajouter manuallement dans le fichier xml</common:Description>
+        <common:Description xml:lang="en">Annotations ORDER for FR version to be added manually in the xml file</common:Description>
+        <structure:Code id="_Z">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">31</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_YAT" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Year of arrival in the country since 2010</common:Name>
+        <common:Name xml:lang="fr">Année d'arrivée dans le pays depuis 2010</common:Name>
+        <structure:Code id="_Z">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">5</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_DECIMALS" agencyID="SDMX" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Decimals</common:Name>
+        <common:Name xml:lang="fr">Décimales</common:Name>
+        <common:Description xml:lang="en">Cette liste de codes fournit une liste de valeurs indiquant le nombre de chiffres décimaux utilisés dans les données. Cette liste de codes a été publiée en 2009. De plus amples informations sur cette liste de codes et sur les listes de codes SDMX en général (par exemple, la liste des codes génériques pour exprimer des concepts généraux comme "Total", "Inconnu", etc. ; les syntaxes pour la création d'autres codes ; les lignes directrices générales pour la création de listes de codes SDMX) peuvent être consultées à l'adresse suivante : https://sdmx.org/?page_id=4345.</common:Description>
+        <common:Description xml:lang="fr">Cette liste de codes fournit une liste de valeurs indiquant le nombre de chiffres décimaux utilisés dans les données. Cette liste de codes a été publiée en 2009. De plus amples informations sur cette liste de codes et sur les listes de codes SDMX en général (par exemple, la liste des codes génériques pour exprimer des concepts généraux comme "Total", "Inconnu", etc. ; les syntaxes pour la création d'autres codes ; les lignes directrices générales pour la création de listes de codes SDMX) peuvent être consultées à l'adresse suivante : https://sdmx.org/?page_id=4345.</common:Description>
+        <structure:Code id="0">
+          <common:Name xml:lang="en">Zero</common:Name>
+          <common:Name xml:lang="fr">Zéro</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_FREQ" agencyID="SDMX" version="2.1" isFinal="true">
+        <common:Name xml:lang="en">Frequency</common:Name>
+        <common:Name xml:lang="fr">Fréquence</common:Name>
+        <common:Description xml:lang="en">This code list provides a set of values indicating the "frequency" of the data (e.g. weekly, monthly, quarterly). The concept “frequency” may refer to various stages in the production process, e.g. data collection or data dissemination. For example, a time series could be disseminated at annual frequency but the underlying data are compiled monthly. The code list is applicable for all different uses of "frequency". This code list was formally adopted on 4 December 2013. More information about and supporting material for this code list and SDMX code lists in general (e.g. list of generic codes for expressing general concepts like "Total", "Unknown", etc.; syntaxes for the creation of further codes; general guidelines for the creation of SDMX code lists) can be found at this address: https://sdmx.org/?page_id=4345.</common:Description>
+        <common:Description xml:lang="fr">Cette liste de codes fournit un ensemble de valeurs indiquant la "fréquence" des données (par exemple, hebdomadaire, mensuelle, trimestrielle). Le concept de "fréquence" peut se référer à différentes étapes du processus de production, par exemple la collecte ou la diffusion des données. Par exemple, une série chronologique pourrait être diffusée à une fréquence annuelle, mais les données sous-jacentes sont élaborées mensuellement. La liste de codes est applicable pour toutes les différentes utilisations de la "fréquence". Cette liste de codes a été formellement adoptée le 4 décembre 2013. De plus amples informations sur cette liste de codes et les listes de codes SDMX en général, ainsi que des documents d'appui (par exemple, la liste des codes génériques pour exprimer des concepts généraux comme "Total", "Inconnu", etc. ; les syntaxes pour la création d'autres codes ; les lignes directrices générales pour la création des listes de codes SDMX) sont disponibles à cette adresse : https://sdmx.org/?page_id=4345.</common:Description>
+        <structure:Code id="A10">
+          <common:Name xml:lang="fr">Décennale</common:Name>
+          <common:Name xml:lang="en">Decennial</common:Name>
+          <common:Description xml:lang="fr">Décennale</common:Description>
+          <common:Description xml:lang="en">Decennial</common:Description>
+        </structure:Code>
+      </structure:Codelist>
+    </structure:Codelists>
+    <structure:Concepts>
+      <structure:ConceptScheme isPartial="true" id="CS_CENSUS" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Concept Scheme for census 2021</common:Name>
+        <common:Name xml:lang="fr">Concept Scheme pour recensement 2021</common:Name>
+        <structure:Concept id="UNIT_MEASURE">
+          <common:Name xml:lang="en">Unit of measure</common:Name>
+          <common:Name xml:lang="fr">Unité de mesure</common:Name>
+          <common:Description xml:lang="en">Common codelist used by all Statec units</common:Description>
+          <common:Description xml:lang="fr">Codelist commune utilisée par toutes les unités du Statec</common:Description>
+        </structure:Concept>
+        <structure:Concept id="MEASURE">
+          <common:Name xml:lang="en">Measure</common:Name>
+          <common:Name xml:lang="fr">Mesure</common:Name>
+          <common:Description xml:lang="en">Codelist to be created by theme/DSD</common:Description>
+          <common:Description xml:lang="fr">Codelist à créer par thème/DSD</common:Description>
+        </structure:Concept>
+        <structure:Concept id="UNIT_MULT">
+          <common:Name xml:lang="en">Unit multiplier</common:Name>
+          <common:Name xml:lang="fr">Multiplicateur d'unité</common:Name>
+          <common:Description xml:lang="en">Common codelist used by all Statec units</common:Description>
+          <common:Description xml:lang="fr">Codelist commune utilisée par toutes les unités du Statec</common:Description>
+        </structure:Concept>
+        <structure:Concept id="TIME_PERIOD">
+          <common:Name xml:lang="en">Time period</common:Name>
+          <common:Name xml:lang="fr">Période</common:Name>
+        </structure:Concept>
+        <structure:Concept id="FREQ">
+          <common:Name xml:lang="en">Frequency</common:Name>
+          <common:Name xml:lang="fr">Fréquence</common:Name>
+        </structure:Concept>
+        <structure:Concept id="OBS_VALUE">
+          <common:Name xml:lang="en">Observation value</common:Name>
+          <common:Name xml:lang="fr">Valeur d'observation</common:Name>
+        </structure:Concept>
+        <structure:Concept id="DECIMALS">
+          <common:Name xml:lang="en">Decimals</common:Name>
+          <common:Name xml:lang="fr">Décimales</common:Name>
+          <common:Description xml:lang="en">Common codelist used by all Statec units</common:Description>
+          <common:Description xml:lang="fr">Codelist commune utilisée par toutes les unités du Statec</common:Description>
+        </structure:Concept>
+        <structure:Concept id="SEX">
+          <common:Name xml:lang="en">Sex</common:Name>
+          <common:Name xml:lang="fr">Sexe</common:Name>
+        </structure:Concept>
+        <structure:Concept id="AGE">
+          <common:Name xml:lang="en">Age class</common:Name>
+          <common:Name xml:lang="fr">Classe d'âge</common:Name>
+        </structure:Concept>
+        <structure:Concept id="LMS">
+          <common:Name xml:lang="fr">Etat matrimonial</common:Name>
+          <common:Name xml:lang="en">Legal marital status</common:Name>
+        </structure:Concept>
+        <structure:Concept id="HST">
+          <common:Name xml:lang="en">Household status</common:Name>
+          <common:Name xml:lang="fr">Position dans le ménage</common:Name>
+        </structure:Concept>
+        <structure:Concept id="FST">
+          <common:Name xml:lang="en">Familly status</common:Name>
+          <common:Name xml:lang="fr">Position dans la famille</common:Name>
+        </structure:Concept>
+        <structure:Concept id="HAR">
+          <common:Name xml:lang="en">Housing arrangements</common:Name>
+          <common:Name xml:lang="fr">Mode d’occupation du logement</common:Name>
+        </structure:Concept>
+        <structure:Concept id="LOC_SIZE">
+          <common:Name xml:lang="en">Size of the locality</common:Name>
+          <common:Name xml:lang="fr">Taille de la localité</common:Name>
+        </structure:Concept>
+        <structure:Concept id="WSTATUS">
+          <common:Name xml:lang="en">Working status</common:Name>
+          <common:Name xml:lang="fr">Statut professionnel</common:Name>
+          <common:Description xml:lang="en">ex CAS</common:Description>
+        </structure:Concept>
+        <structure:Concept id="ISCO08">
+          <common:Name xml:lang="en">Occupation (ISCO-08)</common:Name>
+          <common:Name xml:lang="fr">Profession  (ISCO-08)</common:Name>
+          <common:Description xml:lang="en">ex OCC</common:Description>
+        </structure:Concept>
+        <structure:Concept id="EDU">
+          <common:Name xml:lang="en">Educational level</common:Name>
+          <common:Name xml:lang="fr">Niveau d'éducation</common:Name>
+        </structure:Concept>
+        <structure:Concept id="SIE">
+          <common:Name xml:lang="en">Employment status</common:Name>
+          <common:Name xml:lang="fr">Situation dans la profession</common:Name>
+        </structure:Concept>
+        <structure:Concept id="LPW">
+          <common:Name xml:lang="en">Place of work</common:Name>
+          <common:Name xml:lang="fr">Lieu de travail</common:Name>
+        </structure:Concept>
+        <structure:Concept id="C_BIRTH">
+          <common:Name xml:lang="en">Country of birth</common:Name>
+          <common:Name xml:lang="fr">Pays de naissance</common:Name>
+          <common:Description xml:lang="en">ex POB</common:Description>
+        </structure:Concept>
+        <structure:Concept id="CITIZEN">
+          <common:Name xml:lang="en">Citizenship</common:Name>
+          <common:Name xml:lang="fr">Nationalité</common:Name>
+          <common:Description xml:lang="en">ex COCITY</common:Description>
+        </structure:Concept>
+        <structure:Concept id="YAE">
+          <common:Name xml:lang="en">Year of arrival in the country since 1980</common:Name>
+          <common:Name xml:lang="fr">Année d'immigration depuis 1980</common:Name>
+        </structure:Concept>
+        <structure:Concept id="YAT">
+          <common:Name xml:lang="en">Year of arrival in the country since 2010</common:Name>
+          <common:Name xml:lang="fr">Année d'immigration depuis 2010</common:Name>
+        </structure:Concept>
+        <structure:Concept id="ROY">
+          <common:Name xml:lang="en">Place of usual residence one year prior to the census</common:Name>
+          <common:Name xml:lang="fr">Lieu de résidence un an avant le recensement</common:Name>
+        </structure:Concept>
+        <structure:Concept id="GEO">
+          <common:Name xml:lang="en">Geographic level</common:Name>
+          <common:Name xml:lang="fr">Niveau géographique</common:Name>
+        </structure:Concept>
+        <structure:Concept id="ACTIVITY">
+          <common:Name xml:lang="en">Economic activity (NACE Rev.2)</common:Name>
+          <common:Name xml:lang="fr">Activité économique (NACE Rév.2)</common:Name>
+        </structure:Concept>
+      </structure:ConceptScheme>
+    </structure:Concepts>
+    <structure:DataStructures>
+      <structure:DataStructure id="DSD_CENSUS_GROUP7_10" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">DSD_CENSUS_GROUP7_10</common:Name>
+        <common:Description xml:lang="en">DSD comprennat les tableaux du groupe 7 à 10</common:Description>
+        <structure:DataStructureComponents>
+          <structure:DimensionList id="DimensionDescriptor">
+            <structure:Dimension id="UNIT_MEASURE" position="1">
+              <structure:ConceptIdentity>
+                <Ref id="UNIT_MEASURE" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_UNIT_MEASURE" version="1.2" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="MEASURE" position="2">
+              <structure:ConceptIdentity>
+                <Ref id="MEASURE" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_MEASURE_CENSUS" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="FREQ" position="3">
+              <structure:ConceptIdentity>
+                <Ref id="FREQ" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_FREQ" version="2.1" agencyID="SDMX" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="SEX" position="4">
+              <structure:ConceptIdentity>
+                <Ref id="SEX" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_SEX" version="1.1" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="AGE" position="5">
+              <structure:ConceptIdentity>
+                <Ref id="AGE" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_AGE_CLASS" version="1.2" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="LMS" position="6">
+              <structure:ConceptIdentity>
+                <Ref id="LMS" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_LMS" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="HST" position="7">
+              <structure:ConceptIdentity>
+                <Ref id="HST" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_HST" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="FST" position="8">
+              <structure:ConceptIdentity>
+                <Ref id="FST" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_FST" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="HAR" position="9">
+              <structure:ConceptIdentity>
+                <Ref id="HAR" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_HAR" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="LOC_SIZE" position="10">
+              <structure:ConceptIdentity>
+                <Ref id="LOC_SIZE" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_LOCALITY" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="WSTATUS" position="11">
+              <structure:ConceptIdentity>
+                <Ref id="WSTATUS" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_WSTATUS" version="1.2" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="EDU" position="12">
+              <structure:ConceptIdentity>
+                <Ref id="EDU" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_ISCED11" version="1.1" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="SIE" position="13">
+              <structure:ConceptIdentity>
+                <Ref id="SIE" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_SIE" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="LPW" position="14">
+              <structure:ConceptIdentity>
+                <Ref id="LPW" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_LPW" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="C_BIRTH" position="15">
+              <structure:ConceptIdentity>
+                <Ref id="C_BIRTH" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_POB" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="CITIZEN" position="16">
+              <structure:ConceptIdentity>
+                <Ref id="CITIZEN" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CITIZEN" version="1.2" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+                <structure:EnumerationFormat textType="String"/>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="YAE" position="17">
+              <structure:ConceptIdentity>
+                <Ref id="YAE" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_YAE" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="YAT" position="18">
+              <structure:ConceptIdentity>
+                <Ref id="YAT" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_YAT" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="ROY" position="19">
+              <structure:ConceptIdentity>
+                <Ref id="ROY" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_ROY" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="GEO" position="20">
+              <structure:ConceptIdentity>
+                <Ref id="GEO" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CANTON_MUNICIPALITY" version="2.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="ACTIVITY" position="21">
+              <structure:ConceptIdentity>
+                <Ref id="ACTIVITY" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_NACE_R2" version="1.2" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="ISCO08" position="22">
+              <structure:ConceptIdentity>
+                <Ref id="ISCO08" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_ISCO08" version="1.1" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+                <structure:EnumerationFormat textType="String"/>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:TimeDimension id="TIME_PERIOD" position="23">
+              <structure:ConceptIdentity>
+                <Ref id="TIME_PERIOD" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="ObservationalTimePeriod"/>
+              </structure:LocalRepresentation>
+            </structure:TimeDimension>
+          </structure:DimensionList>
+          <structure:AttributeList id="AttributeDescriptor">
+            <structure:Attribute id="UNIT_MULT" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="UNIT_MULT" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_UNIT_MULT" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:None/>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="DECIMALS" assignmentStatus="Mandatory">
+              <structure:ConceptIdentity>
+                <Ref id="DECIMALS" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_DECIMALS" version="1.0" agencyID="SDMX" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+          </structure:AttributeList>
+          <structure:MeasureList id="MeasureDescriptor">
+            <structure:PrimaryMeasure id="OBS_VALUE">
+              <structure:ConceptIdentity>
+                <Ref id="OBS_VALUE" maintainableParentID="CS_CENSUS" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="Double"/>
+              </structure:LocalRepresentation>
+            </structure:PrimaryMeasure>
+          </structure:MeasureList>
+        </structure:DataStructureComponents>
+      </structure:DataStructure>
+    </structure:DataStructures>
+    <structure:Constraints>
+      <structure:ContentConstraint id="CR_A_DSD_CENSUS_GROUP7_10@DF_B1625" agencyID="LU1" version="1.0" isFinal="false" type="Actual">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationTitle>A</common:AnnotationTitle>
+            <common:AnnotationType>ReleaseVersion</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="obs_count">
+            <common:AnnotationTitle>2415</common:AnnotationTitle>
+            <common:AnnotationType>sdmx_metrics</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Availability (A) for DSD_CENSUS_GROUP7_10@DF_B1625</common:Name>
+        <structure:ConstraintAttachment>
+          <structure:Dataflow>
+            <Ref id="DSD_CENSUS_GROUP7_10@DF_B1625" version="1.0" agencyID="LU1" package="datastructure" class="Dataflow"/>
+          </structure:Dataflow>
+        </structure:ConstraintAttachment>
+        <structure:CubeRegion include="true">
+          <common:KeyValue id="UNIT_MEASURE">
+            <common:Value>PERS</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="MEASURE">
+            <common:Value>POP</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="FREQ">
+            <common:Value>A10</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="SEX">
+            <common:Value>_T</common:Value>
+            <common:Value>F</common:Value>
+            <common:Value>M</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="AGE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="LMS">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="HST">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="FST">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="HAR">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="LOC_SIZE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="WSTATUS">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="EDU">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="SIE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="LPW">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="C_BIRTH">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="CITIZEN">
+            <common:Value>_T</common:Value>
+            <common:Value>EU_FOR</common:Value>
+            <common:Value>FOR</common:Value>
+            <common:Value>NAT</common:Value>
+            <common:Value>NEU</common:Value>
+            <common:Value>STLS</common:Value>
+            <common:Value>UNK</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="YAE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="YAT">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="ROY">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="GEO">
+            <common:Value>_T</common:Value>
+            <common:Value>LU00001</common:Value>
+            <common:Value>LU0000101</common:Value>
+            <common:Value>LU0000102</common:Value>
+            <common:Value>LU0000103</common:Value>
+            <common:Value>LU0000104</common:Value>
+            <common:Value>LU0000105</common:Value>
+            <common:Value>LU0000106</common:Value>
+            <common:Value>LU0000107</common:Value>
+            <common:Value>LU0000108</common:Value>
+            <common:Value>LU0000110</common:Value>
+            <common:Value>LU00002</common:Value>
+            <common:Value>LU0000201</common:Value>
+            <common:Value>LU0000202</common:Value>
+            <common:Value>LU0000203</common:Value>
+            <common:Value>LU0000204</common:Value>
+            <common:Value>LU0000205</common:Value>
+            <common:Value>LU0000206</common:Value>
+            <common:Value>LU0000207</common:Value>
+            <common:Value>LU0000208</common:Value>
+            <common:Value>LU0000209</common:Value>
+            <common:Value>LU0000210</common:Value>
+            <common:Value>LU0000211</common:Value>
+            <common:Value>LU0000212</common:Value>
+            <common:Value>LU0000213</common:Value>
+            <common:Value>LU0000214</common:Value>
+            <common:Value>LU00003</common:Value>
+            <common:Value>LU0000301</common:Value>
+            <common:Value>LU0000302</common:Value>
+            <common:Value>LU0000303</common:Value>
+            <common:Value>LU0000304</common:Value>
+            <common:Value>LU0000305</common:Value>
+            <common:Value>LU0000306</common:Value>
+            <common:Value>LU0000307</common:Value>
+            <common:Value>LU0000308</common:Value>
+            <common:Value>LU0000309</common:Value>
+            <common:Value>LU0000310</common:Value>
+            <common:Value>LU0000311</common:Value>
+            <common:Value>LU00004</common:Value>
+            <common:Value>LU0000401</common:Value>
+            <common:Value>LU0000402</common:Value>
+            <common:Value>LU0000403</common:Value>
+            <common:Value>LU0000404</common:Value>
+            <common:Value>LU0000405</common:Value>
+            <common:Value>LU0000406</common:Value>
+            <common:Value>LU0000407</common:Value>
+            <common:Value>LU0000408</common:Value>
+            <common:Value>LU0000409</common:Value>
+            <common:Value>LU0000410</common:Value>
+            <common:Value>LU00005</common:Value>
+            <common:Value>LU0000501</common:Value>
+            <common:Value>LU0000502</common:Value>
+            <common:Value>LU0000503</common:Value>
+            <common:Value>LU0000504</common:Value>
+            <common:Value>LU0000505</common:Value>
+            <common:Value>LU00006</common:Value>
+            <common:Value>LU0000601</common:Value>
+            <common:Value>LU0000602</common:Value>
+            <common:Value>LU0000603</common:Value>
+            <common:Value>LU0000604</common:Value>
+            <common:Value>LU0000605</common:Value>
+            <common:Value>LU0000606</common:Value>
+            <common:Value>LU0000607</common:Value>
+            <common:Value>LU0000608</common:Value>
+            <common:Value>LU0000609</common:Value>
+            <common:Value>LU0000610</common:Value>
+            <common:Value>LU00007</common:Value>
+            <common:Value>LU0000701</common:Value>
+            <common:Value>LU0000702</common:Value>
+            <common:Value>LU0000703</common:Value>
+            <common:Value>LU0000704</common:Value>
+            <common:Value>LU0000705</common:Value>
+            <common:Value>LU0000706</common:Value>
+            <common:Value>LU0000707</common:Value>
+            <common:Value>LU0000708</common:Value>
+            <common:Value>LU0000709</common:Value>
+            <common:Value>LU0000710</common:Value>
+            <common:Value>LU00008</common:Value>
+            <common:Value>LU0000801</common:Value>
+            <common:Value>LU0000802</common:Value>
+            <common:Value>LU0000804</common:Value>
+            <common:Value>LU0000805</common:Value>
+            <common:Value>LU0000806</common:Value>
+            <common:Value>LU0000807</common:Value>
+            <common:Value>LU0000808</common:Value>
+            <common:Value>LU00009</common:Value>
+            <common:Value>LU0000901</common:Value>
+            <common:Value>LU0000902</common:Value>
+            <common:Value>LU0000903</common:Value>
+            <common:Value>LU00010</common:Value>
+            <common:Value>LU0001001</common:Value>
+            <common:Value>LU0001002</common:Value>
+            <common:Value>LU0001003</common:Value>
+            <common:Value>LU0001004</common:Value>
+            <common:Value>LU0001005</common:Value>
+            <common:Value>LU0001006</common:Value>
+            <common:Value>LU0001008</common:Value>
+            <common:Value>LU00011</common:Value>
+            <common:Value>LU0001101</common:Value>
+            <common:Value>LU0001102</common:Value>
+            <common:Value>LU0001103</common:Value>
+            <common:Value>LU0001104</common:Value>
+            <common:Value>LU0001105</common:Value>
+            <common:Value>LU0001106</common:Value>
+            <common:Value>LU0001107</common:Value>
+            <common:Value>LU0001108</common:Value>
+            <common:Value>LU00012</common:Value>
+            <common:Value>LU0001201</common:Value>
+            <common:Value>LU0001202</common:Value>
+            <common:Value>LU0001203</common:Value>
+            <common:Value>LU0001204</common:Value>
+            <common:Value>LU0001205</common:Value>
+            <common:Value>LU0001206</common:Value>
+            <common:Value>LU0001207</common:Value>
+            <common:Value>LU0001208</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="ACTIVITY">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="ISCO08">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="TIME_PERIOD">
+            <common:TimeRange>
+              <common:StartPeriod isInclusive="true">2021-01-01T00:00:00</common:StartPeriod>
+              <common:EndPeriod isInclusive="true">2021-12-31T00:00:00</common:EndPeriod>
+            </common:TimeRange>
+          </common:KeyValue>
+        </structure:CubeRegion>
+      </structure:ContentConstraint>
+      <structure:ContentConstraint id="CR_DSD_CENSUS_GROUP7_10@DF_B1625" agencyID="LU1" version="1.0" isFinal="false" type="Allowed">
+        <common:Name xml:lang="en">LU1:CR_DSD_CENSUS_GROUP7_10@DF_B1625(1.0)</common:Name>
+        <structure:ConstraintAttachment>
+          <structure:Dataflow>
+            <Ref id="DSD_CENSUS_GROUP7_10@DF_B1625" version="1.0" agencyID="LU1" package="datastructure" class="Dataflow"/>
+          </structure:Dataflow>
+        </structure:ConstraintAttachment>
+        <structure:CubeRegion include="true">
+          <common:KeyValue id="UNIT_MEASURE">
+            <common:Value>PERS</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="MEASURE">
+            <common:Value>POP</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="FREQ">
+            <common:Value>A10</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="SEX">
+            <common:Value>_T</common:Value>
+            <common:Value>F</common:Value>
+            <common:Value>M</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="AGE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="LMS">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="HST">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="FST">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="HAR">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="LOC_SIZE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="WSTATUS">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="ISCO08">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="EDU">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="SIE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="LPW">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="C_BIRTH">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="CITIZEN">
+            <common:Value>_T</common:Value>
+            <common:Value>EU_FOR</common:Value>
+            <common:Value>FOR</common:Value>
+            <common:Value>NAT</common:Value>
+            <common:Value>NEU</common:Value>
+            <common:Value>STLS</common:Value>
+            <common:Value>UNK</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="YAE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="YAT">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="ROY">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="GEO">
+            <common:Value>_T</common:Value>
+            <common:Value>LU00001</common:Value>
+            <common:Value>LU0000101</common:Value>
+            <common:Value>LU0000102</common:Value>
+            <common:Value>LU0000103</common:Value>
+            <common:Value>LU0000104</common:Value>
+            <common:Value>LU0000105</common:Value>
+            <common:Value>LU0000106</common:Value>
+            <common:Value>LU0000107</common:Value>
+            <common:Value>LU0000108</common:Value>
+            <common:Value>LU0000110</common:Value>
+            <common:Value>LU00002</common:Value>
+            <common:Value>LU0000201</common:Value>
+            <common:Value>LU0000202</common:Value>
+            <common:Value>LU0000203</common:Value>
+            <common:Value>LU0000204</common:Value>
+            <common:Value>LU0000205</common:Value>
+            <common:Value>LU0000206</common:Value>
+            <common:Value>LU0000207</common:Value>
+            <common:Value>LU0000208</common:Value>
+            <common:Value>LU0000209</common:Value>
+            <common:Value>LU0000210</common:Value>
+            <common:Value>LU0000211</common:Value>
+            <common:Value>LU0000212</common:Value>
+            <common:Value>LU0000213</common:Value>
+            <common:Value>LU0000214</common:Value>
+            <common:Value>LU00003</common:Value>
+            <common:Value>LU0000301</common:Value>
+            <common:Value>LU0000302</common:Value>
+            <common:Value>LU0000303</common:Value>
+            <common:Value>LU0000304</common:Value>
+            <common:Value>LU0000305</common:Value>
+            <common:Value>LU0000306</common:Value>
+            <common:Value>LU0000307</common:Value>
+            <common:Value>LU0000308</common:Value>
+            <common:Value>LU0000309</common:Value>
+            <common:Value>LU0000310</common:Value>
+            <common:Value>LU0000311</common:Value>
+            <common:Value>LU00004</common:Value>
+            <common:Value>LU0000401</common:Value>
+            <common:Value>LU0000402</common:Value>
+            <common:Value>LU0000403</common:Value>
+            <common:Value>LU0000404</common:Value>
+            <common:Value>LU0000405</common:Value>
+            <common:Value>LU0000406</common:Value>
+            <common:Value>LU0000407</common:Value>
+            <common:Value>LU0000408</common:Value>
+            <common:Value>LU0000409</common:Value>
+            <common:Value>LU0000410</common:Value>
+            <common:Value>LU00005</common:Value>
+            <common:Value>LU0000501</common:Value>
+            <common:Value>LU0000502</common:Value>
+            <common:Value>LU0000503</common:Value>
+            <common:Value>LU0000504</common:Value>
+            <common:Value>LU0000505</common:Value>
+            <common:Value>LU00006</common:Value>
+            <common:Value>LU0000601</common:Value>
+            <common:Value>LU0000602</common:Value>
+            <common:Value>LU0000603</common:Value>
+            <common:Value>LU0000604</common:Value>
+            <common:Value>LU0000605</common:Value>
+            <common:Value>LU0000606</common:Value>
+            <common:Value>LU0000607</common:Value>
+            <common:Value>LU0000608</common:Value>
+            <common:Value>LU0000609</common:Value>
+            <common:Value>LU0000610</common:Value>
+            <common:Value>LU00007</common:Value>
+            <common:Value>LU0000701</common:Value>
+            <common:Value>LU0000702</common:Value>
+            <common:Value>LU0000703</common:Value>
+            <common:Value>LU0000704</common:Value>
+            <common:Value>LU0000705</common:Value>
+            <common:Value>LU0000706</common:Value>
+            <common:Value>LU0000707</common:Value>
+            <common:Value>LU0000708</common:Value>
+            <common:Value>LU0000709</common:Value>
+            <common:Value>LU0000710</common:Value>
+            <common:Value>LU00008</common:Value>
+            <common:Value>LU0000801</common:Value>
+            <common:Value>LU0000802</common:Value>
+            <common:Value>LU0000804</common:Value>
+            <common:Value>LU0000805</common:Value>
+            <common:Value>LU0000806</common:Value>
+            <common:Value>LU0000807</common:Value>
+            <common:Value>LU0000808</common:Value>
+            <common:Value>LU00009</common:Value>
+            <common:Value>LU0000901</common:Value>
+            <common:Value>LU0000902</common:Value>
+            <common:Value>LU0000903</common:Value>
+            <common:Value>LU00010</common:Value>
+            <common:Value>LU0001001</common:Value>
+            <common:Value>LU0001002</common:Value>
+            <common:Value>LU0001003</common:Value>
+            <common:Value>LU0001004</common:Value>
+            <common:Value>LU0001005</common:Value>
+            <common:Value>LU0001006</common:Value>
+            <common:Value>LU0001008</common:Value>
+            <common:Value>LU00011</common:Value>
+            <common:Value>LU0001101</common:Value>
+            <common:Value>LU0001102</common:Value>
+            <common:Value>LU0001103</common:Value>
+            <common:Value>LU0001104</common:Value>
+            <common:Value>LU0001105</common:Value>
+            <common:Value>LU0001106</common:Value>
+            <common:Value>LU0001107</common:Value>
+            <common:Value>LU0001108</common:Value>
+            <common:Value>LU00012</common:Value>
+            <common:Value>LU0001201</common:Value>
+            <common:Value>LU0001202</common:Value>
+            <common:Value>LU0001203</common:Value>
+            <common:Value>LU0001204</common:Value>
+            <common:Value>LU0001205</common:Value>
+            <common:Value>LU0001206</common:Value>
+            <common:Value>LU0001207</common:Value>
+            <common:Value>LU0001208</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="ACTIVITY">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:Attribute id="UNIT_MULT">
+            <common:Value>0</common:Value>
+          </common:Attribute>
+          <common:Attribute id="DECIMALS">
+            <common:Value>0</common:Value>
+          </common:Attribute>
+        </structure:CubeRegion>
+      </structure:ContentConstraint>
+    </structure:Constraints>
+  </message:Structures>
+</message:Structure>

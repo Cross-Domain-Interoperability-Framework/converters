@@ -1,0 +1,406 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "urn:iso19115:gov.noaa.ncei.oer_EX1503L2",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Okeanos Explorer (EX1503L2): Tropical Exploration (Mapping II)",
+  "schema:alternateName": [
+    "EX1503L2",
+    "Okeanos Mapping Cruises"
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NOAA Office of Ocean Exploration and Research"
+      }
+    ]
+  },
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "NOAA National Centers for Environmental Information"
+  },
+  "schema:description": "During EX-15-03L2, multibeam data will be collected 24 hours a day and XBT casts will be conducted at an interval defined by prevailing oceanographic conditions, but not to exceed 6 hours. Additionally, EK 60 (single beam) and sub-bottom profile data will be collected 24 hours per day. Data will only be collected in foreign waters where clearance has been granted. If no permit was obtained, all data collection systems will be shut down in those foreign waters. All multibeam data will be fully processed according to standard onboard procedures and will be archived with the National Geophysical Data Center. Ancillary sonar datasets will be archived at the National Oceanographic Data Center.\n\nPurpose: In EX1503L2, the Okeanos Explorer will transit from Panama City to Honolulu, HI on its way toward its three season exploration of the Pacific Remote Islands Marine National Monument in its Campaign to Address Pacific Science, Technology, and Ocean Needs (CAPSTONE) mission.",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "collectionSession",
+      "schema:termCode": "collectionSession",
+      "schema:inDefinedTermSet": "http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "oceans",
+      "schema:termCode": "oceans",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    "moorings PICO-Prawler Mooring ARGO float seasnake salinity instrument Clipperton Fracture Zone",
+    "Hawaii Panama City Clipperton Islands Eastern Pacific Ocean Pearl Harbor",
+    "expedition exploration explorer marine education noaa ocean ocean discovery ocean education ocean exploration ocean exploration and research ocean literacy ocean research OER science scientific mission scientific research sea stewardship systematic exploration technology transformational research undersea underwater mapping survey multibeam multibeam backscatter multibeam sonar multi-beam sonar noaa fleet okeanos okeanos explorer R337 scientific computing system SCS single beam sonar singlebeam sonar single-beam sonar sub-bottom profile water column backscatter",
+    "Davisville Rhode Island",
+    "Tropical East Pacific",
+    "Hawaii",
+    "International Waters",
+    "Telepresence",
+    "Seafloor Mapping"
+  ],
+  "schema:inLanguage": "en",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "2 -158 21.2 -79"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2015-05-16T00:00:00/2015-06-24T00:00:00"
+  ],
+  "schema:image": [
+    {
+      "@type": [
+        "schema:ImageObject"
+      ],
+      "schema:contentUrl": "http://oer.hpc.msstate.edu/okeanos/ex1503l2/EX1503L2-OverviewMap.jpg"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Data use shall be credited to NOAA Office of Ocean Exploration and Research. No data access constraints, unless data are protected under the National Historic Preservation Act of 1966."
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "Data acquisition",
+      "schema:instrument": [
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Kongsberg EM304 Multibeam Echosounder",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The EM 304 consists of a new state-of-the-art electronics and separate transmit and receive transducers in a Mills Cross configuration. It utilizes the same field-proven transducers as the EM 302, making it easy to upgrade. Care has been taken to design a highly, modular and flexible solution with compact electronics for easier and faster installation. Due to a flexible transducer design, the system can be tailored to almost any required size. The largest standard size, 0.5 x 0.5 degrees, gives the ultimate system performance in terms of resolution and range, while a smaller 4 x 4 degrees solution can be installed on any vessel of opportunity"
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Simrad EK60 Echosounder",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The Simrad EK60 Scientific Sounder system is a new generation fishery researchtool, based on experience from the EK500. The new electronic hardware is combined with up to date PC processing and Windows operation. The EK60 provides facilities for accurate echo sounding, data storage, data analysis and reporting results. The system communication is through Ethernet, which gives flexibility in the location of the EK60 system units and allows easy access to data from other instruments or stations on a vessel network. A post processing software, BI60, is also included in the EK60 system."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Simrad EK80 Echosounder",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The Simrad EK80 is the most modern \"high end\" split beam scientific echo sounder in the fishery scientific market. Based on more than 60 years of research and development in close collaboration with leading marine scientists this wide band echo sounder system has succeeded the famous EK60, which became an international standard for fish stock assessment. The Simrad EK80 can operate a large number of frequencies simultaneously ranging from 10 to 500 kHz. A wide selection of high quality accurate transducers is available."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Knudsen CHIRP 3260",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The Chirp 3260 is designed for full ocean depth work where high transmit output power is a requirement. The Chirp 3260's 5U rackmount case can be fitted with up to six 2kW transmitter modules to output up to 12kW of total system power. The most common arrangement used by the research community worldwide is one 3.5 kHz channel configured for 10KW paired together with a 2KW, 12 kHz channel."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "RM Young 61202V",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The Model 61202V Barometric Pressure Sensor offers unparalleled performance and flexibility for atmospheric pressure measurement."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "RM Young 41382VC Relative Humidity/Air Temperature Sensor",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The Model 41382 Relative Humidity/Temperature Probe combines a high accuracy, capacitance type humidity sensor and precision Platinum RTD temperature sensor in one probe. This probe offers a choice of 0-1 VDC or 4-20 mA outputs for T and RH."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "RM Young 05106 Wind Sensor",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The Wind Monitor MA is an accurate and reliable wind sensor specifically designed for the rigors of the marine environment.The wind speed sensor is a four blade helicoid propeller. Unique transducer produces a pulse signal without electrical contacts or slip rings. The wind direction sensor is a durable molded vane. Vane angle is sensed by a precision potentiometer housed in a sealed chamber. All materials are carefully selected for corrosion resistance and maximum durability in the harsh marine environment. Ceramic bearings are used throughout. The instrument mounts on standard 1 inch pipe. Separate signal conditioning circuits are available to provide voltage or current signals when needed. Each is supplied in a weatherproof junction box with mounting hardware."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Lockheed Martin Sippican eXpendable BathyThermograph/eXpendable Sound Velocimeter",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The Expendable Bathythermograph is used by scientists to provide an ocean temperature versus depth profile. Useful for oceanographic research, the XBT does not restrict ship mobility. The Expendable Sound Velocimeter obtains accurate sound velocity profiles for the support of ASW operations, mine countermeasure operations, and oceanographic research."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Sea-Bird Electronics 45 MicroTSG Thermosalinograph",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The SBE 45 is an externally-powered, high-accuracy instrument, designed for shipboard determination of sea surface (pumped-water) conductivity and temperature. Salinity and sound velocity can also be computed. Communication with the SBE 45 is over an internal, 3-wire, RS-232C link, providing real-time data transmission. An optional Interface Box provides power, a NMEA 0183 port for appending navigation information from a NMEA navigation device to the data stream, and an RS-232 port for appending SBE 38 remote temperature sensor output."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Sea-Bird Electronics 911plus CTD",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The 911plus, consisting of the 9plus underwater CTD and 11plus V2 Deck Unit, is a premium real-time CTD accurate to the highest international standards. It features high resolution sampling (24 Hz), pump-controlled T-C ducted flow, up to 10500 meter (15,000 psia) depth capability, maximum auxiliary sensor flexibility, and modem channel for Water Sampler control. The 911plus has eight 12-bit A/D channels, and supports redundant conductivity and temperature sensors or custom auxiliary digital inputs."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Sea-Bird Electronics 32 Carousel Water Sampler",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The SBE 32 Carousel is a full-featured water sampler for use to depths of 6800, 7000, or 10,500 meters. It is available in 12, 24, or 36 bottle configurations (1.2 to 30 liters, depending on Carousel model and number of bottle positions). The Carousel supports auto bottle firing as well as real-time operation with a Deck Unit."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Applanix POS/MV 320",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "POS MV 320 is a tightly-coupled systems using Applanix' unique approach to Inertially-Aided Real-Time Kinematic (IARTK) technology. The user-friendly, turnkey system provides accurate attitude, heading, heave, position, and velocity data, representing the latest in state-of-the-art inertial/GPS technology. The system maintains positioning accuracy under the most demanding conditions, regardless of vessel dynamics.."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Furuno GP-150 GPS",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "FURUNO GP150 is a GPS navigator designed for the SOLAS ships according to the GPS performance standard IMO Res MSC.112(73) and associated IEC standards effective on and after July 1, 2003. It is a highly reliable standalone EPFS (electronic position fixing system) that feeds positioning information to AIS, Radar, VDR, VideoPlotter, Autopilot, Echo Sounder and Sonar."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Reson SVP 70 Sound Velocity Probe",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The RESON SVP 70 sound velocity probe is developed for fixed-mount installation on surface ships, outboard rigs, submarines, AUVs, ROVs and other self-propelled platforms. The SVP 70 uses the latest electronic technology combined with an innovative mechanical design to yield a compact, robust, yet very flexible product. The SVP 70 uses a direct path echosounding technique that instantly compensates for temperature and pressure with internal sensors. The SVP 70 comes in a water resistant case including brackets for mounting, a 3m accessory cable, bolts, and a user manual with system description. Additional adaptor kits and fairing accessories are available."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "Teledyne RD Instruments Ocean Surveyor Acoustic Doppler Current Profiler",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "For over twenty years, Teledyne RD Instruments has been the preeminent supplier of Acoustic Doppler Current Profiling (ADCP) instrumentation for open ocean applications. Teledyne RDI's vessel-mounted Ocean Surveyor family of ADCPs continues to raise the bar, collecting detailed maps of the distribution of water currents and suspended materials through the water column and along the ship's path - at depths and resolutions previously considered unattainable. In real time, the ADCP is also used to aid in situ decision-making, to adapt field operations, and to understand current regime characteristics."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "WetLabs ECO FLNTU",
+          "schema:additionalType": [
+            {
+              "@id": "dde:sensorType"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "The WetLabs ECO FLNTU is a dual-wavelength, single-angle sensor for simultaneously determining both chlorophyll fluorescence and turbidity. It detects light scattered by particles suspended in water, generating an output voltage proportional to turbidity or suspended solids. Scaling factors are used to convert the voltage readings to values representing chlorophyll concentration and turbidity expressed in Nephelometric Turbidity Units (NTUs)."
+        },
+        {
+          "@type": [
+            "schema:Product"
+          ],
+          "schema:name": "NOAA Ship Okeanos Explorer (R337)",
+          "schema:additionalType": [
+            {
+              "@id": "dde:platform"
+            },
+            {
+              "@id": "https://www.wikidata.org/entity/Q3099911"
+            }
+          ],
+          "schema:description": "NOAA Ship Okeanos Explorer is the only federal vessel dedicated to exploring our largely unknown ocean for the purpose of discovery and the advancement of knowledge about the deep ocean. The ship is operated by the NOAA Commissioned Officer Corps and civilians as part of NOAA's fleet managed by NOAA's Office of Marine and Aviation Operations. Mission equipment is operated by NOAA's Office of Ocean Exploration and Research in partnership with the Global Foundation for Ocean Exploration."
+        }
+      ]
+    }
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "metadataIdentifier",
+    "schema:value": "gov.noaa.ncei.oer:EX1503L2"
+  },
+  "schema:dateModified": "2026-03-23T17:42:02",
+  "schema:url": "http://www.opengis.net/def/nil/OGC/0/missing",
+  "schema:subjectOf": {
+    "@id": "urn:iso19115:gov.noaa.ncei.oer_EX1503L2#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: Okeanos Explorer (EX1503L2): Tropical Exploration (Mapping II)",
+    "schema:about": {
+      "@id": "urn:iso19115:gov.noaa.ncei.oer_EX1503L2"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19115-2 (19139 encoding) to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "gov.noaa.ncei.oer:EX1503L2",
+    "schema:dateModified": "2026-03-23T17:42:02",
+    "schema:inLanguage": "en",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "NOAA National Centers for Environmental Information",
+      "schema:identifier": "https://ror.org/04r0wrp59",
+      "schema:email": "ncei.info@noaa.gov",
+      "schema:url": "https://www.ncei.noaa.gov/contact"
+    }
+  }
+}

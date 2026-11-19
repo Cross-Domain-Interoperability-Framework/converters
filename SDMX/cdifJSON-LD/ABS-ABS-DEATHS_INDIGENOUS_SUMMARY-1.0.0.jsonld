@@ -1,0 +1,620 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/"
+  },
+  "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Deaths, Year of registration, Indigenous status, Summary data, Sex, States, Territories and Australia",
+  "schema:description": "Dataset: DEATHS_INDIGENOUS_SUMMARY. Characteristics of the deceased: place of usual residence, age at death, sex, Indigenous status and country of birth. Includes infant deaths and death rates. Death statistics are used in the calculation of quarterly population estimates and in the analysis of mortality in Australia. Unit of measure: Births/Deaths/Age/Ratios. Geographic coverage: Australia/State. Catalogue number: 3302.0",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "SDMX URN",
+    "schema:value": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0)",
+    "schema:url": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0"
+  },
+  "schema:version": "1.0.0",
+  "schema:dateModified": "2025-09-26T02:00:00Z",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "ABS"
+  },
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Deaths",
+      "schema:termCode": "POPULATION.DEATHS",
+      "schema:inDefinedTermSet": "People"
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2001-01-01/2024-12-31",
+    "2001-01-01/2025-12-31"
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "Methodology",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.abs.gov.au/statistics/people/population/deaths-australia/latest-release#methodology"
+      }
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "MEASURE",
+      "schema:alternateName": [
+        "Measure"
+      ],
+      "schema:description": "Measure",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_COMMON(1.0.0).MEASURE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Deaths Measures",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_DEATHS_MEASURE(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_DEATHS_MEASURE/1.0.0"
+          },
+          "schema:description": "13 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#SEX",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "SEX",
+      "schema:alternateName": [
+        "Sex"
+      ],
+      "schema:description": "Sex",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_DEMOG(1.0.0).SEX"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Sex",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_SEX(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_SEX/1.0.0"
+          },
+          "schema:description": "3 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#IND_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "IND_STATUS",
+      "schema:alternateName": [
+        "Indigenous status"
+      ],
+      "schema:description": "Indigenous status",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_DEMOG(1.0.0).IND_STATUS"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Deaths Indigenous status",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_DEATHS_INDIG_STATUS(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_DEATHS_INDIG_STATUS/1.0.0"
+          },
+          "schema:description": "4 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#REGION",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REGION",
+      "schema:alternateName": [
+        "Region"
+      ],
+      "schema:description": "Region",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_GEOGRAPHY(1.0.0).REGION"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Deaths States including 5 State/territory total",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_DEATHS_INDIGENOUS_STATES(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_DEATHS_INDIGENOUS_STATES/1.0.0"
+          },
+          "schema:description": "10 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#FREQ",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FREQ",
+      "schema:alternateName": [
+        "Frequency"
+      ],
+      "schema:description": "Rate at which data is collated.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_COMMON(1.0.0).FREQ"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Frequency",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_FREQ(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_FREQ/1.0.0"
+          },
+          "schema:description": "9 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#TIME_PERIOD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_PERIOD",
+      "schema:alternateName": [
+        "Time Period"
+      ],
+      "schema:description": "Timespan or point in time for which the observation refers.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_COMMON(1.0.0).TIME_PERIOD"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "ObservationalTimePeriod"
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#UNIT_MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MEASURE",
+      "schema:alternateName": [
+        "Unit of Measure"
+      ],
+      "schema:description": "Base unit in which the observation value is expressed.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_ATTRIBUTE(1.0.0).UNIT_MEASURE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Unit of Measure",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_UNIT_MEASURE(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_UNIT_MEASURE/1.0.0"
+          },
+          "schema:description": "88 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#MEASURE"
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#OBS_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_STATUS",
+      "schema:alternateName": [
+        "Observation Status"
+      ],
+      "schema:description": "Observation Status",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_ATTRIBUTE(1.0.0).OBS_STATUS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Observation Status",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_OBS_STATUS(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_OBS_STATUS/1.0.0"
+          },
+          "schema:description": "16 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#OBS_COMMENT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_COMMENT",
+      "schema:alternateName": [
+        "Observation Comment"
+      ],
+      "schema:description": "Observation Comment",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_ATTRIBUTE(1.0.0).OBS_COMMENT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#OBS_VALUE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_VALUE",
+      "schema:alternateName": [
+        "Observation Value"
+      ],
+      "schema:description": "The observed value of the variable identified by the series dimension values.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_COMMON(1.0.0).OBS_VALUE"
+      },
+      "cdif:role": "Measure",
+      "cdif:physicalDataType": "xsd:double"
+    }
+  ],
+  "schema:url": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "SDMX-ML data for ABS,DEATHS_INDIGENOUS_SUMMARY,1.0.0",
+      "schema:contentUrl": "https://data.api.abs.gov.au/rest/v1/data/ABS,DEATHS_INDIGENOUS_SUMMARY,1.0.0/all",
+      "schema:encodingFormat": [
+        "application/vnd.sdmx.genericdata+xml;version=2.1"
+      ],
+      "schema:description": "SDMX-REST data query for the whole dataflow; add a series key in place of 'all', startPeriod/endPeriod, or an Accept header (e.g. application/vnd.sdmx.data+csv) to narrow or reformat it.",
+      "cdi:isStructuredBy": {
+        "@type": [
+          "cdi:DimensionalDataStructure"
+        ],
+        "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0)",
+        "cdi:has_DataStructureComponent": [
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#MEASURE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).SEX",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#SEX"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).IND_STATUS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#IND_STATUS"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).REGION",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#REGION"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).FREQ",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#FREQ"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).TIME_PERIOD",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#TIME_PERIOD"
+            }
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).UNIT_MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#UNIT_MEASURE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).MEASURE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).OBS_STATUS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#OBS_STATUS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).OBS_COMMENT",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#OBS_COMMENT"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:MeasureComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ABS:DEATHS_INDIGENOUS_SUMMARY(1.0.0).OBS_VALUE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#OBS_VALUE"
+            }
+          }
+        ],
+        "cdif:has_PrimaryKey": {
+          "@type": [
+            "cdif:Key"
+          ],
+          "cdif:isComposedOf": [
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#MEASURE"
+              },
+              "cdi:value": 1
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#SEX"
+              },
+              "cdi:value": 2
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#IND_STATUS"
+              },
+              "cdi:value": 3
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#REGION"
+              },
+              "cdi:value": 4
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#FREQ"
+              },
+              "cdi:value": 5
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0#TIME_PERIOD"
+              },
+              "cdi:value": 6
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0?references=all&detail=referencepartial",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "SDMX structure metadata for: Deaths, Year of registration, Indigenous status, Summary data, Sex, States, Territories and Australia",
+    "schema:about": {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_structure/2.0"
+      }
+    ],
+    "schema:description": "Converted from an SDMX-ML 2.1 structure message (dataflow and data structure definition) to CDIF by sdmx_to_cdif.py.",
+    "schema:dateModified": "2026-11-19T00:01:47+00:00",
+    "schema:url": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/DEATHS_INDIGENOUS_SUMMARY/1.0.0?references=all&detail=referencepartial"
+  }
+}

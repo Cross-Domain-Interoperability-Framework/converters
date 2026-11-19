@@ -1,0 +1,415 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "https://doi.org/10.25921/ds9v-ky35",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Continuously Updated Digital Elevation Model (CUDEM) - 1/3 Arc-Second Resolution Bathymetric-Topographic Tiles",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "doi:10.25921/ds9v-ky35",
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:url": "https://doi.org/10.25921/ds9v-ky35"
+  },
+  "schema:sameAs": [
+    "NCEI Metadata ID: gov.noaa.ngdc.mgg.dem:199919"
+  ],
+  "schema:datePublished": "2014-12-09",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Cooperative Institute for Research in Environmental Sciences (CIRES) at the University of Colorado, Boulder"
+      }
+    ]
+  },
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "NOAA National Centers for Environmental Information"
+  },
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NOAA National Centers for Environmental Information",
+        "schema:identifier": "https://ror.org/04r0wrp59",
+        "schema:email": "ncei.info@noaa.gov",
+        "schema:url": "https://www.ncei.noaa.gov/contact"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NOAA National Centers for Environmental Information",
+        "schema:email": "dem.info@noaa.gov"
+      }
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "NOAA National Centers for Environmental Information",
+      "schema:identifier": "https://ror.org/04r0wrp59",
+      "schema:email": "ncei.info@noaa.gov",
+      "schema:url": "https://www.ncei.noaa.gov/contact"
+    }
+  ],
+  "schema:description": "NOAA's National Centers for Environmental Information (NCEI) is developing a suite of digital elevation models (DEMs) for the U.S. coast to support a variety of NOAA missions, including improved inundation modeling and mapping, habitat characterization, and visualization of Earth's surface. The DEMs are being developed according to a 0.25 degree tiling scheme. The spatial resolution of the tiles \"telescopes\" from the coastal zone to the deep ocean floor at 1/9, 1/3, and 3 arc-second grid resolution. Only the 1/9 arc-second DEM tiles integrate both bathymetric and topographic data; all other resolutions map bathymetry only. The tiling of the DEMs facilitates targeted, rapid updates as new coastal and marine elevation data are acquired and become available. Bathymetric and topographic data utilized for DEM creation originate from a variety of sources, including (but not limited to) the NOAA Office of Coast Survey, NOAA National Geodetic Survey, NOAA Office for Coastal Management, U.S. Geological Survey, and the U.S. Army Corps of Engineers. The DEMs are referenced vertically to the North American Vertical Datum of 1988. The vertical units of the DEMs are meters. The DEMs are referenced horizontally to the North American Datum of 1983. The horizontal units of the data are decimal degrees.\n\nPurpose: This data is available to the public for a wide variety of uses including scientific research and analysis.",
+  "schema:creativeWorkStatus": "onGoing",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "geographicDataset",
+      "schema:termCode": "geographicDataset",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "elevation",
+      "schema:termCode": "elevation",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Bathymetry/Seafloor Topography > Seafloor Topography",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Bathymetry/Seafloor Topography > Bathymetry",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Bathymetry/Seafloor Topography > Water Depth",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Land Surface > Topography > Terrain Elevation",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Science > Oceans > Coastal Processes > Coastal Elevation",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Models/Analyses > DEM > Digital Elevation Model",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Platform Keywords",
+      "schema:description": "keyword type: platform"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "1 meter - < 30 meters",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Horizontal Data Resolution Keywords",
+      "schema:description": "keyword type: dataResolution"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "< 1 meter",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Vertical Data Resolution Keywords",
+      "schema:description": "keyword type: dataResolution"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Coastal Relief",
+      "schema:inDefinedTermSet": "Uncontrolled",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Gridded elevations",
+      "schema:inDefinedTermSet": "Uncontrolled",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Integrated bathymetry and topography",
+      "schema:inDefinedTermSet": "Uncontrolled",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Continent > North America > United States of America",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Vertical Location > Land Surface",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Vertical Location > Sea Floor",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Data Center Keywords",
+      "schema:description": "keyword type: dataCentre"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DOC/NOAA/NESDIS/NGDC > National Geophysical Data Center, NESDIS, NOAA, U.S. Department of Commerce",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Data Center Keywords",
+      "schema:description": "keyword type: dataCentre"
+    }
+  ],
+  "schema:inLanguage": "en",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "23 -127 52 -65"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2018-01-01/.."
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:spatialRepresentationType"
+        }
+      ],
+      "schema:name": "Spatial Representation Type",
+      "schema:value": "grid"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:referenceSystemIdentifier"
+        }
+      ],
+      "schema:name": "Coordinate Reference System",
+      "schema:value": "urn:ogc:def:crs:EPSG::4269",
+      "schema:url": "https://epsg.io/4269"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:referenceSystemIdentifier"
+        }
+      ],
+      "schema:name": "Coordinate Reference System",
+      "schema:value": "urn:ogc:def:datum:EPSG::5703",
+      "schema:url": "https://epsg.io/5703"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Distribution liability: NOAA and NCEI make no warranty, expressed or implied, regarding these data, nor does the fact of distribution constitute such a warranty. NOAA and NCEI cannot assume liability for any damages caused by any errors or omissions in these data. If appropriate, NCEI can only certify that the data it distributes are an authentic copy of the records that were accepted for inclusion in the NCEI archives.",
+    "Use liability: NOAA and NCEI cannot provide any warranty as to the accuracy, reliability, or completeness of furnished data. Users assume responsibility to determine the usability of these data. The user is responsible for the results of any application of this data for other than its intended purpose",
+    "Not to be used for navigation. Although these data are of high quality and useful for planning and modeling purposes, they are not suitable for navigation. For navigation, please refer to the NOS nautical chart series.",
+    "Produced by the NOAA National Centers for Environmental Information. Not subject to copyright protection within the United States.",
+    "Cite as: Cooperative Institute for Research in Environmental Sciences (CIRES) at the University of Colorado, Boulder. 2014: Continuously Updated Digital Elevation Model (CUDEM) - 1/3 Arc-Second Resolution Bathymetric-Topographic Tiles. [indicate subset used]. NOAA National Centers for Environmental Information. https://doi.org/10.25921/0mpp-h192. Accessed [date].",
+    "otherRestrictions"
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Download NetCDF Files",
+      "schema:serviceType": "HTTPS",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "Download NetCDF Files",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "https://www.ngdc.noaa.gov/thredds/catalog/tiles/catalog.html",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "schema:description": "THREDDS Data Server containing the Continuously Updated Digital Elevation Model (CUDEM) Bathymetric-Topographic Tiles."
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://coast.noaa.gov/dataviewer/#/lidar/search/where:ID=8580",
+      "schema:name": "Customized Download",
+      "schema:description": "Map Services and Applications. Create custom data files by choosing data area, product type, map projection, file format, datum, etc."
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://coast.noaa.gov/htdata/raster2/elevation/NCEI_third_Topobathy_2014_8580/",
+      "schema:name": "Bulk Download",
+      "schema:description": "Simple download of data files."
+    }
+  ],
+  "schema:url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ngdc.mgg.dem:199913/html",
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "Common horizontal reference frames and vertical datums are established among disparate data and data are converted to...",
+      "schema:actionProcess": "Common horizontal reference frames and vertical datums are established among disparate data and data are converted to a common data format, ASCII xyz, prior to gridding/interpolating. A variety of software can be used for projection/datum transformations and format conversions, including (but not limited to) Geospatial Data Abstraction Library (GDAL) software utilities, VDatum, ArcGIS, LAStools, etc. Once consistency among the input source data is established, the DEM surface is created through gridding and interpolation. Elevations in grid-cells constrained by source measurements are assigned a value according to a weighted average of all samples located within the particular cell, while elevations in unconstrained grid-cells are estimated through interpolation. Please see the DEM technical reports for a more detailed explanation of specific processing steps.",
+      "schema:endTime": "2018-02-01T00:00:00",
+      "schema:agent": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NOAA National Centers for Environmental Information",
+        "schema:email": "dem.info@noaa.gov"
+      }
+    },
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "NOAA created the National Centers for Environmental Information (NCEI) by merging NOAA's National Climatic Data Cente...",
+      "schema:actionProcess": "NOAA created the National Centers for Environmental Information (NCEI) by merging NOAA's National Climatic Data Center (NCDC), National Geophysical Data Center (NGDC), and National Oceanographic Data Center (NODC), including the National Coastal Data Development Center (NCDDC), per the Consolidated and Further Continuing Appropriations Act, 2015, Public Law 113-235. NCEI launched publicly on April 22, 2015.",
+      "schema:endTime": "2015-04-22T00:00:00"
+    }
+  ],
+  "prov:wasDerivedFrom": [
+    "DEM Development Reports: Source Contribution:DEM source data",
+    "VDatum Vertical Datum Transformation software: Source Contribution: vertical datum transformation tool ; Source Type: online"
+  ],
+  "schema:dateModified": "2014-12-09",
+  "schema:subjectOf": {
+    "@id": "https://doi.org/10.25921/ds9v-ky35#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: Continuously Updated Digital Elevation Model (CUDEM) - 1/3 Arc-Second Resolution Bathymetric-Topographic Tiles",
+    "schema:about": {
+      "@id": "https://doi.org/10.25921/ds9v-ky35"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19115-2 (19139 encoding) to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "gov.noaa.ngdc.mgg.dem:199913",
+    "schema:dateModified": "2026-04-29",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "NOAA National Centers for Environmental Information",
+      "schema:identifier": "https://ror.org/04r0wrp59",
+      "schema:email": "ncei.info@noaa.gov",
+      "schema:url": "https://www.ncei.noaa.gov/contact"
+    }
+  }
+}

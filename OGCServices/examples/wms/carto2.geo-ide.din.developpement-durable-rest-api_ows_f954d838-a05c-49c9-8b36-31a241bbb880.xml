@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3.0" updateSequence="16465141" xsi:schemaLocation="http://www.opengis.net/wms https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+  <Service>
+    <Name>WMS</Name>
+    <Title>LOCALISATION DES ELEVAGES PORÇINS DU FINISTERE</Title>
+    <Abstract>Localisation des élevages porçins du Finistère en cas de peste porçine</Abstract>
+    <KeywordList/>
+    <OnlineResource xlink:type="simple" xlink:href="https://www.finistere.gouv.fr/"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson/>
+        <ContactOrganization>DDTM 29 (Direction Départementale des Territoires et de la Mer du Finistère)</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition/>
+      <ContactAddress>
+        <AddressType>Work</AddressType>
+        <Address>2 boulevard du Finistère - CS 96018</Address>
+        <City>QUIMPER Cedex</City>
+        <StateOrProvince/>
+        <PostCode/>
+        <Country>France</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone/>
+      <ContactFacsimileTelephone/>
+      <ContactElectronicMailAddress>ddtm-mpdd-geo@finistere.gouv.fr</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>NONE</Fees>
+    <AccessConstraints>NONE</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xlink:type="simple" xlink:href="https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/vnd.jpeg-png</Format>
+        <Format>image/vnd.jpeg-png8</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/plain</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/xml</Format>
+        <Format>application/vnd.ogc.gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/html</Format>
+        <Format>application/json</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+    </Request>
+    <Exception>
+      <Format>XML</Format>
+      <Format>INIMAGE</Format>
+      <Format>BLANK</Format>
+      <Format>JSON</Format>
+    </Exception>
+    <Layer>
+      <Title>LOCALISATION DES ELEVAGES PORÇINS DU FINISTERE</Title>
+      <Abstract>Localisation des élevages porçins du Finistère en cas de peste porçine</Abstract>
+      <!--Limited list of EPSG projections:-->
+      <CRS>EPSG:3857</CRS>
+      <CRS>EPSG:4627</CRS>
+      <CRS>EPSG:4966</CRS>
+      <CRS>EPSG:27562</CRS>
+      <CRS>EPSG:27561</CRS>
+      <CRS>EPSG:27564</CRS>
+      <CRS>EPSG:27563</CRS>
+      <CRS>EPSG:4470</CRS>
+      <CRS>EPSG:4471</CRS>
+      <CRS>EPSG:3942</CRS>
+      <CRS>EPSG:4558</CRS>
+      <CRS>EPSG:4258</CRS>
+      <CRS>EPSG:2972</CRS>
+      <CRS>EPSG:4970</CRS>
+      <CRS>EPSG:2154</CRS>
+      <CRS>EPSG:3949</CRS>
+      <CRS>EPSG:3947</CRS>
+      <CRS>EPSG:3948</CRS>
+      <CRS>EPSG:3945</CRS>
+      <CRS>EPSG:3946</CRS>
+      <CRS>EPSG:3943</CRS>
+      <CRS>EPSG:4559</CRS>
+      <CRS>EPSG:2975</CRS>
+      <CRS>EPSG:3944</CRS>
+      <CRS>EPSG:27573</CRS>
+      <CRS>EPSG:27572</CRS>
+      <CRS>EPSG:27574</CRS>
+      <CRS>EPSG:32630</CRS>
+      <CRS>EPSG:3395</CRS>
+      <CRS>EPSG:27571</CRS>
+      <CRS>EPSG:32632</CRS>
+      <CRS>EPSG:32631</CRS>
+      <CRS>EPSG:4326</CRS>
+      <CRS>EPSG:4624</CRS>
+      <CRS>EPSG:3950</CRS>
+      <CRS>EPSG:4467</CRS>
+      <CRS>EPSG:4468</CRS>
+      <CRS>EPSG:4465</CRS>
+      <CRS>EPSG:3297</CRS>
+      <CRS>EPSG:4463</CRS>
+      <CRS>CRS:84</CRS>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-4.821251007419389</westBoundLongitude>
+        <eastBoundLongitude>-3.3772482944481883</eastBoundLongitude>
+        <southBoundLatitude>47.75536062083034</southBoundLatitude>
+        <northBoundLatitude>48.74970506676161</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="-4.821251007419389" miny="47.75536062083034" maxx="-3.3772482944481883" maxy="48.74970506676161"/>
+      <Layer queryable="1" opaque="0">
+        <Name>N_BRUIT_ZBR_INFRA_R_A_LD_S_029</Name>
+        <Title>N_BRUIT_ZBR_INFRA_R_A_LD_S_029</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>N_BRUIT_ZBR_INFRA_R_A_LD_S_029</Keyword>
+        </KeywordList>
+        <CRS>EPSG:2154</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.821251007419389</westBoundLongitude>
+          <eastBoundLongitude>-3.3772482944481883</eastBoundLongitude>
+          <southBoundLatitude>47.75536062083034</southBoundLatitude>
+          <northBoundLatitude>48.74970506676161</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-4.821251007419389" miny="47.75536062083034" maxx="-3.3772482944481883" maxy="48.74970506676161"/>
+        <BoundingBox CRS="EPSG:2154" minx="125007.44360716276" miny="6767448.908263117" maxx="223417.44360716274" maxy="6869548.908263117"/>
+        <Style>
+          <Name>7d3948e2-3405-4983-be3e-6616a5de9b3f</Name>
+          <Title>Analyse thématique générée</Title>
+          <LegendURL width="99" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=N_BRUIT_ZBR_INFRA_R_A_LD_S_029"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>N_BRUIT_ZBR_INFRA_R_A_LN_S_029-f234e89d-6005-4aed-81d1-0d859e8373e5</Name>
+        <Title>N_BRUIT_ZBR_INFRA_R_A_LN_S_029</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>N_BRUIT_ZBR_INFRA_R_A_LN_S_029</Keyword>
+        </KeywordList>
+        <CRS>EPSG:2154</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.821039115873218</westBoundLongitude>
+          <eastBoundLongitude>-3.3773882026140565</eastBoundLongitude>
+          <southBoundLatitude>47.756195840745214</southBoundLatitude>
+          <northBoundLatitude>48.74891902918581</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-4.821039115873218" miny="47.756195840745214" maxx="-3.3773882026140565" maxy="48.74891902918581"/>
+        <BoundingBox CRS="EPSG:2154" minx="125014.43405199774" miny="6767541.465019992" maxx="223414.43405199773" maxy="6869461.465019992"/>
+        <Style>
+          <Name>b5fa2dcd-93ce-4a04-b0ac-7ff6dfc01584</Name>
+          <Title>Analyse thématique générée</Title>
+          <LegendURL width="99" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=N_BRUIT_ZBR_INFRA_R_A_LN_S_029-f234e89d-6005-4aed-81d1-0d859e8373e5"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>N_BRUIT_ZBR_INFRA_R_C_LD_S_029</Name>
+        <Title>N_BRUIT_ZBR_INFRA_R_C_LD_S_029</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>N_BRUIT_ZBR_INFRA_R_C_LD_S_029</Keyword>
+        </KeywordList>
+        <CRS>EPSG:2154</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.820648078118919</westBoundLongitude>
+          <eastBoundLongitude>-3.381002527817284</eastBoundLongitude>
+          <southBoundLatitude>47.75705091274664</southBoundLatitude>
+          <northBoundLatitude>48.74848126209058</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-4.820648078118919" miny="47.75705091274664" maxx="-3.381002527817284" maxy="48.74848126209058"/>
+        <BoundingBox CRS="EPSG:2154" minx="125040.67758599484" miny="6767634.357910643" maxx="223150.67758599482" maxy="6869434.357910643"/>
+        <Style>
+          <Name>bc4bc26d-e3b9-4418-a106-1c1fb3986beb</Name>
+          <Title>Analyse thématique générée</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=N_BRUIT_ZBR_INFRA_R_C_LD_S_029"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>N_BRUIT_ZBR_INFRA_R_C_LN_S_029</Name>
+        <Title>N_BRUIT_ZBR_INFRA_R_C_LN_S_029</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>N_BRUIT_ZBR_INFRA_R_C_LN_S_029</Keyword>
+        </KeywordList>
+        <CRS>EPSG:2154</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.820325237515789</westBoundLongitude>
+          <eastBoundLongitude>-3.381280329248253</eastBoundLongitude>
+          <southBoundLatitude>47.75717920927632</southBoundLatitude>
+          <northBoundLatitude>48.74812915811251</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-4.820325237515789" miny="47.75717920927632" maxx="-3.381280329248253" maxy="48.74812915811251"/>
+        <BoundingBox CRS="EPSG:2154" minx="125060.82756833764" miny="6767646.7126317695" maxx="223130.82756833764" maxy="6869396.7126317695"/>
+        <Style>
+          <Name>c730bbea-f9e7-4153-b28d-c78361b7fe95</Name>
+          <Title>Analyse thématique générée</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=N_BRUIT_ZBR_INFRA_R_C_LN_S_029"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

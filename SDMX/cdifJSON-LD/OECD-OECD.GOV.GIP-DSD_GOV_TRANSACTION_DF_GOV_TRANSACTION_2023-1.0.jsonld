@@ -1,0 +1,844 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/"
+  },
+  "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Public finance by economic transaction - Government at a glance indicators, 2023 edition",
+  "schema:alternateName": [
+    "Finances publiques par opération économique - Indicateurs du Panorama des administrations publiques, Édition 2023"
+  ],
+  "schema:description": "This dataset represents a selection of indicators as presented in the 2023 edition of the Government at a Glance publication related to government revenue and expenditure disaggregation by economic transactions under the System of National Accounts (SNA). Government at a Glance provides a dashboard of indicators assembled to help decision makers and the public analyse and benchmark governments across OECD members and partner countries. This eighth edition provides internationally comparative data on a range of public governance, tools and practices to help identify both strengths and weaknesses in democratic governance. The Structure and indicators section of the Government at a Glance publication, describes its framework and the structure by chapters, as well as the changes compared to the previous 2021 edition.The 2023 edition presents a new structure around these three broad categories: 1) Trust and satisfaction with public services (trust in public institutions, satisfaction with public services); 2) Achieving results with good governance practices (governance of the policy cycle, regulatory governance, budgeting practices, managing public procurement, infrastructure planning and delivery, digital government and open government data); and 3) What resources public institutions use and how are they managed (public finance, public employment, managing human resources). Further information on Government at a Glance 2023 edition via a dedicated web platform, which includes a Government at a Glance Data dashboard (for a selection of indicators in an interactive format) as well as Country fact sheets (key data by country), can be found at: <a href=\"https://www.oecd.org/publication/government-at-a-glance/2023\">Government at a Glance website</a>",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "SDMX URN",
+    "schema:value": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=OECD.GOV.GIP:DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023(1.0)",
+    "schema:url": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0"
+  },
+  "schema:version": "1.0",
+  "schema:dateModified": "2026-06-04T11:12:38Z",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "OECD.GOV.GIP"
+  },
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Public finance",
+      "schema:termCode": "GOV.GOV_PFB.GOV_PF",
+      "schema:inDefinedTermSet": "Topic"
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2007-01-01/2022-12-31"
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#FREQ",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FREQ",
+      "schema:alternateName": [
+        "Frequency of observation"
+      ],
+      "schema:description": "Frequency of observation",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).FREQ"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Frequency",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_FREQ(2.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/SDMX/CL_FREQ/2.0"
+          },
+          "schema:description": "This code list provides a set of values indicating the \"frequency\" of the data (e.g. weekly, monthly, quarterly). The concept “frequency” may refer to various stages in the production process, e.g. data collection or data dissemination. For example, a time series could be disseminated at annual frequency but the underlying data are compiled monthly. The code list is applicable for all different uses of \"frequency\". This code list was formally adopted on 4 December 2013. More information about and supporting material for this code list and SDMX code lists in general (e.g. list of generic codes for expressing general concepts like \"Total\", \"Unknown\", etc.; syntaxes for the creation of further codes; general guidelines for the creation of SDMX code lists) can be found at this address: https://sdmx.org/?page_id=4345.. 1 code used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#REF_AREA",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REF_AREA",
+      "schema:alternateName": [
+        "Reference area"
+      ],
+      "schema:description": "Reference area",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).REF_AREA"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Codelist for reference areas and geocoding",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD:CL_AREA(1.1)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/OECD/CL_AREA/1.1"
+          },
+          "schema:description": "469 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "MEASURE",
+      "schema:alternateName": [
+        "Measure"
+      ],
+      "schema:description": "Measure",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).MEASURE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Measure",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD.GOV.GIP:CL_MEASURE(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/OECD.GOV.GIP/CL_MEASURE/1.0"
+          },
+          "schema:description": "Codelist for data element that represents a simple aggregation and which takes one or more vectors as arguments and returns a scalar. 139 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#UNIT_MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MEASURE",
+      "schema:alternateName": [
+        "Unit of measure"
+      ],
+      "schema:description": "Unit in which the data values are expressed",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).UNIT_MEASURE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Codelist for Unit of measure",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD:CL_UNIT_MEASURE(1.4)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/OECD/CL_UNIT_MEASURE/1.4"
+          },
+          "schema:description": "Unit in which the data values are expressed.. 724 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#SECTOR",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "SECTOR",
+      "schema:alternateName": [
+        "Institutional sector"
+      ],
+      "schema:description": "Institutional sector",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).SECTOR"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Codelist for institutional sectors",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD:CL_SECTOR(1.1)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/OECD/CL_SECTOR/1.1"
+          },
+          "schema:description": "1 code used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#TRANSACTION",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TRANSACTION",
+      "schema:alternateName": [
+        "Economic transaction"
+      ],
+      "schema:description": "Economic transaction",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).TRANSACTION"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Economic transaction",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD.GOV.GIP:CL_STO(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/OECD.GOV.GIP/CL_STO/1.0"
+          },
+          "schema:description": "23 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#EDITION",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "EDITION",
+      "schema:alternateName": [
+        "Edition"
+      ],
+      "schema:description": "Edition",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).EDITION"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Code list for Editions",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD.GOV.GIP:CL_EDITION(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/OECD.GOV.GIP/CL_EDITION/1.0"
+          },
+          "schema:description": "1 code used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#CATEGORY",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CATEGORY",
+      "schema:alternateName": [
+        "Category"
+      ],
+      "schema:description": "Category",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).CATEGORY"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Code list for Category",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD.GOV.GIP:CL_CATEGORY(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/OECD.GOV.GIP/CL_CATEGORY/1.0"
+          },
+          "schema:description": "1 code used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#TIME_PERIOD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_PERIOD",
+      "schema:alternateName": [
+        "Time period"
+      ],
+      "schema:description": "Time period",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).TIME_PERIOD"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "ObservationalTimePeriod"
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#OBS_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_STATUS",
+      "schema:alternateName": [
+        "Observation status"
+      ],
+      "schema:description": "Observation status",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).OBS_STATUS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Code list for Observation Status",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_OBS_STATUS(2.2)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/SDMX/CL_OBS_STATUS/2.2"
+          },
+          "schema:description": "Information on the quality of a value or an unusual or missing value.. 20 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#UNIT_MULT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MULT",
+      "schema:alternateName": [
+        "Unit multiplier"
+      ],
+      "schema:description": "Unit multiplier",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).UNIT_MULT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Code list for the Unit Multiplier",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_UNIT_MULT(1.1)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/SDMX/CL_UNIT_MULT/1.1"
+          },
+          "schema:description": "This code list provides code values for indicating the magnitude in the units of measurement. More information about this code list and SDMX code lists in general (e.g. list of generic codes for expressing general concepts like \"Total\", \"Unknown\", etc.; syntaxes for the creation of further codes; general guidelines for the creation of SDMX code lists) can be found at this address: https://sdmx.org/?page_id=4345.. 31 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#MEASURE"
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#PRICE_BASE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PRICE_BASE",
+      "schema:alternateName": [
+        "Price base"
+      ],
+      "schema:description": "Price base",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).PRICE_BASE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Codelist for Prices",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD:CL_PRICES(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/public/rest/v1/codelist/OECD/CL_PRICES/1.0"
+          },
+          "schema:description": "14 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#UNIT_MEASURE"
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#BASE_PER",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "BASE_PER",
+      "schema:alternateName": [
+        "Base period"
+      ],
+      "schema:description": "Base period",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).BASE_PER"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "ReportingTimePeriod",
+      "cdif:qualifies": {
+        "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#MEASURE"
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#OBS_VALUE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_VALUE",
+      "schema:alternateName": [
+        "Observation value"
+      ],
+      "schema:description": "Observation value",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD.GOV.GIP:GOV_CONCEPTS(1.0).OBS_VALUE"
+      },
+      "cdif:role": "Measure",
+      "cdif:physicalDataType": "xsd:double"
+    }
+  ],
+  "schema:url": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "SDMX-ML data for OECD.GOV.GIP,DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023,1.0",
+      "schema:contentUrl": "https://sdmx.oecd.org/public/rest/v1/data/OECD.GOV.GIP,DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023,1.0/all",
+      "schema:encodingFormat": [
+        "application/vnd.sdmx.genericdata+xml;version=2.1"
+      ],
+      "schema:description": "SDMX-REST data query for the whole dataflow; add a series key in place of 'all', startPeriod/endPeriod, or an Accept header (e.g. application/vnd.sdmx.data+csv) to narrow or reformat it.",
+      "cdi:isStructuredBy": {
+        "@type": [
+          "cdi:DimensionalDataStructure"
+        ],
+        "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0)",
+        "cdi:has_DataStructureComponent": [
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).FREQ",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#FREQ"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).REF_AREA",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#REF_AREA"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#MEASURE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).UNIT_MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#UNIT_MEASURE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).SECTOR",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#SECTOR"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).TRANSACTION",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#TRANSACTION"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).EDITION",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#EDITION"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).CATEGORY",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#CATEGORY"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).TIME_PERIOD",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#TIME_PERIOD"
+            }
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).OBS_STATUS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#OBS_STATUS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).UNIT_MULT",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#UNIT_MULT"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).UNIT_MEASURE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).PRICE_BASE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#PRICE_BASE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).UNIT_MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).MEASURE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).BASE_PER",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#BASE_PER"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).UNIT_MEASURE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:MeasureComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=OECD.GOV.GIP:DSD_GOV_TRANSACTION(1.0).OBS_VALUE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#OBS_VALUE"
+            }
+          }
+        ],
+        "cdif:has_PrimaryKey": {
+          "@type": [
+            "cdif:Key"
+          ],
+          "cdif:isComposedOf": [
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#FREQ"
+              },
+              "cdi:value": 1
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#REF_AREA"
+              },
+              "cdi:value": 2
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#MEASURE"
+              },
+              "cdi:value": 3
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#UNIT_MEASURE"
+              },
+              "cdi:value": 4
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#SECTOR"
+              },
+              "cdi:value": 5
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#TRANSACTION"
+              },
+              "cdi:value": 6
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#EDITION"
+              },
+              "cdi:value": 7
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#CATEGORY"
+              },
+              "cdi:value": 8
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0#TIME_PERIOD"
+              },
+              "cdi:value": 9
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0?references=all&detail=referencepartial",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "SDMX structure metadata for: Public finance by economic transaction - Government at a glance indicators, 2023 edition",
+    "schema:about": {
+      "@id": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_structure/2.0"
+      }
+    ],
+    "schema:description": "Converted from an SDMX-ML 2.1 structure message (dataflow and data structure definition) to CDIF by sdmx_to_cdif.py.",
+    "schema:dateModified": "2026-11-19T01:06:53+01:00",
+    "schema:url": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.GOV.GIP/DSD_GOV_TRANSACTION@DF_GOV_TRANSACTION_2023/1.0?references=all&detail=referencepartial"
+  }
+}

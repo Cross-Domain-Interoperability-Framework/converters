@@ -15,6 +15,8 @@ expose their conversion as an importable function.
 | [`DCAT/dcat_to_cdif.py`](DCAT/dcat_to_cdif.py) | DCAT → CDIF | W3C DCAT |
 | [`DCAT/cdif_to_dcat.py`](DCAT/cdif_to_dcat.py) | CDIF → DCAT 3 (JSON-LD `@graph`: Dataset, CatalogRecord, Catalog) | W3C DCAT |
 | [`UMM/umm_to_cdif.py`](UMM/umm_to_cdif.py) | NASA CMR UMM-C (file **or URL**) → CDIF core+discovery | NASA UMM-C JSON |
+| [`ISO19115/iso_to_cdif.py`](ISO19115/iso_to_cdif.py) | ISO 19115-3 and ISO 19139 / 19115-2 XML (file, URL or CSW response) → CDIF (table-driven; DDE conventions where ISO has no CDIF property) | ISO 19115 XML |
+| [`SDMX/sdmx_to_cdif.py`](SDMX/sdmx_to_cdif.py) | SDMX-ML 2.1 structure message (dataflow + DSD, file or SDMX-REST URL) → CDIF core/discovery/data_description/data_structure (table-driven; DSD as a cdi:DimensionalDataStructure) | SDMX |
 | [`FAIR2/fair2_to_cdif.py`](FAIR2/fair2_to_cdif.py) | FAIR² `fair2.json` (file **or URL**) → CDIF (reuses the Croissant converter for the Croissant core) | FAIR² |
 | [`DDI/ddi_to_cdif.py`](DDI/ddi_to_cdif.py) | DDI Codebook 2.5 (Harvard Dataverse) → CDIF | DDI Codebook XML |
 | [`DDI/ddi122_to_cdif.py`](DDI/ddi122_to_cdif.py) | DDI 1.2.2 (ICPSR, source-agnostic) → CDIF | DDI XML |
@@ -35,6 +37,7 @@ produce. For converting a SOSO file or URL you already have, use `soso2cdif.py`.
 | Path | Source | Notes |
 |------|--------|-------|
 | [`harvesters/geocodes_harvester.py`](harvesters/geocodes_harvester.py) | EarthCube GeoCodes SPARQL catalog → source landing-page JSON-LD → CDIF core/discovery | Moved from the `validation` repo |
+| [`harvesters/harvest_format_examples.py`](harvesters/harvest_format_examples.py) | re3data-sampled OAI-PMH / CSW endpoints, DataCite, DataONE, GBIF, EDI, WAFs → example records in each source format (ISO 19115-3, ISO 19139, DataCite, EML, FGDC, Dublin Core, WMS/WFS, SDMX via the SDMX Global Discovery Service) | Writes each converter's `examples/` and an `INDEX.json` of sources; the endpoint inventory is in `harvesters/endpoints/` |
 
 `geocodes_harvester.py` and `soso/ConvertFromSOSO.py` share one schema.org
 naming step, [`schemaorg_names.py`](schemaorg_names.py): an unprefixed name

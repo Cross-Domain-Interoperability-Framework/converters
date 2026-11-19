@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource xmlns="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oaire="http://namespace.openaire.eu/schema/oaire/" xmlns:datacite="http://datacite.org/schema/kernel-4" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:doc="http://www.lyncode.com/xoai" xmlns:rdf="http://www.w3.org/TR/rdf-concepts/" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
+   <datacite:titles>
+      <datacite:title xml:lang="en">SIMU - Sound Immission in Music</datacite:title>
+   </datacite:titles>
+   <datacite:creators>
+      <datacite:creator>
+         <datacite:creatorName nameType="Personal">Roskosch, Lukas</datacite:creatorName>
+         <datacite:nameIdentifier nameIdentifierScheme="ORCID" schemeURI="http://orcid.org">0009-0000-5958-474X</datacite:nameIdentifier>
+      </datacite:creator>
+      <datacite:creator>
+         <datacite:creatorName nameType="Personal">Bernschütz, Benjamin</datacite:creatorName>
+         <datacite:nameIdentifier nameIdentifierScheme="ORCID" schemeURI="http://orcid.org">0009-0009-0203-8444</datacite:nameIdentifier>
+      </datacite:creator>
+   </datacite:creators>
+   <datacite:contributors>
+      <datacite:contributor contributorType="HostingInstitution">
+         <datacite:contributorName nameType="Organizational">data.THM research data repository</datacite:contributorName>
+         <datacite:nameIdentifier nameIdentifierScheme="e-mail" schemeURI="mailto:dspace-admin@hrz.uni-marburg.de">dspace-admin@hrz.uni-marburg.de</datacite:nameIdentifier>
+      </datacite:contributor>
+   </datacite:contributors>
+   <datacite:relatedIdentifiers>
+      <datacite:relatedIdentifier relatedIdentifierType="DOI" relationType="IsPartOf">https://doi.org/10.48581/dspace/1</datacite:relatedIdentifier>
+   </datacite:relatedIdentifiers>
+   <datacite:dates>
+      <datacite:date dateType="Submitted">2026-02-04</datacite:date>
+   </datacite:dates>
+   <dc:language>en_US</dc:language>
+   <dc:publisher>Technische Hochschule Mittelhessen</dc:publisher>
+   <dc:description xml:lang="en">We present a high-resolution, relational dataset of time-resolved acoustic measurements collected during live music events to support environmental noise assessment, source-attribution studies, propagation modelling, and data-driven acoustic research. The dataset contains continuous, one-second temporal resolution records from two measurement roles: emission (infield, adjacent to electroacoustic sound systems) and immission (reference/residential receptor points). All records are labeled by music genre (pop, rock, electronic, hard-rock, hip-hop, singer-songwriter, classical) and are temporally referenced to event timelines.
+
+Each individual sensor record comprises a sensor identifier, an absolute timestamp (UTC), broadband acoustic metrics (LAeq, LCeq, LAFmax, LAFT, LCpeak) and a full frequency spectrum spanning 6.3 Hz to 20 kHz (delivered as octave bands). Importantly, measurements are not pre-aligned across sensors; every table entry is tied to a sensor_id + timestamp pair so that multi-sensor alignment is achieved by joining on timestamp. Temporal ranges supplied with the dataset explicitly mark the periods when the electroacoustic sound reinforcement was active; intervals without sound reinforcement are present in the data but are not separately labeled and must therefore be inferred from timestamps that fall outside the provided active ranges.
+
+The dataset is distributed in normalized SQL form. Relational tables map sensor units to semantic roles (e.g., infield vs. residential), associate sensors with identifiers for infield points, and encode spatial relations such as distances from each immission sensor to the nearest infield point. A comprehensive SQL schema diagram is included to document table structures, primary/foreign keys and the relations required to reconstruct time-aligned emission/immission traces.
+
+Measurements were acquired with Class-1 precision sound level meters. Accompanying documentation details variable definitions, recommended conventions for joining and aggregating the timestamped records (e.g., handling missing timestamps, clock drift mitigation), guidance for identifying silent/no-reinforcement intervals, and example queries to reconstruct second-by-second, multi-location time series.
+
+By combining second-resolution metrics, full spectral detail and explicit spatial relations in an SQL relational layout, the dataset supports reproducible time-domain and frequency-domain investigations: regulatory analyses, propagation and attenuation modelling, genre-dependent spectral characterization, machine-learning model development for source recognition, and human exposure assessments.</dc:description>
+   <dc:format>application/octet-stream</dc:format>
+   <dc:format>application/octet-stream</dc:format>
+   <datacite:identifier identifierType="URL">https://data.thm.de/handle/datathm/65</datacite:identifier>
+   <datacite:rights rightsURI="http://purl.org/coar/access_right/c_abf2">open access</datacite:rights>
+   <datacite:subjects>
+      <datacite:subject>Sound Emission</datacite:subject>
+      <datacite:subject>Sound Immission</datacite:subject>
+      <datacite:subject>Environmental Noise</datacite:subject>
+      <datacite:subject>Live Music</datacite:subject>
+      <datacite:subject>Electroacoustics</datacite:subject>
+   </datacite:subjects>
+   <datacite:sizes>
+      <datacite:size>8499809775 bytes</datacite:size>
+      <datacite:size>13418 bytes</datacite:size>
+   </datacite:sizes>
+</resource>

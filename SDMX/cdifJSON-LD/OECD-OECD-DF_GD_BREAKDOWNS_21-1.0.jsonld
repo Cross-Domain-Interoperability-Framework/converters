@@ -1,0 +1,572 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/"
+  },
+  "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Data for the breakdown visualisations of the Going Digital portal - part 21",
+  "schema:description": "Data for the breakdown visualisations of the Going Digital portal - part 21",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "SDMX URN",
+    "schema:value": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=OECD:DF_GD_BREAKDOWNS_21(1.0)",
+    "schema:url": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0"
+  },
+  "schema:version": "1.0",
+  "schema:dateModified": "2024-03-21T18:32:49Z",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "OECD"
+  },
+  "schema:temporalCoverage": [
+    "2021-01-01/2021-12-31"
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#LOCATION",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LOCATION",
+      "schema:alternateName": [
+        "Country"
+      ],
+      "schema:description": "Country",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD:CS_GD_BREAKDOWNS_21(1.0).LOCATION"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Country",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD:CL_GD_BREAKDOWNS_21__LOCATION(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/archive/rest/v1/codelist/OECD/CL_GD_BREAKDOWNS_21__LOCATION/1.0"
+          },
+          "schema:description": "26 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#INDICATOR",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INDICATOR",
+      "schema:alternateName": [
+        "Indicator"
+      ],
+      "schema:description": "Indicator",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD:CS_GD_BREAKDOWNS_21(1.0).INDICATOR"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Indicator",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD:CL_GD_BREAKDOWNS_21__INDICATOR(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/archive/rest/v1/codelist/OECD/CL_GD_BREAKDOWNS_21__INDICATOR/1.0"
+          },
+          "schema:description": "1 code used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#DIMENSION",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "DIMENSION",
+      "schema:alternateName": [
+        "Dimension"
+      ],
+      "schema:description": "Dimension",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD:CS_GD_BREAKDOWNS_21(1.0).DIMENSION"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Dimension",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD:CL_GD_BREAKDOWNS_21__DIMENSION(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/archive/rest/v1/codelist/OECD/CL_GD_BREAKDOWNS_21__DIMENSION/1.0"
+          },
+          "schema:description": "8 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#POLICY",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "POLICY",
+      "schema:alternateName": [
+        "Policy domains included in the dimension"
+      ],
+      "schema:description": "Policy domains included in the dimension",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD:CS_GD_BREAKDOWNS_21(1.0).POLICY"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Policy domains included in the dimension",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD:CL_GD_BREAKDOWNS_21__POLICY(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/archive/rest/v1/codelist/OECD/CL_GD_BREAKDOWNS_21__POLICY/1.0"
+          },
+          "schema:description": "8 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#TIME_PERIOD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_PERIOD",
+      "schema:alternateName": [
+        "Time"
+      ],
+      "schema:description": "Time",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD:CS_GD_BREAKDOWNS_21(1.0).TIME"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "ObservationalTimePeriod"
+    },
+    {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#OBS_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_STATUS",
+      "schema:alternateName": [
+        "Observation Status"
+      ],
+      "schema:description": "Observation Status",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD:CS_GD_BREAKDOWNS_21(1.0).OBS_STATUS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#UNIT_MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MEASURE",
+      "schema:alternateName": [
+        "Unit of Measures"
+      ],
+      "schema:description": "Unit of Measures",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD:CS_GD_BREAKDOWNS_21(1.0).UNIT_MEASURE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Unit of Measures",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD:CL_GD_BREAKDOWNS_21__UNIT_MEASURE(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/archive/rest/v1/codelist/OECD/CL_GD_BREAKDOWNS_21__UNIT_MEASURE/1.0"
+          },
+          "schema:description": "323 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#UNIT_MULT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MULT",
+      "schema:alternateName": [
+        "Multiplier"
+      ],
+      "schema:description": "Multiplier",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD:CS_GD_BREAKDOWNS_21(1.0).UNIT_MULT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Multiplier",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OECD:CL_GD_BREAKDOWNS_21__UNIT_MULT(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.oecd.org/archive/rest/v1/codelist/OECD/CL_GD_BREAKDOWNS_21__UNIT_MULT/1.0"
+          },
+          "schema:description": "32 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#BASE_PER",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "BASE_PER",
+      "schema:alternateName": [
+        "Base reference period"
+      ],
+      "schema:description": "Base reference period",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD:CS_GD_BREAKDOWNS_21(1.0).BASE_PER"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#OBS_VALUE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_VALUE",
+      "schema:alternateName": [
+        "Observation Value"
+      ],
+      "schema:description": "Observation Value",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OECD:CS_GD_BREAKDOWNS_21(1.0).OBS_VALUE"
+      },
+      "cdif:role": "Measure",
+      "cdif:physicalDataType": "xsd:double"
+    }
+  ],
+  "schema:url": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "SDMX-ML data for OECD,DF_GD_BREAKDOWNS_21,1.0",
+      "schema:contentUrl": "https://sdmx.oecd.org/archive/rest/v1/data/OECD,DF_GD_BREAKDOWNS_21,1.0/all",
+      "schema:encodingFormat": [
+        "application/vnd.sdmx.genericdata+xml;version=2.1"
+      ],
+      "schema:description": "SDMX-REST data query for the whole dataflow; add a series key in place of 'all', startPeriod/endPeriod, or an Accept header (e.g. application/vnd.sdmx.data+csv) to narrow or reformat it.",
+      "cdi:isStructuredBy": {
+        "@type": [
+          "cdi:DimensionalDataStructure"
+        ],
+        "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=OECD:DSD_GD_BREAKDOWNS_21(1.0)",
+        "cdi:has_DataStructureComponent": [
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD:DSD_GD_BREAKDOWNS_21(1.0).LOCATION",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#LOCATION"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD:DSD_GD_BREAKDOWNS_21(1.0).INDICATOR",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#INDICATOR"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD:DSD_GD_BREAKDOWNS_21(1.0).DIMENSION",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#DIMENSION"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=OECD:DSD_GD_BREAKDOWNS_21(1.0).POLICY",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#POLICY"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=OECD:DSD_GD_BREAKDOWNS_21(1.0).TIME_PERIOD",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#TIME_PERIOD"
+            }
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=OECD:DSD_GD_BREAKDOWNS_21(1.0).OBS_STATUS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#OBS_STATUS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=OECD:DSD_GD_BREAKDOWNS_21(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=OECD:DSD_GD_BREAKDOWNS_21(1.0).UNIT_MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#UNIT_MEASURE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=OECD:DSD_GD_BREAKDOWNS_21(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=OECD:DSD_GD_BREAKDOWNS_21(1.0).UNIT_MULT",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#UNIT_MULT"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=OECD:DSD_GD_BREAKDOWNS_21(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=OECD:DSD_GD_BREAKDOWNS_21(1.0).BASE_PER",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#BASE_PER"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=OECD:DSD_GD_BREAKDOWNS_21(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:MeasureComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=OECD:DSD_GD_BREAKDOWNS_21(1.0).OBS_VALUE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#OBS_VALUE"
+            }
+          }
+        ],
+        "cdif:has_PrimaryKey": {
+          "@type": [
+            "cdif:Key"
+          ],
+          "cdif:isComposedOf": [
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#LOCATION"
+              },
+              "cdi:value": 1
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#INDICATOR"
+              },
+              "cdi:value": 2
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#DIMENSION"
+              },
+              "cdi:value": 3
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#POLICY"
+              },
+              "cdi:value": 4
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0#TIME_PERIOD"
+              },
+              "cdi:value": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0?references=all&detail=referencepartial",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "SDMX structure metadata for: Data for the breakdown visualisations of the Going Digital portal - part 21",
+    "schema:about": {
+      "@id": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_structure/2.0"
+      }
+    ],
+    "schema:description": "Converted from an SDMX-ML 2.1 structure message (dataflow and data structure definition) to CDIF by sdmx_to_cdif.py.",
+    "schema:dateModified": "2026-11-19T01:02:59+01:00",
+    "schema:url": "https://sdmx.oecd.org/archive/rest/v1/dataflow/OECD/DF_GD_BREAKDOWNS_21/1.0?references=all&detail=referencepartial"
+  }
+}

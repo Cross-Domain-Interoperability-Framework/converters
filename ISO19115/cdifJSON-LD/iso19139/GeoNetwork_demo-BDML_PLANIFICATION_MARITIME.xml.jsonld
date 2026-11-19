@@ -1,0 +1,352 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "http://www.shom.fr/BDML/PLANIFICATION_MARITIME",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Planification maritime",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "http://www.shom.fr/BDML/PLANIFICATION_MARITIME",
+    "schema:url": "http://www.shom.fr/BDML/PLANIFICATION_MARITIME"
+  },
+  "schema:datePublished": "2024-12-11",
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Shom",
+        "schema:email": "bps@shom.fr"
+      }
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Shom",
+      "schema:email": "data-support@shom.fr"
+    }
+  ],
+  "schema:description": "Le produit « Planification maritime » contient des données vectorielles sous forme d’objets surfaciques 2D représentant l’emprise de la façade maritime (couche « MSP Spatial Plan ») ainsi que les emprises des zones de vocations correspondantes (couche « MSP Zoning Element »), définies dans le document stratégique de chaque façade.",
+  "schema:creditText": "©Shom",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "geographicDataset",
+      "schema:termCode": "geographicDataset",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "oceans",
+      "schema:termCode": "oceans",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    "DSF",
+    "zone de vocation",
+    "données ouvertes",
+    "Produit",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Zones de gestion, de restriction ou de réglementation et unités de déclaration",
+      "schema:inDefinedTermSet": "https://www.eionet.europa.eu/gemet/en/inspire-themes/",
+      "schema:url": "http://inspire.ec.europa.eu/theme/am",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Nationales",
+      "schema:inDefinedTermSet": "http://inspire.ec.europa.eu/metadata-codelist/SpatialScope",
+      "schema:url": "http://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Observation de la terre et environnement",
+      "schema:inDefinedTermSet": "http://publications.europa.eu/resource/dataset/high-value-dataset-category",
+      "schema:url": "http://data.europa.eu/bna/c_dd313021"
+    }
+  ],
+  "schema:inLanguage": "fr",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "40 -10.3 51.6 10.3"
+      }
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:spatialRepresentationType"
+        }
+      ],
+      "schema:name": "Spatial Representation Type",
+      "schema:value": "vector"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:referenceSystemIdentifier"
+        }
+      ],
+      "schema:name": "Coordinate Reference System",
+      "schema:value": "WGS 84 (EPSG:4326)",
+      "schema:url": "http://www.opengis.net/def/crs/EPSG/0/4326"
+    }
+  ],
+  "schema:image": [
+    {
+      "@type": [
+        "schema:ImageObject"
+      ],
+      "schema:contentUrl": "https://services.data.shom.fr/static/imagettes/MD/planif.png",
+      "schema:caption": "thumbnail",
+      "schema:encodingFormat": "png"
+    },
+    {
+      "@type": [
+        "schema:ImageObject"
+      ],
+      "schema:contentUrl": "https://services.data.shom.fr/static/imagettes/MD/planif.png",
+      "schema:caption": "large_thumbnail",
+      "schema:encodingFormat": "png"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Utilisation libre sous réserve de citer les sources de la manière suivante : \"DGAMPA-Shom, 2024. Planification maritime. https://dx.doi.org/10.17183/MSP\".",
+    "Ne pas utiliser pour la navigation.",
+    "Ce produit est strictement géomatique et ne se substitue pas au champ d’application géographique des DSF tel que défini juridiquement. Le droit ne limite pas de façon stricte le périmètre d’application du DSF, qui est à adapter en fonction des caractéristiques hydrologiques, océanographiques, biogéographiques, socio-économiques et culturelles de la mer et du littoral.",
+    "Licence Ouverte (version 2.0 d'avril 2017), définie par la mission Etalab.",
+    "access: license",
+    "Pas de restriction d'accès public.",
+    "security classification: unclassified"
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.shom.fr",
+      "schema:name": "Portail d'information géographique du Shom",
+      "schema:description": "Portail d'information géographique du Shom",
+      "schema:encodingFormat": [
+        "GeoPackage"
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "PLANIFICATION_MARITIME_SPATIALPLAN_BDD_WMSV",
+      "schema:serviceType": "OGC Web Map Service",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "PLANIFICATION_MARITIME_SPATIALPLAN_BDD_WMSV",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "https://services.data.shom.fr/INSPIRE/wms/v?service=WMS&request=GetCapabilities&version=1.3.0",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "schema:description": "Access point / WMS Documents stratégiques de planification maritime"
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "PLANIFICATION_MARITIME_ZONINGELEMENT_BDD_WMSV",
+      "schema:serviceType": "OGC Web Map Service",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "PLANIFICATION_MARITIME_ZONINGELEMENT_BDD_WMSV",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "https://services.data.shom.fr/INSPIRE/wms/v?service=WMS&request=GetCapabilities&version=1.3.0",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "schema:description": "Access point / WMS Zones de vocations"
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "PLANIFICATION_MARITIME_BDD_WFS:spatialplan",
+      "schema:serviceType": "OGC Web Feature Service",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "PLANIFICATION_MARITIME_BDD_WFS:spatialplan",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "https://services.data.shom.fr/INSPIRE/wfs?service=WFS&request=GetCapabilities&version=2.0.0",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "schema:description": "Access point / Documents stratégiques de planification maritime"
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "PLANIFICATION_MARITIME_BDD_WFS:zoningelement",
+      "schema:serviceType": "OGC Web Feature Service",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "PLANIFICATION_MARITIME_BDD_WFS:zoningelement",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "https://services.data.shom.fr/INSPIRE/wfs?service=WFS&request=GetCapabilities&version=2.0.0",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "schema:description": "Access point / Zones de vocations"
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://services.data.shom.fr/INSPIRE/telechargement/prepackageGroup/PLANIFICATION_MARITIME_PACK_DL/prepackage/PLANIFICATION_MARITIME_PACK/file/PLANIFICATION_MARITIME_PACK.7z",
+      "schema:name": "Service de téléchargement Planification maritime",
+      "schema:encodingFormat": [
+        "GeoPackage"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://diffusion.shom.fr/",
+      "schema:name": "Espace de diffusion du Shom",
+      "schema:description": "Espace de diffusion du Shom",
+      "schema:encodingFormat": [
+        "GeoPackage"
+      ]
+    }
+  ],
+  "schema:url": "https://data.shom.fr",
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "Lineage",
+      "schema:actionProcess": "Les informations utilisées pour l’élaboration de ce produit proviennent des volets stratégiques des documents stratégiques de façade (DSF) des quatre façades de France métropolitaine, en vigueur à la date de la publication de ce produit. Les Directions Interrégionales de la Mer (DIRM) sont les services référents et producteurs des données de ce produit. Le Shom a été mandaté par la direction générale des affaires maritimes, de la pêche et de l'aquaculture (DGAMPA) pour assurer un soutien géomatique auprès des DIRM pour la production des données au format vecteur."
+    }
+  ],
+  "schema:dateModified": "2024-12-11",
+  "schema:subjectOf": {
+    "@id": "http://www.shom.fr/BDML/PLANIFICATION_MARITIME#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: Planification maritime",
+    "schema:about": {
+      "@id": "http://www.shom.fr/BDML/PLANIFICATION_MARITIME"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19139 to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "BDML_PLANIFICATION_MARITIME.xml",
+    "schema:dateModified": "2024-12-12T17:18:35",
+    "schema:inLanguage": "fr",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Shom",
+      "schema:email": "data-support@shom.fr"
+    }
+  }
+}

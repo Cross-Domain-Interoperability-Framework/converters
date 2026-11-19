@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doc="http://www.lyncode.com/xoai" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.openarchives.org/OAI/2.0/" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+   <dc:title>SIMU - Sound Immission in Music</dc:title>
+   <dc:creator>Roskosch, Lukas; https://orcid.org/0009-0000-5958-474X</dc:creator>
+   <dc:creator>Bernschütz, Benjamin; https://orcid.org/0009-0009-0203-8444</dc:creator>
+   <dc:subject>Sound Emission</dc:subject>
+   <dc:subject>Sound Immission</dc:subject>
+   <dc:subject>Environmental Noise</dc:subject>
+   <dc:subject>Live Music</dc:subject>
+   <dc:subject>Electroacoustics</dc:subject>
+   <dc:subject>103-02 Musikwissenschaften</dc:subject>
+   <dc:description>We present a high-resolution, relational dataset of time-resolved acoustic measurements collected during live music events to support environmental noise assessment, source-attribution studies, propagation modelling, and data-driven acoustic research. The dataset contains continuous, one-second temporal resolution records from two measurement roles: emission (infield, adjacent to electroacoustic sound systems) and immission (reference/residential receptor points). All records are labeled by music genre (pop, rock, electronic, hard-rock, hip-hop, singer-songwriter, classical) and are temporally referenced to event timelines.
+
+Each individual sensor record comprises a sensor identifier, an absolute timestamp (UTC), broadband acoustic metrics (LAeq, LCeq, LAFmax, LAFT, LCpeak) and a full frequency spectrum spanning 6.3 Hz to 20 kHz (delivered as octave bands). Importantly, measurements are not pre-aligned across sensors; every table entry is tied to a sensor_id + timestamp pair so that multi-sensor alignment is achieved by joining on timestamp. Temporal ranges supplied with the dataset explicitly mark the periods when the electroacoustic sound reinforcement was active; intervals without sound reinforcement are present in the data but are not separately labeled and must therefore be inferred from timestamps that fall outside the provided active ranges.
+
+The dataset is distributed in normalized SQL form. Relational tables map sensor units to semantic roles (e.g., infield vs. residential), associate sensors with identifiers for infield points, and encode spatial relations such as distances from each immission sensor to the nearest infield point. A comprehensive SQL schema diagram is included to document table structures, primary/foreign keys and the relations required to reconstruct time-aligned emission/immission traces.
+
+Measurements were acquired with Class-1 precision sound level meters. Accompanying documentation details variable definitions, recommended conventions for joining and aggregating the timestamped records (e.g., handling missing timestamps, clock drift mitigation), guidance for identifying silent/no-reinforcement intervals, and example queries to reconstruct second-by-second, multi-location time series.
+
+By combining second-resolution metrics, full spectral detail and explicit spatial relations in an SQL relational layout, the dataset supports reproducible time-domain and frequency-domain investigations: regulatory analyses, propagation and attenuation modelling, genre-dependent spectral characterization, machine-learning model development for source recognition, and human exposure assessments.</dc:description>
+   <dc:description>FH-kooperativ 13FH547KB0</dc:description>
+   <dc:description>1.0.0</dc:description>
+   <dc:date>2026-02-04</dc:date>
+   <dc:dateSubmitted>2026-02-04</dc:dateSubmitted>
+   <dc:type>doc-type:ResearchData</dc:type>
+   <dc:identifier>https://doi.org/10.48581/dspace/1</dc:identifier>
+   <dc:identifier>https://data.thm.de/handle/datathm/65</dc:identifier>
+   <dc:language>en_US</dc:language>
+   <dc:rights>CC0 1.0 Universal</dc:rights>
+   <dc:rights>http://creativecommons.org/publicdomain/zero/1.0/</dc:rights>
+   <dc:format>application/octet-stream</dc:format>
+   <dc:format>application/octet-stream</dc:format>
+   <dc:publisher>Technische Hochschule Mittelhessen</dc:publisher>
+</oai_dc:dc>

@@ -1,0 +1,887 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:sld="http://www.opengis.net/sld" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ms="http://mapserver.gis.umn.edu/mapserver" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" version="1.3.0" updateSequence="20250131121700" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd  http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/sld_capabilities.xsd  http://inspire.ec.europa.eu/schemas/inspire_vs/1.0  http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd http://mapserver.gis.umn.edu/mapserver http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;service=WMS&amp;version=1.3.0&amp;request=GetSchemaExtension">
+<Service>
+  <Name>WMS</Name>
+  <Title>BGS OneGeology Europe geology</Title>
+  <Abstract>The 1:50k GeoSure (natural ground stability) data covering the map sheets for Loughborough and Kilmarnock are available in this OGC WMS service for your personal, non-commercial use only and is being served as a contribution to the OneGeology Europe initiative. For information about more of the British Geological Survey's maps and other digital products please visit https://www.bgs.ac.uk/geological-data/datasets/digital-data-product-development/</Abstract>
+  <KeywordList>
+      <Keyword>OneGeology</Keyword>
+      <Keyword>MD_LANG@ENG</Keyword>
+      <Keyword>MD_DATE@2019-01-22</Keyword>
+      <Keyword vocabulary="GEMET">Geology</Keyword>
+      <Keyword vocabulary="ISO">infoMapAccessService</Keyword>
+  </KeywordList>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/geological-data/datasets/digital-data-product-development/"/>
+  <ContactInformation>
+    <ContactPersonPrimary>
+      <ContactPerson>Mr Garry Baker</ContactPerson>
+      <ContactOrganization>British Geological Survey (BGS)</ContactOrganization>
+    </ContactPersonPrimary>
+      <ContactPosition>Chief Digital Officer</ContactPosition>
+    <ContactAddress>
+        <AddressType>postal</AddressType>
+        <Address>Nicker Hill</Address>
+        <City>Keyworth</City>
+        <StateOrProvince>Nottinghamshire</StateOrProvince>
+        <PostCode>NG12 5GG</PostCode>
+        <Country>United Kingdom</Country>
+    </ContactAddress>
+      <ContactVoiceTelephone>+44 (0)115 936 3100</ContactVoiceTelephone>
+      <ContactFacsimileTelephone>+44 (0)115 936 3200</ContactFacsimileTelephone>
+  <ContactElectronicMailAddress>enquiries@bgs.ac.uk</ContactElectronicMailAddress>
+  </ContactInformation>
+  <Fees>none</Fees>
+  <AccessConstraints>The data are available for free download on the basis it is only used for your personal, teaching, and research purposes - provided all are non-commercial in nature as described on https://www.bgs.ac.uk/bgs-intellectual-property-rights/using-bgs-copyright-material/. Where commercial use is required, licences are available from the British Geological Survey (BGS). Your use of any information provided by the BGS is at your own risk. BGS gives no warranty, condition or representation as to the quality, accuracy or completeness of the information or its suitability for any use or purpose. All implied conditions relating to the quality or suitability of the information, and all liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.</AccessConstraints>
+  <MaxWidth>3072</MaxWidth>
+  <MaxHeight>3072</MaxHeight>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/png</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/tiff</Format>
+      <Format>application/vnd.mapbox-vector-tile</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/html</Format>
+      <Format>application/vnd.ogc.gml</Format>
+      <Format>text/plain</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+    <sld:DescribeLayer>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </sld:DescribeLayer>
+    <sld:GetLegendGraphic>
+      <Format>image/png</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/png; mode=8bit</Format>
+      <Format>image/vnd.jpeg-png</Format>
+      <Format>image/vnd.jpeg-png8</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </sld:GetLegendGraphic>
+    <ms:GetStyles>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </ms:GetStyles>
+  </Request>
+  <Exception>
+    <Format>XML</Format>
+    <Format>INIMAGE</Format>
+    <Format>BLANK</Format>
+  </Exception>
+  <sld:UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0" InlineFeature="0" RemoteWCS="0"/>
+  <inspire_vs:ExtendedCapabilities>
+    <inspire_common:MetadataUrl xsi:type="inspire_common:resourceLocatorType">
+      <inspire_common:URL>https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;ID=f00173da-bb16-4be8-a612-3fd5aa6c7040&amp;version=2.0.2&amp;</inspire_common:URL>
+      <inspire_common:MediaType>application/xml</inspire_common:MediaType>
+    </inspire_common:MetadataUrl>
+    <inspire_common:SupportedLanguages>
+      <inspire_common:DefaultLanguage><inspire_common:Language>eng</inspire_common:Language></inspire_common:DefaultLanguage>
+    </inspire_common:SupportedLanguages>
+    <inspire_common:ResponseLanguage><inspire_common:Language>eng</inspire_common:Language></inspire_common:ResponseLanguage>
+  </inspire_vs:ExtendedCapabilities>
+  <Layer queryable="1">
+    <Name>ONEGEOLOGYEUROPE</Name>
+    <Title>BGS OneGeology Europe geology</Title>
+    <Abstract>The 1:50k GeoSure (natural ground stability) data covering the map sheets for Loughborough and Kilmarnock are available in this OGC WMS service for your personal, non-commercial use only and is being served as a contribution to the OneGeology Europe initiative. For information about more of the British Geological Survey's maps and other digital products please visit https://www.bgs.ac.uk/geological-data/datasets/digital-data-product-development/</Abstract>
+    <KeywordList>
+        <Keyword>OneGeology</Keyword>
+        <Keyword>MD_LANG@ENG</Keyword>
+        <Keyword>MD_DATE@2019-01-22</Keyword>
+        <Keyword vocabulary="GEMET">Geology</Keyword>
+        <Keyword vocabulary="ISO">infoMapAccessService</Keyword>
+    </KeywordList>
+    <CRS>EPSG:4326</CRS>
+    <CRS>EPSG:27700</CRS>
+    <CRS>EPSG:3031</CRS>
+    <CRS>EPSG:3034</CRS>
+    <CRS>EPSG:3413</CRS>
+    <CRS>EPSG:3857</CRS>
+    <CRS>EPSG:4258</CRS>
+    <CRS>CRS:84</CRS>
+    <EX_GeographicBoundingBox>
+        <westBoundLongitude>-8.647600</westBoundLongitude>
+        <eastBoundLongitude>1.769430</eastBoundLongitude>
+        <southBoundLatitude>49.863900</southBoundLatitude>
+        <northBoundLatitude>60.862200</northBoundLatitude>
+    </EX_GeographicBoundingBox>
+    <BoundingBox CRS="EPSG:4326" minx="49.863900" miny="-8.647600" maxx="60.862200" maxy="1.769430"/>
+    <BoundingBox CRS="EPSG:27700" minx="-77493.4" miny="-4039.85" maxx="670977" maxy="1.23824e+06"/>
+    <BoundingBox CRS="EPSG:3031" minx="-7.11295e+06" miny="3.3298e+07" maxx="1.46072e+06" maxy="4.73071e+07"/>
+    <BoundingBox CRS="EPSG:3034" minx="2.60232e+06" miny="2.71888e+06" maxx="3.88362e+06" maxy="3.56176e+06"/>
+    <BoundingBox CRS="EPSG:3413" minx="1.91073e+06" miny="-3.64649e+06" maxx="3.29885e+06" maxy="-2.20789e+06"/>
+    <BoundingBox CRS="EPSG:3857" minx="-962646" miny="6.42274e+06" maxx="196972" maxy="8.59425e+06"/>
+    <BoundingBox CRS="EPSG:4258" minx="49.863900" miny="-8.647600" maxx="60.862200" maxy="1.769430"/>
+    <BoundingBox CRS="CRS:84" minx="-8.647600" miny="49.863900" maxx="1.769430" maxy="60.862200"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+    <AuthorityURL name="BritishGeologicalSurvey">
+      <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+    </AuthorityURL>
+    <Style>
+       <Name>default</Name>
+       <Title>default</Title>
+       <LegendURL width="46" height="700">
+          <Format>image/png</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=ONEGEOLOGYEUROPE&amp;format=image/png&amp;STYLE=default"/>
+       </LegendURL>
+    </Style>
+    <Layer queryable="1">
+      <Name>GeoSure</Name>
+      <Title>GeoSure</Title>
+      <Layer queryable="1">
+        <Name>Loughborough</Name>
+        <Title>Loughborough</Title>
+        <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>GBR_Loughborough_BGS_50K_SolubleRocks</Name>
+        <Title>GBR Loughborough BGS 1:50K soluble rocks</Title>
+        <Abstract>GBR Loughborough BGS 1:50K soluble rocks</Abstract>
+        <KeywordList>
+            <Keyword>OneGeology</Keyword>
+            <Keyword>thematic@Geology</Keyword>
+            <Keyword>thematic@Geologic hazards</Keyword>
+            <Keyword>GeoSure</Keyword>
+            <Keyword>soluble rocks</Keyword>
+            <Keyword>subarea@Loughborough</Keyword>
+            <Keyword>Natural ground stability</Keyword>
+            <Keyword>continent@Europe</Keyword>
+            <Keyword>subcontinent@Northern Europe</Keyword>
+            <Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+            <Keyword>dataprovider@British Geological Survey</Keyword>
+            <Keyword>serviceprovider@British Geological Survey</Keyword>
+            <Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+            <Keyword>DS_DATE@2009-03-09</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:3031</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:3413</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-1.537317</westBoundLongitude>
+            <eastBoundLongitude>-1.195709</eastBoundLongitude>
+            <southBoundLatitude>52.758311</southBoundLatitude>
+            <northBoundLatitude>52.908884</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:4326" minx="52.758311" miny="-1.537317" maxx="52.908884" maxy="-1.195709"/>
+        <BoundingBox CRS="EPSG:27700" minx="431214" miny="317956" maxx="454375" maxy="334909"/>
+        <BoundingBox CRS="EPSG:3031" minx="-983735" miny="3.64963e+07" maxx="-761862" maxy="3.66602e+07"/>
+        <BoundingBox CRS="EPSG:3034" minx="2.93673e+06" miny="3.2505e+06" maxx="2.95613e+06" maxy="3.27496e+06"/>
+        <BoundingBox CRS="EPSG:3413" minx="2.86075e+06" miny="-3.03166e+06" maxx="2.89121e+06" maxy="-3.00142e+06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-171133" miny="6.93842e+06" maxx="-133106" maxy="6.96616e+06"/>
+        <BoundingBox CRS="EPSG:4258" minx="52.758311" miny="-1.537317" maxx="52.908884" maxy="-1.195709"/>
+        <BoundingBox CRS="CRS:84" minx="-1.537317" miny="52.758311" maxx="-1.195709" maxy="52.908884"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+        <AuthorityURL name="BritishGeologicalSurvey">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+        </AuthorityURL>
+        <MetadataURL type="TC211">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603030.html"/>
+        </MetadataURL>
+        <DataURL>
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/datasets/geosure/"/>
+        </DataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="46" height="60">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GBR_Loughborough_BGS_50K_SolubleRocks&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        </Layer>
+        <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>GBR_Loughborough_BGS_50K_ShrinkSwell</Name>
+        <Title>GBR Loughborough BGS 1:50K shrink swell</Title>
+        <Abstract>GBR Loughborough BGS 1:50K shrink swell</Abstract>
+        <KeywordList>
+            <Keyword>OneGeology</Keyword>
+            <Keyword>thematic@Geology</Keyword>
+            <Keyword>thematic@Geologic hazards</Keyword>
+            <Keyword>GeoSure</Keyword>
+            <Keyword>shrink swell</Keyword>
+            <Keyword>subarea@Loughborough</Keyword>
+            <Keyword>Natural ground stability</Keyword>
+            <Keyword>continent@Europe</Keyword>
+            <Keyword>subcontinent@Northern Europe</Keyword>
+            <Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+            <Keyword>dataprovider@British Geological Survey</Keyword>
+            <Keyword>serviceprovider@British Geological Survey</Keyword>
+            <Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+            <Keyword>DS_DATE@2009-03-09</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:3031</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:3413</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-1.629976</westBoundLongitude>
+            <eastBoundLongitude>-1.195225</eastBoundLongitude>
+            <southBoundLatitude>52.739146</southBoundLatitude>
+            <northBoundLatitude>52.917249</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:4326" minx="52.739146" miny="-1.629976" maxx="52.917249" maxy="-1.195225"/>
+        <BoundingBox CRS="EPSG:27700" minx="424978" miny="315788" maxx="454432" maxy="335840"/>
+        <BoundingBox CRS="EPSG:3031" minx="-1.04326e+06" miny="3.64745e+07" maxx="-761134" maxy="3.66691e+07"/>
+        <BoundingBox CRS="EPSG:3034" minx="2.93468e+06" miny="3.24421e+06" maxx="2.95796e+06" maxy="3.27513e+06"/>
+        <BoundingBox CRS="EPSG:3413" minx="2.85517e+06" miny="-3.03798e+06" maxx="2.89283e+06" maxy="-3.00067e+06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-181448" miny="6.93489e+06" maxx="-133052" maxy="6.96771e+06"/>
+        <BoundingBox CRS="EPSG:4258" minx="52.739146" miny="-1.629976" maxx="52.917249" maxy="-1.195225"/>
+        <BoundingBox CRS="CRS:84" minx="-1.629976" miny="52.739146" maxx="-1.195225" maxy="52.917249"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+        <AuthorityURL name="BritishGeologicalSurvey">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+        </AuthorityURL>
+        <MetadataURL type="TC211">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603028.html"/>
+        </MetadataURL>
+        <DataURL>
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/datasets/geosure/"/>
+        </DataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="46" height="60">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GBR_Loughborough_BGS_50K_ShrinkSwell&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        </Layer>
+        <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>GBR_Loughborough_BGS_50K_RunningSand</Name>
+        <Title>GBR Loughborough BGS 1:50K running sand</Title>
+        <Abstract>GBR Loughborough BGS 1:50K running sand</Abstract>
+        <KeywordList>
+            <Keyword>OneGeology</Keyword>
+            <Keyword>thematic@Geology</Keyword>
+            <Keyword>thematic@Geologic hazards</Keyword>
+            <Keyword>GeoSure</Keyword>
+            <Keyword>running sand</Keyword>
+            <Keyword>subarea@Loughborough</Keyword>
+            <Keyword>Natural ground stability</Keyword>
+            <Keyword>continent@Europe</Keyword>
+            <Keyword>subcontinent@Northern Europe</Keyword>
+            <Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+            <Keyword>dataprovider@British Geological Survey</Keyword>
+            <Keyword>serviceprovider@British Geological Survey</Keyword>
+            <Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+            <Keyword>DS_DATE@2009-03-09</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:3031</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:3413</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-1.629976</westBoundLongitude>
+            <eastBoundLongitude>-1.195225</eastBoundLongitude>
+            <southBoundLatitude>52.739146</southBoundLatitude>
+            <northBoundLatitude>52.917249</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:4326" minx="52.739146" miny="-1.629976" maxx="52.917249" maxy="-1.195225"/>
+        <BoundingBox CRS="EPSG:27700" minx="424978" miny="315788" maxx="454432" maxy="335840"/>
+        <BoundingBox CRS="EPSG:3031" minx="-1.04326e+06" miny="3.64745e+07" maxx="-761134" maxy="3.66691e+07"/>
+        <BoundingBox CRS="EPSG:3034" minx="2.93468e+06" miny="3.24421e+06" maxx="2.95796e+06" maxy="3.27513e+06"/>
+        <BoundingBox CRS="EPSG:3413" minx="2.85517e+06" miny="-3.03798e+06" maxx="2.89283e+06" maxy="-3.00067e+06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-181448" miny="6.93489e+06" maxx="-133052" maxy="6.96771e+06"/>
+        <BoundingBox CRS="EPSG:4258" minx="52.739146" miny="-1.629976" maxx="52.917249" maxy="-1.195225"/>
+        <BoundingBox CRS="CRS:84" minx="-1.629976" miny="52.739146" maxx="-1.195225" maxy="52.917249"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+        <AuthorityURL name="BritishGeologicalSurvey">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+        </AuthorityURL>
+        <MetadataURL type="TC211">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603027.html"/>
+        </MetadataURL>
+        <DataURL>
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/datasets/geosure/"/>
+        </DataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="46" height="60">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GBR_Loughborough_BGS_50K_RunningSand&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        </Layer>
+        <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>GBR_Loughborough_BGS_50K_Landslides</Name>
+        <Title>GBR Loughborough BGS 1:50K landslides</Title>
+        <Abstract>GBR Loughborough BGS 1:50K landslides</Abstract>
+        <KeywordList>
+            <Keyword>OneGeology</Keyword>
+            <Keyword>thematic@Geology</Keyword>
+            <Keyword>thematic@Geologic hazards</Keyword>
+            <Keyword>GeoSure</Keyword>
+            <Keyword>Landslides</Keyword>
+            <Keyword>Slope Instability</Keyword>
+            <Keyword>subarea@Loughborough</Keyword>
+            <Keyword>Natural ground stability</Keyword>
+            <Keyword>continent@Europe</Keyword>
+            <Keyword>subcontinent@Northern Europe</Keyword>
+            <Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+            <Keyword>dataprovider@British Geological Survey</Keyword>
+            <Keyword>serviceprovider@British Geological Survey</Keyword>
+            <Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+            <Keyword>DS_DATE@2009-03-09</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:3031</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:3413</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-1.629976</westBoundLongitude>
+            <eastBoundLongitude>-1.195225</eastBoundLongitude>
+            <southBoundLatitude>52.739146</southBoundLatitude>
+            <northBoundLatitude>52.917249</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:4326" minx="52.739146" miny="-1.629976" maxx="52.917249" maxy="-1.195225"/>
+        <BoundingBox CRS="EPSG:27700" minx="424978" miny="315788" maxx="454432" maxy="335840"/>
+        <BoundingBox CRS="EPSG:3031" minx="-1.04326e+06" miny="3.64745e+07" maxx="-761134" maxy="3.66691e+07"/>
+        <BoundingBox CRS="EPSG:3034" minx="2.93468e+06" miny="3.24421e+06" maxx="2.95796e+06" maxy="3.27513e+06"/>
+        <BoundingBox CRS="EPSG:3413" minx="2.85517e+06" miny="-3.03798e+06" maxx="2.89283e+06" maxy="-3.00067e+06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-181448" miny="6.93489e+06" maxx="-133052" maxy="6.96771e+06"/>
+        <BoundingBox CRS="EPSG:4258" minx="52.739146" miny="-1.629976" maxx="52.917249" maxy="-1.195225"/>
+        <BoundingBox CRS="CRS:84" minx="-1.629976" miny="52.739146" maxx="-1.195225" maxy="52.917249"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+        <AuthorityURL name="BritishGeologicalSurvey">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+        </AuthorityURL>
+        <MetadataURL type="TC211">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603029.html"/>
+        </MetadataURL>
+        <DataURL>
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/datasets/geosure/"/>
+        </DataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="46" height="100">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GBR_Loughborough_BGS_50K_Landslides&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        </Layer>
+        <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>GBR_Loughborough_BGS_50K_CompressibleGround</Name>
+        <Title>GBR Loughborough BGS 1:50K Compressible Ground</Title>
+        <Abstract>GBR Loughborough BGS 1:50K Compressible Ground</Abstract>
+        <KeywordList>
+            <Keyword>OneGeology</Keyword>
+            <Keyword>thematic@Geology</Keyword>
+            <Keyword>thematic@Geologic hazards</Keyword>
+            <Keyword>GeoSure</Keyword>
+            <Keyword>Compressible Ground</Keyword>
+            <Keyword>subarea@Loughborough</Keyword>
+            <Keyword>Natural ground stability</Keyword>
+            <Keyword>continent@Europe</Keyword>
+            <Keyword>subcontinent@Northern Europe</Keyword>
+            <Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+            <Keyword>dataprovider@British Geological Survey</Keyword>
+            <Keyword>serviceprovider@British Geological Survey</Keyword>
+            <Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+            <Keyword>DS_DATE@2009-03-09</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:3031</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:3413</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-1.629976</westBoundLongitude>
+            <eastBoundLongitude>-1.195225</eastBoundLongitude>
+            <southBoundLatitude>52.739146</southBoundLatitude>
+            <northBoundLatitude>52.917249</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:4326" minx="52.739146" miny="-1.629976" maxx="52.917249" maxy="-1.195225"/>
+        <BoundingBox CRS="EPSG:27700" minx="424978" miny="315788" maxx="454432" maxy="335840"/>
+        <BoundingBox CRS="EPSG:3031" minx="-1.04326e+06" miny="3.64745e+07" maxx="-761134" maxy="3.66691e+07"/>
+        <BoundingBox CRS="EPSG:3034" minx="2.93468e+06" miny="3.24421e+06" maxx="2.95796e+06" maxy="3.27513e+06"/>
+        <BoundingBox CRS="EPSG:3413" minx="2.85517e+06" miny="-3.03798e+06" maxx="2.89283e+06" maxy="-3.00067e+06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-181448" miny="6.93489e+06" maxx="-133052" maxy="6.96771e+06"/>
+        <BoundingBox CRS="EPSG:4258" minx="52.739146" miny="-1.629976" maxx="52.917249" maxy="-1.195225"/>
+        <BoundingBox CRS="CRS:84" minx="-1.629976" miny="52.739146" maxx="-1.195225" maxy="52.917249"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+        <AuthorityURL name="BritishGeologicalSurvey">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+        </AuthorityURL>
+        <MetadataURL type="TC211">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603026.html"/>
+        </MetadataURL>
+        <DataURL>
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/datasets/geosure/"/>
+        </DataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="46" height="60">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GBR_Loughborough_BGS_50K_CompressibleGround&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Name>Kilmarnock</Name>
+        <Title>Kilmarnock</Title>
+        <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>GBR_Kilmarnock_BGS_50K_SolubleRocks</Name>
+        <Title>GBR Kilmarnock BGS 1:50K soluble rocks</Title>
+        <Abstract>GBR Kilmarnock BGS 1:50K soluble rocks</Abstract>
+        <KeywordList>
+            <Keyword>OneGeology</Keyword>
+            <Keyword>thematic@Geology</Keyword>
+            <Keyword>thematic@Geologic hazards</Keyword>
+            <Keyword>GeoSure</Keyword>
+            <Keyword>soluble rocks</Keyword>
+            <Keyword>subarea@Kilmarnock</Keyword>
+            <Keyword>Natural ground stability</Keyword>
+            <Keyword>continent@Europe</Keyword>
+            <Keyword>subcontinent@Northern Europe</Keyword>
+            <Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+            <Keyword>dataprovider@British Geological Survey</Keyword>
+            <Keyword>serviceprovider@British Geological Survey</Keyword>
+            <Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+            <Keyword>DS_DATE@2009-03-09</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:3031</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:3413</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-4.523977</westBoundLongitude>
+            <eastBoundLongitude>-4.215973</eastBoundLongitude>
+            <southBoundLatitude>55.538103</southBoundLatitude>
+            <northBoundLatitude>55.793293</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:4326" minx="55.538103" miny="-4.523977" maxx="55.793293" maxy="-4.215973"/>
+        <BoundingBox CRS="EPSG:27700" minx="240825" miny="629384" maxx="261165" maxy="658439"/>
+        <BoundingBox CRS="EPSG:3031" minx="-3.1527e+06" miny="3.9533e+07" maxx="-2.9154e+06" maxy="3.98621e+07"/>
+        <BoundingBox CRS="EPSG:3034" minx="3.26423e+06" miny="3.11718e+06" maxx="3.29487e+06" maxy="3.14093e+06"/>
+        <BoundingBox CRS="EPSG:3413" minx="2.47657e+06" miny="-2.9251e+06" maxx="2.51185e+06" maxy="-2.88879e+06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-503607" miny="7.46701e+06" maxx="-469320" maxy="7.51738e+06"/>
+        <BoundingBox CRS="EPSG:4258" minx="55.538103" miny="-4.523977" maxx="55.793293" maxy="-4.215973"/>
+        <BoundingBox CRS="CRS:84" minx="-4.523977" miny="55.538103" maxx="-4.215973" maxy="55.793293"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+        <AuthorityURL name="BritishGeologicalSurvey">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+        </AuthorityURL>
+        <MetadataURL type="TC211">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603030.html"/>
+        </MetadataURL>
+        <DataURL>
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/datasets/geosure/"/>
+        </DataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="46" height="40">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GBR_Kilmarnock_BGS_50K_SolubleRocks&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        </Layer>
+        <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>GBR_Kilmarnock_BGS_50K_ShrinkSwell</Name>
+        <Title>GBR Kilmarnock BGS 1:50K shrink swell</Title>
+        <Abstract>GBR Kilmarnock BGS 1:50K shrink swell</Abstract>
+        <KeywordList>
+            <Keyword>OneGeology</Keyword>
+            <Keyword>thematic@Geology</Keyword>
+            <Keyword>thematic@Geologic hazards</Keyword>
+            <Keyword>GeoSure</Keyword>
+            <Keyword>shrink swell</Keyword>
+            <Keyword>subarea@Kilmarnock</Keyword>
+            <Keyword>Natural ground stability</Keyword>
+            <Keyword>continent@Europe</Keyword>
+            <Keyword>subcontinent@Northern Europe</Keyword>
+            <Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+            <Keyword>dataprovider@British Geological Survey</Keyword>
+            <Keyword>serviceprovider@British Geological Survey</Keyword>
+            <Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+            <Keyword>DS_DATE@2009-03-09</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:3031</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:3413</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-4.524706</westBoundLongitude>
+            <eastBoundLongitude>-4.215438</eastBoundLongitude>
+            <southBoundLatitude>55.532280</southBoundLatitude>
+            <northBoundLatitude>55.793395</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:4326" minx="55.532280" miny="-4.524706" maxx="55.793395" maxy="-4.215438"/>
+        <BoundingBox CRS="EPSG:27700" minx="240755" miny="628735" maxx="261199" maxy="658452"/>
+        <BoundingBox CRS="EPSG:3031" minx="-3.15322e+06" miny="3.95258e+07" maxx="-2.91451e+06" maxy="3.98622e+07"/>
+        <BoundingBox CRS="EPSG:3034" minx="3.2636e+06" miny="3.11701e+06" maxx="3.29489e+06" maxy="3.14096e+06"/>
+        <BoundingBox CRS="EPSG:3413" minx="2.47652e+06" miny="-2.92566e+06" maxx="2.51232e+06" maxy="-2.88876e+06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-503688" miny="7.46586e+06" maxx="-469260" maxy="7.5174e+06"/>
+        <BoundingBox CRS="EPSG:4258" minx="55.532280" miny="-4.524706" maxx="55.793395" maxy="-4.215438"/>
+        <BoundingBox CRS="CRS:84" minx="-4.524706" miny="55.532280" maxx="-4.215438" maxy="55.793395"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+        <AuthorityURL name="BritishGeologicalSurvey">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+        </AuthorityURL>
+        <MetadataURL type="TC211">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603028.html"/>
+        </MetadataURL>
+        <DataURL>
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/datasets/geosure/"/>
+        </DataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="46" height="60">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GBR_Kilmarnock_BGS_50K_ShrinkSwell&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        </Layer>
+        <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>GBR_Kilmarnock_BGS_50K_RunningSand</Name>
+        <Title>GBR Kilmarnock BGS 1:50K running sand</Title>
+        <Abstract>GBR Kilmarnock BGS 1:50K running sand</Abstract>
+        <KeywordList>
+            <Keyword>OneGeology</Keyword>
+            <Keyword>thematic@Geology</Keyword>
+            <Keyword>thematic@Geologic hazards</Keyword>
+            <Keyword>GeoSure</Keyword>
+            <Keyword>running sand</Keyword>
+            <Keyword>subarea@Kilmarnock</Keyword>
+            <Keyword>Natural ground stability</Keyword>
+            <Keyword>continent@Europe</Keyword>
+            <Keyword>subcontinent@Northern Europe</Keyword>
+            <Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+            <Keyword>dataprovider@British Geological Survey</Keyword>
+            <Keyword>serviceprovider@British Geological Survey</Keyword>
+            <Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+            <Keyword>DS_DATE@2009-03-09</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:3031</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:3413</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-4.524706</westBoundLongitude>
+            <eastBoundLongitude>-4.215438</eastBoundLongitude>
+            <southBoundLatitude>55.532280</southBoundLatitude>
+            <northBoundLatitude>55.793395</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:4326" minx="55.532280" miny="-4.524706" maxx="55.793395" maxy="-4.215438"/>
+        <BoundingBox CRS="EPSG:27700" minx="240755" miny="628735" maxx="261199" maxy="658452"/>
+        <BoundingBox CRS="EPSG:3031" minx="-3.15322e+06" miny="3.95258e+07" maxx="-2.91451e+06" maxy="3.98622e+07"/>
+        <BoundingBox CRS="EPSG:3034" minx="3.2636e+06" miny="3.11701e+06" maxx="3.29489e+06" maxy="3.14096e+06"/>
+        <BoundingBox CRS="EPSG:3413" minx="2.47652e+06" miny="-2.92566e+06" maxx="2.51232e+06" maxy="-2.88876e+06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-503688" miny="7.46586e+06" maxx="-469260" maxy="7.5174e+06"/>
+        <BoundingBox CRS="EPSG:4258" minx="55.532280" miny="-4.524706" maxx="55.793395" maxy="-4.215438"/>
+        <BoundingBox CRS="CRS:84" minx="-4.524706" miny="55.532280" maxx="-4.215438" maxy="55.793395"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+        <AuthorityURL name="BritishGeologicalSurvey">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+        </AuthorityURL>
+        <MetadataURL type="TC211">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603027.html"/>
+        </MetadataURL>
+        <DataURL>
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/datasets/geosure/"/>
+        </DataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="46" height="60">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GBR_Kilmarnock_BGS_50K_RunningSand&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        </Layer>
+        <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>GBR_Kilmarnock_BGS_50K_Landslides</Name>
+        <Title>GBR Kilmarnock BGS 1:50K landslides</Title>
+        <Abstract>GBR Kilmarnock BGS 1:50K landslides</Abstract>
+        <KeywordList>
+            <Keyword>OneGeology</Keyword>
+            <Keyword>thematic@Geology</Keyword>
+            <Keyword>thematic@Geologic hazards</Keyword>
+            <Keyword>GeoSure</Keyword>
+            <Keyword>Landslides</Keyword>
+            <Keyword>Slope Instability</Keyword>
+            <Keyword>subarea@Kilmarnock</Keyword>
+            <Keyword>Natural ground stability</Keyword>
+            <Keyword>continent@Europe</Keyword>
+            <Keyword>subcontinent@Northern Europe</Keyword>
+            <Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+            <Keyword>dataprovider@British Geological Survey</Keyword>
+            <Keyword>serviceprovider@British Geological Survey</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:3031</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:3413</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-4.524706</westBoundLongitude>
+            <eastBoundLongitude>-4.215438</eastBoundLongitude>
+            <southBoundLatitude>55.532280</southBoundLatitude>
+            <northBoundLatitude>55.793395</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:4326" minx="55.532280" miny="-4.524706" maxx="55.793395" maxy="-4.215438"/>
+        <BoundingBox CRS="EPSG:27700" minx="240755" miny="628735" maxx="261199" maxy="658452"/>
+        <BoundingBox CRS="EPSG:3031" minx="-3.15322e+06" miny="3.95258e+07" maxx="-2.91451e+06" maxy="3.98622e+07"/>
+        <BoundingBox CRS="EPSG:3034" minx="3.2636e+06" miny="3.11701e+06" maxx="3.29489e+06" maxy="3.14096e+06"/>
+        <BoundingBox CRS="EPSG:3413" minx="2.47652e+06" miny="-2.92566e+06" maxx="2.51232e+06" maxy="-2.88876e+06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-503688" miny="7.46586e+06" maxx="-469260" maxy="7.5174e+06"/>
+        <BoundingBox CRS="EPSG:4258" minx="55.532280" miny="-4.524706" maxx="55.793395" maxy="-4.215438"/>
+        <BoundingBox CRS="CRS:84" minx="-4.524706" miny="55.532280" maxx="-4.215438" maxy="55.793395"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+        <AuthorityURL name="BritishGeologicalSurvey">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+        </AuthorityURL>
+        <MetadataURL type="TC211">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603029.html"/>
+        </MetadataURL>
+        <DataURL>
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/datasets/geosure/"/>
+        </DataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="46" height="100">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GBR_Kilmarnock_BGS_50K_Landslides&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        </Layer>
+        <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>GBR_Kilmarnock_BGS_50K_CompressibleGround</Name>
+        <Title>GBR Kilmarnock BGS 1:50K Compressible Ground</Title>
+        <Abstract>GBR Kilmarnock BGS 1:50K Compressible Ground</Abstract>
+        <KeywordList>
+            <Keyword>OneGeology</Keyword>
+            <Keyword>thematic@Geology</Keyword>
+            <Keyword>thematic@Geologic hazards</Keyword>
+            <Keyword>GeoSure</Keyword>
+            <Keyword>Compressible Ground</Keyword>
+            <Keyword>subarea@Kilmarnock</Keyword>
+            <Keyword>Natural ground stability</Keyword>
+            <Keyword>continent@Europe</Keyword>
+            <Keyword>subcontinent@Northern Europe</Keyword>
+            <Keyword>geographicarea@United Kingdom of Great Britain and Northern Ireland</Keyword>
+            <Keyword>dataprovider@British Geological Survey</Keyword>
+            <Keyword>serviceprovider@British Geological Survey</Keyword>
+            <Keyword>DS_TOPIC@geoscientificinformation</Keyword>
+            <Keyword>DS_DATE@2009-03-09</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:3031</CRS>
+        <CRS>EPSG:3034</CRS>
+        <CRS>EPSG:3413</CRS>
+        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4258</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-4.524706</westBoundLongitude>
+            <eastBoundLongitude>-4.215438</eastBoundLongitude>
+            <southBoundLatitude>55.532280</southBoundLatitude>
+            <northBoundLatitude>55.793395</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:4326" minx="55.532280" miny="-4.524706" maxx="55.793395" maxy="-4.215438"/>
+        <BoundingBox CRS="EPSG:27700" minx="240755" miny="628735" maxx="261199" maxy="658452"/>
+        <BoundingBox CRS="EPSG:3031" minx="-3.15322e+06" miny="3.95258e+07" maxx="-2.91451e+06" maxy="3.98622e+07"/>
+        <BoundingBox CRS="EPSG:3034" minx="3.2636e+06" miny="3.11701e+06" maxx="3.29489e+06" maxy="3.14096e+06"/>
+        <BoundingBox CRS="EPSG:3413" minx="2.47652e+06" miny="-2.92566e+06" maxx="2.51232e+06" maxy="-2.88876e+06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-503688" miny="7.46586e+06" maxx="-469260" maxy="7.5174e+06"/>
+        <BoundingBox CRS="EPSG:4258" minx="55.532280" miny="-4.524706" maxx="55.793395" maxy="-4.215438"/>
+        <BoundingBox CRS="CRS:84" minx="-4.524706" miny="55.532280" maxx="-4.215438" maxy="55.793395"/>
+    <Attribution>
+        <Title>British Geological Survey (BGS)</Title>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.bgs.ac.uk/"/>
+        <LogoURL width="275" height="60">
+             <Format>image/gif</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ogc.bgs.ac.uk/img/bgs_c_t_275x60.gif"/>
+          </LogoURL>
+    </Attribution>
+        <AuthorityURL name="BritishGeologicalSurvey">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://data.bgs.ac.uk/ref/BritishGeologicalSurvey"/>
+        </AuthorityURL>
+        <MetadataURL type="TC211">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/discoverymetadata/13603026.html"/>
+        </MetadataURL>
+        <DataURL>
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.bgs.ac.uk/datasets/geosure/"/>
+        </DataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="46" height="100">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GBR_Kilmarnock_BGS_50K_CompressibleGround&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        </Layer>
+      </Layer>
+    </Layer>
+  </Layer>
+</Capability>
+</WMS_Capabilities>

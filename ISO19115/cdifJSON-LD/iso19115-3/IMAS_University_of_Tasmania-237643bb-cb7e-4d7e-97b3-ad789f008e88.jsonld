@@ -1,0 +1,423 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "urn:uuid:237643bb-cb7e-4d7e-97b3-ad789f008e88",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "ETAS (Eastern TASmania) Ocean Model Output - Daily Timeseries",
+  "schema:dateCreated": "2015-01-11T00:00:00",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Oliver, Eric, Dr",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Institute for Marine and Antarctic Studies (IMAS), University of Tasmania (UTAS)"
+        },
+        "schema:email": "eric.oliver@utas.edu.au",
+        "schema:url": "http://orcid.org/0000-0002-4006-2826",
+        "schema:telephone": "03 6226 6663"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Holbrook, Neil",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Institute for Marine and Antarctic Studies (IMAS), University of Tasmania (UTAS)"
+        },
+        "schema:email": "neil.holbrook@utas.edu.au",
+        "schema:url": "http://orcid.org/0000-0002-3523-6254",
+        "schema:telephone": "03 6226 2027"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Herzfeld, Mike, Dr",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "CSIRO Oceans and Atmosphere – Hobart"
+        },
+        "schema:email": "mike.herzfeld@csiro.au"
+      }
+    ]
+  },
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Oliver, Eric, Dr",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Institute for Marine and Antarctic Studies (IMAS), University of Tasmania (UTAS)"
+        },
+        "schema:email": "eric.oliver@utas.edu.au",
+        "schema:url": "http://orcid.org/0000-0002-4006-2826",
+        "schema:telephone": "03 6226 6663"
+      }
+    }
+  ],
+  "schema:description": "The ETAS (Eastern TASmania) model is a high-resolution (~2 km in the horizontal) ocean model for eastern Tasmania, providing three-dimensional estimates of daily temperature, salinity, and circulation over the 1993-2014 period. This dataset consists of temperature, salinity, density, sea level, eastward (u) and northward (v) currents organised into timeseries files.\n\nSupplemental information: Oliver, E.C.J, M. Herzfeld and N.J. Holbrook, Modelling the shelf circulation off eastern Tasmania, submitted to Continental Shelf Research",
+  "schema:creativeWorkStatus": "completed",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "geographicDataset",
+      "schema:termCode": "geographicDataset",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "oceans",
+      "schema:termCode": "oceans",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE | OCEANS | OCEAN TEMPERATURE",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Earth Science Keywords Version 8.0",
+      "schema:url": "http://gcmdservices.gsfc.nasa.gov/kms/concept/251c87cd-03b3-464f-8390-8ede2fec28fc",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE | OCEANS | OCEAN TEMPERATURE | SEA SURFACE TEMPERATURE",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Earth Science Keywords Version 8.0",
+      "schema:url": "http://gcmdservices.gsfc.nasa.gov/kms/concept/bd24a9a9-7d52-4c29-b2a0-6cefd216ae78",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE | CLIMATE INDICATORS | ATMOSPHERIC/OCEAN INDICATORS | SURFACE SALINITY",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Earth Science Keywords Version 8.0",
+      "schema:url": "http://gcmdservices.gsfc.nasa.gov/kms/concept/1d8525f0-0cfc-4d59-8677-da5c8038deb7",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE | OCEANS | OCEAN CIRCULATION | OCEAN CURRENTS",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Earth Science Keywords Version 8.0",
+      "schema:url": "http://gcmdservices.gsfc.nasa.gov/kms/concept/510c5f78-e19e-4ce4-b59a-8937aeb84631",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE | OCEANS | SALINITY/DENSITY | DENSITY",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Earth Science Keywords Version 8.0",
+      "schema:url": "http://gcmdservices.gsfc.nasa.gov/kms/concept/007ab607-2ee1-484d-85fb-0bfb89f18c9b",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE | OCEANS | SALINITY/DENSITY | SALINITY",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Earth Science Keywords Version 8.0",
+      "schema:url": "http://gcmdservices.gsfc.nasa.gov/kms/concept/7e95b5fc-1d58-431a-af36-948b29fa870d",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE SERVICES | MODELS | OCEAN GENERAL CIRCULATION MODELS (OGCM)/REGIONAL OCEAN MODELS",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Earth Science Keywords Version 8.0",
+      "schema:url": "http://gcmdservices.gsfc.nasa.gov/kms/concept/c61a56a3-c08f-4989-92f3-0f0787688424",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE | OCEANS | COASTAL PROCESSES",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Earth Science Keywords Version 8.0",
+      "schema:url": "http://gcmdservices.gsfc.nasa.gov/kms/concept/b6fd22ab-dca7-4dfa-8812-913453b5695b",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE | OCEANS | COASTAL PROCESSES | SEA SURFACE HEIGHT",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Earth Science Keywords Version 8.0",
+      "schema:url": "http://gcmdservices.gsfc.nasa.gov/kms/concept/1ed24fe1-d0d5-46d1-8d22-8ac25d289c75",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Climatology (excl. Climate Change Processes)",
+      "schema:inDefinedTermSet": "http://purl.org/au-research/vocabulary/anzsrc-for/2008/",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Physical Oceanography",
+      "schema:inDefinedTermSet": "http://purl.org/au-research/vocabulary/anzsrc-for/2008/",
+      "schema:description": "keyword type: theme"
+    },
+    "Z coordinate at grid layer faces",
+    "Latitude at cell centre",
+    "Longitude at cell centre",
+    "Time",
+    "Surface Elevation",
+    "Eastward component of current",
+    "Northward component of current",
+    "K component of current at cell centre and Z grid",
+    "Eastward component of bottom current deviation",
+    "Northward component of bottom current deviation",
+    "Temperature",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Practical salinity of the water body",
+      "schema:inDefinedTermSet": "http://vocab.aodn.org.au/def/discovery_parameter/1",
+      "schema:url": "http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Density of the water body",
+      "schema:inDefinedTermSet": "http://vocab.aodn.org.au/def/discovery_parameter/1",
+      "schema:url": "http://vocab.aodn.org.au/def/discovery_parameter/entity/401",
+      "schema:description": "keyword type: theme"
+    }
+  ],
+  "schema:inLanguage": "en",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-44.4125 146.641 -40.8364 149.0897"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "1993-01-01T00:00:00/2014-12-31T00:00:00"
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:verticalExtent"
+        }
+      ],
+      "schema:name": "Vertical Extent",
+      "schema:value": {
+        "@type": [
+          "schema:QuantitativeValue"
+        ],
+        "schema:minValue": 0.0,
+        "schema:maxValue": 2470.0
+      }
+    }
+  ],
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "http://creativecommons.org/licenses/by/2.5/au/",
+      "schema:name": "Creative Commons Attribution 2.5 Australia License"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "security classification: unclassified",
+    "The data described in this record are the intellectual property of the University of Tasmania through the Institute for Marine and Antarctic Studies.",
+    "The citation in a list of references is: citation author name/s (year metadata published), metadata title. Citation author organisation/s. File identifier and Data accessed at (add http link).",
+    "Please contact the researcher when accessing the dataset."
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "ETAS paper (.pdf) [direct download]",
+      "schema:serviceType": "WWW:LINK-1.0-http--publication",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "ETAS paper (.pdf) [direct download]",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "http://thredds.imas.utas.edu.au/thredds/catalog/IMAS/EOliver_ETAS_ocean_model_output_timeseries_daily/doc/catalog.html?dataset=imas/EOliver_ETAS_ocean_model_output_timeseries_daily/doc/ETAS_paper.pdf",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "ETAS paper supplement (.pdf) [direct download]",
+      "schema:serviceType": "WWW:LINK-1.0-http--publication",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "ETAS paper supplement (.pdf) [direct download]",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "http://thredds.imas.utas.edu.au/thredds/catalog/IMAS/EOliver_ETAS_ocean_model_output_timeseries_daily/doc/catalog.html?dataset=imas/EOliver_ETAS_ocean_model_output_timeseries_daily/doc/ETAS_paper_suppmat.pdf",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "THREDDS catalogue of data files",
+      "schema:serviceType": "WWW:LINK-1.0-http--downloaddata",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "THREDDS catalogue of data files",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "http://thredds.imas.utas.edu.au/thredds/catalog/IMAS/EOliver_ETAS_ocean_model_output_timeseries_daily/catalog.html",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "schema:url": "http://thredds.imas.utas.edu.au/thredds/catalog/IMAS/EOliver_ETAS_ocean_model_output_timeseries_daily/doc/catalog.html?dataset=imas/EOliver_ETAS_ocean_model_output_timeseries_daily/doc/ETAS_paper.pdf",
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "Lineage",
+      "schema:actionProcess": "The Sparse Hydrodynamic Ocean Code (SHOC) developed at the CSIRO Marine Laboratories in Hobart (Australia) was used to dynamically simulate variability of the near-shore and continental shelf waters off eastern Tasmania for 1993-2014. SHOC is based on the nonlinear three-dimensional equations for momentum conservation, continuity, and the conservation of heat and salt. The model domain consists of the continental shelf and slope off eastern Tasmania. The domain was defined by a curvilinear horizontal grid with three open boundaries and the fourth side bounded by the Tasmanian coast. The seaward boundary ran parallel to the continental shelf break roughly following the 2500 m isobath. The two cross-shelf boundaries ran perpendicular to the shelf break and met the coast at South Cape in the south and just north of Eddystone Point in the north. The grid included two narrow spurs for the Derwent River and Huon River estuaries. River runoff was included by specifying the flow rate and temperature of freshwater input (zero salinity) every six hours at source points. The model boundary forcing consisted of daily fields of three-dimensional velocities, sea level, temperature and salinity from the 1/10-degree Bluelink ReANalysis (BRAN, version 3, 1/1/1993-31/7/2012) and OceanMAPS analysis (versions 2.0--2.2.1, 1/8/2012-31/12/2014). The model surface boundary forcing consisted of 6-hourly atmospheric fields provided by the National Centers for Environmental Prediction (NCEP) Climate Forecast System Reanalysis (CFSR, 1993-2010) and Climate Forecast System Version 2 analysis (CSFv2, 2011-2014). Daily fields of sea surface height and three-dimensional fields of velocity, temperature, and salinity, were output every day. Hourly time series were output at specific points of interest."
+    }
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "metadataIdentifier",
+    "schema:value": "237643bb-cb7e-4d7e-97b3-ad789f008e88"
+  },
+  "schema:dateModified": "2015-01-11T00:00:00",
+  "schema:subjectOf": {
+    "@id": "https://metadata.imas.utas.edu.au/geonetwork/srv/eng/catalog.search#/metadata/237643bb-cb7e-4d7e-97b3-ad789f008e88",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: ETAS (Eastern TASmania) Ocean Model Output - Daily Timeseries",
+    "schema:about": {
+      "@id": "urn:uuid:237643bb-cb7e-4d7e-97b3-ad789f008e88"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19115-3 to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "237643bb-cb7e-4d7e-97b3-ad789f008e88",
+    "schema:inLanguage": "en",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "IMAS Data Manager",
+      "schema:affiliation": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Institute for Marine and Antarctic Studies (IMAS), University of Tasmania (UTAS)"
+      },
+      "schema:email": "IMAS.DataManager@utas.edu.au"
+    }
+  }
+}

@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<csw:Record xmlns:csw="http://www.opengis.net/cat/csw/2.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/">a960060c-b5a9-4843-93f8-d87200649878</dc:identifier>
+      <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">Eastern Torres Strait Seagrass Survey, Torres Strait, September 2020 (TropWATER, JCU)</dc:title>
+      <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/">dataset</dc:type>
+      <dc:subject xmlns:dc="http://purl.org/dc/elements/1.1/">marine</dc:subject>
+      <dc:subject xmlns:dc="http://purl.org/dc/elements/1.1/">biota</dc:subject>
+      <dct:abstract xmlns:dct="http://purl.org/dc/terms/">This dataset summarises intertidal benthic surveys of the Eastern Cluster, Torres Strait, in September 2020 into 3 GIS shapefiles.
+
+(1) The site shapefile describes (a) seagrass presence/absence, (b) species composition, (c) algae cover and (d) benthic macro-invertebrate cover at 798 sites.
+(2) The meadow shapefile describes seagrass communities for the intertidal meadows.
+(3) The interpolation shapefile describes variation in seagrass biomass across sites for the intertidal meadows.
+
+The full report is: Carter AB, David M, Wilkinson J, Lukac M (2021) Torres Strait Eastern Cluster: Intertidal seagrass baseline survey, JCU Publication, Report no. 21/12, Centre for Tropical Water &amp; Aquatic Ecosystem Research, Cairns, pp.42
+
+
+Methods:
+
+The sampling methods used to study, describe and monitor seagrass meadows were developed by the TropWATER Seagrass Group and tailored to the location and habitat surveyed; these are described in detail in the relevant publications (https://research.jcu.edu.au/tropwater).
+
+1. Location
+Sites were surveyed by helicopter. At each site latitude and longitude was recorded by GPS. Sediment type was recorded.
+
+2. Seagrass metrics
+At each site observers estimated the percent cover of seagrass, then for three quadrats within each site, ranked seagrass biomass and estimated the percent contribution of each species to that biomass.
+Helicopter was used for the intertidal surveys following TropWATER’s methods to assess areas at high risk from shipping accidents in Torres Strait (Carter et al. 2013). At each site the helicopter comes into a low hover and seagrass was ranked and species composition estimated from three 0.25 m2 quadrats placed randomly within a 10m^2 circular area.
+
+Seagrass above-ground biomass was determined using the “visual estimates of biomass” technique (Mellors 1991) using trained observers. This involves ranking seagrass biomass while referring to a series of quadrat photographs of similar seagrass habitats for which the above-ground biomass has been previously measured. Three separate biomass scales are used: low biomass, high biomass, and Enhalus biomass. The percent contribution of each seagrass species to total above-ground biomass within each quadrat is also recorded. At the completion of sampling each observer ranks a series of calibration quadrats. A linear regression is then calculated for the relationship between the observer ranks and the harvested values. This regression is used to calibrate above-ground biomass estimates for all ranks made by that observer during the survey. Biomass ranks are then converted to above-ground biomass in grams dry weight per square metre (g DW m^-2).
+
+3. Benthic macro-invertebrates
+At each site a visual estimate of benthic macro-invertebrate (BMI) percent cover was recorded each site according to four broad taxonomic groups:
+- Hard coral – All scleractinian corals including massive, branching, tabular, digitate and mushroom.
+- Soft coral – All alcyonarian corals, i.e. corals lacking a hard limestone skeleton.
+- Sponge.
+- Other BMI – Any other BMI identified, e.g. hydroid, ascidian, barnacle, oyster, mollusc. Other BMI are listed in the “comments” column of the GIS site layer.
+
+4. Algae
+A visual estimate of algae percent cover was recorded at each site. When present, algae were categorised into five functional groups and the percent contribution of each functional group was estimated:
+- Erect macrophyte – Macrophytic algae with an erect growth form and high level of cellular differentiation, e.g. Sargassum, Caulerpa and Galaxaura species.
+- Erect calcareous – Algae with erect growth form and high level of cellular differentiation containing calcified segments, e.g. Halimeda species.
+- Filamentous – Thin, thread-like algae with little cellular differentiation.
+- Encrusting – Algae that grows in sheet-like form attached to the substrate or benthos, e.g. coralline algae.
+- Turf mat – Algae that forms a dense mat on the substrate.
+
+Geographic Information System (GIS)
+All survey data were entered into a Geographic Information System (GIS) developed for Torres Strait using ArcGIS 10.8. Rectified colour satellite imagery of Eastern Torres (Source: ESRI, Maxar, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community), field notes and aerial photographs taken from the helicopter during surveys were used to identify geographical features, such as reef tops, channels and deep-water drop-offs, to assist in determining seagrass meadow boundaries. Three GIS layers were created to describe spatial features of the region: a site layer, seagrass meadow layer, and seagrass biomass interpolation layer.
+
+Site layer
+This layer contains data collected at each site, including:
+- Temporal details – survey date.
+- Spatial details – latitude/longitude.
+- Habitat information – sediment type; seagrass information including presence/absence and above-ground biomass (total and for each species); percent cover of seagrass, algae, hard coral, soft coral, sponges, other BMI, and open substrate; percent contribution of algae functional groups to algae cover.
+- Sampling method and any relevant comments.
+
+Seagrass meadow layer
+Seagrass presence/absence site data, mapping sites, field notes, and satellite imagery were used to construct meadow boundaries in ArcGIS®. The meadow (polygon) layer provides summary information for all sites within the meadow, including:
+1.	Habitat information – seagrass species present, meadow community type, meadow cover, mean meadow biomass + standard error (SE), meadow area + reliability estimate (R), and number of sites within the meadow.
+2.	A meadow identification number and reef name; this allows individual meadows to be compared among years.
+3.	Sampling methods.
+
+Meadow community type was determined according to seagrass species composition within each meadow. Species composition was based on the percent each species’ biomass contributed to mean meadow biomass. A standard nomenclature system was used to categorize each meadow (Table 1). This nomenclature also included a measure of meadow density categories (light, moderate, dense) determined by mean biomass of the dominant species within the meadow (Table 2).
+Mapping precision estimates (R; in metres) were based on the mapping method used for that meadow (Table 3). Mapping precision estimates ranged from 10-50m for intertidal seagrass meadows and up to 100m for meadow mapping precision estimates based on the distance between sites with and without seagrass. Mapping precision estimate was used to calculate an error buffer around each meadow; the area of this buffer is expressed as a meadow reliability estimate (R) in hectares. Meadow area and error buffers were determined in hectares using the calculate geometry function in ArcGIS.
+
+Table 1. Nomenclature for seagrass community types.
+
+Community type (Species composition)
+Species A (Species A is 90-100% of composition)
+Species A with Species B (Species A is 60-90% of composition)
+Species A with Species B/Species C (Species A is 50% of composition)
+Species A/Species B (Species A is 40-60% of composition)
+
+
+Table 2. Density categories and mean above-ground biomass ranges for each species used in determining seagrass community density.
+Mean above-ground biomass (g DW m-2)
+
+Species: H. uninervis (thin)
+Categories: Light (&lt;1), Moderate (1 - 4), Dense (&gt;4)
+
+Species: H. ovalis
+Categories: Light (&lt;1), Moderate (1 - 5), Dense (&gt;5)
+
+Species: C. serrulata, C. rotundata, T. hemprichii
+Categories: Light (&lt;5), Moderate (5 - 25), Dense (&gt;25)
+
+Species: E. acoroides
+Categories: Light (&lt;40), Moderate (40 - 100), Dense (&gt;100)
+
+
+Table 3. Mapping precision and methods for seagrass meadows.
+Mapping precision: Mapping method
+
+1-20 m:
+- Meadow boundaries mapped in detail by GPS from helicopter
+- Intertidal meadows completely exposed or visible at low tide
+- Relatively high density of mapping and survey sites
+- Recent aerial photography and satellite imagery aided in mapping
+
+20-50 m:
+- Parts of meadow boundary mapped in detail by GPS from helicopter
+- Parts of meadow boundary determined from presence/absence site data and satellite imagery
+- Relatively high density of mapping and survey sites
+
+
+Seagrass biomass interpolation layer
+An inverse distance weighted (IDW) interpolation was applied to seagrass site data to describe spatial variation in seagrass biomass within seagrass meadows. The interpolation was conducted in ArcMap 10.8.
+
+An assessment of seagrass condition for all of Torres Strait, can be found in this publication:
+Carter et al. (2021) Torres Strait Seagrass 2021 Report Card. TropWATER JCU, Report no. 21/13
+
+
+Format of the data:
+
+This dataset consists of 3 shapefiles with a spatial reference of GDA94.
+
+Meadow shapefile
+- Eastern Torres community type 2020.lpk
+Includes 23 individual seagrass meadows across Eastern Torres mapped in 2020 with information including individual meadow ID, meadow mean seagrass biomass (g DW m^-2) + SE, number of sites surveyed, seagrass cover, meadow area + R, seagrass community type, seagrass species present, survey dates, survey method, and data author. ESRI and Landsat satellite image basemaps were used as background source data to check meadow and site boundaries, and re-map where required.
+
+- Eastern Torres biomass interpolation 2020.lpk
+An inverse distance weighted (IDW) interpolation was applied to seagrass site data to describe spatial variation in biomass across Eastern Torres.
+
+Site shapefile
+Includes information including latitude/longitude, seagrass presence/absence, algae and benthic macro-invertebrate percent cover, percent cover of algae functional groups, individual seagrass species biomass, survey date, survey method, and data author.
+
+These shapefiles have been presented as 4 layer packages based on symbology from specific columns:
+- Eastern Torres seagrass present absent 2020.lpk
+- Eastern Torres species composition 2020.lpk
+- Eastern Torres algae cover 2020.lpk
+- Eastern Torres benthic macro-invertebrates 2020.lpk
+
+
+Data dictionary:
+
+Eastern Torres Strait seagrass survey sites 2020 (point data):
+- Site (numeric) - Unique identifier representing a single sample site
+- Meadow_ID (numeric) - Unique identifier representing what meadow the sample site is located in. Blank if sample site is not located within a meadow
+- Date (numeric) - Survey date/s
+- Time (numeric) - sample time (24 hours; AEST GMT +10)
+- Location (text) - Name of survey location
+- Latitude (numeric) - Site location in decimal degrees south
+- Longitude (numeric) - Site location in decimal degrees east
+- Depth (numeric) - Depth of site below mean sea level (dbmsl) unit is in metres
+- Substrate (text) - Tags identifying the types of substrates at the sample site. Possible tags are Sand, Shell, Rock, Reef, Rubble and various combinations
+- Seagrass_p (numeric) - Absence (0) or Presence (1) of seagrass
+- Seagrass_c (numeric) - Estimated % of seagrass cover at sample site
+- Seagrass_b (numeric) - Estimated total biomass per square metre for sample site calculated from the mean of three replicate quadrats. Unit is gdw m^-2
+- SE (numeric) - standard error of biomass at sample site calculated from the three replicate quadrats used to estimate biomass at a sample site. Unit is gdw m^-2
+- Exclude_fr (numeric) - Any site identified that needs to be excluded from contributing to the calculation of mean meadow biomass, e.g. where a visual estimate of biomass could not be optioned (i.e. no visibility at the site, only a van Veen sediment grab was used at the site)
+- EA (numeric) - Estimated biomass of Enhalus acoroides at the sample site. Unit is gdw m^-2
+- TH (numeric) - Estimated biomass of Thalassia hemprichii at the sample site. Unit is gdw m^-2
+- CR (numeric) - Estimated biomass of Cymodocea rotundata at the sample site. Unit is gdw m^-2
+- HUT (numeric) - Estimated biomass of Halodule uninervis (thin morphology) at the sample site. Unit is gdw m^-2
+- HO (numeric) - Estimated biomass of Halophila ovalis at the sample site. Unit is gdw m^-2
+- Vessel (text) - Name of vessel used in the survey. If no name then leave blank
+- Camera (numeric) - Drop camera utilised (1) or not (0) at sample site
+- Helicopter (numeric) - Helicopter utilised (1) or not (0) at sample site
+- DFTs_prese (numeric) - Absence (0) or Presence (1) of dugong feeding trails at site
+- Author (text) - Author of this dataset
+- Comments (text) - Any comments for that site
+- Updated (date) - The date the shapefile was last updated
+- Algae_cove (numeric) - Estimated % of algae cover at sample site
+- turf_mat_a (numeric) - (Turf mat %) Algae that forms a dense mat on the substrate
+- erect_macr (numeric) - (Erect macrophyte %) Macrophytic algae with an erect growth form and high level of cellular differentiation, e.g. Sargassum, Caulerpa and Galaxaura species
+- encrusting (numeric) - (Encrusting algae %) Algae that grows in sheet-like form attached to the substrate or benthos, e.g. coralline algae
+- erect_calc (numeric) - (Erect calcareous %) Algae with erect growth form and high level of cellular differentiation containing calcified segments, e.g. Halimeda species
+- filamentou (numeric) - (Filamentous %) Thin, thread-like algae with little cellular differentiation
+- Benthos_co (numeric) - Estimated % of benthos cover at sample site
+- open_subst (numeric) - Open substrate, no benthic macro-invertebrates at site
+- hard_coral (numeric) - (Hard coral %) All scleractinian corals including massive, branching, tabular, digitate and mushroom
+- soft_coral (numeric) - (Soft coral %) All alcyonarian corals, i.e. corals lacking a hard limestone skeleton
+- sponge_cov (numeric) - (Sponge %)
+- other_BMI (numeric) - Any other benthic macro-invertebrates identified, e.g. ascidians, clams. Other benthic macro-invertebrates are listed in the “comments” attribute
+
+Note: turf_mat_a + erect_macr + encrusting + erect_calc = 100%
+Note: Seagrass_c + Algae_cove + open_subst + hard_coral + soft_coral + sponge_cov + other_bmi = 100%
+
+Eastern Torres Strait seagrass meadows 2020 (polygon data):
+- Meadow_ID (numeric) - Unique identifier representing a single meadow
+- Sites (numeric) - (Number of survey sites): the number of sample sites within the meadow
+- R_m (numeric) - (Meadow mapping precision (m)): Estimated mapping precision based on mapping method
+- Species (text) - List of seagrass species found within the meadow. Species are recorded as abbreviated species names such as “E. acoroides”
+- Type (text) - Meadow community type determined according to seagrass species composition within the meadow
+- Landscape (text) - Seagrass meadow landscape categories: isolated patches, aggregated patches, continuous seagrass cover
+- Biomass (numeric) - (Seagrass biomass (gdw m^-2)): Mean biomass calculated from all sites within an individual meadow
+- Methods (text): Method by which the survey was undertakes (Boat - camera and grab or Helicopter)
+- Updated (date) - The date the shapefile was last updated
+- Date (numeric) - Sample date (day/month/year)
+- Author (text) - Author of this dataset
+- Area_ha (numeric) - (Meadow area (Ha)): Estimated meadow size (unit: hectares)
+- R_ha (numeric) - (Meadow reliability estimate (Ha)): Meadow reliability estimate (unit: hectares). Expressing the error buffer around each meadow as calculated from the mapping precision estimate
+
+Eastern Torres Strait biomass interpolation 2020 (interpolation layer):
+- Band 1: Interpolated biomass in gdw m^-2
+
+
+References:
+
+The full report is: Carter AB, David M, Wilkinson J, Lukac M (2021) Torres Strait Eastern Cluster: Intertidal seagrass baseline survey, JCU Publication, Report no. 21/12, Centre for Tropical Water &amp; Aquatic Ecosystem Research, Cairns, pp.42
+
+
+eAtlas Processing:
+
+The original data were provided as Layer Packages. The lpkg files were imported to ArcGIS and exported as shapefiles and GeoTiff. In "TS_JCU_Eastern-Torres-Strait_2020_Seagrass-Site-surveys.shp" the attribute "Seagrass" was renamed to "Seagrass_p", and the attribute "Biomass" was renamed to "Seagrass_b" to be consistent with previous datasets. All "-1" values in the attributes "Seagrass_p", "Helicopter", "DFTs_prese" were inverted to "1" to indicate "present" for "Seagrass_p" and "DFTs_prese", and "used" for "Helicopter". In "TS_JCU_Eastern-Torres-Strait_2020_Seagrass-community-type.shp" the attribute "Cover" was renamed to "Landscape", and "Hectares2" renamed to "Area_ha" to be consistent with previous datasets. No further modifications modifications to the underlying data were performed and the data package are provided as submitted.
+
+
+Data Location:
+
+This dataset is filed in the eAtlas enduring data repository at: `custodian\2018-2025-TSRA\TS_JCU_Eastern-Torres-Strait_2020`</dct:abstract>
+      <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">This dataset summarises intertidal benthic surveys of the Eastern Cluster, Torres Strait, in September 2020 into 3 GIS shapefiles.
+
+(1) The site shapefile describes (a) seagrass presence/absence, (b) species composition, (c) algae cover and (d) benthic macro-invertebrate cover at 798 sites.
+(2) The meadow shapefile describes seagrass communities for the intertidal meadows.
+(3) The interpolation shapefile describes variation in seagrass biomass across sites for the intertidal meadows.
+
+The full report is: Carter AB, David M, Wilkinson J, Lukac M (2021) Torres Strait Eastern Cluster: Intertidal seagrass baseline survey, JCU Publication, Report no. 21/12, Centre for Tropical Water &amp; Aquatic Ecosystem Research, Cairns, pp.42
+
+
+Methods:
+
+The sampling methods used to study, describe and monitor seagrass meadows were developed by the TropWATER Seagrass Group and tailored to the location and habitat surveyed; these are described in detail in the relevant publications (https://research.jcu.edu.au/tropwater).
+
+1. Location
+Sites were surveyed by helicopter. At each site latitude and longitude was recorded by GPS. Sediment type was recorded.
+
+2. Seagrass metrics
+At each site observers estimated the percent cover of seagrass, then for three quadrats within each site, ranked seagrass biomass and estimated the percent contribution of each species to that biomass.
+Helicopter was used for the intertidal surveys following TropWATER’s methods to assess areas at high risk from shipping accidents in Torres Strait (Carter et al. 2013). At each site the helicopter comes into a low hover and seagrass was ranked and species composition estimated from three 0.25 m2 quadrats placed randomly within a 10m^2 circular area.
+
+Seagrass above-ground biomass was determined using the “visual estimates of biomass” technique (Mellors 1991) using trained observers. This involves ranking seagrass biomass while referring to a series of quadrat photographs of similar seagrass habitats for which the above-ground biomass has been previously measured. Three separate biomass scales are used: low biomass, high biomass, and Enhalus biomass. The percent contribution of each seagrass species to total above-ground biomass within each quadrat is also recorded. At the completion of sampling each observer ranks a series of calibration quadrats. A linear regression is then calculated for the relationship between the observer ranks and the harvested values. This regression is used to calibrate above-ground biomass estimates for all ranks made by that observer during the survey. Biomass ranks are then converted to above-ground biomass in grams dry weight per square metre (g DW m^-2).
+
+3. Benthic macro-invertebrates
+At each site a visual estimate of benthic macro-invertebrate (BMI) percent cover was recorded each site according to four broad taxonomic groups:
+- Hard coral – All scleractinian corals including massive, branching, tabular, digitate and mushroom.
+- Soft coral – All alcyonarian corals, i.e. corals lacking a hard limestone skeleton.
+- Sponge.
+- Other BMI – Any other BMI identified, e.g. hydroid, ascidian, barnacle, oyster, mollusc. Other BMI are listed in the “comments” column of the GIS site layer.
+
+4. Algae
+A visual estimate of algae percent cover was recorded at each site. When present, algae were categorised into five functional groups and the percent contribution of each functional group was estimated:
+- Erect macrophyte – Macrophytic algae with an erect growth form and high level of cellular differentiation, e.g. Sargassum, Caulerpa and Galaxaura species.
+- Erect calcareous – Algae with erect growth form and high level of cellular differentiation containing calcified segments, e.g. Halimeda species.
+- Filamentous – Thin, thread-like algae with little cellular differentiation.
+- Encrusting – Algae that grows in sheet-like form attached to the substrate or benthos, e.g. coralline algae.
+- Turf mat – Algae that forms a dense mat on the substrate.
+
+Geographic Information System (GIS)
+All survey data were entered into a Geographic Information System (GIS) developed for Torres Strait using ArcGIS 10.8. Rectified colour satellite imagery of Eastern Torres (Source: ESRI, Maxar, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community), field notes and aerial photographs taken from the helicopter during surveys were used to identify geographical features, such as reef tops, channels and deep-water drop-offs, to assist in determining seagrass meadow boundaries. Three GIS layers were created to describe spatial features of the region: a site layer, seagrass meadow layer, and seagrass biomass interpolation layer.
+
+Site layer
+This layer contains data collected at each site, including:
+- Temporal details – survey date.
+- Spatial details – latitude/longitude.
+- Habitat information – sediment type; seagrass information including presence/absence and above-ground biomass (total and for each species); percent cover of seagrass, algae, hard coral, soft coral, sponges, other BMI, and open substrate; percent contribution of algae functional groups to algae cover.
+- Sampling method and any relevant comments.
+
+Seagrass meadow layer
+Seagrass presence/absence site data, mapping sites, field notes, and satellite imagery were used to construct meadow boundaries in ArcGIS®. The meadow (polygon) layer provides summary information for all sites within the meadow, including:
+1.	Habitat information – seagrass species present, meadow community type, meadow cover, mean meadow biomass + standard error (SE), meadow area + reliability estimate (R), and number of sites within the meadow.
+2.	A meadow identification number and reef name; this allows individual meadows to be compared among years.
+3.	Sampling methods.
+
+Meadow community type was determined according to seagrass species composition within each meadow. Species composition was based on the percent each species’ biomass contributed to mean meadow biomass. A standard nomenclature system was used to categorize each meadow (Table 1). This nomenclature also included a measure of meadow density categories (light, moderate, dense) determined by mean biomass of the dominant species within the meadow (Table 2).
+Mapping precision estimates (R; in metres) were based on the mapping method used for that meadow (Table 3). Mapping precision estimates ranged from 10-50m for intertidal seagrass meadows and up to 100m for meadow mapping precision estimates based on the distance between sites with and without seagrass. Mapping precision estimate was used to calculate an error buffer around each meadow; the area of this buffer is expressed as a meadow reliability estimate (R) in hectares. Meadow area and error buffers were determined in hectares using the calculate geometry function in ArcGIS.
+
+Table 1. Nomenclature for seagrass community types.
+
+Community type (Species composition)
+Species A (Species A is 90-100% of composition)
+Species A with Species B (Species A is 60-90% of composition)
+Species A with Species B/Species C (Species A is 50% of composition)
+Species A/Species B (Species A is 40-60% of composition)
+
+
+Table 2. Density categories and mean above-ground biomass ranges for each species used in determining seagrass community density.
+Mean above-ground biomass (g DW m-2)
+
+Species: H. uninervis (thin)
+Categories: Light (&lt;1), Moderate (1 - 4), Dense (&gt;4)
+
+Species: H. ovalis
+Categories: Light (&lt;1), Moderate (1 - 5), Dense (&gt;5)
+
+Species: C. serrulata, C. rotundata, T. hemprichii
+Categories: Light (&lt;5), Moderate (5 - 25), Dense (&gt;25)
+
+Species: E. acoroides
+Categories: Light (&lt;40), Moderate (40 - 100), Dense (&gt;100)
+
+
+Table 3. Mapping precision and methods for seagrass meadows.
+Mapping precision: Mapping method
+
+1-20 m:
+- Meadow boundaries mapped in detail by GPS from helicopter
+- Intertidal meadows completely exposed or visible at low tide
+- Relatively high density of mapping and survey sites
+- Recent aerial photography and satellite imagery aided in mapping
+
+20-50 m:
+- Parts of meadow boundary mapped in detail by GPS from helicopter
+- Parts of meadow boundary determined from presence/absence site data and satellite imagery
+- Relatively high density of mapping and survey sites
+
+
+Seagrass biomass interpolation layer
+An inverse distance weighted (IDW) interpolation was applied to seagrass site data to describe spatial variation in seagrass biomass within seagrass meadows. The interpolation was conducted in ArcMap 10.8.
+
+An assessment of seagrass condition for all of Torres Strait, can be found in this publication:
+Carter et al. (2021) Torres Strait Seagrass 2021 Report Card. TropWATER JCU, Report no. 21/13
+
+
+Format of the data:
+
+This dataset consists of 3 shapefiles with a spatial reference of GDA94.
+
+Meadow shapefile
+- Eastern Torres community type 2020.lpk
+Includes 23 individual seagrass meadows across Eastern Torres mapped in 2020 with information including individual meadow ID, meadow mean seagrass biomass (g DW m^-2) + SE, number of sites surveyed, seagrass cover, meadow area + R, seagrass community type, seagrass species present, survey dates, survey method, and data author. ESRI and Landsat satellite image basemaps were used as background source data to check meadow and site boundaries, and re-map where required.
+
+- Eastern Torres biomass interpolation 2020.lpk
+An inverse distance weighted (IDW) interpolation was applied to seagrass site data to describe spatial variation in biomass across Eastern Torres.
+
+Site shapefile
+Includes information including latitude/longitude, seagrass presence/absence, algae and benthic macro-invertebrate percent cover, percent cover of algae functional groups, individual seagrass species biomass, survey date, survey method, and data author.
+
+These shapefiles have been presented as 4 layer packages based on symbology from specific columns:
+- Eastern Torres seagrass present absent 2020.lpk
+- Eastern Torres species composition 2020.lpk
+- Eastern Torres algae cover 2020.lpk
+- Eastern Torres benthic macro-invertebrates 2020.lpk
+
+
+Data dictionary:
+
+Eastern Torres Strait seagrass survey sites 2020 (point data):
+- Site (numeric) - Unique identifier representing a single sample site
+- Meadow_ID (numeric) - Unique identifier representing what meadow the sample site is located in. Blank if sample site is not located within a meadow
+- Date (numeric) - Survey date/s
+- Time (numeric) - sample time (24 hours; AEST GMT +10)
+- Location (text) - Name of survey location
+- Latitude (numeric) - Site location in decimal degrees south
+- Longitude (numeric) - Site location in decimal degrees east
+- Depth (numeric) - Depth of site below mean sea level (dbmsl) unit is in metres
+- Substrate (text) - Tags identifying the types of substrates at the sample site. Possible tags are Sand, Shell, Rock, Reef, Rubble and various combinations
+- Seagrass_p (numeric) - Absence (0) or Presence (1) of seagrass
+- Seagrass_c (numeric) - Estimated % of seagrass cover at sample site
+- Seagrass_b (numeric) - Estimated total biomass per square metre for sample site calculated from the mean of three replicate quadrats. Unit is gdw m^-2
+- SE (numeric) - standard error of biomass at sample site calculated from the three replicate quadrats used to estimate biomass at a sample site. Unit is gdw m^-2
+- Exclude_fr (numeric) - Any site identified that needs to be excluded from contributing to the calculation of mean meadow biomass, e.g. where a visual estimate of biomass could not be optioned (i.e. no visibility at the site, only a van Veen sediment grab was used at the site)
+- EA (numeric) - Estimated biomass of Enhalus acoroides at the sample site. Unit is gdw m^-2
+- TH (numeric) - Estimated biomass of Thalassia hemprichii at the sample site. Unit is gdw m^-2
+- CR (numeric) - Estimated biomass of Cymodocea rotundata at the sample site. Unit is gdw m^-2
+- HUT (numeric) - Estimated biomass of Halodule uninervis (thin morphology) at the sample site. Unit is gdw m^-2
+- HO (numeric) - Estimated biomass of Halophila ovalis at the sample site. Unit is gdw m^-2
+- Vessel (text) - Name of vessel used in the survey. If no name then leave blank
+- Camera (numeric) - Drop camera utilised (1) or not (0) at sample site
+- Helicopter (numeric) - Helicopter utilised (1) or not (0) at sample site
+- DFTs_prese (numeric) - Absence (0) or Presence (1) of dugong feeding trails at site
+- Author (text) - Author of this dataset
+- Comments (text) - Any comments for that site
+- Updated (date) - The date the shapefile was last updated
+- Algae_cove (numeric) - Estimated % of algae cover at sample site
+- turf_mat_a (numeric) - (Turf mat %) Algae that forms a dense mat on the substrate
+- erect_macr (numeric) - (Erect macrophyte %) Macrophytic algae with an erect growth form and high level of cellular differentiation, e.g. Sargassum, Caulerpa and Galaxaura species
+- encrusting (numeric) - (Encrusting algae %) Algae that grows in sheet-like form attached to the substrate or benthos, e.g. coralline algae
+- erect_calc (numeric) - (Erect calcareous %) Algae with erect growth form and high level of cellular differentiation containing calcified segments, e.g. Halimeda species
+- filamentou (numeric) - (Filamentous %) Thin, thread-like algae with little cellular differentiation
+- Benthos_co (numeric) - Estimated % of benthos cover at sample site
+- open_subst (numeric) - Open substrate, no benthic macro-invertebrates at site
+- hard_coral (numeric) - (Hard coral %) All scleractinian corals including massive, branching, tabular, digitate and mushroom
+- soft_coral (numeric) - (Soft coral %) All alcyonarian corals, i.e. corals lacking a hard limestone skeleton
+- sponge_cov (numeric) - (Sponge %)
+- other_BMI (numeric) - Any other benthic macro-invertebrates identified, e.g. ascidians, clams. Other benthic macro-invertebrates are listed in the “comments” attribute
+
+Note: turf_mat_a + erect_macr + encrusting + erect_calc = 100%
+Note: Seagrass_c + Algae_cove + open_subst + hard_coral + soft_coral + sponge_cov + other_bmi = 100%
+
+Eastern Torres Strait seagrass meadows 2020 (polygon data):
+- Meadow_ID (numeric) - Unique identifier representing a single meadow
+- Sites (numeric) - (Number of survey sites): the number of sample sites within the meadow
+- R_m (numeric) - (Meadow mapping precision (m)): Estimated mapping precision based on mapping method
+- Species (text) - List of seagrass species found within the meadow. Species are recorded as abbreviated species names such as “E. acoroides”
+- Type (text) - Meadow community type determined according to seagrass species composition within the meadow
+- Landscape (text) - Seagrass meadow landscape categories: isolated patches, aggregated patches, continuous seagrass cover
+- Biomass (numeric) - (Seagrass biomass (gdw m^-2)): Mean biomass calculated from all sites within an individual meadow
+- Methods (text): Method by which the survey was undertakes (Boat - camera and grab or Helicopter)
+- Updated (date) - The date the shapefile was last updated
+- Date (numeric) - Sample date (day/month/year)
+- Author (text) - Author of this dataset
+- Area_ha (numeric) - (Meadow area (Ha)): Estimated meadow size (unit: hectares)
+- R_ha (numeric) - (Meadow reliability estimate (Ha)): Meadow reliability estimate (unit: hectares). Expressing the error buffer around each meadow as calculated from the mapping precision estimate
+
+Eastern Torres Strait biomass interpolation 2020 (interpolation layer):
+- Band 1: Interpolated biomass in gdw m^-2
+
+
+References:
+
+The full report is: Carter AB, David M, Wilkinson J, Lukac M (2021) Torres Strait Eastern Cluster: Intertidal seagrass baseline survey, JCU Publication, Report no. 21/12, Centre for Tropical Water &amp; Aquatic Ecosystem Research, Cairns, pp.42
+
+
+eAtlas Processing:
+
+The original data were provided as Layer Packages. The lpkg files were imported to ArcGIS and exported as shapefiles and GeoTiff. In "TS_JCU_Eastern-Torres-Strait_2020_Seagrass-Site-surveys.shp" the attribute "Seagrass" was renamed to "Seagrass_p", and the attribute "Biomass" was renamed to "Seagrass_b" to be consistent with previous datasets. All "-1" values in the attributes "Seagrass_p", "Helicopter", "DFTs_prese" were inverted to "1" to indicate "present" for "Seagrass_p" and "DFTs_prese", and "used" for "Helicopter". In "TS_JCU_Eastern-Torres-Strait_2020_Seagrass-community-type.shp" the attribute "Cover" was renamed to "Landscape", and "Hectares2" renamed to "Area_ha" to be consistent with previous datasets. No further modifications modifications to the underlying data were performed and the data package are provided as submitted.
+
+
+Data Location:
+
+This dataset is filed in the eAtlas enduring data repository at: `custodian\2018-2025-TSRA\TS_JCU_Eastern-Torres-Strait_2020`</dc:description>
+      <dc:language xmlns:dc="http://purl.org/dc/elements/1.1/">eng</dc:language>
+      <dc:URI xmlns:dc="http://purl.org/dc/elements/1.1/" protocol="WWW:LINK-1.0-http--related" name="&#10;                Interactive map of this dataset&#10;              ">https://maps.eatlas.org.au/index.html?intro=false&amp;z=10&amp;ll=144.11977,-9.63295&amp;l0=ea_jcu%3ATS_JCU_Eastern-Torres-Strait_2020_Seagrass-Site-surveys,ea_jcu%3ATS_JCU_Eastern-Torres-Strait_2020_Seagrass-biomass-interp,ea_jcu%3ATS_JCU_Eastern-Torres-Strait_2020_Seagrass-community-type,ea_ea-be%3AWorld_Bright-Earth-e-Atlas-basemap,google_HYBRID,google_TERRAIN,google_SATELLITE,google_ROADMAP&amp;v0=,,,,f,f,f,f</dc:URI>
+      <dc:URI xmlns:dc="http://purl.org/dc/elements/1.1/" protocol="WWW:DOWNLOAD-1.0-http--download" name="&#10;                Download a copy of the survey data [2 x shapefiles, 1 x Tiff, 5 x jpg]&#10;              ">https://nextcloud.eatlas.org.au/apps/sharealias/a/TS_JCU_Eastern-Torres-Strait_2020</dc:URI>
+      <dc:URI xmlns:dc="http://purl.org/dc/elements/1.1/" protocol="OGC:WMS" name="&#10;                jcu:TS_JCU_Eastern-Torres-Strait_2020_Seagrass-biomass-interp&#10;              " description="&#10;                TS: Biomass Interpolation, Eastern Torres Strait 2020 (JCU)&#10;              ">https://maps.eatlas.org.au/maps/wms</dc:URI>
+      <dc:URI xmlns:dc="http://purl.org/dc/elements/1.1/" protocol="OGC:WMS" name="&#10;                jcu:TS_JCU_Eastern-Torres-Strait_2020_Seagrass-community-type&#10;              " description="&#10;                TS: Seagrass Community Type, Eastern Torres Strait 2020 (JCU)&#10;              ">https://maps.eatlas.org.au/maps/wms</dc:URI>
+      <dc:URI xmlns:dc="http://purl.org/dc/elements/1.1/" protocol="OGC:WMS" name="&#10;                jcu:TS_JCU_Eastern-Torres-Strait_2020_Seagrass-Site-surveys&#10;              " description="&#10;                TS: Seagrass present absent, Eastern Torres Strait 2020 (JCU)&#10;              ">https://maps.eatlas.org.au/maps/wms</dc:URI>
+      <dc:URI xmlns:dc="http://purl.org/dc/elements/1.1/" name="Seagrass presence/absence at intertidal sites in the Eastern Cluster, Torres Strait, 2020 (TropWATER, James Cook University)">https://catalogue.eatlas.org.au/geonetwork/srv/api/records/a960060c-b5a9-4843-93f8-d87200649878/attachments/Eastern%20cluster%20survey%20sites%202020.jpg</dc:URI>
+      <dc:URI xmlns:dc="http://purl.org/dc/elements/1.1/" name="Seagrass intertidal species composition and meadow community types at Erub Island and surrounding reefs, Eastern Cluster, Torres Strait, 2020 (TropWATER, James Cook University)">https://catalogue.eatlas.org.au/geonetwork/srv/api/records/a960060c-b5a9-4843-93f8-d87200649878/attachments/Eastern%20cluster%20species%20composition%20and%20community%20type%202020.jpg</dc:URI>
+      <dc:URI xmlns:dc="http://purl.org/dc/elements/1.1/" name="Variation in intertidal seagrass biomass on Mer, Dauar and Waier intertidal fringing reefs, Eastern Cluster, Torres Strait, 2020 (TropWATER, James Cook University)">https://catalogue.eatlas.org.au/geonetwork/srv/api/records/a960060c-b5a9-4843-93f8-d87200649878/attachments/Eastern%20cluster%20seagrass%20biomass%202020.jpg</dc:URI>
+      <dc:URI xmlns:dc="http://purl.org/dc/elements/1.1/" name="Benthic macroinvertebrate communities at survey sites between Erub Island and Little Mary Reef, Eastern Cluster, Torres Strait, 2020 (TropWATER, James Cook University)">https://catalogue.eatlas.org.au/geonetwork/srv/api/records/a960060c-b5a9-4843-93f8-d87200649878/attachments/Eastern%20cluster%20benthic%20macroinvertebrates%202020.jpg</dc:URI>
+      <dc:URI xmlns:dc="http://purl.org/dc/elements/1.1/" name="Algae communities at survey sites at Mer Island and surrounding reefs, Eastern Cluster, Torres Strait, 2020 (TropWATER, James Cook University)">https://catalogue.eatlas.org.au/geonetwork/srv/api/records/a960060c-b5a9-4843-93f8-d87200649878/attachments/Eastern%20cluster%20algae%20communities%202020.jpg</dc:URI>
+    </csw:Record>
+    

@@ -1,0 +1,1580 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:esri_wms="http://www.esri.com/wms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3.0" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+	<Service>
+		<Name>WMS</Name>
+		<Title>Pedirka and Western Eromanga Basins Energy Resource Assessments</Title>
+		<Abstract>The AFER Project has adapted the conventional hydrocarbon play-based exploration workflow, developed by the petroleum industry over several decades, to develop a similar approach for assessing unconventional hydrocarbon resource potential and CO2 geological storage prospectivity. Play-based exploration is a method of building and leveraging an understanding of a basin and its sediment-hosted resources by systematically evaluating a series of play intervals using the best available geological data and models. Each play interval represents a regionally significant reservoir/aquifer for one or more resources (e.g. hydrocarbons, groundwater, CO2 storage intervals) often with an associated seal/aquitard. Various ‘risk elements’ that are essential for a resource to exist can be mapped and qualified with a probability of geological success. These risk elements are then spatially integrated (stacked) to generate common risk segment (CRS) or ‘heat’ maps for each play interval that indicate areas of relatively high prospectivity versus relatively low prospectivity. Geological risk elements are evaluated using post-drill analysis of well control points, and geological maps generated from basin studies. Common risk segment mapping, supported by post-drill analysis, has been undertaken by the AFER Project using the GIS-Pax Player Software, and assigned a geological probability of success (POS) using a ‘split risking’ system that involves assessing: Pg play, which is the POS that the risk element is effective somewhere within the map segment.</Abstract>
+		<KeywordList>
+			<Keyword>Australia</Keyword>
+			<Keyword>web service</Keyword>
+			<Keyword>AFER</Keyword>
+			<Keyword>EFTF</Keyword>
+			<Keyword>Exploring for the Future</Keyword>
+			<Keyword>energy resource assessment module</Keyword>
+			<Keyword>Pedirka Basin</Keyword>
+			<Keyword>conventional hydrocarbons</Keyword>
+			<Keyword>CO2 geological storage</Keyword>
+			<Keyword>western Eromanga Basin</Keyword>
+		</KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.ga.gov.au"/>
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson/>
+				<ContactOrganization>Geoscience Australia</ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactPosition/>
+			<ContactAddress>
+				<AddressType>Postal</AddressType>
+				<Address>GPO Box 378</Address>
+				<City>Canberra</City>
+				<StateOrProvince>ACT</StateOrProvince>
+				<PostCode>2601</PostCode>
+				<Country>Australia</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone>+61 2 6249 9111</ContactVoiceTelephone>
+			<ContactFacsimileTelephone/>
+			<ContactElectronicMailAddress>clientservices@ga.gov.au</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees>NONE</Fees>
+		<AccessConstraints>© Commonwealth of Australia (Geoscience Australia) 2025. This material is released under the Creative Commons Attribution 4.0 International Licence. https://creativecommons.org/licenses/by/4.0/legalcode</AccessConstraints>
+		<MaxWidth>4096</MaxWidth>
+		<MaxHeight>4096</MaxHeight>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/bmp</Format>
+				<Format>image/jpeg</Format>
+				<Format>image/tiff</Format>
+				<Format>image/png</Format>
+				<Format>image/png8</Format>
+				<Format>image/png24</Format>
+				<Format>image/png32</Format>
+				<Format>image/gif</Format>
+				<Format>image/svg+xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>application/vnd.esri.wms_raw_xml</Format>
+				<Format>application/vnd.esri.wms_featureinfo_xml</Format>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>application/geo+json</Format>
+				<Format>text/xml</Format>
+				<Format>text/html</Format>
+				<Format>text/plain</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+			<esri_wms:GetStyles>
+				<Format>application/vnd.ogc.sld+xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</esri_wms:GetStyles>
+		</Request>
+		<Exception>
+			<Format>application/vnd.ogc.se_xml</Format>
+			<Format>application/vnd.ogc.se_inimage</Format>
+			<Format>application/vnd.ogc.se_blank</Format>
+			<Format>text/xml</Format>
+			<Format>XML</Format>
+		</Exception>
+		<Layer>
+			<Title>PedirkaAndWesternEromangaBasinsEnergyResourceAssessments</Title>
+			<CRS>EPSG:4283</CRS>
+			<CRS>EPSG:4326</CRS>
+			<CRS>CRS:84</CRS>
+			<CRS>EPSG:3857</CRS>
+			<CRS>EPSG:28348</CRS>
+			<CRS>EPSG:28349</CRS>
+			<CRS>EPSG:28350</CRS>
+			<CRS>EPSG:28351</CRS>
+			<CRS>EPSG:28352</CRS>
+			<CRS>EPSG:28353</CRS>
+			<CRS>EPSG:28354</CRS>
+			<CRS>EPSG:28355</CRS>
+			<CRS>EPSG:28356</CRS>
+			<CRS>EPSG:28357</CRS>
+			<CRS>EPSG:28358</CRS>
+			<CRS>EPSG:32748</CRS>
+			<CRS>EPSG:32749</CRS>
+			<CRS>EPSG:32750</CRS>
+			<CRS>EPSG:32751</CRS>
+			<CRS>EPSG:32752</CRS>
+			<CRS>EPSG:32753</CRS>
+			<CRS>EPSG:32754</CRS>
+			<CRS>EPSG:32755</CRS>
+			<CRS>EPSG:32756</CRS>
+			<CRS>EPSG:32757</CRS>
+			<CRS>EPSG:32758</CRS>
+			<CRS>EPSG:3031</CRS>
+			<CRS>EPSG:3032</CRS>
+			<CRS>EPSG:102100</CRS>
+			<EX_GeographicBoundingBox>
+				<westBoundLongitude>133.481812</westBoundLongitude>
+				<eastBoundLongitude>140.215415</eastBoundLongitude>
+				<southBoundLatitude>-27.956540</southBoundLatitude>
+				<northBoundLatitude>-23.606129</northBoundLatitude>
+			</EX_GeographicBoundingBox>
+			<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+			<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+			<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+			<Layer queryable="1">
+				<Name>WestEromanga_Storage_Poolowanna_PlayStack</Name>
+				<Title>WestEromanga Storage Poolowanna PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Storage Poolowanna PlayStack</Title>
+					<LegendURL width="304" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Storage_Poolowanna_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Storage_NamurMurta_PlayStack</Name>
+				<Title>WestEromanga Storage NamurMurta PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481814</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481814" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481814" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481814" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Storage NamurMurta PlayStack</Title>
+					<LegendURL width="304" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Storage_NamurMurta_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Storage_Hutton_PlayStack</Name>
+				<Title>WestEromanga Storage Hutton PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481813</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481813" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Storage Hutton PlayStack</Title>
+					<LegendURL width="304" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Storage_Hutton_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Storage_Cadnaowie_PlayStack</Name>
+				<Title>WestEromanga Storage Cadnaowie PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Storage Cadnaowie PlayStack</Title>
+					<LegendURL width="304" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Storage_Cadnaowie_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Storage_Birkhead_PlayStack</Name>
+				<Title>WestEromanga Storage Birkhead PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481813</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481813" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Storage Birkhead PlayStack</Title>
+					<LegendURL width="304" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Storage_Birkhead_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Storage_AdoriWestbourne_PlayStack</Name>
+				<Title>WestEromanga Storage AdoriWestbourne PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481813</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481813" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Storage AdoriWestbourne PlayStack</Title>
+					<LegendURL width="304" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Storage_AdoriWestbourne_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Storage_AllPlays_PlayStack</Name>
+				<Title>WestEromanga Storage AllPlays PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481813</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481813" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Storage AllPlays PlayStack</Title>
+					<LegendURL width="304" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Storage_AllPlays_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_ShaleResource_Poolowanna_PlayStack</Name>
+				<Title>WestEromanga ShaleResource Poolowanna PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga ShaleResource Poolowanna PlayStack</Title>
+					<LegendURL width="250" height="370">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_ShaleResource_Poolowanna_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_ShaleResource_PeeraPeera_PlayStack</Name>
+				<Title>WestEromanga ShaleResource PeeraPeera PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga ShaleResource PeeraPeera PlayStack</Title>
+					<LegendURL width="250" height="370">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_ShaleResource_PeeraPeera_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_ShaleResource_AllPlays_PlayStack</Name>
+				<Title>WestEromanga ShaleResource AllPlays PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga ShaleResource AllPlays PlayStack</Title>
+					<LegendURL width="250" height="370">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_ShaleResource_AllPlays_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Pedirka_CoalSeamGas_upperPurni_PlayStack</Name>
+				<Title>Pedirka CoalSeamGas upperPurni PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>Pedirka CoalSeamGas upperPurni PlayStack</Title>
+					<LegendURL width="248" height="370">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/Pedirka_CoalSeamGas_upperPurni_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Pedirka_CoalSeamGas_lowerPurni_PlayStack</Name>
+				<Title>Pedirka CoalSeamGas lowerPurni PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>Pedirka CoalSeamGas lowerPurni PlayStack</Title>
+					<LegendURL width="248" height="370">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/Pedirka_CoalSeamGas_lowerPurni_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Pedirka_CoalSeamGas_AllPlays_PlayStack</Name>
+				<Title>Pedirka CoalSeamGas AllPlays PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>Pedirka CoalSeamGas AllPlays PlayStack</Title>
+					<LegendURL width="248" height="370">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/Pedirka_CoalSeamGas_AllPlays_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>PedirkaEromanga_AllUnconventional_AllPlays_PlayStack</Name>
+				<Title>PedirkaEromanga AllUnconventional AllPlays PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>PedirkaEromanga AllUnconventional AllPlays PlayStack</Title>
+					<LegendURL width="225" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/PedirkaEromanga_AllUnconventional_AllPlays_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Pedirka_Conventional_CrownPoint_PlayStack</Name>
+				<Title>Pedirka Conventional CrownPoint PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>Pedirka Conventional CrownPoint PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/Pedirka_Conventional_CrownPoint_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Pedirka_Conventional_lowerPurni_PlayStack</Name>
+				<Title>Pedirka Conventional lowerPurni PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>Pedirka Conventional lowerPurni PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/Pedirka_Conventional_lowerPurni_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Pedirka_Conventional_upperPurni_PlayStack</Name>
+				<Title>Pedirka Conventional upperPurni PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>Pedirka Conventional upperPurni PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/Pedirka_Conventional_upperPurni_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>Pedirka_Conventional_Walkandi_PlayStack</Name>
+				<Title>Pedirka Conventional Walkandi PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>Pedirka Conventional Walkandi PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/Pedirka_Conventional_Walkandi_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Conventional_AdoriWestbourne_PlayStack</Name>
+				<Title>WestEromanga Conventional AdoriWestbourne PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Conventional AdoriWestbourne PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Conventional_AdoriWestbourne_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Conventional_Birkhead_PlayStack</Name>
+				<Title>WestEromanga Conventional Birkhead PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Conventional Birkhead PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Conventional_Birkhead_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Conventional_Cadnaowie_PlayStack</Name>
+				<Title>WestEromanga Conventional Cadnaowie PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Conventional Cadnaowie PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Conventional_Cadnaowie_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Conventional_Hutton_PlayStack</Name>
+				<Title>WestEromanga Conventional Hutton PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Conventional Hutton PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Conventional_Hutton_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Conventional_NamurMurta_PlayStack</Name>
+				<Title>WestEromanga Conventional NamurMurta PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481813</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481813" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Conventional NamurMurta PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Conventional_NamurMurta_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Conventional_PeeraPeera_PlayStack</Name>
+				<Title>WestEromanga Conventional PeeraPeera PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Conventional PeeraPeera PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Conventional_PeeraPeera_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>WestEromanga_Conventional_Poolowanna_PlayStack</Name>
+				<Title>WestEromanga Conventional Poolowanna PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481812</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481812" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481812" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>WestEromanga Conventional Poolowanna PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/WestEromanga_Conventional_Poolowanna_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+			<Layer queryable="1">
+				<Name>PedirkaEromanga_AllConventional_AllPlays_PlayStack</Name>
+				<Title>PedirkaEromanga AllConventional AllPlays PlayStack</Title>
+				<Abstract/>
+				<CRS>EPSG:4283</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:28348</CRS>
+				<CRS>EPSG:28349</CRS>
+				<CRS>EPSG:28350</CRS>
+				<CRS>EPSG:28351</CRS>
+				<CRS>EPSG:28352</CRS>
+				<CRS>EPSG:28353</CRS>
+				<CRS>EPSG:28354</CRS>
+				<CRS>EPSG:28355</CRS>
+				<CRS>EPSG:28356</CRS>
+				<CRS>EPSG:28357</CRS>
+				<CRS>EPSG:28358</CRS>
+				<CRS>EPSG:32748</CRS>
+				<CRS>EPSG:32749</CRS>
+				<CRS>EPSG:32750</CRS>
+				<CRS>EPSG:32751</CRS>
+				<CRS>EPSG:32752</CRS>
+				<CRS>EPSG:32753</CRS>
+				<CRS>EPSG:32754</CRS>
+				<CRS>EPSG:32755</CRS>
+				<CRS>EPSG:32756</CRS>
+				<CRS>EPSG:32757</CRS>
+				<CRS>EPSG:32758</CRS>
+				<CRS>EPSG:3031</CRS>
+				<CRS>EPSG:3032</CRS>
+				<CRS>EPSG:102100</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>133.481813</westBoundLongitude>
+					<eastBoundLongitude>140.215415</eastBoundLongitude>
+					<southBoundLatitude>-27.956540</southBoundLatitude>
+					<northBoundLatitude>-23.606129</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="133.481813" miny="-27.956540" maxx="140.215415" maxy="-23.606129"/>
+				<BoundingBox CRS="EPSG:4326" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<BoundingBox CRS="EPSG:4283" minx="-27.956540" miny="133.481813" maxx="-23.606129" maxy="140.215415"/>
+				<MetadataURL type="TC211">
+					<Format>text/html</Format>
+					<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/149501" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>PedirkaEromanga AllConventional AllPlays PlayStack</Title>
+					<LegendURL width="228" height="409">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://getcaps.gis.ga.gov.au/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/PedirkaEromanga_AllConventional_AllPlays_PlayStack.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+			</Layer>
+		</Layer>
+	</Capability>
+</WMS_Capabilities>

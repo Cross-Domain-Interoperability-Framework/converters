@@ -1,0 +1,485 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/"
+  },
+  "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Census 2021, G33 Total household income (weekly) by household composition, Remoteness Areas (RA)",
+  "schema:description": "Dataset: C21_G33_RA. Total household income (weekly) by household composition data for Remoteness Areas (RA), 2021 Census, Count of occupied private dwellings. This table is based on place of enumeration. Excludes 'Visitors only' and 'Other non-classifiable' households. Please note that there are small random adjustments made to all cell values to protect the confidentiality of data. These adjustments may cause the sum of rows or columns to differ by small amounts from table totals.",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "SDMX URN",
+    "schema:value": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ABS:C21_G33_RA(1.0.0)",
+    "schema:url": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0"
+  },
+  "schema:version": "1.0.0",
+  "schema:dateModified": "2023-04-27T11:30:00Z",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "ABS"
+  },
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "General Community Profiles",
+      "schema:termCode": "C21_RA.C21_RA_GCP",
+      "schema:inDefinedTermSet": "Census 2021"
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2021-01-01/2021-12-31"
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "Guide to Census data",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.abs.gov.au/census/guide-census-data"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "Download all data - Census DataPacks",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.abs.gov.au/census/find-census-data/datapacks"
+      }
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#HIND",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "HIND",
+      "schema:alternateName": [
+        "Total household income (weekly)"
+      ],
+      "schema:description": "This variable is the sum of Total personal income (weekly) of each resident aged 15 years or older who was present in the household on Census night.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_C21_DWELLING(1.0.0).HIND"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Total Household Income (weekly) 02",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_C21_HIND02(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_C21_HIND02/1.0.0"
+          },
+          "schema:description": "20 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#HHCD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "HHCD",
+      "schema:alternateName": [
+        "Household composition"
+      ],
+      "schema:description": "This variable describes the type of household within a dwelling. It indicates if a family is present on Census night and if other unrelated household members are present.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_C21_DWELLING(1.0.0).HHCD"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Household Composition 01",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_C21_HHCD01(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_C21_HHCD01/1.0.0"
+          },
+          "schema:description": "3 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#REGION",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REGION",
+      "schema:alternateName": [
+        "Region"
+      ],
+      "schema:description": "Region",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_GEOGRAPHY(1.0.0).REGION"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Remoteness Areas - 2021",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_RA_2021(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_RA_2021/1.0.0"
+          },
+          "schema:description": "63 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#REGION_TYPE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REGION_TYPE",
+      "schema:alternateName": [
+        "Region Type"
+      ],
+      "schema:description": "Region Type",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_GEOGRAPHY(1.0.0).REGION_TYPE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Region Type",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_REGION_TYPE(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_REGION_TYPE/1.0.0"
+          },
+          "schema:description": "43 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#STATE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "STATE",
+      "schema:alternateName": [
+        "State"
+      ],
+      "schema:description": "State",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_GEOGRAPHY(1.0.0).STATE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "State",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_STATE(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_STATE/1.0.0"
+          },
+          "schema:description": "10 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#TIME_PERIOD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_PERIOD",
+      "schema:alternateName": [
+        "Time Period"
+      ],
+      "schema:description": "Timespan or point in time for which the observation refers.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_COMMON(1.0.0).TIME_PERIOD"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "ObservationalTimePeriod"
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#OBS_VALUE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_VALUE",
+      "schema:alternateName": [
+        "Observation Value"
+      ],
+      "schema:description": "The observed value of the variable identified by the series dimension values.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_COMMON(1.0.0).OBS_VALUE"
+      },
+      "cdif:role": "Measure",
+      "cdif:physicalDataType": "xsd:double"
+    }
+  ],
+  "schema:url": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "SDMX-ML data for ABS,C21_G33_RA,1.0.0",
+      "schema:contentUrl": "https://data.api.abs.gov.au/rest/v1/data/ABS,C21_G33_RA,1.0.0/all",
+      "schema:encodingFormat": [
+        "application/vnd.sdmx.genericdata+xml;version=2.1"
+      ],
+      "schema:description": "SDMX-REST data query for the whole dataflow; add a series key in place of 'all', startPeriod/endPeriod, or an Accept header (e.g. application/vnd.sdmx.data+csv) to narrow or reformat it.",
+      "cdi:isStructuredBy": {
+        "@type": [
+          "cdi:DimensionalDataStructure"
+        ],
+        "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ABS:C21_G33_RA(1.0.0)",
+        "cdi:has_DataStructureComponent": [
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:C21_G33_RA(1.0.0).HIND",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#HIND"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:C21_G33_RA(1.0.0).HHCD",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#HHCD"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:C21_G33_RA(1.0.0).REGION",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#REGION"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:C21_G33_RA(1.0.0).REGION_TYPE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#REGION_TYPE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:C21_G33_RA(1.0.0).STATE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#STATE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=ABS:C21_G33_RA(1.0.0).TIME_PERIOD",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#TIME_PERIOD"
+            }
+          },
+          {
+            "@type": [
+              "cdi:MeasureComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ABS:C21_G33_RA(1.0.0).OBS_VALUE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#OBS_VALUE"
+            }
+          }
+        ],
+        "cdif:has_PrimaryKey": {
+          "@type": [
+            "cdif:Key"
+          ],
+          "cdif:isComposedOf": [
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#HIND"
+              },
+              "cdi:value": 1
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#HHCD"
+              },
+              "cdi:value": 2
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#REGION"
+              },
+              "cdi:value": 3
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#REGION_TYPE"
+              },
+              "cdi:value": 4
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#STATE"
+              },
+              "cdi:value": 5
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0#TIME_PERIOD"
+              },
+              "cdi:value": 6
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0?references=all&detail=referencepartial",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "SDMX structure metadata for: Census 2021, G33 Total household income (weekly) by household composition, Remoteness Areas (RA)",
+    "schema:about": {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_structure/2.0"
+      }
+    ],
+    "schema:description": "Converted from an SDMX-ML 2.1 structure message (dataflow and data structure definition) to CDIF by sdmx_to_cdif.py.",
+    "schema:dateModified": "2026-11-19T00:12:57+00:00",
+    "schema:url": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/C21_G33_RA/1.0.0?references=all&detail=referencepartial"
+  }
+}

@@ -1,0 +1,1501 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/"
+  },
+  "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "CPMI systems",
+  "schema:description": "Payment statistics covering activities in financial market infrastructures and critical services, providing quantitative and qualitative information for payment systems, central securities depositories and central counterparties. Tables: T8, T9, T11, T13, T14, T16, T17, T18, T19.",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "SDMX URN",
+    "schema:value": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=BIS:WS_CPMI_SYSTEMS(1.0)",
+    "schema:url": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0"
+  },
+  "schema:version": "1.0",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "Bank for International Settlements",
+    "@id": "urn:sdmx:org.sdmx.infomodel.base.Agency=SDMX:AGENCIES(1.0).BIS",
+    "schema:alternateName": "BIS",
+    "schema:description": "Bank for International Settlements",
+    "schema:contactPoint": [
+      {
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:name": "Support",
+        "schema:contactType": "Support",
+        "schema:email": "statistics@bis.org"
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "BIS",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=BIS:DATA_PROVIDERS(1.0).BIS"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FREQ",
+      "schema:alternateName": [
+        "Frequency"
+      ],
+      "schema:description": "Frequency",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).FREQ"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Code list for Frequency (FREQ)",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_FREQ(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_FREQ/1.0"
+          },
+          "schema:description": "1 code used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#REP_CTY",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REP_CTY",
+      "schema:alternateName": [
+        "Reporting country"
+      ],
+      "schema:description": "Reporting country",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).REP_CTY"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Reference Area Code for BIS General Economics and Block L",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_BIS_GL_REF_AREA(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_BIS_GL_REF_AREA/1.0"
+          },
+          "schema:description": "28 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "MEASURE",
+      "schema:alternateName": [
+        "Measure"
+      ],
+      "schema:description": "Measure",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).MEASURE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CPMI Measure",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_CPMI_MEASURE(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_CPMI_MEASURE/1.0"
+          },
+          "schema:description": "2 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#SYSTEM_TYPE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "SYSTEM_TYPE",
+      "schema:alternateName": [
+        "System type"
+      ],
+      "schema:description": "System type",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).SYSTEM_TYPE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Type of CPMI system",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_CPMI_SYST_TYPE(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_CPMI_SYST_TYPE/1.0"
+          },
+          "schema:description": "3 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#SYSTEM",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "SYSTEM",
+      "schema:alternateName": [
+        "System"
+      ],
+      "schema:description": "System",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).SYSTEM"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CPMI systems",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_CPMI_SYSTEMS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_CPMI_SYSTEMS/1.0"
+          },
+          "schema:description": "4 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#INSTRUMENT_TYPE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INSTRUMENT_TYPE",
+      "schema:alternateName": [
+        "Instrument type"
+      ],
+      "schema:description": "Instrument type",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).INSTRUMENT_TYPE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Type of CPMI instrument",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_CPMI_INSTR_TYP(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_CPMI_INSTR_TYP/1.0"
+          },
+          "schema:description": "46 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OTHER_PS_TRANS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OTHER_PS_TRANS",
+      "schema:alternateName": [
+        "Other PS's net value/volume that settle in the PS in question"
+      ],
+      "schema:description": "Other PS's net value/volume that settle in the PS in question",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).OTHER_PS_TRANS"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CPMI systems",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_CPMI_SYSTEMS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_CPMI_SYSTEMS/1.0"
+          },
+          "schema:description": "4 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TYPE_OF_INFO",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TYPE_OF_INFO",
+      "schema:alternateName": [
+        "Type of information"
+      ],
+      "schema:description": "Type of information",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).TYPE_OF_INFO"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Type of CPMI information",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_CPMI_INFO(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_CPMI_INFO/1.0"
+          },
+          "schema:description": "3 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TIME_PERIOD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_PERIOD",
+      "schema:alternateName": [
+        "Time period or range"
+      ],
+      "schema:description": "Time period or range",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).TIME_PERIOD"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "ObservationalTimePeriod"
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TITLE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TITLE",
+      "schema:alternateName": [
+        "Title"
+      ],
+      "schema:description": "Title",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).TITLE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TABLE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TABLE",
+      "schema:alternateName": [
+        "Table"
+      ],
+      "schema:description": "Table",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).TABLE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:integer",
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#COMMENT_TS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "COMMENT_TS",
+      "schema:alternateName": [
+        "Time series comment"
+      ],
+      "schema:description": "Time series comment",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).COMMENT_TS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#COMMENT_OBS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "COMMENT_OBS",
+      "schema:alternateName": [
+        "Observation comment"
+      ],
+      "schema:description": "Observation comment",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).COMMENT_OBS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#COLLECTION",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "COLLECTION",
+      "schema:alternateName": [
+        "Collection Indicator"
+      ],
+      "schema:description": "Collection Indicator",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).COLLECTION"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Collection",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_COLLECTION(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_COLLECTION/1.0"
+          },
+          "schema:description": "10 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#AVAILABILITY",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "AVAILABILITY",
+      "schema:alternateName": [
+        "Availability"
+      ],
+      "schema:description": "Availability",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).AVAILABILITY"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Availability",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_AVAILABILITY(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_AVAILABILITY/1.0"
+          },
+          "schema:description": "20 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#UNIT_MULT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MULT",
+      "schema:alternateName": [
+        "Unit Multiplier"
+      ],
+      "schema:description": "Unit Multiplier",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).UNIT_MULT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Unit Multiplier",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_UNIT_MULT(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_UNIT_MULT/1.0"
+          },
+          "schema:description": "11 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#UNIT_MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MEASURE",
+      "schema:alternateName": [
+        "Unit of measure"
+      ],
+      "schema:description": "Unit of measure",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).UNIT_MEASURE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "BIS_Unit",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_BIS_UNIT(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_BIS_UNIT/1.0"
+          },
+          "schema:description": "1105 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TIME_FORMAT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_FORMAT",
+      "schema:alternateName": [
+        "Time Format"
+      ],
+      "schema:description": "Time Format",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).TIME_FORMAT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Possible formats for representation of dates, times or dateranges",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_TIME_FORMAT(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_TIME_FORMAT/1.0"
+          },
+          "schema:description": "19 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#DECIMALS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "DECIMALS",
+      "schema:alternateName": [
+        "Decimals"
+      ],
+      "schema:description": "Decimals",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).DECIMALS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Decimals codelist (BIS, ECB)",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_DECIMALS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_DECIMALS/1.0"
+          },
+          "schema:description": "17 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OLD_TABLE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OLD_TABLE",
+      "schema:alternateName": [
+        "Old table"
+      ],
+      "schema:description": "Old table",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).OLD_TABLE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:integer",
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_STATUS",
+      "schema:alternateName": [
+        "Observation Status"
+      ],
+      "schema:description": "Observation Status",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).OBS_STATUS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Observation status codelist (BIS, ECB, Eurostat-BoP)",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_OBS_STATUS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_OBS_STATUS/1.0"
+          },
+          "schema:description": "2 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_CONF",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_CONF",
+      "schema:alternateName": [
+        "Observation confidentiality"
+      ],
+      "schema:description": "Observation confidentiality",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).OBS_CONF"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Observation confidentiality code list",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_CONF_STATUS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_CONF_STATUS/1.0"
+          },
+          "schema:description": "5 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_PRE_BREAK",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_PRE_BREAK",
+      "schema:alternateName": [
+        "Pre-Break Observation"
+      ],
+      "schema:description": "Pre-Break Observation",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).OBS_PRE_BREAK"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_VALUE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_VALUE",
+      "schema:alternateName": [
+        "Observation Value"
+      ],
+      "schema:description": "Observation Value",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).OBS_VALUE"
+      },
+      "cdif:role": "Measure",
+      "cdif:physicalDataType": "xsd:string"
+    }
+  ],
+  "schema:url": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "SDMX-ML data for BIS,WS_CPMI_SYSTEMS,1.0",
+      "schema:contentUrl": "https://stats.bis.org/api/v1/data/BIS,WS_CPMI_SYSTEMS,1.0/all",
+      "schema:encodingFormat": [
+        "application/vnd.sdmx.genericdata+xml;version=2.1"
+      ],
+      "schema:description": "SDMX-REST data query for the whole dataflow; add a series key in place of 'all', startPeriod/endPeriod, or an Accept header (e.g. application/vnd.sdmx.data+csv) to narrow or reformat it.",
+      "cdi:isStructuredBy": {
+        "@type": [
+          "cdi:DimensionalDataStructure"
+        ],
+        "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=BIS:CPMI_SYSTEMS(1.0)",
+        "cdi:has_DataStructureComponent": [
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#REP_CTY"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#MEASURE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#SYSTEM_TYPE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#SYSTEM"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#INSTRUMENT_TYPE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OTHER_PS_TRANS"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TYPE_OF_INFO"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=BIS:CPMI_SYSTEMS(1.0).TIME_PERIOD",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TIME_PERIOD"
+            }
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).TITLE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TITLE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).TABLE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TABLE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).COMMENT_TS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#COMMENT_TS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).COMMENT_OBS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#COMMENT_OBS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=BIS:CPMI_SYSTEMS(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).COLLECTION",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#COLLECTION"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).AVAILABILITY",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#AVAILABILITY"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).UNIT_MULT",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#UNIT_MULT"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).UNIT_MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#UNIT_MEASURE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).TIME_FORMAT",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TIME_FORMAT"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).DECIMALS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#DECIMALS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).OLD_TABLE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OLD_TABLE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).FREQ"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).REP_CTY"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).SYSTEM"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).INSTRUMENT_TYPE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).OTHER_PS_TRANS"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:CPMI_SYSTEMS(1.0).TYPE_OF_INFO"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).OBS_STATUS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_STATUS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=BIS:CPMI_SYSTEMS(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).OBS_CONF",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_CONF"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=BIS:CPMI_SYSTEMS(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:CPMI_SYSTEMS(1.0).OBS_PRE_BREAK",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_PRE_BREAK"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=BIS:CPMI_SYSTEMS(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:MeasureComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=BIS:CPMI_SYSTEMS(1.0).OBS_VALUE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OBS_VALUE"
+            }
+          }
+        ],
+        "cdif:has_PrimaryKey": {
+          "@type": [
+            "cdif:Key"
+          ],
+          "cdif:isComposedOf": [
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#FREQ"
+              },
+              "cdi:value": 1
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#REP_CTY"
+              },
+              "cdi:value": 2
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#MEASURE"
+              },
+              "cdi:value": 3
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#SYSTEM_TYPE"
+              },
+              "cdi:value": 4
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#SYSTEM"
+              },
+              "cdi:value": 5
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#INSTRUMENT_TYPE"
+              },
+              "cdi:value": 6
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#OTHER_PS_TRANS"
+              },
+              "cdi:value": 7
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TYPE_OF_INFO"
+              },
+              "cdi:value": 8
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0#TIME_PERIOD"
+              },
+              "cdi:value": 9
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "schema:dateModified": "1900-01-01",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0?references=all&detail=referencepartial",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "SDMX structure metadata for: CPMI systems",
+    "schema:about": {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_structure/2.0"
+      }
+    ],
+    "schema:description": "Converted from an SDMX-ML 2.1 structure message (dataflow and data structure definition) to CDIF by sdmx_to_cdif.py.",
+    "schema:dateModified": "2026-11-19T00:02:40Z",
+    "schema:url": "https://stats.bis.org/api/v1/dataflow/BIS/WS_CPMI_SYSTEMS/1.0?references=all&detail=referencepartial"
+  }
+}

@@ -1,0 +1,679 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/"
+  },
+  "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Stock Market: Share Price Index",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "SDMX URN",
+    "schema:value": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:SPI(1.0)",
+    "schema:url": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0"
+  },
+  "schema:version": "1.0",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "International Monetary Fund (IMF)",
+    "@id": "urn:sdmx:org.sdmx.infomodel.base.Agency=SDMX:AGENCIES(1.0).IMF",
+    "schema:alternateName": "IMF",
+    "schema:description": "The IMF works to foster global growth and economic stability. It provides policy advice and financing to members in economic difficulties and also works with developing nations to help them achieve macroeconomic stability and reduce poverty.",
+    "schema:contactPoint": [
+      {
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:name": "Single point of contact for external inquiries",
+        "schema:contactType": "Single point of contact for external inquiries",
+        "schema:email": "sdmx@imf.org",
+        "schema:url": "http://www.imf.org"
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "National Bank of Belgium",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).BE1",
+      "schema:alternateName": "BE1"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Central Bank of Brazil",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).BR1",
+      "schema:alternateName": "BR1",
+      "schema:contactPoint": [
+        {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:name": "Mr. Renato Baldini Júnior",
+          "schema:contactType": "Deputy-Head of Department of Statistics (DSTAT)"
+        },
+        {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:name": "Mr. Fernando Lemos",
+          "schema:contactType": "Deputy-Head of Department of Statistics (DSTAT)"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Statistics Canada",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).CA1",
+      "schema:alternateName": "CA1",
+      "schema:description": "Statistics Canada"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Swiss Federal Statistical Office",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).CH1",
+      "schema:alternateName": "CH1",
+      "schema:description": "Swiss Federal Statistical Office FSO"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Banco Central de Chile",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).CL2",
+      "schema:alternateName": "CL2"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Germany Deutsche Bundesbank",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).DE2",
+      "schema:alternateName": "DE2",
+      "schema:contactPoint": [
+        {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:name": "Sonja Babl",
+          "schema:contactType": "Correspondent",
+          "schema:email": "sonja.babl@bundesbank.de"
+        },
+        {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:name": "Lutz Schneider",
+          "schema:contactType": "Correspondent",
+          "schema:email": "lutz.schneider@bundesbank.de"
+        },
+        {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:name": "Mr. Rauch",
+          "schema:contactType": "IT Expert"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "France Banque de France",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).FR2",
+      "schema:alternateName": "FR2"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "IMF",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).IMF",
+      "schema:contactPoint": [
+        {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:name": "Bibson Joseph",
+          "schema:contactType": "Project Manager",
+          "schema:email": "bjoseph@imf.org",
+          "schema:telephone": "+1 (202) 623 4130"
+        },
+        {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:name": "Gareth McGuinness",
+          "schema:contactType": "Sponsor",
+          "schema:email": "rpiche@imf.org"
+        },
+        {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:name": "Nalini Umashankar",
+          "schema:contactType": "Project Manager"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Japan Financial Services Agency",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).JP6",
+      "schema:alternateName": "JP6"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Euronext Amsterdam",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).NL5",
+      "schema:alternateName": "NL5"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Banco Central de Reserva del Perú",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).PE2",
+      "schema:alternateName": "PE2"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Portugal - Banco de Portugal",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).PT2",
+      "schema:alternateName": "PT2"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Bucharest Stock Exchange",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).RO4",
+      "schema:alternateName": "RO4"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "National Bank of Slovakia",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).SK1",
+      "schema:alternateName": "SK1"
+    },
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "United States Board of Governors of the Federal Reserve System (USA)",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).US3",
+      "schema:alternateName": "US3"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Financial Sector",
+      "schema:termCode": "3",
+      "schema:inDefinedTermSet": "SDMX Central Categories",
+      "@id": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=IMF:CS_SDMX_CENTRAL(1.0).3"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#DATA_DOMAIN",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "DATA_DOMAIN",
+      "schema:alternateName": [
+        "Data Domain"
+      ],
+      "schema:description": "Data Domain",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).DATA_DOMAIN"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Data Domain",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_DATADOMAIN(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/codelist/IMF/CL_DATADOMAIN/1.0"
+          },
+          "schema:description": "1 code used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#REF_AREA",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REF_AREA",
+      "schema:alternateName": [
+        "Reference Country or area"
+      ],
+      "schema:description": "Reference Country or area",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).REF_AREA"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Reference Area",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_REF_AREA(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/codelist/IMF/CL_REF_AREA/1.0"
+          },
+          "schema:description": "1 code used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#INDICATOR",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INDICATOR",
+      "schema:alternateName": [
+        "Economic Indicator"
+      ],
+      "schema:description": "Economic Indicator",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).INDICATOR"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Economic Indicator",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_INDICATOR(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/codelist/IMF/CL_INDICATOR/1.0"
+          },
+          "schema:description": "2 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#COUNTERPART_AREA",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "COUNTERPART_AREA",
+      "schema:alternateName": [
+        "Counterpart Area"
+      ],
+      "schema:description": "Counterpart Area",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).COUNTERPART_AREA"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Reference Area",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_REF_AREA(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/codelist/IMF/CL_REF_AREA/1.0"
+          },
+          "schema:description": "1 code used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#FREQ",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FREQ",
+      "schema:alternateName": [
+        "Frequency"
+      ],
+      "schema:description": "The time interval at which observations occur over a given time period.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).FREQ"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Frequency",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_FREQ(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/codelist/SDMX/CL_FREQ/1.0"
+          },
+          "schema:description": "This code list provides a list of values indicating the \"frequency\" of the data (e.g. monthly) and, thus, indirectly, also implying the type of \"time reference\" that could be used for identifying the data with respect time. It was first released in 2009. More information about this code list and SDMX code lists in general (e.g. list of generic codes for expressing general concepts like \"Total\", \"Unknown\", etc.; syntaxes for the creation of further codes; general guidelines for the creation of SDMX code lists) can be found at this address: https://sdmx.org/?page_id=4345.. 8 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#TIME_PERIOD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_PERIOD",
+      "schema:alternateName": [
+        "Time period"
+      ],
+      "schema:description": "The period of time or point in time to which the measured observation refers.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).TIME_PERIOD"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "ObservationalTimePeriod"
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#COMMENT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "COMMENT",
+      "schema:alternateName": [
+        "Comment"
+      ],
+      "schema:description": "Comment",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).COMMENT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#BASE_PER",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "BASE_PER",
+      "schema:alternateName": [
+        "Base Period"
+      ],
+      "schema:description": "Base Period",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).BASE_PER"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#DATA_DOMAIN"
+      }
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#UNIT_MULT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MULT",
+      "schema:alternateName": [
+        "Unit Multiplier"
+      ],
+      "schema:description": "Unit Multiplier",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).UNIT_MULT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Unit Multiplier",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_UNIT_MULT(1.1)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/codelist/SDMX/CL_UNIT_MULT/1.1"
+          },
+          "schema:description": "This code list provides code values for indicating the magnitude in the units of measurement. More information about this code list and SDMX code lists in general (e.g. list of generic codes for expressing general concepts like \"Total\", \"Unknown\", etc.; syntaxes for the creation of further codes; general guidelines for the creation of SDMX code lists) can be found at this address: https://sdmx.org/?page_id=4345.. 31 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#DATA_DOMAIN"
+      }
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#OBS_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_STATUS",
+      "schema:alternateName": [
+        "Observation Status"
+      ],
+      "schema:description": "Observation Status",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).OBS_STATUS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Observation Status",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_OBS_STATUS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/codelist/IMF/CL_OBS_STATUS/1.0"
+          },
+          "schema:description": "19 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#TIME_FORMAT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_FORMAT",
+      "schema:alternateName": [
+        "Time format"
+      ],
+      "schema:description": "Technical format in which time is represented for the measured phenomenon.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).TIME_FORMAT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Time Format",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_TIME_FORMAT(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/codelist/SDMX/CL_TIME_FORMAT/1.0"
+          },
+          "schema:description": "This code list provides coded information (based on the ISO 8601 standard) indicating the type of time references used in the data. It was released in 2009. More information about this code list and SDMX code lists in general (e.g. list of generic codes for expressing general concepts like \"Total\", \"Unknown\", etc.; syntaxes for the creation of further codes; general guidelines for the creation of SDMX code lists) can be found at this address: https://sdmx.org/?page_id=4345.. 5 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#DATA_DOMAIN"
+      }
+    },
+    {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0#OBS_VALUE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_VALUE",
+      "schema:alternateName": [
+        "Observation"
+      ],
+      "schema:description": "The value of a particular variable at a particular period.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).OBS_VALUE"
+      },
+      "cdif:role": "Measure",
+      "cdif:physicalDataType": "xsd:string"
+    }
+  ],
+  "schema:url": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0",
+  "schema:description": "Stock Market: Share Price Index",
+  "schema:dateModified": "1900-01-01",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0?references=all&detail=referencepartial",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "SDMX structure metadata for: Stock Market: Share Price Index",
+    "schema:about": {
+      "@id": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from an SDMX-ML 2.1 structure message (dataflow and data structure definition) to CDIF by sdmx_to_cdif.py.",
+    "schema:dateModified": "2026-11-19T00:11:34Z",
+    "schema:url": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/IMF/SPI/1.0?references=all&detail=referencepartial"
+  }
+}

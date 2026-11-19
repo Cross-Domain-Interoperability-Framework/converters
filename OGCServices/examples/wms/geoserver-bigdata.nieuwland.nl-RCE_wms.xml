@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WMS_Capabilities xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3.0" updateSequence="455" xsi:schemaLocation="http://www.opengis.net/wms https://geoserver-bigdata.nieuwland.nl/schemas/wms/1.3.0/capabilities_1_3_0.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 https://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd">
+  <Service>
+    <Name>WMS</Name>
+    <Title>RCE Historische kaarten</Title>
+    <Abstract>Viewservice historische kaarten, in opdracht van de RCE (Rijksdienst voor het Cultureel Erfgoed)</Abstract>
+    <KeywordList>
+      <Keyword>rasters</Keyword>
+      <Keyword>large datasets</Keyword>
+    </KeywordList>
+    <OnlineResource xlink:type="simple" xlink:href="https://geoserver-bigdata.nieuwland.nl/wms"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>Helpdesk Nieuwland Geo-informatie</ContactPerson>
+        <ContactOrganization>Nieuwland Geo-informatie</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>pointOfContact</ContactPosition>
+      <ContactAddress>
+        <AddressType>Postadres</AddressType>
+        <Address/>
+        <City>Wageningen</City>
+        <StateOrProvince/>
+        <PostCode>6700 AM</PostCode>
+        <Country>Netherlands</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone>0031(0)317 42 17 11</ContactVoiceTelephone>
+      <ContactFacsimileTelephone/>
+      <ContactElectronicMailAddress>helpdesk@nieuwland.nl</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>none</Fees>
+    <AccessConstraints>none</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://geoserver-bigdata.nieuwland.nl/RCE/ows?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xlink:type="simple" xlink:href="https://geoserver-bigdata.nieuwland.nl/RCE/ows?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/json;type=utfgrid</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>image/vnd.jpeg-png</Format>
+        <Format>image/vnd.jpeg-png8</Format>
+        <Format>text/html; subtype=openlayers</Format>
+        <Format>text/html; subtype=openlayers2</Format>
+        <Format>text/html; subtype=openlayers3</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://geoserver-bigdata.nieuwland.nl/RCE/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/plain</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/xml</Format>
+        <Format>application/vnd.ogc.gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/html</Format>
+        <Format>application/json</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="https://geoserver-bigdata.nieuwland.nl/RCE/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+    </Request>
+    <Exception>
+      <Format>XML</Format>
+      <Format>INIMAGE</Format>
+      <Format>BLANK</Format>
+      <Format>JSON</Format>
+    </Exception>
+    <Layer>
+      <Title>RCE Historische kaarten</Title>
+      <Abstract>Viewservice historische kaarten, in opdracht van de RCE (Rijksdienst voor het Cultureel Erfgoed)</Abstract>
+      <!--Limited list of EPSG projections:-->
+      <CRS>EPSG:28992</CRS>
+      <CRS>CRS:84</CRS>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>3.040779206370053</westBoundLongitude>
+        <eastBoundLongitude>7.305051953753163</eastBoundLongitude>
+        <southBoundLatitude>50.662816288779794</southBoundLatitude>
+        <northBoundLatitude>53.61142145879776</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="3.040779206370053" miny="50.662816288779794" maxx="7.305051953753163" maxy="53.61142145879776"/>
+      <BoundingBox CRS="EPSG:28992" minx="-10898.12742308533" miny="296993.8796945913" maxx="290602.6347152037" maxy="627587.3169624207"/>
+      <Layer queryable="1" opaque="0">
+        <Name>BOSSTATISTIEK1</Name>
+        <Title>BOSSTATISTIEK1</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>BOSSTATISTIEK1_optimized</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.2001024184113582</westBoundLongitude>
+          <eastBoundLongitude>7.293676232031509</eastBoundLongitude>
+          <southBoundLatitude>50.690389932227546</southBoundLatitude>
+          <northBoundLatitude>53.51905339017394</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.2001024184113582" miny="50.690389932227546" maxx="7.293676232031509" maxy="53.51905339017394"/>
+        <BoundingBox CRS="EPSG:28992" minx="9801.75" miny="302053.25" maxx="281424.25" maxy="614758.25"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style for rasters</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://geoserver-bigdata.nieuwland.nl/RCE/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=BOSSTATISTIEK1"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Bonnebladen1900</Name>
+        <Title>Bonnebladen1900</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>Bonnebladen_optimized</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.1973389348050447</westBoundLongitude>
+          <eastBoundLongitude>7.297479827704338</eastBoundLongitude>
+          <southBoundLatitude>50.69038738137305</southBoundLatitude>
+          <northBoundLatitude>53.57277235686578</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.1973389348050447" miny="50.69038738137305" maxx="7.297479827704338" maxy="53.57277235686578"/>
+        <BoundingBox CRS="EPSG:28992" minx="9800.51879084442" miny="302053.0005984442" maxx="281517.8975091837" maxy="620737.25"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style for rasters</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://geoserver-bigdata.nieuwland.nl/RCE/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Bonnebladen1900"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Waterstaatskaarten1</Name>
+        <Title>Waterstaatskaarten1</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>WCS</Keyword>
+          <Keyword>ImagePyramid</Keyword>
+          <Keyword>rce_waterstaatskrt1_pyramids_1024_6</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.040779206370053</westBoundLongitude>
+          <eastBoundLongitude>7.305051953753163</eastBoundLongitude>
+          <southBoundLatitude>50.662816288779794</southBoundLatitude>
+          <northBoundLatitude>53.61142145879776</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.040779206370053" miny="50.662816288779794" maxx="7.305051953753163" maxy="53.61142145879776"/>
+        <BoundingBox CRS="EPSG:28992" minx="-442.34449" miny="299281.2838786734" maxx="281904.84085860796" maxy="625051.312038"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style for rasters</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://geoserver-bigdata.nieuwland.nl/RCE/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Waterstaatskaarten1"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>rce_tmk1850_pyramide</Name>
+        <Title>TMK1850</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>WCS</Keyword>
+          <Keyword>ImagePyramid</Keyword>
+          <Keyword>rce_tmk1850_pyramide</Keyword>
+        </KeywordList>
+        <CRS>EPSG:28992</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3.046205622980855</westBoundLongitude>
+          <eastBoundLongitude>7.298508026202815</eastBoundLongitude>
+          <southBoundLatitude>50.71026419115633</southBoundLatitude>
+          <northBoundLatitude>53.60900537453144</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3.046205622980855" miny="50.71026419115633" maxx="7.298508026202815" maxy="53.60900537453144"/>
+        <BoundingBox CRS="EPSG:28992" minx="-91.5" miny="304552.5" maxx="281478.5" maxy="624782.5"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style for rasters</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://geoserver-bigdata.nieuwland.nl/RCE/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=rce_tmk1850_pyramide"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

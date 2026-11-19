@@ -139,6 +139,10 @@ def used_prefixes(tsv):
 
 
 def rebuild(lines, used, reg):
+    # A prefix the sidecar already declares keeps its own IRI: the same prefix
+    # can name different namespaces in different tables (srv:, gfc: in ISO
+    # 19139 and ISO 19115-3), so the shared registry only fills gaps.
+    reg = {**reg, **curie_map_of(lines)}
     out, i, found = [], 0, False
     while i < len(lines):
         ln = lines[i]

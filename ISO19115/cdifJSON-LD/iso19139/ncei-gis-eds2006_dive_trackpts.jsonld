@@ -1,0 +1,196 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "urn:iso19115:gov.noaa.ncei_eds2006_dive_trackpts",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Submersible Data (Dive Trackpoints) for Expedition to the Deep Slope 2006 - Office of Ocean Exploration",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce"
+      }
+    ]
+  },
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
+        "schema:email": "ncei.info@noaa.gov",
+        "schema:telephone": "228-688-2354"
+      }
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
+      "schema:email": "ncei.info@noaa.gov",
+      "schema:telephone": "866-732-2382"
+    }
+  ],
+  "schema:description": "Data and information collected by the DSV ALVIN along its track during dives of the 2006 \"Expedition to the Deep Slope\" expedition sponsored by the National Oceanic and Atmospheric Administration (NOAA) Office of Ocean Exploration and Minerals Management Service (MMS), May 7 through June 2, 2006. Measurements and information include sub's position, altitude, and depth; dive, mission, and vehicle ID's.\n\nPurpose: This data set was compiled to support NOAA's Office of Ocean Exploration Regional Atlas. It was formatted for incorporation into a Geographic Information System database.\n\nSupplemental information: The dataset was thinned to readings approximately every 5 minutes.",
+  "schema:creativeWorkStatus": "completed",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "geographicDataset",
+      "schema:termCode": "geographicDataset",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "oceans",
+      "schema:termCode": "oceans",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    "ocean exploration",
+    "submersible dive",
+    "Gulf of Mexico"
+  ],
+  "schema:inLanguage": "en",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "26.179146 -94.624161 28.357512 -88.359473"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2006-05-09/2006-06-01"
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:spatialRepresentationType"
+        }
+      ],
+      "schema:name": "Spatial Representation Type",
+      "schema:value": "vector"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Access Constraints: None Use Constraints: None Distribution Liability: NOAA makes no warranty regarding these data, expressed or implied, nor does the fact of distribution constitute such a warranty. NOAA, NESDIS, NCEI cannot assume liability for any damages caused by any errors or omissions in these data, nor as a result of the failure of these data to function on a particular system."
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://gis.ngdc.noaa.gov/arcgis/rest/services/OceanExploration/OE_DigitalAtlasCruises/MapServer",
+      "schema:encodingFormat": [
+        "OGC:WMS"
+      ]
+    }
+  ],
+  "schema:url": "https://gis.ngdc.noaa.gov/arcgis/rest/services/OceanExploration/OE_DigitalAtlasCruises/MapServer",
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "Date, time, latitude, and longitude were extracted from files produced by shipboard equipment for each dive. Trackpoi...",
+      "schema:actionProcess": "Date, time, latitude, and longitude were extracted from files produced by shipboard equipment for each dive. Trackpoint measurements were thinned to approximately every 5 minutes for the duration of a dive. Text files containing the values were imported into Excel, then ArcMap, and a shapefile was created. Fields were added and populated in order to match an existing data layer. The shapefile was then appended to the submersible trackpoint data layer in ArcSDE.",
+      "schema:object": [
+        {
+          "@type": [
+            "schema:Thing"
+          ],
+          "schema:name": "dive_trackpts"
+        }
+      ],
+      "schema:agent": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
+        "schema:email": "ncei.info@noaa.gov",
+        "schema:telephone": "228-688-2354"
+      }
+    }
+  ],
+  "prov:wasDerivedFrom": [
+    "ROV ALVIN navigation data: Source Contribution: DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce.disc"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "metadataIdentifier",
+    "schema:value": "gov.noaa.ncei:eds2006_dive_trackpts"
+  },
+  "schema:dateModified": "2023-10-17T19:22:28",
+  "schema:subjectOf": {
+    "@id": "urn:iso19115:gov.noaa.ncei_eds2006_dive_trackpts#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: Submersible Data (Dive Trackpoints) for Expedition to the Deep Slope 2006 - Office of Ocean Exploration",
+    "schema:about": {
+      "@id": "urn:iso19115:gov.noaa.ncei_eds2006_dive_trackpts"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19115-2 (19139 encoding) to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "gov.noaa.ncei:eds2006_dive_trackpts",
+    "schema:dateModified": "2023-10-17T19:22:28",
+    "schema:inLanguage": "en",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
+      "schema:email": "ncei.info@noaa.gov",
+      "schema:telephone": "228-688-2354"
+    }
+  }
+}

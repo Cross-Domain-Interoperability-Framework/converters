@@ -1,0 +1,201 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "urn:uuid:72a091bf-274c-46ac-9903-dbb4d2f0c5ca",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Annual average water stress (ClimWatAdapt project, base line)",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "874ddad6f8afb1f8024d806b603d55c341e458db"
+  },
+  "schema:datePublished": "2011-10-28",
+  "schema:description": "Annual average water stress indicator WEI on river basin level for ClimWatAdapt baseline. A water stress indicator is defined as the total withdrawal of freshwater resources in relation to the long-term average availability of the freshwater water resources within a river (sub)basin. One of the most important indicators for water scarcity or water stress is the water exploitation index (WEI) or water stress indicator (w.t.a.), which is defined as the total water withdrawals-to-water availability ratio within a river basin. Water scarcity can be the result of intensive water use, low water availability (climate driven) or a combination of these pressures. The indicator provides to policy makers a quick overview of areas that may encounter water shortage problems. WEI or a w.t.a.-value between 0.0 and 0.2 is considered a low water stress, WEI between 0.2 and 0.4medium water stress, and a value greater than 0.4 severe water stress. This variant of the water exploitation index is defined as the ratio of water withdrawals in all sectors to water availability. Annual WEI is calculated on a river basin level for the baseline and the 2050s. Here, baseline conditions are defined as water availability averaged over the climate normal period 1961-90 and water withdrawals for the year 2005. For the 2050s, water availability is averaged over the period 2041-2070 (2050s) and calculated as the median of the hydrological simulations. Total water withdrawals are represented by two different socio-economic scenarios, the SCENES scenarios “Economy First” (EcF) and “Sustainability Eventually” (SuE).",
+  "schema:creativeWorkStatus": "obsolete",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "geographicDataset",
+      "schema:termCode": "geographicDataset",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "climatologyMeteorologyAtmosphere",
+      "schema:termCode": "climatologyMeteorologyAtmosphere",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    "water management",
+    "water stress",
+    "WEI",
+    "ClimWatAdapt",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "water",
+      "schema:inDefinedTermSet": "GEMET",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Atmospheric conditions",
+      "schema:inDefinedTermSet": "GEMET - INSPIRE themes, version 1.0",
+      "schema:description": "keyword type: theme"
+    }
+  ],
+  "schema:inLanguage": "en",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "35 -23.251 70.833 37.999"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "1961-01-01/1990-01-01"
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:referenceSystemIdentifier"
+        }
+      ],
+      "schema:name": "Coordinate Reference System",
+      "schema:value": "EPSG:4258",
+      "schema:url": "http://www.opengis.net/def/crs/EPSG/0/4258"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "No conditions apply",
+    "no limitations to public access"
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "cwa:wei_rb_base_ann",
+      "schema:serviceType": "OGC:WMS-1.1.1-http-get-map",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "cwa:wei_rb_base_ann",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "http://climate-adapt.eea.europa.eu/geoserver/wms?SERVICE=WMS&",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "schema:description": "Annual average water stress (ClimWatAdapt project, base line)"
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "CRH 2025 (LegendURL)",
+      "schema:serviceType": "image/png",
+      "schema:termsOfService": "not specified",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:Action"
+          ],
+          "schema:name": "CRH 2025 (LegendURL)",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:urlTemplate": "http://climate-adapt.eea.europa.eu/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=wei_rb_base_ann",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "schema:url": "http://climate-adapt.eea.europa.eu/geoserver/wms?SERVICE=WMS&",
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "Lineage",
+      "schema:actionProcess": "The water withdrawals are calculated by WaterGAP, and results for the SCENES scenarios “Economy First” (EcF) and “Sustainability Eventually” (SuE) are selected (Annex 3). Water availability is computed as the median of an ensemble of LISFLOOD simulations driven by climate projections of 11 different GCM-RCM combinations (see Annex 3, Table 1) for the period 2041-2070 (representing 2050s). The climate projections are taken from the ENSEMBLES project and are based on the SRES A1B scenario (Annex 3)."
+    }
+  ],
+  "schema:dateModified": "2011-10-28",
+  "schema:subjectOf": {
+    "@id": "urn:uuid:72a091bf-274c-46ac-9903-dbb4d2f0c5ca#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: Annual average water stress (ClimWatAdapt project, base line)",
+    "schema:about": {
+      "@id": "urn:uuid:72a091bf-274c-46ac-9903-dbb4d2f0c5ca"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19139 to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "72a091bf-274c-46ac-9903-dbb4d2f0c5ca",
+    "schema:dateModified": "2025-10-09T10:57:30Z",
+    "schema:inLanguage": "en",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "European Environment Agency",
+      "schema:email": "sdi@eea.europa.eu"
+    }
+  }
+}

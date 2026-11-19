@@ -1,0 +1,530 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "urn:iso19115:gov.noaa.ngdc_NOS_Hydrographic_Survey_Collection",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:name": "NOS Hydrographic Surveys Collection",
+  "schema:alternateName": [
+    "National Geospatial Data Asset (NGDA) NOS Hydrographic Surveys"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:value": "NCEI Metadata ID: gov.noaa.ngdc:NOS_Hydrographic_Survey_Collection"
+  },
+  "schema:datePublished": "2012-03-02",
+  "schema:dateCreated": "1837-05-23",
+  "schema:dateModified": "2023-09-15",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NOAA National Ocean Service"
+      }
+    ]
+  },
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "NOAA National Centers for Environmental Information"
+  },
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NOAA National Centers for Environmental Information",
+        "schema:identifier": "https://ror.org/04r0wrp59",
+        "schema:email": "ncei.info@noaa.gov",
+        "schema:url": "https://www.ncei.noaa.gov/contact"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "NOAA National Centers for Environmental Information",
+        "schema:telephone": "(303) 497-6429"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "NCEI GIS Team",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "NOAA National Centers for Environmental Information"
+        },
+        "schema:email": "ncei.gis@noaa.gov"
+      }
+    }
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "NOAA National Centers for Environmental Information",
+      "schema:identifier": "https://ror.org/04r0wrp59",
+      "schema:email": "ncei.info@noaa.gov",
+      "schema:url": "https://www.ncei.noaa.gov/contact"
+    }
+  ],
+  "schema:description": "The National Oceanic and Atmospheric Administration (NOAA) has the statutory mandate to collect hydrographic data in support of nautical chart compilation for safe navigation and to provide background data for engineers, scientific, and other commercial and industrial activities. Hydrographic survey data primarily consist of water depths, but may also include features (e.g. rocks, wrecks), navigation aids, shoreline identification, and bottom type information. NOAA is responsible for archiving and distributing the source data as described in this metadata record. Survey types are B: Hydrographic EEZ Surveys; D: Discovery Surveys; H: Hydrographic Surveys; F: Field Edit Surveys; W: Non-NOS Hydrographic Surveys.\n\nPurpose: These hydrographic data are made available to the public for a wide variety of uses, such as sea-bottom characterization, habitat classification, coastal studies, boundary issues, and tsunami forecasting. These data are not intended to be used for navigation. Nautical charts produced and certified by NOAA should be used for navigation purposes.",
+  "schema:creativeWorkStatus": "onGoing",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "collection",
+      "schema:termCode": "collection",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "oceans",
+      "schema:termCode": "oceans",
+      "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE > Oceans > Bathymetry/Seafloor Topography > Bathymetry",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE > Oceans > Bathymetry/Seafloor Topography > Seafloor Topography",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE > Oceans > Bathymetry/Seafloor Topography > Water Depth",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE > Oceans > Marine Sediments > Sediment Composition",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    "Hydrographic Surveys for Selected Locations Within the United States",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "CONTINENT > NORTH AMERICA > UNITED STATES OF AMERICA",
+      "schema:inDefinedTermSet": "Getty Thesaurus of Geographic Names",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "OCEAN",
+      "schema:inDefinedTermSet": "Getty Thesaurus of Geographic Names",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "In Situ/Laboratory Instruments > Profilers/Sounders > Acoustic Sounders > > MSBS > Multibeam Swath Bathymetry System",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Instrument Keywords",
+      "schema:description": "keyword type: instrument"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "In Situ/Laboratory Instruments > Profilers/Sounders > Acoustic Sounders > > MBES > Multibeam Mapping System",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Instrument Keywords",
+      "schema:description": "keyword type: instrument"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "In Situ/Laboratory Instruments > Profilers/Sounders > Acoustic Sounders > > SONAR > Sound Navigation and Ranging",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Instrument Keywords",
+      "schema:description": "keyword type: instrument"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "In Situ/Laboratory Instruments > Profilers/Sounders > Acoustic Sounders",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Instrument Keywords",
+      "schema:description": "keyword type: instrument"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Remote Sensing Instruments > Passive Remote Sensing > Positioning/Navigation > GPS > GPS RECEIVERS",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Instrument Keywords",
+      "schema:description": "keyword type: instrument"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Earth Remote Sensing Instruments > Passive Remote Sensing > Positioning/Navigation > GPS > GPS/IMU > Global Positioning System/Inertial Measurement Unit",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Instrument Keywords",
+      "schema:description": "keyword type: instrument"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "NGDA",
+      "schema:inDefinedTermSet": "NGDA Portfolio Themes",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "National Geospatial Data Asset",
+      "schema:inDefinedTermSet": "NGDA Portfolio Themes",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Elevation Theme",
+      "schema:inDefinedTermSet": "NGDA Portfolio Themes",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Data Center Keywords",
+      "schema:description": "keyword type: dataCentre"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DOC/NOAA/NESDIS/NGDC > National Geophysical Data Center, NESDIS, NOAA, U.S. Department of Commerce",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Data Center Keywords",
+      "schema:description": "keyword type: dataCentre"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "NOAA OneStop Project",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Project Keywords",
+      "schema:description": "keyword type: project"
+    },
+    "NGDAID45",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DATA ANALYSIS AND VISUALIZATION > GEOGRAPHIC INFORMATION SYSTEMS > WEB-BASED GEOGRAPHIC INFORMATION SYSTEMS",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Service Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DATA MANAGEMENT/DATA HANDLING > DATA SEARCH AND RETRIEVAL",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Service Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "DATA ANALYSIS AND VISUALIZATION > VISUALIZATION/IMAGE PROCESSING",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Service Keywords",
+      "schema:description": "keyword type: theme"
+    }
+  ],
+  "schema:inLanguage": "en",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-90 -180 90 180"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "1837-05-23/.."
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:spatialResolution"
+        }
+      ],
+      "schema:name": "Spatial Resolution",
+      "schema:value": "1:10000"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "dde:referenceSystemIdentifier"
+        }
+      ],
+      "schema:name": "Coordinate Reference System",
+      "schema:value": "Through the collection reference systems have vaired with time and location. Please see survey level metadata for detailed information."
+    }
+  ],
+  "schema:image": [
+    {
+      "@type": [
+        "schema:ImageObject"
+      ],
+      "schema:contentUrl": "https://www.ngdc.noaa.gov/mgg/image/nossmoothsheeticon.jpg",
+      "schema:caption": "1950s smooth sheet",
+      "schema:encodingFormat": "JPG"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Distribution liability: NOAA and NCEI make no warranty, expressed or implied, regarding these data, nor does the fact of distribution constitute such a warranty. NOAA and NCEI cannot assume liability for any damages caused by any errors or omissions in these data. If appropriate, NCEI can only certify that the data it distributes are an authentic copy of the records that were accepted for inclusion in the NCEI archives.",
+    "Use liability: NOAA and NCEI cannot provide any warranty as to the accuracy, reliability, or completeness of furnished data. Users assume responsibility to determine the usability of these data. The user is responsible for the results of any application of this data for other than its intended purpose",
+    "These data are NOT to be used for navigation.",
+    "Cite as: NOAA National Ocean Service, Office of Coast Survey. 2012: NOS Hydrographic Surveys Collection. [indicate subset used]. NOAA National Centers for Environmental Information. Accessed [date] https://doi.org/10.25921/qh2z-7261.",
+    "otherRestrictions",
+    "These data not to be used for navigation. Although these data are of high quality and useful for planning and modeling purposes, they are not suitable for navigation. For official navigation products, please refer to the U.S. nautical charts available from the NOAA Office of Coast Survey: http://www.nauticalcharts.noaa.gov."
+  ],
+  "schema:url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ngdc:NOS_Hydrographic_Survey_Collection/html",
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "information",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.ngdc.noaa.gov/mgg/bathymetry/hydro.html",
+        "schema:name": "NOS Hydrographic Survey Data Home Page",
+        "schema:description": "Home page for digitized data from smooth sheets of hydrographic surveys completed between 1837 and 1965, and from survey data acquired digitally on NOS survey vessels since 1965. Over 76 million soundings from over 6,600 surveys are included. NGDC has developed an interactive map and data discovery tool, the Bathymetry Map Service, and a text-based search engine, the Hydrographic Survey Text Search, which enable rapid data discovery and download."
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "search",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.ncei.noaa.gov/maps/bathymetry/",
+        "schema:name": "Bathymetric Data Viewer"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "search",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.ngdc.noaa.gov/hydro-survey-search/",
+        "schema:name": "Hydrographic Survey Text Search"
+      }
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "schema:Action",
+        "prov:Activity"
+      ],
+      "schema:name": "NOAA created the National Centers for Environmental Information (NCEI) by merging NOAA's National Climatic Data Cente...",
+      "schema:actionProcess": "NOAA created the National Centers for Environmental Information (NCEI) by merging NOAA's National Climatic Data Center (NCDC), National Geophysical Data Center (NGDC), and National Oceanographic Data Center (NODC), including the National Coastal Data Development Center (NCDDC), per the Consolidated and Further Continuing Appropriations Act, 2015, Public Law 113-235. NCEI launched publicly on April 22, 2015.",
+      "schema:endTime": "2015-04-22T00:00:00"
+    }
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "ArcGIS Image Service",
+    "schema:termCode": "ArcGIS Image Service"
+  },
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ArcGIS for Server REST endpoint for Bathymetric Attributed Grid (BAG) image service",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://gis.ngdc.noaa.gov/arcgis/rest/services/bag_bathymetry/ImageServer"
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ArcGIS for Server REST endpoint for Bathymetric Attributed Grid (BAG) Color Shaded Relief tile layer",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://tiles.arcgis.com/tiles/C8EMgrsFcRFL6LrL/arcgis/rest/services/bag_hillshades/MapServer"
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ArcGIS for Server REST endpoint for BAG Color Shaded Relief \"Subsets\" image service",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://gis.ngdc.noaa.gov/arcgis/rest/services/bag_hillshades_subsets/ImageServer"
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ArcGIS for Server REST endpoint for hosted tile layer",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://tiles.arcgis.com/tiles/C8EMgrsFcRFL6LrL/arcgis/rest/services/nos_hydro/MapServer"
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ArcGIS for Server REST endpoint for dynamic map service",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://gis.ngdc.noaa.gov/arcgis/rest/services/web_mercator/nos_hydro_dynamic/MapServer"
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "WMS Get Capabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://gis.ngdc.noaa.gov/arcgis/services//web_mercator/nos_hydro_dynamic/MapServer/WMSServer?request=GetCapabilities&service=WMS"
+      }
+    }
+  ],
+  "schema:termsOfService": "not specified",
+  "schema:subjectOf": {
+    "@id": "urn:iso19115:gov.noaa.ngdc_NOS_Hydrographic_Survey_Collection#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: NOS Hydrographic Surveys Collection",
+    "schema:about": {
+      "@id": "urn:iso19115:gov.noaa.ngdc_NOS_Hydrographic_Survey_Collection"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/provenance/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19115-2 (19139 encoding) to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "gov.noaa.ngdc:NOS_Hydrographic_Survey_Collection",
+    "schema:dateModified": "2025-12-04T21:00:09",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "NOAA National Centers for Environmental Information",
+      "schema:identifier": "https://ror.org/04r0wrp59",
+      "schema:email": "ncei.info@noaa.gov",
+      "schema:url": "https://www.ncei.noaa.gov/contact"
+    }
+  }
+}

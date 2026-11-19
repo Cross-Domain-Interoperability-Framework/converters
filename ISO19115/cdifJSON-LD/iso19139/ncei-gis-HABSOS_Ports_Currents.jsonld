@@ -1,0 +1,174 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dde": "https://www.ddeworld.org/resource/"
+  },
+  "@id": "urn:iso19115:gov.noaa.ncei_HABSOS_Ports_Currents",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:name": "Web Service for CO-OPS Stations",
+  "schema:alternateName": [
+    "HABSOS_Ports_Currents_Service_Granule"
+  ],
+  "schema:dateCreated": "2016-03-25",
+  "schema:description": "The National Ocean Service's Center for Operational Oceanographic Products and Services (CO-OPS) Stations map service contains the locations of present and historical stations around the US and its territories that record oceanographic and meteorological observations.\n\nPurpose: CO-OPS Stations map service contains the locations of stations around the US/territories that record oceanographic and meteorological observations.",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "service",
+      "schema:termCode": "service",
+      "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE > OCEANS > OCEAN CIRCULATION > OCEAN CURRENTS",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "EARTH SCIENCE > OCEANS > TIDES > TIDAL CURRENTS",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Science Keywords",
+      "schema:description": "keyword type: theme"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "CONTINENT > NORTH AMERICA > UNITED STATES OF AMERICA > FLORIDA",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "OCEAN > ATLANTIC OCEAN > NORTH ATLANTIC OCEAN > GULF OF MEXICO",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Location Keywords",
+      "schema:description": "keyword type: place"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "BUOYS",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Platform Keywords",
+      "schema:description": "keyword type: platform"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "WIND MONITOR > WIND MONITOR",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Instrument Keywords",
+      "schema:description": "keyword type: instrument"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "THERMOMETERS > THERMOMETERS",
+      "schema:inDefinedTermSet": "Global Change Master Directory (GCMD) Instrument Keywords",
+      "schema:description": "keyword type: instrument"
+    }
+  ],
+  "schema:inLanguage": "en",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-63.39 -177.35 71.36 178.42"
+      }
+    }
+  ],
+  "schema:image": [
+    {
+      "@type": [
+        "schema:ImageObject"
+      ],
+      "schema:contentUrl": "https://www.ncei.noaa.gov/themes/custom/ncei/logo.svg",
+      "schema:caption": "NOAA logo",
+      "schema:encodingFormat": "SVG"
+    }
+  ],
+  "schema:url": "https://tidesandcurrents.noaa.gov",
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "ArcGIS Map Service",
+    "schema:termCode": "ArcGIS Map Service"
+  },
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ArcGIS for Server REST endpoint for image service",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://idpgis.ncep.noaa.gov/arcgis/rest/services/NOS_Observations/CO_OPS_Stations/MapServer"
+      }
+    }
+  ],
+  "schema:termsOfService": "not specified",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "metadataIdentifier",
+    "schema:value": "gov.noaa.ncei:HABSOS_Ports_Currents"
+  },
+  "schema:dateModified": "2016-03-25",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "urn:iso19115:gov.noaa.ncei_HABSOS_Ports_Currents#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "ISO metadata record for: Web Service for CO-OPS Stations",
+    "schema:about": {
+      "@id": "urn:iso19115:gov.noaa.ncei_HABSOS_Ports_Currents"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from ISO 19115-2 (19139 encoding) to CDIF by iso_to_cdif.py.",
+    "schema:identifier": "gov.noaa.ncei:HABSOS_Ports_Currents",
+    "schema:dateModified": "2022-01-12T22:30:20"
+  }
+}
