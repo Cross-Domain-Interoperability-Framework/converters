@@ -1,0 +1,2018 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Header>
+    <message:ID>IDREF2610</message:ID>
+    <message:Test>false</message:Test>
+    <message:Prepared>2026-11-19T00:12:57.1248315+00:00</message:Prepared>
+    <message:Sender id="Unknown"/>
+    <message:Receiver id="Unknown"/>
+  </message:Header>
+  <message:Structures>
+    <structure:Dataflows>
+      <structure:Dataflow id="C21_G33_RA" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>TIME_PERIOD,HHCD</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>HIND</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>REGION</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW_SECTION</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>REGION=10,TIME_PERIOD_START=2021</common:AnnotationTitle>
+            <common:AnnotationType>DEFAULT</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">Guide to Census data|https://www.abs.gov.au/census/guide-census-data</common:AnnotationText>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">Download all data - Census DataPacks|https://www.abs.gov.au/census/find-census-data/datapacks</common:AnnotationText>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Census 2021, G33 Total household income (weekly) by household composition, Remoteness Areas (RA)</common:Name>
+        <common:Description xml:lang="en">Dataset: C21_G33_RA. Total household income (weekly) by household composition data for Remoteness Areas (RA), 2021 Census, Count of occupied private dwellings.
+This table is based on place of enumeration.
+Excludes 'Visitors only' and 'Other non-classifiable' households.
+Please note that there are small random adjustments made to all cell values to protect the confidentiality of data. These adjustments may cause the sum of rows or columns to differ by small amounts from table totals.</common:Description>
+        <structure:Structure>
+          <Ref id="C21_G33_RA" version="1.0.0" agencyID="ABS" package="datastructure" class="DataStructure"/>
+        </structure:Structure>
+      </structure:Dataflow>
+    </structure:Dataflows>
+    <structure:CategorySchemes>
+      <structure:CategoryScheme id="C21_RA" agencyID="ABS" version="1.0.0" isFinal="true" isPartial="true">
+        <common:Name xml:lang="en">Census 2021</common:Name>
+        <structure:Category id="C21_RA">
+          <common:Name xml:lang="en">Remoteness Areas</common:Name>
+          <structure:Category id="C21_RA_GCP">
+            <common:Name xml:lang="en">General Community Profiles</common:Name>
+          </structure:Category>
+        </structure:Category>
+      </structure:CategoryScheme>
+    </structure:CategorySchemes>
+    <structure:Categorisations>
+      <structure:Categorisation id="CAT_C21_G33_RA" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Name xml:lang="en">Census 2021, G33 Total household income (weekly) by household composition, Remoteness Areas (RA) Categorisation</common:Name>
+        <structure:Source>
+          <Ref id="C21_G33_RA" version="1.0.0" agencyID="ABS" package="datastructure" class="Dataflow"/>
+        </structure:Source>
+        <structure:Target>
+          <Ref id="C21_RA.C21_RA_GCP" maintainableParentID="C21_RA" maintainableParentVersion="1.0.0" agencyID="ABS" package="categoryscheme" class="Category"/>
+        </structure:Target>
+      </structure:Categorisation>
+    </structure:Categorisations>
+    <structure:Codelists>
+      <structure:Codelist id="CL_C21_HHCD01" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Name xml:lang="en">Household Composition 01</common:Name>
+        <structure:Code id="_T">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">3</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Total</common:Name>
+        </structure:Code>
+        <structure:Code id="1_2">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Family households</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="3">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">2</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>FURTHER_INFORMATION</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">Comprises 'Lone person' and 'Group households'.</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Non-family household</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_C21_HIND02" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Name xml:lang="en">Total Household Income (weekly) 02</common:Name>
+        <structure:Code id="_T">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">20</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Total</common:Name>
+        </structure:Code>
+        <structure:Code id="1">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Negative/Nil income</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="2">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">2</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$1-$149</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="3">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">3</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$150-$299</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="4">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">4</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$300-$399</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="5">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">5</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$400-$499</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="6">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">6</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$500-$649</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="7">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">7</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$650-$799</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="8">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">8</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$800-$999</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="9">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">9</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$1,000-$1,249</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="10">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">10</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$1,250-$1,499</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="11">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">11</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$1,500-$1,749</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="12">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">12</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$1,750-$1,999</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="13">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">13</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$2,000-$2,499</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="14">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">14</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$2,500-$2,999</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="15">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">15</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$3,000-$3,499</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="16">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">16</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$3,500-$3,999</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="17">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">17</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">$4,000 or more</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="18">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">18</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>FURTHER_INFORMATION</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">Comprises households where at least one, but not all, member(s) aged 15 years and over did not state an income and/or was temporarily absent on Census Night.</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Partial income stated</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="_N">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">19</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>FURTHER_INFORMATION</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">Comprises households where no members present stated an income.</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">All incomes not stated</common:Name>
+          <structure:Parent>
+            <Ref id="_T"/>
+          </structure:Parent>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_RA_2021" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>EXTERNAL_RESOURCE</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/RA/MapServer</common:AnnotationText>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Remoteness Areas - 2021</common:Name>
+        <structure:Code id="AUS">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Australia</common:Name>
+        </structure:Code>
+        <structure:Code id="1">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">5</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">New South Wales</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="10">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">10</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Major Cities of Australia (NSW)</common:Name>
+          <structure:Parent>
+            <Ref id="1"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="11">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">15</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Inner Regional Australia (NSW)</common:Name>
+          <structure:Parent>
+            <Ref id="1"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="12">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">20</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Outer Regional Australia (NSW)</common:Name>
+          <structure:Parent>
+            <Ref id="1"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="13">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">25</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Remote Australia (NSW)</common:Name>
+          <structure:Parent>
+            <Ref id="1"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="14">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">30</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Very Remote Australia (NSW)</common:Name>
+          <structure:Parent>
+            <Ref id="1"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="15">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">35</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Migratory - Offshore - Shipping (NSW)</common:Name>
+          <structure:Parent>
+            <Ref id="1"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="19">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">40</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">No usual address (NSW)</common:Name>
+          <structure:Parent>
+            <Ref id="1"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="2">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">45</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Victoria</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="20">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">50</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Major Cities of Australia (Vic.)</common:Name>
+          <structure:Parent>
+            <Ref id="2"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="21">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">55</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Inner Regional Australia (Vic.)</common:Name>
+          <structure:Parent>
+            <Ref id="2"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="22">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">60</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Outer Regional Australia (Vic.)</common:Name>
+          <structure:Parent>
+            <Ref id="2"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="23">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">65</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Remote Australia (Vic.)</common:Name>
+          <structure:Parent>
+            <Ref id="2"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="25">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">70</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Migratory - Offshore - Shipping (Vic.)</common:Name>
+          <structure:Parent>
+            <Ref id="2"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="29">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">75</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">No usual address (Vic.)</common:Name>
+          <structure:Parent>
+            <Ref id="2"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="3">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">80</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Queensland</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="30">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">85</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Major Cities of Australia (Qld)</common:Name>
+          <structure:Parent>
+            <Ref id="3"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="31">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">90</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Inner Regional Australia (Qld)</common:Name>
+          <structure:Parent>
+            <Ref id="3"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="32">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">95</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Outer Regional Australia (Qld)</common:Name>
+          <structure:Parent>
+            <Ref id="3"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="33">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">100</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Remote Australia (Qld)</common:Name>
+          <structure:Parent>
+            <Ref id="3"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="34">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">105</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Very Remote Australia (Qld)</common:Name>
+          <structure:Parent>
+            <Ref id="3"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="35">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">110</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Migratory - Offshore - Shipping (Qld)</common:Name>
+          <structure:Parent>
+            <Ref id="3"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="39">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">115</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">No usual address (Qld)</common:Name>
+          <structure:Parent>
+            <Ref id="3"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="4">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">120</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">South Australia</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="40">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">125</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Major Cities of Australia (SA)</common:Name>
+          <structure:Parent>
+            <Ref id="4"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="41">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">130</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Inner Regional Australia (SA)</common:Name>
+          <structure:Parent>
+            <Ref id="4"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="42">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">135</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Outer Regional Australia (SA)</common:Name>
+          <structure:Parent>
+            <Ref id="4"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="43">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">140</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Remote Australia (SA)</common:Name>
+          <structure:Parent>
+            <Ref id="4"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="44">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">145</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Very Remote Australia (SA)</common:Name>
+          <structure:Parent>
+            <Ref id="4"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="45">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">150</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Migratory - Offshore - Shipping (SA)</common:Name>
+          <structure:Parent>
+            <Ref id="4"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="49">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">155</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">No usual address (SA)</common:Name>
+          <structure:Parent>
+            <Ref id="4"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="5">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">160</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Western Australia</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="50">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">165</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Major Cities of Australia (WA)</common:Name>
+          <structure:Parent>
+            <Ref id="5"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="51">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">170</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Inner Regional Australia (WA)</common:Name>
+          <structure:Parent>
+            <Ref id="5"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="52">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">175</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Outer Regional Australia (WA)</common:Name>
+          <structure:Parent>
+            <Ref id="5"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="53">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">180</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Remote Australia (WA)</common:Name>
+          <structure:Parent>
+            <Ref id="5"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="54">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">185</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Very Remote Australia (WA)</common:Name>
+          <structure:Parent>
+            <Ref id="5"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="55">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">190</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Migratory - Offshore - Shipping (WA)</common:Name>
+          <structure:Parent>
+            <Ref id="5"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="59">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">195</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">No usual address (WA)</common:Name>
+          <structure:Parent>
+            <Ref id="5"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="6">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">200</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Tasmania</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="61">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">205</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Inner Regional Australia (Tas.)</common:Name>
+          <structure:Parent>
+            <Ref id="6"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="62">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">210</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Outer Regional Australia (Tas.)</common:Name>
+          <structure:Parent>
+            <Ref id="6"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="63">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">215</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Remote Australia (Tas.)</common:Name>
+          <structure:Parent>
+            <Ref id="6"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="64">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">220</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Very Remote Australia (Tas.)</common:Name>
+          <structure:Parent>
+            <Ref id="6"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="65">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">225</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Migratory - Offshore - Shipping (Tas.)</common:Name>
+          <structure:Parent>
+            <Ref id="6"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="69">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">230</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">No usual address (Tas.)</common:Name>
+          <structure:Parent>
+            <Ref id="6"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="7">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">235</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Northern Territory</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="72">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">240</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Outer Regional Australia (NT)</common:Name>
+          <structure:Parent>
+            <Ref id="7"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="73">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">245</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Remote Australia (NT)</common:Name>
+          <structure:Parent>
+            <Ref id="7"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="74">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">250</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Very Remote Australia (NT)</common:Name>
+          <structure:Parent>
+            <Ref id="7"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="75">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">255</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Migratory - Offshore - Shipping (NT)</common:Name>
+          <structure:Parent>
+            <Ref id="7"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="79">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">260</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">No usual address (NT)</common:Name>
+          <structure:Parent>
+            <Ref id="7"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="8">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">265</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Australian Capital Territory</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="80">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">270</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Major Cities of Australia (ACT)</common:Name>
+          <structure:Parent>
+            <Ref id="8"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="81">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">275</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Inner Regional Australia (ACT)</common:Name>
+          <structure:Parent>
+            <Ref id="8"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="85">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">280</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Migratory - Offshore - Shipping (ACT)</common:Name>
+          <structure:Parent>
+            <Ref id="8"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="89">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">285</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">No usual address (ACT)</common:Name>
+          <structure:Parent>
+            <Ref id="8"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="9">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">290</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Other Territories</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="91">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">295</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Inner Regional Australia (OT)</common:Name>
+          <structure:Parent>
+            <Ref id="9"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="94">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">300</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Very Remote Australia (OT)</common:Name>
+          <structure:Parent>
+            <Ref id="9"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="95">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">305</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Migratory - Offshore - Shipping (OT)</common:Name>
+          <structure:Parent>
+            <Ref id="9"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="99">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">310</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">No usual address (OT)</common:Name>
+          <structure:Parent>
+            <Ref id="9"/>
+          </structure:Parent>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_REGION_TYPE" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Name xml:lang="en">Region Type</common:Name>
+        <structure:Code id="AUS">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">10</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Australia</common:Name>
+        </structure:Code>
+        <structure:Code id="STE">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">20</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">States and Territories</common:Name>
+        </structure:Code>
+        <structure:Code id="SA4">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">30</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Statistical Area Level 4</common:Name>
+        </structure:Code>
+        <structure:Code id="SA3">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">40</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Statistical Area Level 3</common:Name>
+        </structure:Code>
+        <structure:Code id="SA2">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">50</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Statistical Area Level 2</common:Name>
+        </structure:Code>
+        <structure:Code id="SA1">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">60</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Statistical Area Level 1</common:Name>
+        </structure:Code>
+        <structure:Code id="RA">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">70</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Remoteness Area</common:Name>
+        </structure:Code>
+        <structure:Code id="SOS">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">80</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Section of State</common:Name>
+        </structure:Code>
+        <structure:Code id="SOSR">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">90</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Section of State Ranges</common:Name>
+        </structure:Code>
+        <structure:Code id="UC">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">100</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Urban Centres</common:Name>
+        </structure:Code>
+        <structure:Code id="UL">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">110</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Urban Locations</common:Name>
+        </structure:Code>
+        <structure:Code id="IREG">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">120</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Indigenous Regions</common:Name>
+        </structure:Code>
+        <structure:Code id="IARE">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">130</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Indigenous Areas</common:Name>
+        </structure:Code>
+        <structure:Code id="ILOC">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">140</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Indigenous Locations</common:Name>
+        </structure:Code>
+        <structure:Code id="GCCSA">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">150</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Greater Capital City Statistical Areas</common:Name>
+        </structure:Code>
+        <structure:Code id="SUA">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">160</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Significant Urban Areas</common:Name>
+        </structure:Code>
+        <structure:Code id="SLA">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">170</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">2011 Statistical Local Areas</common:Name>
+        </structure:Code>
+        <structure:Code id="DZN">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">180</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Destination Zones</common:Name>
+        </structure:Code>
+        <structure:Code id="CED">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">190</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Commonwealth Electoral Divisions</common:Name>
+        </structure:Code>
+        <structure:Code id="SED">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">200</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">State Electoral Divisions</common:Name>
+        </structure:Code>
+        <structure:Code id="LGA">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">210</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas</common:Name>
+        </structure:Code>
+        <structure:Code id="LGA2011">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">211</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2011)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2012">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">212</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2012)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2013">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">213</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2013)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2014">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">214</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2014)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2015">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">215</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2015)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2016">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">216</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2016)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2017">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">217</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2017)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2018">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">218</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2018)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2019">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">219</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2019)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2020">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">220</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2020)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2021">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">221</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2021)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2022">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">222</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2022)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2023">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">223</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2023)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2024">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">224</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2024)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="LGA2025">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">225</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Local Government Areas (2025)</common:Name>
+          <structure:Parent>
+            <Ref id="LGA"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="FED">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">240</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Federal Electoral Division</common:Name>
+        </structure:Code>
+        <structure:Code id="POA">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">250</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Postal Areas</common:Name>
+        </structure:Code>
+        <structure:Code id="NRMR">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">260</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">National Resource Management Regions</common:Name>
+        </structure:Code>
+        <structure:Code id="ADD">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">270</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Australian Drainage Divisions</common:Name>
+        </structure:Code>
+        <structure:Code id="TR">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">280</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Tourism Regions</common:Name>
+        </structure:Code>
+        <structure:Code id="SSC">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">290</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">State Suburbs</common:Name>
+        </structure:Code>
+        <structure:Code id="OT">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1000</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Other</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_STATE" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Name xml:lang="en">State</common:Name>
+        <structure:Code id="AUS">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">10</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Australia</common:Name>
+        </structure:Code>
+        <structure:Code id="1">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">20</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">New South Wales</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="2">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">30</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Victoria</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="3">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">40</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Queensland</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="4">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">50</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">South Australia</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="5">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">60</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Western Australia</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="6">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">70</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Tasmania</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="7">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">80</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Northern Territory</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="8">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">90</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Australian Capital Territory</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="9">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">100</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Other Territories</common:Name>
+          <structure:Parent>
+            <Ref id="AUS"/>
+          </structure:Parent>
+        </structure:Code>
+      </structure:Codelist>
+    </structure:Codelists>
+    <structure:Concepts>
+      <structure:ConceptScheme isPartial="true" id="CS_C21_DWELLING" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Name xml:lang="en">Census 2021 Dwelling Concepts</common:Name>
+        <structure:Concept id="HHCD">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>CONTEXT</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">This variable is derived from the Relationship in household and Persons temporarily absent questions on the Census form.
+
+[Family](https://www.abs.gov.au/census/guide-census-data/census-dictionary/2021/glossary/f#family) and [Household](https://www.abs.gov.au/census/guide-census-data/census-dictionary/2021/glossary/h#household) structures are identified during Census data processing and are created around a family or household reference person. Persons identified as [temporarily absent](https://www.abs.gov.au/census/guide-census-data/census-dictionary/2021/glossary/t#temporarily-absent) on Census night are taken into consideration when deriving Household composition. This allows for identification of some family types and helps distinguish between lone person and group households.</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>SCOPE</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">Occupied private dwellings</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>SOURCE</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">https://www.abs.gov.au/census/guide-census-data/census-dictionary/2021/variables-topic/household-and-families/household-composition-hhcd</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>TOPIC</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">Household and families</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>RELEASE</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">June 2022</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>CONSIDERATION</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">Across the community, a wide variety of living arrangements exist with complex family structures. The quality of family data in the Census is partly dependent on people’s ability to describe these relationships within the constraints of the generalised questionnaire format required by a Census. Reporting relationships in respect of 'Person 1' only, can make it difficult to establish all the relationships which exist in a household, or to identify whether more than one family is living in the dwelling.
+
+A maximum of three families can be coded to a household. Lone person households can contain visitors. Visitor only households can contain overseas visitors.
+
+The 'Other not classifiable' category consists mainly of occupied dwellings where a form was not received. It also includes households:
+
+* which the ABS Field Officer determined were occupied on Census night but where the ABS Field Officer could not make contact
+* that contained only persons aged under 15 years
+* which could not be classified elsewhere in this classification because there was insufficient information on the Census form
+
+Care should be taken when comparing this variable to other family data from within the ABS or external organisations or agencies. The definition of a family can differ between statistical collections and may not match Census definitions.</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Household composition</common:Name>
+          <common:Description xml:lang="en">This variable describes the type of household within a dwelling. It indicates if a family is present on Census night and if other unrelated household members are present.</common:Description>
+        </structure:Concept>
+        <structure:Concept id="HIND">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>CONTEXT</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">This variable is calculated by summing the personal incomes reported by all household members aged 15 years and over. The Census collects personal income in ranges, so before these can be summed, a specific dollar amount needs to be allocated to each person. Median incomes for each range, derived using data from the Survey of Income and Housing, are used for this purpose. For more information about this survey see the [Survey of Income and Housing, User Guide.](https://www.abs.gov.au/ausstats/abs@.nsf/Lookup/by%20Subject/6553.0~2013-14~Main%20Features~Income~2)
+
+Households where all or at least one member aged 15 and over did not state an income are set to:
+
+* 'All incomes not stated' and
+* 'Partial income stated' respectively.
+
+Households where at least one member aged 15 and over was away from the dwelling on Census night are also set to 'Partial incomes stated'. 
+
+In most cases, the income of visitors to a household are excluded from Total household income as stated. The exception to this is households that comprise only visitors.</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>SCOPE</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">Occupied private dwellings</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>SOURCE</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">https://www.abs.gov.au/census/guide-census-data/census-dictionary/2021/variables-topic/income-and-work/total-household-income-weekly-hind</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>TOPIC</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">Income and work</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>RELEASE</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">June 2022</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>CONSIDERATION</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">If there is a need to recalculate this variable under different circumstances, the derived variable Household income derivation indicator [(HIDD)](https://www.abs.gov.au/census/guide-census-data/census-dictionary/2021/variables-topic/income-and-work/household-income-derivation-indicator-hidd) can be used in conjunction with Total personal income (weekly) [(INCP)](https://www.abs.gov.au/census/guide-census-data/census-dictionary/2021/variables-topic/income-and-work/total-personal-income-weekly-incp) to create a new household income variable.
+
+Total household income is calculated for visitor only households to collect data on household income in tourist areas.</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Total household income (weekly)</common:Name>
+          <common:Description xml:lang="en">This variable is the sum of Total personal income (weekly) of each resident aged 15 years or older who was present in the household on Census night.</common:Description>
+        </structure:Concept>
+      </structure:ConceptScheme>
+      <structure:ConceptScheme isPartial="true" id="CS_COMMON" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Name xml:lang="en">Common Concepts</common:Name>
+        <structure:Concept id="OBS_VALUE">
+          <common:Name xml:lang="en">Observation Value</common:Name>
+          <common:Description xml:lang="en">The observed value of the variable identified by the series dimension values.</common:Description>
+        </structure:Concept>
+        <structure:Concept id="TIME_PERIOD">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>CONTEXT</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">The measurement represented by each observation corresponds to either a specific point in time (e.g. a single day) or a period (e.g. a month, quarter, financial or calendar year).</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>QUARTER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">Quarterly data is reported against the calander year. e.g. "YYYY-Q1" represents the quarter ending March.</common:AnnotationText>
+            </common:Annotation>
+            <common:Annotation>
+              <common:AnnotationType>FINANCIAL_YEAR</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">Time periods matching the "YYYY-MM-DD/P1Y" format represent financial years as the start date of the period followed by the duration of 1 year.</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Time Period</common:Name>
+          <common:Description xml:lang="en">Timespan or point in time for which the observation refers.</common:Description>
+        </structure:Concept>
+      </structure:ConceptScheme>
+      <structure:ConceptScheme isPartial="true" id="CS_GEOGRAPHY" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Name xml:lang="en">Geography Concepts</common:Name>
+        <structure:Concept id="REGION">
+          <common:Name xml:lang="en">Region</common:Name>
+        </structure:Concept>
+        <structure:Concept id="REGION_TYPE">
+          <common:Name xml:lang="en">Region Type</common:Name>
+        </structure:Concept>
+        <structure:Concept id="STATE">
+          <common:Name xml:lang="en">State</common:Name>
+        </structure:Concept>
+      </structure:ConceptScheme>
+    </structure:Concepts>
+    <structure:DataStructures>
+      <structure:DataStructure id="C21_G33_RA" agencyID="ABS" version="1.0.0" isFinal="true">
+        <common:Name xml:lang="en">Census 2021, G33 Total household income (weekly) by household composition, Remoteness Areas (RA) Datastructure</common:Name>
+        <structure:DataStructureComponents>
+          <structure:DimensionList id="DimensionDescriptor">
+            <structure:Dimension id="HIND" position="1">
+              <structure:ConceptIdentity>
+                <Ref id="HIND" maintainableParentID="CS_C21_DWELLING" maintainableParentVersion="1.0.0" agencyID="ABS" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_C21_HIND02" version="1.0.0" agencyID="ABS" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="HHCD" position="2">
+              <structure:ConceptIdentity>
+                <Ref id="HHCD" maintainableParentID="CS_C21_DWELLING" maintainableParentVersion="1.0.0" agencyID="ABS" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_C21_HHCD01" version="1.0.0" agencyID="ABS" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="REGION" position="3">
+              <structure:ConceptIdentity>
+                <Ref id="REGION" maintainableParentID="CS_GEOGRAPHY" maintainableParentVersion="1.0.0" agencyID="ABS" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_RA_2021" version="1.0.0" agencyID="ABS" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="REGION_TYPE" position="4">
+              <structure:ConceptIdentity>
+                <Ref id="REGION_TYPE" maintainableParentID="CS_GEOGRAPHY" maintainableParentVersion="1.0.0" agencyID="ABS" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_REGION_TYPE" version="1.0.0" agencyID="ABS" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="STATE" position="5">
+              <structure:ConceptIdentity>
+                <Ref id="STATE" maintainableParentID="CS_GEOGRAPHY" maintainableParentVersion="1.0.0" agencyID="ABS" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_STATE" version="1.0.0" agencyID="ABS" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:TimeDimension id="TIME_PERIOD" position="6">
+              <structure:ConceptIdentity>
+                <Ref id="TIME_PERIOD" maintainableParentID="CS_COMMON" maintainableParentVersion="1.0.0" agencyID="ABS" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="ObservationalTimePeriod"/>
+              </structure:LocalRepresentation>
+            </structure:TimeDimension>
+          </structure:DimensionList>
+          <structure:MeasureList id="MeasureDescriptor">
+            <structure:PrimaryMeasure id="OBS_VALUE">
+              <structure:ConceptIdentity>
+                <Ref id="OBS_VALUE" maintainableParentID="CS_COMMON" maintainableParentVersion="1.0.0" agencyID="ABS" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="Double"/>
+              </structure:LocalRepresentation>
+            </structure:PrimaryMeasure>
+          </structure:MeasureList>
+        </structure:DataStructureComponents>
+      </structure:DataStructure>
+    </structure:DataStructures>
+    <structure:Constraints>
+      <structure:ContentConstraint id="CR_A_C21_G33_RA" agencyID="ABS" version="1.0.0" validFrom="2023-04-27T11:30:00Z" isFinal="false" type="Actual">
+        <common:Annotations>
+          <common:Annotation id="obs_count">
+            <common:AnnotationTitle>2640</common:AnnotationTitle>
+            <common:AnnotationType>sdmx_metrics</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>A</common:AnnotationTitle>
+            <common:AnnotationType>ReleaseVersion</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Availability (A) for C21_G33_RA</common:Name>
+        <structure:ConstraintAttachment>
+          <structure:Dataflow>
+            <Ref id="C21_G33_RA" version="1.0.0" agencyID="ABS" package="datastructure" class="Dataflow"/>
+          </structure:Dataflow>
+        </structure:ConstraintAttachment>
+        <structure:CubeRegion include="true">
+          <common:KeyValue id="HIND">
+            <common:Value>_N</common:Value>
+            <common:Value>_T</common:Value>
+            <common:Value>1</common:Value>
+            <common:Value>10</common:Value>
+            <common:Value>11</common:Value>
+            <common:Value>12</common:Value>
+            <common:Value>13</common:Value>
+            <common:Value>14</common:Value>
+            <common:Value>15</common:Value>
+            <common:Value>16</common:Value>
+            <common:Value>17</common:Value>
+            <common:Value>18</common:Value>
+            <common:Value>2</common:Value>
+            <common:Value>3</common:Value>
+            <common:Value>4</common:Value>
+            <common:Value>5</common:Value>
+            <common:Value>6</common:Value>
+            <common:Value>7</common:Value>
+            <common:Value>8</common:Value>
+            <common:Value>9</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="HHCD">
+            <common:Value>_T</common:Value>
+            <common:Value>1_2</common:Value>
+            <common:Value>3</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="REGION">
+            <common:Value>10</common:Value>
+            <common:Value>11</common:Value>
+            <common:Value>12</common:Value>
+            <common:Value>13</common:Value>
+            <common:Value>14</common:Value>
+            <common:Value>15</common:Value>
+            <common:Value>20</common:Value>
+            <common:Value>21</common:Value>
+            <common:Value>22</common:Value>
+            <common:Value>23</common:Value>
+            <common:Value>25</common:Value>
+            <common:Value>30</common:Value>
+            <common:Value>31</common:Value>
+            <common:Value>32</common:Value>
+            <common:Value>33</common:Value>
+            <common:Value>34</common:Value>
+            <common:Value>35</common:Value>
+            <common:Value>40</common:Value>
+            <common:Value>41</common:Value>
+            <common:Value>42</common:Value>
+            <common:Value>43</common:Value>
+            <common:Value>44</common:Value>
+            <common:Value>45</common:Value>
+            <common:Value>50</common:Value>
+            <common:Value>51</common:Value>
+            <common:Value>52</common:Value>
+            <common:Value>53</common:Value>
+            <common:Value>54</common:Value>
+            <common:Value>55</common:Value>
+            <common:Value>61</common:Value>
+            <common:Value>62</common:Value>
+            <common:Value>63</common:Value>
+            <common:Value>64</common:Value>
+            <common:Value>65</common:Value>
+            <common:Value>72</common:Value>
+            <common:Value>73</common:Value>
+            <common:Value>74</common:Value>
+            <common:Value>75</common:Value>
+            <common:Value>80</common:Value>
+            <common:Value>81</common:Value>
+            <common:Value>85</common:Value>
+            <common:Value>91</common:Value>
+            <common:Value>94</common:Value>
+            <common:Value>95</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="REGION_TYPE">
+            <common:Value>RA</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="STATE">
+            <common:Value>1</common:Value>
+            <common:Value>2</common:Value>
+            <common:Value>3</common:Value>
+            <common:Value>4</common:Value>
+            <common:Value>5</common:Value>
+            <common:Value>6</common:Value>
+            <common:Value>7</common:Value>
+            <common:Value>8</common:Value>
+            <common:Value>9</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="TIME_PERIOD">
+            <common:TimeRange>
+              <common:StartPeriod isInclusive="true">2021-01-01T00:00:00</common:StartPeriod>
+              <common:EndPeriod isInclusive="true">2021-12-31T00:00:00</common:EndPeriod>
+            </common:TimeRange>
+          </common:KeyValue>
+        </structure:CubeRegion>
+      </structure:ContentConstraint>
+      <structure:ContentConstraint id="CR_B_C21_G33_RA" agencyID="ABS" version="1.0.0" validTo="2023-04-27T11:29:59Z" isFinal="false" type="Actual">
+        <common:Annotations>
+          <common:Annotation id="obs_count">
+            <common:AnnotationTitle>0</common:AnnotationTitle>
+            <common:AnnotationType>sdmx_metrics</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>B</common:AnnotationTitle>
+            <common:AnnotationType>ReleaseVersion</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Availability (B) for C21_G33_RA</common:Name>
+        <structure:ConstraintAttachment>
+          <structure:Dataflow>
+            <Ref id="C21_G33_RA" version="1.0.0" agencyID="ABS" package="datastructure" class="Dataflow"/>
+          </structure:Dataflow>
+        </structure:ConstraintAttachment>
+      </structure:ContentConstraint>
+    </structure:Constraints>
+  </message:Structures>
+</message:Structure>

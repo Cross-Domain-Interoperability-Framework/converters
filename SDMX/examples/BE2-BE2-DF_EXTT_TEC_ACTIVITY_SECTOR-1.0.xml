@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Header>
+    <message:ID>IDREF28223</message:ID>
+    <message:Test>false</message:Test>
+    <message:Prepared>2026-11-19T00:02:18.4362827+00:00</message:Prepared>
+    <message:Sender id="Unknown"/>
+    <message:Receiver id="Unknown"/>
+  </message:Header>
+  <message:Structures>
+    <structure:Dataflows>
+      <structure:Dataflow id="DF_EXTT_TEC_ACTIVITY_SECTOR" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>TRADE_POPULATION=BR,NUMBER_EMPL=_T,NUMBER_PARTNERS=_T,PRODUCT=_T,TYPE_CONTROL=_T,TYPE_TRADER=_T,COUNTERPART_AREA=W1,EXPORTS_INTENSITY=_T,TOP_ENTERPRISES=_T,FREQ=A,LASTNPERIODS=1</common:AnnotationTitle>
+            <common:AnnotationType>DEFAULT</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>ACTIVITY</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>FLOW,INDICATOR</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>NUMBER_EMPL,TOP_ENTERPRISES,TRADE_POPULATION,NUMBER_PARTNERS,PRODUCT,TYPE_CONTROL,TYPE_TRADER,EXPORTS_INTENSITY,COUNTERPART_AREA,FREQ,TIME_PERIOD</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW_SECTION</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>TABLE_IDENTIFIER,OBS_STATUS=A,CONF_STATUS=F,UNIT_MULT,UNIT_MEASURE</common:AnnotationTitle>
+            <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Trade by enterprise characteristics: Trade by activity sector</common:Name>
+        <common:Name xml:lang="fr">Commerce par caractéristiques de l'entreprise:Commerce par activité économique</common:Name>
+        <common:Name xml:lang="nl">Handel volgens kenmerken van de onderneming:Handel per bedrijfstak</common:Name>
+        <common:Description xml:lang="en">Statistics on Belgium's foreign trade by enterprise characteristics: Trade by activity sector.</common:Description>
+        <common:Description xml:lang="fr">Statistiques du commerce extérieur de la Belgique par caractéristiques des entreprises : Commerce par secteur d'activité.</common:Description>
+        <common:Description xml:lang="nl">Statistieken over de buitenlandse handel van België volgens bedrijfskenmerken: Handel per activiteitensector.</common:Description>
+        <structure:Structure>
+          <Ref id="ITGS_TEC" version="1.0" agencyID="BE2" package="datastructure" class="DataStructure"/>
+        </structure:Structure>
+      </structure:Dataflow>
+    </structure:Dataflows>
+    <structure:DataStructures>
+      <structure:DataStructure id="ITGS_TEC" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>SUPPORT_INTENT_MISS_VALUES</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=BE2:MSD(1.0)</common:AnnotationTitle>
+            <common:AnnotationType>METADATA</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Trade Enterprise Characteristics DSD</common:Name>
+        <structure:DataStructureComponents>
+          <structure:DimensionList id="DimensionDescriptor">
+            <structure:Dimension id="TABLE_IDENTIFIER" position="1">
+              <structure:ConceptIdentity>
+                <Ref id="TABLE_IDENTIFIER" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_TEC_TABLEID" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="FREQ" position="2">
+              <structure:ConceptIdentity>
+                <Ref id="FREQ" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_FREQ" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="REF_AREA" position="3">
+              <structure:ConceptIdentity>
+                <Ref id="REF_AREA" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_GEONOM" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="COUNTERPART_AREA" position="4">
+              <structure:ConceptIdentity>
+                <Ref id="COUNTERPART_AREA" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_GEONOM" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="ACTIVITY" position="5">
+              <structure:ConceptIdentity>
+                <Ref id="ACTIVITY" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_NACE2" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="NUMBER_EMPL" position="6">
+              <structure:ConceptIdentity>
+                <Ref id="NUMBER_EMPL" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_NB_EMPL" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="TOP_ENTERPRISES" position="7">
+              <structure:ConceptIdentity>
+                <Ref id="TOP_ENTERPRISES" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_TEC_NB_ENTERPRISE" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="NUMBER_PARTNERS" position="8">
+              <structure:ConceptIdentity>
+                <Ref id="NUMBER_PARTNERS" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_TEC_NB_PARTNER" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="PRODUCT" position="9">
+              <structure:ConceptIdentity>
+                <Ref id="PRODUCT" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CPA21_PRODUCT" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="TRADE_POPULATION" position="10">
+              <structure:ConceptIdentity>
+                <Ref id="TRADE_POPULATION" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_TEC_TRADE_POPULATION" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="FLOW" position="11">
+              <structure:ConceptIdentity>
+                <Ref id="FLOW" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_TRADE_FLOW" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="TYPE_CONTROL" position="12">
+              <structure:ConceptIdentity>
+                <Ref id="TYPE_CONTROL" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_TEC_TYPE_CONTROL" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="TYPE_TRADER" position="13">
+              <structure:ConceptIdentity>
+                <Ref id="TYPE_TRADER" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_TEC_TYPE_TRADER" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="EXPORTS_INTENSITY" position="14">
+              <structure:ConceptIdentity>
+                <Ref id="EXPORTS_INTENSITY" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_TEC_EXPORTS_INTENSITY" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="INDICATOR" position="15">
+              <structure:ConceptIdentity>
+                <Ref id="INDICATOR" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_EBS_INDICATOR" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:TimeDimension id="TIME_PERIOD" position="16">
+              <structure:ConceptIdentity>
+                <Ref id="TIME_PERIOD" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="ObservationalTimePeriod"/>
+              </structure:LocalRepresentation>
+            </structure:TimeDimension>
+          </structure:DimensionList>
+          <structure:AttributeList id="AttributeDescriptor">
+            <structure:Attribute id="OBS_STATUS" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="OBS_STATUS" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_OBS_STATUS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="CONF_STATUS" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="CONF_STATUS" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CONF_STATUS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="DECIMALS" assignmentStatus="Mandatory">
+              <structure:ConceptIdentity>
+                <Ref id="DECIMALS" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_DECIMALS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:None/>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="UNIT_MULT" assignmentStatus="Mandatory">
+              <structure:ConceptIdentity>
+                <Ref id="UNIT_MULT" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_UNIT_MULT" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:None/>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="UNIT_MEASURE" assignmentStatus="Mandatory">
+              <structure:ConceptIdentity>
+                <Ref id="UNIT_MEASURE" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_UNIT" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="EMBARGO_TIME" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="EMBARGO_TIME" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="DateTime" maxLength="25"/>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:None/>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+          </structure:AttributeList>
+          <structure:MeasureList id="MeasureDescriptor">
+            <structure:PrimaryMeasure id="OBS_VALUE">
+              <structure:ConceptIdentity>
+                <Ref id="OBS_VALUE" maintainableParentID="CS_ITGS_TEC" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="Double"/>
+              </structure:LocalRepresentation>
+            </structure:PrimaryMeasure>
+          </structure:MeasureList>
+        </structure:DataStructureComponents>
+      </structure:DataStructure>
+    </structure:DataStructures>
+  </message:Structures>
+</message:Structure>

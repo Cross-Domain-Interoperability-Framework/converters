@@ -1,0 +1,1214 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Header>
+    <message:ID>IDREF28227</message:ID>
+    <message:Test>false</message:Test>
+    <message:Prepared>2026-11-19T00:02:31.6371857+00:00</message:Prepared>
+    <message:Sender id="Unknown"/>
+    <message:Receiver id="Unknown"/>
+  </message:Header>
+  <message:Structures>
+    <structure:Dataflows>
+      <structure:Dataflow id="DF_CCR" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>CCR_UNIT</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>TIME_PERIOD</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>CCR_ITEM</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW_SECTION</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>OBS_STATUS=A,CONF_STATUS=F</common:AnnotationTitle>
+            <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>FREQ=M,CCR_REGIO=BE,CCR_SIZE=T,CCR_BRANCH=ALL,LASTNPERIODS=13,TIME_PERIOD_START=2015-01</common:AnnotationTitle>
+            <common:AnnotationType>DEFAULT</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">CCR : Credit granted to resident non-financial corporations</common:Name>
+        <common:Name xml:lang="fr">CCE : Crédits octroyés aux sociétés non financières</common:Name>
+        <common:Name xml:lang="nl">CKO : Kredietverstrekking aan ingezeten niet-financiële vennootschappen</common:Name>
+        <common:Description xml:lang="en">Statistics on credit granted to resident non-financial corporations in Belgium. It includes data on outstanding amounts, changes compared to previous periods, yearly percentage changes, credit facilities, and their degree of use.</common:Description>
+        <common:Description xml:lang="fr">Statistiques sur les crédits accordés aux sociétés non financières résidentes en Belgique. Elles comprennent des données sur les encours, les variations par rapport aux périodes précédentes, les variations annuelles en pourcentage, les facilités de crédit et leur degré d'utilisation.</common:Description>
+        <common:Description xml:lang="nl">Statistieken over krediet verleend aan ingezeten niet-financiële vennootschappen in België. Het bevat gegevens over uitstaande bedragen, wijzigingen ten opzichte van vorige periodes, jaarlijkse procentuele wijzigingen, kredietfaciliteiten en de mate waarin ze worden gebruikt.</common:Description>
+        <structure:Structure>
+          <Ref id="DSD_CCR" version="1.0" agencyID="BE2" package="datastructure" class="DataStructure"/>
+        </structure:Structure>
+      </structure:Dataflow>
+    </structure:Dataflows>
+    <structure:CategorySchemes>
+      <structure:CategoryScheme id="BANK_FIN" agencyID="BE2" version="1.0" isFinal="false" isPartial="true">
+        <common:Name xml:lang="en">Financial institutions</common:Name>
+        <common:Name xml:lang="fr">Établissements financiers</common:Name>
+        <common:Name xml:lang="nl">Financiële instellingen</common:Name>
+        <structure:Category id="BANK">
+          <common:Annotations>
+            <common:Annotation>
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Banks</common:Name>
+          <common:Name xml:lang="fr">Banques</common:Name>
+          <common:Name xml:lang="nl">Banken</common:Name>
+        </structure:Category>
+      </structure:CategoryScheme>
+    </structure:CategorySchemes>
+    <structure:Categorisations>
+      <structure:Categorisation id="CAT_BE2__DF_CCR__1_0@BE2__BANK_FIN__1_0__BANK" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">CCR : Credit granted to resident non-financial corporations</common:Name>
+        <structure:Source>
+          <Ref id="DF_CCR" version="1.0" agencyID="BE2" package="datastructure" class="Dataflow"/>
+        </structure:Source>
+        <structure:Target>
+          <Ref id="BANK" maintainableParentID="BANK_FIN" maintainableParentVersion="1.0" agencyID="BE2" package="categoryscheme" class="Category"/>
+        </structure:Target>
+      </structure:Categorisation>
+    </structure:Categorisations>
+    <structure:Codelists>
+      <structure:Codelist id="CL_CCR_BRANCH" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">Branch of industry</common:Name>
+        <common:Description xml:lang="en">CCR Branch of industry codelist</common:Description>
+        <structure:Code id="ALL">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">All branches of activity</common:Name>
+          <common:Name xml:lang="fr">Toutes les branches d'activité</common:Name>
+          <common:Name xml:lang="nl">Alle bedrijfstakken</common:Name>
+        </structure:Code>
+        <structure:Code id="A">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">2</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Products of agriculture, forestry and fishing</common:Name>
+          <common:Name xml:lang="fr">Agriculture, sylviculture et pêche</common:Name>
+          <common:Name xml:lang="nl">Landbouw, bosbouw en visserij</common:Name>
+        </structure:Code>
+        <structure:Code id="C">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">3</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Manufactured products</common:Name>
+          <common:Name xml:lang="fr">Industrie manufacturière</common:Name>
+          <common:Name xml:lang="nl">Industrie</common:Name>
+        </structure:Code>
+        <structure:Code id="D_E">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">4</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">4</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">4</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Energy en water supply, werage, waste management and remediation services</common:Name>
+          <common:Name xml:lang="fr">Production et distribution d'énergie et d'eau, gestion des déchets et dépollution</common:Name>
+          <common:Name xml:lang="nl">Productie en distributie van energie en water, afval- en afval-waterbeheer en sanering</common:Name>
+        </structure:Code>
+        <structure:Code id="F">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">5</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">5</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">5</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Constructions and construction works</common:Name>
+          <common:Name xml:lang="fr">Construction</common:Name>
+          <common:Name xml:lang="nl">Bouwnijverheid</common:Name>
+        </structure:Code>
+        <structure:Code id="G">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">6</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">6</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">6</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Wholesale and retail trade serv.;repair serv.of motor vehicles and motorcycl.</common:Name>
+          <common:Name xml:lang="fr">Commerce de gros et de détail; réparation de véhicules autom. et de motocycles</common:Name>
+          <common:Name xml:lang="nl">Groot- en detailhandel; reparatie van auto's en motorfietsen</common:Name>
+        </structure:Code>
+        <structure:Code id="H">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">7</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">7</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">7</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Transportation and storage services</common:Name>
+          <common:Name xml:lang="fr">Transports et entreposage</common:Name>
+          <common:Name xml:lang="nl">Vervoer en opslag</common:Name>
+        </structure:Code>
+        <structure:Code id="I">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">8</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">8</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">8</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Accommodation and food services</common:Name>
+          <common:Name xml:lang="fr">Hébergement et restauration</common:Name>
+          <common:Name xml:lang="nl">Verschaffen van accommodatie en maaltijden</common:Name>
+        </structure:Code>
+        <structure:Code id="J">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">9</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">9</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">9</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Information and communication services</common:Name>
+          <common:Name xml:lang="fr">Information et communication</common:Name>
+          <common:Name xml:lang="nl">Informatie en communicatie</common:Name>
+        </structure:Code>
+        <structure:Code id="K">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">10</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">10</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">10</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Financial and insurance services</common:Name>
+          <common:Name xml:lang="fr">Activités financières et d'assurance</common:Name>
+          <common:Name xml:lang="nl">Financiële activiteiten en verzekeringen</common:Name>
+        </structure:Code>
+        <structure:Code id="L">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">11</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">11</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">11</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Real estate services</common:Name>
+          <common:Name xml:lang="fr">Activités immobilières</common:Name>
+          <common:Name xml:lang="nl">Exploitatie van en handel in onroerend goed</common:Name>
+        </structure:Code>
+        <structure:Code id="M">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">12</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">12</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Professional, scientific and technical services</common:Name>
+          <common:Name xml:lang="fr">Activités spécialisées, scientifiques et techniques</common:Name>
+          <common:Name xml:lang="nl">Vrije beroepen en wetenschappelijke en technische activiteiten</common:Name>
+        </structure:Code>
+        <structure:Code id="N">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">13</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">13</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Administrative and support services</common:Name>
+          <common:Name xml:lang="fr">Activités de services administratifs et de soutien</common:Name>
+          <common:Name xml:lang="nl">Administratieve en ondersteunende diensten</common:Name>
+        </structure:Code>
+        <structure:Code id="Q">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">14</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">14</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">14</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Human health and social work services</common:Name>
+          <common:Name xml:lang="fr">Santé humaine et action sociale</common:Name>
+          <common:Name xml:lang="nl">Menselijke gezondheidszorg en maatschappelijke dienstverlening</common:Name>
+        </structure:Code>
+        <structure:Code id="ZZZ">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">15</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">15</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">15</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Other branches of activity</common:Name>
+          <common:Name xml:lang="fr">Autres branches d'activité</common:Name>
+          <common:Name xml:lang="nl">Andere bedrijfstakken</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_CCR_ITEM" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">Item</common:Name>
+        <common:Description xml:lang="en">CCR Item codelist</common:Description>
+        <structure:Code id="UC">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Used credits</common:Name>
+          <common:Name xml:lang="fr">Crédits utilisés</common:Name>
+          <common:Name xml:lang="nl">Gebruikte kredieten</common:Name>
+        </structure:Code>
+        <structure:Code id="CF">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">2</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Credit facilities opened</common:Name>
+          <common:Name xml:lang="fr">Ouverture de lignes de crédit</common:Name>
+          <common:Name xml:lang="nl">Geopende kredietfaciliteiten</common:Name>
+        </structure:Code>
+        <structure:Code id="DU">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">3</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Degree of use of the credit facilities</common:Name>
+          <common:Name xml:lang="fr">Taux d'utilisation des crédits autorisés</common:Name>
+          <common:Name xml:lang="nl">Aanwendingsgraad van de toegestane kredieten</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_CCR_REGIO" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">Region</common:Name>
+        <common:Description xml:lang="en">CCR Region codelist</common:Description>
+        <structure:Code id="BE">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Belgium</common:Name>
+          <common:Name xml:lang="fr">Belgique</common:Name>
+          <common:Name xml:lang="nl">België</common:Name>
+        </structure:Code>
+        <structure:Code id="VL">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Flemish region</common:Name>
+          <common:Name xml:lang="fr">Région flamande</common:Name>
+          <common:Name xml:lang="nl">Vlaams gewest</common:Name>
+          <structure:Parent>
+            <Ref id="BE"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="WL">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">2</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Walloon region</common:Name>
+          <common:Name xml:lang="fr">Région wallonne</common:Name>
+          <common:Name xml:lang="nl">Waals gewest</common:Name>
+          <structure:Parent>
+            <Ref id="BE"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="BX">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">3</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Brussels capital region</common:Name>
+          <common:Name xml:lang="fr">Région de Bruxelles-capitale</common:Name>
+          <common:Name xml:lang="nl">Brussels Hoofdstedelijk gewest</common:Name>
+          <structure:Parent>
+            <Ref id="BE"/>
+          </structure:Parent>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_CCR_SIZE" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">Enterprise size</common:Name>
+        <common:Description xml:lang="en">CCR Enterprise size codelist</common:Description>
+        <structure:Code id="T">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Total</common:Name>
+          <common:Name xml:lang="fr">Total</common:Name>
+          <common:Name xml:lang="nl">Totaal</common:Name>
+        </structure:Code>
+        <structure:Code id="C">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">2</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Micro enterprises</common:Name>
+          <common:Name xml:lang="fr">Micro entreprises</common:Name>
+          <common:Name xml:lang="nl">Micro vennootschappen</common:Name>
+          <structure:Parent>
+            <Ref id="T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="S">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">3</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Small enterprises</common:Name>
+          <common:Name xml:lang="fr">Petites entreprises</common:Name>
+          <common:Name xml:lang="nl">Kleine vennootschappen</common:Name>
+          <structure:Parent>
+            <Ref id="T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="M">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">4</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">4</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">4</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Medium-sized enterprises</common:Name>
+          <common:Name xml:lang="fr">Moyennes entreprises</common:Name>
+          <common:Name xml:lang="nl">Middelgrote vennootschappen</common:Name>
+          <structure:Parent>
+            <Ref id="T"/>
+          </structure:Parent>
+        </structure:Code>
+        <structure:Code id="L">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">5</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">5</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">5</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Large enterprises</common:Name>
+          <common:Name xml:lang="fr">Grandes entreprises</common:Name>
+          <common:Name xml:lang="nl">Grote vennootschappen</common:Name>
+          <structure:Parent>
+            <Ref id="T"/>
+          </structure:Parent>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_CCR_UNIT" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">Unit</common:Name>
+        <common:Description xml:lang="en">CCR Unit codelist</common:Description>
+        <structure:Code id="OAE">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Outstanding amount (end of period, millions of euro)</common:Name>
+          <common:Name xml:lang="fr">Encours (fin de période, millions d'euros)</common:Name>
+          <common:Name xml:lang="nl">Uitstaand bedrag (einde periode, miljoenen euro's)</common:Name>
+        </structure:Code>
+        <structure:Code id="OAC">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">2</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Change in the outstanding amount compared to the previous period (millions of euro)</common:Name>
+          <common:Name xml:lang="fr">Variation de l'encours par rapport à la période précédente (millions d'euros)</common:Name>
+          <common:Name xml:lang="nl">Verandering van het uitstaand bedrag t.o.v. de vorige periode (miljoenen euro's)</common:Name>
+        </structure:Code>
+        <structure:Code id="YPC">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">3</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Yearly percentage changes</common:Name>
+          <common:Name xml:lang="fr">Pourcentages de variation annuelle</common:Name>
+          <common:Name xml:lang="nl">Jaarlijks veranderingspercentage</common:Name>
+        </structure:Code>
+        <structure:Code id="PCT">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">4</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">4</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">4</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Percentages</common:Name>
+          <common:Name xml:lang="fr">Pourcentages</common:Name>
+          <common:Name xml:lang="nl">Procenten</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_DECIMALS" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">Decimals</common:Name>
+        <common:Name xml:lang="fr">Cette liste de codes fournit une liste de valeurs montrant le nombre de chiffres décimaux utilisés dans les données. Cette liste de codes a été publiée en 2009. Plus d'informations sur cette liste de codes et les listes de codes SDMX en général (par exemple, liste de codes génériques pour exprimer des concepts généraux tels que 'Total', 'Inconnu', etc.; syntaxes pour la création de codes supplémentaires; lignes directrices générales pour la création de listes de codes SDMX) peuvent être trouvées à cette adresse : https://sdmx.org/?page_id=4345.</common:Name>
+        <common:Name xml:lang="nl">Deze codelijst biedt een lijst met waarden die het aantal decimale cijfers tonen dat wordt gebruikt in de gegevens. Deze codelijst is uitgebracht in 2009. Meer informatie over deze codelijst en SDMX-codelijsten in het algemeen (bijv. lijst van generieke codes voor het uitdrukken van algemene begrippen zoals 'Totaal', 'Onbekend', enz.; syntaxes voor het maken van verdere codes; algemene richtlijnen voor het maken van SDMX-codelijsten) is te vinden op dit adres: https://sdmx.org/?page_id=4345.</common:Name>
+        <common:Description xml:lang="en">This code list provides a list of values showing the number of decimal digits used in the data. This code list was released in 2009. More information about this code list and SDMX code lists in general (e.g. list of generic codes for expressing general concepts like "Total", "Unknown", etc.; syntaxes for the creation of further codes; general guidelines for the creation of SDMX code lists) can be found at this address: https://sdmx.org/?page_id=4345.</common:Description>
+        <structure:Code id="0">
+          <common:Name xml:lang="en">Zero</common:Name>
+          <common:Name xml:lang="fr">Zéro</common:Name>
+          <common:Name xml:lang="nl">Nul</common:Name>
+        </structure:Code>
+        <structure:Code id="1">
+          <common:Name xml:lang="en">One</common:Name>
+          <common:Name xml:lang="fr">Un</common:Name>
+          <common:Name xml:lang="nl">Een</common:Name>
+        </structure:Code>
+        <structure:Code id="2">
+          <common:Name xml:lang="en">Two</common:Name>
+          <common:Name xml:lang="fr">Deux</common:Name>
+          <common:Name xml:lang="nl">Twee</common:Name>
+        </structure:Code>
+        <structure:Code id="3">
+          <common:Name xml:lang="en">Three</common:Name>
+          <common:Name xml:lang="fr">Trois</common:Name>
+          <common:Name xml:lang="nl">Drie</common:Name>
+        </structure:Code>
+        <structure:Code id="4">
+          <common:Name xml:lang="en">Four</common:Name>
+          <common:Name xml:lang="fr">Quatre</common:Name>
+          <common:Name xml:lang="nl">Vier</common:Name>
+        </structure:Code>
+        <structure:Code id="5">
+          <common:Name xml:lang="en">Five</common:Name>
+          <common:Name xml:lang="fr">Cinq</common:Name>
+          <common:Name xml:lang="nl">Vijf</common:Name>
+        </structure:Code>
+        <structure:Code id="6">
+          <common:Name xml:lang="en">Six</common:Name>
+          <common:Name xml:lang="fr">Six</common:Name>
+          <common:Name xml:lang="nl">Zes</common:Name>
+        </structure:Code>
+        <structure:Code id="7">
+          <common:Name xml:lang="en">Seven</common:Name>
+          <common:Name xml:lang="fr">Sept</common:Name>
+          <common:Name xml:lang="nl">Zeven</common:Name>
+        </structure:Code>
+        <structure:Code id="8">
+          <common:Name xml:lang="en">Eight</common:Name>
+          <common:Name xml:lang="fr">Huit</common:Name>
+          <common:Name xml:lang="nl">Acht</common:Name>
+        </structure:Code>
+        <structure:Code id="9">
+          <common:Name xml:lang="en">Nine</common:Name>
+          <common:Name xml:lang="fr">Neuf</common:Name>
+          <common:Name xml:lang="nl">Negen</common:Name>
+        </structure:Code>
+        <structure:Code id="10">
+          <common:Name xml:lang="en">Ten</common:Name>
+          <common:Name xml:lang="fr">Dix</common:Name>
+          <common:Name xml:lang="nl">Tien</common:Name>
+        </structure:Code>
+        <structure:Code id="11">
+          <common:Name xml:lang="en">Eleven</common:Name>
+          <common:Name xml:lang="fr">Onze</common:Name>
+          <common:Name xml:lang="nl">Elf</common:Name>
+        </structure:Code>
+        <structure:Code id="12">
+          <common:Name xml:lang="en">Twelve</common:Name>
+          <common:Name xml:lang="fr">Douze</common:Name>
+          <common:Name xml:lang="nl">Twaalf</common:Name>
+        </structure:Code>
+        <structure:Code id="13">
+          <common:Name xml:lang="en">Thirteen</common:Name>
+          <common:Name xml:lang="fr">Treize</common:Name>
+          <common:Name xml:lang="nl">Dertien</common:Name>
+        </structure:Code>
+        <structure:Code id="14">
+          <common:Name xml:lang="en">Fourteen</common:Name>
+          <common:Name xml:lang="fr">Quatorze</common:Name>
+          <common:Name xml:lang="nl">Veertien</common:Name>
+        </structure:Code>
+        <structure:Code id="15">
+          <common:Name xml:lang="en">Fifteen</common:Name>
+          <common:Name xml:lang="fr">Quinze</common:Name>
+          <common:Name xml:lang="nl">Vijftien</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_FREQ" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">Code list for concept "Frequency"</common:Name>
+        <common:Description xml:lang="en">This code list provides a set of values indicating the
+          "frequency" of the data (e.g. weekly, monthly, quarterly). The concept "frequency" may
+          refer to various stages in the production process, e.g. data collection or data
+          dissemination. For example, a time series could be disseminated at annual frequency but
+          the underlying data are compiled monthly. The code list is applicable for all different
+          uses of "frequency".</common:Description>
+        <structure:Code id="A">
+          <common:Name xml:lang="en">Annual</common:Name>
+          <common:Name xml:lang="fr">Annuelle</common:Name>
+          <common:Name xml:lang="nl">Jaarlijks</common:Name>
+          <common:Description xml:lang="en">Annual</common:Description>
+          <common:Description xml:lang="fr">Annuelle</common:Description>
+          <common:Description xml:lang="nl">Jaarlijks</common:Description>
+        </structure:Code>
+        <structure:Code id="S">
+          <common:Name xml:lang="en">Half-yearly</common:Name>
+          <common:Name xml:lang="fr">Semestrielle</common:Name>
+          <common:Name xml:lang="nl">Halfjaarlijks</common:Name>
+          <common:Description xml:lang="en">Half-yearly</common:Description>
+          <common:Description xml:lang="fr">Semestrielle</common:Description>
+          <common:Description xml:lang="nl">Halfjaarlijks</common:Description>
+        </structure:Code>
+        <structure:Code id="Q">
+          <common:Name xml:lang="en">Quarterly</common:Name>
+          <common:Name xml:lang="fr">Trimestrielle</common:Name>
+          <common:Name xml:lang="nl">Driemaandelijks</common:Name>
+          <common:Description xml:lang="en">Quarterly</common:Description>
+          <common:Description xml:lang="fr">Trimestrielle</common:Description>
+          <common:Description xml:lang="nl">Driemaandelijks</common:Description>
+        </structure:Code>
+        <structure:Code id="M">
+          <common:Name xml:lang="en">Monthly</common:Name>
+          <common:Name xml:lang="fr">Mensuelle</common:Name>
+          <common:Name xml:lang="nl">Maandelijks</common:Name>
+          <common:Description xml:lang="en">Monthly</common:Description>
+          <common:Description xml:lang="fr">Mensuelle</common:Description>
+          <common:Description xml:lang="nl">Maandelijks</common:Description>
+        </structure:Code>
+        <structure:Code id="D">
+          <common:Name xml:lang="en">Daily</common:Name>
+          <common:Name xml:lang="fr">Journalière</common:Name>
+          <common:Name xml:lang="nl">Dagelijks</common:Name>
+          <common:Description xml:lang="en">Daily</common:Description>
+          <common:Description xml:lang="fr">Journalière</common:Description>
+          <common:Description xml:lang="nl">Dagelijks</common:Description>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_OBS_STATUS" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">CL_OBS_STATUS</common:Name>
+        <common:Description xml:lang="en">CL_OBS_STATUS codelist</common:Description>
+        <structure:Code id="E">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">1</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">1</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Estimated value</common:Name>
+          <common:Name xml:lang="fr">Valeur estimée</common:Name>
+          <common:Name xml:lang="nl">Geschatte waarde</common:Name>
+        </structure:Code>
+        <structure:Code id="F">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">2</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">2</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Expected value</common:Name>
+          <common:Name xml:lang="fr">Valeur attendue</common:Name>
+          <common:Name xml:lang="nl">Verwachte waarde</common:Name>
+        </structure:Code>
+        <structure:Code id="N">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">3</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">3</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Uncharacteristic</common:Name>
+          <common:Name xml:lang="fr">Non caractéristique</common:Name>
+          <common:Name xml:lang="nl">Niet kenmerkend</common:Name>
+        </structure:Code>
+        <structure:Code id="P">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">4</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">4</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">4</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Provisional value</common:Name>
+          <common:Name xml:lang="fr">Valeur provisoire</common:Name>
+          <common:Name xml:lang="nl">Voorlopige waarde</common:Name>
+        </structure:Code>
+        <structure:Code id="A">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">5</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">5</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">5</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Normal</common:Name>
+          <common:Name xml:lang="fr">Normal</common:Name>
+          <common:Name xml:lang="nl">Normaal</common:Name>
+        </structure:Code>
+        <structure:Code id="O">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">6</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">6</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">6</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Missing value</common:Name>
+          <common:Name xml:lang="fr">Valeur manquante</common:Name>
+          <common:Name xml:lang="nl">Ontbrekende waarde</common:Name>
+        </structure:Code>
+        <structure:Code id="L">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">7</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">7</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">7</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Missing value; data exist but not collected</common:Name>
+          <common:Name xml:lang="fr">Valeur manquante ; les données existent mais ne sont pas collectées</common:Name>
+          <common:Name xml:lang="nl">Ontbrekende waarde; de gegevens bestaan, maar zijn niet verzameld</common:Name>
+        </structure:Code>
+        <structure:Code id="B">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">8</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">8</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">8</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Time series break</common:Name>
+          <common:Name xml:lang="fr">Rupture de série temporelle</common:Name>
+          <common:Name xml:lang="nl">Tijdreeksonderbreking</common:Name>
+        </structure:Code>
+        <structure:Code id="D">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">9</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">9</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">9</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Definition differs</common:Name>
+          <common:Name xml:lang="fr">La définition diffère</common:Name>
+          <common:Name xml:lang="nl">Definitie verschilt</common:Name>
+        </structure:Code>
+        <structure:Code id="G">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">10</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">10</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">10</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Experimental value</common:Name>
+          <common:Name xml:lang="fr">Valeur expérimentale</common:Name>
+          <common:Name xml:lang="nl">Experimentele waarde</common:Name>
+        </structure:Code>
+        <structure:Code id="H">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">11</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">11</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">11</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Missing value; holiday or weekend</common:Name>
+          <common:Name xml:lang="fr">Valeur manquante ; jour férié ou week-end</common:Name>
+          <common:Name xml:lang="nl">Ontbrekende waarde; vakantie of weekend</common:Name>
+        </structure:Code>
+        <structure:Code id="I">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">12</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">12</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">12</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Value imputed by a receiving agency</common:Name>
+          <common:Name xml:lang="fr">Valeur imputée par une agence réceptrice</common:Name>
+          <common:Name xml:lang="nl">Waarde toegerekend door een ontvangende instantie</common:Name>
+        </structure:Code>
+        <structure:Code id="J">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">13</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">13</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">13</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Derogation</common:Name>
+          <common:Name xml:lang="fr">Dérogation</common:Name>
+          <common:Name xml:lang="nl">Afwijking</common:Name>
+        </structure:Code>
+        <structure:Code id="K">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">14</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">14</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">14</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Data included in another category</common:Name>
+          <common:Name xml:lang="fr">Données incluses dans une autre catégorie</common:Name>
+          <common:Name xml:lang="nl">Gegevens opgenomen in een andere categorie</common:Name>
+        </structure:Code>
+        <structure:Code id="M">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">15</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">15</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">15</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Missing value; data cannot exist</common:Name>
+          <common:Name xml:lang="fr">Valeur manquante ; les données ne peuvent pas exister</common:Name>
+          <common:Name xml:lang="nl">Ontbrekende waarde; gegevens kunnen niet bestaan</common:Name>
+        </structure:Code>
+        <structure:Code id="Q">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">16</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">16</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">16</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Missing value; suppressed</common:Name>
+          <common:Name xml:lang="fr">Valeur manquante ; supprimée</common:Name>
+          <common:Name xml:lang="nl">Ontbrekende waarde; onderdrukt</common:Name>
+        </structure:Code>
+        <structure:Code id="S">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">17</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">17</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">17</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Strike and other special events</common:Name>
+          <common:Name xml:lang="fr">Grève et autres événements spéciaux</common:Name>
+          <common:Name xml:lang="nl">Staking en andere speciale evenementen</common:Name>
+        </structure:Code>
+        <structure:Code id="U">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">18</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">18</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">18</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Low reliability</common:Name>
+          <common:Name xml:lang="fr">Faible fiabilité</common:Name>
+          <common:Name xml:lang="nl">Lage betrouwbaarheid</common:Name>
+        </structure:Code>
+        <structure:Code id="V">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">19</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">19</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">19</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Unvalidated value</common:Name>
+          <common:Name xml:lang="fr">Valeur non validée</common:Name>
+          <common:Name xml:lang="nl">Unvalidated value</common:Name>
+        </structure:Code>
+        <structure:Code id="R">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">20</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">20</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">20</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Revised value</common:Name>
+          <common:Name xml:lang="fr">Revised value</common:Name>
+          <common:Name xml:lang="nl">Ongeldige waarde</common:Name>
+        </structure:Code>
+        <structure:Code id="W">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">21</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">21</common:AnnotationText>
+              <common:AnnotationText xml:lang="nl">21</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Includes data from another category</common:Name>
+          <common:Name xml:lang="fr">Inclut des données d'une autre catégorie</common:Name>
+          <common:Name xml:lang="nl">Bevat gegevens uit een andere categorie</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+    </structure:Codelists>
+    <structure:Concepts>
+      <structure:ConceptScheme id="CCR_CONCEPTS" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">CCR Concept Scheme</common:Name>
+        <common:Description xml:lang="en">Description of CCR Concept Scheme</common:Description>
+        <structure:Concept id="FREQ">
+          <common:Name xml:lang="en">Frequency</common:Name>
+          <common:Name xml:lang="fr">Fréquence</common:Name>
+          <common:Name xml:lang="nl">Frequentie</common:Name>
+          <common:Description xml:lang="en">Time interval at which observations occur over a given time period.</common:Description>
+          <structure:CoreRepresentation>
+            <structure:Enumeration>
+              <Ref id="CL_FREQ" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+            </structure:Enumeration>
+          </structure:CoreRepresentation>
+        </structure:Concept>
+        <structure:Concept id="TIME_PERIOD">
+          <common:Name xml:lang="en">Time period</common:Name>
+          <common:Name xml:lang="fr">Période</common:Name>
+          <common:Name xml:lang="nl">Periode</common:Name>
+          <common:Description xml:lang="en">Timespan or point in time to which the observation actually refers.</common:Description>
+          <structure:CoreRepresentation>
+            <structure:TextFormat textType="ObservationalTimePeriod"/>
+          </structure:CoreRepresentation>
+        </structure:Concept>
+        <structure:Concept id="OBS_VALUE">
+          <common:Name xml:lang="en">Observation value</common:Name>
+          <common:Name xml:lang="fr">Valeur de l'observation</common:Name>
+          <common:Name xml:lang="nl">Observatiewaarde</common:Name>
+          <common:Description xml:lang="en">Value of a particular variable.</common:Description>
+        </structure:Concept>
+        <structure:Concept id="OBS_STATUS">
+          <common:Name xml:lang="en">Observation status</common:Name>
+          <common:Name xml:lang="fr">Statut de l'observation</common:Name>
+          <common:Name xml:lang="nl">Observatiestatus</common:Name>
+          <common:Description xml:lang="en">Information on the quality of a value or an unusual or missing value.</common:Description>
+          <structure:CoreRepresentation>
+            <structure:Enumeration>
+              <Ref id="CL_OBS_STATUS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+            </structure:Enumeration>
+          </structure:CoreRepresentation>
+        </structure:Concept>
+        <structure:Concept id="CCR_ITEM">
+          <common:Name xml:lang="en">Item</common:Name>
+          <common:Name xml:lang="fr">Item</common:Name>
+          <common:Name xml:lang="nl">Item</common:Name>
+          <common:Description xml:lang="en">CCR Item codelist</common:Description>
+        </structure:Concept>
+        <structure:Concept id="CCR_UNIT">
+          <common:Name xml:lang="en">Unit</common:Name>
+          <common:Name xml:lang="fr">Unité</common:Name>
+          <common:Name xml:lang="nl">Eenheid</common:Name>
+          <common:Description xml:lang="en">CCR Unit codelist</common:Description>
+          <structure:CoreRepresentation>
+            <structure:Enumeration>
+              <Ref id="CL_CCR_UNIT" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+            </structure:Enumeration>
+          </structure:CoreRepresentation>
+        </structure:Concept>
+        <structure:Concept id="CCR_REGIO">
+          <common:Name xml:lang="en">Region</common:Name>
+          <common:Name xml:lang="fr">Région</common:Name>
+          <common:Name xml:lang="nl">Regio</common:Name>
+          <common:Description xml:lang="en">CCR Region codelist</common:Description>
+        </structure:Concept>
+        <structure:Concept id="CCR_SIZE">
+          <common:Name xml:lang="en">Enterprise size</common:Name>
+          <common:Name xml:lang="fr">Taille d'entreprise</common:Name>
+          <common:Name xml:lang="nl">Grootte van onderneming</common:Name>
+          <common:Description xml:lang="en">CCR Enterprise size codelist</common:Description>
+        </structure:Concept>
+        <structure:Concept id="CCR_BRANCH">
+          <common:Name xml:lang="en">Industry breakdown</common:Name>
+          <common:Name xml:lang="fr">Branche d'activité</common:Name>
+          <common:Name xml:lang="nl">Bedrijfstak</common:Name>
+          <common:Description xml:lang="en">CCR Branch of industry codelist</common:Description>
+        </structure:Concept>
+        <structure:Concept id="DECIMALS">
+          <common:Name xml:lang="en">Decimals</common:Name>
+          <common:Name xml:lang="fr">Décimales</common:Name>
+          <common:Name xml:lang="nl">Decimalen</common:Name>
+          <common:Description xml:lang="en">Number of digits of an observation to the right of a decimal point.</common:Description>
+          <structure:CoreRepresentation>
+            <structure:Enumeration>
+              <Ref id="CL_DECIMALS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+            </structure:Enumeration>
+          </structure:CoreRepresentation>
+        </structure:Concept>
+      </structure:ConceptScheme>
+    </structure:Concepts>
+    <structure:DataStructures>
+      <structure:DataStructure id="DSD_CCR" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>SUPPORT_INTENT_MISS_VALUES</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=BE2:MSD(1.0)</common:AnnotationTitle>
+            <common:AnnotationType>METADATA</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">CCR DSD</common:Name>
+        <structure:DataStructureComponents>
+          <structure:DimensionList id="DimensionDescriptor">
+            <structure:Dimension id="FREQ" position="1">
+              <structure:ConceptIdentity>
+                <Ref id="FREQ" maintainableParentID="CCR_CONCEPTS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_FREQ" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="CCR_ITEM" position="2">
+              <structure:ConceptIdentity>
+                <Ref id="CCR_ITEM" maintainableParentID="CCR_CONCEPTS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CCR_ITEM" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="CCR_UNIT" position="3">
+              <structure:ConceptIdentity>
+                <Ref id="CCR_UNIT" maintainableParentID="CCR_CONCEPTS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CCR_UNIT" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="CCR_REGIO" position="4">
+              <structure:ConceptIdentity>
+                <Ref id="CCR_REGIO" maintainableParentID="CCR_CONCEPTS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CCR_REGIO" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="CCR_SIZE" position="5">
+              <structure:ConceptIdentity>
+                <Ref id="CCR_SIZE" maintainableParentID="CCR_CONCEPTS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CCR_SIZE" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="CCR_BRANCH" position="6">
+              <structure:ConceptIdentity>
+                <Ref id="CCR_BRANCH" maintainableParentID="CCR_CONCEPTS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CCR_BRANCH" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:TimeDimension id="TIME_PERIOD" position="7">
+              <structure:ConceptIdentity>
+                <Ref id="TIME_PERIOD" maintainableParentID="CCR_CONCEPTS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="ObservationalTimePeriod"/>
+              </structure:LocalRepresentation>
+            </structure:TimeDimension>
+          </structure:DimensionList>
+          <structure:AttributeList id="AttributeDescriptor">
+            <structure:Attribute id="OBS_STATUS" assignmentStatus="Mandatory">
+              <structure:ConceptIdentity>
+                <Ref id="OBS_STATUS" maintainableParentID="CCR_CONCEPTS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_OBS_STATUS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="DECIMALS" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="DECIMALS" maintainableParentID="CCR_CONCEPTS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_DECIMALS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+          </structure:AttributeList>
+          <structure:MeasureList id="MeasureDescriptor">
+            <structure:PrimaryMeasure id="OBS_VALUE">
+              <structure:ConceptIdentity>
+                <Ref id="OBS_VALUE" maintainableParentID="CCR_CONCEPTS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="Double"/>
+              </structure:LocalRepresentation>
+            </structure:PrimaryMeasure>
+          </structure:MeasureList>
+        </structure:DataStructureComponents>
+      </structure:DataStructure>
+    </structure:DataStructures>
+    <structure:Constraints>
+      <structure:ContentConstraint id="CR_A_DF_CCR" agencyID="BE2" version="1.0" validFrom="2025-11-28T13:57:21.07Z" isFinal="false" type="Actual">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationTitle>A</common:AnnotationTitle>
+            <common:AnnotationType>ReleaseVersion</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="obs_count">
+            <common:AnnotationTitle>8865</common:AnnotationTitle>
+            <common:AnnotationType>sdmx_metrics</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Availability (A) for DF_CCR</common:Name>
+        <structure:ConstraintAttachment>
+          <structure:Dataflow>
+            <Ref id="DF_CCR" version="1.0" agencyID="BE2" package="datastructure" class="Dataflow"/>
+          </structure:Dataflow>
+        </structure:ConstraintAttachment>
+        <structure:CubeRegion include="true">
+          <common:KeyValue id="FREQ">
+            <common:Value>M</common:Value>
+            <common:Value>Q</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="CCR_ITEM">
+            <common:Value>CF</common:Value>
+            <common:Value>DU</common:Value>
+            <common:Value>UC</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="CCR_UNIT">
+            <common:Value>OAC</common:Value>
+            <common:Value>OAE</common:Value>
+            <common:Value>PCT</common:Value>
+            <common:Value>YPC</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="CCR_REGIO">
+            <common:Value>BE</common:Value>
+            <common:Value>BX</common:Value>
+            <common:Value>VL</common:Value>
+            <common:Value>WL</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="CCR_SIZE">
+            <common:Value>C</common:Value>
+            <common:Value>L</common:Value>
+            <common:Value>M</common:Value>
+            <common:Value>S</common:Value>
+            <common:Value>T</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="CCR_BRANCH">
+            <common:Value>ALL</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="TIME_PERIOD">
+            <common:TimeRange>
+              <common:StartPeriod isInclusive="true">2005-01-01T00:00:00</common:StartPeriod>
+              <common:EndPeriod isInclusive="true">2021-11-30T00:00:00</common:EndPeriod>
+            </common:TimeRange>
+          </common:KeyValue>
+        </structure:CubeRegion>
+      </structure:ContentConstraint>
+    </structure:Constraints>
+  </message:Structures>
+</message:Structure>

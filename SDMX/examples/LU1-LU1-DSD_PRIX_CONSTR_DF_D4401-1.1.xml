@@ -1,0 +1,1264 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Header>
+    <message:ID>IDREF100720</message:ID>
+    <message:Test>false</message:Test>
+    <message:Prepared>2026-11-19T00:03:20.8114715+00:00</message:Prepared>
+    <message:Sender id="Unknown"/>
+    <message:Receiver id="Unknown"/>
+  </message:Header>
+  <message:Structures>
+    <structure:Dataflows>
+      <structure:Dataflow id="DSD_PRIX_CONSTR@DF_D4401" agencyID="LU1" version="1.1" isFinal="true">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>UNIT_MULT,COMMENT_TS</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_NOTE</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>UNIT_MULT=0,OBS_STATUS=0</common:AnnotationTitle>
+            <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>TIME_PERIOD_START=2018,FREQ=A+S</common:AnnotationTitle>
+            <common:AnnotationType>DEFAULT</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>COMBINED_UNIT_MEASURE:UNIT_MEASURE,UNIT_MULT</common:AnnotationTitle>
+            <common:AnnotationType>COMBINED_CONCEPTS</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">COMBINED_UNIT_MEASURE:Unit of measure</common:AnnotationText>
+            <common:AnnotationText xml:lang="fr">COMBINED_UNIT_MEASURE:Unité de mesure</common:AnnotationText>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Construction prices, overall summary indices</common:Name>
+        <common:Name xml:lang="fr">Prix de la construction, indices de synthèse généraux</common:Name>
+        <common:Description xml:lang="en">Publication date: 16/07/2026 - Periodicity: yearly - Author: Statec - Category: Enterprises - Construction - Keywords: construction&lt;br&gt;&lt;b&gt;*** Replaces table DF_D4401***&lt;/b&gt;</common:Description>
+        <common:Description xml:lang="fr">Date de publication: 16/07/2026 - Périodicité: annuelle - Auteur: Statec - Catégorie: Entreprises - Construction - Mots-clés: construction
+&lt;br&gt;&lt;b&gt;*** Remplace table DF_D4401***&lt;/b&gt;</common:Description>
+        <structure:Structure>
+          <Ref id="DSD_PRIX_CONSTR" version="1.3" agencyID="LU1" package="datastructure" class="DataStructure"/>
+        </structure:Structure>
+      </structure:Dataflow>
+    </structure:Dataflows>
+    <structure:CategorySchemes>
+      <structure:CategoryScheme id="LU1_CS" agencyID="LU1" version="1.0" isFinal="true" isPartial="true">
+        <common:Name xml:lang="en">Topics</common:Name>
+        <common:Name xml:lang="fr">Thèmes</common:Name>
+        <structure:Category id="D">
+          <common:Annotations>
+            <common:Annotation id="D">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">4</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="en">Enterprises</common:Name>
+          <common:Name xml:lang="fr">Entreprises</common:Name>
+          <common:Description xml:lang="en">Enterprises</common:Description>
+          <common:Description xml:lang="fr">Entreprises</common:Description>
+          <structure:Category id="D4">
+            <common:Annotations>
+              <common:Annotation id="D.D4">
+                <common:AnnotationType>ORDER</common:AnnotationType>
+                <common:AnnotationText xml:lang="en">4</common:AnnotationText>
+              </common:Annotation>
+            </common:Annotations>
+            <common:Name xml:lang="en">Construction and dwelling</common:Name>
+            <common:Name xml:lang="fr">Construction et logement</common:Name>
+            <common:Description xml:lang="fr">Construction et logement</common:Description>
+            <common:Description xml:lang="en">Construction and dwelling</common:Description>
+            <structure:Category id="D44">
+              <common:Annotations>
+                <common:Annotation id="D.D4.D44">
+                  <common:AnnotationType>ORDER</common:AnnotationType>
+                  <common:AnnotationText xml:lang="en">4</common:AnnotationText>
+                </common:Annotation>
+              </common:Annotations>
+              <common:Name xml:lang="en">Constructon price index</common:Name>
+              <common:Name xml:lang="fr">Indice des prix de la construction</common:Name>
+              <common:Description xml:lang="en">Constructon price index</common:Description>
+              <common:Description xml:lang="fr">Indice des prix de la construction</common:Description>
+            </structure:Category>
+          </structure:Category>
+        </structure:Category>
+      </structure:CategoryScheme>
+    </structure:CategorySchemes>
+    <structure:Categorisations>
+      <structure:Categorisation id="0E81D49C-456B-59CC-7B8E-EF820A577721" agencyID="LU1" version="1.0" isFinal="false">
+        <common:Name xml:lang="en">Category 'LU1:LU1_CS(1.0).D.D4.D44' linking to Dataflow 'LU1:DSD_PRIX_CONSTR@DF_D4401(1.1)'</common:Name>
+        <structure:Source>
+          <Ref id="DSD_PRIX_CONSTR@DF_D4401" version="1.1" agencyID="LU1" package="datastructure" class="Dataflow"/>
+        </structure:Source>
+        <structure:Target>
+          <Ref id="D.D4.D44" maintainableParentID="LU1_CS" maintainableParentVersion="1.0" agencyID="LU1" package="categoryscheme" class="Category"/>
+        </structure:Target>
+      </structure:Categorisation>
+    </structure:Categorisations>
+    <structure:Codelists>
+      <structure:Codelist isPartial="true" id="CL_BASE_PERIOD" agencyID="LU1" version="1.1" isFinal="true">
+        <common:Name xml:lang="en">Base period</common:Name>
+        <common:Name xml:lang="fr">Période de référence</common:Name>
+        <common:Description xml:lang="fr">ajout 2025=100</common:Description>
+        <common:Description xml:lang="en">add 2025=100</common:Description>
+        <structure:Code id="1970">
+          <common:Name xml:lang="en">1970=100</common:Name>
+          <common:Name xml:lang="fr">1970=100</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_BUILDING_TYPE_PRIX" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Building type</common:Name>
+        <common:Name xml:lang="fr">Type d'immeubles</common:Name>
+        <common:Description xml:lang="en">Used for prices tables</common:Description>
+        <common:Description xml:lang="fr">Utilisé pour les tableaux des prix</common:Description>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicabe</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_COMMENT_DSET_PRIX" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Comments on the dataset levels</common:Name>
+        <common:Name xml:lang="fr">Commentaires sur les niveaux de l'ensemble de données</common:Name>
+        <common:Description xml:lang="en">Codelist used for prices</common:Description>
+        <common:Description xml:lang="fr">Codelist utilisée pour les prix</common:Description>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="en">Not Applicable</common:Name>
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+        </structure:Code>
+        <structure:Code id="_U">
+          <common:Name xml:lang="en">Unknown</common:Name>
+          <common:Name xml:lang="fr">Inconnue</common:Name>
+        </structure:Code>
+        <structure:Code id="INFLATION">
+          <common:Name xml:lang="en">The inflation rate is the percentage change of the general index compared to the previous year.</common:Name>
+          <common:Name xml:lang="fr">Le taux d'inflation pour une année donnée est laugmentation en pourcent de l'indice général par rapport à l'année précédente.</common:Name>
+        </structure:Code>
+        <structure:Code id="D3201">
+          <common:Name xml:lang="en">Index 100 in 2010. Between brackets: Common nomenclature of industrial products (PRODCOM)|http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&amp;StrNom=PRD_2010&amp;StrLanguageCode=FR&amp;IntPcKey=&amp;StrLayoutCode=HIERARCHIC&amp;IntCurrentPage=1.</common:Name>
+          <common:Name xml:lang="fr">Base 100 en 2010. Entre parenthèses: Nomenclature commune des produits industriels (PRODCOM)|http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&amp;StrNom=PRD_2010&amp;StrLanguageCode=FR&amp;IntPcKey=&amp;StrLayoutCode=HIERARCHIC&amp;IntCurrentPage=1.</common:Name>
+        </structure:Code>
+        <structure:Code id="E5201">
+          <common:Name xml:lang="en">The sliding salary scale mechanism is modulated for the years 1985, 1986, 1987. Over the period 2006 to 2009, the mechanism is not applied the month following their triggering, as would be the case in a non-modulated system. (cf. law of 27 June 2006 adopting certain methods of application of the sliding scale of wages and salaries.) The 2011 index mechanism is also applied according to a special regime. (cf. law of April 8, 2011 adapting certain terms of application of the sliding scale of wages and salaries) During the period from 2012 to 2014, the automatic mechanism was suspended. (cf. law of January 31, 2012 adapting certain terms of application of the sliding scale of wages and salaries)</common:Name>
+          <common:Name xml:lang="fr">Le mécanisme de l'échelle mobile des salaires est modulé pour les années 1985, 1986, 1987. Sur la période 2006 à 2009 les tranches indiciaires ne sont pas appliquées le mois suivant leur déclenchement, comme ce serait le cas dans un système non-modulé (cf. loi du 27 juin 2006 adoptant certaines modalités d'application de l'échelle mobile des salaires et des traitements.) La tranche indiciaire de 2011 est aussi appliquée selon un régime spécial (cf. loi du 8 avril 2011 adaptant certaines modalités d'application de l'échelle mobile des salaires et traitements). Pendant la période de 2012 à 2014, le mécanisme automatique a été suspendu (cf. loi du 31 janvier 2012 adaptant certaines modalités d'application de l'échelle mobile des salaires et traitements).</common:Name>
+        </structure:Code>
+        <structure:Code id="D32001">
+          <common:Name xml:lang="en">For the 2021 base period, data for the last 6 months are subject to change.</common:Name>
+          <common:Name xml:lang="fr">Pour la période de référence de 2021 les données des 6 derniers mois sont susceptibles d'être modifiées</common:Name>
+        </structure:Code>
+        <structure:Code id="D4401">
+          <common:Name xml:lang="fr">&lt;p&gt;Les indices postérieurs respectivement à 1980, 1990, 2000, 2010 et 2020 sont établis sur les bases 1980, 1990, 2000, 2010 et 2020.&lt;/p&gt;								 &lt;p&gt;Les séries rétrospectives des tableaux 1.1 et 1.2 sont rattachées à la base initiale 1970, les coefficients de raccordements étant respectivement 2.4370 (1980), 4.1188 (1990), 5.2913 (2000), 6.8208 (2010), et 8.415162 (2020).&lt;/p&gt;									 &lt;p&gt;(Voir aussi: La révision de l'indice des prix de la construction  -  Bulletins du Statec N° 7/1981, N° 5/1991, N° 5/2011 et le working paper du STATEC N°125 2021)&lt;/p&gt;									 &lt;p&gt;Les modifications du taux de la TVA de 10% à 12% au 1.7.83 et de 12% à 15% au 1.1.92 ont apporté des hausses mécaniques de respectivement 1.8% à l'indice d'octobre 1983 et 2.7% à celui d'avril 1992.&lt;/p&gt;									 &lt;p&gt;Le passage de la TVA de 15% à 17% en janvier 2015, respectivement la réduction temporaire du taux à 16% en 2023, restent sans impact sur l’indice qui est basé sur des prix hors TVA.&lt;/p&gt;</common:Name>
+          <common:Name xml:lang="en">&lt;p&gt;Indices after respectively 1980, 1990, 2000, 2010 and 2020 are published on base 1980, 1990, 2000, 2010 and 2020.&lt;/p&gt;								 &lt;p&gt;Retrospective series of tables 1.1 and 1.2 are linked to the initial base 1970, the linking coefficients are respectively 2.4370 (1980), 4.1188 (1990), 5.2913 (2000), 6.8208 (2010) and 8.415162 (2020).&lt;/p&gt;								 &lt;p&gt;On this, see also: La révision de l'indice des prix de la construction  -  Bulletins du Statec N° 7/1981, N° 5/1991, N° 5/2011 and the working paper from STATEC N°125 2021).&lt;/p&gt;								 &lt;p&gt;Changes in the VAT rate from 10% to 12% on 01.07.1983 and 12% to 15% on 01.01.1992 brought mechanical increases to the index of respectively 1.8% in October 1983 and 2.7% in April 1992.&lt;/p&gt;   								 &lt;p&gt;The VAT changes from 15% to 17% in January 2015 and the temporary VAT reduction to 16% in 2023 have no impact on the Index which is based on prices excluding VAT.&lt;/p&gt;</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_COMMENT_OBS_PRIX" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Comments on the observation value</common:Name>
+        <common:Name xml:lang="fr">Commentaires sur la valeur d'observation</common:Name>
+        <common:Description xml:lang="en">Codelist used for prices</common:Description>
+        <common:Description xml:lang="fr">Codelist utilisée pour les prix</common:Description>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="en">Not Applicable</common:Name>
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+        </structure:Code>
+        <structure:Code id="_U">
+          <common:Name xml:lang="en">Unknown</common:Name>
+          <common:Name xml:lang="fr">Inconnue</common:Name>
+        </structure:Code>
+        <structure:Code id="1987">
+          <common:Name xml:lang="en">From July to November 1987: figures were adjusted for the retroactive increase in the price of a day of hospitalization.</common:Name>
+          <common:Name xml:lang="fr">A partir de juillet jusqu'en novembre 1987: pour tenir compte de la hausse rétroactive du prix de la journée d'hospitalisation</common:Name>
+        </structure:Code>
+        <structure:Code id="1994">
+          <common:Name xml:lang="en">From July 1994:excluding the social contribution on fuels from</common:Name>
+          <common:Name xml:lang="fr">A partir du 1.7.1994: hors contribution sociale sur les carburants</common:Name>
+        </structure:Code>
+        <structure:Code id="1999">
+          <common:Name xml:lang="en">From 1999: accounting for seasonal sales prices in January and July</common:Name>
+          <common:Name xml:lang="fr">A partir de 1999: prise en compte des prix des soldes saisonniers en janvier et juillet</common:Name>
+        </structure:Code>
+        <structure:Code id="2006">
+          <common:Name xml:lang="en">From 2006 excluding the climate change contribution on fuels and with fixed excise duties and VAT on tobacco products.</common:Name>
+          <common:Name xml:lang="fr">A partir de 2006: hors contribution changement climatique sur les carburants et avec taxes(TVA) et droits d'accises gelés pour les produits de tabacs</common:Name>
+        </structure:Code>
+        <structure:Code id="2008">
+          <common:Name xml:lang="en">From January 2008: prices collected on the first of the month are replaced by mid-month prices. In the case of petroleum products, an average price from 1st to 15th of each month (and mot only the price on the first day) is collected.</common:Name>
+          <common:Name xml:lang="fr">A partir de janvier 2008: " au 1er du mois " pour certains tarif sont remplacés par des prix au milieu du mois. Dans le cas des produits pétroliers, un prix moyen est établi du 1er au 15 de chaque mois et non plus uniquement au 1er de chaque mois.</common:Name>
+        </structure:Code>
+        <structure:Code id="2011">
+          <common:Name xml:lang="en">From January 2011: changes in the methodology for the treatment of seasonal products</common:Name>
+          <common:Name xml:lang="fr">A partir de janvier 2011: changement de la méthodologie de traitement des produits saisonniers.</common:Name>
+        </structure:Code>
+        <structure:Code id="2023">
+          <common:Name xml:lang="en">Value revised on 14.02.2023</common:Name>
+          <common:Name xml:lang="fr">Valeur révisée le 14.02.2023</common:Name>
+        </structure:Code>
+        <structure:Code id="E5201">
+          <common:Name xml:lang="en">In accordance with Article 3 of the law of 29 June 2022, the application of the wage indexation, triggered in June 2022, has been postponed to April 2023.</common:Name>
+          <common:Name xml:lang="fr">Conformément à l'article 3 de la loi du 29 juin 2022, l'application de la tranche indiciaire, déclenchée en juin 2022, a été reportée à avril 2023.</common:Name>
+        </structure:Code>
+        <structure:Code id="E5200">
+          <common:Name xml:lang="en">Annual average of the sliding scale: 342.65 (social minimum wage), annual increase in wages in %: 7,25 (social minimum wage)</common:Name>
+          <common:Name xml:lang="fr">342.65 Moyenne annuelle de l'échelle mobile (salaire social minimum), hausse annuelle des salaires en %: 7,25 (salaire social minimum)</common:Name>
+        </structure:Code>
+        <structure:Code id="AVG">
+          <common:Name xml:lang="en">The annual average is the arithmetic average of twelve months in a year</common:Name>
+          <common:Name xml:lang="fr">La moyenne  annuelle correspond à la moyenne arithmétique des douze mois d'une année.</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_COMMENT_TS_BUILDING_TYPE" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Detailed description of the group of series of building type</common:Name>
+        <common:Name xml:lang="fr">Description détaillée du groupe de séries de type d'immeuble</common:Name>
+        <structure:Code id="1987">
+          <common:Name xml:lang="en">From July to November 1987: figures were adjusted for the retroactive increase in the price of a day of hospitalization.</common:Name>
+          <common:Name xml:lang="fr">A partir de juillet jusqu'en novembre 1987: pour tenir compte de la hausse rétroactive du prix de la journée d'hospitalisation</common:Name>
+        </structure:Code>
+        <structure:Code id="1994">
+          <common:Name xml:lang="en">From July 1994:excluding the social contribution on fuels from 1.7.1994.</common:Name>
+          <common:Name xml:lang="fr">A partir du 1.7.1994: hors contribution sociale sur les carburants</common:Name>
+        </structure:Code>
+        <structure:Code id="1999">
+          <common:Name xml:lang="en">From 1999: accounting for seasonal sales prices in January and July</common:Name>
+          <common:Name xml:lang="fr">A partir de 1999: prise en compte des prix des soldes saisonniers en janvier et juillet</common:Name>
+        </structure:Code>
+        <structure:Code id="2006">
+          <common:Name xml:lang="en">From 2006 excluding the climate change contribution on fuels and with fixed excise duties and VAT on tobacco products.</common:Name>
+          <common:Name xml:lang="fr">A partir de 2006: hors contribution changement climatique sur les carburants et avec taxes(TVA) et droits d'accises gelés pour les produits de tabacs</common:Name>
+        </structure:Code>
+        <structure:Code id="2008">
+          <common:Name xml:lang="en">From January 2008: prices collected on the first of the month are replaced by mid-month prices. In the case of petroleum products, an average price from 1st to 15th of each month (and mot only the price on the first day) is collected.</common:Name>
+          <common:Name xml:lang="fr">A partir de janvier 2008: " au 1er du mois " pour certains tarif sont remplacés par des prix au milieu du mois. Dans le cas des produits pétroliers, un prix moyen est établi du 1er au 15 de chaque mois et non plus uniquement au 1er de chaque mois.</common:Name>
+        </structure:Code>
+        <structure:Code id="2011">
+          <common:Name xml:lang="en">From January 2011: changes in the methodology for the treatment of seasonal products</common:Name>
+          <common:Name xml:lang="fr">A partir de janvier 2011: changement de la méthodologie de traitement des produits saisonniers.</common:Name>
+        </structure:Code>
+        <structure:Code id="INDA">
+          <common:Name xml:lang="en">Building types Type A: - Single family homes of all types and other residential buildings with no more than five levels. Definitions: Type A index (construction)</common:Name>
+          <common:Name xml:lang="fr">Immeubles du Type A: Maisons unifamiliales de tout genre et autres bâtiments résidentiels ne comptant pas plus de cinq niveaux et se rapprochant, par leur type de construction, des maisons unifamiliales. Définitions: Indice Type A (Construction)</common:Name>
+        </structure:Code>
+        <structure:Code id="INDS">
+          <common:Name xml:lang="en">The overall index is based ont the weighted average of the two types. Definitions: General synthesis index (construction)</common:Name>
+          <common:Name xml:lang="fr">Les indices de synthèse reposent sur une pondération qui est la moyenne pondérée de celles des deux types de bâtiments. Définitions: Indice de synthèse général (Construction)</common:Name>
+        </structure:Code>
+        <structure:Code id="INDB">
+          <common:Name xml:lang="en">Building types Type B: - Residential and semi-residential buildings with a volume greater than 2000 m3 and equipped with infrastructures typical for multi-dwelling buildings. Definitions: Type B index (construction)</common:Name>
+          <common:Name xml:lang="fr">Immeubles du Tybe B: Bâtiments résidentiels et semi-résidentiels d'un volume bâti supérieur à 3 000 m3 et équipés de l'infrastructure propre aux résidences. Définitions: Indice Type B (Construction)</common:Name>
+        </structure:Code>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="en">Not Applicable</common:Name>
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+        </structure:Code>
+        <structure:Code id="_U">
+          <common:Name xml:lang="en">Unknown</common:Name>
+          <common:Name xml:lang="fr">Inconnue</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_COMMENT_TS_CONSTR_TRADE" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Comments on thetime serie</common:Name>
+        <common:Name xml:lang="fr">Commentaires sur la série temporelle</common:Name>
+        <common:Description xml:lang="en">Codelist used for prices</common:Description>
+        <common:Description xml:lang="fr">Codelist utilisée pour les prix</common:Description>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="en">Not Applicable</common:Name>
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+        </structure:Code>
+        <structure:Code id="_U">
+          <common:Name xml:lang="en">Unknown</common:Name>
+          <common:Name xml:lang="fr">Inconnue</common:Name>
+        </structure:Code>
+        <structure:Code id="AVG">
+          <common:Name xml:lang="en">The annual average is the arithmetic average of twelve months in a year</common:Name>
+          <common:Name xml:lang="fr">La moyenne  annuelle correspond à la moyenne arithmétique des douze mois d'une année.</common:Name>
+        </structure:Code>
+        <structure:Code id="C031">
+          <common:Name xml:lang="en">Since 2010, the category of exterior joinery also covers glazing</common:Name>
+          <common:Name xml:lang="fr">À partir de 2010, le vitrage est inclus dans la menuiserie extérieure.</common:Name>
+        </structure:Code>
+        <structure:Code id="C032">
+          <common:Name xml:lang="en">Since 2020, the category facade is no more part of finishing but it belongs to building closure.</common:Name>
+          <common:Name xml:lang="fr">A partir de 2020, les façades ne font plus partie du parachèvement mais ils sont regroupées au niveu de la fermeture du bâtiment.</common:Name>
+        </structure:Code>
+        <structure:Code id="C058">
+          <common:Name xml:lang="en">Since 2010, the category of structural works does not cover anymore screeds and mortar coatings, these services are now grouped in a separate category (C057).</common:Name>
+          <common:Name xml:lang="fr">À partir de 2010, les chapes et enduits ne sont plus inclus dans la rubrique du gros-œuvre mais ils forment une catégorie à part (C057).</common:Name>
+        </structure:Code>
+        <structure:Code id="2023">
+          <common:Name xml:lang="en">Value revised on 14.02.2023</common:Name>
+          <common:Name xml:lang="fr">Valeur révisée le 14.02.2023</common:Name>
+        </structure:Code>
+        <structure:Code id="1987">
+          <common:Name xml:lang="en">From July to November 1987: figures were adjusted for the retroactive increase in the price of a day of hospitalization.</common:Name>
+          <common:Name xml:lang="fr">A partir de juillet jusqu'en novembre 1987: pour tenir compte de la hausse rétroactive du prix de la journée d'hospitalisation</common:Name>
+        </structure:Code>
+        <structure:Code id="1994">
+          <common:Name xml:lang="en">From July 1994:excluding the social contribution on fuels from 1.7.1994.</common:Name>
+          <common:Name xml:lang="fr">A partir du 1.7.1994: hors contribution sociale sur les carburants</common:Name>
+        </structure:Code>
+        <structure:Code id="1999">
+          <common:Name xml:lang="en">From 1999: accounting for seasonal sales prices in January and July</common:Name>
+          <common:Name xml:lang="fr">A partir de 1999: prise en compte des prix des soldes saisonniers en janvier et juillet</common:Name>
+        </structure:Code>
+        <structure:Code id="2006">
+          <common:Name xml:lang="en">From 2006 excluding the climate change contribution on fuels and with fixed excise duties and VAT on tobacco products.</common:Name>
+          <common:Name xml:lang="fr">A partir de 2006: hors contribution changement climatique sur les carburants et avec taxes(TVA) et droits d'accises gelés pour les produits de tabacs</common:Name>
+        </structure:Code>
+        <structure:Code id="2008">
+          <common:Name xml:lang="en">From January 2008: prices collected on the first of the month are replaced by mid-month prices. In the case of petroleum products, an average price from 1st to 15th of each month (and mot only the price on the first day) is collected.</common:Name>
+          <common:Name xml:lang="fr">A partir de janvier 2008: " au 1er du mois " pour certains tarif sont remplacés par des prix au milieu du mois. Dans le cas des produits pétroliers, un prix moyen est établi du 1er au 15 de chaque mois et non plus uniquement au 1er de chaque mois.</common:Name>
+        </structure:Code>
+        <structure:Code id="2011">
+          <common:Name xml:lang="en">From January 2011: changes in the methodology for the treatment of seasonal products</common:Name>
+          <common:Name xml:lang="fr">A partir de janvier 2011: changement de la méthodologie de traitement des produits saisonniers.</common:Name>
+        </structure:Code>
+        <structure:Code id="INDA">
+          <common:Name xml:lang="en">Building types Type A: - Single family homes of all types and other residential buildings with no more than five levels. Definitions: Type A index (construction)</common:Name>
+          <common:Name xml:lang="fr">Immeubles du Type A: Maisons unifamiliales de tout genre et autres bâtiments résidentiels ne comptant pas plus de cinq niveaux et se rapprochant, par leur type de construction, des maisons unifamiliales. Définitions: Indice Type A (Construction)</common:Name>
+        </structure:Code>
+        <structure:Code id="INDS">
+          <common:Name xml:lang="en">The overall index is based ont the weighted average of the two types. Definitions: General synthesis index (construction)</common:Name>
+          <common:Name xml:lang="fr">Les indices de synthèse reposent sur une pondération qui est la moyenne pondérée de celles des deux types de bâtiments. Définitions: Indice de synthèse général (Construction)</common:Name>
+        </structure:Code>
+        <structure:Code id="INDB">
+          <common:Name xml:lang="en">Building types Type B: - Residential and semi-residential buildings with a volume greater than 2000 m3 and equipped with infrastructures typical for multi-dwelling buildings. Definitions: Type B index (construction)</common:Name>
+          <common:Name xml:lang="fr">Immeubles du Tybe B: Bâtiments résidentiels et semi-résidentiels d'un volume bâti supérieur à 3 000 m3 et équipés de l'infrastructure propre aux résidences. Définitions: Indice Type B (Construction)</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_COMMON_PRODUCT" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Common products</common:Name>
+        <common:Name xml:lang="fr">Produits courants</common:Name>
+        <common:Description xml:lang="en">Used for the prices</common:Description>
+        <common:Description xml:lang="fr">Utilisé pour les prix</common:Description>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not Applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_CONSTRUCTION_TRADE" agencyID="LU1" version="2.0" isFinal="true">
+        <common:Name xml:lang="en">Construction trades</common:Name>
+        <common:Name xml:lang="fr">Corps de métiers</common:Name>
+        <common:Description xml:lang="en">Update Ids + add order/parent</common:Description>
+        <common:Description xml:lang="fr">Mise a jour des Ids + ajout order/parent</common:Description>
+        <structure:Code id="_Z">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">880</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">880</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not Applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_DECIMALS" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Decimals</common:Name>
+        <structure:Code id="2">
+          <common:Name xml:lang="fr">Deux</common:Name>
+          <common:Name xml:lang="en">Two</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_MARKET" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Market</common:Name>
+        <common:Name xml:lang="fr">Marché</common:Name>
+        <common:Description xml:lang="en">Used for prices tables</common:Description>
+        <common:Description xml:lang="fr">Utilisé pour les tableaux des prix</common:Description>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_MEASURE_PRIX" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Measure</common:Name>
+        <common:Name xml:lang="fr">Mesure</common:Name>
+        <common:Description xml:lang="en">Measure for prices</common:Description>
+        <common:Description xml:lang="fr">Mesure pour les Prix</common:Description>
+        <structure:Code id="PRIX_CONSTR">
+          <common:Name xml:lang="en">Construction prices</common:Name>
+          <common:Name xml:lang="fr">Prix de la construction</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_MOTOR_ENERGY_VEH" agencyID="LU1" version="1.2" isFinal="true">
+        <common:Name xml:lang="en">Motor energy</common:Name>
+        <common:Name xml:lang="fr">Type de carburant</common:Name>
+        <common:Description xml:lang="en">Fuel Type</common:Description>
+        <common:Description xml:lang="fr">Type de carburant</common:Description>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="en">Not applicable</common:Name>
+          <common:Name xml:lang="fr">Pas applicable</common:Name>
+          <common:Description xml:lang="en">Not applicable</common:Description>
+          <common:Description xml:lang="fr">Pas applicable</common:Description>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_NACE_R2" agencyID="LU1" version="1.3" isFinal="true">
+        <common:Name xml:lang="en">Economic activity (NACE Rev.2)</common:Name>
+        <common:Name xml:lang="fr">Activité économique (NACE Rév.2)</common:Name>
+        <structure:Code id="_Z">
+          <common:Annotations>
+            <common:Annotation id="@SDMX">
+              <common:AnnotationType>ORDER</common:AnnotationType>
+              <common:AnnotationText xml:lang="en">999999</common:AnnotationText>
+              <common:AnnotationText xml:lang="fr">999999</common:AnnotationText>
+            </common:Annotation>
+          </common:Annotations>
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_NRG_SRC" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Energy source</common:Name>
+        <common:Name xml:lang="fr">Source d'énergie</common:Name>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_OBS_STATUS" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="fr">CL_OBS_STATUS</common:Name>
+        <common:Name xml:lang="en">CL_OBS_STATUS</common:Name>
+        <structure:Code id="a">
+          <common:Name xml:lang="fr">Valeur normale</common:Name>
+          <common:Name xml:lang="en">Normal value</common:Name>
+          <common:Description xml:lang="fr">Valeur normale</common:Description>
+          <common:Description xml:lang="en">Normal value</common:Description>
+        </structure:Code>
+        <structure:Code id="b">
+          <common:Name xml:lang="fr">Rupture de série</common:Name>
+          <common:Name xml:lang="en">Break in time series</common:Name>
+          <common:Description xml:lang="fr">Rupture de série</common:Description>
+          <common:Description xml:lang="en">Break in time series</common:Description>
+        </structure:Code>
+        <structure:Code id="c">
+          <common:Name xml:lang="fr">Confidentiel</common:Name>
+          <common:Name xml:lang="en">Confidential</common:Name>
+          <common:Description xml:lang="fr">Confidentiel</common:Description>
+          <common:Description xml:lang="en">Confidential</common:Description>
+        </structure:Code>
+        <structure:Code id="d">
+          <common:Name xml:lang="fr">La définition diffère</common:Name>
+          <common:Name xml:lang="en">Definition differs</common:Name>
+          <common:Description xml:lang="fr">La définition diffère</common:Description>
+          <common:Description xml:lang="en">Definition differs</common:Description>
+        </structure:Code>
+        <structure:Code id="e">
+          <common:Name xml:lang="fr">Estimé</common:Name>
+          <common:Name xml:lang="en">Estimated</common:Name>
+          <common:Description xml:lang="fr">Estimé</common:Description>
+          <common:Description xml:lang="en">Estimated</common:Description>
+        </structure:Code>
+        <structure:Code id="f">
+          <common:Name xml:lang="fr">Prévision</common:Name>
+          <common:Name xml:lang="en">Forecast</common:Name>
+          <common:Description xml:lang="fr">Prévision</common:Description>
+          <common:Description xml:lang="en">Forecast</common:Description>
+        </structure:Code>
+        <structure:Code id="g">
+          <common:Name xml:lang="fr">Valeur expérimentale</common:Name>
+          <common:Name xml:lang="en">Experimental value</common:Name>
+          <common:Description xml:lang="fr">Valeur expérimentale</common:Description>
+          <common:Description xml:lang="en">Experimental value</common:Description>
+        </structure:Code>
+        <structure:Code id="h">
+          <common:Name xml:lang="fr">Valeur manquante: jour férié ou week-end</common:Name>
+          <common:Name xml:lang="en">Missing value: holiday or weekend</common:Name>
+          <common:Description xml:lang="fr">Valeur manquante: jour férié ou week-end</common:Description>
+          <common:Description xml:lang="en">Missing value: holiday or weekend</common:Description>
+        </structure:Code>
+        <structure:Code id="i">
+          <common:Name xml:lang="fr">Valeur imputée</common:Name>
+          <common:Name xml:lang="en">Imputed value</common:Name>
+          <common:Description xml:lang="fr">Valeur imputée</common:Description>
+          <common:Description xml:lang="en">Imputed value</common:Description>
+        </structure:Code>
+        <structure:Code id="j">
+          <common:Name xml:lang="fr">Dérogation</common:Name>
+          <common:Name xml:lang="en">Derogation</common:Name>
+          <common:Description xml:lang="fr">Dérogation</common:Description>
+          <common:Description xml:lang="en">Derogation</common:Description>
+        </structure:Code>
+        <structure:Code id="k">
+          <common:Name xml:lang="fr">Données incluses dans une autre catégorie</common:Name>
+          <common:Name xml:lang="en">Data included in another category</common:Name>
+          <common:Description xml:lang="fr">Données incluses dans une autre catégorie</common:Description>
+          <common:Description xml:lang="en">Data included in another category</common:Description>
+        </structure:Code>
+        <structure:Code id="l">
+          <common:Name xml:lang="fr">Non disponible</common:Name>
+          <common:Name xml:lang="en">Not available</common:Name>
+          <common:Description xml:lang="fr">Non disponible</common:Description>
+          <common:Description xml:lang="en">Not available</common:Description>
+        </structure:Code>
+        <structure:Code id="m">
+          <common:Name xml:lang="fr">Valeur manquante: les données ne peuvent pas exister</common:Name>
+          <common:Name xml:lang="en">Missing value: data cannot exist</common:Name>
+          <common:Description xml:lang="fr">Valeur manquante: les données ne peuvent pas exister</common:Description>
+          <common:Description xml:lang="en">Missing value: data cannot exist</common:Description>
+        </structure:Code>
+        <structure:Code id="n">
+          <common:Name xml:lang="fr">Inférieur à la moitié de l'unité employée</common:Name>
+          <common:Name xml:lang="en">Less than half the used unit</common:Name>
+          <common:Description xml:lang="fr">Inférieur à la moitié de l'unité employée</common:Description>
+          <common:Description xml:lang="en">Less than half the used unit</common:Description>
+        </structure:Code>
+        <structure:Code id="o">
+          <common:Name xml:lang="fr">Valeur manquante</common:Name>
+          <common:Name xml:lang="en">Missing value</common:Name>
+          <common:Description xml:lang="fr">Valeur manquante</common:Description>
+          <common:Description xml:lang="en">Missing value</common:Description>
+        </structure:Code>
+        <structure:Code id="p">
+          <common:Name xml:lang="fr">Provisoire</common:Name>
+          <common:Name xml:lang="en">Provisional</common:Name>
+          <common:Description xml:lang="fr">Provisoire</common:Description>
+          <common:Description xml:lang="en">Provisional</common:Description>
+        </structure:Code>
+        <structure:Code id="q">
+          <common:Name xml:lang="fr">Valeur manquante: supprimée</common:Name>
+          <common:Name xml:lang="en">Missing value: suppressed</common:Name>
+          <common:Description xml:lang="fr">Valeur manquante: supprimée</common:Description>
+          <common:Description xml:lang="en">Missing value: suppressed</common:Description>
+        </structure:Code>
+        <structure:Code id="r">
+          <common:Name xml:lang="fr">Révisé</common:Name>
+          <common:Name xml:lang="en">Revised</common:Name>
+          <common:Description xml:lang="fr">Révisé</common:Description>
+          <common:Description xml:lang="en">Revised</common:Description>
+        </structure:Code>
+        <structure:Code id="s">
+          <common:Name xml:lang="fr">Grève et autres événements spéciaux</common:Name>
+          <common:Name xml:lang="en">Strike and other special events</common:Name>
+          <common:Description xml:lang="fr">Grève et autres événements spéciaux</common:Description>
+          <common:Description xml:lang="en">Strike and other special events</common:Description>
+        </structure:Code>
+        <structure:Code id="t">
+          <common:Name xml:lang="fr">.</common:Name>
+          <common:Name xml:lang="en">.</common:Name>
+          <common:Description xml:lang="fr">.</common:Description>
+          <common:Description xml:lang="en">.</common:Description>
+        </structure:Code>
+        <structure:Code id="u">
+          <common:Name xml:lang="fr">Faible fiabilité</common:Name>
+          <common:Name xml:lang="en">Low reliability</common:Name>
+          <common:Description xml:lang="fr">Faible fiabilité</common:Description>
+          <common:Description xml:lang="en">Low reliability</common:Description>
+        </structure:Code>
+        <structure:Code id="v">
+          <common:Name xml:lang="fr">Peu fiable</common:Name>
+          <common:Name xml:lang="en">Unvalidated value</common:Name>
+          <common:Description xml:lang="fr">Peu fiable</common:Description>
+          <common:Description xml:lang="en">Unvalidated value</common:Description>
+        </structure:Code>
+        <structure:Code id="w">
+          <common:Name xml:lang="fr">Comprend les données d'une autre catégorie</common:Name>
+          <common:Name xml:lang="en">Includes data from another category</common:Name>
+          <common:Description xml:lang="fr">Comprend les données d'une autre catégorie</common:Description>
+          <common:Description xml:lang="en">Includes data from another category</common:Description>
+        </structure:Code>
+        <structure:Code id="x">
+          <common:Name xml:lang="fr">.</common:Name>
+          <common:Name xml:lang="en">.</common:Name>
+        </structure:Code>
+        <structure:Code id="y">
+          <common:Name xml:lang="fr">.</common:Name>
+          <common:Name xml:lang="en">.</common:Name>
+          <common:Description xml:lang="fr">.</common:Description>
+          <common:Description xml:lang="en">.</common:Description>
+        </structure:Code>
+        <structure:Code id="z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+          <common:Description xml:lang="fr">Non applicable</common:Description>
+          <common:Description xml:lang="en">Not applicable</common:Description>
+        </structure:Code>
+        <structure:Code id="-">
+          <common:Name xml:lang="fr">néant</common:Name>
+          <common:Name xml:lang="en">nil</common:Name>
+          <common:Description xml:lang="fr">néant</common:Description>
+          <common:Description xml:lang="en">nil</common:Description>
+        </structure:Code>
+        <structure:Code id="A">
+          <common:Name xml:lang="en">Normal value</common:Name>
+          <common:Description xml:lang="en">To be used as default value if no value is
+						provided or when no special coded qualification is assumed. Usually, it can
+						be assumed that the source agency assigns sufficient confidence to the
+						provided observation and/or the value is not expected to be
+						drama</common:Description>
+        </structure:Code>
+        <structure:Code id="B">
+          <common:Name xml:lang="en">Time series break</common:Name>
+          <common:Description xml:lang="en">Observations are characterised as such when
+						different content exists or a different methodology has been applied to this
+						observation as compared with the preceding one (the one given for the
+						previous period).</common:Description>
+        </structure:Code>
+        <structure:Code id="D">
+          <common:Name xml:lang="en">Definition differs</common:Name>
+          <common:Description xml:lang="en">Used to indicate slight deviations from the
+						established methodology (footnote-type information); these divergences do
+						not imply a break in time series.</common:Description>
+        </structure:Code>
+        <structure:Code id="E">
+          <common:Name xml:lang="en">Estimated value</common:Name>
+          <common:Description xml:lang="en">Observation obtained through an estimation
+						methodology (e.g. to produce back-casts) or based on the use of a limited
+						amount of data or ad hoc sampling and through additional calculations (e.g.
+						to produce a value at an early stage of the production stage while not all
+						data are available). It may also be used in case of experimental data (e.g.
+						in the context of a pilot ahead of a full scale production process) or in
+						case of data of (anticipated/assessed) low quality. If needed, additional
+						information can be provided through free text using the COMMENT_OBS
+						attribute at the observation level or at a higher level. This code is to be
+						used when the estimation is done by a sender agency. When the imputation is
+						carried out by a receiver agency in order to replace or fill gaps in
+						reported data series, the flag to use is I "Value imputed by a receiving
+						agency".</common:Description>
+        </structure:Code>
+        <structure:Code id="F">
+          <common:Name xml:lang="en">Forecast value</common:Name>
+          <common:Description xml:lang="en">Value deemed to assess the magnitude which a
+						quantity will assume at some future point of time (as distinct from
+						"estimated value" which attempts to assess the magnitude of an already
+						existent quantity).</common:Description>
+        </structure:Code>
+        <structure:Code id="G">
+          <common:Name xml:lang="en">Experimental value</common:Name>
+          <common:Description xml:lang="en">Data collected on the basis of definitions or
+						(alternative) collection methods under development. Data not of guaranteed
+						quality as normally expected from provider.</common:Description>
+        </structure:Code>
+        <structure:Code id="H">
+          <common:Name xml:lang="en">Missing value; holiday or weekend</common:Name>
+          <common:Description xml:lang="en">Used in some daily data flows.</common:Description>
+        </structure:Code>
+        <structure:Code id="I">
+          <common:Name xml:lang="en">Value imputed by a receiving agency</common:Name>
+          <common:Description xml:lang="en">Observation imputed by a receiving agency to
+						replace or fill gaps in reported data series. This code is intended to cover
+						all cases where a receiving agency publishes data about a sending agency
+						that do not come from an official source in the sender agency's reporting
+						framework.When the estimation is done by the sender agency, the flag to use
+						is E "Estimated value".</common:Description>
+        </structure:Code>
+        <structure:Code id="J">
+          <common:Name xml:lang="en">Derogation</common:Name>
+          <common:Description xml:lang="en">Clause in an agreement (e.g. legal act,
+						gentlemen's agreement) stating that some provisions in the agreement are not
+						to be implemented by designated parties; these derogations may affect the
+						observation or cause a missing value. In general, derogations
+						ar</common:Description>
+        </structure:Code>
+        <structure:Code id="K">
+          <common:Name xml:lang="en">Data included in another category</common:Name>
+          <common:Description xml:lang="en">This code is used when data for a given category
+						are missing and are included in another category, sub-total or total.
+						Generally where code "K" is used there should be a corresponding code "W -
+						Includes data from another category" assigned to the
+						over-cov</common:Description>
+        </structure:Code>
+        <structure:Code id="L">
+          <common:Name xml:lang="en">Missing value; data exist but were not
+						collected</common:Name>
+          <common:Description xml:lang="en">Used, for example, when some data are not
+						reported/disseminated because they are below a certain
+						threshold.</common:Description>
+        </structure:Code>
+        <structure:Code id="M">
+          <common:Name xml:lang="en">Missing value; data cannot exist</common:Name>
+          <common:Description xml:lang="en">Used to denote empty cells resulting from the
+						impossibility to collect a statistical value (e.g. a particular education
+						level or type of institution may be not applicable to a given country's
+						education system).</common:Description>
+        </structure:Code>
+        <structure:Code id="N">
+          <common:Name xml:lang="en">Not significant</common:Name>
+          <common:Description xml:lang="en">Used to indicate a value which is not a "real"
+						zero (e.g. a result of 0.0004 rounded to zero).</common:Description>
+        </structure:Code>
+        <structure:Code id="O">
+          <common:Name xml:lang="en">Missing value</common:Name>
+          <common:Description xml:lang="en">This code is to be used when no breakdown is made
+						between the reasons why data are missing. Data can be missing due to many
+						reasons: data cannot exist, data exist but are not collected (e.g. because
+						they are below a certain threshold or subject to a derog</common:Description>
+        </structure:Code>
+        <structure:Code id="P">
+          <common:Name xml:lang="en">Provisional value</common:Name>
+          <common:Description xml:lang="en">An observation is characterised as "provisional"
+						when the source agency - while it bases its calculations on its standard
+						production methodology - considers that the data, almost certainly, are
+						expected to be revised.</common:Description>
+        </structure:Code>
+        <structure:Code id="Q">
+          <common:Name xml:lang="en">Missing value; suppressed</common:Name>
+          <common:Description xml:lang="en">Used, for example, when data are suppressed due
+						to statistical confidentiality considerations.</common:Description>
+        </structure:Code>
+        <structure:Code id="S">
+          <common:Name xml:lang="en">Strike and other special events</common:Name>
+          <common:Description xml:lang="en">Special circumstances (e.g. strike) affecting the
+						observation or causing a missing value.</common:Description>
+        </structure:Code>
+        <structure:Code id="U">
+          <common:Name xml:lang="en">Low reliability</common:Name>
+          <common:Description xml:lang="en">This indicates existing observations, but for
+						which the user should also be aware of the low quality
+						assigned.</common:Description>
+        </structure:Code>
+        <structure:Code id="V">
+          <common:Name xml:lang="en">Unvalidated value</common:Name>
+          <common:Description xml:lang="en">Observation as received from the respondent
+						without further evaluation of data quality.</common:Description>
+        </structure:Code>
+        <structure:Code id="W">
+          <common:Name xml:lang="en">Includes data from another category</common:Name>
+          <common:Description xml:lang="en">This code is used when data include another
+						category, or go beyond the scope of the data collection and are therefore
+						over-covered. Generally, where code "W" is used there should be a
+						corresponding code "K - Data included in another category" assigned
+						to</common:Description>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_PRODUCT_CPA_2_2" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Statistical classification of products by activity (CPA 2.2)</common:Name>
+        <common:Name xml:lang="fr">Classification statistique des produits associée aux activités (CPA 2.1)</common:Name>
+        <common:Description xml:lang="en">Used for prices tables</common:Description>
+        <common:Description xml:lang="fr">Utilisé pour les tableaux des prix</common:Description>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not applicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_TIME_TRANS" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Time transformation</common:Name>
+        <common:Name xml:lang="fr">Transformation temporelle</common:Name>
+        <common:Description xml:lang="en">Used for prices tables</common:Description>
+        <common:Description xml:lang="fr">Utilisé pour les tableaux des prix</common:Description>
+        <structure:Code id="_Z">
+          <common:Name xml:lang="fr">Non applicable</common:Name>
+          <common:Name xml:lang="en">Not aplicable</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_UNIT_MEASURE" agencyID="LU1" version="1.5" isFinal="true">
+        <common:Name xml:lang="en">Unit of measure</common:Name>
+        <common:Description xml:lang="en">- Common codelist used by all Statec units
+- Add VARY and PART1000
+- Add WEIGHT</common:Description>
+        <common:Description xml:lang="fr">- Common codelist used by all Statec units
+- Ajout VARY et PART1000</common:Description>
+        <structure:Code id="IND">
+          <common:Name xml:lang="en">Index</common:Name>
+          <common:Name xml:lang="fr">Indice</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_UNIT_MULT" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Codelist for Unit multiplier</common:Name>
+        <common:Name xml:lang="fr">Codelist pour Multiplicateur d'unité</common:Name>
+        <structure:Code id="0">
+          <common:Name xml:lang="fr">Unités</common:Name>
+          <common:Name xml:lang="en">Units</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist isPartial="true" id="CL_FREQ" agencyID="SDMX" version="2.1" isFinal="true">
+        <common:Name xml:lang="en">Frequency</common:Name>
+        <common:Name xml:lang="fr">Fréquence</common:Name>
+        <common:Description xml:lang="en">This code list provides a set of values indicating the "frequency" of the data (e.g. weekly, monthly, quarterly). The concept “frequency” may refer to various stages in the production process, e.g. data collection or data dissemination. For example, a time series could be disseminated at annual frequency but the underlying data are compiled monthly. The code list is applicable for all different uses of "frequency". This code list was formally adopted on 4 December 2013. More information about and supporting material for this code list and SDMX code lists in general (e.g. list of generic codes for expressing general concepts like "Total", "Unknown", etc.; syntaxes for the creation of further codes; general guidelines for the creation of SDMX code lists) can be found at this address: https://sdmx.org/?page_id=4345.</common:Description>
+        <common:Description xml:lang="fr">Cette liste de codes fournit un ensemble de valeurs indiquant la "fréquence" des données (par exemple, hebdomadaire, mensuelle, trimestrielle). Le concept de "fréquence" peut se référer à différentes étapes du processus de production, par exemple la collecte ou la diffusion des données. Par exemple, une série chronologique pourrait être diffusée à une fréquence annuelle, mais les données sous-jacentes sont élaborées mensuellement. La liste de codes est applicable pour toutes les différentes utilisations de la "fréquence". Cette liste de codes a été formellement adoptée le 4 décembre 2013. De plus amples informations sur cette liste de codes et les listes de codes SDMX en général, ainsi que des documents d'appui (par exemple, la liste des codes génériques pour exprimer des concepts généraux comme "Total", "Inconnu", etc. ; les syntaxes pour la création d'autres codes ; les lignes directrices générales pour la création des listes de codes SDMX) sont disponibles à cette adresse : https://sdmx.org/?page_id=4345.</common:Description>
+        <structure:Code id="A">
+          <common:Name xml:lang="en">Annual</common:Name>
+          <common:Name xml:lang="fr">Annuelle</common:Name>
+          <common:Description xml:lang="en">Annual</common:Description>
+          <common:Description xml:lang="fr">Annuelle</common:Description>
+        </structure:Code>
+        <structure:Code id="S">
+          <common:Name xml:lang="en">Half-yearly, semester</common:Name>
+          <common:Name xml:lang="fr">Semestrielle</common:Name>
+          <common:Description xml:lang="en">Half-yearly, semester</common:Description>
+          <common:Description xml:lang="fr">Semestrielle</common:Description>
+        </structure:Code>
+      </structure:Codelist>
+    </structure:Codelists>
+    <structure:Concepts>
+      <structure:ConceptScheme id="CS_PRIX" agencyID="LU1" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Price Concept Scheme</common:Name>
+        <common:Name xml:lang="fr">Concept Scheme des prix</common:Name>
+        <common:Description xml:lang="en">Price Concept Scheme</common:Description>
+        <common:Description xml:lang="fr">Prix Concept scheme</common:Description>
+        <structure:Concept id="MEASURE">
+          <common:Name xml:lang="en">Measure</common:Name>
+          <common:Name xml:lang="fr">Mesure</common:Name>
+        </structure:Concept>
+        <structure:Concept id="UNIT_MEASURE">
+          <common:Name xml:lang="en">Unit of measure</common:Name>
+          <common:Name xml:lang="fr">Unité de mesure</common:Name>
+        </structure:Concept>
+        <structure:Concept id="UNIT_MULT">
+          <common:Name xml:lang="en">Unit multiplier</common:Name>
+          <common:Name xml:lang="fr">Multiplicateur d'unité</common:Name>
+        </structure:Concept>
+        <structure:Concept id="TIME_PERIOD">
+          <common:Name xml:lang="en">Time period</common:Name>
+          <common:Name xml:lang="fr">Période</common:Name>
+        </structure:Concept>
+        <structure:Concept id="FREQ">
+          <common:Name xml:lang="en">Frequency</common:Name>
+          <common:Name xml:lang="fr">Fréquence</common:Name>
+        </structure:Concept>
+        <structure:Concept id="OBS_STATUS">
+          <common:Name xml:lang="en">Observation status</common:Name>
+          <common:Name xml:lang="fr">Statut de la valeur</common:Name>
+        </structure:Concept>
+        <structure:Concept id="OBS_VALUE">
+          <common:Name xml:lang="en">Observation value</common:Name>
+          <common:Name xml:lang="fr">Valeur</common:Name>
+        </structure:Concept>
+        <structure:Concept id="DECIMALS">
+          <common:Name xml:lang="en">Decimals</common:Name>
+          <common:Name xml:lang="fr">Décimales</common:Name>
+        </structure:Concept>
+        <structure:Concept id="COMMENT_DSET">
+          <common:Name xml:lang="en">Comments on the dataset levels</common:Name>
+          <common:Name xml:lang="fr">Commentaires sur les niveaux de l'ensemble de données</common:Name>
+        </structure:Concept>
+        <structure:Concept id="COMMENT_OBS">
+          <common:Name xml:lang="en">Comments to the observation value</common:Name>
+          <common:Name xml:lang="fr">Commentaires sur la valeur d'observation</common:Name>
+        </structure:Concept>
+        <structure:Concept id="COMMENT_TS_CONSTR_TRADE">
+          <common:Name xml:lang="en">Detailed description of the group of series</common:Name>
+          <common:Name xml:lang="fr">Description détaillée du groupe de séries</common:Name>
+        </structure:Concept>
+        <structure:Concept id="MOTOR_ENERGY">
+          <common:Name xml:lang="en">Motor Energy</common:Name>
+          <common:Name xml:lang="fr">Energie motrice</common:Name>
+        </structure:Concept>
+        <structure:Concept id="COMMON_PRODUCT">
+          <common:Name xml:lang="en">Common products</common:Name>
+          <common:Name xml:lang="fr">Produits courants</common:Name>
+        </structure:Concept>
+        <structure:Concept id="BASE_PERIOD">
+          <common:Name xml:lang="en">Base period</common:Name>
+          <common:Name xml:lang="fr">Période de référence</common:Name>
+        </structure:Concept>
+        <structure:Concept id="CONSTR_TRADE">
+          <common:Name xml:lang="en">Construction trades</common:Name>
+          <common:Name xml:lang="fr">Corps de métiers</common:Name>
+        </structure:Concept>
+        <structure:Concept id="ACTIVITY">
+          <common:Name xml:lang="en">Economic activity (NACE Rev.2)</common:Name>
+          <common:Name xml:lang="fr">Activité économique (NACE Rév.2)</common:Name>
+        </structure:Concept>
+        <structure:Concept id="COMMENT_TS_BUILDING_TYPE">
+          <common:Name xml:lang="en">Detailed description of the group of series of building type</common:Name>
+          <common:Name xml:lang="fr">Description détaillée du groupe de séries de type d'immeuble</common:Name>
+        </structure:Concept>
+        <structure:Concept id="BUILDING_TYPE">
+          <common:Name xml:lang="en">Building type</common:Name>
+          <common:Name xml:lang="fr">Type d'immeuble</common:Name>
+        </structure:Concept>
+        <structure:Concept id="MARKET">
+          <common:Name xml:lang="en">Market</common:Name>
+          <common:Name xml:lang="fr">Marché</common:Name>
+        </structure:Concept>
+        <structure:Concept id="PRODUCT_CPA_2_2">
+          <common:Name xml:lang="en">Products (CPA 2.2)</common:Name>
+          <common:Name xml:lang="fr">Produits (CPA 2.2)</common:Name>
+          <common:Description xml:lang="en">Statistical classification of products by activity (CPA 2.2)</common:Description>
+          <common:Description xml:lang="fr">Classification statistique des produits associée aux activités (CPA 2.2)</common:Description>
+        </structure:Concept>
+        <structure:Concept id="TIME_TRANS">
+          <common:Name xml:lang="en">Time transformation</common:Name>
+          <common:Name xml:lang="fr">Transformation temporelle</common:Name>
+        </structure:Concept>
+        <structure:Concept id="NRG_SRC">
+          <common:Name xml:lang="en">Energy source</common:Name>
+          <common:Name xml:lang="fr">Source d'énergie</common:Name>
+        </structure:Concept>
+      </structure:ConceptScheme>
+    </structure:Concepts>
+    <structure:DataStructures>
+      <structure:DataStructure id="DSD_PRIX_CONSTR" agencyID="LU1" version="1.3" isFinal="true">
+        <common:Name xml:lang="en">DSD_PRIX_CONSTR</common:Name>
+        <structure:DataStructureComponents>
+          <structure:DimensionList id="DimensionDescriptor">
+            <structure:Dimension id="MEASURE" position="1">
+              <structure:ConceptIdentity>
+                <Ref id="MEASURE" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_MEASURE_PRIX" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="UNIT_MEASURE" position="2">
+              <structure:ConceptIdentity>
+                <Ref id="UNIT_MEASURE" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_UNIT_MEASURE" version="1.5" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+                <structure:EnumerationFormat textType="String"/>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="FREQ" position="3">
+              <structure:ConceptIdentity>
+                <Ref id="FREQ" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_FREQ" version="2.1" agencyID="SDMX" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="MOTOR_ENERGY" position="4">
+              <structure:ConceptIdentity>
+                <Ref id="MOTOR_ENERGY" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_MOTOR_ENERGY_VEH" version="1.2" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="COMMON_PRODUCT" position="5">
+              <structure:ConceptIdentity>
+                <Ref id="COMMON_PRODUCT" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_COMMON_PRODUCT" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="BASE_PERIOD" position="6">
+              <structure:ConceptIdentity>
+                <Ref id="BASE_PERIOD" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_BASE_PERIOD" version="1.1" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="CONSTR_TRADE" position="7">
+              <structure:ConceptIdentity>
+                <Ref id="CONSTR_TRADE" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CONSTRUCTION_TRADE" version="2.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="ACTIVITY" position="8">
+              <structure:ConceptIdentity>
+                <Ref id="ACTIVITY" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_NACE_R2" version="1.3" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="BUILDING_TYPE" position="9">
+              <structure:ConceptIdentity>
+                <Ref id="BUILDING_TYPE" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_BUILDING_TYPE_PRIX" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="MARKET" position="10">
+              <structure:ConceptIdentity>
+                <Ref id="MARKET" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_MARKET" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="PRODUCT_CPA_2_2" position="11">
+              <structure:ConceptIdentity>
+                <Ref id="PRODUCT_CPA_2_2" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_PRODUCT_CPA_2_2" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="TIME_TRANS" position="12">
+              <structure:ConceptIdentity>
+                <Ref id="TIME_TRANS" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_TIME_TRANS" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="NRG_SRC" position="13">
+              <structure:ConceptIdentity>
+                <Ref id="NRG_SRC" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_NRG_SRC" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:TimeDimension id="TIME_PERIOD" position="14">
+              <structure:ConceptIdentity>
+                <Ref id="TIME_PERIOD" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="ObservationalTimePeriod"/>
+              </structure:LocalRepresentation>
+            </structure:TimeDimension>
+          </structure:DimensionList>
+          <structure:AttributeList id="AttributeDescriptor">
+            <structure:Attribute id="COMMENT_TS_BUILDING_TYPE" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="COMMENT_TS_BUILDING_TYPE" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_COMMENT_TS_BUILDING_TYPE" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:Dimension>
+                  <Ref id="BUILDING_TYPE"/>
+                </structure:Dimension>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="UNIT_MULT" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="UNIT_MULT" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_UNIT_MULT" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:None/>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="OBS_STATUS" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="OBS_STATUS" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_OBS_STATUS" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="DECIMALS" assignmentStatus="Mandatory">
+              <structure:ConceptIdentity>
+                <Ref id="DECIMALS" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_DECIMALS" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="COMMENT_DSET" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="COMMENT_DSET" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_COMMENT_DSET_PRIX" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:None/>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="COMMENT_OBS" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="COMMENT_OBS" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_COMMENT_OBS_PRIX" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="COMMENT_TS_CONSTR_TRADE" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="COMMENT_TS_CONSTR_TRADE" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_COMMENT_TS_CONSTR_TRADE" version="1.0" agencyID="LU1" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:Dimension>
+                  <Ref id="CONSTR_TRADE"/>
+                </structure:Dimension>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+          </structure:AttributeList>
+          <structure:MeasureList id="MeasureDescriptor">
+            <structure:PrimaryMeasure id="OBS_VALUE">
+              <structure:ConceptIdentity>
+                <Ref id="OBS_VALUE" maintainableParentID="CS_PRIX" maintainableParentVersion="1.0" agencyID="LU1" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="Double"/>
+              </structure:LocalRepresentation>
+            </structure:PrimaryMeasure>
+          </structure:MeasureList>
+        </structure:DataStructureComponents>
+      </structure:DataStructure>
+    </structure:DataStructures>
+    <structure:Constraints>
+      <structure:ContentConstraint id="CR_A_DSD_PRIX_CONSTR@DF_D4401" agencyID="LU1" version="1.1" validFrom="2026-07-17T06:58:44.397Z" isFinal="false" type="Actual">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationTitle>A</common:AnnotationTitle>
+            <common:AnnotationType>ReleaseVersion</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="obs_count">
+            <common:AnnotationTitle>199</common:AnnotationTitle>
+            <common:AnnotationType>sdmx_metrics</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Availability (A) for DSD_PRIX_CONSTR@DF_D4401</common:Name>
+        <structure:ConstraintAttachment>
+          <structure:Dataflow>
+            <Ref id="DSD_PRIX_CONSTR@DF_D4401" version="1.1" agencyID="LU1" package="datastructure" class="Dataflow"/>
+          </structure:Dataflow>
+        </structure:ConstraintAttachment>
+        <structure:CubeRegion include="true">
+          <common:KeyValue id="MEASURE">
+            <common:Value>PRIX_CONSTR</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="UNIT_MEASURE">
+            <common:Value>IND</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="FREQ">
+            <common:Value>A</common:Value>
+            <common:Value>S</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="MOTOR_ENERGY">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="COMMON_PRODUCT">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="BASE_PERIOD">
+            <common:Value>1970</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="CONSTR_TRADE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="ACTIVITY">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="BUILDING_TYPE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="MARKET">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="PRODUCT_CPA_2_2">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="TIME_TRANS">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="NRG_SRC">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="TIME_PERIOD">
+            <common:TimeRange>
+              <common:StartPeriod isInclusive="true">1940-01-01T00:00:00</common:StartPeriod>
+              <common:EndPeriod isInclusive="true">2026-06-30T00:00:00</common:EndPeriod>
+            </common:TimeRange>
+          </common:KeyValue>
+        </structure:CubeRegion>
+      </structure:ContentConstraint>
+      <structure:ContentConstraint id="CR_DSD_PRIX_CONSTR@DF_D4401" agencyID="LU1" version="1.1" isFinal="true" type="Allowed">
+        <common:Name xml:lang="en">LU1:CR_DSD_PRIX_CONSTR@DF_D4401(1.1)</common:Name>
+        <structure:ConstraintAttachment>
+          <structure:Dataflow>
+            <Ref id="DSD_PRIX_CONSTR@DF_D4401" version="1.1" agencyID="LU1" package="datastructure" class="Dataflow"/>
+          </structure:Dataflow>
+        </structure:ConstraintAttachment>
+        <structure:CubeRegion include="true">
+          <common:KeyValue id="MEASURE">
+            <common:Value>PRIX_CONSTR</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="UNIT_MEASURE">
+            <common:Value>IND</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="FREQ">
+            <common:Value>A</common:Value>
+            <common:Value>S</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="MOTOR_ENERGY">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="COMMON_PRODUCT">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="BASE_PERIOD">
+            <common:Value>1970</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="CONSTR_TRADE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="ACTIVITY">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="BUILDING_TYPE">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="MARKET">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="PRODUCT_CPA_2_2">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="TIME_TRANS">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:KeyValue id="NRG_SRC">
+            <common:Value>_Z</common:Value>
+          </common:KeyValue>
+          <common:Attribute id="UNIT_MULT">
+            <common:Value>0</common:Value>
+          </common:Attribute>
+          <common:Attribute id="DECIMALS">
+            <common:Value>2</common:Value>
+          </common:Attribute>
+        </structure:CubeRegion>
+      </structure:ContentConstraint>
+    </structure:Constraints>
+  </message:Structures>
+</message:Structure>

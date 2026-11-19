@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Header>
+    <message:ID>IDREF28226</message:ID>
+    <message:Test>false</message:Test>
+    <message:Prepared>2026-11-19T00:02:30.7379387+00:00</message:Prepared>
+    <message:Sender id="Unknown"/>
+    <message:Receiver id="Unknown"/>
+  </message:Header>
+  <message:Structures>
+    <structure:Dataflows>
+      <structure:Dataflow id="DF_EXTTRADEBXNAT_Part_XV_to_XVII" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>PRODUCT</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>TIME_PERIOD,FLOW</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>UNIT_MULT,UNIT_MEASURE,OBS_STATUS=A,CONF_STATUS=F</common:AnnotationTitle>
+            <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>FREQ=M,LASTNPERIODS=1,TIME_PERIOD_START=2023-06,REPORTING=BX,COUNTRY=A1,CONCEPT=NAT,DATATYPE=VAL,PRODUCT=72+73+74+75+76+78+79+80+81+82+83+84+85+86+87+88+89+XV+XVI+XVII</common:AnnotationTitle>
+            <common:AnnotationType>DEFAULT</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation id="@SDMX">
+            <common:AnnotationTitle>1,0000008</common:AnnotationTitle>
+            <common:AnnotationType>SEARCH_WEIGHT</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Foreign trade - Region of Brussels - Capital - National concept - Part XV to XVII</common:Name>
+        <common:Name xml:lang="fr">Commerce extérieur - Bruxelles-Capital - Concept national - Partie XV à XVII</common:Name>
+        <common:Name xml:lang="nl">Buitenlandse handel -Brussels Hoofdstedelijk gewest - Nationaal concept - Deel XV to XVII</common:Name>
+        <common:Description xml:lang="en">Belgium’s foreign trade statistics based on the "Region of Brussels-Capital - National concept." It includes import and export data by product categories, trading partners, and trade flows - Part XV to XVII.</common:Description>
+        <common:Description xml:lang="fr">Statistiques du commerce extérieur de la Belgique basées sur la « Région de Bruxelles-Capitale - Concept national ». Elles comprennent des données sur les importations et les exportations par catégories de produits, les partenaires commerciaux et les flux commerciaux - Partie XV à XVII.</common:Description>
+        <common:Description xml:lang="nl">Belgische statistieken over buitenlandse handel gebaseerd op het “Brussels Hoofdstedelijk Gewest - Nationaal concept”. Het omvat import- en exportgegevens per productcategorie, handelspartners en handelsstromen - Deel XV to XVII.</common:Description>
+        <structure:Structure>
+          <Ref id="DS_EXTTRADEBXNAT" version="1.0" agencyID="BE2" package="datastructure" class="DataStructure"/>
+        </structure:Structure>
+      </structure:Dataflow>
+    </structure:Dataflows>
+    <structure:DataStructures>
+      <structure:DataStructure id="DS_EXTTRADEBXNAT" agencyID="BE2" version="1.0" isFinal="false">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>SUPPORT_INTENT_MISS_VALUES</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=BE2:MSD(1.0)</common:AnnotationTitle>
+            <common:AnnotationType>METADATA</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Foreign trade - Region of Brussels - Capital - National concept</common:Name>
+        <structure:DataStructureComponents>
+          <structure:DimensionList id="DimensionDescriptor">
+            <structure:Dimension id="REPORTING" position="1">
+              <structure:ConceptIdentity>
+                <Ref id="REPORTING" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_BE_AREA" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="COUNTRY" position="2">
+              <structure:ConceptIdentity>
+                <Ref id="COUNTRY" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_EXT_AREA" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="PRODUCT" position="3">
+              <structure:ConceptIdentity>
+                <Ref id="PRODUCT" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_EXTTRADE_PRODUCT_HS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="FLOW" position="4">
+              <structure:ConceptIdentity>
+                <Ref id="FLOW" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_FLOW" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="CONCEPT" position="5">
+              <structure:ConceptIdentity>
+                <Ref id="CONCEPT" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CONCEPT" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="DATATYPE" position="6">
+              <structure:ConceptIdentity>
+                <Ref id="DATATYPE" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_DATATYPE" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:Dimension id="FREQ" position="7">
+              <structure:ConceptIdentity>
+                <Ref id="FREQ" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_FREQ" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+            </structure:Dimension>
+            <structure:TimeDimension id="TIME_PERIOD" position="8">
+              <structure:ConceptIdentity>
+                <Ref id="TIME_PERIOD" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="ObservationalTimePeriod"/>
+              </structure:LocalRepresentation>
+            </structure:TimeDimension>
+          </structure:DimensionList>
+          <structure:AttributeList id="AttributeDescriptor">
+            <structure:Attribute id="OBS_STATUS" assignmentStatus="Mandatory">
+              <structure:ConceptIdentity>
+                <Ref id="OBS_STATUS" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_OBS_STATUS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="CONF_STATUS" assignmentStatus="Mandatory">
+              <structure:ConceptIdentity>
+                <Ref id="CONF_STATUS" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_CONF_STATUS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="UNIT_MEASURE" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="UNIT_MEASURE" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_UNIT" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:Dimension>
+                  <Ref id="REPORTING"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="COUNTRY"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="PRODUCT"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="FLOW"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="CONCEPT"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="DATATYPE"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="FREQ"/>
+                </structure:Dimension>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="UNIT_MULT" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="UNIT_MULT" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_UNIT_MULT" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:Dimension>
+                  <Ref id="FREQ"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="DATATYPE"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="CONCEPT"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="FLOW"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="PRODUCT"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="COUNTRY"/>
+                </structure:Dimension>
+                <structure:Dimension>
+                  <Ref id="REPORTING"/>
+                </structure:Dimension>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="EMBARGO_TIME" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="EMBARGO_TIME" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="DateTime" maxLength="25"/>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+            <structure:Attribute id="DECIMALS" assignmentStatus="Conditional">
+              <structure:ConceptIdentity>
+                <Ref id="DECIMALS" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:Enumeration>
+                  <Ref id="CL_DECIMALS" version="1.0" agencyID="BE2" package="codelist" class="Codelist"/>
+                </structure:Enumeration>
+              </structure:LocalRepresentation>
+              <structure:AttributeRelationship>
+                <structure:PrimaryMeasure>
+                  <Ref id="OBS_VALUE"/>
+                </structure:PrimaryMeasure>
+              </structure:AttributeRelationship>
+            </structure:Attribute>
+          </structure:AttributeList>
+          <structure:MeasureList id="MeasureDescriptor">
+            <structure:PrimaryMeasure id="OBS_VALUE">
+              <structure:ConceptIdentity>
+                <Ref id="OBS_VALUE" maintainableParentID="CS_EXT_PROD_DISS" maintainableParentVersion="1.0" agencyID="BE2" package="conceptscheme" class="Concept"/>
+              </structure:ConceptIdentity>
+              <structure:LocalRepresentation>
+                <structure:TextFormat textType="Double"/>
+              </structure:LocalRepresentation>
+            </structure:PrimaryMeasure>
+          </structure:MeasureList>
+        </structure:DataStructureComponents>
+      </structure:DataStructure>
+    </structure:DataStructures>
+  </message:Structures>
+</message:Structure>
