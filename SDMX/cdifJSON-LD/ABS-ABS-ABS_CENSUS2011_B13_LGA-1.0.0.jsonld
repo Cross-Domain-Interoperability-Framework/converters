@@ -1,0 +1,676 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/"
+  },
+  "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "B13 Language Spoken at Home by Sex (LGA)",
+  "schema:description": "Dataset: ABS_CENSUS2011_B13_LGA. LGA2011 based data for Language spoken at home by Sex, Basic Community Profile Table B13, for 2011 Census. Unit of measure: Count of all persons on Census night, based on place of usual residence. Excludes Overseas Visitors. Geographic coverage: ASGS2011 LGA2016. Catalogue number: 2916.0",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "SDMX URN",
+    "schema:value": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ABS:ABS_CENSUS2011_B13_LGA(1.0.0)",
+    "schema:url": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0"
+  },
+  "schema:version": "1.0.0",
+  "schema:dateModified": "2021-09-21T17:37:00Z",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "ABS"
+  },
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Cultural diversity",
+      "schema:termCode": "GEN_PROFILE_LGA_C11.CULTURAL_DIVERSITY_C11_GPLGA",
+      "schema:inDefinedTermSet": "Census 2011"
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2011-01-01/2011-12-31"
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "Methodology",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/2016%20Census%20Community%20Profiles"
+      }
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "MEASURE",
+      "schema:alternateName": [
+        "Sex"
+      ],
+      "schema:description": "Records each person's sex.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_C16_PERSON(1.0.0).SEXP"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Sex",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_C16_SEX(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_C16_SEX/1.0.0"
+          },
+          "schema:description": "3 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#LANP",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LANP",
+      "schema:alternateName": [
+        "Language Spoken at Home"
+      ],
+      "schema:description": "Language Spoken at Home",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_C16_PERSON(1.0.0).LANP"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Language Spoken at Home",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_C11_LANP(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_C11_LANP/1.0.0"
+          },
+          "schema:description": "50 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#STATE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "STATE",
+      "schema:alternateName": [
+        "State"
+      ],
+      "schema:description": "State",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_C16_COMMON(1.0.0).STATE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "State",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_C16_STATE(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_C16_STATE/1.0.0"
+          },
+          "schema:description": "10 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#REGIONTYPE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REGIONTYPE",
+      "schema:alternateName": [
+        "Geography Level"
+      ],
+      "schema:description": "Geography Level",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_C16_COMMON(1.0.0).REGION_TYPE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Georaphy Level",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_C16_REGION_TYPE(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_C16_REGION_TYPE/1.0.0"
+          },
+          "schema:description": "37 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#REGION",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REGION",
+      "schema:alternateName": [
+        "LGA 2011"
+      ],
+      "schema:description": "LGA 2011",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_C16_COMMON(1.0.0).LGA_2011"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Local Government Areas 2011",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_C11_LGA(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_C11_LGA/1.0.0"
+          },
+          "schema:description": "586 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#FREQUENCY",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FREQUENCY",
+      "schema:alternateName": [
+        "Frequency"
+      ],
+      "schema:description": "Rate at which data is collated.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_C16_COMMON(1.0.0).FREQ"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Frequency",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_FREQ(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_FREQ/1.0.0"
+          },
+          "schema:description": "9 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#TIME_PERIOD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_PERIOD",
+      "schema:alternateName": [
+        "Time Period"
+      ],
+      "schema:description": "Timespan or point in time for which the observation refers.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_C16_COMMON(1.0.0).TIME_PERIOD"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "ObservationalTimePeriod"
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#UNIT_MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MEASURE",
+      "schema:alternateName": [
+        "Unit of Measure"
+      ],
+      "schema:description": "Base unit in which the observation value is expressed.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_ATTRIBUTE(1.0.0).UNIT_MEASURE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Unit of Measure",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_UNIT_MEASURE(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_UNIT_MEASURE/1.0.0"
+          },
+          "schema:description": "88 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#OBS_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_STATUS",
+      "schema:alternateName": [
+        "Observation Status"
+      ],
+      "schema:description": "Observation Status",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_ATTRIBUTE(1.0.0).OBS_STATUS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Observation Status",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ABS:CL_OBS_STATUS(1.0.0)"
+          },
+          "cdif:references": {
+            "@id": "https://data.api.abs.gov.au/rest/v1/codelist/ABS/CL_OBS_STATUS/1.0.0"
+          },
+          "schema:description": "16 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#OBS_COMMENT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_COMMENT",
+      "schema:alternateName": [
+        "Observation Comment"
+      ],
+      "schema:description": "Observation Comment",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_ATTRIBUTE(1.0.0).OBS_COMMENT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#OBS_VALUE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_VALUE",
+      "schema:alternateName": [
+        "Observation Value"
+      ],
+      "schema:description": "The observed value of the variable identified by the series dimension values.",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ABS:CS_C16_COMMON(1.0.0).OBS_VALUE"
+      },
+      "cdif:role": "Measure",
+      "cdif:physicalDataType": "xsd:double"
+    }
+  ],
+  "schema:url": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "SDMX-ML data for ABS,ABS_CENSUS2011_B13_LGA,1.0.0",
+      "schema:contentUrl": "https://data.api.abs.gov.au/rest/v1/data/ABS,ABS_CENSUS2011_B13_LGA,1.0.0/all",
+      "schema:encodingFormat": [
+        "application/vnd.sdmx.genericdata+xml;version=2.1"
+      ],
+      "schema:description": "SDMX-REST data query for the whole dataflow; add a series key in place of 'all', startPeriod/endPeriod, or an Accept header (e.g. application/vnd.sdmx.data+csv) to narrow or reformat it.",
+      "cdi:isStructuredBy": {
+        "@type": [
+          "cdi:DimensionalDataStructure"
+        ],
+        "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ABS:ABS_CENSUS2011_B13_LGA(1.0.0)",
+        "cdi:has_DataStructureComponent": [
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#MEASURE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).LANP",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#LANP"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).STATE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#STATE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).REGIONTYPE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#REGIONTYPE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).REGION",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#REGION"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).FREQUENCY",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#FREQUENCY"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).TIME_PERIOD",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#TIME_PERIOD"
+            }
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).UNIT_MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#UNIT_MEASURE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).OBS_STATUS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#OBS_STATUS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).OBS_COMMENT",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#OBS_COMMENT"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:MeasureComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ABS:ABS_CENSUS2011_B13_LGA(1.0.0).OBS_VALUE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#OBS_VALUE"
+            }
+          }
+        ],
+        "cdif:has_PrimaryKey": {
+          "@type": [
+            "cdif:Key"
+          ],
+          "cdif:isComposedOf": [
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#MEASURE"
+              },
+              "cdi:value": 1
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#LANP"
+              },
+              "cdi:value": 2
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#STATE"
+              },
+              "cdi:value": 3
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#REGIONTYPE"
+              },
+              "cdi:value": 4
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#REGION"
+              },
+              "cdi:value": 5
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#FREQUENCY"
+              },
+              "cdi:value": 6
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0#TIME_PERIOD"
+              },
+              "cdi:value": 7
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0?references=all&detail=referencepartial",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "SDMX structure metadata for: B13 Language Spoken at Home by Sex (LGA)",
+    "schema:about": {
+      "@id": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_structure/2.0"
+      }
+    ],
+    "schema:description": "Converted from an SDMX-ML 2.1 structure message (dataflow and data structure definition) to CDIF by sdmx_to_cdif.py.",
+    "schema:dateModified": "2026-11-19T00:01:50+00:00",
+    "schema:url": "https://data.api.abs.gov.au/rest/v1/dataflow/ABS/ABS_CENSUS2011_B13_LGA/1.0.0?references=all&detail=referencepartial"
+  }
+}

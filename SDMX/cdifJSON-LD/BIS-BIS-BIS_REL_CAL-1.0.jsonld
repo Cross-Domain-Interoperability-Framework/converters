@@ -1,0 +1,525 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/"
+  },
+  "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "BIS_RELEASE_CALENDAR",
+  "schema:description": "BIS Release Calendar",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "SDMX URN",
+    "schema:value": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=BIS:BIS_REL_CAL(1.0)",
+    "schema:url": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0"
+  },
+  "schema:version": "1.0",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "Bank for International Settlements",
+    "@id": "urn:sdmx:org.sdmx.infomodel.base.Agency=SDMX:AGENCIES(1.0).BIS",
+    "schema:alternateName": "BIS",
+    "schema:description": "Bank for International Settlements",
+    "schema:contactPoint": [
+      {
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:name": "Support",
+        "schema:contactType": "Support",
+        "schema:email": "statistics@bis.org"
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "BIS",
+      "@id": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=BIS:DATA_PROVIDERS(1.0).BIS"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#FREQ",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FREQ",
+      "schema:alternateName": [
+        "Frequency"
+      ],
+      "schema:description": "Frequency",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).FREQ"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Code list for Frequency (FREQ)",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_FREQ(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_FREQ/1.0"
+          },
+          "schema:description": "8 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#CATEGORY",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CATEGORY",
+      "schema:description": "CATEGORY",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:RELEASE_CALENDAR(1.0).CATEGORY"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_REL_CAT",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_REL_CAT(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_REL_CAT/1.0"
+          },
+          "schema:description": "25 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#RELEASE_TYPE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "RELEASE_TYPE",
+      "schema:description": "RELEASE_TYPE",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:RELEASE_CALENDAR(1.0).RELEASE_TYPE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "CL_REL_TYPE",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=BIS:CL_REL_TYPE(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/BIS/CL_REL_TYPE/1.0"
+          },
+          "schema:description": "16 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#TIME_PERIOD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_PERIOD",
+      "schema:alternateName": [
+        "Time period or range"
+      ],
+      "schema:description": "Time period or range",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).TIME_PERIOD"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_STATUS",
+      "schema:alternateName": [
+        "Observation Status"
+      ],
+      "schema:description": "Observation Status",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).OBS_STATUS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Observation Status",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_OBS_STATUS(2.1)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/SDMX/CL_OBS_STATUS/2.1"
+          },
+          "schema:description": "This code list provides coded information on 1) the quality of a value or 2) unusual or missing values. It was formally adopted on 15 September 2016. More information about this code list and SDMX code lists in general (e.g. list of generic codes for expressing general concepts like \"Total\", \"Unknown\", etc.; syntaxes for the creation of further codes; general guidelines for the creation of SDMX code lists) can be found at this address: https://sdmx.org/?page_id=4345.. 20 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_PRE_BREAK",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_PRE_BREAK",
+      "schema:alternateName": [
+        "Pre-Break Observation"
+      ],
+      "schema:description": "Pre-Break Observation",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).OBS_PRE_BREAK"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_CONF",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_CONF",
+      "schema:alternateName": [
+        "Observation confidentiality"
+      ],
+      "schema:description": "Observation confidentiality",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).OBS_CONF"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Confidentiality Status",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_CONF_STATUS(1.3)"
+          },
+          "cdif:references": {
+            "@id": "https://stats.bis.org/api/v1/codelist/SDMX/CL_CONF_STATUS/1.3"
+          },
+          "schema:description": "12 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#COMMENTARY",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "COMMENTARY",
+      "schema:description": "COMMENTARY URL",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:RELEASE_CALENDAR(1.0).COMMENTARY"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_VALUE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_VALUE",
+      "schema:alternateName": [
+        "Observation Value"
+      ],
+      "schema:description": "Observation Value",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=BIS:STANDALONE_CONCEPT_SCHEME(1.0).OBS_VALUE"
+      },
+      "cdif:role": "Measure",
+      "cdif:physicalDataType": "xsd:int"
+    }
+  ],
+  "schema:url": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "SDMX-ML data for BIS,BIS_REL_CAL,1.0",
+      "schema:contentUrl": "https://stats.bis.org/api/v1/data/BIS,BIS_REL_CAL,1.0/all",
+      "schema:encodingFormat": [
+        "application/vnd.sdmx.genericdata+xml;version=2.1"
+      ],
+      "schema:description": "SDMX-REST data query for the whole dataflow; add a series key in place of 'all', startPeriod/endPeriod, or an Accept header (e.g. application/vnd.sdmx.data+csv) to narrow or reformat it.",
+      "cdi:isStructuredBy": {
+        "@type": [
+          "cdi:DimensionalDataStructure"
+        ],
+        "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=BIS:BIS_RELEASE_CALENDAR(1.0)",
+        "cdi:has_DataStructureComponent": [
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:BIS_RELEASE_CALENDAR(1.0).FREQ",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#FREQ"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:BIS_RELEASE_CALENDAR(1.0).CATEGORY",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#CATEGORY"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=BIS:BIS_RELEASE_CALENDAR(1.0).RELEASE_TYPE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#RELEASE_TYPE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=BIS:BIS_RELEASE_CALENDAR(1.0).TIME_PERIOD",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#TIME_PERIOD"
+            }
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:BIS_RELEASE_CALENDAR(1.0).OBS_STATUS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_STATUS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=BIS:BIS_RELEASE_CALENDAR(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:BIS_RELEASE_CALENDAR(1.0).OBS_PRE_BREAK",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_PRE_BREAK"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=BIS:BIS_RELEASE_CALENDAR(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:BIS_RELEASE_CALENDAR(1.0).OBS_CONF",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_CONF"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=BIS:BIS_RELEASE_CALENDAR(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=BIS:BIS_RELEASE_CALENDAR(1.0).COMMENTARY",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#COMMENTARY"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=BIS:BIS_RELEASE_CALENDAR(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:MeasureComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=BIS:BIS_RELEASE_CALENDAR(1.0).OBS_VALUE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#OBS_VALUE"
+            }
+          }
+        ],
+        "cdif:has_PrimaryKey": {
+          "@type": [
+            "cdif:Key"
+          ],
+          "cdif:isComposedOf": [
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#FREQ"
+              },
+              "cdi:value": 1
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#CATEGORY"
+              },
+              "cdi:value": 2
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#RELEASE_TYPE"
+              },
+              "cdi:value": 3
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0#TIME_PERIOD"
+              },
+              "cdi:value": 4
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "schema:dateModified": "1900-01-01",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0?references=all&detail=referencepartial",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "SDMX structure metadata for: BIS_RELEASE_CALENDAR",
+    "schema:about": {
+      "@id": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_structure/2.0"
+      }
+    ],
+    "schema:description": "Converted from an SDMX-ML 2.1 structure message (dataflow and data structure definition) to CDIF by sdmx_to_cdif.py.",
+    "schema:dateModified": "2026-11-19T00:02:36Z",
+    "schema:url": "https://stats.bis.org/api/v1/dataflow/BIS/BIS_REL_CAL/1.0?references=all&detail=referencepartial"
+  }
+}

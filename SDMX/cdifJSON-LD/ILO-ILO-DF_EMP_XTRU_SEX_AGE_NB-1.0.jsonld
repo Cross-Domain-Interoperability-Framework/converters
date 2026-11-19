@@ -1,0 +1,987 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/"
+  },
+  "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Time-related underemployment by sex and age",
+  "schema:alternateName": [
+    "Personas en subocupación por insuficiencia de tiempo de trabajo según sexo y edad",
+    "Sous-emploi lié à la durée du travail par sexe et âge"
+  ],
+  "schema:description": "<strong>With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. </strong>This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. Persons in time-related underemployment comprise all persons in employment, who satisfy the following three criteria during the reference period: a) are willing to work additional hours; b) are available to work additional hours i.e., are ready, within a specified subsequent period, to work additional hours, given opportunities for additional work; and c) worked less than a threshold relating to working time i.e., persons whose hours actually worked in all jobs during the reference period were below a threshold, to be chosen according to national circumstances. For details, refer to the Resolution concerning the measurement of underemployment and inadequate employment situations. For more information, refer to the <a href = \"https://ilostat.ilo.org/databases/lfs/description/\">Labour Force Statistics (LFS and STLFS) database description</a>.",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "SDMX URN",
+    "schema:value": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ILO:DF_EMP_XTRU_SEX_AGE_NB(1.0)",
+    "schema:url": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0"
+  },
+  "schema:version": "1.0",
+  "schema:dateModified": "2026-11-13T07:05:04Z",
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "International Labour Organization (ILO)",
+    "schema:alternateName": "ILO"
+  },
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Age",
+      "schema:termCode": "AGE",
+      "schema:inDefinedTermSet": "Indicators by Breakdown"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Labour Force Statistics (LFS)",
+      "schema:termCode": "DB_603",
+      "schema:inDefinedTermSet": "Databases"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Unemployment and labour underutilization",
+      "schema:termCode": "LUU",
+      "schema:inDefinedTermSet": "Indicators by subject"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Sex",
+      "schema:termCode": "SEX",
+      "schema:inDefinedTermSet": "Indicators by Breakdown"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#REF_AREA",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REF_AREA",
+      "schema:alternateName": [
+        "Reference area"
+      ],
+      "schema:description": "Reference area",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).REF_AREA"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Reference Area",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ILO:CL_AREA(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.ilo.org/rest/v1/codelist/ILO/CL_AREA/1.0"
+          },
+          "schema:description": "174 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#FREQ",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FREQ",
+      "schema:alternateName": [
+        "Frequency"
+      ],
+      "schema:description": "Frequency",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).FREQ"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "FREQ",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ILO:CL_FREQ(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.ilo.org/rest/v1/codelist/ILO/CL_FREQ/1.0"
+          },
+          "schema:description": "3 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "MEASURE",
+      "schema:alternateName": [
+        "Measure"
+      ],
+      "schema:description": "Measure",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).MEASURE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Measure",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ILO:CL_MEASURE(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.ilo.org/rest/v1/codelist/ILO/CL_MEASURE/1.0"
+          },
+          "schema:description": "1 code used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#SEX",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "SEX",
+      "schema:alternateName": [
+        "Sex"
+      ],
+      "schema:description": "Sex",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_CLASSIF_TYPE(1.0).SEX"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Classification: SEX",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ILO:CL_SEX(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.ilo.org/rest/v1/codelist/ILO/CL_SEX/1.0"
+          },
+          "schema:description": "4 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#AGE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "AGE",
+      "schema:alternateName": [
+        "Age"
+      ],
+      "schema:description": "Age",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_CLASSIF_TYPE(1.0).AGE"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "Classification: AGE",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ILO:CL_AGE(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.ilo.org/rest/v1/codelist/ILO/CL_AGE/1.0"
+          },
+          "schema:description": "39 codes used by this dataflow"
+        }
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#TIME_PERIOD",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TIME_PERIOD",
+      "schema:alternateName": [
+        "Time period"
+      ],
+      "schema:description": "Time period",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).TIME_PERIOD"
+      },
+      "cdif:role": "Dimension",
+      "cdif:physicalDataType": "ObservationalTimePeriod"
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#OBS_STATUS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_STATUS",
+      "schema:alternateName": [
+        "Observation status"
+      ],
+      "schema:description": "Observation status",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).OBS_STATUS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "OBS_STATUS",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ILO:CL_OBS_STATUS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.ilo.org/rest/v1/codelist/ILO/CL_OBS_STATUS/1.0"
+          },
+          "schema:description": "15 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#UNIT_MEASURE_TYPE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MEASURE_TYPE",
+      "schema:alternateName": [
+        "Unit of measure type"
+      ],
+      "schema:description": "Unit of measure type",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).UNIT_MEASURE_TYPE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "UNIT_MEASURE_TYPE",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ILO:CL_UNIT_MEASURE_TYPE(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.ilo.org/rest/v1/codelist/ILO/CL_UNIT_MEASURE_TYPE/1.0"
+          },
+          "schema:description": "5 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#MEASURE"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#UNIT_MEASURE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MEASURE",
+      "schema:alternateName": [
+        "Unit of measure"
+      ],
+      "schema:description": "Unit of measure",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).UNIT_MEASURE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "UNIT_MEASURE",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ILO:CL_UNIT_MEASURE(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.ilo.org/rest/v1/codelist/ILO/CL_UNIT_MEASURE/1.0"
+          },
+          "schema:description": "20 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#MEASURE"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#UNIT_MULT",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNIT_MULT",
+      "schema:alternateName": [
+        "Unit multiplier"
+      ],
+      "schema:description": "Unit multiplier",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).UNIT_MULT"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "UNIT_MULT",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ILO:CL_UNIT_MULT(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.ilo.org/rest/v1/codelist/ILO/CL_UNIT_MULT/1.0"
+          },
+          "schema:description": "3 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#MEASURE"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#SOURCE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "SOURCE",
+      "schema:alternateName": [
+        "Source"
+      ],
+      "schema:description": "Source",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_NOTE_TYPE(1.0).SOURCE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#REF_AREA"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#NOTE_SOURCE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "NOTE_SOURCE",
+      "schema:alternateName": [
+        "Source Notes"
+      ],
+      "schema:description": "Source Notes",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_NOTE_TYPE(1.0).NOTE_SOURCE"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#REF_AREA"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#NOTE_INDICATOR",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "NOTE_INDICATOR",
+      "schema:alternateName": [
+        "Indicator Notes"
+      ],
+      "schema:description": "Indicator Notes",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_NOTE_TYPE(1.0).NOTE_INDICATOR"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#REF_AREA"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#NOTE_CLASSIF",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "NOTE_CLASSIF",
+      "schema:alternateName": [
+        "Classification Notes"
+      ],
+      "schema:description": "Classification Notes",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_NOTE_TYPE(1.0).NOTE_CLASSIF"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#DECIMALS",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "DECIMALS",
+      "schema:alternateName": [
+        "Decimals"
+      ],
+      "schema:description": "Decimals",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).DECIMALS"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdi:takesSubstantiveValuesFrom": {
+        "@type": [
+          "cdif:SubstantiveValueDomain"
+        ],
+        "cdif:takesValuesFrom": {
+          "@type": [
+            "cdif:EnumerationDomain"
+          ],
+          "schema:name": "DECIMALS",
+          "cdif:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "SDMX URN",
+            "schema:value": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ILO:CL_DECIMALS(1.0)"
+          },
+          "cdif:references": {
+            "@id": "https://sdmx.ilo.org/rest/v1/codelist/ILO/CL_DECIMALS/1.0"
+          },
+          "schema:description": "10 codes used by this dataflow"
+        }
+      },
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#UPPER_BOUND",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UPPER_BOUND",
+      "schema:alternateName": [
+        "Upper bound of Observation Value"
+      ],
+      "schema:description": "Upper bound of Observation Value",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).UPPER_BOUND"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#LOWER_BOUND",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LOWER_BOUND",
+      "schema:alternateName": [
+        "Lower bound of Observation Value"
+      ],
+      "schema:description": "Lower bound of Observation Value",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).LOWER_BOUND"
+      },
+      "cdif:role": "Attribute",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:qualifies": {
+        "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#OBS_VALUE"
+      }
+    },
+    {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#OBS_VALUE",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OBS_VALUE",
+      "schema:alternateName": [
+        "Observation value"
+      ],
+      "schema:description": "Observation value",
+      "schema:propertyID": {
+        "@id": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ILO:CS_ILOSTAT(1.0).OBS_VALUE"
+      },
+      "cdif:role": "Measure",
+      "cdif:physicalDataType": "xsd:double"
+    }
+  ],
+  "schema:url": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "SDMX-ML data for ILO,DF_EMP_XTRU_SEX_AGE_NB,1.0",
+      "schema:contentUrl": "https://sdmx.ilo.org/rest/v1/data/ILO,DF_EMP_XTRU_SEX_AGE_NB,1.0/all",
+      "schema:encodingFormat": [
+        "application/vnd.sdmx.genericdata+xml;version=2.1"
+      ],
+      "schema:description": "SDMX-REST data query for the whole dataflow; add a series key in place of 'all', startPeriod/endPeriod, or an Accept header (e.g. application/vnd.sdmx.data+csv) to narrow or reformat it.",
+      "cdi:isStructuredBy": {
+        "@type": [
+          "cdi:DimensionalDataStructure"
+        ],
+        "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ILO:EMP_XTRU_SEX_AGE_NB(1.0)",
+        "cdi:has_DataStructureComponent": [
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).REF_AREA",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#REF_AREA"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).FREQ",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#FREQ"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#MEASURE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).SEX",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#SEX"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).AGE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#AGE"
+            }
+          },
+          {
+            "@type": [
+              "cdi:DimensionComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).TIME_PERIOD",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#TIME_PERIOD"
+            }
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).OBS_STATUS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#OBS_STATUS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ILO:EMP_XTRU_SEX_AGE_NB(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).UNIT_MEASURE_TYPE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#UNIT_MEASURE_TYPE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).MEASURE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).UNIT_MEASURE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#UNIT_MEASURE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).MEASURE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).UNIT_MULT",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#UNIT_MULT"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).MEASURE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).SOURCE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#SOURCE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).REF_AREA"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).TIME_PERIOD"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).NOTE_SOURCE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#NOTE_SOURCE"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).REF_AREA"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).TIME_PERIOD"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).NOTE_INDICATOR",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#NOTE_INDICATOR"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).REF_AREA"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).MEASURE"
+              },
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=ILO:EMP_XTRU_SEX_AGE_NB(1.0).TIME_PERIOD"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).NOTE_CLASSIF",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#NOTE_CLASSIF"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ILO:EMP_XTRU_SEX_AGE_NB(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).DECIMALS",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#DECIMALS"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ILO:EMP_XTRU_SEX_AGE_NB(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).UPPER_BOUND",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#UPPER_BOUND"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ILO:EMP_XTRU_SEX_AGE_NB(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:AttributeComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=ILO:EMP_XTRU_SEX_AGE_NB(1.0).LOWER_BOUND",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#LOWER_BOUND"
+            },
+            "cdif:qualifies": [
+              {
+                "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ILO:EMP_XTRU_SEX_AGE_NB(1.0).OBS_VALUE"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:MeasureComponent"
+            ],
+            "@id": "urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=ILO:EMP_XTRU_SEX_AGE_NB(1.0).OBS_VALUE",
+            "cdif:isDefinedBy_Variable": {
+              "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#OBS_VALUE"
+            }
+          }
+        ],
+        "cdif:has_PrimaryKey": {
+          "@type": [
+            "cdif:Key"
+          ],
+          "cdif:isComposedOf": [
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#REF_AREA"
+              },
+              "cdi:value": 1
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#FREQ"
+              },
+              "cdi:value": 2
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#MEASURE"
+              },
+              "cdi:value": 3
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#SEX"
+              },
+              "cdi:value": 4
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#AGE"
+              },
+              "cdi:value": 5
+            },
+            {
+              "@type": [
+                "cdi:ComponentPosition"
+              ],
+              "cdi:indexes": {
+                "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0#TIME_PERIOD"
+              },
+              "cdi:value": 6
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0?references=all&detail=referencepartial",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "SDMX structure metadata for: Time-related underemployment by sex and age",
+    "schema:about": {
+      "@id": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_structure/2.0"
+      }
+    ],
+    "schema:description": "Converted from an SDMX-ML 2.1 structure message (dataflow and data structure definition) to CDIF by sdmx_to_cdif.py.",
+    "schema:dateModified": "2026-11-19T01:10:06+01:00",
+    "schema:url": "https://sdmx.ilo.org/rest/v1/dataflow/ILO/DF_EMP_XTRU_SEX_AGE_NB/1.0?references=all&detail=referencepartial"
+  }
+}
