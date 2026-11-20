@@ -122,6 +122,7 @@ def values_at(elem, parts):
     out = []
     for node in descend(elem, parts):
         s = node if isinstance(node, str) else text_of(node)
+        s = s.replace("﻿", "")  # a byte-order mark is never content
         if s:
             out.append(s)
     return out
