@@ -298,7 +298,9 @@ def parse_access(stdy):
 def parse_variables(root):
     out = []
     for var in find_all(root, "var"):
-        name = var.attrib.get("name", "").strip().strip('"')
+        # Dataverse can carry a tab file's byte-order mark into the first
+        # column's name; it would otherwise end up in the variable's @id.
+        name = var.attrib.get("name", "").replace("﻿", "").strip().strip('"')
         vid = var.attrib.get("ID", "")
         intrvl = var.attrib.get("intrvl", "")
         fmt_elem = child(var, "varFormat")
@@ -330,8 +332,11 @@ def parse_variables(root):
                     "cats": cats, "ncat": len(cats),
                     # physical-mapping context: which distribution file this column
                     # is in, and its field width. Document order (list order) is the
-                    # column position.
-                    "files": var.attrib.get("files", "").strip(),
+                    # column position. Dataverse states the file on
+                    # <location fileid> instead of <var files>.
+                    "files": (var.attrib.get("files")
+                              or (loc.attrib.get("fileid") if loc is not None else "")
+                              or "").strip(),
                     "width": loc.attrib.get("width") if loc is not None else None})
     return out
 
