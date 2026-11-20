@@ -123,7 +123,8 @@ def sniff_source(path):
 _CODEBOOK_VERSION = {"codebook-1.2.2": "122", "codebook-2.5": "25"}
 
 
-def convert(path, explicit_id=None, base_uri="urn:ddi", detect=True):
+def convert(path, explicit_id=None, base_uri="urn:ddi", detect=True,
+            framed=False):
     """Sniff `path` and convert it, dispatching to the engine that fits its
     flavor. XML DDI-CDI goes to ddicdi_to_cdif.py; NotImplementedError is raised
     for the branches with no handler (RDF/JSON-LD DDI-CDI, Lifecycle 3.x), and
@@ -131,7 +132,8 @@ def convert(path, explicit_id=None, base_uri="urn:ddi", detect=True):
     flavor = sniff_flavor(path)
     if flavor in _CODEBOOK_VERSION:
         return _convert_codebook(path, explicit_id, _CODEBOOK_VERSION[flavor],
-                                 detect=detect, base_uri=base_uri)
+                                 detect=detect, base_uri=base_uri,
+                                 framed=framed)
     if flavor == "ddi-cdi-xml":
         return _convert_ddicdi_xml(path, explicit_id, base_uri="urn:ddi-cdi",
                                    detect=detect)
@@ -164,6 +166,9 @@ def main():
                          "present (default: urn:ddi)")
     ap.add_argument("--static-conformance", action="store_true",
                     help="Skip content-derived conformsTo (detect_conformance)")
+    ap.add_argument("--framed", action="store_true",
+                    help="Codebook input: write one nested record with the code "
+                         "lists embedded instead of a flattened @graph")
     ap.add_argument("--print-flavor", action="store_true",
                     help="Only report the detected flavor, do not convert")
     ap.add_argument("--print-source", action="store_true",
@@ -180,7 +185,7 @@ def main():
         return
     try:
         doc = convert(a.input, a.explicit_id, a.base_uri,
-                      detect=not a.static_conformance)
+                      detect=not a.static_conformance, framed=a.framed)
     except (NotImplementedError, ValueError) as e:
         print(f"ddi2cdif: {e}", file=sys.stderr)
         sys.exit(2)
