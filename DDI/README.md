@@ -186,7 +186,11 @@ fully emitted:
   entries carrying `skos:notation` + `skos:prefLabel` + `skos:inScheme`).
   Variables that share a code list (e.g. every yes/no field) reference the same
   node. When any code list is emitted the document is a **flattened `@graph`**:
-  `{ "@graph": [ dataset, …code lists ] }`.
+  `{ "@graph": [ dataset, …code lists ] }`. Pass `framed=True` to `convert()`
+  (or `--framed` on the command line) for one nested record rooted at the
+  dataset instead, the shape the profile schemas validate: each code list is
+  embedded where it is first referenced and stays a bare `{"@id"}` reference
+  everywhere else. The RDF is the same either way.
 - **Statistics.** `<sumStat>` and `<catStat>` become
   `cdif:isDescribedBy_StatisticsCollection` → `cdi:StatisticsCollection`:
   `cdi:Statistics` for `count` (valid/invalid/total split by

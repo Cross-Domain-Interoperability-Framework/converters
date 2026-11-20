@@ -57,7 +57,7 @@ from ddi122_to_cdif import (  # noqa: E402
     _var_signature, CodeListRegistry, _value_domains, _statistics_collection,
     parse_files as _parse_files, build_distributions as _build_dists,
     parse_access as _parse_access, first_text as _first_text, find as _find,
-    agent_node as _agent_node,
+    agent_node as _agent_node, embed_code_lists,
     NIL_MISSING,
 )
 
@@ -528,7 +528,9 @@ def derive_dataset_id(root, xml_path, base_uri="urn:ddi"):
 
 
 def convert(xml_path, doi_url=None, version="25", detect=True, verbose=False,
-            base_uri="urn:ddi"):
+            base_uri="urn:ddi", framed=False):
+    """framed=True returns one nested record (code lists embedded where first
+    referenced) instead of the flattened @graph."""
     root = ET.parse(xml_path).getroot()
     if not doi_url:
         doi_url = derive_dataset_id(root, xml_path, base_uri)
@@ -842,6 +844,8 @@ def convert(xml_path, doi_url=None, version="25", detect=True, verbose=False,
     if registry.nodes:
         ctx = doc.pop("@context")
         doc = {"@context": ctx, "@graph": [doc] + registry.nodes}
+        if framed:
+            doc = embed_code_lists(doc)
     return doc
 
 
@@ -857,9 +861,12 @@ def main():
     ap.add_argument("-o", "--output")
     ap.add_argument("--no-detect", action="store_true")
     ap.add_argument("-v", "--verbose", action="store_true")
+    ap.add_argument("--framed", action="store_true",
+                    help="write one nested record with the code lists embedded "
+                         "instead of a flattened @graph")
     a = ap.parse_args()
     doc = convert(a.xml, a.doi, a.version, detect=not a.no_detect,
-                  verbose=a.verbose, base_uri=a.base_uri)
+                  verbose=a.verbose, base_uri=a.base_uri, framed=a.framed)
     out = a.output or (os.path.splitext(a.xml)[0] + "-cdif.json")
     json.dump(doc, open(out, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
     print(f"wrote {out}")

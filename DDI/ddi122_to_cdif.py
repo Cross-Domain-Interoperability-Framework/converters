@@ -653,8 +653,33 @@ def build_distributions(files, variables, sig_to_id):
 # Document assembly
 # ---------------------------------------------------------------------------
 
+def embed_code_lists(doc):
+    """Turn a flattened {"@graph": [dataset, ...code lists]} into one record
+    rooted at the dataset: each code list is embedded where it is first
+    referenced, and every later reference stays a bare {"@id"}, which the
+    profile schemas accept for cdif:references. A document with no @graph is
+    returned unchanged."""
+    graph = doc.get("@graph")
+    if not isinstance(graph, list):
+        return doc
+    pending = {n["@id"]: n for n in graph[1:]}
+
+    def walk(o):
+        if isinstance(o, dict):
+            if len(o) == 1 and o.get("@id") in pending:
+                o = pending.pop(o["@id"])
+            return {k: walk(v) for k, v in o.items()}
+        if isinstance(o, list):
+            return [walk(v) for v in o]
+        return o
+
+    return {"@context": doc["@context"], **walk(graph[0])}
+
+
 def convert(xml_path, explicit_id=None, base_uri="urn:ddi", detect=True,
-            source_desc="DDI Codebook 1.2.2 (ICPSR)"):
+            source_desc="DDI Codebook 1.2.2 (ICPSR)", framed=False):
+    """framed=True returns one nested record (code lists embedded, see
+    embed_code_lists) instead of the flattened @graph."""
     root = ET.parse(xml_path).getroot()
     stdy = find(root, "stdyDscr")
     docd = find(root, "docDscr")
@@ -770,7 +795,9 @@ def convert(xml_path, explicit_id=None, base_uri="urn:ddi", detect=True,
     # with the dataset first and each distinct code list as a sibling node.
     if registry.nodes:
         context = doc.pop("@context")
-        return {"@context": context, "@graph": [doc] + registry.nodes}
+        doc = {"@context": context, "@graph": [doc] + registry.nodes}
+        if framed:
+            doc = embed_code_lists(doc)
     return doc
 
 
@@ -842,10 +869,14 @@ def main():
     ap.add_argument("--static-conformance", action="store_true",
                     help="Keep the built-in conformsTo instead of deriving it "
                          "from content via detect_conformance")
+    ap.add_argument("--framed", action="store_true",
+                    help="Write one nested record with the code lists embedded "
+                         "instead of a flattened @graph")
     args = ap.parse_args()
 
     doc = convert(args.input, explicit_id=args.explicit_id,
-                  base_uri=args.base_uri, detect=not args.static_conformance)
+                  base_uri=args.base_uri, detect=not args.static_conformance,
+                  framed=args.framed)
 
     out = json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
     if args.output:
