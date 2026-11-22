@@ -1,0 +1,73 @@
+mapping_set_id: https://w3id.org/cdif/mappings/eml-to-cdif
+mapping_set_title: Ecological Metadata Language (EML 2.0.1 to 2.2.0) to CDIF
+mapping_set_description: |
+  Property correspondences applied by EML/eml_to_cdif.py (an <eml:eml>
+  document -> CDIF JSON-LD, one record per document). This table drives the
+  converter: it is read at runtime, and each transform names a shaper
+  (tf_<transform>) in eml_to_cdif.py.
+
+  subject_xpath is an XPath 1.0 expression from the <eml:eml> element. EML's
+  child elements are unqualified, so the paths need no prefix and serve every
+  EML version; subject_id and subject_class use eml: only as a label for the
+  element. object_json_path is where the value lands: $.<property> on the
+  dataset, or $.schema:subjectOf.<property> on the catalog record. Rows run in
+  file order: for a scalar target the first row to fill it wins; array targets
+  accumulate. A row with no transform documents an EML element that is not
+  converted.
+
+  A dataTable with an attributeList becomes a cdi:TabularTextDataSet
+  distribution with one cdif:PhysicalMapping per attribute, and each attribute
+  a cdi:InstanceVariable, which is what CDIF data_description describes.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/EML/eml_to_cdif.py
+mapping_date: 2026-11-22
+subject_source: https://eml.ecoinformatics.org/eml-2.2.0
+object_source: https://w3id.org/cdif/core/2.0
+see_also:
+  - https://eml.ecoinformatics.org/
+  - https://ipt.gbif.org/manual/en/ipt/latest/gbif-metadata-profile
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_xpath
+    property: https://w3id.org/cdif/mappings/subjectXPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  iri             a DOI -> https://doi.org/<doi>; a URL as is; anything else urn:eml:<value>
+  gbifdataset     a GBIF dataset key -> https://www.gbif.org/dataset/<key>
+  identifier      a DOI -> PropertyValue (identifiers.org doi)
+  packageid       the packageId -> PropertyValue whose propertyID is the eml system
+  altidentifier   the other alternate identifiers -> URLs or strings
+  doiurl          a DOI's resolver URL
+  text            the first non-empty value
+  texts           every distinct non-empty value
+  paras           TextType elements -> their paragraphs as text
+  creators        creators -> a JSON-LD @list of Persons and Organizations
+  agent           ResponsibleParty elements -> Persons and Organizations
+  contributor     ResponsibleParty elements -> schema:Role with the EML role as roleName
+  funding         funding text -> MonetaryGrants
+  date            the first value in the CDIF date pattern (no zone is UTC)
+  year            a year -> YYYY-01-01
+  description     abstract, purpose, additionalInfo and project text, labelled
+  keywords        keywordSets -> DefinedTerms in their thesaurus, or strings
+  taxon           taxonomicClassifications -> DefinedTerms
+  licensed        EML 2.2 licensed -> CreativeWork
+  ulink           a linked licence in intellectualRights -> CreativeWork
+  place           geographicCoverage -> Place with a box or point
+  interval        temporalCoverage -> ISO 8601 intervals and dates
+  method          methodStep / sampling / qualityControl -> cdifProv Actions
+  bibliography    GBIF bibliography citations with a DOI or URL -> LinkRoles
+  download        distribution URLs -> DataDownloads
+  datatable       dataTables -> cdi:TabularTextDataSet distributions with physical mappings
+  variables       dataTable attributes -> cdi:InstanceVariables
+curie_map:
+  eml: https://eml.ecoinformatics.org/eml-2.2.0
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sssom: https://w3id.org/sssom/
