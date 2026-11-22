@@ -1,0 +1,75 @@
+mapping_set_id: https://w3id.org/cdif/mappings/fgdc-to-cdif
+mapping_set_title: FGDC Content Standard for Digital Geospatial Metadata (CSDGM) to CDIF
+mapping_set_description: |
+  Property correspondences applied by FGDC/fgdc_to_cdif.py (a CSDGM <metadata>
+  document, FGDC-STD-001-1998 or its Biological Data Profile -> CDIF JSON-LD,
+  one record per document). This table drives the converter: it is read at
+  runtime, and each transform names a shaper (tf_<transform>) in
+  fgdc_to_cdif.py.
+
+  subject_xpath is an XPath 1.0 expression from the <metadata> element. CSDGM
+  elements have no namespace; subject_id and subject_class use fgdc: only as a
+  label for the element. object_json_path is where the value lands:
+  $.<property> on the dataset, or $.schema:subjectOf.<property> on the catalog
+  record. Rows run in file order: for a scalar target the first row to fill it
+  wins; array targets accumulate. A row with no transform documents a CSDGM
+  element that is not converted.
+
+  CSDGM has no element for the dataset's identifier. The record's @id is a DOI
+  among the citation's online linkages; else the converter uses the identifier
+  its caller gives (--identifier), else the first online linkage. Those two
+  fallbacks are in code, not in a row, because they come from outside the
+  document.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/FGDC/fgdc_to_cdif.py
+mapping_date: 2026-11-22
+subject_source: https://www.fgdc.gov/metadata/csdgm-standard
+object_source: https://w3id.org/cdif/core/2.0
+see_also:
+  - https://www.fgdc.gov/standards/projects/metadata/base-metadata/v2_0698.pdf
+  - https://www.fgdc.gov/metadata/csdgm/
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_xpath
+    property: https://w3id.org/cdif/mappings/subjectXPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  doiiri          a DOI online linkage -> https://doi.org/<doi>
+  doi             a DOI online linkage -> PropertyValue (identifiers.org doi)
+  firsturl        the first http(s) online linkage
+  onlinks         other online linkages not also download URLs -> LinkRoles
+  text            the first non-empty value
+  texts           every distinct non-empty value
+  creators        originators -> a JSON-LD @list of Persons and Organizations
+  organization    a publisher name -> Organization
+  date            a CSDGM date (YYYYMMDD, YYYYMM, YYYY) in ISO 8601
+  fulldate        such a date with at least year and month
+  year            a date's year -> YYYY-01-01
+  description     abstract, purpose, supplemental information and attribute overview, labelled
+  interval        timeinfo -> ISO 8601 intervals and dates
+  place           spdom -> Place with a box or point
+  keywords        theme / place / stratum / temporal keyword sets -> DefinedTerms or strings
+  taxon           taxoncl -> DefinedTerms
+  constraints     accconst / useconst -> labelled statements
+  licenseurl      a licence URL written in useconst -> CreativeWork
+  contact         cntinfo -> schema:Role pointOfContact
+  agents          cntinfo -> Persons and Organizations
+  agent           the first such agent
+  procstep        process steps -> cdifProv Actions
+  source          source citations -> labelled links or titles
+  crossref        cross references with a link -> LinkRoles
+  largerwork      a larger work citation with a link -> LinkRole
+  digform         digital forms with a network address -> DataDownloads
+  variables       entity attributes -> cdi:InstanceVariables
+curie_map:
+  fgdc: https://www.fgdc.gov/metadata/csdgm-standard#
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sssom: https://w3id.org/sssom/
