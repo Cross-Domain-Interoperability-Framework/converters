@@ -23,7 +23,9 @@ different roles — check which before editing either side:
   `iso19115-3-to-cdif` and `iso19139-to-cdif`, with the same rows in the same
   order and different `subject_xpath`s — keep them aligned), SDMX
   (`SDMX/sdmx_to_cdif.py`: `subject_xpath` from the `str:Dataflow`, with `$dsd`
-  bound to its DSD), DDI (worksheets compiled to
+  bound to its DSD), DataCite (`DataCite/datacite_to_cdif.py`: `subject_xpath`
+  from the `<resource>`, with `datacite:` bound to its own kernel-3 or kernel-4
+  namespace), DDI (worksheets compiled to
   `mappings/ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py`). A
   mapping change for these is a table edit; code is only for structural
   shapers.

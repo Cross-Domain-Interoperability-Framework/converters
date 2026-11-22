@@ -1,0 +1,88 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://doi.org/10.7483/OPENDATA.CMS.6ZY4.EHOH",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:value": "10.7483/OPENDATA.CMS.6ZY4.EHOH",
+    "schema:url": "https://doi.org/10.7483/OPENDATA.CMS.6ZY4.EHOH"
+  },
+  "schema:url": "https://doi.org/10.7483/OPENDATA.CMS.6ZY4.EHOH",
+  "schema:name": "/Commissioning/Run2010A-Apr21ReReco-v1/AOD",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "CMS collaboration"
+      }
+    ]
+  },
+  "schema:publisher": {
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "CERN Open Data Portal"
+  },
+  "schema:dateModified": "2019-01-01",
+  "schema:datePublished": "2019",
+  "schema:keywords": [
+    "CERN-LHC",
+    "CMS"
+  ],
+  "schema:inLanguage": "en",
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Dataset",
+      "schema:inDefinedTermSet": "https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/"
+    }
+  ],
+  "schema:license": [
+    "open access"
+  ],
+  "schema:description": "<p>Commissioning primary dataset in AOD format from RunA of 2010</p> <p>The list of validated runs, which must be applied to all analyses, can be found in</p>\n\nMethods: Events stored in this primary dataset were selected by various triggers during the commissioning period. Data taking / HLT The collision data were assigned to different RAW datasets using the following HLT configuration. Data processing / RECO This primary AOD dataset was processed from the RAW dataset by the following step: Step: RECO Release: CMSSW_4_2_1_patch1 Global tag: FT_R_42_V10A::All The configuration file for RECO step can be generated with the cmsDriver command line script in the corresponding CMSSW release area: cmsDriver.py reco -s RAW2DIGI,L1Reco,RECO --data --conditions FT_R_42_V10A::All --eventcontent AOD --no_exec --python reco_cmsdriver2010.py HLT trigger paths The possible HLT trigger paths in this dataset are: HLT_Activity_CSC HLT_Activity_DT HLT_Activity_DT_Tuned HLT_Activity_Ecal HLT_Activity_EcalREM HLT_Activity_L1A HLT_Activity_PixelClusters HLT_IsoTrackHB HLT_IsoTrackHE HLT_L1_BptxXOR_BscMinBiasOR HLT_MultiVertex6 HLT_MultiVertex8_L1ETT60 HLT_MultiVertex6_v2 HLT_MultiVertex8_L1ETT60_v2 HLT_IsoTrackHB_v2 HLT_IsoTrackHE_v3 HLT_IsoTrackHE_v2 HLT_IsoTrackHE_v2\n\nOther: You can access these data through the CMS Virtual Machine. See the instructions for setting up the Virtual Machine and getting started in",
+  "schema:subjectOf": {
+    "@id": "https://doi.org/10.7483/OPENDATA.CMS.6ZY4.EHOH#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "DataCite metadata record for: /Commissioning/Run2010A-Apr21ReReco-v1/AOD",
+    "schema:about": {
+      "@id": "https://doi.org/10.7483/OPENDATA.CMS.6ZY4.EHOH"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      }
+    ],
+    "schema:description": "Converted from DataCite Metadata Schema kernel-4 XML to CDIF by datacite_to_cdif.py.",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "CERN Open Data",
+      "schema:url": "https://opendata.cern.ch/oai2d"
+    }
+  }
+}

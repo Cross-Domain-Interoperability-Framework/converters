@@ -17,6 +17,7 @@ expose their conversion as an importable function.
 | [`UMM/umm_to_cdif.py`](UMM/umm_to_cdif.py) | NASA CMR UMM-C (file **or URL**) → CDIF core+discovery | NASA UMM-C JSON |
 | [`ISO19115/iso_to_cdif.py`](ISO19115/iso_to_cdif.py) | ISO 19115-3 and ISO 19139 / 19115-2 XML (file, URL or CSW response) → CDIF (table-driven; DDE conventions where ISO has no CDIF property) | ISO 19115 XML |
 | [`SDMX/sdmx_to_cdif.py`](SDMX/sdmx_to_cdif.py) | SDMX-ML 2.1 structure message (dataflow + DSD, file or SDMX-REST URL) → CDIF core/discovery/data_description/data_structure (table-driven; DSD as a cdi:DimensionalDataStructure) | SDMX |
+| [`DataCite/datacite_to_cdif.py`](DataCite/datacite_to_cdif.py) | DataCite Metadata Schema kernel 3 / 4 XML (a record or an OAI-PMH response) → CDIF core/discovery (table-driven) | DataCite XML |
 | [`FAIR2/fair2_to_cdif.py`](FAIR2/fair2_to_cdif.py) | FAIR² `fair2.json` (file **or URL**) → CDIF (reuses the Croissant converter for the Croissant core) | FAIR² |
 | [`DDI/ddi_to_cdif.py`](DDI/ddi_to_cdif.py) | DDI Codebook 2.5 (Harvard Dataverse) → CDIF | DDI Codebook XML |
 | [`DDI/ddi122_to_cdif.py`](DDI/ddi122_to_cdif.py) | DDI 1.2.2 (ICPSR, source-agnostic) → CDIF | DDI XML |
