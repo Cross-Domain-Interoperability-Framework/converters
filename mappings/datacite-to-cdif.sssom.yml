@@ -1,0 +1,67 @@
+mapping_set_id: https://w3id.org/cdif/mappings/datacite-to-cdif
+mapping_set_title: DataCite Metadata Schema (kernel 3 and 4) XML to CDIF
+mapping_set_description: |
+  Property correspondences applied by DataCite/datacite_to_cdif.py (DataCite
+  <resource> XML, alone or in an OAI-PMH response -> CDIF JSON-LD, one record
+  per resource). This table drives the converter: it is read at runtime, and
+  each transform names a shaper (tf_<transform>) in datacite_to_cdif.py.
+
+  subject_xpath is an XPath 1.0 expression from the <resource> element. The
+  datacite: prefix is bound at run time to the record's own namespace
+  (http://datacite.org/schema/kernel-3 or kernel-4), so one row serves both
+  kernels; the shapers handle the places they differ (kernel 3's text
+  geoLocationPoint and geoLocationBox, and its Funder contributor).
+  object_json_path is where the value lands: $.<property> on the dataset, or
+  $.schema:subjectOf.<property> on the catalog record. Rows run in file order:
+  for a scalar target the first row to fill it wins; array targets accumulate.
+  A row with no transform documents a DataCite element that is not converted.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/DataCite/datacite_to_cdif.py
+mapping_date: 2026-11-22
+subject_source: http://datacite.org/schema/kernel-4
+object_source: https://w3id.org/cdif/core/2.0
+see_also:
+  - https://datacite-metadata-schema.readthedocs.io/en/4.6/
+  - https://schema.datacite.org/meta/kernel-3/
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_xpath
+    property: https://w3id.org/cdif/mappings/subjectXPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  iri             the identifier as the record's @id: its resolver URL, else urn:<type>:<value>
+  identifier      the identifier -> PropertyValue (propertyID from identifiers.org, url its resolver)
+  url             the identifier's resolver URL
+  altidentifier   alternateIdentifiers -> PropertyValues
+  text            the first non-empty value
+  texts           every distinct non-empty value
+  creators        creators -> a JSON-LD @list of Persons and Organizations
+  publisher       publisher -> Organization (with publisherIdentifier)
+  agent           contributors -> Persons and Organizations
+  contributor     contributors -> schema:Role with the contributorType as roleName
+  funder          kernel-3 Funder contributors -> MonetaryGrants
+  grant           fundingReferences -> MonetaryGrants
+  date            the first date in the CDIF pattern (the start of a range; no zone is UTC)
+  lastdate        the latest such date
+  year            publicationYear -> YYYY-01-01
+  interval        dates and date ranges as written
+  subject         subjects -> DefinedTerms (one per valueURI, other languages as alternateName) or strings
+  resourcetype    resourceTypeGeneral -> DefinedTerm, and the free-text resourceType
+  license         rights -> CreativeWork at the rightsURI, or the statement
+  accessrights    OpenAIRE info:eu-repo access rights -> their URIs
+  description     Abstracts, then the other descriptions labelled by type
+  place           geoLocations -> Places with a box, polygon or point
+  related         relatedIdentifiers -> LinkRoles (dropped when the identifier has no URL)
+  source          IsDerivedFrom relatedIdentifiers -> references
+curie_map:
+  datacite: http://datacite.org/schema/kernel-4
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sssom: https://w3id.org/sssom/
