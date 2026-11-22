@@ -57,7 +57,7 @@ from ddi122_to_cdif import (  # noqa: E402
     _var_signature, CodeListRegistry, _value_domains, _statistics_collection,
     parse_files as _parse_files, build_distributions as _build_dists,
     parse_access as _parse_access, first_text as _first_text, find as _find,
-    agent_node as _agent_node, embed_code_lists,
+    agent_node as _agent_node, embed_code_lists, _date_only,
     NIL_MISSING,
 )
 
@@ -221,6 +221,10 @@ def shape_dataset(leaf, object_id, contribs):
         return {"@list": [{"@type": ["schema:Person"], "schema:name": v} for v in flat]} if flat else None
     if object_id in ("schema:publisher", "schema:provider", "schema:maintainer", "schema:funder"):
         return {"@type": ["schema:Organization"], "schema:name": flat[0]} if flat else None
+    if object_id == "schema:sdDatePublished":
+        # the profile wants a plain date here; some producers (NADA) give a
+        # timestamp such as 2026-03-18T04:00:00.000Z
+        return _date_only(flat[0]) if flat else None
     return concat([(lbl, " ".join(vs) if isinstance(vs, list) else vs) for lbl, vs in contribs])
 
 
