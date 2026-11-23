@@ -1,0 +1,1190 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:name": "Pedirka and Western Eromanga Basins Energy Resource Assessments",
+  "schema:description": "The AFER Project has adapted the conventional hydrocarbon play-based exploration workflow, developed by the petroleum industry over several decades, to develop a similar approach for assessing unconventional hydrocarbon resource potential and CO2 geological storage prospectivity. Play-based exploration is a method of building and leveraging an understanding of a basin and its sediment-hosted resources by systematically evaluating a series of play intervals using the best available geological data and models. Each play interval represents a regionally significant reservoir/aquifer for one or more resources (e.g. hydrocarbons, groundwater, CO2 storage intervals) often with an associated seal/aquitard. Various ‘risk elements’ that are essential for a resource to exist can be mapped and qualified with a probability of geological success. These risk elements are then spatially integrated (stacked) to generate common risk segment (CRS) or ‘heat’ maps for each play interval that indicate areas of relatively high prospectivity versus relatively low prospectivity. Geological risk elements are evaluated using post-drill analysis of well control points, and geological maps generated from basin studies. Common risk segment mapping, supported by post-drill analysis, has been undertaken by the AFER Project using the GIS-Pax Player Software, and assigned a geological probability of success (POS) using a ‘split risking’ system that involves assessing: Pg play, which is the POS that the risk element is effective somewhere within the map segment.",
+  "schema:keywords": [
+    "Australia",
+    "web service",
+    "AFER",
+    "EFTF",
+    "Exploring for the Future",
+    "energy resource assessment module",
+    "Pedirka Basin",
+    "conventional hydrocarbons",
+    "CO2 geological storage",
+    "western Eromanga Basin"
+  ],
+  "schema:url": "http://www.ga.gov.au",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Geoscience Australia",
+      "schema:email": "clientservices@ga.gov.au",
+      "schema:telephone": "+61 2 6249 9111"
+    }
+  ],
+  "schema:termsOfService": "Fees: NONE; Access constraints: © Commonwealth of Australia (Geoscience Australia) 2025. This material is released under the Creative Commons Attribution 4.0 International Licence. https://creativecommons.org/licenses/by/4.0/legalcode",
+  "schema:conditionsOfAccess": [
+    "© Commonwealth of Australia (Geoscience Australia) 2025. This material is released under the Creative Commons Attribution 4.0 International Licence. https://creativecommons.org/licenses/by/4.0/legalcode"
+  ],
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "https://creativecommons.org/licenses/by/4.0/legalcode"
+    }
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/vnd.ogc.wms_xml",
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/bmp",
+          "image/jpeg",
+          "image/tiff",
+          "image/png",
+          "image/png8",
+          "image/png24",
+          "image/png32",
+          "image/gif",
+          "image/svg+xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/vnd.esri.wms_raw_xml",
+          "application/vnd.esri.wms_featureinfo_xml",
+          "application/vnd.ogc.wms_xml",
+          "application/geo+json",
+          "text/xml",
+          "text/html",
+          "text/plain"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetStyles",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/vnd.ogc.sld+xml"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Storage_Poolowanna_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Storage Poolowanna PlayStack",
+      "schema:identifier": "WestEromanga_Storage_Poolowanna_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Storage_NamurMurta_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Storage NamurMurta PlayStack",
+      "schema:identifier": "WestEromanga_Storage_NamurMurta_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481814 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Storage_Hutton_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Storage Hutton PlayStack",
+      "schema:identifier": "WestEromanga_Storage_Hutton_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481813 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Storage_Cadnaowie_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Storage Cadnaowie PlayStack",
+      "schema:identifier": "WestEromanga_Storage_Cadnaowie_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Storage_Birkhead_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Storage Birkhead PlayStack",
+      "schema:identifier": "WestEromanga_Storage_Birkhead_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481813 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Storage_AdoriWestbourne_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Storage AdoriWestbourne PlayStack",
+      "schema:identifier": "WestEromanga_Storage_AdoriWestbourne_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481813 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Storage_AllPlays_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Storage AllPlays PlayStack",
+      "schema:identifier": "WestEromanga_Storage_AllPlays_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481813 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_ShaleResource_Poolowanna_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga ShaleResource Poolowanna PlayStack",
+      "schema:identifier": "WestEromanga_ShaleResource_Poolowanna_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_ShaleResource_PeeraPeera_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga ShaleResource PeeraPeera PlayStack",
+      "schema:identifier": "WestEromanga_ShaleResource_PeeraPeera_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_ShaleResource_AllPlays_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga ShaleResource AllPlays PlayStack",
+      "schema:identifier": "WestEromanga_ShaleResource_AllPlays_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/Pedirka_CoalSeamGas_upperPurni_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Pedirka CoalSeamGas upperPurni PlayStack",
+      "schema:identifier": "Pedirka_CoalSeamGas_upperPurni_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/Pedirka_CoalSeamGas_lowerPurni_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Pedirka CoalSeamGas lowerPurni PlayStack",
+      "schema:identifier": "Pedirka_CoalSeamGas_lowerPurni_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/Pedirka_CoalSeamGas_AllPlays_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Pedirka CoalSeamGas AllPlays PlayStack",
+      "schema:identifier": "Pedirka_CoalSeamGas_AllPlays_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/PedirkaEromanga_AllUnconventional_AllPlays_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "PedirkaEromanga AllUnconventional AllPlays PlayStack",
+      "schema:identifier": "PedirkaEromanga_AllUnconventional_AllPlays_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/Pedirka_Conventional_CrownPoint_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Pedirka Conventional CrownPoint PlayStack",
+      "schema:identifier": "Pedirka_Conventional_CrownPoint_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/Pedirka_Conventional_lowerPurni_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Pedirka Conventional lowerPurni PlayStack",
+      "schema:identifier": "Pedirka_Conventional_lowerPurni_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/Pedirka_Conventional_upperPurni_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Pedirka Conventional upperPurni PlayStack",
+      "schema:identifier": "Pedirka_Conventional_upperPurni_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/Pedirka_Conventional_Walkandi_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Pedirka Conventional Walkandi PlayStack",
+      "schema:identifier": "Pedirka_Conventional_Walkandi_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Conventional_AdoriWestbourne_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Conventional AdoriWestbourne PlayStack",
+      "schema:identifier": "WestEromanga_Conventional_AdoriWestbourne_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Conventional_Birkhead_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Conventional Birkhead PlayStack",
+      "schema:identifier": "WestEromanga_Conventional_Birkhead_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Conventional_Cadnaowie_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Conventional Cadnaowie PlayStack",
+      "schema:identifier": "WestEromanga_Conventional_Cadnaowie_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Conventional_Hutton_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Conventional Hutton PlayStack",
+      "schema:identifier": "WestEromanga_Conventional_Hutton_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Conventional_NamurMurta_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Conventional NamurMurta PlayStack",
+      "schema:identifier": "WestEromanga_Conventional_NamurMurta_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481813 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Conventional_PeeraPeera_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Conventional PeeraPeera PlayStack",
+      "schema:identifier": "WestEromanga_Conventional_PeeraPeera_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/WestEromanga_Conventional_Poolowanna_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WestEromanga Conventional Poolowanna PlayStack",
+      "schema:identifier": "WestEromanga_Conventional_Poolowanna_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/PedirkaEromanga_AllConventional_AllPlays_PlayStack",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "PedirkaEromanga AllConventional AllPlays PlayStack",
+      "schema:identifier": "PedirkaEromanga_AllConventional_AllPlays_PlayStack",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.95654 133.481813 -23.606129 140.215415"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.ga.gov.au/metadata-gateway/metadata/record/149501"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-27.95654 133.481812 -23.606129 140.215415"
+      }
+    }
+  ],
+  "schema:identifier": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: Pedirka and Western Eromanga Basins Energy Resource Assessments",
+    "schema:about": {
+      "@id": "https://services.ga.gov.au/gis/services/PedirkaAndWesternEromangaBasinsEnergyResourceAssessments/MapServer/WMSServer?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Geoscience Australia eCat"
+    }
+  }
+}

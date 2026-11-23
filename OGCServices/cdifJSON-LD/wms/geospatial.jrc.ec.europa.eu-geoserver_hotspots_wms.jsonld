@@ -1,0 +1,4244 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:url": "https://geospatial.jrc.ec.europa.eu/geoserver/",
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "PERE ROCA RISTOL",
+        "schema:email": "peroc79@gmail.com"
+      }
+    }
+  ],
+  "schema:termsOfService": "Fees: none; Access constraints: none",
+  "schema:conditionsOfAccess": [
+    "none"
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/png",
+          "application/atom+xml",
+          "application/geopackage+sqlite3",
+          "application/json;type=geojson",
+          "application/json;type=topojson",
+          "application/json;type=utfgrid",
+          "application/pdf",
+          "application/rss+xml",
+          "application/vnd.google-earth.kml+xml",
+          "application/vnd.google-earth.kml+xml;mode=networklink",
+          "application/vnd.google-earth.kmz",
+          "application/vnd.mapbox-vector-tile",
+          "application/x-sqlite3",
+          "image/geotiff",
+          "image/geotiff8",
+          "image/gif",
+          "image/jpeg",
+          "image/png; mode=8bit",
+          "image/svg+xml",
+          "image/tiff",
+          "image/tiff8",
+          "image/vnd.jpeg-png",
+          "image/vnd.jpeg-png8",
+          "text/html; subtype=openlayers",
+          "text/html; subtype=openlayers10",
+          "text/html; subtype=openlayers2",
+          "text/html; subtype=openlayers3"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/plain",
+          "text/html",
+          "application/json",
+          "application/vnd.ogc.gml",
+          "text/xml",
+          "application/vnd.ogc.gml/3.1.1",
+          "text/xml; subtype=gml/3.1.1"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_01_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_01_IR",
+      "schema:identifier": "CAF_01_IR",
+      "schema:keywords": [
+        "CAF01_L8_2015_MOSAIC_IR",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "3.82133 7.93974 8.749097 13.246763"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_01_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_01_RGB",
+      "schema:identifier": "CAF_01_RGB",
+      "schema:keywords": [
+        "CAF01_L8_2015_MOSAIC_PSH",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "3.821285 7.93974 8.749151 13.246839"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_02_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_02_IR",
+      "schema:identifier": "CAF_02_IR",
+      "schema:keywords": [
+        "CAF_02_IR_clipped",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-1.830216 28.84651 1.322092 30.902633"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_02_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_02_RGB",
+      "schema:identifier": "CAF_02_RGB",
+      "schema:keywords": [
+        "CAF_02_RGB_clipped",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-1.830216 28.84651 1.322092 30.902633"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_05_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_05_IR",
+      "schema:identifier": "CAF_05_IR",
+      "schema:keywords": [
+        "CAF_05_IR",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "3.098939 22.143354 7.659149 30.407257"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_05_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_05_RGB",
+      "schema:identifier": "CAF_05_RGB",
+      "schema:keywords": [
+        "caf05_rgb",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "3.099043 22.143354 7.659427 30.407807"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_06_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_06_IR",
+      "schema:identifier": "CAF_06_IR",
+      "schema:keywords": [
+        "CAF06_IR_32634",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "6.911377 18.623892 10.506341 22.925889"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_06_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_06_RGB",
+      "schema:identifier": "CAF_06_RGB",
+      "schema:keywords": [
+        "CAF06_L8_2015_MOSAIC_PSH",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "6.974191 18.699083 10.456371 22.865347"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_07_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_07_IR",
+      "schema:identifier": "CAF_07_IR",
+      "schema:keywords": [
+        "CAF_07_IR",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-3.542598 19.885956 -0.793076 22.88598"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_07_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_07_RGB",
+      "schema:identifier": "CAF_07_RGB",
+      "schema:keywords": [
+        "CAF_07_RGB",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-3.541906 19.886207 -0.79347 22.885959"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_11_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_11_IR",
+      "schema:identifier": "CAF_11_IR",
+      "schema:keywords": [
+        "CAF11_L8_2016_MOSAIC_IR",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-11.328566 25.73625 -8.047464 28.361808"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_11_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_11_RGB",
+      "schema:identifier": "CAF_11_RGB",
+      "schema:keywords": [
+        "CAF11_L8_2016_MOSAIC_PSH",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-11.328701 25.73625 -8.047464 28.361809"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_15_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_15_IR",
+      "schema:identifier": "CAF_15_IR",
+      "schema:keywords": [
+        "CAF15_L8_2015_MOSAIC_IR",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-3.365617 24.148693 -0.614802 25.797527"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_15_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_15_RGB",
+      "schema:identifier": "CAF_15_RGB",
+      "schema:keywords": [
+        "CAF15_L8_2015_MOSAIC_PSH",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-3.470131 23.994319 -0.514511 25.999"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_16_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_16_IR",
+      "schema:identifier": "CAF_16_IR",
+      "schema:keywords": [
+        "CAF_16_IR_Clipnew1",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "5.337832 12.208551 6.393001 13.341198"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_16_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_16_RGB_Clip2",
+      "schema:identifier": "CAF_16_RGB",
+      "schema:keywords": [
+        "CAF_16_RGB_Clip2",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "5.337832 12.208551 6.393001 13.341198"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_99_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_99_IR",
+      "schema:identifier": "CAF_99_IR",
+      "schema:keywords": [
+        "CAF_99_IR_32634",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "0.358416 24.200783 1.298626 25.202863"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAF_99_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAF_99_RGB",
+      "schema:identifier": "CAF_99_RGB",
+      "schema:keywords": [
+        "CAF99_L8_2015_MOSAIC_PSH",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "0.358551 24.200783 1.298626 25.202863"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAR_01_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAR_01_IR",
+      "schema:identifier": "CAR_01_IR",
+      "schema:keywords": [
+        "CAR_01_IR",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "16.901918 -79.723817 27.443104 -67.360319"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/CAR_01_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "CAR_01_RGB",
+      "schema:identifier": "CAR_01_RGB",
+      "schema:keywords": [
+        "CAR_01_RGB",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "16.901918 -79.723817 27.443104 -67.360319"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/EAF_04_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "EAF_04_IR",
+      "schema:identifier": "EAF_04_IR",
+      "schema:keywords": [
+        "EAF_04_IR",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-13.662351 35.661165 -6.322023 39.090426"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/EAF_04_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "EAF_04_RGB",
+      "schema:identifier": "EAF_04_RGB",
+      "schema:keywords": [
+        "eaf_04_rgb",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-13.662351 35.661165 -6.322023 39.090426"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/PAC_01_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "PAC_01_IR",
+      "schema:identifier": "PAC_01_IR",
+      "schema:keywords": [
+        "PAC01_IR_4326",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-9.550646 123.995865 -8.066668 127.400611"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/PAC_01_IR_OLD",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "PAC_01_IR_OLD",
+      "schema:identifier": "PAC_01_IR_OLD",
+      "schema:keywords": [
+        "pac01_ir",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "8944113.10871 609724.987097 9105733.10871 983424.987097"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/PAC_01_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "PAC_01_RGB",
+      "schema:identifier": "PAC_01_RGB",
+      "schema:keywords": [
+        "pac01_rgb",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-9.550619 123.995865 -8.066668 127.400614"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/SAF_02_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "SAF_02_IR",
+      "schema:identifier": "SAF_02_IR",
+      "schema:keywords": [
+        "SAF_02_IR",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.764268 30.588385 -20.863085 32.885556"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/SAF_02_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "SAF_02_RGB",
+      "schema:identifier": "SAF_02_RGB",
+      "schema:keywords": [
+        "SAF_02_RGB",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.764268 30.588385 -20.863085 32.8857"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/SAF_14_15_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "SAF_14_15_IR",
+      "schema:identifier": "SAF_14_15_IR",
+      "schema:keywords": [
+        "SAF_14_15_IR_Clipped_new",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-15.516152 30.109678 -10.50354 34.111789"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/SAF_14_15_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "SAF_14_15_RGB",
+      "schema:identifier": "SAF_14_15_RGB",
+      "schema:keywords": [
+        "SAF_14_15_RGB_clipped",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-15.650901 29.915275 -10.401871 34.488625"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/SAF_21_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "SAF_21_IR",
+      "schema:identifier": "SAF_21_IR",
+      "schema:keywords": [
+        "SAF_21_IR",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.20397 46.12056 -13.637409 50.849582"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/SAF_21_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "SAF_21_RGB",
+      "schema:identifier": "SAF_21_RGB",
+      "schema:keywords": [
+        "SAF_21_RGB",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.20397 46.12056 -13.637409 50.849582"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/Tanzania_CropMask_InSeason_LongRains_2021",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Tanzania_CropMask_InSeason_LongRains_2021",
+      "schema:identifier": "Tanzania_CropMask_InSeason_LongRains_2021",
+      "schema:keywords": [
+        "Tanzania_CropMask_InSeason_LongRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-7.386486 34.842991 -3.443589 39.222005"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/Tanzania_CropType_InSeason_LongRains_2021_geo",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Tanzania_CropType_InSeason_LongRains_2021_geo",
+      "schema:identifier": "Tanzania_CropType_InSeason_LongRains_2021_geo",
+      "schema:keywords": [
+        "Tanzania_CropType_InSeason_LongRains_2021_geo",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-7.386486 34.842991 -3.443589 39.222005"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/WAF_04_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WAF_04_IR",
+      "schema:identifier": "WAF_04_IR",
+      "schema:keywords": [
+        "WAF_04_IR_clip_4326",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "9.774829 0.234381 13.00881 3.573454"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/WAF_04_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WAF_04_RGB",
+      "schema:identifier": "WAF_04_RGB",
+      "schema:keywords": [
+        "WAF_04_RGB_clip_4326",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "9.774829 0.234381 13.00881 3.573454"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/WAF_05_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WAF_05_IR",
+      "schema:identifier": "WAF_05_IR",
+      "schema:keywords": [
+        "WAF_05_IR",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "8.277892 -4.676508 10.339032 -1.127687"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/WAF_05_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WAF_05_RGB",
+      "schema:identifier": "WAF_05_RGB",
+      "schema:keywords": [
+        "WAF_05_RGB",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "8.277892 -4.676508 10.339032 -1.127687"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/WAF_10_IR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WAF_10_IR",
+      "schema:identifier": "WAF_10_IR",
+      "schema:keywords": [
+        "WAF_10_IR",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "4.53065 -9.054166 6.707555 -6.628382"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/WAF_10_RGB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "WAF_10_RGB",
+      "schema:identifier": "WAF_10_RGB",
+      "schema:keywords": [
+        "WAF_10_RGB",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "4.530514 -9.054166 6.707555 -6.628247"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/access_minimum_all_motorized",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "access_minimum_all_motorized",
+      "schema:identifier": "access_minimum_all_motorized",
+      "schema:keywords": [
+        "access_minimum_all_motorized",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-37 -27 39 65"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/access_minimum_all_motorized_clipped",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "access_minimum_all_motorized_clipped",
+      "schema:identifier": "access_minimum_all_motorized_clipped",
+      "schema:keywords": [
+        "access_minimum_all_motorized_clipped",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-37 -17.541667 27.3 51.416667"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_a_lcc_lc_intersection_dates",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_a_lcc_lc_intersection_dates",
+      "schema:identifier": "all_a_lcc_lc_intersection_dates",
+      "schema:keywords": [
+        "all_a_lcc_lc_intersection_dates",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.898348 -9.218043 13.174756 33.034813"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_a_lcc_lc_intersection_dates_pol",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_a_lcc_lc_intersection_dates_pol",
+      "schema:identifier": "all_a_lcc_lc_intersection_dates_pol",
+      "schema:keywords": [
+        "features",
+        "all_a_lcc_lc_intersection_dates_pol"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.945219 -80.021927 27.482851 128.325928"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_b_lcc_lc_intersection_dates",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_b_lcc_lc_intersection_dates",
+      "schema:identifier": "all_b_lcc_lc_intersection_dates",
+      "schema:keywords": [
+        "all_b_lcc_lc_intersection_dates",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.898348 -9.218043 13.174756 33.034813"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_b_lcc_lc_intersection_dates_pol",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_b_lcc_lc_intersection_dates_pol",
+      "schema:identifier": "all_b_lcc_lc_intersection_dates_pol",
+      "schema:keywords": [
+        "features",
+        "all_b_lcc_lc_intersection_dates_pol"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.945171 -80.309189 27.168739 128.311508"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_lcc_a_dates",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_lcc_a_dates",
+      "schema:identifier": "all_lcc_a_dates",
+      "schema:keywords": [
+        "features",
+        "all_lcc_a_dates"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.704914 -9.008871 12.981325 32.825638"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_lcc_a_pol",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_lcc_a_pol",
+      "schema:identifier": "all_lcc_a_pol",
+      "schema:description": "from all_lcc_a_dates_pol in dbase",
+      "schema:keywords": [
+        "features",
+        "all_lcc_a_dates_pol"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.92308 -80.309174 27.170738 128.307755"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_lcc_b_dates",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_lcc_b_dates",
+      "schema:identifier": "all_lcc_b_dates",
+      "schema:keywords": [
+        "features",
+        "all_lcc_b_dates"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.969532 -80.326294 27.482971 128.327438"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_lcc_b_pol",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_lcc_b_pol",
+      "schema:identifier": "all_lcc_b_pol",
+      "schema:keywords": [
+        "features",
+        "all_lcc_b_dates_pol"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.704914 -9.008871 12.981325 50.450107"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_present_lc_a",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_present_lc_a",
+      "schema:identifier": "all_present_lc_a",
+      "schema:keywords": [
+        "features",
+        "all_present_lc_a"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.890057 -9.218125 10.470037 33.042973"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_present_lc_a_pol",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_present_lc_a_pol",
+      "schema:identifier": "all_present_lc_a_pol",
+      "schema:keywords": [
+        "features",
+        "all_present_lc_a_pol"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.974916 -80.341339 27.526852 128.375229"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/all_present_lc_b_pol",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "all_present_lc_b_pol",
+      "schema:identifier": "all_present_lc_b_pol",
+      "schema:keywords": [
+        "features",
+        "all_present_lc_b_pol"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.969128 -80.324799 27.524611 128.328644"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/caf05_rgb",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "caf05_rgb",
+      "schema:identifier": "caf05_rgb",
+      "schema:keywords": [
+        "caf05_rgb",
+        "WCS",
+        "ImageMosaic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "3.099043 22.143354 7.659545 30.407807"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/ceat_nightlights",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "nightlights",
+      "schema:identifier": "ceat_nightlights",
+      "schema:keywords": [
+        "nightlights2",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-40.185007 -20.740992 37.567642 60.784878"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/centroid_px_adm0_sel",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "centroid_px_adm0_sel",
+      "schema:identifier": "centroid_px_adm0_sel",
+      "schema:keywords": [
+        "features",
+        "centroid_px_adm0_sel"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-34.803612 -17.358479 25.27199 50.674831"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/clustered_pop",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "clustered_pop",
+      "schema:identifier": "clustered_pop",
+      "schema:keywords": [
+        "features",
+        "clustered_pop"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "4.231916 2.650501 13.928085 14.735744"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cocoa_merged",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cocoa_merged",
+      "schema:identifier": "cocoa_merged",
+      "schema:keywords": [
+        "cocoa_merged",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "4.36177 -8.599303 11.173335 1.191795"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_kenya_mask_endseason",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_kenya_mask_endseason",
+      "schema:identifier": "cop4geo_kenya_mask_endseason",
+      "schema:keywords": [
+        "Kenya_CropMask_EndOfSeason_LongRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-2.104945 33.905937 1.325353 38.428288"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_kenya_mask_firstgrow_in",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_kenya_mask_firstgrow_in",
+      "schema:identifier": "cop4geo_kenya_mask_firstgrow_in",
+      "schema:keywords": [
+        "Kenya_CropMask_InSeason_LongRains_2021_V1",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-2.104945 33.906027 1.325353 38.428288"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_kenya_mask_second_end",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_kenya_mask_second_end",
+      "schema:identifier": "cop4geo_kenya_mask_second_end",
+      "schema:keywords": [
+        "Kenya_CropMask_EndOfSeason_ShortRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-2.105035 33.906027 1.325353 38.428378"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_kenya_mask_second_in",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_kenya_mask_second_in",
+      "schema:identifier": "cop4geo_kenya_mask_second_in",
+      "schema:keywords": [
+        "Kenya_CropMask_InSeason_ShortRains_2021_V1",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-2.105035 33.906027 1.325353 38.428378"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_kenya_second_type_end",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_kenya_second_type_end",
+      "schema:identifier": "cop4geo_kenya_second_type_end",
+      "schema:keywords": [
+        "Kenya_CropType_EndOfSeason_ShortRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-2.105035 33.906027 1.325353 38.428378"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_kenya_type_endseason",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_kenya_type_endseason",
+      "schema:identifier": "cop4geo_kenya_type_endseason",
+      "schema:keywords": [
+        "Kenya_CropType_EndOfSeason_LongRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-2.104945 33.905937 1.325353 38.428288"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_kenya_type_firstgrow_in",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_kenya_type_firstgrow_in",
+      "schema:identifier": "cop4geo_kenya_type_firstgrow_in",
+      "schema:keywords": [
+        "Kenya_CropType_InSeason_LongRains_2021_V1",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-2.104945 33.906027 1.325353 38.428288"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_kenya_type_second_in",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_kenya_type_second_in",
+      "schema:identifier": "cop4geo_kenya_type_second_in",
+      "schema:keywords": [
+        "Kenya_CropType_InSeason_ShortRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-2.105035 33.906027 1.325353 38.428378"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_tanzania_mask_endseason",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_tanzania_mask_endseason",
+      "schema:identifier": "cop4geo_tanzania_mask_endseason",
+      "schema:keywords": [
+        "Tanzania_CropMask_EndOfSeason_LongRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-7.38633 34.842997 -3.443704 39.221919"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_tanzania_mask_second_end",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_tanzania_mask_second_end",
+      "schema:identifier": "cop4geo_tanzania_mask_second_end",
+      "schema:keywords": [
+        "Tanzania_CropMask_EndOfSeason_ShortRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-6.02211 34.854497 -3.443621 39.221391"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_tanzania_mask_second_in",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_tanzania_mask_second_in",
+      "schema:identifier": "cop4geo_tanzania_mask_second_in",
+      "schema:keywords": [
+        "Tanzania_CropMask_InSeason_ShortRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-6.022258 34.854499 -3.443679 39.221303"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_tanzania_type_endseason",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_tanzania_type_endseason",
+      "schema:identifier": "cop4geo_tanzania_type_endseason",
+      "schema:keywords": [
+        "Tanzania_CropType_EndOfSeason_LongRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-7.38633 34.842997 -3.443704 39.221919"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_tanzania_type_second_end",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_tanzania_type_second_end",
+      "schema:identifier": "cop4geo_tanzania_type_second_end",
+      "schema:keywords": [
+        "Tanzania_CropType_InSeason_LongRains_2021_geo",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-7.386486 34.842991 -3.443589 39.222005"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_tanzania_type_second_in",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_tanzania_type_second_in",
+      "schema:identifier": "cop4geo_tanzania_type_second_in",
+      "schema:keywords": [
+        "Tanzania_CropMask_InSeason_LongRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-7.386486 34.842991 -3.443589 39.222005"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_tza_crops_long_end_2021",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_tza_crops_long_end_2021",
+      "schema:identifier": "cop4geo_tza_crops_long_end_2021",
+      "schema:keywords": [
+        "cop4geo_tza_crops_long_end_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-7.38633 34.842997 -3.443704 39.221919"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_tza_crops_long_end_2021_new",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_tza_crops_long_end_2021_new",
+      "schema:identifier": "cop4geo_tza_crops_long_end_2021_new",
+      "schema:keywords": [
+        "cop4geo_tza_crops_long_end_2021_new",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-7.386383 34.842997 -3.443704 39.221919"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_uganda_mask_endseason",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_uganda_mask_endseason",
+      "schema:identifier": "cop4geo_uganda_mask_endseason",
+      "schema:keywords": [
+        "Uganda_CropMask_EndOfSeason_LongRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "0.935122 30.736724 4.231974 35.005468"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_uganda_mask_firstgrow_in",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_uganda_mask_firstgrow_in",
+      "schema:identifier": "cop4geo_uganda_mask_firstgrow_in",
+      "schema:keywords": [
+        "Uganda_CropMask_InSeason_LongRains_2021_V1",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "0.935122 30.736724 4.231974 35.005468"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_uganda_mask_second_end",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_uganda_mask_second_end",
+      "schema:identifier": "cop4geo_uganda_mask_second_end",
+      "schema:keywords": [
+        "Uganda_CropMask_EndOfSeason_ShortRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "0.935112 30.737646 3.890816 34.278552"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_uganda_mask_second_in",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_uganda_mask_second_in",
+      "schema:identifier": "cop4geo_uganda_mask_second_in",
+      "schema:keywords": [
+        "Uganda_CropMask_InSeason_ShortRains_2021_V1",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "0.935112 30.737646 3.890816 34.278552"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_uganda_type_endseason",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_uganda_type_endseason",
+      "schema:identifier": "cop4geo_uganda_type_endseason",
+      "schema:keywords": [
+        "Uganda_CropType_EndOfSeason_LongRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "0.935122 30.736724 4.231974 35.005468"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_uganda_type_firstgrow_in",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_uganda_type_firstgrow_in",
+      "schema:identifier": "cop4geo_uganda_type_firstgrow_in",
+      "schema:keywords": [
+        "Uganda_CropType_InSeason_LongRains_2021_V1",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "0.935122 30.736724 4.231974 35.005468"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_uganda_type_second_end",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_uganda_type_second_end",
+      "schema:identifier": "cop4geo_uganda_type_second_end",
+      "schema:keywords": [
+        "Uganda_CropType_EndOfSeason_ShortRains_2021",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "0.935112 30.737646 3.890816 34.278552"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop4geo_uganda_type_second_in",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop4geo_uganda_type_second_in",
+      "schema:identifier": "cop4geo_uganda_type_second_in",
+      "schema:keywords": [
+        "Uganda_CropType_InSeason_ShortRains_2021_V1",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "0.935112 30.737646 3.890902 34.278552"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop_klc",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop_klc",
+      "schema:identifier": "cop_klc",
+      "schema:keywords": [
+        "features",
+        "cop_klc"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.710054 -79.319774 27.277735 127.342498"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/cop_klc2",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cop_klc2",
+      "schema:identifier": "cop_klc2",
+      "schema:keywords": [
+        "features",
+        "cop_klc"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.974995 -80.353088 27.542675 128.375809"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/distance_africa",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "distance_africa",
+      "schema:identifier": "distance_africa",
+      "schema:keywords": [
+        "distance_africa",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-46.981379 -25.358747 37.561722 51.415474"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/distance_africa_01092022",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "distance_africa_01092022",
+      "schema:identifier": "distance_africa_01092022",
+      "schema:keywords": [
+        "distance_africa_01092022",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-40.372563 -29.20734 37.561018 72.451216"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/distance_africa_05092022",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "distance_africa_05092022",
+      "schema:identifier": "distance_africa_05092022",
+      "schema:keywords": [
+        "distance_africa_05092022",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-34.78794 -19.761654 37.263019 55.52283"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/electric_grid_classif",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "electric_grid_classif",
+      "schema:identifier": "electric_grid_classif",
+      "schema:keywords": [
+        "features",
+        "electric_grid_classif"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-35.146969 -17.893742 37.621803 59.911655"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/electric_grid_classif2",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "electric_grid_classif2",
+      "schema:identifier": "electric_grid_classif2",
+      "schema:keywords": [
+        "features",
+        "electric_grid_reclass2"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-35.146969 -17.893742 37.621803 59.911655"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/electric_grid_new",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "electric_grid_new",
+      "schema:identifier": "electric_grid_new",
+      "schema:keywords": [
+        "features",
+        "electric_grid_new"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-34.87252 -17.787189 37.576939 48.930286"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/electric_grid_new_gaul",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "electric_grid_new_gaul",
+      "schema:identifier": "electric_grid_new_gaul",
+      "schema:keywords": [
+        "features",
+        "electric_grid_new_gaul"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-34.786728 -17.50827 37.261562 49.383339"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul1_simple",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul1_simple",
+      "schema:identifier": "gaul1_simple",
+      "schema:keywords": [
+        "features",
+        "gaul1_simple"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-60.199837 -181.800003 84.342514 181.800018"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_0_centroids",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_0_centroids",
+      "schema:identifier": "gaul_0_centroids",
+      "schema:keywords": [
+        "features",
+        "gaul_0_centroids"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-29.583193 -15.384873 20.265168 47.37"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_0_labels",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_0_labels",
+      "schema:identifier": "gaul_0_labels",
+      "schema:description": "from gaul_0_centroids",
+      "schema:keywords": [
+        "features",
+        "gaul_0_centroids"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-29.583193 -15.384873 20.265168 47.37"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_0_simple_lines",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_0_simple_lines",
+      "schema:identifier": "gaul_0_simple_lines",
+      "schema:keywords": [
+        "features",
+        "gaul_0_simple_lines"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-56.491501 -181.800003 84.324532 181.800018"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_0_simplified",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_0_simplified",
+      "schema:identifier": "gaul_0_simplified",
+      "schema:keywords": [
+        "features",
+        "gaul_0_simplified"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-56.491501 -181.800003 84.324532 181.800018"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_1",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_1",
+      "schema:identifier": "gaul_1",
+      "schema:keywords": [
+        "features",
+        "adm_level_1"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-46.981379 -118.367087 37.560954 72.494732"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_1_labels",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_1_centroids",
+      "schema:identifier": "gaul_1_labels",
+      "schema:keywords": [
+        "features",
+        "gaul_1_centroids"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-33.058903 -17.265717 24.208147 50.049847"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_2_labels",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_2_centroids",
+      "schema:identifier": "gaul_2_labels",
+      "schema:keywords": [
+        "features",
+        "gaul_2_centroids"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-36.070023 -17.739576 25.964535 51.134983"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_level_0_africa",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_level_0_africa",
+      "schema:identifier": "gaul_level_0_africa",
+      "schema:keywords": [
+        "features",
+        "gaul_level_0_africa"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-46.978923 -17.535208 27.295477 51.412992"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_level_0_africa2",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_level_0_africa2",
+      "schema:identifier": "gaul_level_0_africa2",
+      "schema:keywords": [
+        "features",
+        "gaul_level_0_africa2"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-46.978923 -17.535208 27.295477 51.412992"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_level_0_africa3",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_level_0_africa3",
+      "schema:identifier": "gaul_level_0_africa3",
+      "schema:keywords": [
+        "features",
+        "gaul_level_0_africa3"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-46.978923 -17.535208 27.295477 51.412992"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_level_0_africa4",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_level_0_africa4",
+      "schema:identifier": "gaul_level_0_africa4",
+      "schema:keywords": [
+        "features",
+        "gaul_level_0_africa4"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-46.978923 -17.535208 27.295477 51.412992"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_level_0_highlight",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_level_0_highlight",
+      "schema:identifier": "gaul_level_0_highlight",
+      "schema:keywords": [
+        "features",
+        "gaul_level_0_highlight"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-46.978923 -17.535208 27.295477 51.412992"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_level_1_africa",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_level_1_africa",
+      "schema:identifier": "gaul_level_1_africa",
+      "schema:keywords": [
+        "features",
+        "gaul_level_1_africa"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-46.98138 -17.530172 27.31274 51.415516"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gaul_level_2_africa",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gaul_level_2_africa",
+      "schema:identifier": "gaul_level_2_africa",
+      "schema:keywords": [
+        "gaul_level_2_africa",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-47.352852 -17.874901 27.684212 51.760242"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/ghs_1km_bigger_than_5",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "ghs_1km_bigger_than_5",
+      "schema:identifier": "ghs_1km_bigger_than_5",
+      "schema:keywords": [
+        "ghs_4326_clipped2",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-46.989814 -32.189237 27.298076 65.255726"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/ghs_250m_bigger_than_2",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "ghs_250m_bigger_than_2",
+      "schema:identifier": "ghs_250m_bigger_than_2",
+      "schema:keywords": [
+        "ghs_250m_bigger_than_2",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-34.762 -17.454 27.29658 51.214"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/ghs_250m_bigger_than_5",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "ghs_250m",
+      "schema:identifier": "ghs_250m_bigger_than_5",
+      "schema:keywords": [
+        "SetNull_250m",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-34.762 -17.454 27.295979 51.2161"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/ghs_4326",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "ghs_4326",
+      "schema:identifier": "ghs_4326",
+      "schema:keywords": [
+        "SetNull_GHS_11_4326",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-46.989814 -32.189237 27.298076 65.255726"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/ghs_africa_250m_bigger_than_2",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "ghs_africa_250m_bigger_than_2",
+      "schema:identifier": "ghs_africa_250m_bigger_than_2",
+      "schema:keywords": [
+        "pop_nogrid_SetNull_minor_1",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-34.762 -17.454 37.299419 51.214"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/gsh_250m_bigger_than_5",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gsh_250m_bigger_than_5",
+      "schema:identifier": "gsh_250m_bigger_than_5",
+      "schema:keywords": [
+        "gsh_250m_bigger_than_5",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-34.762 -17.454 27.295979 51.2161"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/health_centres_updated",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "health_centres_updated",
+      "schema:identifier": "health_centres_updated",
+      "schema:keywords": [
+        "features",
+        "health_centres_updated"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-37.439392 -25.754755 37.642529 63.924057"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/health_centres_updated2",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "health_centres_updated2",
+      "schema:identifier": "health_centres_updated2",
+      "schema:keywords": [
+        "features",
+        "health_centres_updated2"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-35.03582 -25.653933 37.425144 63.858631"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/hotspots_cocoa",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "hotspots_cocoa",
+      "schema:identifier": "hotspots_cocoa",
+      "schema:keywords": [
+        "hotspots_cocoa",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "4.36177 -8.599303 8.785164 1.191795"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/hotspots_validation_points",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "hotspots_validation_points",
+      "schema:identifier": "hotspots_validation_points",
+      "schema:keywords": [
+        "features",
+        "hotspots_validation_points"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.953316 -75.078934 24.330397 51.090355"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/lcc_a",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "lcc_a",
+      "schema:identifier": "lcc_a",
+      "schema:keywords": [
+        "features",
+        "lcc_a"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.969532 -80.326294 27.482971 128.327438"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/lcc_a_pol_labels",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "lcc_a_pol_labels",
+      "schema:identifier": "lcc_a_pol_labels",
+      "schema:keywords": [
+        "lcc_a_pol_labels",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.944988 -80.302902 27.158043 128.311584"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/lcc_a_pols",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "lcc_a_pols",
+      "schema:identifier": "lcc_a_pols",
+      "schema:keywords": [
+        "features",
+        "lcc_a_pols"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.704916 -79.293358 27.218355 127.294502"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/lcc_b",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "lcc_b",
+      "schema:identifier": "lcc_b",
+      "schema:keywords": [
+        "features",
+        "lcc_b"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.969532 -80.326294 27.482971 128.327438"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/lcc_b_pol_labels",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "lcc_b_pol_labels",
+      "schema:identifier": "lcc_b_pol_labels",
+      "schema:keywords": [
+        "features",
+        "lcc_b_pol_labels"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.885689 -80.018929 27.148251 128.32431"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/lcc_b_pols",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "lcc_b_pols",
+      "schema:identifier": "lcc_b_pols",
+      "schema:keywords": [
+        "features",
+        "lcc_b_pols"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.871452 -80.326218 27.166235 128.310699"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/lcc_lc_a_highlighted",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "lcc_lc_a_highlighted",
+      "schema:identifier": "lcc_lc_a_highlighted",
+      "schema:keywords": [
+        "features",
+        "lcc_lc_a"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.969532 -80.326294 27.482971 128.327438"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/lcc_lc_a_highlighted_pols",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "lcc_lc_a_pols",
+      "schema:identifier": "lcc_lc_a_highlighted_pols",
+      "schema:keywords": [
+        "features",
+        "lcc_lc_a_pols"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.704916 -79.293358 27.218355 127.294502"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/lcc_lc_b_highlighted",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "lcc_lc_b_highlighted",
+      "schema:identifier": "lcc_lc_b_highlighted",
+      "schema:keywords": [
+        "features",
+        "lcc_lc_b"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.969532 -80.326294 27.482971 128.327438"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/lcc_lc_b_highlighted_pols",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "lcc_lc_b_pols",
+      "schema:identifier": "lcc_lc_b_highlighted_pols",
+      "schema:keywords": [
+        "features",
+        "lcc_lc_b_pols"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.704916 -79.293358 27.218355 127.294502"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/new2_cop4geo_tza_crops_long_end_2021_new",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "new2_cop4geo_tza_crops_long_end_2021_new",
+      "schema:identifier": "new2_cop4geo_tza_crops_long_end_2021_new",
+      "schema:keywords": [
+        "new2_cop4geo_tza_crops_long_end_2021_new",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-7.386383 34.842997 -3.443704 39.221919"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/new_cop4geo_tza_crops_long_end_2021_new",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "new_cop4geo_tza_crops_long_end_2021_new",
+      "schema:identifier": "new_cop4geo_tza_crops_long_end_2021_new",
+      "schema:keywords": [
+        "new_cop4geo_tza_crops_long_end_2021_new",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-7.386383 34.842997 -3.443704 39.221919"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/old_all_lcc_a_pol",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "old_all_lcc_a_pol",
+      "schema:identifier": "old_all_lcc_a_pol",
+      "schema:description": "previously all_lcc_a_dates_pol",
+      "schema:keywords": [
+        "features",
+        "all_lcc_a_dates_pol"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.869907 -9.305083 13.158113 50.747398"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/pop_ghs_bigger_1_5_4326",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "pop_ghs_bigger_1_5_4326",
+      "schema:identifier": "pop_ghs_bigger_1_5_4326",
+      "schema:keywords": [
+        "pop_ghs_bigger_1_5_4326",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-40.375 -29.2075 37.56275 72.45425"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/power_plants_2019_class2",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "power_plants_2019_class2",
+      "schema:identifier": "power_plants_2019_class2",
+      "schema:keywords": [
+        "features",
+        "power_plants_2019_class2"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-49.608135 -25.545792 37.706863 70.073456"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/power_plants_gaul_2",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "power_plants_gaul_2",
+      "schema:identifier": "power_plants_gaul_2",
+      "schema:keywords": [
+        "features",
+        "power_plants_gaul_2"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-34.540031 -25.436707 37.512531 50.657707"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/present_lc_a",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "present_lc_a",
+      "schema:identifier": "present_lc_a",
+      "schema:keywords": [
+        "features",
+        "present_lc_a"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.710056 -79.314827 27.27293 127.342163"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/present_lc_a_pol_labels",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "present_lc_a_pol_labels",
+      "schema:identifier": "present_lc_a_pol_labels",
+      "schema:keywords": [
+        "features",
+        "present_lc_a_pol_labels"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.928366 -80.3162 27.496552 128.341675"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/present_lc_a_pols",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "present_lc_a_pols",
+      "schema:identifier": "present_lc_a_pols",
+      "schema:keywords": [
+        "features",
+        "present_lc_a_pols"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.710056 -79.314827 27.27293 127.342163"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/present_lc_b",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "present_lc_b",
+      "schema:identifier": "present_lc_b",
+      "schema:keywords": [
+        "features",
+        "present_lc_b"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.974972 -80.348114 27.537846 128.375443"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/present_lc_b_pol_labels",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "present_lc_b_pol_labels",
+      "schema:identifier": "present_lc_b_pol_labels",
+      "schema:keywords": [
+        "features",
+        "present_lc_b_pol_labels"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.922844 -80.327118 27.525328 128.375031"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/present_lc_b_pols",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "present_lc_b_pols",
+      "schema:identifier": "present_lc_b_pols",
+      "schema:keywords": [
+        "features",
+        "present_lc_b_pols"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-25.710056 -79.314827 27.27293 127.342163"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/protected_areas",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "protected_areas",
+      "schema:identifier": "protected_areas",
+      "schema:keywords": [
+        "features",
+        "protected_areas"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-35.140556 -79.357368 27.067932 58.203087"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/refugee_camps_geoserver",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "refugee_camps_geoserver",
+      "schema:identifier": "refugee_camps_geoserver",
+      "schema:description": "refugee_camps in dbase",
+      "schema:keywords": [
+        "features",
+        "refugee_camps"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-21.071402 -2.6835 15.7066 43.2537"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/slumaps_kisumu_landcover",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "slumaps_kisumu_landcover",
+      "schema:identifier": "slumaps_kisumu_landcover",
+      "schema:keywords": [
+        "slumaps_kisumu_landcover",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-0.131939 34.739386 -0.075868 34.796879"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/slumaps_nairobi_landcover",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "slumaps_nairobi_landcover",
+      "schema:identifier": "slumaps_nairobi_landcover",
+      "schema:keywords": [
+        "slumaps_nairobi_landcover",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-1.325682 36.689431 -1.179887 36.974295"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#layer/slumaps_ouaga_landcover",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "slumaps_ouaga_landcover",
+      "schema:identifier": "slumaps_ouaga_landcover",
+      "schema:keywords": [
+        "slumaps_ouaga_landcover",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "12.231471 -1.675783 12.484321 -1.39024"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-90.885117 -181.800003 9105733.10871 983424.987097"
+      }
+    }
+  ],
+  "schema:name": "OGC Web Map Service at https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms",
+  "schema:identifier": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities",
+  "schema:description": "OGC Web Map Service at https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: OGC Web Map Service at https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms",
+    "schema:about": {
+      "@id": "https://geospatial.jrc.ec.europa.eu/geoserver/hotspots/wms?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18"
+  }
+}

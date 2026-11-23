@@ -1,0 +1,3152 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Feature Service 1.1.0",
+    "schema:termCode": "OGC:WFS"
+  },
+  "schema:version": "1.1.0",
+  "schema:name": "DCE",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Ifremer"
+    }
+  ],
+  "schema:termsOfService": "Fees: conditions unknown; Access constraints: None",
+  "schema:conditionsOfAccess": [
+    "None"
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://sextant.ifremer.fr/services/wfs/dce",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeFeatureType",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://sextant.ifremer.fr/services/wfs/dce",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "XMLSCHEMA",
+          "text/xml; subtype=gml/2.1.2",
+          "text/xml; subtype=gml/3.1.1"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://sextant.ifremer.fr/services/wfs/dce",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml; subtype=gml/2.1.2",
+          "text/xml; subtype=gml/3.1.1",
+          "application/vnd.geo+json",
+          "SHP",
+          "TAB",
+          "MIF",
+          "KML",
+          "GPKG",
+          "GPX",
+          "ODS",
+          "XLSX",
+          "CSV",
+          "FGB"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "Transaction",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://sextant.ifremer.fr/services/wfs/dce",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_MACROALGUES_INTERDITAL",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Macroalgues (domaine intertidal)",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_MACROALGUES_INTERDITAL",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.230833 -4.959994 48.890892 -1.419999"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_COMPLEMENT_INTERTIDAL",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Complément Macroalgues (domaine intertidal)",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_COMPLEMENT_INTERTIDAL",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.501416 -4.516667 48.725478 -2.63355"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_MACROALGUES_SUBTIDAL",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Macroalgues (domaine subtidal)",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_MACROALGUES_SUBTIDAL",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.24763 -5.14172 48.88877 -1.59216"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_ENQUETE_MACROALGUES",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Enquête - Macroalgues (domaine subtidal)",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_ENQUETE_MACROALGUES",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.720882 -3.888274 48.756181 -2.017073"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_CHIMIE_EAU",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Chimie eau",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_CHIMIE_EAU",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.278148 -5.049082 48.870717 -1.082481"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_CHIMIE_COQUILLAGE",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "OSPAR - Chimie coquillages",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_CHIMIE_COQUILLAGE",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.163319 -4.609307 48.820696 -1.162945"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_COMPLEMENT_CHIMIE_EAU",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Complément - 2008-2009 - Chimie eau",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_COMPLEMENT_CHIMIE_EAU",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.056243 -4.533382 48.814847 -1.207083"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_CHIMIE_SEDIMENT",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Complément - 2008-2009 - Chimie sédiment",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_CHIMIE_SEDIMENT",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.301454 -4.534853 48.82319 -1.275493"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_CHIMIE_SEDIMENT",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Chimie sédiment",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_CHIMIE_SEDIMENT",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.166631 -4.586126 48.833135 -1.0746"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_PHYSICO_CHIMIE",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Physico-chimie",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_PHYSICO_CHIMIE",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.278148 -5.115 48.870717 -1.082481"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_CHIMIE_IMPOSEX",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "OSPAR - Chimie Imposex",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_CHIMIE_IMPOSEX",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.109153 -4.774398 48.727179 -1.144051"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_INVERTEBRES_INTERTIDAL",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Invertébrés (domaine intertidal)",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_INVERTEBRES_INTERTIDAL",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.207528 -4.7647 48.823584 -1.423817"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_INVERTEBRES_SUBTIDAL",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Invertébrés (domaine subtidal)",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_INVERTEBRES_SUBTIDAL",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.212311 -4.893783 48.708333 -1.283503"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_ENQUETE_INVERTEBRES",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Enquête - Invertébrés (domaine intertidal)",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_ENQUETE_INVERTEBRES",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.626 -1.838 48.641927 -1.656889"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_COMPLEMENT_MAERL",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Complément - Maërl",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_OSPAR_COMPLEMENT_MAERL",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.04815 -4.854266 48.787283 -2.237082"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_HERBIERS_ZOSTERA_MARINA",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Herbiers à Zostera (Zostera) marina",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_HERBIERS_ZOSTERA_MARINA",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.613053 -4.949865 48.878013 -2.038885"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_HERBIERS_ZOSTERA_NOLTEI",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Herbiers à Zostera (Zosterella) noltei",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_HERBIERS_ZOSTERA_NOLTEI",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.207528 -3.103874 48.773489 -1.269656"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_PHYTOPLANCTON",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Phytoplancton",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_PHYTOPLANCTON",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.278148 -5.115 48.870717 -1.37695"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_POISSONS",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Poissons",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_RESEAU_POISSONS",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.276461 -4.558089 48.776408 -1.163187"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues opportunistes 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues opportunistes 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues opportunistes 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues opportunistes 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_PROLIF_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Angiospermes 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Angiospermes 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Angiospermes 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Angiospermes 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_ANGIOSPERME_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Autres polluants 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Autres polluants 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Autres polluants 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Autres polluants 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_AUTRES_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Contaminants chimiques 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Contaminants chimiques 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Contaminants chimiques 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Contaminants chimiques 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Hydromorphologie 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Hydromorphologie 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Hydromorphologie 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Hydromorphologie 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_HYDROMORPHO_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_IMPOSEX_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Imposex 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_IMPOSEX_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Invertebrés benthiques 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat écologique 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat écologique 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat écologique 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Invertebrés benthiques 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Invertebrés benthiques 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Invertebrés benthiques 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Invertebrés benthiques intertidaux 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Invertebrés benthiques intertidaux 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Invertebrés benthiques intertidaux 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Invertebrés benthiques intertidaux 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_INTER_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bratagne - Invertebrés benthiques subtidaux 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bratagne - Invertebrés benthiques subtidaux 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bratagne - Invertebrés benthiques subtidaux 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bratagne - Invertebrés benthiques subtidaux 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_BENTH_SUB_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues intertidales 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues intertidales 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues intertidales 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues subtidales 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues subtidales 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues subtidales 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues intertidales 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_INTER_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Macroalgues subtidales 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MACRO_SUB_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Maerl 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Maerl 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Maerl 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Maerl 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_MAERL_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat chimique 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat chimique 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat chimique 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat chimique 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_CHIMIQUE_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_ECOLOGIQUE_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat écologique 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_ECOLOGIQUE_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat global 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat global 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat global 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Etat global 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_ETAT_GLOBAL_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Métaux lourds 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Métaux lourds 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Métaux lourds 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Métaux lourds 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_ML_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Nutriments 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Nutriments 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Nutriments 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Nutriments 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_NUTRI_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire bretagne - Oxygène dissous 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire bretagne - Oxygène dissous 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire bretagne - Oxygène dissous 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire bretagne - Oxygène dissous 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_OXYGENE_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Pesticides 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Pesticides 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Pesticides 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Pesticides 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_PEST_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Phytoplancton 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Phytoplancton 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Phytoplancton 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Phytoplancton 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_PHYTO_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Poissons 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Poissons 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Poissons 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Poissons 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POISSONS_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Polluants industriels 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Polluants industriels 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Polluants industriels 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Polluants industriels 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_CHIMIQUE_POL_INDU_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Polluants spécifiques 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Polluants spécifiques 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Polluants spécifiques 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Polluants spécifiques 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_POLLUANTS_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Salinité 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Salinité 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Salinité 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Salinité 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_SALINITE_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Température 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Température 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Température 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Température 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TEMP_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2011_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Transparence 2011",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2011_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2013_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Transparence 2013",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2013_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2012_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Transparence 2012",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2012_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#layer/ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2010_P",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Loire Bretagne - Transparence 2010",
+      "schema:identifier": "ATLAS_DCE_LOIRE_BRETAGNE_ME_QUALITE_TRANSPARENCE_2010_P",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.816975 -5.463641 49.00509 -1.225226"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "45.816975 -5.463641 49.00509 -1.0746"
+      }
+    }
+  ],
+  "schema:identifier": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities",
+  "schema:description": "DCE",
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "https://sextant.ifremer.fr/services/wfs/dce",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities",
+    "schema:name": "WFS 1.1.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WFS capabilities for: DCE",
+    "schema:about": {
+      "@id": "https://sextant.ifremer.fr/services/wfs/dce?service=WFS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WFS 1.1.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Ifremer Sextant"
+    }
+  }
+}

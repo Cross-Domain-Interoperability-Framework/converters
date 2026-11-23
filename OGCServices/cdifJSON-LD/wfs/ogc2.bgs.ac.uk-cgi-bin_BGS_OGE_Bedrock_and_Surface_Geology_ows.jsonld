@@ -1,0 +1,565 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Feature Service 2.0.0",
+    "schema:termCode": "OGC:WFS"
+  },
+  "schema:version": "2.0.0",
+  "schema:name": "BGS OGE bedrock and surface geology",
+  "schema:description": "The 1:625k DiGMap data covering the whole of the United Kingdom is available in this OGC WFS service for your personal, non-commercial use only and was being served as a contribution to the OneGeology-Europe initiative, which has now ended; see https://www.europe-geology.eu/project/onegeology-europe/ for details. The contents of this WFS service were not intended for direct use but were transformed by a mediator layer into separate WFS services which provided data in GeoSciML; the mediator is no longer maintained. For information about more of the British Geological Survey's maps that are available digitally please visit https://www.bgs.ac.uk/products/digitalmaps/digmapgb.html.",
+  "schema:keywords": [
+    "OneGeology",
+    "MD_LANG@ENG",
+    "MD_DATE@2019-01-22"
+  ],
+  "schema:url": "https://www.bgs.ac.uk/products/digitalmaps/digmapgb.html",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "British Geological Survey (BGS)",
+      "schema:email": "enquiries@bgs.ac.uk",
+      "schema:telephone": "+44 (0)115 936 3100"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Mr Garry Baker",
+        "schema:jobTitle": "Chief Digital Officer",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "British Geological Survey (BGS)"
+        },
+        "schema:email": "enquiries@bgs.ac.uk",
+        "schema:telephone": "+44 (0)115 936 3100"
+      }
+    }
+  ],
+  "schema:termsOfService": "Fees: none; Access constraints: The 1:625k DiGMap data is available for free download for your personal, teaching, research or non-commercial use as described at https://www.bgs.ac.uk/products/digitalmaps/digmapgb_625.html. Your use of any information provided by the British Geological Survey (BGS) is at your own risk. Neither BGS nor the Natural Environment Research Council (NERC) gives any warranty, condition or representation as to the quality, accuracy or completeness of the information or its suitability for any use or purpose. All implied conditions relating to the quality or suitability of the information, and all liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
+  "schema:conditionsOfAccess": [
+    "The 1:625k DiGMap data is available for free download for your personal, teaching, research or non-commercial use as described at https://www.bgs.ac.uk/products/digitalmaps/digmapgb_625.html. Your use of any information provided by the British Geological Survey (BGS) is at your own risk. Neither BGS nor the Natural Environment Research Council (NERC) gives any warranty, condition or representation as to the quality, accuracy or completeness of the information or its suitability for any use or purpose. All implied conditions relating to the quality or suitability of the information, and all liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeFeatureType",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "text/xml; subtype=gml/3.2.1",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/2.1.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "text/xml; subtype=gml/3.2.1",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/2.1.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetPropertyValue",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "text/xml; subtype=gml/3.2.1",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/2.1.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ListStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities#layer/ms:OGE_1M_surface_GeologicStructure",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "1GE BGS 1M surface geologic structure",
+      "schema:identifier": "ms:OGE_1M_surface_GeologicStructure",
+      "schema:description": "BGS surface fault geology for OneGeology Europe.",
+      "schema:keywords": [
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom",
+        "serviceprovider@British Geological Survey",
+        "dataprovider@British Geological Survey",
+        "thematic@Harmonized geology",
+        "thematic@Structure",
+        "thematic@Surface geology",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2010",
+        "thematic@Geology",
+        "thematic@Fault"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.9678 -8.01697 60.8368 0.715821"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13480426.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities#layer/ms:OGE_1M_bedrock_GeologicStructure",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "1GE BGS 1M bedrock geologic structure",
+      "schema:identifier": "ms:OGE_1M_bedrock_GeologicStructure",
+      "schema:description": "BGS bedrock fault geology for OneGeology Europe. The bedrock fault layer shows faults with superficial deposits (Quaternary and Recent) removed.",
+      "schema:keywords": [
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom",
+        "serviceprovider@British Geological Survey",
+        "dataprovider@British Geological Survey",
+        "thematic@Harmonized structure",
+        "thematic@Bedrock",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2010",
+        "thematic@Geology",
+        "thematic@Structure",
+        "thematic@Fault"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.9678 -8.09708 60.8368 0.781767"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13480426.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities#layer/ms:OGE_1M_surface_GeologicUnit",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "1GE BGS 1M surface geologic unit",
+      "schema:identifier": "ms:OGE_1M_surface_GeologicUnit",
+      "schema:description": "BGS surface geology for OneGeology Europe. The surface layer shows the rocks and superficial deposits present at the land surface.",
+      "schema:keywords": [
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom",
+        "serviceprovider@British Geological Survey",
+        "dataprovider@British Geological Survey",
+        "thematic@Harmonized geology",
+        "thematic@Surface geology",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2010",
+        "Geosciml_portrayal_age_or_litho_queryable",
+        "Geosciml_lite_age_or_litho_queryable_2",
+        "Geosciml_lite_age_or_litho_queryable_mapserver",
+        "thematic@Geology",
+        "thematic@Lithology"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.8639 -8.64839 60.8608 1.76748"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13480426.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities#layer/ms:OGE_1M_surface_GeologicUnit_age",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "1GE BGS 1M surface geologic unit age",
+      "schema:identifier": "ms:OGE_1M_surface_GeologicUnit_age",
+      "schema:description": "BGS surface geology for OneGeology Europe. The surface layer shows the rocks and superficial deposits present at the land surface.",
+      "schema:keywords": [
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom",
+        "serviceprovider@British Geological Survey",
+        "dataprovider@British Geological Survey",
+        "thematic@Harmonized geology",
+        "thematic@Surface geology",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2010",
+        "Geosciml_portrayal_age_or_litho_queryable",
+        "Geosciml_lite_age_or_litho_queryable_2",
+        "Geosciml_lite_age_or_litho_queryable_mapserver",
+        "thematic@Geology"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.8639 -8.64839 60.8608 1.76748"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13480426.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities#layer/ms:OGE_1M_bedrock_GeologicUnit",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "1GE BGS 1M bedrock geologic unit",
+      "schema:identifier": "ms:OGE_1M_bedrock_GeologicUnit",
+      "schema:description": "BGS bedrock geology for OneGeology Europe. The bedrock layer shows the rocks with superficial deposits (Quaternary and Recent) removed.",
+      "schema:keywords": [
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom",
+        "serviceprovider@British Geological Survey",
+        "dataprovider@British Geological Survey",
+        "thematic@Harmonized geology",
+        "thematic@Bedrock",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2010",
+        "Geosciml_portrayal_age_or_litho_queryable",
+        "Geosciml_lite_age_or_litho_queryable_2",
+        "Geosciml_lite_age_or_litho_queryable_mapserver",
+        "thematic@Geology",
+        "thematic@Lithology"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.8638 -8.64839 60.861 1.76755"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13480426.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities#layer/ms:OGE_1M_bedrock_GeologicUnit_age",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "1GE BGS 1M bedrock geologic unit age",
+      "schema:identifier": "ms:OGE_1M_bedrock_GeologicUnit_age",
+      "schema:description": "BGS bedrock geology for OneGeology Europe. The bedrock layer shows the rocks with superficial deposits (Quaternary and Recent) removed.",
+      "schema:keywords": [
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom",
+        "serviceprovider@British Geological Survey",
+        "dataprovider@British Geological Survey",
+        "thematic@Harmonized geology",
+        "thematic@Harmonized age",
+        "thematic@Bedrock",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2010",
+        "Geosciml_portrayal_age_or_litho_queryable",
+        "Geosciml_lite_age_or_litho_queryable_2",
+        "Geosciml_lite_age_or_litho_queryable_mapserver",
+        "thematic@Geology"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.8638 -8.64839 60.861 1.76755"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13480426.html"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "49.8638 -8.64839 60.861 1.76755"
+      }
+    }
+  ],
+  "schema:identifier": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities",
+    "schema:name": "WFS 2.0.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WFS capabilities for: BGS OGE bedrock and surface geology",
+    "schema:about": {
+      "@id": "https://ogc2.bgs.ac.uk/cgi-bin/BGS_OGE_Bedrock_and_Surface_Geology/ows?service=WFS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WFS 2.0.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "British Geological Survey"
+    }
+  }
+}

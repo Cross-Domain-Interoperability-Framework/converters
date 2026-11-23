@@ -1,0 +1,372 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs?service=WFS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Feature Service 2.0.0",
+    "schema:termCode": "OGC:WFS"
+  },
+  "schema:version": "2.0.0",
+  "schema:name": "Amplitude van het getij - NAP boven LAT",
+  "schema:description": "Amplitude van het getij: verschil tussen (NAP boven ETRS89) - (LAT boven ETRS89)",
+  "schema:keywords": [
+    "WFS",
+    "Inspire",
+    "accessPoint"
+  ],
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Ministerie van Defensie, Koninklijke Marine, Dienst der Hydrografie",
+      "schema:email": "hydro.admin@defensie.nl",
+      "schema:telephone": "0703162800"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Hoofd Gegevens Beheer",
+        "schema:jobTitle": "Bronleverancier",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Ministerie van Defensie, Koninklijke Marine, Dienst der Hydrografie"
+        },
+        "schema:email": "hydro.admin@defensie.nl",
+        "schema:telephone": "0703162800"
+      }
+    }
+  ],
+  "schema:termsOfService": "Fees: NONE",
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeFeatureType",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "application/json",
+          "csv",
+          "geopackage",
+          "gml3",
+          "gml32",
+          "gpkg",
+          "json",
+          "text/csv",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetPropertyValue",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ListStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "CreateStoredQuery",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DropStoredQuery",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "LockFeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureWithLock",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "application/json",
+          "csv",
+          "geopackage",
+          "gml3",
+          "gml32",
+          "gpkg",
+          "json",
+          "text/csv",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "Transaction",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs?service=WFS&request=GetCapabilities#layer/NAP_LAT:OF.MultiPointObservation",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "MultiPointObservation",
+      "schema:identifier": "NAP_LAT:OF.MultiPointObservation",
+      "schema:description": "NAP quasi geoid height above ETRS89 ellipsoid (m) minus Lowest astronomical tide height above ETRS89 ellipsoid(m)",
+      "schema:keywords": [
+        "features",
+        "Points",
+        "Inspire",
+        "Elevation"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.325 2.54 55.7625 7.31"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "51.325 2.54 55.7625 7.31"
+      }
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "describedby",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.nationaalgeoregister.nl/geonetwork/srv/api/records/0c4fe37c-4020-4727-b67d-dd854e14a83a/formatters/xml",
+        "schema:name": "INSPIRE service metadata"
+      }
+    }
+  ],
+  "schema:inLanguage": "dut",
+  "schema:identifier": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs?service=WFS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs?service=WFS&request=GetCapabilities",
+    "schema:name": "WFS 2.0.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs?service=WFS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WFS capabilities for: Amplitude van het getij - NAP boven LAT",
+    "schema:about": {
+      "@id": "https://inspire.bathy.online/geoserver/NAP_LAT/wfs?service=WFS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WFS 2.0.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "PDOK (Netherlands NGR)"
+    }
+  }
+}

@@ -1,0 +1,532 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:name": "Service de consultation (WMS, WMTS) des limites administratives sur la région Auvergne-Rhône-Alpes",
+  "schema:description": "Les couches ont été produites à partir des données Admin Express IGN sur les 12 départements de la région",
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Administrative units",
+      "schema:inDefinedTermSet": "GEMET"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "boundaries",
+      "schema:inDefinedTermSet": "ISO"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "location",
+      "schema:inDefinedTermSet": "ISO"
+    },
+    "IGN",
+    "Admin Express",
+    "Auvergne-Rhône-Alpes",
+    "OGC:WMS",
+    "WMS 1.3.0",
+    "WMTS 1.0.0",
+    "Service d'accès aux limites administratives",
+    "CRAIG",
+    "tiles.craig.fr",
+    "tiles.craig.fr/administratif"
+  ],
+  "schema:url": "https://tiles.craig.fr/administratif/ows",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Centre Régional Auvergne-Rhône-Alpes de l'Information Géographique (CRAIG)",
+      "schema:email": "admin@craig.fr"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Landry Breuil",
+        "schema:jobTitle": "Responsable Informatique",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Centre Régional Auvergne-Rhône-Alpes de l'Information Géographique (CRAIG)"
+        },
+        "schema:email": "admin@craig.fr"
+      }
+    }
+  ],
+  "schema:termsOfService": "Fees: None; Access constraints: Le service est disponible en libre accès",
+  "schema:conditionsOfAccess": [
+    "Le service est disponible en libre accès"
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://tiles.craig.fr/administratif/ows?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://tiles.craig.fr/administratif/ows?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/png",
+          "image/jpeg"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://tiles.craig.fr/administratif/ows?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/plain",
+          "text/html",
+          "text/xml",
+          "application/json"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetLegendGraphic",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://tiles.craig.fr/administratif/ows?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/png",
+          "image/jpeg"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities#layer/commune",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Communes",
+      "schema:identifier": "commune",
+      "schema:description": "Communes (Admin Express 2026 IGN)",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-85.051129 -180 85.051129 180"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities#layer/chef_lieu_commune",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Chef-lieux de commune",
+      "schema:identifier": "chef_lieu_commune",
+      "schema:description": "Chef-lieux de commune (Admin Express 2026 IGN)",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-85.051129 -180 85.051129 180"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities#layer/epci",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "EPCI",
+      "schema:identifier": "epci",
+      "schema:description": "Etablissements publics de coopération intercommunale (Admin Express 2026 IGN)",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-85.051129 -180 85.051129 180"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities#layer/canton",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Cantons",
+      "schema:identifier": "canton",
+      "schema:description": "Cantons (Admin Express 2026 IGN)",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-85.051129 -180 85.051129 180"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities#layer/departement",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Départements",
+      "schema:identifier": "departement",
+      "schema:description": "Départements (Admin Express 2026 IGN)",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-85.051129 -180 85.051129 180"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities#layer/region",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Régions",
+      "schema:identifier": "region",
+      "schema:description": "Régions (Admin Express 2026 IGN)",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-85.051129 -180 85.051129 180"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/7e43e024-06ed-4756-ad13-351e6b37691b/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/7e43e024-06ed-4756-ad13-351e6b37691b"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-85.051129 -180 85.051129 180"
+      }
+    }
+  ],
+  "schema:identifier": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: Service de consultation (WMS, WMTS) des limites administratives sur la région Auvergne-Rhône-Alpes",
+    "schema:about": {
+      "@id": "https://tiles.craig.fr/administratif/ows?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "GeoNetwork demo"
+    }
+  }
+}

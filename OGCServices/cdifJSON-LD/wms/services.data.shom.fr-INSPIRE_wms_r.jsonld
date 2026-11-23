@@ -1,0 +1,3922 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:name": "Service de consultation WMS Raster des données du SHOM",
+  "schema:description": "Ce service permet la consultation des données du SHOM au travers d'un flux WMS",
+  "schema:keywords": [
+    "WMS",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "infoMapAccessService",
+      "schema:inDefinedTermSet": "ISO"
+    }
+  ],
+  "schema:url": "http://wxs-shom-fr.shom3.svc.meshcore.net",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "SHOM",
+      "schema:email": "data-support@shom.fr"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "SHOM",
+        "schema:jobTitle": "owner",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "SHOM"
+        },
+        "schema:email": "data-support@shom.fr"
+      }
+    }
+  ],
+  "schema:termsOfService": "Fees: Soumis à abonnement sauf pour les thématiques INSPIRE qui sont en accès libre; Access constraints: otherRestrictions",
+  "schema:conditionsOfAccess": [
+    "otherRestrictions"
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://services.data.shom.fr/INSPIRE/wms/r?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://services.data.shom.fr/INSPIRE/wms/r?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/png",
+          "image/jpeg",
+          "image/tiff",
+          "image/geotiff",
+          "image/x-bil;bits=32"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://services.data.shom.fr/INSPIRE/wms/r?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/plain"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/BATHYELLI_ZH_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Bathyelli v2.1 Zéro Hydrographique / ellipsoïde (CD/GRS80)",
+      "schema:identifier": "BATHYELLI_ZH_PYR_PNG_3857_WMSR",
+      "schema:description": "Surface Bathyelli v2.1 Zéro Hydrographique / ellipsoïde (CD/GRS80)",
+      "schema:keywords": [
+        "bathyelli zh"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "40.9064 -8.03132 51.6499 10.6362"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYELLI_2_1.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/CABLES_PYR-PNG_WLD_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Câbles et conduites",
+      "schema:identifier": "CABLES_PYR-PNG_WLD_3857_WMSR",
+      "schema:description": "Câbles et conduites",
+      "schema:keywords": [
+        "câbles"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-27.707969 -178.404656 51.738126 176.493158"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_CABLES.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS2D_WMSR_VMAX_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants - Vitesses maximales",
+      "schema:identifier": "COURANTS2D_WMSR_VMAX_3857",
+      "schema:description": "Courants - Vitesses maximales",
+      "schema:keywords": [
+        "courants"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "41 -9 52 4"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS2D_VMAX.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS_3D_FROMVEUR_10M_FOND_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants 3D - Fromveur 10m du fond",
+      "schema:identifier": "COURANTS_3D_FROMVEUR_10M_FOND_WMSR_3857",
+      "schema:description": "Courants 3D - Fromveur 10m du fond",
+      "schema:keywords": [
+        "courants 3D fromveur"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.24 -5.39 48.61 -4.63"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_COURANTS3D_FROMVEUR.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS_3D_FROMVEUR_FOND_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants 3D - Fromveur fond",
+      "schema:identifier": "COURANTS_3D_FROMVEUR_FOND_WMSR_3857",
+      "schema:description": "Courants 3D - Fromveur fond",
+      "schema:keywords": [
+        "courants 3D fromveur"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.24 -5.39 48.61 -4.63"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_COURANTS3D_FROMVEUR.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS_3D_FROMVEUR_MI_PROF_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants 3D - Fromveur mi profondeur",
+      "schema:identifier": "COURANTS_3D_FROMVEUR_MI_PROF_WMSR_3857",
+      "schema:description": "Courants 3D - Fromveur mi profondeur",
+      "schema:keywords": [
+        "courants 3D fromveur"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.24 -5.39 48.61 -4.63"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_COURANTS3D_FROMVEUR.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS_3D_FROMVEUR_SURF_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants 3D - Fromveur surface",
+      "schema:identifier": "COURANTS_3D_FROMVEUR_SURF_WMSR_3857",
+      "schema:description": "Courants 3D - Fromveur surface",
+      "schema:keywords": [
+        "courants 3D fromveur"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.24 -5.39 48.61 -4.63"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_COURANTS3D_FROMVEUR.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS_3D_LOIRE_FOND_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants 3D - Pays de la Loire - fond",
+      "schema:identifier": "COURANTS_3D_LOIRE_FOND_WMSR_3857",
+      "schema:description": "Courants 3D - Pays de la Loire - fond",
+      "schema:keywords": [
+        "courants 3D Loire"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.62 -3.38 47.7 -1.86"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_COURANTS3D_LOIRE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS_3D_LOIRE_MI_PROF_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants 3D - Pays de la Loire - mi profondeur",
+      "schema:identifier": "COURANTS_3D_LOIRE_MI_PROF_WMSR_3857",
+      "schema:description": "Courants 3D - Pays de la Loire - mi profondeur",
+      "schema:keywords": [
+        "courants 3D Loire"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.62 -3.38 47.7 -1.86"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_COURANTS3D_LOIRE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS_3D_LOIRE_SURF_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants 3D - Pays de la Loire - surface",
+      "schema:identifier": "COURANTS_3D_LOIRE_SURF_WMSR_3857",
+      "schema:description": "Courants 3D - Pays de la Loire - surface",
+      "schema:keywords": [
+        "courants 3D Loire"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.62 -3.38 47.7 -1.86"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_COURANTS3D_LOIRE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS_3D_MANCHE_FOND_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants 3D - Manche - fond",
+      "schema:identifier": "COURANTS_3D_MANCHE_FOND_WMSR_3857",
+      "schema:description": "Courants 3D - Manche - fond",
+      "schema:keywords": [
+        "courants 3D manche"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.29 -5.31 51.01 2.05"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_COURANTS3D_MANCHE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS_3D_MANCHE_MI_PROF_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants 3D - Manche - mi profondeur",
+      "schema:identifier": "COURANTS_3D_MANCHE_MI_PROF_WMSR_3857",
+      "schema:description": "Courants 3D - Manche - mi profondeur",
+      "schema:keywords": [
+        "courants 3D manche"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.29 -5.31 51.01 2.05"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_COURANTS3D_MANCHE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/COURANTS_3D_MANCHE_SURF_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courants 3D - Manche - surface",
+      "schema:identifier": "COURANTS_3D_MANCHE_SURF_WMSR_3857",
+      "schema:description": "Courants 3D - Manche - surface",
+      "schema:keywords": [
+        "courants 3D surface"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.29 -5.31 51.01 2.05"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_COURANTS3D_MANCHE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/DAM_CLASS_ZONES_MAR_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Classes des zones maritimes",
+      "schema:identifier": "DAM_CLASS_ZONES_MAR_WMSR",
+      "schema:description": "Classes des zones maritimes",
+      "schema:keywords": [
+        "classes navigation"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "37.849595 -11.054826 55.268977 14.179134"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_DAM_CLASS_ZONES_MAR.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/DAM_LIMIT_CAT_NAVIGATION_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Catégories de navigation par les navires professionnels",
+      "schema:identifier": "DAM_LIMIT_CAT_NAVIGATION_WMSR",
+      "schema:description": "Catégories de navigation par les navires professionnels",
+      "schema:keywords": [
+        "catégorie navigation"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-24.252162 -150.928214 55.268977 169.23865"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_DAM_LIMITE_CAT_NAVIGATION.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/DELMAR_PYR-PNG_WLD_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Délimitations maritimes",
+      "schema:identifier": "DELMAR_PYR-PNG_WLD_3857_WMSR",
+      "schema:description": "Délimitations maritimes ZEE, mer territoriale, zone contigue, frontières maritimes, plateau continental, lignes de base droite",
+      "schema:keywords": [
+        "délimitations maritimes"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-53.472611 -179.217148 51.642734 179.571605"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_DELMAR.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/DST_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Dispositifs de séparation du trafic",
+      "schema:identifier": "DST_PYR_PNG_3857_WMSR",
+      "schema:description": "Dispositifs de séparation du trafic mai 2021",
+      "schema:keywords": [
+        "Dispositif de séparation du trafic",
+        "DST",
+        "Trafic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "40.89941 -6.26832 51.983093 9.790996"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_DST.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/DUNES_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Répartition des dunes du Plateau continental français",
+      "schema:identifier": "DUNES_PYR_PNG_3857_WMSR",
+      "schema:description": "Répartition des dunes du Plateau continental français",
+      "schema:keywords": [
+        "Dunes"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.70244 -8.370121 51.717958 2.761772"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=HOM_GEOL_DUNES.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/EPAVES_PYR-PNG_WLD_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Épaves et obstructions",
+      "schema:identifier": "EPAVES_PYR-PNG_WLD_3857_WMSR",
+      "schema:description": "Épaves et obstructions",
+      "schema:keywords": [
+        "epaves"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-50.6179 -178.727749 52.184569 173.111338"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_EPAVES.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/ESPACES_MARITIMES_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Espaces maritimes de souveraineté ou de juridiction",
+      "schema:identifier": "ESPACES_MARITIMES_PYR_PNG_3857_WMSR",
+      "schema:description": "Sovereignty or jurisdiction maritime spaces",
+      "schema:keywords": [
+        "espaces maritimes français"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-53.472611 -179.934955 51.642734 179.571605"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_ESPACES_MARITIMES.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/ETAT_PNH_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Etat d'avancement du programme national d'hydrographie (PNH)",
+      "schema:identifier": "ETAT_PNH_3857_WMSR",
+      "schema:description": "Etat d'avancement du programme national d'hydrographie (PNH)",
+      "schema:keywords": [
+        "PNH"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-67.089306 -179.934947 51.642733 179.571597"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_ETAT_PNH.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/INFORMATIONS_PORTUAIRES_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Informations portuaires",
+      "schema:identifier": "INFORMATIONS_PORTUAIRES_PYR_PNG_3857_WMSR",
+      "schema:description": "informations portuaires",
+      "schema:keywords": [
+        "ports"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-22.605041 -178.185944 51.318417 168.200675"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_PORTS.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_LIDAR_CORSE_2017_2018_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Corse",
+      "schema:identifier": "L3D_LIDAR_CORSE_2017_2018_PYR_3857_WMSR",
+      "schema:description": "Partie maritime Litto3D® - Corse 2017-2018 - MNT, altimétrie littorale, prondeur, altitude",
+      "schema:keywords": [
+        "lidar Corse"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "41.293902 8.509855 43.049537 9.65557"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_L3D_MAR_CORSE_2017_2018.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_LIDAR_POLYNESIE_BOR_2015_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Lidar Polynésie Française 2015 - Bora Bora",
+      "schema:identifier": "L3D_LIDAR_POLYNESIE_BOR_2015_WMSR_3857",
+      "schema:description": "Lidar Polynésie Française 2015 - Bora Bora",
+      "schema:keywords": [
+        "Lidar Polynésie"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-16.566331 -151.800674 -16.430757 -151.679006"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_L3D_LIDAR_POLYNESIE_BOR_2015.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_LIDAR_POLYNESIE_MOO_2015_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Lidar Polynésie Française 2015 - Moorea",
+      "schema:identifier": "L3D_LIDAR_POLYNESIE_MOO_2015_WMSR_3857",
+      "schema:description": "Lidar Polynésie Française 2015 - Moorea",
+      "schema:keywords": [
+        "Lidar Polynésie"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-17.616909 -149.938237 -17.462764 -149.740105"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_L3D_LIDAR_POLYNESIE_MOO_2015.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_LIDAR_POLYNESIE_TAHARUU_2015_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Lidar Polynésie Française 2015 - Taharuu",
+      "schema:identifier": "L3D_LIDAR_POLYNESIE_TAHARUU_2015_WMSR_3857",
+      "schema:description": "Lidar Polynésie Française 2015 - Taharuu",
+      "schema:keywords": [
+        "Lidar Polynésie"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-17.802277 -149.508992 -17.75629 -149.433587"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_L3D_LIDAR_POLYNESIE_TAHARUU_2015.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_LIDAR_POLYNESIE_TAHITI_2015_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Lidar Polynésie Française 2015 - Tahiti",
+      "schema:identifier": "L3D_LIDAR_POLYNESIE_TAHITI_2015_WMSR_3857",
+      "schema:description": "Tahiti SAU 2015 V. 20160630",
+      "schema:keywords": [
+        "Lidar Polynésie"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-17.764593 -149.638173 -17.476939 -149.382764"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_L3D_LIDAR_POLYNESIE_TAHITI_2015.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_LIDAR_RANCE_2019_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Lidar Rance",
+      "schema:identifier": "L3D_LIDAR_RANCE_2019_WMSR_3857",
+      "schema:description": "Lidar Rance 2019",
+      "schema:keywords": [
+        "lidar Rance"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.453932 -2.064499 48.630749 -1.899532"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LIDAR_RANCE_2019.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_LIDAR_ROCHES_DOUVRES_BARNOUIC_2022_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Roches Douvres - Barnouic",
+      "schema:identifier": "L3D_LIDAR_ROCHES_DOUVRES_BARNOUIC_2022_WMSR_3857",
+      "schema:description": "Lidar Topo-Bathy Roches-Douvres - Barnouic",
+      "schema:keywords": [
+        "Lidar Roches Douvres Barnouic"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.004371 -2.87367 49.131237 -2.767525"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LIDAR_ROCHES_DOUVRES_BARNOUIC_2022.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_MAR_LR_2011_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Partie maritime Litto3D® - Languedoc-Roussillon 2011",
+      "schema:identifier": "L3D_MAR_LR_2011_PYR_3857_WMSR",
+      "schema:description": "Partie maritime Litto3D® - Languedoc-Roussillon 2011",
+      "schema:keywords": [
+        "Litto3D, Litto3D"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "42.422744 3.024308 43.560462 4.457187"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_L3D_MAR_LR_2011.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_MAR_LR_2014_2015_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Partie maritime Litto3D® - Languedoc-Roussillon 2014-2015",
+      "schema:identifier": "L3D_MAR_LR_2014_2015_WMSR_3857",
+      "schema:description": "Partie maritime Litto3D® - Languedoc-Roussillon 2014-2015",
+      "schema:keywords": [
+        "L3D languedoc roussillon"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "42.512786 2.963435 43.577969 4.445049"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_L3D_MAR_LR_2014_2015.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_MAR_MORBIHAN_2015_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Partie maritime Litto3D® - Morbihan",
+      "schema:identifier": "L3D_MAR_MORBIHAN_2015_PYR_3857_WMSR",
+      "schema:description": "Partie maritime Litto3D® - Morbihan 2015",
+      "schema:keywords": [
+        "Litto3D, Litto3D"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.514595 -2.995156 47.65519 -2.685022"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_L3D_MAR_MORBIHAN_2015.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_MAR_NHDF_2016_2018_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Normandie et Hauts-De-France",
+      "schema:identifier": "L3D_MAR_NHDF_2016_2018_PYR_3857_WMSR",
+      "schema:description": "Partie maritime Litto3D® - Normandie et Hauts-De-France 2016-201",
+      "schema:keywords": [
+        "NHDF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.56967 -1.978359 51.174147 2.962375"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_L3D_MAR_NHDF_2016_2018.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/L3D_MAR_PNMI_2012_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Partie maritime Litto3D® - Parc Naturel Marin d'Iroise",
+      "schema:identifier": "L3D_MAR_PNMI_2012_PYR_3857_WMSR",
+      "schema:description": "Partie maritime Litto3D® - Parc Naturel Marin d'Iroise 2012",
+      "schema:keywords": [
+        "litto3d"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.136223 -5.05349 48.568904 -4.257762"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_L3D_MAR_PNMI_2012.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LIMITES_SALURE_EAUX_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Limites de salure des eaux",
+      "schema:identifier": "LIMITES_SALURE_EAUX_WMSR",
+      "schema:description": "Limites de salure des eaux 20 08 2018",
+      "schema:keywords": [
+        "limite salure des eaux"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-21.39735 -61.669516 51.329521 55.777567"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_LIMITE_LSE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LIMITES_TRANSVERSALES_MER_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Limites transversales de la mer",
+      "schema:identifier": "LIMITES_TRANSVERSALES_MER_WMSR",
+      "schema:description": "Limites transversales de la mer 20 08 2018",
+      "schema:keywords": [
+        "limites transversales mer"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-21.39735 -61.669516 51.329521 55.777567"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_LIMITE_LTM.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LIMITE_INSCRIPTION_MARITIME_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Limites des affaires maritimes",
+      "schema:identifier": "LIMITE_INSCRIPTION_MARITIME_WMSR",
+      "schema:description": "Limites des affaires maritimes 20 08 2018",
+      "schema:keywords": [
+        "limites inscription maritime"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-21.39735 -61.669516 51.329521 55.777567"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_LIMITE_LIM.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_BZH_2018_2021_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D® - Bretagne",
+      "schema:identifier": "LITTO3D_BZH_2018_2021_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - Bretagne 2018 - 2021",
+      "schema:keywords": [
+        "Litto3D Bretagne"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.236386 -3.869034 49.007021 -1.37304"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_BZH_2018_2021.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_EPARSES_2012_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D® - Eparses 2012",
+      "schema:identifier": "LITTO3D_EPARSES_2012_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - Eparses 2012",
+      "schema:keywords": [
+        "litto3D eparses"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-22.411501 40.320641 -11.44267 54.543872"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_EPARSES_2012.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_FINISTR_2014_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D® - Finistère",
+      "schema:identifier": "LITTO3D_FINISTR_2014_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - Finistère 2014",
+      "schema:keywords": [
+        "litto3d"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.580909 -5.312291 48.778816 -3.066503"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_FINISTR_2014.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_GUAD_2016_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D® - Guadeloupe 2016",
+      "schema:identifier": "LITTO3D_GUAD_2016_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - Guadeloupe 2016",
+      "schema:keywords": [
+        "Litto3D"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "15.787845 -61.830235 16.528371 -60.978022"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_GUAD_2016.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_LR_2009_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D® - Languedoc-Roussillon",
+      "schema:identifier": "LITTO3D_LR_2009_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - Languedoc-Roussillon 2009",
+      "schema:keywords": [
+        "litto3d languedoc roussillon"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "42.422761 2.902353 43.761665 4.527245"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_LR_2009.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_MART_2016_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D® - Martinique 2016",
+      "schema:identifier": "LITTO3D_MART_2016_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - Martinique 2016",
+      "schema:keywords": [
+        "litto3D"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "14.372455 -61.23463 14.899324 -60.7453"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_MART_2016.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_MAYOT_2012_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D® - Mayotte 2012",
+      "schema:identifier": "LITTO3D_MAYOT_2012_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - Mayotte 2012",
+      "schema:keywords": [
+        "litto3d mayotte"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-13.080131 44.917123 -12.510448 45.313244"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_MAYOT_2012.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_NAQ_2020_2022_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D Nouvelle-Aquitaine",
+      "schema:identifier": "LITTO3D_NAQ_2020_2022_PYR_3857_WMSR",
+      "schema:description": "Litto3D Nouvelle-Aquitaine 2020-2022",
+      "schema:keywords": [
+        "Litto3D Nouvelle-Aquitaine"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.290592 -1.80207 46.343195 -0.825422"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_NAQ_2020_2022.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_PACA_2015_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D® - Provence-Alpes-Côte d'Azur",
+      "schema:identifier": "LITTO3D_PACA_2015_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - PACA 2015",
+      "schema:keywords": [
+        "litto3d"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "42.974854 4.347301 43.858663 7.537626"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_PACA_2015.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_REUNION_2016_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D® - Réunion 2016",
+      "schema:identifier": "LITTO3D_REUNION_2016_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - Réunion 2016",
+      "schema:keywords": [
+        "littO3D"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-21.399809 55.199844 -20.847097 55.844278"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_REUNION_2016.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_SPM_2023_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D Saint-Pierre-et-Miquelon",
+      "schema:identifier": "LITTO3D_SPM_2023_PYR_PNG_3857_WMSR",
+      "schema:description": "Litto3D Saint-Pierre-et-Miquelon 2023",
+      "schema:keywords": [
+        "Litto3D Saint-Pierre-et-Miquelon"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.716952 -56.539346 47.158679 -56.09583"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_SPM_2023.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_STBARTHELEMY_2019_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Litto3D® - Saint-Barthélemy 2019 v2",
+      "schema:identifier": "LITTO3D_STBARTHELEMY_2019_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - Saint-Barthélemy 2019 v2",
+      "schema:keywords": [
+        "litto3D Saint Barthélémy"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "17.844595 -62.971678 17.989287 -62.763951"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_STBARTH_2019.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/LITTO3D_STMARTIN_2019_PYR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Saint-Martin 2019 v2",
+      "schema:identifier": "LITTO3D_STMARTIN_2019_PYR_3857_WMSR",
+      "schema:description": "Litto3D® - Saint-Martin 2019 v2",
+      "schema:keywords": [
+        "litto3D Saint Martin"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "17.971214 -63.188994 18.17909 -62.896036"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BATHYMETRIE_LITTO3D_STMARTIN_2019.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MARNAGE_INF_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Marnage coefficient 20",
+      "schema:identifier": "MARNAGE_INF_3857_WMSR",
+      "schema:description": "Marnage coefficient 20",
+      "schema:keywords": [
+        "marnage inf"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.187205 -7.877031 51.453452 2.959034"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_MARNAGES_MGA_INF.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MARNAGE_ME_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Marnage coefficient 45",
+      "schema:identifier": "MARNAGE_ME_3857_WMSR",
+      "schema:description": "Marnage coefficient 45",
+      "schema:keywords": [
+        "marnage me"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.187205 -7.877031 51.453452 2.959034"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_MARNAGES_MGA_ME.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MARNAGE_SUP_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Marnage coefficient 120",
+      "schema:identifier": "MARNAGE_SUP_3857_WMSR",
+      "schema:description": "Marnage coefficient 120",
+      "schema:keywords": [
+        "marnage sup"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.187205 -7.877031 51.453452 2.959034"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_MARNAGES_MGA_SUP.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MARNAGE_VE_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Marnage coefficient 95",
+      "schema:identifier": "MARNAGE_VE_3857_WMSR",
+      "schema:description": "Marnage coefficient 95",
+      "schema:keywords": [
+        "marnage ve"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.187205 -7.877031 51.453452 2.959034"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_MARNAGES_MGA_VE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_ANTN100m_HOMONIM_PBMA_4326_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT de façade de Saint-Martin et Saint-Barthélemy",
+      "schema:identifier": "MNT_ANTN100m_HOMONIM_PBMA_4326_WMSR",
+      "schema:description": "MNT de façade de Saint-Martin et Saint-Barthélemy",
+      "schema:keywords": [
+        "MNT Saint Martin Saint Barthelemy"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "17.5995 -63.5005 18.5005 -62.4995"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_ANTN100m_HOMONIM_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_ANTS100m_HOMONIM_4326_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT de façade de la Guadeloupe et de la Martinique",
+      "schema:identifier": "MNT_ANTS100m_HOMONIM_4326_WMSR",
+      "schema:description": "MNT de façade de la Guadeloupe et de la Martinique",
+      "schema:keywords": [
+        "MNT Guadeloupe Martinique"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "14.0995 -62.3005 16.9005 -60.2995"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_ANTS100m_HOMONIM_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_ATL100m_HOMONIM_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT de façade Atlantique",
+      "schema:identifier": "MNT_ATL100m_HOMONIM_PBMA_3857_WMSR",
+      "schema:description": "MNT Bathymétrique de façade Atlantique (Projet Homonim)",
+      "schema:keywords": [
+        "mnt homonim"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.2495 -6.0005 52.9005 5.8505"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_ATL100m_HOMONIM_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_ARCACHON_HOMONIM_20m_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier Bassin d'Arcachon et ses abords",
+      "schema:identifier": "MNT_COTIER_ARCACHON_HOMONIM_20m_PBMA_3857_WMSR",
+      "schema:description": "MNT topo-bathymétrique côtier du bassin d'Arcachon et ses abords (Projet HOMONIM)",
+      "schema:keywords": [
+        "MNT Arcachon"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "44.4299 -1.4101 45.1901 -0.9499"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_ARCACHON_HOMONIM_20m_WGS84_ZNEG.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_BAIE_SJL_TANDEM_20m_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier Saint-Jean-de-Luz",
+      "schema:identifier": "MNT_COTIER_BAIE_SJL_TANDEM_20m_3857_WMSR",
+      "schema:description": "MNT topo-bathymétrique côtier de la baie de Saint-Jean-de-Luz et de ses abords",
+      "schema:keywords": [
+        "mnt cotier"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.3742 -1.7346 43.4552 -1.611"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_BAIE_SJL_TANDEM_20m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_CLIPPERTON_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier Clipperton",
+      "schema:identifier": "MNT_COTIER_CLIPPERTON_3857_WMSR",
+      "schema:description": "MNT côtier Clipperton",
+      "schema:keywords": [
+        "MNT",
+        "CLIPPERTON",
+        "PASSION"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "10.2001 -109.3499 10.4385 -109.1243"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_PASSION_CLIPPERTON_20m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_DETROIT_PDC_20m_PBMA_WMSR_3857",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier détroit du Pas-de-Calais",
+      "schema:identifier": "MNT_COTIER_DETROIT_PDC_20m_PBMA_WMSR_3857",
+      "schema:description": "MNT côtier détroit du Pas-de-Calais",
+      "schema:keywords": [
+        "MNT côtier"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.499843 0.833543 51.333556 2.543523"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_DETROIT_PDC_TANDEM_20m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_GIRONDE_AMONT_20m_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier estuaire de la Gironde Amont",
+      "schema:identifier": "MNT_COTIER_GIRONDE_AMONT_20m_PBMA_3857_WMSR",
+      "schema:description": "MNT côtier de l'estuaire de la Gironde Amont",
+      "schema:keywords": [
+        "MNT Gironde"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "44.805342 -0.779226 45.186629 -0.255125"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_GIRONDE_AMONT_HOMONIM_20m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_GIRONDE_AVAL_20m_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier estuaire de la Gironde Aval",
+      "schema:identifier": "MNT_COTIER_GIRONDE_AVAL_20m_PBMA_3857_WMSR",
+      "schema:description": "MNT côtier de l'estuaire de la Gironde Aval",
+      "schema:keywords": [
+        "MNT Gironde"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.18276 -1.508797 45.759591 -0.648502"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_GIRONDE_AVAL_HOMONIM_20m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_GNB_PAPI_SM_20m_PBMA_4326_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT topo-bathymétrique côtier d'une partie du golfe normand-breton",
+      "schema:identifier": "MNT_COTIER_GNB_PAPI_SM_20m_PBMA_4326_WMSR",
+      "schema:description": "MNT topo-bathymétrique côtier d'une partie du golfe normand-breton",
+      "schema:keywords": [
+        "MNT golfe Normand Breton"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.5499 -2.1501 48.9501 -1.2999"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_GNB_PAPI_SM_20m_WGS84_ZNEG.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_ILE_DE_RE_5m_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT topo-bathymétrique côtier des abords de l’île de Ré",
+      "schema:identifier": "MNT_COTIER_ILE_DE_RE_5m_PBMA_3857_WMSR",
+      "schema:description": "MNT topo-bathymétrique côtier des abords de l’île de Ré",
+      "schema:keywords": [
+        "MNT Ile de Ré"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.124675 -1.722925 46.318024 -1.445175"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_ILE_DE_RE_HOMONIM_5m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_MOOREA_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier de Moorea",
+      "schema:identifier": "MNT_COTIER_MOOREA_PBMA_3857_WMSR",
+      "schema:description": "MNT côtier de Moorea",
+      "schema:keywords": [
+        "MNT Moorea"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-18.0005 -150.0505 -17.3495 -148.9995"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_MOOREA_20m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_MORBIHAN_TANDEM_20m_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier de la zone \"Morbihan\"",
+      "schema:identifier": "MNT_COTIER_MORBIHAN_TANDEM_20m_PBMA_3857_WMSR",
+      "schema:description": "MNT topo-bathymétrique côtier de la zone \"Morbihan\" à 20m (Projet TANDEM)",
+      "schema:keywords": [
+        "mnt cotier"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.1999 -3.33343 47.7251 -2.36663"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_MORBIHAN_TANDEM_20m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_PERTUIS_HOMONIM_20m_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier des Pertuis Charentais",
+      "schema:identifier": "MNT_COTIER_PERTUIS_HOMONIM_20m_PBMA_3857_WMSR",
+      "schema:description": "MNT Topo-Bathymétrique Côtier des Pertuis Charentais (Projet Homonim)",
+      "schema:keywords": [
+        "mnt cotier"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.745702 -1.703833 46.454298 -0.942009"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_PERTUIS_HOMONIM_20m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_PORT_BSM_TANDEM_10m_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier du port de Boulogne-sur-Mer",
+      "schema:identifier": "MNT_COTIER_PORT_BSM_TANDEM_10m_PBMA_3857_WMSR",
+      "schema:description": "MNT topo-bathymétrique côtier du port de Boulogne-sur-Mer et de ses abords à 10m (Projet TANDEM)",
+      "schema:keywords": [
+        "mnt cotier"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.69495 1.51245 50.79475 1.62175"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_PORT_BSM_TANDEM_10m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_PORT_SM_PAPI_SM_5m_PBMA_4326_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT topo-bathymétrique côtier du port de Saint-Malo et ses abords",
+      "schema:identifier": "MNT_COTIER_PORT_SM_PAPI_SM_5m_PBMA_4326_WMSR",
+      "schema:description": "MNT topo-bathymétrique côtier du port de Saint-Malo et ses abords",
+      "schema:keywords": [
+        "MNT port Saint Malo"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.609975 -2.110025 48.690025 -1.979975"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_PORT_SM_PAPI_SM_5m_WGS84_ZNEG.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_COTIER_TAHITI_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT côtier de Tahiti",
+      "schema:identifier": "MNT_COTIER_TAHITI_PBMA_3857_WMSR",
+      "schema:description": "MNT côtier de Tahiti",
+      "schema:keywords": [
+        "MNT_TAHITI"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-18.0005 -150.0505 -17.3495 -148.9995"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_COTIER_TAHITI_20m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_FACADE_CLIPPERTON_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT de façade de Clipperton",
+      "schema:identifier": "MNT_FACADE_CLIPPERTON_3857_WMSR",
+      "schema:description": "MNT de façade de Clipperton",
+      "schema:keywords": [
+        "PASSION",
+        "MNT",
+        "CLIPPERTON"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "9.7805 -109.8195 10.6795 -108.6805"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_FACADE_PASSION_CLIPPERTON_100m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_FACADE_TAHITI_MOOREA_100m_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT bathymétrique de façade de Tahiti et Moorea",
+      "schema:identifier": "MNT_FACADE_TAHITI_MOOREA_100m_PBMA_3857_WMSR",
+      "schema:description": "MNT bathymétrique de façade de Tahiti et Moorea",
+      "schema:keywords": [
+        "MNT Tahiti Moorea"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-18.0005 -150.0505 -17.3495 -148.9995"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_FACADE_TAHITI_MOOREA_100m_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_GUY100m_HOMONIM_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT de façade de la Guyane",
+      "schema:identifier": "MNT_GUY100m_HOMONIM_PBMA_3857_WMSR",
+      "schema:description": "MNT Bathymétrique de façade de la Guyane",
+      "schema:keywords": [
+        "mnt guyane"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "3.2495 -54.7505 8.0005 -49.7495"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_GUY100m_HOMONIM_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_MAY100m_HOMONIM_PBMA_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT de façade de Mayotte",
+      "schema:identifier": "MNT_MAY100m_HOMONIM_PBMA_PYR_PNG_3857_WMSR",
+      "schema:description": "MNT de façade de Mayotte",
+      "schema:keywords": [
+        "MNT Mayotte"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-13.5005 44.4995 -12.2495 45.7505"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_MAY100m_HOMONIM_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_MED100m_CORSE_HOMONIM_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT de façade de la Corse",
+      "schema:identifier": "MNT_MED100m_CORSE_HOMONIM_PBMA_3857_WMSR",
+      "schema:description": "MNT Bathymétrique de façade de la Corse",
+      "schema:keywords": [
+        "mnt homonim"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "40.6995 7.6995 43.7005 10.4005"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_MED100m_CORSE_HOMONIM_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_MED100m_GDL_CA_HOMONIM_PBMA_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT de façade du Golfe du Lion - Côte d'Azur",
+      "schema:identifier": "MNT_MED100m_GDL_CA_HOMONIM_PBMA_3857_WMSR",
+      "schema:description": "MNT Bathymétrique de façade du Golfe du Lion - Côte d'Azur",
+      "schema:keywords": [
+        "mnt homonim"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "41.6995 2.8995 44.4005 7.9005"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_MED100m_GDL_CA_HOMONIM_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_NC100m_PBMA_4326_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT de façade Nouvelle Calédonie",
+      "schema:identifier": "MNT_NC100m_PBMA_4326_WMSR",
+      "schema:description": "MNT Façade Nouvelle Calédonie",
+      "schema:keywords": [
+        "MNT Nouvelle Calédonie"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-24.6005 162.3995 -16.9995 169.3005"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_NC100m_WGS84_ZNEG.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/MNT_REU100m_HOMONIM_PBMA_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "MNT de façade de la Réunion",
+      "schema:identifier": "MNT_REU100m_HOMONIM_PBMA_PYR_PNG_3857_WMSR",
+      "schema:description": "MNT de façade de la Réunion",
+      "schema:keywords": [
+        "MNT Réunion"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-22.0005 54.4995 -20.2495 56.5005"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MNT_REU100m_HOMONIM_WGS84.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/NDF_PYR-PNG_WLD_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Natures de fond au 50 000",
+      "schema:identifier": "NDF_PYR-PNG_WLD_3857_WMSR",
+      "schema:description": "Natures de fond au 50 000",
+      "schema:keywords": [
+        "sédimentologie"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "41.054874 -5.293538 51.363437 9.942076"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=HOM_GEOL_NATURES_FOND_50.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/REGLEMENTATION_NAVIGATION_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Réglementation - Navigation",
+      "schema:identifier": "REGLEMENTATION_NAVIGATION_PYR_PNG_3857_WMSR",
+      "schema:description": "Réglementation - Navigation 07/2021",
+      "schema:keywords": [
+        "réglementation"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-52.686513 -178.197402 51.546528 174.441006"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_REGLEMENTATION_NAVIGATION.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/SAR_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Zones de recherches et secours (SAR)",
+      "schema:identifier": "SAR_PYR_PNG_3857_WMSR",
+      "schema:description": "Zones de recherches et secours (SAR) 2018",
+      "schema:keywords": [
+        "sar"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-84.943414 -179.663057 84.943414 179.663057"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_SAR.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/SEDIM_MONDIALE_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Carte sédimentaire mondiale",
+      "schema:identifier": "SEDIM_MONDIALE_PYR_PNG_3857_WMSR",
+      "schema:description": "Carte sédimentaire mondiale",
+      "schema:keywords": [
+        "sedim mondiale"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-84.943414 -179.663057 84.943414 179.663057"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=HOM_GEOL_SEDIM_MONDIALE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/TCH-LINE_PYR-PNG_WLD_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Trait de côte DOM-COM",
+      "schema:identifier": "TCH-LINE_PYR-PNG_WLD_3857_WMSR",
+      "schema:description": "Trait de côte DOM-COM HISTOLITT®",
+      "schema:keywords": [
+        "trait de côte"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-21.391136 -63.153316 47.146583 55.839148"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_TCH.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/TCHR_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Trait de Côte Haute Résolution - Îles subantarctiques françaises",
+      "schema:identifier": "TCHR_3857_WMSR",
+      "schema:description": "Trait de Côte Haute Résolution - Îles subantarctiques françaises",
+      "schema:keywords": [
+        "TCHR"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-50.135237 49.874613 -37.74258 77.685093"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_TCHR.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/TOPONYMIE_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Toponymie marine",
+      "schema:identifier": "TOPONYMIE_PYR_PNG_3857_WMSR",
+      "schema:description": "Toponymie marine",
+      "schema:keywords": [
+        "toponymes marins"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-79.588445 -180 87.485248 180"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_TOPONYMES.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/TYPE_MAREE_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Types de marée",
+      "schema:identifier": "TYPE_MAREE_PYR_PNG_3857_WMSR",
+      "schema:description": "Types de marée",
+      "schema:keywords": [
+        "types marée"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-85.06 -179.9 85.06 179.9"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_TYPE_MAREE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/ZONES_MAREE_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Zones de marée",
+      "schema:identifier": "ZONES_MAREE_PYR_PNG_3857_WMSR",
+      "schema:description": "Zones de marée",
+      "schema:keywords": [
+        "zones de marée"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "39.881248 -10.174191 51.692038 10.371514"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=MAREE_COURANTS_ZONES_MAREE.xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#layer/ZONEX_PYR_PNG_3857_WMSR",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Zones d'exercices",
+      "schema:identifier": "ZONEX_PYR_PNG_3857_WMSR",
+      "schema:description": "Zones d'exercices",
+      "schema:keywords": [
+        "ZONEX"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "41.155919 -10.017966 48.678532 10.717006"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://services.data.shom.fr/geonetwork/INSPIRE?service=CSW&version=2.0.2&request=GetRecordById&Id=BDML_ZONEX.xml"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-85.06 -180 87.485248 180"
+      }
+    }
+  ],
+  "schema:identifier": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: Service de consultation WMS Raster des données du SHOM",
+    "schema:about": {
+      "@id": "https://services.data.shom.fr/INSPIRE/wms/r?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18"
+  }
+}

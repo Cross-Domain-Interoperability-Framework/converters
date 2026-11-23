@@ -1,0 +1,1150 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Feature Service 2.0.0",
+    "schema:termCode": "OGC:WFS"
+  },
+  "schema:version": "2.0.0",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Cadac",
+      "schema:email": "support@cadac.com"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Cadac Support",
+        "schema:jobTitle": "Support",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Cadac"
+        },
+        "schema:email": "support@cadac.com"
+      }
+    }
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeFeatureType",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "GML2",
+          "KML",
+          "SHAPE-ZIP",
+          "application/json",
+          "application/vnd.google-earth.kml xml",
+          "application/vnd.google-earth.kml+xml",
+          "csv",
+          "gml3",
+          "gml32",
+          "json",
+          "text/csv",
+          "text/xml; subtype=gml/2.1.2",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetPropertyValue",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ListStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "CreateStoredQuery",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DropStoredQuery",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "LockFeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureWithLock",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "GML2",
+          "KML",
+          "SHAPE-ZIP",
+          "application/json",
+          "application/vnd.google-earth.kml xml",
+          "application/vnd.google-earth.kml+xml",
+          "csv",
+          "gml3",
+          "gml32",
+          "json",
+          "text/csv",
+          "text/xml; subtype=gml/2.1.2",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "Transaction",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:shg_aed_locaties",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "AED locaties",
+      "schema:identifier": "org44:shg_aed_locaties",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.974951 3.314596 47.97496 3.314609"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_arc_beleid",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Archeologiebeleid",
+      "schema:identifier": "org44:O10002_shg_arc_beleid",
+      "schema:keywords": [
+        "archeologie",
+        "archeologiebeleid"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.67723 4.60979 52.898847 4.873125"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_beeldbpld_panden",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Beeldbepalende panden",
+      "schema:identifier": "org44:O10002_shg_beeldbpld_panden",
+      "schema:keywords": [
+        "beeldbepalende",
+        "panden"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.770879 4.672599 52.85229 4.831881"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_bl_zonneparken_gr",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Beleid zonneparken grootschalig",
+      "schema:identifier": "org44:O10002_shg_bl_zonneparken_gr",
+      "schema:keywords": [
+        "features",
+        "shg_bl_zonneparken_gr"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.688193 4.65191 52.893203 4.870979"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_bl_zonneparken_kl",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Beleid zonneparken kleinschalig",
+      "schema:identifier": "org44:O10002_shg_bl_zonneparken_kl",
+      "schema:keywords": [
+        "features",
+        "shg_bl_zonneparken_kl"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.67723 4.60979 52.898847 4.873125"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_bomen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Boomstatus",
+      "schema:identifier": "org44:O10002_shg_bomen",
+      "schema:keywords": [
+        "features",
+        "shg_bomen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.678753 4.631492 52.892821 4.869446"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_cultuurhistorie",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Cultuurhistorie",
+      "schema:identifier": "org44:O10002_shg_cultuurhistorie",
+      "schema:keywords": [
+        "cultuurhistorie"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.674294 4.623211 52.966737 4.905592"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_gebouwen_ng",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Dorpshuizen, buurthuizen etc.",
+      "schema:identifier": "org44:O10002_shg_gebouwen_ng",
+      "schema:keywords": [
+        "features",
+        "shg_gebouwen_ng"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.707707 4.637439 52.851231 4.848969"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_invasieve_exoten",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Exoten soort",
+      "schema:identifier": "org44:O10002_shg_invasieve_exoten",
+      "schema:keywords": [
+        "features",
+        "shg_invasieve_exoten"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.689219 4.630975 52.881015 4.86273"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_dorpsraden",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Gebiedscontactfunctionarissen",
+      "schema:identifier": "org44:O10002_shg_dorpsraden",
+      "schema:keywords": [
+        "dorpsraden",
+        "wijkverenigingen",
+        "gebiedscontactfunctionarissen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.67723 4.60979 52.898847 4.873125"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:shg_brk_gemeente",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Gem. kad. eigendommen",
+      "schema:identifier": "org44:shg_brk_gemeente",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.974951 3.314596 47.97496 3.314609"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_gemeentegrens_0441",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Gemeentegrens",
+      "schema:identifier": "org44:O10002_shg_gemeentegrens_0441",
+      "schema:keywords": [
+        "features",
+        "shg_gemeentegrens_0441"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.67723 4.60979 52.898847 4.873126"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_gem_gebouwen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Gemeentelijke gebouwen",
+      "schema:identifier": "org44:O10002_shg_gem_gebouwen",
+      "schema:keywords": [
+        "features",
+        "shg_gem_gebouwen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.705878 4.629489 52.879161 4.849963"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_monumenten_gem",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Gemeentelijke monumenten",
+      "schema:identifier": "org44:O10002_shg_monumenten_gem",
+      "schema:keywords": [
+        "monumenten"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.693133 4.63287 52.895101 4.855536"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_cbs_hitstrdlg_2025as",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Kwetsbare groep hittestress 0-3 jaar (%)",
+      "schema:identifier": "org44:O10002_cbs_hitstrdlg_2025as",
+      "schema:keywords": [
+        "features",
+        "cbs_hitstrdlg_2025"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.677303 4.615774 53.199836 5.190547"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_cbs_hitstrdlg_2025bs",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Kwetsbare groep hittestress 75 plus jaar (%)",
+      "schema:identifier": "org44:O10002_cbs_hitstrdlg_2025bs",
+      "schema:keywords": [
+        "features",
+        "cbs_hitstrdlg_2025"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.677303 4.615934 53.190851 5.190547"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_ontmoetingsplekken",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Ontmoetingsplekken",
+      "schema:identifier": "org44:O10002_shg_ontmoetingsplekken",
+      "schema:keywords": [
+        "features",
+        "shg_ontmoetingsplekken"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.686739 4.637897 52.852165 4.849381"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_pnh_plancapaciteit",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Plancapaciteit.nl (publiek deel)",
+      "schema:identifier": "org44:O10002_pnh_plancapaciteit",
+      "schema:keywords": [
+        "features",
+        "pnh_plancapaciteit"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.709957 4.637353 52.868003 4.862742"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_projecten_obr",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Projecten openbare ruimte",
+      "schema:identifier": "org44:O10002_shg_projecten_obr",
+      "schema:keywords": [
+        "features",
+        "shg_ove_projecten"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.680607 4.633643 52.875569 4.863022"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_monumenten_prov",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Provinciale monumenten",
+      "schema:identifier": "org44:O10002_shg_monumenten_prov",
+      "schema:keywords": [
+        "monumenten"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.67433 4.630917 52.851636 4.905592"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_rce_monumenten_rijk",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Rijksmonumenten",
+      "schema:identifier": "org44:O10002_rce_monumenten_rijk",
+      "schema:keywords": [
+        "monumenten"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.685153 4.642398 52.873131 4.851545"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_scholen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Scholen",
+      "schema:identifier": "org44:O10002_shg_scholen",
+      "schema:keywords": [
+        "features",
+        "shg_scholen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.707136 4.641687 52.850777 4.851552"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_schoon_belonen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Schoon Belonen beschikbaarheid gebieden",
+      "schema:identifier": "org44:O10002_shg_schoon_belonen",
+      "schema:keywords": [
+        "features",
+        "shg_schoon_belonen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.698497 4.625912 52.862033 4.863941"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_pnh_stolpen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Stolpen",
+      "schema:identifier": "org44:O10002_pnh_stolpen",
+      "schema:keywords": [
+        "stolpen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.678144 4.585302 52.894494 4.868842"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:shg_strandpalen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Strandpalen",
+      "schema:identifier": "org44:shg_strandpalen",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.732318 4.623229 52.859468 4.727775"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_strooiroutes_gem",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Strooiroutes",
+      "schema:identifier": "org44:O10002_shg_strooiroutes_gem",
+      "schema:keywords": [
+        "features",
+        "shg_strooiroutes_gem"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.680564 4.625964 52.897201 4.867708"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_houtopstand_wdv",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Waardevolle houtopstanden",
+      "schema:identifier": "org44:O10002_shg_houtopstand_wdv",
+      "schema:keywords": [
+        "features",
+        "shg_houtopstand_wdv"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.678924 4.630594 52.896442 4.869673"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_welstandsgebieden",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Welstandsgebieden",
+      "schema:identifier": "org44:O10002_shg_welstandsgebieden",
+      "schema:keywords": [
+        "features",
+        "shg_welstandsgebieden"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.67723 4.60979 52.898847 4.873126"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_welstandsniveau",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Welstandsniveau",
+      "schema:identifier": "org44:O10002_shg_welstandsniveau",
+      "schema:keywords": [
+        "shg_welstandsniveau",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.67723 4.60979 52.898854 4.874604"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#layer/org44:O10002_shg_welstandsnota",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Welstandsnota",
+      "schema:identifier": "org44:O10002_shg_welstandsnota",
+      "schema:keywords": [
+        "shg_welstandsnota",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.67723 4.60979 52.898847 4.873125"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "47.974951 3.314596 53.199836 5.190547"
+      }
+    }
+  ],
+  "schema:name": "OGC Web Feature Service at https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+  "schema:identifier": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities",
+  "schema:description": "OGC Web Feature Service at https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:termsOfService": "not specified",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities",
+    "schema:name": "WFS 2.0.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WFS capabilities for: OGC Web Feature Service at https://app.cadac.com/carto/services/schagen/geoserver/wfs",
+    "schema:about": {
+      "@id": "https://app.cadac.com/carto/services/schagen/geoserver/wfs?service=WFS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WFS 2.0.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "PDOK (Netherlands NGR)"
+    }
+  }
+}
