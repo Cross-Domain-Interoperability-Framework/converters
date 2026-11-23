@@ -1,0 +1,64 @@
+mapping_set_id: https://w3id.org/cdif/mappings/ogc-services-to-cdif
+mapping_set_title: OGC WMS 1.3 and WFS 2.0 / 1.1 capabilities to CDIF
+mapping_set_description: |
+  Property correspondences applied by OGCServices/ogc_services_to_cdif.py (a
+  WMS_Capabilities or WFS_Capabilities GetCapabilities response -> CDIF
+  JSON-LD, one record per service). This table drives the converter: it is
+  read at runtime, and each transform names a shaper (tf_<transform>) in
+  ogc_services_to_cdif.py.
+
+  The record describes the service as the ISO converter describes a service
+  record: @type schema:Dataset and schema:WebAPI, with the CDIF webAPI block's
+  serviceType, termsOfService, documentation (the capabilities URL) and one
+  potentialAction per operation. Each named WMS layer or WFS feature type is
+  listed under schema:dataset as a schema:CreativeWork; as a schema:Dataset,
+  CDIF would require each to carry a full record of its own.
+
+  subject_xpath is an XPath 1.0 expression from the document root. wms: is the
+  WMS 1.3 namespace; wfs: and ows: are bound at run time to the document's own
+  WFS (2.0 or 1.1) and OWS Common (1.1 or 1.0) namespaces, so one row serves
+  every version. subject_id and subject_class use ogc: only as a label for the
+  element. Rows run in file order: for a scalar target the first row to fill it
+  wins; array targets accumulate. A row with no transform documents an element
+  that is not converted.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/OGCServices/ogc_services_to_cdif.py
+mapping_date: 2026-11-22
+subject_source: http://www.opengis.net/wms
+object_source: https://w3id.org/cdif/core/2.0
+see_also:
+  - https://www.ogc.org/standard/wms/
+  - https://www.ogc.org/standard/wfs/
+  - https://www.ogc.org/standard/common/
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_xpath
+    property: https://w3id.org/cdif/mappings/subjectXPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  servicetype   the root element -> DefinedTerm (OGC Web Map/Feature Service <version>, OGC:WMS / OGC:WFS)
+  text          the first non-empty value
+  texts         every distinct non-empty value
+  keywords      WMS Keywords / OWS Keywords -> DefinedTerms in their vocabulary, or strings
+  url           the first http(s) value
+  provider      ContactInformation / ServiceProvider -> Organization
+  contact       the named contact -> schema:Role pointOfContact
+  terms         Fees and AccessConstraints -> termsOfService text
+  licenseurl    a licence URL in Fees or AccessConstraints -> CreativeWork
+  operations    WMS Request children / OWS Operations -> schema:Actions with an EntryPoint
+  layers        named WMS layers / WFS feature types -> CreativeWorks under schema:dataset
+  extent        the union of the WMS layer boxes or of the feature type boxes -> Place
+  describedby   INSPIRE MetadataUrl -> LinkRole
+  date          a date-shaped updateSequence
+curie_map:
+  inspire_common: http://inspire.ec.europa.eu/schemas/common/1.0
+  ogc: http://www.opengis.net/ogc#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sssom: https://w3id.org/sssom/

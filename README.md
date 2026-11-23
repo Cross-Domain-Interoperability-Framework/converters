@@ -21,6 +21,7 @@ expose their conversion as an importable function.
 | [`DublinCore/dc_to_cdif.py`](DublinCore/dc_to_cdif.py) | Dublin Core: `csw:Record` (CSW 2.0.2) and `oai_dc` (OAI-PMH), a record or a response → CDIF core/discovery (table-driven) | Dublin Core XML |
 | [`EML/eml_to_cdif.py`](EML/eml_to_cdif.py) | Ecological Metadata Language 2.0.1–2.2.0 (GBIF, DataONE, LTER) → CDIF core/discovery/provenance, plus data_description from `dataTable` attribute lists (table-driven) | EML XML |
 | [`FGDC/fgdc_to_cdif.py`](FGDC/fgdc_to_cdif.py) | FGDC CSDGM (FGDC-STD-001-1998, Biological Data Profile) → CDIF core/discovery/provenance, with entity attributes as variables (table-driven) | FGDC CSDGM XML |
+| [`OGCServices/ogc_services_to_cdif.py`](OGCServices/ogc_services_to_cdif.py) | OGC WMS 1.3 / WFS 2.0, 1.1 GetCapabilities (file or URL) → one CDIF core/discovery record per service: `schema:Dataset` + `schema:WebAPI`, its layers or feature types under `schema:dataset` (table-driven) | OGC capabilities XML |
 | [`FAIR2/fair2_to_cdif.py`](FAIR2/fair2_to_cdif.py) | FAIR² `fair2.json` (file **or URL**) → CDIF (reuses the Croissant converter for the Croissant core) | FAIR² |
 | [`DDI/ddi_to_cdif.py`](DDI/ddi_to_cdif.py) | DDI Codebook 2.5 (Harvard Dataverse) → CDIF | DDI Codebook XML |
 | [`DDI/ddi122_to_cdif.py`](DDI/ddi122_to_cdif.py) | DDI 1.2.2 (ICPSR, source-agnostic) → CDIF | DDI XML |

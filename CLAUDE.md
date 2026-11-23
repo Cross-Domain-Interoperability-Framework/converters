@@ -31,6 +31,10 @@ different roles — check which before editing either side:
   `<metadata>`; CSDGM has no dataset identifier, so the non-DOI `@id`
   fallbacks are in code), Dublin Core (`DublinCore/dc_to_cdif.py`:
   `subject_xpath` from the `csw:Record` or `oai_dc:dc`, one table for both),
+  OGC services (`OGCServices/ogc_services_to_cdif.py`: `subject_xpath` from
+  the capabilities root, with `wfs:` and `ows:` bound to the document's own
+  versions; layers are CreativeWorks under `schema:dataset`, since a nested
+  `schema:Dataset` must meet every Dataset rule),
   DDI (worksheets compiled to
   `mappings/ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py`). A
   mapping change for these is a table edit; code is only for structural
