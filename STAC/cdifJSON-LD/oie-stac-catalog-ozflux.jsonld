@@ -1,0 +1,127 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "http://stac.webservice-energy.org/api/collections/ozflux",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "OZFLUX",
+  "schema:description": "OzFlux is an ecosystem research network set up to provide Australian, New Zealand and global ecosystem modelling communities with consistent observations of energy, carbon and water exchange between the atmosphere and key Australian and New Zealand ecosystems. OzFlux is part of an international network (FluxNet external link) of over 500 flux stations that is designed to provide continuous, long-term micrometeorological measurements to monitor the state of ecosystems globally. The OzFlux purpose is: - to understand mechanisms controlling exchanges of carbon, water vapour and energy between terrestrial ecosystems and the atmosphere over a range of time and space scales - to provide data on carbon and water balances of key ecosystems for model testing - to provide information to validate estimates of net primary productivity, evaporation, and energy absorption using remotely sensed radiance data - to provide data to validate new developments in micrometeorological theory for fluxes and air flows in complex terrain see https://www.ozflux.org.au/governance.html for more information",
+  "schema:keywords": [
+    "OZFLUX",
+    "Energy",
+    "Renewable energy",
+    "in-situ",
+    "insitu",
+    "Measurements",
+    "Solar",
+    "MINES Paris - PSL",
+    "Webservice-Energy",
+    "Thredds",
+    "TDS",
+    "NetCDF"
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Yves-Marie Saint-Drenan",
+        "schema:url": "https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/saint-drenan-yves-marie-albert/"
+      },
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Lionel Ménard",
+        "schema:url": "https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/lionel-menard/"
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "MINES Paris - PSL / ARMINES Center Observation, Impacts, Energy (O.I.E.)",
+      "schema:url": "http://www.webservice-energy.org"
+    }
+  ],
+  "schema:dateModified": "2025-05-02T15:04:40Z",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-43.095001 115.713898 -12.4943 152.877808"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2002-01-01T00:30:00Z/2023-09-04T23:30:00Z"
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "items",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "http://stac.webservice-energy.org/api/collections/ozflux/items",
+        "schema:name": "Items",
+        "schema:encodingFormat": "application/geo+json"
+      }
+    }
+  ],
+  "schema:identifier": "ozflux",
+  "schema:url": "http://stac.webservice-energy.org/api/collections/ozflux",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "http://stac.webservice-energy.org/api/collections/ozflux#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: OZFLUX",
+    "schema:about": {
+      "@id": "http://stac.webservice-energy.org/api/collections/ozflux"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.1.0 Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "PSL / Mines Paris / OIE | STAC Catalog | Renewable energy datasets ",
+      "schema:url": "https://stac.webservice-energy.org/api/"
+    }
+  }
+}

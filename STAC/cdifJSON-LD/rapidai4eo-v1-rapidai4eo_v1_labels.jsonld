@@ -1,0 +1,184 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/stac-v1.0/rapidai4eo_v1_labels/collection.json",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:description": "RapidAI4EO multiclass LULC labels.",
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32013R1159",
+      "schema:name": "License for CORINE Land Cover labels."
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Copernicus Land Monitoring Service",
+        "schema:url": "https://land.copernicus.eu/"
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Radiant Earth Foundation",
+      "schema:url": "https://www.radiant.earth/"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "processor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Vision Impulse",
+        "schema:url": "https://www.vision-impulse.com/"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "licensor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Vision Impulse",
+        "schema:url": "https://www.vision-impulse.com/"
+      }
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "34.91712 -21.922952 69.226345 43.946754"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2018-01-01T00:00:00Z/2018-12-31T23:59:59Z"
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_labels.csv.gz",
+      "schema:name": "Multiclass LULC labels for all samples in RapidAI4EO.",
+      "schema:encodingFormat": [
+        "text/csv+gzip"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_label_mappings.csv",
+      "schema:name": "Mappings between LULC labels and the CLC class hierarchy.",
+      "schema:encodingFormat": [
+        "text/csv"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_v1_labels.parquet",
+      "schema:name": "All STAC Items in GeoParquet format",
+      "schema:encodingFormat": [
+        "application/x-parquet"
+      ]
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "stac-links",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_v1_labels.gpkg",
+        "schema:name": "All ids, geometries and links in GeoPackage format",
+        "schema:encodingFormat": "application/geopackage+vnd.sqlite3"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "stac-links",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_v1_labels.fgb",
+        "schema:name": "All ids, geometries and links in FlatGeobuf format",
+        "schema:encodingFormat": "application/flatgeobuf"
+      }
+    }
+  ],
+  "schema:identifier": "rapidai4eo_v1_labels",
+  "schema:name": "rapidai4eo_v1_labels",
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/stac-v1.0/rapidai4eo_v1_labels/collection.json",
+  "schema:subjectOf": {
+    "@id": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/stac-v1.0/rapidai4eo_v1_labels/collection.json#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: rapidai4eo_v1_labels",
+    "schema:about": {
+      "@id": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/stac-v1.0/rapidai4eo_v1_labels/collection.json"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.0.0 Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "RapidAI4EO",
+      "schema:url": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/stac-v1.0/catalog.json"
+    }
+  }
+}

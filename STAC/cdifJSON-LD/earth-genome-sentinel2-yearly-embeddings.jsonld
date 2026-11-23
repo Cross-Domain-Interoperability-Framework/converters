@@ -1,0 +1,85 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://stac.earthgenome.org/collections/sentinel2-yearly-embeddings",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Sentinel-2 Yearly Embeddings",
+  "schema:description": "Embeddings of Sentinel2 yearly imagery using the Softcon Dino Vit model",
+  "schema:license": [
+    {
+      "@id": "https://spdx.org/licenses/CC-BY-4.0"
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-60.524149 -179.934202 70.306017 180"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2024-01-01T00:00:00Z/2025-01-01T00:00:00Z"
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "items",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://stac.earthgenome.org/collections/sentinel2-yearly-embeddings/items",
+        "schema:encodingFormat": "application/geo+json"
+      }
+    }
+  ],
+  "schema:identifier": "sentinel2-yearly-embeddings",
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "https://stac.earthgenome.org/collections/sentinel2-yearly-embeddings",
+  "schema:subjectOf": {
+    "@id": "https://stac.earthgenome.org/collections/sentinel2-yearly-embeddings#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: Sentinel-2 Yearly Embeddings",
+    "schema:about": {
+      "@id": "https://stac.earthgenome.org/collections/sentinel2-yearly-embeddings"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.x Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Earth Genome: Sentinel-2 L2A Temporal Mosaics",
+      "schema:url": "https://stac.earthgenome.org/"
+    }
+  }
+}

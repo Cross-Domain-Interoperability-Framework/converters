@@ -1,0 +1,277 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/collection.json",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Zoning Base Districts",
+  "schema:description": "Boundaries of Philadelphia's zoning base districts under the zoning code enacted in December 2011 and effective 22 August 2012. A base district sets what may be built on a parcel and how it may be used.\n\nEach polygon carries a district code in `long_code`, such as RSA-5 or CMX-2, and a broader grouping in `zoninggroup`. Residential and residential mixed-use polygons are the most numerous, followed by commercial, industrial, and special purpose. RSA-5, the row-house district that defines much of the city, is the single most common code.\n\n`long_code` joins to [zoning_descriptions](../zoning_descriptions) on `new_code` to get a readable name for every code. Every row matches. Columns for pending and sunset legislation track districts under active amendment.\n\nSource: [Zoning Base Districts](https://opendataphilly.org/datasets/zoning-base-districts/) on OpenDataPhilly.",
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "https://opendataphilly.org/datasets/city-council-districts/",
+      "schema:name": "License"
+    },
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "https://metadata.phila.gov/#help/help-faqs/what-are-the-terms-of-use/",
+      "schema:name": "License"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "City of Philadelphia",
+        "schema:url": "https://opendataphilly.org/"
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Source Cooperative",
+      "schema:url": "https://source.coop/"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "licensor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "City of Philadelphia",
+        "schema:url": "https://opendataphilly.org/"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "processor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Nissim Lebovits"
+      }
+    }
+  ],
+  "schema:dateModified": "2026-11-20T15:55:12Z",
+  "schema:version": "2026-11-20",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "39.870822 -75.280233 40.137858 -74.955806"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2026-08-26T12:27:17Z/2026-11-20T12:27:49Z"
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/zoning_basedistricts.parquet",
+      "schema:encodingFormat": [
+        "application/vnd.apache.parquet"
+      ],
+      "schema:contentSize": "16311045 B"
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/zoning_basedistricts.pmtiles",
+      "schema:name": "zoning_basedistricts (vector tiles)",
+      "schema:encodingFormat": [
+        "application/vnd.pmtiles"
+      ],
+      "schema:contentSize": "8205053 B"
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/styles/default.json",
+      "schema:name": "Categorical Style",
+      "schema:encodingFormat": [
+        "application/vnd.mapbox.style+json"
+      ],
+      "schema:contentSize": "2081 B"
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/versions/2026-08-26.parquet",
+      "schema:name": "zoning_basedistricts as extracted on 2026-08-26",
+      "schema:encodingFormat": [
+        "application/vnd.apache.parquet"
+      ],
+      "schema:contentSize": "16230250 B"
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/versions/2026-10-06.parquet",
+      "schema:name": "zoning_basedistricts as extracted on 2026-10-06",
+      "schema:encodingFormat": [
+        "application/vnd.apache.parquet"
+      ],
+      "schema:contentSize": "16230441 B"
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/versions/2026-11-06.parquet",
+      "schema:name": "zoning_basedistricts as extracted on 2026-11-06",
+      "schema:encodingFormat": [
+        "application/vnd.apache.parquet"
+      ],
+      "schema:contentSize": "16231189 B"
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/versions/2026-11-13.parquet",
+      "schema:name": "zoning_basedistricts as extracted on 2026-11-13",
+      "schema:encodingFormat": [
+        "application/vnd.apache.parquet"
+      ],
+      "schema:contentSize": "16231198 B"
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "thumbnail",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/zoning_basedistricts.thumb.jpg",
+        "schema:encodingFormat": "image/jpeg"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "documentation",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/README.md",
+        "schema:encodingFormat": "text/markdown"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "style",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/styles/zoning-family.json",
+        "schema:name": "Zoning family",
+        "schema:encodingFormat": "application/vnd.mapbox.style+json"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "describedby",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/README.md",
+        "schema:name": "Human-readable documentation",
+        "schema:encodingFormat": "text/markdown"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "via",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://opendataphilly.org/datasets/zoning-base-districts/",
+        "schema:name": "Original source",
+        "schema:encodingFormat": "text/html"
+      }
+    }
+  ],
+  "schema:identifier": "zoning_basedistricts",
+  "schema:url": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/collection.json",
+  "schema:subjectOf": {
+    "@id": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/collection.json#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: Zoning Base Districts",
+    "schema:about": {
+      "@id": "https://data.source.coop/nlebovits/phl-housing-demo/zoning_basedistricts/collection.json"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.1.0 Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Philadelphia Housing and Land Use",
+      "schema:url": "https://data.source.coop/nlebovits/phl-housing-demo/catalog.json"
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://capella-open-data.s3.us-west-2.amazonaws.com/stac/capella-open-data-ieee-data-contest/collection.json",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "IEEE Data Contest 2026",
+  "schema:description": "Capella Open Data IEEE Data Contest 2026\n\n## Overview\nThe **2026 IEEE GRSS Data Analysis Contest**, organized by the **Image Analysis and Data Fusion (IADF) Technical Committee** and **Capella Space**, focuses on the operational reality of **commercial high-resolution SAR time series**.\n\nCommercial SAR constellations can deliver dense temporal sampling, but stacks often have substantial variability in **imaging mode**, **incidence angle**, **look direction**, and **orbital geometry**. This variability complicates repeat-pass analysis, but also enables new approaches that exploit **temporal richness** and **observation diversity**.\n\nThis contest dataset provides **densely sampled, InSAR-compatible temporal stacks** of **very high-resolution X-band SAR imagery** across a wide range of imaging modes and viewing geometries.\n\n---\n\n## Dataset overview\n\n### What’s included\n- Multiple temporal stacks of **Capella Space X-band SAR** data\n- Intended for:\n  - time-series analysis\n  - change detection\n  - object/activity understanding\n  - ML-based SAR analytics with emphasis on **robustness and generalization**\n\n### Scale (current draft)\n- ~**800 unique collects** across coordinated stacks (about a year)\n- Potentially **17,000+ possible interferometric pairs**\n- Some AOIs have **deep stacks** (e.g., **50+ images** over a year)\n\n---\n\n## Data access\n\n### How is the data accessed?\nData is hosted in an **AWS S3 public bucket** via the Capella Space listing on the **Registry of Open Data on AWS**.\n\n- [Dataset listing reference](https://stacindex.org/catalogs/capella-space-open-data#/6QUH7kZBffZNEnYuZuzZWv8D3vWA4TEeZvXZ5pubg4QY1ZAgGDY8dhJcDDxedMvN8d1Dwb)\n- [STAC catalog](https://capella-open-data.s3.us-west-2.amazonaws.com/stac/capella-open-data-ieee-data-contest/collection.json)\n- [Capella Space Open Data felt.com map](https://felt.com/map/Capella-Space-Open-Data-bB24xsH3SuiUlpMdDbVRaA?loc=0,-20.53,1.94z) >> Select IEEE Data Contest 2026 layer\n\n### Programatic access\n\n`pip install pystac stac-asset[cli]`\n\n`# 1 -- download all assets`\n`import pystac`\n`import stac_asset.blocking`\n\n`collection = pystac.Collection.from_file(\"https://capella-open-data.s3.us-west-2.amazonaws.com/stac/capella-open-data-ieee-data-contest/collection.json\")`\n`item_links = collection.get_item_links()`\n\n`item = pystac.Item.from_file(item_links[0].absolute_href)`\n`item = stac_asset.blocking.download_item(item)`\n\n\n`# 2 -- download subset of assets`\n\n`import pystac`\n`import stac_asset.blocking`\n`import os`\n\n`collection = pystac.Collection.from_file(\"https://capella-open-data.s3.us-west-2.amazonaws.com/stac/capella-open-data-ieee-data-contest/collection.json\")`\n`item_links = collection.get_item_links()`\n\n`ASSETS_TO_DOWNLOAD = [\"thumbnail\", \"preview\"]`\n`include_args = sum([['-i', asset] for asset in ASSETS_TO_DOWNLOAD], [])`\n\n`cmd = [\"stac-asset\", \"download\", item_links[0].absolute_href] + include_args`\n`os.system(' '.join(cmd))`",
+  "schema:keywords": [
+    "sar",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella",
+      "schema:inDefinedTermSet": "STAC constellation"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella-2",
+      "schema:inDefinedTermSet": "STAC instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella-3",
+      "schema:inDefinedTermSet": "STAC instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella-5",
+      "schema:inDefinedTermSet": "STAC instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella-6",
+      "schema:inDefinedTermSet": "STAC instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella-7",
+      "schema:inDefinedTermSet": "STAC instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella-8",
+      "schema:inDefinedTermSet": "STAC instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella-9",
+      "schema:inDefinedTermSet": "STAC instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella-10",
+      "schema:inDefinedTermSet": "STAC instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella-13",
+      "schema:inDefinedTermSet": "STAC instruments"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "capella-14",
+      "schema:inDefinedTermSet": "STAC instruments"
+    }
+  ],
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "https://creativecommons.org/licenses/by/4.0/",
+      "schema:name": "CC BY 4.0"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Capella Space",
+        "schema:url": "https://www.capellaspace.com"
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "AWS",
+      "schema:url": "http://www.amazonaws.com/"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "licensor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Capella Space",
+        "schema:url": "https://www.capellaspace.com"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "processor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Capella Space",
+        "schema:url": "https://www.capellaspace.com"
+      }
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-90 -180 90 180"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2020-03-30T00:00:00Z/.."
+  ],
+  "schema:identifier": "capella-open-data-ieee-data-contest",
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "https://capella-open-data.s3.us-west-2.amazonaws.com/stac/capella-open-data-ieee-data-contest/collection.json",
+  "schema:subjectOf": {
+    "@id": "https://capella-open-data.s3.us-west-2.amazonaws.com/stac/capella-open-data-ieee-data-contest/collection.json#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: IEEE Data Contest 2026",
+    "schema:about": {
+      "@id": "https://capella-open-data.s3.us-west-2.amazonaws.com/stac/capella-open-data-ieee-data-contest/collection.json"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.0.0 Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Capella Space Open Data",
+      "schema:url": "https://capella-open-data.s3.us-west-2.amazonaws.com/stac/catalog.json"
+    }
+  }
+}
