@@ -1,0 +1,738 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    {
+      "dcterms": "http://purl.org/dc/terms/",
+      "prov": "http://www.w3.org/ns/prov#",
+      "dqv": "http://www.w3.org/ns/dqv#",
+      "geosparql": "http://www.opengis.net/ont/geosparql#",
+      "spdx": "http://spdx.org/rdf/terms#",
+      "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+      "csvw": "http://www.w3.org/ns/csvw#",
+      "time": "http://www.w3.org/2006/time#",
+      "nxs": "https://manual.nexusformat.org/classes/",
+      "cdifq": "http://crossdomaininteroperability.org/cdifq/",
+      "wasGeneratedBy": {
+        "@id": "prov:wasGeneratedBy",
+        "@container": "@set"
+      },
+      "wasDerivedFrom": {
+        "@id": "prov:wasDerivedFrom",
+        "@container": "@set"
+      },
+      "used": {
+        "@id": "prov:used",
+        "@container": "@set"
+      },
+      "Activity": "prov:Activity",
+      "checksum": "spdx:checksum",
+      "algorithm": "spdx:algorithm",
+      "checksumValue": "spdx:checksumValue",
+      "hasQualityMeasurement": {
+        "@id": "dqv:hasQualityMeasurement",
+        "@container": "@set"
+      },
+      "isMeasurementOf": "dqv:isMeasurementOf",
+      "QualityMeasurement": "dqv:QualityMeasurement",
+      "hasGeometry": "geosparql:hasGeometry",
+      "asWKT": "geosparql:asWKT",
+      "crs": "geosparql:crs",
+      "wktLiteral": "geosparql:wktLiteral",
+      "ProperInterval": "time:ProperInterval",
+      "Instant": "time:Instant",
+      "TimePosition": "time:TimePosition",
+      "intervalStartedBy": {
+        "@id": "time:intervalStartedBy",
+        "@type": "@id"
+      },
+      "intervalFinishedBy": {
+        "@id": "time:intervalFinishedBy",
+        "@type": "@id"
+      },
+      "hasBeginning": "time:hasBeginning",
+      "hasEnd": "time:hasEnd",
+      "inTimePosition": "time:inTimePosition",
+      "hasTRS": {
+        "@id": "time:hasTRS",
+        "@type": "@id"
+      },
+      "numericPosition": "time:numericPosition",
+      "InstanceVariable": "cdi:InstanceVariable",
+      "StructuredDataSet": "cdi:StructuredDataSet",
+      "TabularTextDataSet": "cdi:TabularTextDataSet",
+      "intendedDataType": "cdi:intendedDataType",
+      "role": "cdi:role",
+      "describedUnitOfMeasure": "cdi:describedUnitOfMeasure",
+      "simpleUnitOfMeasure": "cdi:simpleUnitOfMeasure",
+      "unitOfMeasureKind": "cdi:unitOfMeasureKind",
+      "uses": {
+        "@id": "cdi:uses",
+        "@container": "@set"
+      },
+      "characterSet": "cdi:characterSet",
+      "fileSize": "cdi:fileSize",
+      "fileSizeUofM": "cdi:fileSizeUofM",
+      "hasPhysicalMapping": {
+        "@id": "cdi:hasPhysicalMapping",
+        "@container": "@set"
+      },
+      "decimalPositions": "cdi:decimalPositions",
+      "defaultValue": "cdi:defaultValue",
+      "format": "cdi:format",
+      "isRequired": "cdi:isRequired",
+      "maximumLength": "cdi:maximumLength",
+      "minimumLength": "cdi:minimumLength",
+      "nullSequence": "cdi:nullSequence",
+      "physicalDataType": "cdi:physicalDataType",
+      "scale": "cdi:scale",
+      "index": "cdi:index",
+      "locator": "cdi:locator",
+      "formats_InstanceVariable": {
+        "@id": "cdi:formats_InstanceVariable",
+        "@type": "@id"
+      },
+      "arrayBase": "cdi:arrayBase",
+      "escapeCharacter": "cdi:escapeCharacter",
+      "headerIsCaseSensitive": "cdi:headerIsCaseSensitive",
+      "isDelimited": "cdi:isDelimited",
+      "isFixedWidth": "cdi:isFixedWidth",
+      "treatConsecutiveDelimitersAsOne": "cdi:treatConsecutiveDelimitersAsOne",
+      "defaultDecimalSeparator": "cdi:defaultDecimalSeparator",
+      "defaultDigitalGroupSeparator": "cdi:defaultDigitalGroupSeparator",
+      "displayLabel": "cdi:displayLabel",
+      "length": "cdi:length",
+      "allowsDuplicates": "cdi:allowsDuplicates",
+      "isStructuredBy": {
+        "@id": "cdi:isStructuredBy",
+        "@type": "@id"
+      },
+      "has_DataStructureComponent": {
+        "@id": "cdi:has_DataStructureComponent",
+        "@container": "@set"
+      },
+      "isDefinedBy_InstanceVariable": {
+        "@id": "cdi:isDefinedBy_InstanceVariable",
+        "@type": "@id"
+      },
+      "has": {
+        "@id": "cdi:has",
+        "@type": "@id"
+      },
+      "hasIndex": "cdi:hasIndex",
+      "PhysicalDataSet": "cdi:PhysicalDataSet",
+      "WideDataStructure": "cdi:WideDataStructure",
+      "IdentifierComponent": "cdi:IdentifierComponent",
+      "MeasureComponent": "cdi:MeasureComponent",
+      "ValueMapping": "cdi:ValueMapping",
+      "cdiIdentifier": "cdi:identifier",
+      "cdiName": "cdi:name",
+      "commentPrefix": "csvw:commentPrefix",
+      "delimiter": "csvw:delimiter",
+      "header": "csvw:header",
+      "headerRowCount": "csvw:headerRowCount",
+      "lineTerminators": "csvw:lineTerminators",
+      "quoteChar": "csvw:quoteChar",
+      "skipBlankRows": "csvw:skipBlankRows",
+      "skipColumns": "csvw:skipColumns",
+      "skipInitialSpace": "csvw:skipInitialSpace",
+      "skipRows": "csvw:skipRows",
+      "tableDirection": "csvw:tableDirection",
+      "textDirection": "csvw:textDirection",
+      "trim": "csvw:trim",
+      "nColumns": "cdifq:nColumns",
+      "nRows": "cdifq:nRows"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      },
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_1",
+      "@type": [
+        "InstanceVariable",
+        "PropertyValue"
+      ],
+      "name": "energy",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/monochromatorenergy"
+      },
+      "unitText": "eV",
+      "https://w3id.org/cdif/uses": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_1"
+    },
+    {
+      "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_2",
+      "@type": [
+        "InstanceVariable",
+        "PropertyValue"
+      ],
+      "name": "time",
+      "propertyID": {
+        "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+      },
+      "https://w3id.org/cdif/uses": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_2"
+    },
+    {
+      "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_3",
+      "@type": [
+        "InstanceVariable",
+        "PropertyValue"
+      ],
+      "name": "i0",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/incidentintensity"
+      },
+      "https://w3id.org/cdif/uses": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_3"
+    },
+    {
+      "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_4",
+      "@type": [
+        "InstanceVariable",
+        "PropertyValue"
+      ],
+      "name": "itrans",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/transmittedintensity"
+      },
+      "https://w3id.org/cdif/uses": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_4"
+    },
+    {
+      "@id": "https://example.org/blank/b0",
+      "@type": "https://w3id.org/cdif/TextMapping",
+      "maximumLength": 15,
+      "minimumLength": 15,
+      "https://w3id.org/cdif/format": "decimal",
+      "https://w3id.org/cdif/formats_InstanceVariable": {
+        "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_1"
+      },
+      "https://w3id.org/cdif/index": 1,
+      "https://w3id.org/cdif/physicalDataType": "decimal"
+    },
+    {
+      "@id": "https://example.org/blank/b1",
+      "@type": "https://w3id.org/cdif/TextMapping",
+      "maximumLength": 15,
+      "minimumLength": 15,
+      "https://w3id.org/cdif/format": "decimal",
+      "https://w3id.org/cdif/formats_InstanceVariable": {
+        "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_2"
+      },
+      "https://w3id.org/cdif/index": 2,
+      "https://w3id.org/cdif/physicalDataType": "decimal"
+    },
+    {
+      "@id": "https://example.org/blank/b11",
+      "@type": "Person",
+      "name": ":unav"
+    },
+    {
+      "@id": "https://example.org/blank/b12",
+      "@type": "DefinedTerm",
+      "about": "element.edge",
+      "inDefinedTermSet": "https://github.com/XraySpectroscopy/XAS-Data-Interchange/blob/master/specification/dictionary.md",
+      "name": "K-edge",
+      "termCode": "K"
+    },
+    {
+      "@id": "https://example.org/blank/b13",
+      "@type": "DefinedTerm",
+      "about": "element.symbol",
+      "identifier": "http://sweetontology.net/matrElement/Se",
+      "inDefinedTermSet": "http://sweetontology.net/matrElement",
+      "name": "Element symbol Se",
+      "termCode": "Se"
+    },
+    {
+      "@id": "https://example.org/blank/b14",
+      "@type": [
+        "Product",
+        "Thing",
+        "prov:Entity"
+      ],
+      "additionalProperty": [
+        {
+          "@id": "https://example.org/blank/b15"
+        },
+        {
+          "@id": "https://example.org/blank/b16"
+        },
+        {
+          "@id": "https://example.org/blank/b17"
+        }
+      ],
+      "additionalType": [
+        {
+          "@id": "https://w3id.org/cdif/xas/xraymonochromator"
+        },
+        {
+          "@id": "https://www.wikidata.org/entity/Q3099911"
+        }
+      ],
+      "identifier": "xas:Mono/Si 111",
+      "name": "Mono/Si 111"
+    },
+    {
+      "@id": "https://example.org/blank/b15",
+      "@type": "PropertyValue",
+      "name": "d-spacing",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/dspacing"
+      },
+      "unitText": "Angstrom",
+      "value": "3.13550"
+    },
+    {
+      "@id": "https://example.org/blank/b16",
+      "@type": "PropertyValue",
+      "name": "reflection plane",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/reflectionplane"
+      },
+      "value": "1,1,1"
+    },
+    {
+      "@id": "https://example.org/blank/b17",
+      "@type": "PropertyValue",
+      "name": "crystal type",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/monochromatortype"
+      },
+      "value": "Si"
+    },
+    {
+      "@id": "https://example.org/blank/b18",
+      "@type": "DefinedTerm",
+      "inDefinedTermSet": "nxs:Field/NXxas/ENTRY/DATA/mode",
+      "name": "Transmission"
+    },
+    {
+      "@id": "https://example.org/blank/b19",
+      "@type": "DefinedTerm",
+      "identifier": "http://purl.org/pan-science/PaNET/PaNET01196",
+      "inDefinedTermSet": "http://purl.org/pan-science/PaNET/PaNET.owl",
+      "name": "X-Ray Absorption Spectroscopy",
+      "termCode": "XAS"
+    },
+    {
+      "@id": "https://example.org/blank/b2",
+      "@type": "https://w3id.org/cdif/TextMapping",
+      "maximumLength": 15,
+      "minimumLength": 15,
+      "https://w3id.org/cdif/format": "decimal",
+      "https://w3id.org/cdif/formats_InstanceVariable": {
+        "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_3"
+      },
+      "https://w3id.org/cdif/index": 3,
+      "https://w3id.org/cdif/physicalDataType": "decimal"
+    },
+    {
+      "@id": "https://example.org/blank/b20",
+      "@type": "Role",
+      "contributor": {
+        "@id": "https://example.org/blank/b21"
+      },
+      "roleName": "Facility"
+    },
+    {
+      "@id": "https://example.org/blank/b21",
+      "@type": "Organization",
+      "name": "APS"
+    },
+    {
+      "@id": "https://example.org/blank/b22",
+      "@type": [
+        "Product",
+        "Thing"
+      ],
+      "additionalProperty": {
+        "@id": "https://example.org/blank/b23"
+      },
+      "additionalType": [
+        {
+          "@id": "https://w3id.org/isample/vocabulary/materialsampleobjecttype/materialsample"
+        },
+        "MaterialSample"
+      ],
+      "name": "Na2SeO4"
+    },
+    {
+      "@id": "https://example.org/blank/b23",
+      "@type": "PropertyValue",
+      "name": "Sample preparation",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/samplepreparation"
+      },
+      "value": "powder on tape, 6 layers"
+    },
+    {
+      "@id": "https://example.org/blank/b25",
+      "@type": "PropertyValue",
+      "name": "Edge energy",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/edgeenergy"
+      },
+      "value": "12658.0 units not reported"
+    },
+    {
+      "@id": "https://example.org/blank/b26",
+      "@type": [
+        "Product",
+        "Thing",
+        "prov:Entity"
+      ],
+      "additionalProperty": [
+        {
+          "@id": "https://example.org/blank/b27"
+        },
+        {
+          "@id": "https://example.org/blank/b28"
+        }
+      ],
+      "additionalType": [
+        {
+          "@id": "https://w3id.org/cdif/xas/source"
+        },
+        {
+          "@id": "https://www.wikidata.org/entity/Q3099911"
+        }
+      ],
+      "name": "X-ray source"
+    },
+    {
+      "@id": "https://example.org/blank/b27",
+      "@type": "PropertyValue",
+      "name": "Probe",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/probe"
+      },
+      "value": "x-ray"
+    },
+    {
+      "@id": "https://example.org/blank/b28",
+      "@type": "PropertyValue",
+      "name": "X-ray source type",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/xraysourcetype"
+      },
+      "value": "Synchrotron X-ray Source"
+    },
+    {
+      "@id": "https://example.org/blank/b29",
+      "@type": [
+        "PhysicalDataSet",
+        "TabularTextDataSet",
+        "DataDownload"
+      ],
+      "arrayBase": 1,
+      "cdi:commentPrefix": "#",
+      "cdi:hasHeader": true,
+      "isDelimited": false,
+      "isFixedWidth": true,
+      "isStructuredBy": "https://example.org/struct/DV/se_na2so4_rt",
+      "cdi:skipInitialSpace": true,
+      "conformsTo": {
+        "@id": "https://github.com/XraySpectroscopy/XAS-Data-Interchange/blob/master/specification/spec.md"
+      },
+      "path": "cdif:testing/se_na2so4_rt.xdi",
+      "description": "Placeholder metadata generated by cdif-xas-UKDS local pipeline. Values normally sourced from Dataverse are stubbed; edit downstream if you need real values.",
+      "encodingFormat": "application/x-xdi",
+      "https://w3id.org/cdif/hasPhysicalMapping": [
+        {
+          "@id": "https://example.org/blank/b0"
+        },
+        {
+          "@id": "https://example.org/blank/b1"
+        },
+        {
+          "@id": "https://example.org/blank/b2"
+        },
+        {
+          "@id": "https://example.org/blank/b3"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/blank/b3",
+      "@type": "https://w3id.org/cdif/TextMapping",
+      "maximumLength": 15,
+      "minimumLength": 15,
+      "https://w3id.org/cdif/format": "decimal",
+      "https://w3id.org/cdif/formats_InstanceVariable": {
+        "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_4"
+      },
+      "https://w3id.org/cdif/index": 4,
+      "https://w3id.org/cdif/physicalDataType": "decimal"
+    },
+    {
+      "@id": "https://example.org/blank/b4",
+      "@type": [
+        "Product",
+        "Thing",
+        "prov:Entity"
+      ],
+      "additionalProperty": [
+        {
+          "@id": "https://example.org/blank/b5"
+        },
+        {
+          "@id": "https://example.org/blank/b6"
+        },
+        {
+          "@id": "https://example.org/blank/b7"
+        }
+      ],
+      "additionalType": [
+        {
+          "@id": "https://w3id.org/cdif/xas/beamline"
+        },
+        {
+          "@id": "https://www.wikidata.org/entity/Q3099911"
+        }
+      ],
+      "identifier": "xas:Beamline/13-BM-D",
+      "name": "Beamline/13-BM-D"
+    },
+    {
+      "@id": "https://example.org/blank/b5",
+      "@type": "PropertyValue",
+      "name": "collimation",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/collimation"
+      },
+      "value": "none"
+    },
+    {
+      "@id": "https://example.org/blank/b6",
+      "@type": "PropertyValue",
+      "name": "focusing",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/focusing"
+      },
+      "value": "no"
+    },
+    {
+      "@id": "https://example.org/blank/b7",
+      "@type": "PropertyValue",
+      "name": "harmonic rejection",
+      "propertyID": {
+        "@id": "https://w3id.org/cdif/xas/harmonicrejection"
+      },
+      "value": "Rh-coated mirror, detuned "
+    },
+    {
+      "@id": "https://example.org/blank/b8",
+      "@type": [
+        "Product",
+        "Thing",
+        "prov:Entity"
+      ],
+      "additionalProperty": [],
+      "additionalType": [
+        {
+          "@id": "https://w3id.org/cdif/xas/xraymonitor"
+        },
+        {
+          "@id": "https://www.wikidata.org/entity/Q3099911"
+        }
+      ],
+      "identifier": "xas:Detector",
+      "name": "Detector"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "contributor": {
+        "@id": "https://example.org/blank/b20"
+      },
+      "creator": {
+        "@id": "https://example.org/blank/b11"
+      },
+      "dateModified": "2026-10-27",
+      "description": "Placeholder metadata generated by cdif-xas-UKDS local pipeline. Values normally sourced from Dataverse are stubbed; edit downstream if you need real values.",
+      "distribution": {
+        "@id": "https://example.org/blank/b29"
+      },
+      "identifier": "local:se_na2so4_rt",
+      "keywords": [
+        {
+          "@id": "https://example.org/blank/b12"
+        },
+        {
+          "@id": "https://example.org/blank/b13"
+        }
+      ],
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "measurementTechnique": [
+        {
+          "@id": "https://example.org/blank/b18"
+        },
+        {
+          "@id": "https://example.org/blank/b19"
+        }
+      ],
+      "name": "se_na2so4_rt",
+      "subjectOf": {
+        "@id": "https://example.org/dataset/DV/se_na2so4_rt/metadata"
+      },
+      "url": "cdif:testing/se_na2so4_rt.xdi",
+      "variableMeasured": [
+        {
+          "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_1"
+        },
+        {
+          "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_2"
+        },
+        {
+          "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_3"
+        },
+        {
+          "@id": "https://example.org/DV/se_na2so4_rt/iv/Column_4"
+        }
+      ],
+      "wasGeneratedBy": [
+        {
+          "@id": "https://w3id.org/cdif/xas/provevent"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "https://example.org/blank/b29"
+        },
+        {
+          "@id": "https://example.org/dataset/DV/se_na2so4_rt/metadata"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/dataset/DV/se_na2so4_rt/metadata",
+      "@type": "Dataset",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/cdif/core/1.1"
+        },
+        {
+          "@id": "https://w3id.org/cdif/data_description/1.1"
+        },
+        {
+          "@id": "https://w3id.org/cdif/data_structure/1.1"
+        },
+        {
+          "@id": "https://w3id.org/cdif/discovery/1.1"
+        },
+        {
+          "@id": "https://w3id.org/cdif/xasCore/1.2"
+        }
+      ],
+      "about": {
+        "@id": "./"
+      },
+      "additionalType": {
+        "@id": "http://www.w3.org/ns/dcat#CatalogRecord"
+      }
+    },
+    {
+      "@id": "https://example.org/struct/DV/se_na2so4_rt",
+      "@type": "WideDataStructure",
+      "has_DataStructureComponent": [
+        {
+          "@id": "https://example.org/struct/DV/se_na2so4_rt/comp/Column_1"
+        },
+        {
+          "@id": "https://example.org/struct/DV/se_na2so4_rt/comp/Column_2"
+        },
+        {
+          "@id": "https://example.org/struct/DV/se_na2so4_rt/comp/Column_3"
+        },
+        {
+          "@id": "https://example.org/struct/DV/se_na2so4_rt/comp/Column_4"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/struct/DV/se_na2so4_rt/comp/Column_1",
+      "@type": "MeasureComponent",
+      "https://w3id.org/cdif/isDefinedBy_Variable": {
+        "@id": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_1"
+      }
+    },
+    {
+      "@id": "https://example.org/struct/DV/se_na2so4_rt/comp/Column_2",
+      "@type": "MeasureComponent",
+      "https://w3id.org/cdif/isDefinedBy_Variable": {
+        "@id": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_2"
+      }
+    },
+    {
+      "@id": "https://example.org/struct/DV/se_na2so4_rt/comp/Column_3",
+      "@type": "MeasureComponent",
+      "https://w3id.org/cdif/isDefinedBy_Variable": {
+        "@id": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_3"
+      }
+    },
+    {
+      "@id": "https://example.org/struct/DV/se_na2so4_rt/comp/Column_4",
+      "@type": "MeasureComponent",
+      "https://w3id.org/cdif/isDefinedBy_Variable": {
+        "@id": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_4"
+      }
+    },
+    {
+      "@id": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_1",
+      "@type": "cdi:RepresentedVariable",
+      "https://w3id.org/cdif/name": "energy"
+    },
+    {
+      "@id": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_2",
+      "@type": "cdi:RepresentedVariable",
+      "https://w3id.org/cdif/name": "time"
+    },
+    {
+      "@id": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_3",
+      "@type": "cdi:RepresentedVariable",
+      "https://w3id.org/cdif/name": "i0"
+    },
+    {
+      "@id": "https://example.org/struct/DV/se_na2so4_rt/rv/Column_4",
+      "@type": "cdi:RepresentedVariable",
+      "https://w3id.org/cdif/name": "itrans"
+    },
+    {
+      "@id": "https://w3id.org/cdif/xas/provevent",
+      "@type": [
+        "Action",
+        "Activity"
+      ],
+      "additionalProperty": {
+        "@id": "https://example.org/blank/b25"
+      },
+      "additionalType": {
+        "@id": "https://w3id.org/cdif/xas/analysisevent"
+      },
+      "instrument": [
+        {
+          "@id": "https://example.org/blank/b4"
+        },
+        {
+          "@id": "https://example.org/blank/b8"
+        },
+        {
+          "@id": "https://example.org/blank/b14"
+        },
+        {
+          "@id": "https://example.org/blank/b26"
+        }
+      ],
+      "object": {
+        "@id": "https://example.org/blank/b22"
+      },
+      "startTime": "2008-04-10T21:58:50"
+    }
+  ]
+}
