@@ -88,6 +88,13 @@ ARRAY_PROPERTIES = {
     "cdi:uses",
 }
 
+# Array properties that are a single value in one place. A crate holds a single
+# value bare wherever it sits, so the place decides whether to wrap it:
+# schema:propertyID is a list on a variable or an additional property but a
+# single value on an identifier; schema:contributor is a list on the dataset
+# but the one agent inside a schema:Role.
+ROLE_TYPES = {"Role", "schema:Role", "http://schema.org/Role"}
+
 # RO-Crate type strings that indicate DataDownload (may appear unprefixed or prefixed)
 DATADOWNLOAD_TYPES = {"DataDownload", "schema:DataDownload", "http://schema.org/DataDownload"}
 
@@ -584,13 +591,16 @@ def _as_iri(value):
     return value
 
 
-def _normalize(obj):
+def _normalize(obj, parent_key=None):
     """Post-process: remove nulls, normalize @type to array, ensure array
-    properties, and make URI-shaped additionalType / propertyID values IRIs."""
+    properties, and make URI-shaped additionalType / propertyID values IRIs.
+    parent_key is the property this value sits under."""
     if isinstance(obj, list):
-        return [_normalize(item) for item in obj if item is not None]
+        return [_normalize(item, parent_key) for item in obj if item is not None]
 
     if isinstance(obj, dict):
+        types = obj.get("@type") or []
+        is_role = bool(ROLE_TYPES.intersection([types] if isinstance(types, str) else types))
         result = {}
         for key, value in obj.items():
             if value is None:
@@ -599,7 +609,7 @@ def _normalize(obj):
                 result[key] = value
                 continue
 
-            new_value = _normalize(value)
+            new_value = _normalize(value, key)
             if new_value is None:
                 continue
 
@@ -611,7 +621,13 @@ def _normalize(obj):
                 new_value = _as_iri(new_value)
 
             # Wrap single values where schema expects arrays
-            if key in ARRAY_PROPERTIES and not isinstance(new_value, list):
+            if key == "schema:propertyID":
+                if parent_key != "schema:identifier" and not isinstance(new_value, list):
+                    new_value = [new_value]
+            elif key == "schema:contributor" and is_role:
+                if isinstance(new_value, list) and len(new_value) == 1:
+                    new_value = new_value[0]
+            elif key in ARRAY_PROPERTIES and not isinstance(new_value, list):
                 new_value = [new_value]
 
             result[key] = new_value
