@@ -18,6 +18,7 @@ expose their conversion as an importable function.
 | [`ISO19115/iso_to_cdif.py`](ISO19115/iso_to_cdif.py) | ISO 19115-3 and ISO 19139 / 19115-2 XML (file, URL or CSW response) → CDIF (table-driven; DDE conventions where ISO has no CDIF property) | ISO 19115 XML |
 | [`SDMX/sdmx_to_cdif.py`](SDMX/sdmx_to_cdif.py) | SDMX-ML 2.1 structure message (dataflow + DSD, file or SDMX-REST URL) → CDIF core/discovery/data_description/data_structure (table-driven; DSD as a cdi:DimensionalDataStructure) | SDMX |
 | [`DataCite/datacite_to_cdif.py`](DataCite/datacite_to_cdif.py) | DataCite Metadata Schema kernel 3 / 4 XML (a record or an OAI-PMH response) → CDIF core/discovery (table-driven) | DataCite XML |
+| [`DublinCore/dc_to_cdif.py`](DublinCore/dc_to_cdif.py) | Dublin Core: `csw:Record` (CSW 2.0.2) and `oai_dc` (OAI-PMH), a record or a response → CDIF core/discovery (table-driven) | Dublin Core XML |
 | [`EML/eml_to_cdif.py`](EML/eml_to_cdif.py) | Ecological Metadata Language 2.0.1–2.2.0 (GBIF, DataONE, LTER) → CDIF core/discovery/provenance, plus data_description from `dataTable` attribute lists (table-driven) | EML XML |
 | [`FGDC/fgdc_to_cdif.py`](FGDC/fgdc_to_cdif.py) | FGDC CSDGM (FGDC-STD-001-1998, Biological Data Profile) → CDIF core/discovery/provenance, with entity attributes as variables (table-driven) | FGDC CSDGM XML |
 | [`FAIR2/fair2_to_cdif.py`](FAIR2/fair2_to_cdif.py) | FAIR² `fair2.json` (file **or URL**) → CDIF (reuses the Croissant converter for the Croissant core) | FAIR² |
