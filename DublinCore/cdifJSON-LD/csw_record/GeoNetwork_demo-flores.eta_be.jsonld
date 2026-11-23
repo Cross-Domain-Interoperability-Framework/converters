@@ -1,0 +1,142 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "urn:dc:flores.eta_be",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "dc:identifier",
+    "schema:value": "flores.eta_be"
+  },
+  "schema:name": "Etablissements actifs des secteurs Industrie manufacturière, industries extractives et autres",
+  "schema:dateModified": "2026-06-08T00:01:04+00:00",
+  "schema:datePublished": "2026-06-08T00:01:04+00:00",
+  "schema:description": "Découpage : Commune 2025, EPCI 2025, Commune 2024, EPCI 2024, Canton, arrondissement, Comité local pour l’emploi, Zone d'emploi 2020, Aire d'attraction des villes, Bassin emploi-formation, Département, Ancienne région, Région",
+  "schema:keywords": [
+    "données ouvertes",
+    "society"
+  ],
+  "schema:additionalType": [
+    "dataset"
+  ],
+  "schema:encodingFormat": [
+    "SVG",
+    "XLSX",
+    "CSV"
+  ],
+  "schema:inLanguage": "fre",
+  "schema:conditionsOfAccess": [
+    "otherRestrictions"
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "48.8372 1.3797 51.089 4.2557"
+      }
+    }
+  ],
+  "prov:wasDerivedFrom": [
+    "Source : Insee, Flores"
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://geoterritoires.hautsdefrance.fr/api/v1/functions/GC_API_download.php?lang=fr&type=stat&dataset=flores&indic=eta_be&nivgeo=com2025&filter=last&format=xlsx",
+      "schema:name": "Télécharger les données au format XLSX",
+      "schema:description": "Obtenez un classeur excel contenant les dernières données \"Commune 2025\""
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://geoterritoires.hautsdefrance.fr/api/v1/functions/GC_API_download.php?lang=fr&type=stat&dataset=flores&indic=eta_be&nivgeo=com2025&filter=last&format=csv",
+      "schema:name": "Télécharger les données au format CSV",
+      "schema:description": "Obtenez un fichier csv contenant les dernières données \"Commune 2025\""
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://geoterritoires.hautsdefrance.fr/GC_make_map.php?width=800&format=svg&lang=fr&indics=flores.eta_be&print=1&cosmetics=1",
+      "schema:name": "Téléchargement de la carte (SVG)",
+      "schema:description": "Impression de la carte vectorielle (SVG)"
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "WWW:LINK-1.0-http--link",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://geoterritoires.hautsdefrance.fr/index.php#c=indicator&i=flores.eta_be",
+        "schema:name": "Lien vers la cartographie"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "related",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://geoterritoires.hautsdefrance.fr/GC_make_map.php?width=800&lang=fr&indics=flores.eta_be&format=png&",
+        "schema:name": "Aperçu"
+      }
+    }
+  ],
+  "schema:url": "https://demo.georchestra.org/geonetwork/srv/eng/catalog.search#/metadata/flores.eta_be",
+  "schema:subjectOf": {
+    "@id": "https://demo.georchestra.org/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetRecordById&outputSchema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&elementSetName=full&id=flores.eta_be",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Dublin Core metadata record for: Etablissements actifs des secteurs Industrie manufacturière, industries extractives et autres",
+    "schema:about": {
+      "@id": "urn:dc:flores.eta_be"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a Dublin Core csw:Record record to CDIF by dc_to_cdif.py.",
+    "schema:identifier": "flores.eta_be",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "GeoNetwork demo",
+      "schema:url": "https://demo.georchestra.org/geonetwork/srv/eng/csw"
+    }
+  }
+}

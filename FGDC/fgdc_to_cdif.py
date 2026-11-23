@@ -340,6 +340,11 @@ def tf_interval(values, ctx):
     return out
 
 
+def _fmt(n):
+    """A coordinate to six decimal places (about 0.1 m), as the ISO converter writes it."""
+    return ("%.6f" % float(n)).rstrip("0").rstrip(".")
+
+
 def _num(t):
     try:
         return float(t)
@@ -363,7 +368,7 @@ def tf_place(values, ctx):
                                            "schema:latitude": n, "schema:longitude": w}
                 else:
                     place["schema:geo"] = {"@type": ["schema:GeoShape"],
-                                           "schema:box": "%g %g %g %g" % (s, w, n, e)}
+                                           "schema:box": " ".join(_fmt(x) for x in (s, w, n, e))}
         if len(place) > 1:
             out.append(place)
     return out

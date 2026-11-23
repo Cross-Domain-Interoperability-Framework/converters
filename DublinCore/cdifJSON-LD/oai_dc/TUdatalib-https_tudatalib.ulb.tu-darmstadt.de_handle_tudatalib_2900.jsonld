@@ -1,0 +1,88 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://doi.org/10.48328/tudatalib-612",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:value": "10.48328/tudatalib-612",
+    "schema:url": "https://doi.org/10.48328/tudatalib-612"
+  },
+  "schema:sameAs": [
+    "https://tudatalib.ulb.tu-darmstadt.de/handle/tudatalib/2900"
+  ],
+  "schema:url": "https://tudatalib.ulb.tu-darmstadt.de/handle/tudatalib/2900",
+  "schema:name": "GMD 2021 ISSM on HHLR Scaling Profiles",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Fischler, Yannic"
+      }
+    ]
+  },
+  "schema:dateModified": "2021-08-13T07:11:53Z",
+  "schema:datePublished": "2021-07",
+  "schema:description": "This data set includes the profiles in cubex format, which we generated during our scaling runs of ISSM on the HHLR. The data is structured as follows: submit.zip includes the sbatch scripts; other archive include the data of a run with the specific number of MPI processes; each contains 3 executions: trunk is an uninstrumented execution of ISSM v4.18, baseline is our initial measurement without optimization and preallocation is the measurement of ISSM v4.18 which includes optimization.",
+  "schema:keywords": [
+    "Profiles",
+    "ISSM",
+    "cubex",
+    "Scaling",
+    "HHLR",
+    "Greenland Model",
+    "4.43-07",
+    "004"
+  ],
+  "schema:additionalType": [
+    "Dataset"
+  ],
+  "schema:encodingFormat": [
+    "application/zip"
+  ],
+  "schema:conditionsOfAccess": [
+    "CC-BY-NC-4.0"
+  ],
+  "schema:subjectOf": {
+    "@id": "https://doi.org/10.48328/tudatalib-612#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Dublin Core metadata record for: GMD 2021 ISSM on HHLR Scaling Profiles",
+    "schema:about": {
+      "@id": "https://doi.org/10.48328/tudatalib-612"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      }
+    ],
+    "schema:description": "Converted from a Dublin Core oai_dc record to CDIF by dc_to_cdif.py.",
+    "schema:identifier": "https://tudatalib.ulb.tu-darmstadt.de/handle/tudatalib/2900",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "TUdatalib",
+      "schema:url": "https://tudatalib.ulb.tu-darmstadt.de/server/oai/request"
+    }
+  }
+}

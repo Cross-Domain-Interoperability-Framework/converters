@@ -1,0 +1,77 @@
+mapping_set_id: https://w3id.org/cdif/mappings/dc-to-cdif
+mapping_set_title: Dublin Core (csw:Record and oai_dc) to CDIF
+mapping_set_description: |
+  Property correspondences applied by DublinCore/dc_to_cdif.py (a Dublin Core
+  record -> CDIF JSON-LD, one record per source record). It reads the two
+  encodings metadata services publish: csw:Record (OGC CSW 2.0.2, with dct:
+  refinements, an ows:BoundingBox and dc:URI links) and oai_dc:dc (OAI-PMH
+  simple Dublin Core). This table drives the converter: it is read at runtime,
+  and each transform names a shaper (tf_<transform>) in dc_to_cdif.py.
+
+  subject_xpath is an XPath 1.0 expression from the record element (csw:Record
+  or oai_dc:dc), using the prefixes in curie_map; one row serves both
+  encodings, since both use the dc: elements. object_json_path is where the
+  value lands: $.<property> on the dataset, or $.schema:subjectOf.<property>
+  on the catalog record. Rows run in file order: for a scalar target the first
+  row to fill it wins; array targets accumulate. A row with no transform
+  documents an element that is not converted.
+
+  Dublin Core names no vocabulary, role or identifier scheme, so the shapers
+  read those from the values: a DOI or URL among the identifiers, a 'Family,
+  Given' creator, a date with a DataCite type label ('Updated: ...'), a
+  coverage value that is a period.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/DublinCore/dc_to_cdif.py
+mapping_date: 2026-11-22
+subject_source: http://purl.org/dc/elements/1.1/
+object_source: https://w3id.org/cdif/core/2.0
+see_also:
+  - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+  - https://www.openarchives.org/OAI/openarchivesprotocol.html#dublincore
+  - https://www.ogc.org/standard/cat/
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_xpath
+    property: https://w3id.org/cdif/mappings/subjectXPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  iri               the best identifier (DOI, URL, Handle/ARK, UUID, URI, other) as @id
+  identifier        that identifier -> PropertyValue (identifiers.org doi, hdl, ark)
+  otheridentifiers  the other identifiers -> URLs or strings
+  landing           a non-DOI http(s) identifier, else the DOI's resolver URL
+  text              the first non-empty value
+  texts             every distinct non-empty value
+  creators          creators -> a JSON-LD @list of Persons and Organizations (name rule, ORCID)
+  agents            contributors -> Persons and Organizations
+  organization      the first publisher -> Organization
+  date              the first date (a labelled one keeps its label's meaning)
+  fulldate          the first date with at least year and month
+  lastdate          the latest unlabelled date with year and month
+  firstdate         the earliest unlabelled date
+  year              a date's year -> YYYY-01-01
+  interval          dates and ranges as ISO 8601
+  description       dct:abstract and dc:description, distinct texts joined
+  types             dc:type -> IRI references for URIs, strings for labels
+  license           a rights URL, or a licence URL in rights text -> CreativeWork
+  rights            rights text that is not a bare URL
+  timecoverage      coverage that is a date or period -> ISO 8601
+  placecoverage     other coverage -> named Places
+  bbox              ows:BoundingBox -> Place with a box or point (axis order by CRS)
+  relation          relations that are URLs or DOIs -> LinkRoles
+  source            sources -> IRI references or strings
+  download          download dc:URI links -> DataDownloads
+  links             other dc:URI links -> LinkRoles named by protocol
+curie_map:
+  dc: http://purl.org/dc/elements/1.1/
+  dct: http://purl.org/dc/terms/
+  ows: http://www.opengis.net/ows
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sssom: https://w3id.org/sssom/

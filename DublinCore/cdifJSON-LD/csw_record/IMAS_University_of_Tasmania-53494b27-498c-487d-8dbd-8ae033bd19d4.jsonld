@@ -1,0 +1,102 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "urn:uuid:53494b27-498c-487d-8dbd-8ae033bd19d4",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "dc:identifier",
+    "schema:value": "53494b27-498c-487d-8dbd-8ae033bd19d4"
+  },
+  "schema:name": "Collated data inventory for Swift Parrot in relation to the Gippsland Offshore Renewable Energy declaration area (NESP MaC 3.21)",
+  "schema:description": "This project undertook a rapid exploration of information on a priority subset of species identified by the Department of Climate Change, Energy, the Environment and Water (DCCEEW) and the National Offshore Petroleum Safety and Environment Authority (NOPSEMA) that are listed as critically endangered or endangered under the Environment Protection and Biodiversity Conservation Act 1999. It specifically focused on these species in relation to the Gippsland declaration area, and the adjacent areas to the declaration area in Bass Strait. This rapid exploration of information was conducted as follows: 1) identify datasets and information sources relevant to priority species identified by DCCEEW and NOPSEMA for the Gippsland declaration area; 2) identify the source of these datasets and information and their level of accessibility; 3) evaluate the utility of datasets and information identified in 2) for assessments/regulatory processes required to be undertaken by DCCEEW and NOPSEMA; and 4) identify what activities would need to be undertaken to improve the accessibility and utility of datasets and information sources identified in 3) that are not currently accessible in useable formats. Fifteen priorities species (12 birds, 3 cetaceans) were identified for which publicly-available occurrence data could be located. This record and the attached download describes the data inventory for Swift Parrots (Lathamus discolor). To download the data inventory for all fifteen priority species, see https://doi.org/10.25959/GB51-RW44.",
+  "schema:keywords": [
+    "Threatened, endangered and protected species",
+    "Migratory parrots",
+    "Offshore wind energy",
+    "Offshore renewable energy (ORE)",
+    "Lathamus discolor",
+    "COASTAL",
+    "BIRDS",
+    "METADATA HANDLING",
+    "DATA DISCOVERY",
+    "MARINE ENVIRONMENT MONITORING",
+    "Marine Features (Australia) | Marine Features (Australia) | Bass Strait, TAS/VIC",
+    "biota",
+    "oceans"
+  ],
+  "schema:additionalType": [
+    "dataset"
+  ],
+  "schema:inLanguage": "eng",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-41.228507 140.778809 -37.422799 150.095215"
+      }
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://geoserver.imas.utas.edu.au/geoserver/NESP/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=NESP_MaC_3_21_ORE_prioritySpp_data_inventory&CQL_FILTER=scientific_name='Lathamus%20discolor'&outputFormat=CSV",
+      "schema:name": "DATA ACCESS - Swift Parrot data inventory for Gippsland ORE area",
+      "schema:description": "Data supplied as CSV via OGC WFS filtered by species."
+    }
+  ],
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "https://metadata.imas.utas.edu.au/geonetwork/srv/eng/catalog.search#/metadata/53494b27-498c-487d-8dbd-8ae033bd19d4",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://metadata.imas.utas.edu.au/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetRecordById&outputSchema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&elementSetName=full&id=53494b27-498c-487d-8dbd-8ae033bd19d4",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Dublin Core metadata record for: Collated data inventory for Swift Parrot in relation to the Gippsland Offshore Renewable Energy declaration area (NESP M",
+    "schema:about": {
+      "@id": "urn:uuid:53494b27-498c-487d-8dbd-8ae033bd19d4"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a Dublin Core csw:Record record to CDIF by dc_to_cdif.py.",
+    "schema:identifier": "53494b27-498c-487d-8dbd-8ae033bd19d4",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "IMAS (University of Tasmania)",
+      "schema:url": "https://metadata.imas.utas.edu.au/geonetwork/srv/eng/csw"
+    }
+  }
+}
