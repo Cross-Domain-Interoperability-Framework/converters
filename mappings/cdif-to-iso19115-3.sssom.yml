@@ -1,0 +1,87 @@
+mapping_set_id: https://w3id.org/cdif/mappings/cdif-to-iso19115-3
+mapping_set_title: CDIF to ISO 19115-3
+mapping_set_description: |
+  Property correspondences applied by ISO19115/cdif_to_iso.py (a CDIF JSON-LD
+  record -> one ISO 19115-3 mdb:MD_Metadata). This table drives the converter:
+  it is read at runtime, and each transform names a shaper (tf_<transform>) in
+  cdif_to_iso.py, with any arguments in parentheses (party(author,first)).
+
+  The mapping is a port of the DDE GeoNetwork's convert/fromJsonCdif.xsl
+  (iso19115-3.2018 schema plugin); the rows' comments say where it differs.
+
+  subject_json_path is a path from the CDIF record root: dot-separated property
+  names as CDIF writes them, '[*]' for every item, '@id' / '@type' for the
+  node's keywords. JSON-LD lists (arrays and @list) are expanded and @id
+  references into the @graph resolved. object_xpath is where the shaper's
+  elements go, as a path from mdb:MD_Metadata. The record is assembled in the
+  order the ISO 19115-3 XML Schema requires, not in table order; within one
+  location rows run in table order, a single-valued location keeping the first
+  row's element.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/ISO19115/cdif_to_iso.py
+mapping_date: 2026-11-23
+subject_source: https://w3id.org/cdif/core/2.0
+object_source: http://standards.iso.org/iso/19115/-3/mdb/2.0
+see_also:
+  - https://www.iso.org/standard/32579.html
+  - https://schemas.isotc211.org/19115/
+extension_definitions:
+  - slot_name: object_xpath
+    property: https://w3id.org/cdif/mappings/objectXPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_json_path
+    property: https://w3id.org/cdif/mappings/subjectJsonPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  recordid          the catalog record identifier -> metadataIdentifier
+  uuid              the dataset @id -> a uuid5 metadataIdentifier
+  locale            inLanguage -> PT_Locale (ISO 639-2/B, utf8)
+  scope             @type -> MD_ScopeCode dataset / service / software
+  party(role[,first]) agents -> CI_Responsibility with that CI_RoleCode
+  contributor       schema:Role contributors -> CI_Responsibility by roleName
+  date(type)        a date -> CI_Date with that CI_DateTypeCode
+  profile           conformsTo -> metadataProfile citation
+  cataloglink       includedInDataCatalog -> metadataLinkage
+  text              the first value -> CharacterString
+  identifier        identifier -> MD_Identifier (value, propertyID codeSpace)
+  sameas            sameAs -> MD_Identifier (codeSpace sameAs)
+  geodescription    named Places -> EX_GeographicDescription
+  bbox              GeoShape boxes / GeoCoordinates -> EX_GeographicBoundingBox
+  temporal          temporalCoverage -> EX_TemporalExtent with a gml:TimePeriod
+  keywords          keywords -> MD_Keywords, one per vocabulary
+  license           license -> MD_LegalConstraints reference
+  access            conditionsOfAccess -> MD_LegalConstraints otherConstraints
+  associated        relatedLink -> MD_AssociatedResource
+  fundingtext       funding -> FUNDING: line of supplementalInformation
+  techniquetext     measurementTechnique -> MEASUREMENT TECHNIQUE: line
+  principlestext    publishingPrinciples -> PUBLISHING PRINCIPLES: line
+  variabletext      variableMeasured -> VARIABLES MEASURED: line
+  featurecatalogue  variableMeasured -> MD_FeatureCatalogue (gfc FC_FeatureAttributes)
+  format            distribution encodingFormat -> MD_Format
+  distributor       distribution provider -> MD_Distributor
+  transfer          distributions -> MD_DigitalTransferOptions
+  urlfallback       url -> MD_DigitalTransferOptions, when no contentUrl
+  quality           dqv:hasQualityMeasurement -> DQ_DataQuality
+  lineagestatement  wasGeneratedBy -> LI_Lineage statement
+  lineagesource     wasDerivedFrom -> LI_Source
+  processstep       wasGeneratedBy -> LI_ProcessStep
+curie_map:
+  cit: http://standards.iso.org/iso/19115/-3/cit/2.0
+  dcterms: http://purl.org/dc/terms/
+  dqv: http://www.w3.org/ns/dqv#
+  gex: http://standards.iso.org/iso/19115/-3/gex/1.0
+  gfc: http://standards.iso.org/iso/19110/gfc/1.1
+  mco: http://standards.iso.org/iso/19115/-3/mco/1.0
+  mdb: http://standards.iso.org/iso/19115/-3/mdb/2.0
+  mdq: http://standards.iso.org/iso/19157/-2/mdq/1.0
+  mrd: http://standards.iso.org/iso/19115/-3/mrd/1.0
+  mri: http://standards.iso.org/iso/19115/-3/mri/1.0
+  mrl: http://standards.iso.org/iso/19115/-3/mrl/2.0
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#

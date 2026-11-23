@@ -21,7 +21,9 @@ different roles — check which before editing either side:
   no row on its class takes the target the table gives it elsewhere; see
   `NIAID/AGENTS.md`), ISO 19115 (`ISO19115/iso_to_cdif.py`: two tables,
   `iso19115-3-to-cdif` and `iso19139-to-cdif`, with the same rows in the same
-  order and different `subject_xpath`s — keep them aligned), SDMX
+  order and different `subject_xpath`s — keep them aligned; the reverse,
+  `ISO19115/cdif_to_iso.py`, reads `cdif-to-iso19115-3` and assembles the record
+  in XML Schema order from its `SLOTS` list, not in row order), SDMX
   (`SDMX/sdmx_to_cdif.py`: `subject_xpath` from the `str:Dataflow`, with `$dsd`
   bound to its DSD), DataCite (`DataCite/datacite_to_cdif.py`: `subject_xpath`
   from the `<resource>`, with `datacite:` bound to its own kernel-3 or kernel-4

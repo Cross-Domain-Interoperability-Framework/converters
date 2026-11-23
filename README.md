@@ -16,6 +16,7 @@ expose their conversion as an importable function.
 | [`DCAT/cdif_to_dcat.py`](DCAT/cdif_to_dcat.py) | CDIF → DCAT 3 (JSON-LD `@graph`: Dataset, CatalogRecord, Catalog) | W3C DCAT |
 | [`UMM/umm_to_cdif.py`](UMM/umm_to_cdif.py) | NASA CMR UMM-C (file **or URL**) → CDIF core+discovery | NASA UMM-C JSON |
 | [`ISO19115/iso_to_cdif.py`](ISO19115/iso_to_cdif.py) | ISO 19115-3 and ISO 19139 / 19115-2 XML (file, URL or CSW response) → CDIF (table-driven; DDE conventions where ISO has no CDIF property) | ISO 19115 XML |
+| [`ISO19115/cdif_to_iso.py`](ISO19115/cdif_to_iso.py) | CDIF → ISO 19115-3 `mdb:MD_Metadata` (table-driven port of the DDE GeoNetwork's `fromJsonCdif.xsl`; output ordered and valid against the ISO 19115-3 XML Schema) | ISO 19115-3 XML |
 | [`SDMX/sdmx_to_cdif.py`](SDMX/sdmx_to_cdif.py) | SDMX-ML 2.1 structure message (dataflow + DSD, file or SDMX-REST URL) → CDIF core/discovery/data_description/data_structure (table-driven; DSD as a cdi:DimensionalDataStructure) | SDMX |
 | [`DataCite/datacite_to_cdif.py`](DataCite/datacite_to_cdif.py) | DataCite Metadata Schema kernel 3 / 4 XML (a record or an OAI-PMH response) → CDIF core/discovery (table-driven) | DataCite XML |
 | [`DublinCore/dc_to_cdif.py`](DublinCore/dc_to_cdif.py) | Dublin Core: `csw:Record` (CSW 2.0.2) and `oai_dc` (OAI-PMH), a record or a response → CDIF core/discovery (table-driven) | Dublin Core XML |
