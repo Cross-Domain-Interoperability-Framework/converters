@@ -1,0 +1,127 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "http://stac.webservice-energy.org/api/collections/surfrad",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "SURFRAD",
+  "schema:description": "To understand the global surface energy budget is to understand climate. Because it is impractical to cover the earth with monitoring stations, the answer to global coverage lies in reliable satellite-based estimates. Efforts are underway at NASA and universities to develop algorithms to do this, but such projects are in their infancy. In concert with these ambitious efforts, accurate and precise ground-based measurements in differing climatic regions are essential to refine and verify the satellite-based estimates, as well as to support specialized research. To fill this niche, the Surface Radiation Budget Network (SURFRAD) was established in 1993 through the support of NOAA's Office of Global Programs. The SURFRAD mission is clear; its primary objective is to support climate research with accurate, continuous, long-term measurements of the surface radiation budget over the United States. This differs from DOE's ARM/SGP site, where surface radiation budget measurements are also being made, in that ARM uses clustered measurements over a limited area for process-oriented studies. Currently seven SURFRAD stations are operating in climatologically diverse regions: Montana, Colorado, Illinois, Mississippi, Pennsylvania, Nevada and South Dakota. This represents the first time that a full surface radiation budget network has operated across the U. S. Independent measures of upwelling and downwelling, solar and infrared are the primary measurements; ancillary observations include direct and diffuse solar, photosynthetically active radiation, UVB, spectral solar, and meteorological parameters. Data are downloaded, quality controlled, and processed into daily files that are distributed in near real time by anonymous FTP and the WWW (http://www.esrl.noaa.gov/gmd/grad/surfrad/). Observations from SURFRAD have been used for evaluating satellite-based estimates of surface radiation, and for validating hydrologic, weather prediction, and climate models. Quality assurance built into the design and operation of the network, and good data quality control ensure that a continuous, high quality product is released. The SURFRAD program has close ties with scientists at the University of Maryland, the Pennsylvania State University, NESDIS, UCAR's Office of Field Project Support, GCIP, DOE and Unidata. It is also part of the world-wide BSRN network. Operationally, SURFRAD has the cooperation of the USDA, the Fort Peck Tribes, the Pennsylvania State University, and the Illinois State Water Survey. The stations in Nevada, Pennsylvania and South Dakota are the newest in the network. They were installed in 1998 (Nevada and Pennsylvania) and 2003 (South Dakota). The station in Nevada is collocated with the Desert Rock operational rawinsonde station, which is operated by the Special Operations and Research Division (SORD) of NOAA's ARL. The station in central Pennsylvania is located on Penn State's Agricultural Research Farm about six miles southwest of State College, PA, and is operated by the Meteorology Department. The South Dakota station sits adjacent to the EROS Data Center outside of Sioux Falls. To support satellite and model verification activities, a cloud imaging system, now under commercial development, will be deployed at selected stations. It is also possible that state-of-the-art sensible and latent heat flux measurements will soon become an integral part of SURFRAD, making them complete surface energy budget stations.",
+  "schema:keywords": [
+    "SURFRAD",
+    "Energy",
+    "Renewable energy",
+    "in-situ",
+    "insitu",
+    "Measurements",
+    "Solar",
+    "MINES Paris - PSL",
+    "Webservice-Energy",
+    "Thredds",
+    "TDS",
+    "NetCDF"
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Yves-Marie Saint-Drenan",
+        "schema:url": "https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/saint-drenan-yves-marie-albert/"
+      },
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Lionel Ménard",
+        "schema:url": "https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/lionel-menard/"
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "MINES Paris - PSL / ARMINES Center Observation, Impacts, Energy (O.I.E.)",
+      "schema:url": "http://www.webservice-energy.org"
+    }
+  ],
+  "schema:dateModified": "2026-11-16T01:19:30Z",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "34.25 -116.018997 48.310001 -77.93"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "1995-01-01T00:00:00Z/2026-11-12T23:59:00Z"
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "items",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "http://stac.webservice-energy.org/api/collections/surfrad/items",
+        "schema:name": "Items",
+        "schema:encodingFormat": "application/geo+json"
+      }
+    }
+  ],
+  "schema:identifier": "surfrad",
+  "schema:url": "http://stac.webservice-energy.org/api/collections/surfrad",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "http://stac.webservice-energy.org/api/collections/surfrad#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: SURFRAD",
+    "schema:about": {
+      "@id": "http://stac.webservice-energy.org/api/collections/surfrad"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.1.0 Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "PSL / Mines Paris / OIE | STAC Catalog | Renewable energy datasets ",
+      "schema:url": "https://stac.webservice-energy.org/api/"
+    }
+  }
+}

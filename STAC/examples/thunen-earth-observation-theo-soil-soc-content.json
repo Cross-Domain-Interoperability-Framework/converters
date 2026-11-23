@@ -1,0 +1,186 @@
+{
+ "id": "soil-soc-content",
+ "type": "Collection",
+ "links": [
+  {
+   "rel": "items",
+   "type": "application/geo+json",
+   "href": "https://eodata.thuenen.de/stac/api/v1/collections/soil-soc-content/items"
+  },
+  {
+   "rel": "parent",
+   "type": "application/json",
+   "href": "https://eodata.thuenen.de/stac/api/v1/"
+  },
+  {
+   "rel": "root",
+   "type": "application/json",
+   "href": "https://eodata.thuenen.de/stac/api/v1/"
+  },
+  {
+   "rel": "self",
+   "type": "application/json",
+   "href": "https://eodata.thuenen.de/stac/api/v1/collections/soil-soc-content"
+  },
+  {
+   "rel": "license",
+   "href": "https://creativecommons.org/licenses/by/4.0/",
+   "title": "License"
+  },
+  {
+   "rel": "cite-as",
+   "href": "https://doi.org/10.5281/zenodo.15403341",
+   "title": "Dataset on Zenodo"
+  },
+  {
+   "rel": "cite-as",
+   "href": "https://doi.org/10.1016/j.rse.2025.115109",
+   "title": "Publication in Remote Sensing of Environment (2026)"
+  },
+  {
+   "rel": "related",
+   "href": "https://eodata.thuenen.de/viewer/?dataset=soc_content",
+   "type": "text/html",
+   "title": "Open in the ThEO Map Viewer"
+  },
+  {
+   "rel": "http://www.opengis.net/def/rel/ogc/1.0/queryables",
+   "type": "application/schema+json",
+   "title": "Queryables",
+   "href": "https://eodata.thuenen.de/stac/api/v1/collections/soil-soc-content/queryables"
+  }
+ ],
+ "title": "Soil Organic Carbon Content",
+ "assets": {
+  "thumbnail": {
+   "href": "https://eodata.thuenen.de/thumbnails/soil-soc-content/soil-soc-content.png",
+   "type": "image/png",
+   "roles": [
+    "thumbnail"
+   ],
+   "title": "Thumbnail preview"
+  }
+ },
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     5.866,
+     47.27,
+     15.042,
+     55.058
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2015-02-01T00:00:00Z",
+     "2024-11-30T00:00:00Z"
+    ]
+   ]
+  }
+ },
+ "license": "CC-BY-4.0",
+ "sci:doi": "10.1016/j.rse.2025.115109",
+ "keywords": [
+  "soil",
+  "soil organic carbon",
+  "SOC",
+  "carbon content",
+  "cropland",
+  "Germany",
+  "Sentinel-2",
+  "machine learning",
+  "COG",
+  "STAC"
+ ],
+ "providers": [
+  {
+   "url": "https://thuenen.de/theo",
+   "name": "Thünen Earth Observation",
+   "roles": [
+    "producer",
+    "licensor"
+   ]
+  }
+ ],
+ "summaries": {
+  "gsd": [
+   10.0
+  ],
+  "platform": [
+   "sentinel-2a",
+   "sentinel-2b"
+  ],
+  "proj:epsg": [
+   3035
+  ],
+  "instruments": [
+   "msi"
+  ],
+  "target:variable": [
+   "soil_organic_carbon_content"
+  ]
+ },
+ "description": "High-resolution (10 m) map of cropland soil organic carbon (SOC) **content** (0-30 cm, g/kg) for Germany. Predictions were produced with support vector machines from a 10 m Sentinel-2 bare-soil composite and trained on topsoil samples of the German Agricultural Soil Inventory (BZE-LW) [(Broeg et al., 2026)](https://doi.org/10.1016/j.rse.2025.115109). An accompanying uncertainty map (95 % prediction interval, +-1.96 sigma) is provided as a separate *uncertainty* asset. The spatial extent covers agricultural land defined by ATKIS Basis-DLM (© GeoBasis-DE / BKG, 2025).",
+ "item_assets": {
+  "data": {
+   "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+   "bands": [
+    {
+     "name": "soc_content",
+     "unit": "g/kg",
+     "nodata": -32768,
+     "data_type": "int16",
+     "description": "Soil organic carbon content (0-30 cm)",
+     "raster:scale": 1.0,
+     "raster:offset": 0.0,
+     "raster:sampling": "area",
+     "raster:bits_per_sample": 16,
+     "raster:spatial_resolution": 10.0
+    }
+   ],
+   "roles": [
+    "data"
+   ]
+  },
+  "uncertainty": {
+   "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+   "bands": [
+    {
+     "name": "soc_content_uncertainty",
+     "unit": "g/kg",
+     "nodata": -32768,
+     "data_type": "int16",
+     "description": "Soil organic carbon content (0-30 cm) - uncertainty (95 % prediction interval, +-1.96 sigma)",
+     "raster:scale": 1.0,
+     "raster:offset": 0.0,
+     "raster:sampling": "area",
+     "raster:bits_per_sample": 16,
+     "raster:spatial_resolution": 10.0
+    }
+   ],
+   "roles": [
+    "data",
+    "uncertainty"
+   ]
+  }
+ },
+ "stac_version": "1.1.0",
+ "stac_extensions": [
+  "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+  "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+  "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+  "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+  "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+ ],
+ "sci:publications": [
+  {
+   "doi": "10.1016/j.rse.2025.115109",
+   "year": 2026,
+   "title": "Reducing bias in cropland soil organic carbon and clay predictions using Sentinel-2 composites",
+   "citation": "Broeg, T., Don, A., Scholten, T., Erasmi, S., 2026. Reducing bias in cropland soil organic carbon and clay predictions using Sentinel-2 composites. Remote Sensing of Environment 333, 115109."
+  }
+ ]
+}

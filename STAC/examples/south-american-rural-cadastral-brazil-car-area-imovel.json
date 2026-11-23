@@ -1,0 +1,202 @@
+{
+ "type": "Collection",
+ "stac_version": "1.1.0",
+ "stac_extensions": [
+  "https://schemas.portolan-sdi.org/portolan/v0.1.2/schema.json",
+  "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+  "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+ ],
+ "id": "brazil-car-area-imovel",
+ "title": "Brazil — CAR Property Boundaries (Área do Imóvel)",
+ "updated": "2026-08-02T14:20:14Z",
+ "description": "Property boundaries (`Area do Imovel`) from the Brazilian Rural Environmental Registry (Cadastro Ambiental Rural, CAR), national coverage, updated as of July 16, 2026. 8,453,552 polygons after quarantining 2 corrupt geometries (see below). Every row carries the single theme `Area do Imovel`; the other CAR theme layers are not in this catalog.\n\n`cod_imovel` is the CAR registration code and the join key to the CAR theme layers. It is **not unique** here: 8,453,552 rows carry 8,437,938 distinct values, so 15,614 rows repeat a code that another row also carries. Deduplicate before you count properties.\n\nOther attributes: state code (`cod_estado`), municipality (`municipio`), administrative condition (`des_condic`, 16 distinct values), property type (`ind_tipo`: `IRU` rural property, `AST` agrarian reform settlement, `PCT` traditional territory), number of fiscal modules (`mod_fiscal`), declared area (`num_area`) and registry dates (`dat_criaca`, `dat_atuali`).\n\nReprojected from EPSG:4674 (SIRGAS 2000) to EPSG:4326 and rewritten as a single cloud-native GeoParquet 1.1 file: a bbox covering column for row-group pruning, ZSTD compression, and 212 row groups sized for HTTP range requests.\n\nTwo source geometries had corrupt coordinates far outside Brazil (one in Sao Luis/MA reaching a latitude of 239,000,000; one in Itabaiana/SE at longitude 89) and could not be reprojected to a sensible location. They are kept, unmodified, in the sidecar asset `suspect` (`brazil_car_area_imovel_suspect.parquet`) rather than dropped, so no `cod_imovel` is lost.",
+ "keywords": [
+  "cadastre",
+  "land tenure",
+  "parcels",
+  "South America",
+  "rural land",
+  "supply chain",
+  "Brazil",
+  "CAR",
+  "Cadastro Ambiental Rural",
+  "deforestation"
+ ],
+ "license": "other",
+ "providers": [
+  {
+   "name": "Serviço Florestal Brasileiro",
+   "description": "Operates the Sistema Nacional de Cadastro Ambiental Rural (SICAR) under Lei 12.651/2012.",
+   "roles": [
+    "producer",
+    "licensor"
+   ],
+   "url": "https://www.gov.br/florestal/"
+  },
+  {
+   "name": "Tristan Grupp",
+   "roles": [
+    "processor",
+    "host"
+   ],
+   "url": "https://source.coop/tristangruppwri/cadastral"
+  }
+ ],
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -73.80074501037598,
+     -33.75084239596,
+     -34.78797011299997,
+     4.492951075197228
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2026-07-16T00:00:00Z",
+     "2026-07-16T00:00:00Z"
+    ]
+   ]
+  }
+ },
+ "links": [
+  {
+   "rel": "root",
+   "href": "../catalog.json",
+   "type": "application/json",
+   "title": "South American Rural Cadastral Boundaries"
+  },
+  {
+   "rel": "parent",
+   "href": "../catalog.json",
+   "type": "application/json",
+   "title": "South American Rural Cadastral Boundaries"
+  },
+  {
+   "rel": "describedby",
+   "href": "./README.md",
+   "type": "text/markdown",
+   "title": "Collection README"
+  },
+  {
+   "rel": "agents",
+   "href": "./AGENTS.md",
+   "type": "text/markdown",
+   "title": "Collection agent guide"
+  },
+  {
+   "rel": "via",
+   "href": "https://consultapublica.car.gov.br/publico/estados/downloads",
+   "type": "text/html",
+   "title": "SICAR public consultation download portal"
+  },
+  {
+   "rel": "license",
+   "href": "https://consultapublica.car.gov.br/publico/estados/downloads",
+   "type": "text/html",
+   "title": "SICAR download portal — no terms of use are published"
+  }
+ ],
+ "assets": {
+  "data": {
+   "href": "./brazil_car_area_imovel.parquet",
+   "type": "application/vnd.apache.parquet",
+   "title": "CAR property boundaries, national (GeoParquet 1.1)",
+   "roles": [
+    "data"
+   ],
+   "file:size": 3258574258,
+   "file:checksum": "1220a8dbffba2c98562ca4a8883389836d6eb98b4b9e235dde4a8df8b6ab4ed05a61"
+  },
+  "suspect": {
+   "href": "./brazil_car_area_imovel_suspect.parquet",
+   "type": "application/vnd.apache.parquet",
+   "title": "Quarantined rows with corrupt coordinates (2 features)",
+   "roles": [
+    "data",
+    "quality"
+   ],
+   "file:size": 4834,
+   "file:checksum": "1220a78f62285854b07d77085675ad2813212b110c171e988f2db483ee38a6c64d1b",
+   "description": "The 2 source geometries whose coordinates fell outside the valid Brazil extent, kept unmodified in EPSG:4674 (the original CRS). Not part of the main dataset.",
+   "portolan:quarantine": true
+  },
+  "thumbnail": {
+   "href": "./thumbnail.png",
+   "type": "image/png",
+   "file:size": 237485,
+   "file:checksum": "122045fb774e32b756315d4dcb30217b7e14e2df2ac9a1ec4626f1c2540c130e815e",
+   "title": "Brazil — CAR Property Boundaries (Área do Imóvel) — parcel density",
+   "description": "Parcel density over every row in this collection, binned from the bbox covering column. It is an overview of where the parcels are, not a rendering of their boundaries.",
+   "roles": [
+    "thumbnail",
+    "overview"
+   ]
+  }
+ },
+ "geoparquet:geometry_type": "MultiPolygon",
+ "geoparquet:feature_count": 8453552,
+ "table:row_count": 8453552,
+ "table:primary_geometry": "geometry",
+ "table:columns": [
+  {
+   "name": "cod_tema",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "nom_tema",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "cod_imovel",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "mod_fiscal",
+   "type": "DOUBLE"
+  },
+  {
+   "name": "num_area",
+   "type": "DOUBLE"
+  },
+  {
+   "name": "ind_status",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ind_tipo",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "des_condic",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "municipio",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "cod_estado",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "dat_criaca",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "dat_atuali",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "bbox",
+   "type": "STRUCT(xmin DOUBLE, ymin DOUBLE, xmax DOUBLE, ymax DOUBLE)"
+  },
+  {
+   "name": "geometry",
+   "type": "GEOMETRY('{\"$schema\":\"https://proj.org/schemas/v0.7/projjson.schema.json\",\"type\":\"GeographicCRS\",\"name\":\"WGS 84\",\"datum_ensemble\":{\"name\":\"World Geodetic System 1984 ensemble\",\"members\":[{\"name\":\"World Geodetic System 1984 (Transit)\",\"id\":{\"authority\":\"EPSG\",\"code\":1166}},{\"name\":\"World Geodetic System 1984 (G730)\",\"id\":{\"authority\":\"EPSG\",\"code\":1152}},{\"name\":\"World Geodetic System 1984 (G873)\",\"id\":{\"authority\":\"EPSG\",\"code\":1153}},{\"name\":\"World Geodetic System 1984 (G1150)\",\"id\":{\"authority\":\"EPSG\",\"code\":1154}},{\"name\":\"World Geodetic System 1984 (G1674)\",\"id\":{\"authority\":\"EPSG\",\"code\":1155}},{\"name\":\"World Geodetic System 1984 (G1762)\",\"id\":{\"authority\":\"EPSG\",\"code\":1156}},{\"name\":\"World Geodetic System 1984 (G2139)\",\"id\":{\"authority\":\"EPSG\",\"code\":1309}},{\"name\":\"World Geodetic System 1984 (G2296)\",\"id\":{\"authority\":\"EPSG\",\"code\":1383}}],\"ellipsoid\":{\"name\":\"WGS 84\",\"semi_major_axis\":6378137,\"inverse_flattening\":298.257223563},\"accuracy\":\"2.0\",\"id\":{\"authority\":\"EPSG\",\"code\":6326}},\"coordinate_system\":{\"subtype\":\"ellipsoidal\",\"axis\":[{\"name\":\"Geodetic latitude\",\"abbreviation\":\"Lat\",\"direction\":\"north\",\"unit\":\"degree\"},{\"name\":\"Geodetic longitude\",\"abbreviation\":\"Lon\",\"direction\":\"east\",\"unit\":\"degree\"}]},\"scope\":\"Horizontal component of 3D system.\",\"area\":\"World.\",\"bbox\":{\"south_latitude\":-90,\"west_longitude\":-180,\"north_latitude\":90,\"east_longitude\":180},\"id\":{\"authority\":\"EPSG\",\"code\":4326}}')"
+  }
+ ]
+}

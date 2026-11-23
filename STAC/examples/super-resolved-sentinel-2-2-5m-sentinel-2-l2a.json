@@ -1,0 +1,146 @@
+{
+ "type": "Collection",
+ "stac_version": "1.0.0",
+ "id": "sentinel-2-l2a",
+ "title": "Sentinel-2 Level-2A",
+ "description": "Sentinel-2 L2A (bottom-of-atmosphere reflectance) surface imagery, served live from the Copernicus Dataspace catalogue. This is a query-time wrapper, not a locally indexed copy -- item search requires a bbox and a datetime range.",
+ "keywords": [
+  "sentinel-2",
+  "sentinel",
+  "copernicus",
+  "esa",
+  "msi",
+  "l2a",
+  "super-resolution"
+ ],
+ "license": "proprietary",
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -180,
+     -90,
+     180,
+     90
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2015-06-23T00:00:00Z",
+     null
+    ]
+   ]
+  }
+ },
+ "summaries": {
+  "platform": [
+   "sentinel-2a",
+   "sentinel-2b",
+   "sentinel-2c",
+   "sentinel-2d"
+  ],
+  "instruments": [
+   "MSI"
+  ],
+  "gsd": [
+   10
+  ],
+  "processing:level": [
+   "L2A"
+  ],
+  "eo:cloud_cover": {
+   "minimum": 0,
+   "maximum": 100
+  },
+  "eo:bands": [
+   {
+    "name": "coastal",
+    "common_name": "coastal",
+    "center_wavelength": 0.443
+   },
+   {
+    "name": "blue",
+    "common_name": "blue",
+    "center_wavelength": 0.49
+   },
+   {
+    "name": "green",
+    "common_name": "green",
+    "center_wavelength": 0.56
+   },
+   {
+    "name": "red",
+    "common_name": "red",
+    "center_wavelength": 0.665
+   },
+   {
+    "name": "rededge1",
+    "common_name": "rededge",
+    "center_wavelength": 0.704
+   },
+   {
+    "name": "rededge2",
+    "common_name": "rededge",
+    "center_wavelength": 0.74
+   },
+   {
+    "name": "rededge3",
+    "common_name": "rededge",
+    "center_wavelength": 0.783
+   },
+   {
+    "name": "nir",
+    "common_name": "nir",
+    "center_wavelength": 0.842
+   },
+   {
+    "name": "nir08",
+    "common_name": "nir08",
+    "center_wavelength": 0.865
+   },
+   {
+    "name": "nir09",
+    "common_name": "nir09",
+    "center_wavelength": 0.945
+   },
+   {
+    "name": "swir16",
+    "common_name": "swir16",
+    "center_wavelength": 1.61
+   },
+   {
+    "name": "swir22",
+    "common_name": "swir22",
+    "center_wavelength": 2.19
+   }
+  ]
+ },
+ "links": [
+  {
+   "rel": "self",
+   "type": "application/json",
+   "href": "https://console.semablu.com/py/stac/collections/sentinel-2-l2a",
+   "title": "This collection"
+  },
+  {
+   "rel": "parent",
+   "type": "application/json",
+   "href": "https://console.semablu.com/py/stac",
+   "title": "Semablu Sentinel-2 STAC API"
+  },
+  {
+   "rel": "root",
+   "type": "application/json",
+   "href": "https://console.semablu.com/py/stac",
+   "title": "Semablu Sentinel-2 STAC API"
+  },
+  {
+   "rel": "items",
+   "type": "application/geo+json",
+   "href": "https://console.semablu.com/py/stac/collections/sentinel-2-l2a/items",
+   "title": "Sentinel-2 L2A items"
+  }
+ ]
+}

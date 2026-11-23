@@ -1,0 +1,106 @@
+{
+ "type": "Collection",
+ "id": "mapspam2017",
+ "stac_version": "1.0.0",
+ "description": "MapSPAM values are calculated from (a) results of SPAM 2017 (Spatial Production Allocation Model) which generates plausible values for area harvested and production, (b) International crop prices in International 2005 Dollars by FAO, and (c) Areas cultivated and production achieved in different farm sizes derived from household surveys assembled by EPAR. Harvested area by farmsize is the total harvested area x  the farm size share. Household surveys are from different years, SPAM2017 data are scaled to FAO average (2016-2018)",
+ "links": [
+  {
+   "rel": "root",
+   "href": "../../catalog.json",
+   "type": "application/json",
+   "title": "Africa Agriculture Adaptation Atlas Catalog"
+  },
+  {
+   "rel": "cite-as",
+   "href": "https://doi.org/10.5194/essd-2020-11"
+  },
+  {
+   "rel": "item",
+   "href": "./crop_ha/crop_ha.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./crop_vop/crop_vop.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./mapspam2017_vop_parquet/mapspam2017_vop_parquet.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./mapspam2017_ha_parquet/mapspam2017_ha_parquet.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "parent",
+   "href": "../catalog.json",
+   "type": "application/json",
+   "title": "Exposure Catalog"
+  }
+ ],
+ "stac_extensions": [
+  "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+ ],
+ "created": "2024-05-14 15:49:33.759263",
+ "updated": "2024-05-14 15:49:33.759263",
+ "contact:name": "Pete Steward",
+ "contact:organization": "The Alliance of Bioversity International and CIAT",
+ "contact:email": "P.Steward@cgiar.org",
+ "sci:doi": "10.5194/essd-2020-11",
+ "sci:citation": "Yu, Q., You, L., Wood-Sichra, U., Ru, Y., Joglekar, A. K. B., Fritz, S., Xiong, W., Lu, M., Wu, W., and Yang, P.: A cultivated planet in 2010: 2. the global gridded agricultural production maps, Earth Syst. Sci. Data Discuss., 2020. doi: 10.5194/essd-2020-11",
+ "title": "MapSpam 2017",
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -25.34999769553542,
+     -46.95000144466758,
+     57.80000354349613,
+     39.99999985098839
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2016-01-01T00:00:00Z",
+     "2018-12-31T00:00:00Z"
+    ]
+   ]
+  }
+ },
+ "license": "CC-BY-4.0",
+ "providers": [
+  {
+   "name": "IFPRI",
+   "roles": [
+    "producer",
+    "licensor"
+   ],
+   "url": "https://ifpri.org/"
+  },
+  {
+   "name": "Ulrike Wood-Sichra",
+   "roles": [
+    "processor"
+   ]
+  },
+  {
+   "name": "Pete Steward",
+   "roles": [
+    "processor"
+   ]
+  },
+  {
+   "name": "AWS",
+   "roles": [
+    "host"
+   ],
+   "region": "us-east-1",
+   "bucket": "digital-atlas"
+  }
+ ]
+}

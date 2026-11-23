@@ -1,0 +1,2172 @@
+{
+ "type": "Collection",
+ "stac_version": "1.1.0",
+ "stac_extensions": [
+  "https://schemas.portolan-sdi.org/portolan/v0.1.1/schema.json",
+  "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+  "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+  "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+ ],
+ "id": "pop-2030",
+ "updated": "2026-08-18T06:57:31Z",
+ "title": "Population 2030 (100 m, Mollweide)",
+ "description": "Modelled residential population per 100 m grid cell for 2030, from the JRC Global Human Settlement Layer GHS-POP R2023A. Values are persons per pixel on the World Mollweide grid (ESRI:54009), an equal-area projection, so a cell covers the same ground area everywhere and per-cell density needs no latitude correction. Coverage is 332 tiles of 10000x10000 pixels. Ocean-only cells of the grid are not published upstream, and a further 43 tiles that upstream ships containing nothing but nodata are omitted here, since they carry no data and cannot hold the band statistics a renderer needs.\n\n**This is a derived, lossy product; its pixels are not bit-identical to the source.** The source was converted to allow partial reads over HTTP, which the upstream ZIP packaging prevents. The data type was narrowed from Float64 to Float32, which is lossless here because the source values carry only single-precision information (verified: identical GDAL checksums). Compression is LERC_ZSTD with a per-pixel error bound of 0.01 persons per cell, which is lossy. Across a 68-tile sample, the published population differs from the source by -0.000555% (-7,985 people). The largest absolute change to a tile total was 2,701 people. Among tiles holding over a million people, the largest relative shift was 0.0186%. Relative percentages are largest on nearly empty tiles because the quantization step is fixed; the absolute error there is a fraction of one person. Internal overviews and embedded statistics were added; neither exists upstream. For measurements, see [why this mirror exists](https://github.com/nlebovits/ghsl/blob/main/docs/upstream-gaps.md).\n\nQuery recipes are in the [collection agent guide](AGENTS.md). The authoritative original remains [JRC's own distribution](https://human-settlement.emergency.copernicus.eu/download.php?ds=pop).",
+ "license": "CC-BY-4.0",
+ "keywords": [
+  "population",
+  "demographics",
+  "GHSL",
+  "GHS-POP",
+  "JRC",
+  "gridded population",
+  "Mollweide",
+  "2030"
+ ],
+ "providers": [
+  {
+   "name": "European Commission, Joint Research Centre",
+   "description": "Produced GHS-POP R2023A and published it under CC BY 4.0.",
+   "roles": [
+    "producer",
+    "licensor"
+   ],
+   "url": "https://human-settlement.emergency.copernicus.eu/"
+  },
+  {
+   "name": "Nissim Lebovits",
+   "description": "Converted the upstream rasters to Cloud Optimized GeoTIFF and maintains this mirror. Did not alter the model or its inputs.",
+   "roles": [
+    "processor",
+    "host"
+   ],
+   "url": "https://github.com/nlebovits/ghsl",
+   "email": "nissim.lebovits@radiant.earth"
+  }
+ ],
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -179.987188302989,
+     -61.2993700571118,
+     179.986926279516,
+     89.0913829544103
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2030-01-01T00:00:00Z",
+     "2030-12-31T23:59:59Z"
+    ]
+   ]
+  }
+ },
+ "summaries": {
+  "proj:code": [
+   "ESRI:54009"
+  ],
+  "gsd": [
+   100
+  ]
+ },
+ "item_assets": {
+  "data": {
+   "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+   "roles": [
+    "data"
+   ],
+   "title": "Population count COG",
+   "bands": [
+    {
+     "name": "population",
+     "description": "Residential population per 100 m cell, 2030",
+     "nodata": -200,
+     "data_type": "float32",
+     "unit": "persons per pixel",
+     "raster:spatial_resolution": 100
+    }
+   ]
+  }
+ },
+ "links": [
+  {
+   "rel": "root",
+   "href": "../catalog.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "parent",
+   "href": "../catalog.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "describedby",
+   "href": "./README.md",
+   "type": "text/markdown",
+   "title": "Collection README"
+  },
+  {
+   "rel": "agents",
+   "href": "./AGENTS.md",
+   "type": "text/markdown",
+   "title": "Collection agent guide"
+  },
+  {
+   "rel": "cite-as",
+   "href": "https://doi.org/10.2905/2FF68A52-5B5B-4A22-8F40-C41DA8332CFE",
+   "title": "GHS-POP R2023A dataset DOI"
+  },
+  {
+   "rel": "via",
+   "href": "https://human-settlement.emergency.copernicus.eu/download.php?ds=pop",
+   "type": "text/html",
+   "title": "Upstream GHSL population distribution"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C7/pop-2030-R3_C7.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C7"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C6/pop-2030-R3_C6.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C6"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C5/pop-2030-R3_C5.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C5"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C7/pop-2030-R7_C7.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C7"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C4/pop-2030-R7_C4.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C4"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C3/pop-2030-R7_C3.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C3"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C2/pop-2030-R6_C2.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C2"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C3/pop-2030-R6_C3.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C3"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C3/pop-2030-R9_C3.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C3"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C2/pop-2030-R9_C2.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C2"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C3/pop-2030-R10_C3.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C3"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C3/pop-2030-R11_C3.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C3"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C2/pop-2030-R11_C2.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C2"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C1/pop-2030-R11_C1.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C1"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C1/pop-2030-R10_C1.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C1"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C1/pop-2030-R12_C1.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C1"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C2/pop-2030-R13_C2.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C2"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C2/pop-2030-R12_C2.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C2"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C3/pop-2030-R12_C3.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C3"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C4/pop-2030-R12_C4.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C4"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C5/pop-2030-R12_C5.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C5"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C5/pop-2030-R13_C5.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C5"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R15_C4/pop-2030-R15_C4.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R15_C4"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C7/pop-2030-R13_C7.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C7"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C6/pop-2030-R13_C6.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C6"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C6/pop-2030-R12_C6.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C6"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C5/pop-2030-R11_C5.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C5"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C4/pop-2030-R11_C4.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C4"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C5/pop-2030-R10_C5.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C5"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C9/pop-2030-R9_C9.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C9"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C9/pop-2030-R8_C9.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C9"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C10/pop-2030-R8_C10.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C10"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C11/pop-2030-R8_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C11/pop-2030-R9_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C10/pop-2030-R9_C10.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C10"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C10/pop-2030-R10_C10.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C10"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C11/pop-2030-R10_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C11/pop-2030-R11_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C9/pop-2030-R10_C9.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C9"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C9/pop-2030-R13_C9.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C9"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C8/pop-2030-R13_C8.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C8"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C11/pop-2030-R14_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C11/pop-2030-R13_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C11/pop-2030-R12_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C12/pop-2030-R12_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C13/pop-2030-R12_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C13/pop-2030-R13_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C12/pop-2030-R13_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C12/pop-2030-R14_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R15_C12/pop-2030-R15_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R15_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R15_C13/pop-2030-R15_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R15_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C13/pop-2030-R14_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C14/pop-2030-R14_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R15_C14/pop-2030-R15_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R15_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C14/pop-2030-R13_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C14/pop-2030-R12_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C15/pop-2030-R12_C15.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C15"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C15/pop-2030-R11_C15.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C15"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C15/pop-2030-R10_C15.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C15"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C14/pop-2030-R10_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C14/pop-2030-R11_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C13/pop-2030-R11_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C12/pop-2030-R11_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C12/pop-2030-R10_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C13/pop-2030-R10_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C13/pop-2030-R9_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C12/pop-2030-R9_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C12/pop-2030-R8_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C13/pop-2030-R8_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C14/pop-2030-R9_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C14/pop-2030-R4_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C13/pop-2030-R5_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C13/pop-2030-R4_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C12/pop-2030-R4_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C12/pop-2030-R5_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C13/pop-2030-R6_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C13/pop-2030-R7_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C12/pop-2030-R7_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C11/pop-2030-R7_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C11/pop-2030-R6_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C10/pop-2030-R6_C10.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C10"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C10/pop-2030-R7_C10.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C10"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C9/pop-2030-R7_C9.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C9"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C8/pop-2030-R7_C8.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C8"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C8/pop-2030-R6_C8.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C8"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C9/pop-2030-R6_C9.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C9"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C9/pop-2030-R5_C9.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C9"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C8/pop-2030-R5_C8.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C8"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C8/pop-2030-R4_C8.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C8"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C9/pop-2030-R4_C9.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C9"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C10/pop-2030-R4_C10.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C10"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C10/pop-2030-R5_C10.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C10"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C11/pop-2030-R5_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C11/pop-2030-R4_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C11/pop-2030-R3_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C11/pop-2030-R2_C11.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C11"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C10/pop-2030-R2_C10.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C10"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C10/pop-2030-R3_C10.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C10"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C9/pop-2030-R3_C9.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C9"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C8/pop-2030-R3_C8.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C8"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C8/pop-2030-R2_C8.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C8"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C9/pop-2030-R2_C9.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C9"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C13/pop-2030-R1_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C12/pop-2030-R2_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C12/pop-2030-R3_C12.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C12"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C13/pop-2030-R3_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C13/pop-2030-R2_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C14/pop-2030-R2_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C14/pop-2030-R3_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C15/pop-2030-R3_C15.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C15"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C15/pop-2030-R2_C15.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C15"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C15/pop-2030-R1_C15.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C15"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C14/pop-2030-R1_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C16/pop-2030-R1_C16.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C16"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C17/pop-2030-R1_C17.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C17"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C19/pop-2030-R1_C19.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C19"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C18/pop-2030-R1_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C18/pop-2030-R2_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C19/pop-2030-R2_C19.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C19"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C19/pop-2030-R3_C19.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C19"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C18/pop-2030-R3_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C17/pop-2030-R2_C17.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C17"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C16/pop-2030-R2_C16.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C16"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C16/pop-2030-R3_C16.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C16"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C17/pop-2030-R5_C17.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C17"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C16/pop-2030-R5_C16.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C16"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C16/pop-2030-R7_C16.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C16"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C17/pop-2030-R7_C17.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C17"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C17/pop-2030-R6_C17.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C17"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C18/pop-2030-R6_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C18/pop-2030-R7_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C19/pop-2030-R7_C19.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C19"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C19/pop-2030-R6_C19.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C19"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C19/pop-2030-R5_C19.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C19"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C18/pop-2030-R5_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C18/pop-2030-R4_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C19/pop-2030-R4_C19.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C19"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C20/pop-2030-R4_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C21/pop-2030-R4_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C21/pop-2030-R5_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C20/pop-2030-R5_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C20/pop-2030-R6_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C20/pop-2030-R7_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C21/pop-2030-R7_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C21/pop-2030-R6_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C22/pop-2030-R6_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C22/pop-2030-R7_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C23/pop-2030-R7_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C23/pop-2030-R6_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C23/pop-2030-R5_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C22/pop-2030-R5_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C22/pop-2030-R4_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C23/pop-2030-R4_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C23/pop-2030-R3_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C23/pop-2030-R2_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C22/pop-2030-R2_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C22/pop-2030-R3_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C21/pop-2030-R3_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C20/pop-2030-R3_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C20/pop-2030-R2_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C21/pop-2030-R2_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C21/pop-2030-R1_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C20/pop-2030-R1_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C22/pop-2030-R1_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C23/pop-2030-R1_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C25/pop-2030-R1_C25.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C25"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R1_C24/pop-2030-R1_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R1_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C24/pop-2030-R2_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C24/pop-2030-R3_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C25/pop-2030-R3_C25.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C25"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C25/pop-2030-R2_C25.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C25"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C26/pop-2030-R2_C26.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C26"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C26/pop-2030-R3_C26.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C26"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C27/pop-2030-R3_C27.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C27"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C27/pop-2030-R2_C27.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C27"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C30/pop-2030-R2_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C31/pop-2030-R3_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C30/pop-2030-R3_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C29/pop-2030-R3_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C29/pop-2030-R2_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R2_C28/pop-2030-R2_C28.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R2_C28"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C28/pop-2030-R3_C28.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C28"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C28/pop-2030-R4_C28.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C28"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C28/pop-2030-R5_C28.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C28"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C29/pop-2030-R5_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C29/pop-2030-R4_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C30/pop-2030-R4_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C31/pop-2030-R4_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C31/pop-2030-R5_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C30/pop-2030-R5_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C30/pop-2030-R6_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C31/pop-2030-R6_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C31/pop-2030-R7_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C30/pop-2030-R7_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C29/pop-2030-R7_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C29/pop-2030-R6_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C28/pop-2030-R6_C28.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C28"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C28/pop-2030-R7_C28.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C28"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C27/pop-2030-R7_C27.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C27"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C26/pop-2030-R7_C26.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C26"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C26/pop-2030-R6_C26.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C26"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C27/pop-2030-R6_C27.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C27"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C27/pop-2030-R5_C27.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C27"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C27/pop-2030-R4_C27.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C27"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C26/pop-2030-R4_C26.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C26"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C26/pop-2030-R5_C26.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C26"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C25/pop-2030-R5_C25.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C25"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C25/pop-2030-R4_C25.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C25"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R4_C24/pop-2030-R4_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R4_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R5_C24/pop-2030-R5_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R5_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C24/pop-2030-R6_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C25/pop-2030-R6_C25.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C25"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C25/pop-2030-R7_C25.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C25"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C24/pop-2030-R7_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C24/pop-2030-R8_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C24/pop-2030-R9_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C24/pop-2030-R10_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C24/pop-2030-R11_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C26/pop-2030-R10_C26.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C26"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C27/pop-2030-R9_C27.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C27"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C26/pop-2030-R9_C26.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C26"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C26/pop-2030-R8_C26.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C26"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C27/pop-2030-R8_C27.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C27"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C28/pop-2030-R8_C28.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C28"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C28/pop-2030-R9_C28.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C28"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C29/pop-2030-R9_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C29/pop-2030-R8_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C30/pop-2030-R8_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C31/pop-2030-R8_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C31/pop-2030-R9_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C30/pop-2030-R9_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C30/pop-2030-R10_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C31/pop-2030-R10_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C31/pop-2030-R11_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C30/pop-2030-R11_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C29/pop-2030-R11_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C29/pop-2030-R10_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C28/pop-2030-R10_C28.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C28"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C28/pop-2030-R11_C28.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C28"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C29/pop-2030-R13_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C29/pop-2030-R12_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C30/pop-2030-R12_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C31/pop-2030-R12_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C31/pop-2030-R13_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C30/pop-2030-R13_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C30/pop-2030-R14_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C31/pop-2030-R14_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R15_C31/pop-2030-R15_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R15_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C29/pop-2030-R14_C29.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C29"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C25/pop-2030-R12_C25.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C25"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C24/pop-2030-R12_C24.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C24"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R15_C22/pop-2030-R15_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R15_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C20/pop-2030-R14_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C21/pop-2030-R14_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C21/pop-2030-R13_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C20/pop-2030-R13_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C20/pop-2030-R12_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C21/pop-2030-R12_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C22/pop-2030-R12_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C22/pop-2030-R13_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C23/pop-2030-R13_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C23/pop-2030-R12_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C23/pop-2030-R11_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C22/pop-2030-R11_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C22/pop-2030-R10_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C23/pop-2030-R10_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C23/pop-2030-R9_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C23/pop-2030-R8_C23.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C23"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C22/pop-2030-R8_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C22/pop-2030-R9_C22.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C22"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C21/pop-2030-R9_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C21/pop-2030-R8_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C20/pop-2030-R8_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C20/pop-2030-R9_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C20/pop-2030-R10_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C21/pop-2030-R10_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C21/pop-2030-R11_C21.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C21"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C20/pop-2030-R11_C20.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C20"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C18/pop-2030-R11_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C19/pop-2030-R10_C19.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C19"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C19/pop-2030-R9_C19.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C19"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C19/pop-2030-R8_C19.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C19"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C18/pop-2030-R8_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C18/pop-2030-R9_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C17/pop-2030-R9_C17.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C17"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C17/pop-2030-R8_C17.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C17"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C16/pop-2030-R8_C16.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C16"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C17/pop-2030-R10_C17.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C17"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C16/pop-2030-R12_C16.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C16"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C18/pop-2030-R14_C18.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C18"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C17/pop-2030-R14_C17.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C17"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R16_C30/pop-2030-R16_C30.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R16_C30"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R16_C31/pop-2030-R16_C31.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R16_C31"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R16_C14/pop-2030-R16_C14.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R16_C14"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R16_C13/pop-2030-R16_C13.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R16_C13"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C36/pop-2030-R12_C36.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C36"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C34/pop-2030-R14_C34.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C34"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R15_C33/pop-2030-R15_C33.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R15_C33"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R15_C32/pop-2030-R15_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R15_C32"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C32/pop-2030-R14_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C32"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R14_C33/pop-2030-R14_C33.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R14_C33"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C33/pop-2030-R13_C33.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C33"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C32/pop-2030-R13_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C32"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C32/pop-2030-R12_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C32"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C33/pop-2030-R12_C33.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C33"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C34/pop-2030-R12_C34.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C34"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R13_C34/pop-2030-R13_C34.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R13_C34"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R12_C35/pop-2030-R12_C35.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R12_C35"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C35/pop-2030-R11_C35.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C35"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C35/pop-2030-R10_C35.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C35"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C34/pop-2030-R10_C34.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C34"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C34/pop-2030-R11_C34.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C34"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C33/pop-2030-R11_C33.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C33"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C32/pop-2030-R11_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C32"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C32/pop-2030-R10_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C32"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C33/pop-2030-R10_C33.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C33"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C33/pop-2030-R9_C33.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C33"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C32/pop-2030-R9_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C32"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C32/pop-2030-R8_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C32"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C33/pop-2030-R8_C33.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C33"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C34/pop-2030-R8_C34.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C34"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C34/pop-2030-R9_C34.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C34"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C35/pop-2030-R9_C35.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C35"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C35/pop-2030-R8_C35.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C35"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R8_C36/pop-2030-R8_C36.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R8_C36"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R9_C36/pop-2030-R9_C36.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R9_C36"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R10_C36/pop-2030-R10_C36.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R10_C36"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R11_C36/pop-2030-R11_C36.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R11_C36"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C33/pop-2030-R7_C33.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C33"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R7_C32/pop-2030-R7_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R7_C32"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R6_C32/pop-2030-R6_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R6_C32"
+  },
+  {
+   "rel": "item",
+   "href": "./pop-2030-R3_C32/pop-2030-R3_C32.json",
+   "type": "application/geo+json",
+   "title": "Population 2030, tile R3_C32"
+  }
+ ],
+ "assets": {
+  "items": {
+   "href": "https://data.source.coop/nlebovits/ghsl/pop-2030/items.parquet",
+   "type": "application/vnd.apache.parquet",
+   "title": "STAC-GeoParquet item index",
+   "description": "All 332 items for this epoch in one file. Read it instead of fetching item JSON individually.",
+   "roles": [
+    "metadata",
+    "collection-mirror"
+   ],
+   "file:size": 66221,
+   "file:checksum": "122098e1351dd4b5e75411e952b5f6fa14f9b0963a5f44c909ffc7d31bd79d59cdcc"
+  },
+  "documentation": {
+   "href": "https://data.source.coop/nlebovits/ghsl/_assets/GHSL_Data_Package_2023_light.pdf",
+   "type": "application/pdf",
+   "title": "GHSL Data Package 2023 (JRC)",
+   "description": "The publisher's own data package document. Upstream bundles a copy inside all 375 tile archives; carried once here.",
+   "roles": [
+    "metadata",
+    "documentation"
+   ],
+   "file:size": 1513933,
+   "file:checksum": "1220496510abd496673c2b58355f9c763615ad58cbb40905490d21fa967d9f718b08"
+  },
+  "input-metadata": {
+   "href": "https://data.source.coop/nlebovits/ghsl/_assets/GHS_POP_GLOBE_R2023A_input_metadata.xlsx",
+   "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+   "title": "GHS-POP R2023A input metadata (JRC)",
+   "description": "The publisher's per-country table of census inputs and reference years behind the model.",
+   "roles": [
+    "metadata"
+   ],
+   "file:size": 137963,
+   "file:checksum": "12204a1c62b65fb08eb3c308874d1b3215fbe6eb61915018998eebbfde00c04e384a"
+  },
+  "thumbnail": {
+   "href": "./thumbnail.png",
+   "type": "image/png",
+   "title": "Population 2030, global preview",
+   "description": "Rendered from this collection's own COGs, downsampled through their internal overviews. Colour breaks follow the distribution of populated cells. Ocean is transparent and land with no residents is grey, so the two read differently.",
+   "roles": [
+    "thumbnail"
+   ],
+   "file:size": 249705,
+   "file:checksum": "1220489e1424611ccfc8efd6ede59870b66e0ce7dae54c7a9b9325bcd38a9c7e81bd"
+  }
+ },
+ "citation": "Schiavina M., Freire S., Carioli A., MacManus K. (2023): GHS-POP R2023A - GHS population grid multitemporal (1975-2030). European Commission, Joint Research Centre (JRC). doi:10.2905/2FF68A52-5B5B-4A22-8F40-C41DA8332CFE",
+ "portolan:total_size_bytes": 1901068288,
+ "portolan:asset_count": 332,
+ "portolan:processing_notes": "Downloaded from the JRC tiled distribution and converted with tools/transform.py. 4775.5 MB of upstream rasters became 1813.0 MB of COGs, a 2.63x reduction, while adding internal overviews the source lacks."
+}

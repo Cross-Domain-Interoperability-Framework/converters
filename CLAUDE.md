@@ -34,7 +34,9 @@ different roles — check which before editing either side:
   OGC services (`OGCServices/ogc_services_to_cdif.py`: `subject_xpath` from
   the capabilities root, with `wfs:` and `ows:` bound to the document's own
   versions; layers are CreativeWorks under `schema:dataset`, since a nested
-  `schema:Dataset` must meet every Dataset rule),
+  `schema:Dataset` must meet every Dataset rule), STAC (`STAC/stac_to_cdif.py`:
+  `subject_json_path`, a dotted path with `[*]` and `[?key=a|b]`, from the
+  Collection root; Items are not converted),
   DDI (worksheets compiled to
   `mappings/ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py`). A
   mapping change for these is a table edit; code is only for structural

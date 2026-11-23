@@ -1,0 +1,118 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://digital-atlas.s3.amazonaws.com/stac/public_stac/solution_catalog/classified_solutions/collection.json",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Classified Solutions",
+  "schema:description": "These maps indicate solution suitability as the expected change in yield from solution adoption based on extrapolation from quantitative peer-reviewed evidence. Observed experimental yield outcomes for solutions are taken from the Evidence for Resilient Agriculture (ERA) dataset. Each ERA observation is a weighted yield ratio from an experiment comparing adoption to non-adoption of a solution. Solution yield ratios (a proxy for biophysical suitability) are derived for each map cell from analogous ERA locations and weighted by similarity. Grey cells indicate ERA does not contain any analagous sites for a cell, but the cell does produce the crop in question.\n    Methods: Worldclim baseline monthly average preciptation and min/max temperature data and SoilGrids bulkdensity, CEC, clay, sand, silt, soild organic carbon and pH data are associated with each point. An analogues approach is then used to map the biophysical similarity for the climate and soil variable groups across sub-Saharan Africa for each ERA location, resulting in two suitability layers per ERA location for each crop and solution combination. The two suitability layers are then combined as (soil)^0.5 * (climate)^0.5.  For an ERA practice x crop combination, response ratios log(with practice yield/without practice yield) are averaged for each site and the analogues corresponding to these sites stacked. For each map cell, similarity values (0-1) are subset to values >=0.5, this excludes response ratios from non-similar biophysical locations. The mean of the response ratios corresponding to the remaining layers is taken and weighted by similarity. The similiarity weighting means that response ratio values contributed by biophysically similar sites influence the mean more than dissimilar sites. Response ratio were converted to %  yield improvements and classified into 5 classes: <0%, 0-10%, 10%, >25%, and >=50%. MapSPAM 2017 harvested area data were used to defined areas were are crop is grown (as >5% of cell area harvested to the crop in question). A no data class (-9999) is applied to cells with no ERA similarity and >5% harvested area for a crop. NA values indicate no ERA data and <5% of the cell is harvested to the crop or the cell is NA in MapSPAM.\n    The process above was repeated substituting the baseline climate prediction layers for future climate scenarios derived from the average of five CIMP6 models (ACCESS-ESM1-5, EC-Earth3-Veg, INM-CM5-0, MPI-ESM1-2-HR, and MRI-ESM2-0).",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "AWS"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "processor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "The Alliance of Bioversity and CIAT",
+        "schema:url": "https://alliancebioversityciat.org/"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "processor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Pete Steward"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "processor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Julian Rimerez"
+      }
+    }
+  ],
+  "schema:dateModified": "2024-05-14T15:50:20Z",
+  "schema:dateCreated": "2024-05-14T15:50:20Z",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-34.832834 -17.583983 27.333584 51.415741"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "1995-01-01T00:00:00Z/2060-01-01T00:00:00Z"
+  ],
+  "schema:identifier": "classified_solutions",
+  "schema:url": "https://digital-atlas.s3.amazonaws.com/stac/public_stac/solution_catalog/classified_solutions/collection.json",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://digital-atlas.s3.amazonaws.com/stac/public_stac/solution_catalog/classified_solutions/collection.json#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: Classified Solutions",
+    "schema:about": {
+      "@id": "https://digital-atlas.s3.amazonaws.com/stac/public_stac/solution_catalog/classified_solutions/collection.json"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.0.0 Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "African Agriculture Adaptation Atlas STAC catalog",
+      "schema:url": "https://digital-atlas.s3.amazonaws.com/stac/public_stac/catalog.json"
+    }
+  }
+}

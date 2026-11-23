@@ -1,0 +1,1600 @@
+{
+ "type": "Collection",
+ "id": "classified_solutions",
+ "stac_version": "1.0.0",
+ "description": "These maps indicate solution suitability as the expected change in yield from solution adoption based on extrapolation from quantitative peer-reviewed evidence. Observed experimental yield outcomes for solutions are taken from the Evidence for Resilient Agriculture (ERA) dataset. Each ERA observation is a weighted yield ratio from an experiment comparing adoption to non-adoption of a solution. Solution yield ratios (a proxy for biophysical suitability) are derived for each map cell from analogous ERA locations and weighted by similarity. Grey cells indicate ERA does not contain any analagous sites for a cell, but the cell does produce the crop in question.\n    Methods: Worldclim baseline monthly average preciptation and min/max temperature data and SoilGrids bulkdensity, CEC, clay, sand, silt, soild organic carbon and pH data are associated with each point. An analogues approach is then used to map the biophysical similarity for the climate and soil variable groups across sub-Saharan Africa for each ERA location, resulting in two suitability layers per ERA location for each crop and solution combination. The two suitability layers are then combined as (soil)^0.5 * (climate)^0.5.  For an ERA practice x crop combination, response ratios log(with practice yield/without practice yield) are averaged for each site and the analogues corresponding to these sites stacked. For each map cell, similarity values (0-1) are subset to values >=0.5, this excludes response ratios from non-similar biophysical locations. The mean of the response ratios corresponding to the remaining layers is taken and weighted by similarity. The similiarity weighting means that response ratio values contributed by biophysically similar sites influence the mean more than dissimilar sites. Response ratio were converted to %  yield improvements and classified into 5 classes: <0%, 0-10%, 10%, >25%, and >=50%. MapSPAM 2017 harvested area data were used to defined areas were are crop is grown (as >5% of cell area harvested to the crop in question). A no data class (-9999) is applied to cells with no ERA similarity and >5% harvested area for a crop. NA values indicate no ERA data and <5% of the cell is harvested to the crop or the cell is NA in MapSPAM.\n    The process above was repeated substituting the baseline climate prediction layers for future climate scenarios derived from the average of five CIMP6 models (ACCESS-ESM1-5, EC-Earth3-Veg, INM-CM5-0, MPI-ESM1-2-HR, and MRI-ESM2-0).",
+ "links": [
+  {
+   "rel": "root",
+   "href": "../../catalog.json",
+   "type": "application/json",
+   "title": "Africa Agriculture Adaptation Atlas Catalog"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Agroforestry_Maize_Crop-Yield_21/2030_ssp126_Agroforestry_Maize_Crop-Yield_21.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Cassava_Crop-Yield_37/2030_ssp126_Inorganic-Fertilizers_Cassava_Crop-Yield_37.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48/2030_ssp126_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Cowpea_Crop-Yield_60/2030_ssp126_Inorganic-Fertilizers_Cowpea_Crop-Yield_60.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Groundnut_Crop-Yield_28/2030_ssp126_Inorganic-Fertilizers_Groundnut_Crop-Yield_28.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Maize_Crop-Yield_336/2030_ssp126_Inorganic-Fertilizers_Maize_Crop-Yield_336.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38/2030_ssp126_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Potato_Crop-Yield_30/2030_ssp126_Inorganic-Fertilizers_Potato_Crop-Yield_30.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Rice_Crop-Yield_75/2030_ssp126_Inorganic-Fertilizers_Rice_Crop-Yield_75.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Sorghum_Crop-Yield_34/2030_ssp126_Inorganic-Fertilizers_Sorghum_Crop-Yield_34.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Soybean_Crop-Yield_46/2030_ssp126_Inorganic-Fertilizers_Soybean_Crop-Yield_46.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Wheat_Crop-Yield_15/2030_ssp126_Inorganic-Fertilizers_Wheat_Crop-Yield_15.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Inorganic-Fertilizers_Yam_Crop-Yield_10/2030_ssp126_Inorganic-Fertilizers_Yam_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Intercropping_Cassava_Crop-Yield_14/2030_ssp126_Intercropping_Cassava_Crop-Yield_14.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Intercropping_Cowpea_Crop-Yield_32/2030_ssp126_Intercropping_Cowpea_Crop-Yield_32.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Intercropping_Groundnut_Crop-Yield_10/2030_ssp126_Intercropping_Groundnut_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Intercropping_Maize_Crop-Yield_104/2030_ssp126_Intercropping_Maize_Crop-Yield_104.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Intercropping_Soybean_Crop-Yield_16/2030_ssp126_Intercropping_Soybean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Mulch_Maize_Crop-Yield_55/2030_ssp126_Mulch_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Mulch_Pearl-Millet_Crop-Yield_10/2030_ssp126_Mulch_Pearl-Millet_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Mulch_Reduced-Tillage_Maize_Crop-Yield_55/2030_ssp126_Mulch_Reduced-Tillage_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Organic-Fertilizers_Common-Bean_Crop-Yield_16/2030_ssp126_Organic-Fertilizers_Common-Bean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Organic-Fertilizers_Groundnut_Crop-Yield_12/2030_ssp126_Organic-Fertilizers_Groundnut_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Organic-Fertilizers_Maize_Crop-Yield_101/2030_ssp126_Organic-Fertilizers_Maize_Crop-Yield_101.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25/2030_ssp126_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Organic-Fertilizers_Potato_Crop-Yield_29/2030_ssp126_Organic-Fertilizers_Potato_Crop-Yield_29.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Organic-Fertilizers_Sorghum_Crop-Yield_22/2030_ssp126_Organic-Fertilizers_Sorghum_Crop-Yield_22.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Organic-Fertilizers_Soybean_Crop-Yield_12/2030_ssp126_Organic-Fertilizers_Soybean_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Reduced-Tillage_Maize_Crop-Yield_84/2030_ssp126_Reduced-Tillage_Maize_Crop-Yield_84.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Reduced-Tillage_Sorghum_Crop-Yield_16/2030_ssp126_Reduced-Tillage_Sorghum_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Reduced-Tillage_Soybean_Crop-Yield_10/2030_ssp126_Reduced-Tillage_Soybean_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Water-Harvesting_Maize_Crop-Yield_44/2030_ssp126_Water-Harvesting_Maize_Crop-Yield_44.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp126_Water-Harvesting_Sorghum_Crop-Yield_13/2030_ssp126_Water-Harvesting_Sorghum_Crop-Yield_13.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Agroforestry_Maize_Crop-Yield_21/2030_ssp245_Agroforestry_Maize_Crop-Yield_21.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Cassava_Crop-Yield_37/2030_ssp245_Inorganic-Fertilizers_Cassava_Crop-Yield_37.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48/2030_ssp245_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Cowpea_Crop-Yield_60/2030_ssp245_Inorganic-Fertilizers_Cowpea_Crop-Yield_60.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Groundnut_Crop-Yield_28/2030_ssp245_Inorganic-Fertilizers_Groundnut_Crop-Yield_28.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Maize_Crop-Yield_336/2030_ssp245_Inorganic-Fertilizers_Maize_Crop-Yield_336.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38/2030_ssp245_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Potato_Crop-Yield_30/2030_ssp245_Inorganic-Fertilizers_Potato_Crop-Yield_30.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Rice_Crop-Yield_75/2030_ssp245_Inorganic-Fertilizers_Rice_Crop-Yield_75.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Sorghum_Crop-Yield_34/2030_ssp245_Inorganic-Fertilizers_Sorghum_Crop-Yield_34.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Soybean_Crop-Yield_46/2030_ssp245_Inorganic-Fertilizers_Soybean_Crop-Yield_46.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Wheat_Crop-Yield_15/2030_ssp245_Inorganic-Fertilizers_Wheat_Crop-Yield_15.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Inorganic-Fertilizers_Yam_Crop-Yield_10/2030_ssp245_Inorganic-Fertilizers_Yam_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Intercropping_Cassava_Crop-Yield_14/2030_ssp245_Intercropping_Cassava_Crop-Yield_14.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Intercropping_Cowpea_Crop-Yield_32/2030_ssp245_Intercropping_Cowpea_Crop-Yield_32.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Intercropping_Groundnut_Crop-Yield_10/2030_ssp245_Intercropping_Groundnut_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Intercropping_Maize_Crop-Yield_104/2030_ssp245_Intercropping_Maize_Crop-Yield_104.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Intercropping_Soybean_Crop-Yield_16/2030_ssp245_Intercropping_Soybean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Mulch_Maize_Crop-Yield_55/2030_ssp245_Mulch_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Mulch_Pearl-Millet_Crop-Yield_10/2030_ssp245_Mulch_Pearl-Millet_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Mulch_Reduced-Tillage_Maize_Crop-Yield_55/2030_ssp245_Mulch_Reduced-Tillage_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Organic-Fertilizers_Common-Bean_Crop-Yield_16/2030_ssp245_Organic-Fertilizers_Common-Bean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Organic-Fertilizers_Groundnut_Crop-Yield_12/2030_ssp245_Organic-Fertilizers_Groundnut_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Organic-Fertilizers_Maize_Crop-Yield_101/2030_ssp245_Organic-Fertilizers_Maize_Crop-Yield_101.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25/2030_ssp245_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Organic-Fertilizers_Potato_Crop-Yield_29/2030_ssp245_Organic-Fertilizers_Potato_Crop-Yield_29.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Organic-Fertilizers_Sorghum_Crop-Yield_22/2030_ssp245_Organic-Fertilizers_Sorghum_Crop-Yield_22.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Organic-Fertilizers_Soybean_Crop-Yield_12/2030_ssp245_Organic-Fertilizers_Soybean_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Reduced-Tillage_Maize_Crop-Yield_84/2030_ssp245_Reduced-Tillage_Maize_Crop-Yield_84.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Reduced-Tillage_Sorghum_Crop-Yield_16/2030_ssp245_Reduced-Tillage_Sorghum_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Reduced-Tillage_Soybean_Crop-Yield_10/2030_ssp245_Reduced-Tillage_Soybean_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Water-Harvesting_Maize_Crop-Yield_44/2030_ssp245_Water-Harvesting_Maize_Crop-Yield_44.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp245_Water-Harvesting_Sorghum_Crop-Yield_13/2030_ssp245_Water-Harvesting_Sorghum_Crop-Yield_13.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Agroforestry_Maize_Crop-Yield_21/2030_ssp370_Agroforestry_Maize_Crop-Yield_21.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Cassava_Crop-Yield_37/2030_ssp370_Inorganic-Fertilizers_Cassava_Crop-Yield_37.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48/2030_ssp370_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Cowpea_Crop-Yield_60/2030_ssp370_Inorganic-Fertilizers_Cowpea_Crop-Yield_60.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Groundnut_Crop-Yield_28/2030_ssp370_Inorganic-Fertilizers_Groundnut_Crop-Yield_28.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Maize_Crop-Yield_336/2030_ssp370_Inorganic-Fertilizers_Maize_Crop-Yield_336.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38/2030_ssp370_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Potato_Crop-Yield_30/2030_ssp370_Inorganic-Fertilizers_Potato_Crop-Yield_30.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Rice_Crop-Yield_75/2030_ssp370_Inorganic-Fertilizers_Rice_Crop-Yield_75.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Sorghum_Crop-Yield_34/2030_ssp370_Inorganic-Fertilizers_Sorghum_Crop-Yield_34.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Soybean_Crop-Yield_46/2030_ssp370_Inorganic-Fertilizers_Soybean_Crop-Yield_46.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Wheat_Crop-Yield_15/2030_ssp370_Inorganic-Fertilizers_Wheat_Crop-Yield_15.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Inorganic-Fertilizers_Yam_Crop-Yield_10/2030_ssp370_Inorganic-Fertilizers_Yam_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Intercropping_Cassava_Crop-Yield_14/2030_ssp370_Intercropping_Cassava_Crop-Yield_14.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Intercropping_Cowpea_Crop-Yield_32/2030_ssp370_Intercropping_Cowpea_Crop-Yield_32.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Intercropping_Groundnut_Crop-Yield_10/2030_ssp370_Intercropping_Groundnut_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Intercropping_Maize_Crop-Yield_104/2030_ssp370_Intercropping_Maize_Crop-Yield_104.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Intercropping_Soybean_Crop-Yield_16/2030_ssp370_Intercropping_Soybean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Mulch_Maize_Crop-Yield_55/2030_ssp370_Mulch_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Mulch_Pearl-Millet_Crop-Yield_10/2030_ssp370_Mulch_Pearl-Millet_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Mulch_Reduced-Tillage_Maize_Crop-Yield_55/2030_ssp370_Mulch_Reduced-Tillage_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Organic-Fertilizers_Common-Bean_Crop-Yield_16/2030_ssp370_Organic-Fertilizers_Common-Bean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Organic-Fertilizers_Groundnut_Crop-Yield_12/2030_ssp370_Organic-Fertilizers_Groundnut_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Organic-Fertilizers_Maize_Crop-Yield_101/2030_ssp370_Organic-Fertilizers_Maize_Crop-Yield_101.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25/2030_ssp370_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Organic-Fertilizers_Potato_Crop-Yield_29/2030_ssp370_Organic-Fertilizers_Potato_Crop-Yield_29.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Organic-Fertilizers_Sorghum_Crop-Yield_22/2030_ssp370_Organic-Fertilizers_Sorghum_Crop-Yield_22.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Organic-Fertilizers_Soybean_Crop-Yield_12/2030_ssp370_Organic-Fertilizers_Soybean_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Reduced-Tillage_Maize_Crop-Yield_84/2030_ssp370_Reduced-Tillage_Maize_Crop-Yield_84.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Reduced-Tillage_Sorghum_Crop-Yield_16/2030_ssp370_Reduced-Tillage_Sorghum_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Reduced-Tillage_Soybean_Crop-Yield_10/2030_ssp370_Reduced-Tillage_Soybean_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Water-Harvesting_Maize_Crop-Yield_44/2030_ssp370_Water-Harvesting_Maize_Crop-Yield_44.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp370_Water-Harvesting_Sorghum_Crop-Yield_13/2030_ssp370_Water-Harvesting_Sorghum_Crop-Yield_13.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Agroforestry_Maize_Crop-Yield_21/2030_ssp585_Agroforestry_Maize_Crop-Yield_21.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Cassava_Crop-Yield_37/2030_ssp585_Inorganic-Fertilizers_Cassava_Crop-Yield_37.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48/2030_ssp585_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Cowpea_Crop-Yield_60/2030_ssp585_Inorganic-Fertilizers_Cowpea_Crop-Yield_60.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Groundnut_Crop-Yield_28/2030_ssp585_Inorganic-Fertilizers_Groundnut_Crop-Yield_28.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Maize_Crop-Yield_336/2030_ssp585_Inorganic-Fertilizers_Maize_Crop-Yield_336.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38/2030_ssp585_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Potato_Crop-Yield_30/2030_ssp585_Inorganic-Fertilizers_Potato_Crop-Yield_30.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Rice_Crop-Yield_75/2030_ssp585_Inorganic-Fertilizers_Rice_Crop-Yield_75.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Sorghum_Crop-Yield_34/2030_ssp585_Inorganic-Fertilizers_Sorghum_Crop-Yield_34.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Soybean_Crop-Yield_46/2030_ssp585_Inorganic-Fertilizers_Soybean_Crop-Yield_46.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Wheat_Crop-Yield_15/2030_ssp585_Inorganic-Fertilizers_Wheat_Crop-Yield_15.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Inorganic-Fertilizers_Yam_Crop-Yield_10/2030_ssp585_Inorganic-Fertilizers_Yam_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Intercropping_Cassava_Crop-Yield_14/2030_ssp585_Intercropping_Cassava_Crop-Yield_14.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Intercropping_Cowpea_Crop-Yield_32/2030_ssp585_Intercropping_Cowpea_Crop-Yield_32.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Intercropping_Groundnut_Crop-Yield_10/2030_ssp585_Intercropping_Groundnut_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Intercropping_Maize_Crop-Yield_104/2030_ssp585_Intercropping_Maize_Crop-Yield_104.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Intercropping_Soybean_Crop-Yield_16/2030_ssp585_Intercropping_Soybean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Mulch_Maize_Crop-Yield_55/2030_ssp585_Mulch_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Mulch_Pearl-Millet_Crop-Yield_10/2030_ssp585_Mulch_Pearl-Millet_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Mulch_Reduced-Tillage_Maize_Crop-Yield_55/2030_ssp585_Mulch_Reduced-Tillage_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Organic-Fertilizers_Common-Bean_Crop-Yield_16/2030_ssp585_Organic-Fertilizers_Common-Bean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Organic-Fertilizers_Groundnut_Crop-Yield_12/2030_ssp585_Organic-Fertilizers_Groundnut_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Organic-Fertilizers_Maize_Crop-Yield_101/2030_ssp585_Organic-Fertilizers_Maize_Crop-Yield_101.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25/2030_ssp585_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Organic-Fertilizers_Potato_Crop-Yield_29/2030_ssp585_Organic-Fertilizers_Potato_Crop-Yield_29.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Organic-Fertilizers_Sorghum_Crop-Yield_22/2030_ssp585_Organic-Fertilizers_Sorghum_Crop-Yield_22.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Organic-Fertilizers_Soybean_Crop-Yield_12/2030_ssp585_Organic-Fertilizers_Soybean_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Reduced-Tillage_Maize_Crop-Yield_84/2030_ssp585_Reduced-Tillage_Maize_Crop-Yield_84.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Reduced-Tillage_Sorghum_Crop-Yield_16/2030_ssp585_Reduced-Tillage_Sorghum_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Reduced-Tillage_Soybean_Crop-Yield_10/2030_ssp585_Reduced-Tillage_Soybean_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Water-Harvesting_Maize_Crop-Yield_44/2030_ssp585_Water-Harvesting_Maize_Crop-Yield_44.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2030_ssp585_Water-Harvesting_Sorghum_Crop-Yield_13/2030_ssp585_Water-Harvesting_Sorghum_Crop-Yield_13.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Agroforestry_Maize_Crop-Yield_21/2050_ssp126_Agroforestry_Maize_Crop-Yield_21.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Cassava_Crop-Yield_37/2050_ssp126_Inorganic-Fertilizers_Cassava_Crop-Yield_37.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48/2050_ssp126_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Cowpea_Crop-Yield_60/2050_ssp126_Inorganic-Fertilizers_Cowpea_Crop-Yield_60.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Groundnut_Crop-Yield_28/2050_ssp126_Inorganic-Fertilizers_Groundnut_Crop-Yield_28.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Maize_Crop-Yield_336/2050_ssp126_Inorganic-Fertilizers_Maize_Crop-Yield_336.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38/2050_ssp126_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Potato_Crop-Yield_30/2050_ssp126_Inorganic-Fertilizers_Potato_Crop-Yield_30.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Rice_Crop-Yield_75/2050_ssp126_Inorganic-Fertilizers_Rice_Crop-Yield_75.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Sorghum_Crop-Yield_34/2050_ssp126_Inorganic-Fertilizers_Sorghum_Crop-Yield_34.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Soybean_Crop-Yield_46/2050_ssp126_Inorganic-Fertilizers_Soybean_Crop-Yield_46.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Wheat_Crop-Yield_15/2050_ssp126_Inorganic-Fertilizers_Wheat_Crop-Yield_15.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Inorganic-Fertilizers_Yam_Crop-Yield_10/2050_ssp126_Inorganic-Fertilizers_Yam_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Intercropping_Cassava_Crop-Yield_14/2050_ssp126_Intercropping_Cassava_Crop-Yield_14.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Intercropping_Cowpea_Crop-Yield_32/2050_ssp126_Intercropping_Cowpea_Crop-Yield_32.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Intercropping_Groundnut_Crop-Yield_10/2050_ssp126_Intercropping_Groundnut_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Intercropping_Maize_Crop-Yield_104/2050_ssp126_Intercropping_Maize_Crop-Yield_104.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Intercropping_Soybean_Crop-Yield_16/2050_ssp126_Intercropping_Soybean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Mulch_Maize_Crop-Yield_55/2050_ssp126_Mulch_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Mulch_Pearl-Millet_Crop-Yield_10/2050_ssp126_Mulch_Pearl-Millet_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Mulch_Reduced-Tillage_Maize_Crop-Yield_55/2050_ssp126_Mulch_Reduced-Tillage_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Organic-Fertilizers_Common-Bean_Crop-Yield_16/2050_ssp126_Organic-Fertilizers_Common-Bean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Organic-Fertilizers_Groundnut_Crop-Yield_12/2050_ssp126_Organic-Fertilizers_Groundnut_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Organic-Fertilizers_Maize_Crop-Yield_101/2050_ssp126_Organic-Fertilizers_Maize_Crop-Yield_101.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25/2050_ssp126_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Organic-Fertilizers_Potato_Crop-Yield_29/2050_ssp126_Organic-Fertilizers_Potato_Crop-Yield_29.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Organic-Fertilizers_Sorghum_Crop-Yield_22/2050_ssp126_Organic-Fertilizers_Sorghum_Crop-Yield_22.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Organic-Fertilizers_Soybean_Crop-Yield_12/2050_ssp126_Organic-Fertilizers_Soybean_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Reduced-Tillage_Maize_Crop-Yield_84/2050_ssp126_Reduced-Tillage_Maize_Crop-Yield_84.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Reduced-Tillage_Sorghum_Crop-Yield_16/2050_ssp126_Reduced-Tillage_Sorghum_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Reduced-Tillage_Soybean_Crop-Yield_10/2050_ssp126_Reduced-Tillage_Soybean_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Water-Harvesting_Maize_Crop-Yield_44/2050_ssp126_Water-Harvesting_Maize_Crop-Yield_44.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp126_Water-Harvesting_Sorghum_Crop-Yield_13/2050_ssp126_Water-Harvesting_Sorghum_Crop-Yield_13.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Agroforestry_Maize_Crop-Yield_21/2050_ssp245_Agroforestry_Maize_Crop-Yield_21.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Cassava_Crop-Yield_37/2050_ssp245_Inorganic-Fertilizers_Cassava_Crop-Yield_37.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48/2050_ssp245_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Cowpea_Crop-Yield_60/2050_ssp245_Inorganic-Fertilizers_Cowpea_Crop-Yield_60.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Groundnut_Crop-Yield_28/2050_ssp245_Inorganic-Fertilizers_Groundnut_Crop-Yield_28.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Maize_Crop-Yield_336/2050_ssp245_Inorganic-Fertilizers_Maize_Crop-Yield_336.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38/2050_ssp245_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Potato_Crop-Yield_30/2050_ssp245_Inorganic-Fertilizers_Potato_Crop-Yield_30.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Rice_Crop-Yield_75/2050_ssp245_Inorganic-Fertilizers_Rice_Crop-Yield_75.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Sorghum_Crop-Yield_34/2050_ssp245_Inorganic-Fertilizers_Sorghum_Crop-Yield_34.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Soybean_Crop-Yield_46/2050_ssp245_Inorganic-Fertilizers_Soybean_Crop-Yield_46.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Wheat_Crop-Yield_15/2050_ssp245_Inorganic-Fertilizers_Wheat_Crop-Yield_15.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Inorganic-Fertilizers_Yam_Crop-Yield_10/2050_ssp245_Inorganic-Fertilizers_Yam_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Intercropping_Cassava_Crop-Yield_14/2050_ssp245_Intercropping_Cassava_Crop-Yield_14.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Intercropping_Cowpea_Crop-Yield_32/2050_ssp245_Intercropping_Cowpea_Crop-Yield_32.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Intercropping_Groundnut_Crop-Yield_10/2050_ssp245_Intercropping_Groundnut_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Intercropping_Maize_Crop-Yield_104/2050_ssp245_Intercropping_Maize_Crop-Yield_104.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Intercropping_Soybean_Crop-Yield_16/2050_ssp245_Intercropping_Soybean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Mulch_Maize_Crop-Yield_55/2050_ssp245_Mulch_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Mulch_Pearl-Millet_Crop-Yield_10/2050_ssp245_Mulch_Pearl-Millet_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Mulch_Reduced-Tillage_Maize_Crop-Yield_55/2050_ssp245_Mulch_Reduced-Tillage_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Organic-Fertilizers_Common-Bean_Crop-Yield_16/2050_ssp245_Organic-Fertilizers_Common-Bean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Organic-Fertilizers_Groundnut_Crop-Yield_12/2050_ssp245_Organic-Fertilizers_Groundnut_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Organic-Fertilizers_Maize_Crop-Yield_101/2050_ssp245_Organic-Fertilizers_Maize_Crop-Yield_101.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25/2050_ssp245_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Organic-Fertilizers_Potato_Crop-Yield_29/2050_ssp245_Organic-Fertilizers_Potato_Crop-Yield_29.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Organic-Fertilizers_Sorghum_Crop-Yield_22/2050_ssp245_Organic-Fertilizers_Sorghum_Crop-Yield_22.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Organic-Fertilizers_Soybean_Crop-Yield_12/2050_ssp245_Organic-Fertilizers_Soybean_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Reduced-Tillage_Maize_Crop-Yield_84/2050_ssp245_Reduced-Tillage_Maize_Crop-Yield_84.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Reduced-Tillage_Sorghum_Crop-Yield_16/2050_ssp245_Reduced-Tillage_Sorghum_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Reduced-Tillage_Soybean_Crop-Yield_10/2050_ssp245_Reduced-Tillage_Soybean_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Water-Harvesting_Maize_Crop-Yield_44/2050_ssp245_Water-Harvesting_Maize_Crop-Yield_44.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp245_Water-Harvesting_Sorghum_Crop-Yield_13/2050_ssp245_Water-Harvesting_Sorghum_Crop-Yield_13.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Agroforestry_Maize_Crop-Yield_21/2050_ssp370_Agroforestry_Maize_Crop-Yield_21.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Cassava_Crop-Yield_37/2050_ssp370_Inorganic-Fertilizers_Cassava_Crop-Yield_37.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48/2050_ssp370_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Cowpea_Crop-Yield_60/2050_ssp370_Inorganic-Fertilizers_Cowpea_Crop-Yield_60.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Groundnut_Crop-Yield_28/2050_ssp370_Inorganic-Fertilizers_Groundnut_Crop-Yield_28.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Maize_Crop-Yield_336/2050_ssp370_Inorganic-Fertilizers_Maize_Crop-Yield_336.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38/2050_ssp370_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Potato_Crop-Yield_30/2050_ssp370_Inorganic-Fertilizers_Potato_Crop-Yield_30.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Rice_Crop-Yield_75/2050_ssp370_Inorganic-Fertilizers_Rice_Crop-Yield_75.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Sorghum_Crop-Yield_34/2050_ssp370_Inorganic-Fertilizers_Sorghum_Crop-Yield_34.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Soybean_Crop-Yield_46/2050_ssp370_Inorganic-Fertilizers_Soybean_Crop-Yield_46.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Wheat_Crop-Yield_15/2050_ssp370_Inorganic-Fertilizers_Wheat_Crop-Yield_15.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Inorganic-Fertilizers_Yam_Crop-Yield_10/2050_ssp370_Inorganic-Fertilizers_Yam_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Intercropping_Cassava_Crop-Yield_14/2050_ssp370_Intercropping_Cassava_Crop-Yield_14.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Intercropping_Cowpea_Crop-Yield_32/2050_ssp370_Intercropping_Cowpea_Crop-Yield_32.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Intercropping_Groundnut_Crop-Yield_10/2050_ssp370_Intercropping_Groundnut_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Intercropping_Maize_Crop-Yield_104/2050_ssp370_Intercropping_Maize_Crop-Yield_104.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Intercropping_Soybean_Crop-Yield_16/2050_ssp370_Intercropping_Soybean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Mulch_Maize_Crop-Yield_55/2050_ssp370_Mulch_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Mulch_Pearl-Millet_Crop-Yield_10/2050_ssp370_Mulch_Pearl-Millet_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Mulch_Reduced-Tillage_Maize_Crop-Yield_55/2050_ssp370_Mulch_Reduced-Tillage_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Organic-Fertilizers_Common-Bean_Crop-Yield_16/2050_ssp370_Organic-Fertilizers_Common-Bean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Organic-Fertilizers_Groundnut_Crop-Yield_12/2050_ssp370_Organic-Fertilizers_Groundnut_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Organic-Fertilizers_Maize_Crop-Yield_101/2050_ssp370_Organic-Fertilizers_Maize_Crop-Yield_101.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25/2050_ssp370_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Organic-Fertilizers_Potato_Crop-Yield_29/2050_ssp370_Organic-Fertilizers_Potato_Crop-Yield_29.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Organic-Fertilizers_Sorghum_Crop-Yield_22/2050_ssp370_Organic-Fertilizers_Sorghum_Crop-Yield_22.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Organic-Fertilizers_Soybean_Crop-Yield_12/2050_ssp370_Organic-Fertilizers_Soybean_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Reduced-Tillage_Maize_Crop-Yield_84/2050_ssp370_Reduced-Tillage_Maize_Crop-Yield_84.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Reduced-Tillage_Sorghum_Crop-Yield_16/2050_ssp370_Reduced-Tillage_Sorghum_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Reduced-Tillage_Soybean_Crop-Yield_10/2050_ssp370_Reduced-Tillage_Soybean_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Water-Harvesting_Maize_Crop-Yield_44/2050_ssp370_Water-Harvesting_Maize_Crop-Yield_44.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp370_Water-Harvesting_Sorghum_Crop-Yield_13/2050_ssp370_Water-Harvesting_Sorghum_Crop-Yield_13.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Agroforestry_Maize_Crop-Yield_21/2050_ssp585_Agroforestry_Maize_Crop-Yield_21.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Cassava_Crop-Yield_37/2050_ssp585_Inorganic-Fertilizers_Cassava_Crop-Yield_37.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48/2050_ssp585_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Cowpea_Crop-Yield_60/2050_ssp585_Inorganic-Fertilizers_Cowpea_Crop-Yield_60.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Groundnut_Crop-Yield_28/2050_ssp585_Inorganic-Fertilizers_Groundnut_Crop-Yield_28.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Maize_Crop-Yield_336/2050_ssp585_Inorganic-Fertilizers_Maize_Crop-Yield_336.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38/2050_ssp585_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Potato_Crop-Yield_30/2050_ssp585_Inorganic-Fertilizers_Potato_Crop-Yield_30.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Rice_Crop-Yield_75/2050_ssp585_Inorganic-Fertilizers_Rice_Crop-Yield_75.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Sorghum_Crop-Yield_34/2050_ssp585_Inorganic-Fertilizers_Sorghum_Crop-Yield_34.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Soybean_Crop-Yield_46/2050_ssp585_Inorganic-Fertilizers_Soybean_Crop-Yield_46.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Wheat_Crop-Yield_15/2050_ssp585_Inorganic-Fertilizers_Wheat_Crop-Yield_15.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Inorganic-Fertilizers_Yam_Crop-Yield_10/2050_ssp585_Inorganic-Fertilizers_Yam_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Intercropping_Cassava_Crop-Yield_14/2050_ssp585_Intercropping_Cassava_Crop-Yield_14.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Intercropping_Cowpea_Crop-Yield_32/2050_ssp585_Intercropping_Cowpea_Crop-Yield_32.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Intercropping_Groundnut_Crop-Yield_10/2050_ssp585_Intercropping_Groundnut_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Intercropping_Maize_Crop-Yield_104/2050_ssp585_Intercropping_Maize_Crop-Yield_104.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Intercropping_Soybean_Crop-Yield_16/2050_ssp585_Intercropping_Soybean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Mulch_Maize_Crop-Yield_55/2050_ssp585_Mulch_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Mulch_Pearl-Millet_Crop-Yield_10/2050_ssp585_Mulch_Pearl-Millet_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Mulch_Reduced-Tillage_Maize_Crop-Yield_55/2050_ssp585_Mulch_Reduced-Tillage_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Organic-Fertilizers_Common-Bean_Crop-Yield_16/2050_ssp585_Organic-Fertilizers_Common-Bean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Organic-Fertilizers_Groundnut_Crop-Yield_12/2050_ssp585_Organic-Fertilizers_Groundnut_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Organic-Fertilizers_Maize_Crop-Yield_101/2050_ssp585_Organic-Fertilizers_Maize_Crop-Yield_101.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25/2050_ssp585_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Organic-Fertilizers_Potato_Crop-Yield_29/2050_ssp585_Organic-Fertilizers_Potato_Crop-Yield_29.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Organic-Fertilizers_Sorghum_Crop-Yield_22/2050_ssp585_Organic-Fertilizers_Sorghum_Crop-Yield_22.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Organic-Fertilizers_Soybean_Crop-Yield_12/2050_ssp585_Organic-Fertilizers_Soybean_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Reduced-Tillage_Maize_Crop-Yield_84/2050_ssp585_Reduced-Tillage_Maize_Crop-Yield_84.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Reduced-Tillage_Sorghum_Crop-Yield_16/2050_ssp585_Reduced-Tillage_Sorghum_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Reduced-Tillage_Soybean_Crop-Yield_10/2050_ssp585_Reduced-Tillage_Soybean_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Water-Harvesting_Maize_Crop-Yield_44/2050_ssp585_Water-Harvesting_Maize_Crop-Yield_44.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./2050_ssp585_Water-Harvesting_Sorghum_Crop-Yield_13/2050_ssp585_Water-Harvesting_Sorghum_Crop-Yield_13.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Agroforestry_Maize_Crop-Yield_21/baseline_Agroforestry_Maize_Crop-Yield_21.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Cassava_Crop-Yield_37/baseline_Inorganic-Fertilizers_Cassava_Crop-Yield_37.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48/baseline_Inorganic-Fertilizers_Common-Bean_Crop-Yield_48.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Cowpea_Crop-Yield_60/baseline_Inorganic-Fertilizers_Cowpea_Crop-Yield_60.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Groundnut_Crop-Yield_28/baseline_Inorganic-Fertilizers_Groundnut_Crop-Yield_28.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Maize_Crop-Yield_336/baseline_Inorganic-Fertilizers_Maize_Crop-Yield_336.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38/baseline_Inorganic-Fertilizers_Pearl-Millet_Crop-Yield_38.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Potato_Crop-Yield_30/baseline_Inorganic-Fertilizers_Potato_Crop-Yield_30.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Rice_Crop-Yield_75/baseline_Inorganic-Fertilizers_Rice_Crop-Yield_75.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Sorghum_Crop-Yield_34/baseline_Inorganic-Fertilizers_Sorghum_Crop-Yield_34.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Soybean_Crop-Yield_46/baseline_Inorganic-Fertilizers_Soybean_Crop-Yield_46.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Wheat_Crop-Yield_15/baseline_Inorganic-Fertilizers_Wheat_Crop-Yield_15.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Inorganic-Fertilizers_Yam_Crop-Yield_10/baseline_Inorganic-Fertilizers_Yam_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Intercropping_Cassava_Crop-Yield_14/baseline_Intercropping_Cassava_Crop-Yield_14.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Intercropping_Cowpea_Crop-Yield_32/baseline_Intercropping_Cowpea_Crop-Yield_32.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Intercropping_Groundnut_Crop-Yield_10/baseline_Intercropping_Groundnut_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Intercropping_Maize_Crop-Yield_104/baseline_Intercropping_Maize_Crop-Yield_104.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Intercropping_Soybean_Crop-Yield_16/baseline_Intercropping_Soybean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Mulch_Maize_Crop-Yield_55/baseline_Mulch_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Mulch_Pearl-Millet_Crop-Yield_10/baseline_Mulch_Pearl-Millet_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Mulch_Reduced-Tillage_Maize_Crop-Yield_55/baseline_Mulch_Reduced-Tillage_Maize_Crop-Yield_55.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Organic-Fertilizers_Common-Bean_Crop-Yield_16/baseline_Organic-Fertilizers_Common-Bean_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Organic-Fertilizers_Groundnut_Crop-Yield_12/baseline_Organic-Fertilizers_Groundnut_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Organic-Fertilizers_Maize_Crop-Yield_101/baseline_Organic-Fertilizers_Maize_Crop-Yield_101.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25/baseline_Organic-Fertilizers_Pearl-Millet_Crop-Yield_25.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Organic-Fertilizers_Potato_Crop-Yield_29/baseline_Organic-Fertilizers_Potato_Crop-Yield_29.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Organic-Fertilizers_Sorghum_Crop-Yield_22/baseline_Organic-Fertilizers_Sorghum_Crop-Yield_22.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Organic-Fertilizers_Soybean_Crop-Yield_12/baseline_Organic-Fertilizers_Soybean_Crop-Yield_12.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Reduced-Tillage_Maize_Crop-Yield_84/baseline_Reduced-Tillage_Maize_Crop-Yield_84.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Reduced-Tillage_Sorghum_Crop-Yield_16/baseline_Reduced-Tillage_Sorghum_Crop-Yield_16.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Reduced-Tillage_Soybean_Crop-Yield_10/baseline_Reduced-Tillage_Soybean_Crop-Yield_10.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Water-Harvesting_Maize_Crop-Yield_44/baseline_Water-Harvesting_Maize_Crop-Yield_44.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "./baseline_Water-Harvesting_Sorghum_Crop-Yield_13/baseline_Water-Harvesting_Sorghum_Crop-Yield_13.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "parent",
+   "href": "../catalog.json",
+   "type": "application/json",
+   "title": "Solution Catalog"
+  }
+ ],
+ "created": "2024-05-14 15:50:20.372340",
+ "updated": "2024-05-14 15:50:20.372340",
+ "contact:name": "Pete Steward",
+ "contact:organization": "The Alliance of Bioversity International and CIAT",
+ "contact:email": "P.Steward@cgiar.org",
+ "atlas:processing_level": "processed",
+ "atlas:hazard": null,
+ "atlas:statistic": null,
+ "atlas:ssp": [
+  "ssp126",
+  "ssp245",
+  "ssp370",
+  "ssp585"
+ ],
+ "atlas:model": [
+  "ACCESS-ESM1-5",
+  "EC-Earth3-Veg",
+  "INM-CM5-0",
+  "MPI-ESM1-2-HR",
+  "MRI-ESM2-0"
+ ],
+ "atlas:commodity": [
+  "Common-Bean",
+  "Yam",
+  "Wheat",
+  "Potato",
+  "Cowpea",
+  "Pearl-Millet",
+  "Rice",
+  "Groundnut",
+  "Sorghum",
+  "Soybean",
+  "Cassava",
+  "Maize"
+ ],
+ "atlas:unit": null,
+ "atlas:resolution": {
+  "temporal": "20 years",
+  "spatial": null
+ },
+ "atlas:name_convention": {
+  "name_format": "(period_scenario)|(baseline)_solution_crop_outcome_NumERAlocations",
+  "name_dict": null
+ },
+ "title": "Classified Solutions",
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -17.583983000000003,
+     -34.832834,
+     51.415741,
+     27.333584000000002
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "1995-01-01T00:00:00Z",
+     "2060-01-01T00:00:00Z"
+    ]
+   ]
+  }
+ },
+ "license": "proprietary",
+ "providers": [
+  {
+   "name": "The Alliance of Bioversity and CIAT",
+   "roles": [
+    "processor"
+   ],
+   "url": "https://alliancebioversityciat.org/"
+  },
+  {
+   "name": "Pete Steward",
+   "roles": [
+    "processor"
+   ]
+  },
+  {
+   "name": "Julian Rimerez",
+   "roles": [
+    "processor"
+   ]
+  },
+  {
+   "name": "AWS",
+   "roles": [
+    "host"
+   ],
+   "region": "us-east-1",
+   "bucket": "digital-atlas"
+  }
+ ]
+}

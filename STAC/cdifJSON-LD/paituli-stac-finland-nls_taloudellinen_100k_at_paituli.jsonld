@@ -1,0 +1,137 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://paituli.csc.fi/geoserver/ogc/stac/v1/collections/nls_taloudellinen_100k_at_paituli",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Economic map, 1:100 000 (Paituli)",
+  "schema:description": "Economic map. Provided by National Land Survey of Finland. Scale: 1:100 000. Coordinate systems: ETRS-TM35FIN.",
+  "schema:license": [
+    {
+      "@id": "https://spdx.org/licenses/CC-BY-4.0"
+    },
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "http://www.nic.funet.fi/index/geodata/mml/NLS_terms_of_use.pdf"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "National Land Survey of Finland"
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "CSC Finland",
+      "schema:url": "https://www.csc.fi/"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "licensor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "National Land Survey of Finland"
+      }
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "59.469147 19.330416 70.010804 30.97732"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "1911-01-01T00:00:00Z/1970-12-31T00:00:00Z"
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "metadata",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://urn.fi/urn:nbn:fi:att:25bf44d8-4ee0-4ba2-92df-643df365f4ae",
+        "schema:name": "Metadata"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "items",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://paituli.csc.fi/geoserver/ogc/stac/v1/collections/nls_taloudellinen_100k_at_paituli/items",
+        "schema:encodingFormat": "application/geo+json"
+      }
+    }
+  ],
+  "schema:identifier": "nls_taloudellinen_100k_at_paituli",
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "https://paituli.csc.fi/geoserver/ogc/stac/v1/collections/nls_taloudellinen_100k_at_paituli",
+  "schema:subjectOf": {
+    "@id": "https://paituli.csc.fi/geoserver/ogc/stac/v1/collections/nls_taloudellinen_100k_at_paituli#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: Economic map, 1:100 000 (Paituli)",
+    "schema:about": {
+      "@id": "https://paituli.csc.fi/geoserver/ogc/stac/v1/collections/nls_taloudellinen_100k_at_paituli"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.0.0 Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Paituli STAC (Finland)",
+      "schema:url": "https://paituli.csc.fi/geoserver/ogc/stac/v1"
+    }
+  }
+}

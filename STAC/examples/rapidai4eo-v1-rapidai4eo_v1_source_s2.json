@@ -1,0 +1,177 @@
+{
+ "type": "Collection",
+ "stac_version": "1.0.0",
+ "id": "rapidai4eo_v1_source_s2",
+ "description": "RapidAI4EO Sentinel-2 training samples.",
+ "license": "proprietary",
+ "providers": [
+  {
+   "name": "ESA",
+   "roles": [
+    "producer"
+   ],
+   "url": "https://sentinel.esa.int/web/sentinel/home"
+  },
+  {
+   "name": "Vision Impulse",
+   "roles": [
+    "processor",
+    "licensor"
+   ],
+   "url": "https://www.vision-impulse.com/"
+  },
+  {
+   "name": "Radiant Earth Foundation",
+   "roles": [
+    "host"
+   ],
+   "url": "https://www.radiant.earth/"
+  }
+ ],
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -21.922952,
+     34.91712,
+     43.946754,
+     69.226345
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2018-01-01T00:00:00Z",
+     "2018-12-31T23:59:59Z"
+    ]
+   ]
+  }
+ },
+ "assets": {
+  "geometries": {
+   "href": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_geometries.geojson.gz",
+   "title": "Geometries for all samples in RapidAI4EO.",
+   "type": "application/gzip"
+  },
+  "geoparquet-items": {
+   "href": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_v1_source_s2.parquet",
+   "type": "application/x-parquet",
+   "roles": [
+    "stac-items"
+   ],
+   "title": "All STAC Items in GeoParquet format"
+  },
+  "geopackage-links": {
+   "href": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_v1_source_s2.gpkg",
+   "type": "application/geopackage+vnd.sqlite3",
+   "roles": [
+    "stac-links"
+   ],
+   "title": "All ids, geometries and links in GeoPackage format"
+  },
+  "flatgeobuf-links": {
+   "href": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_v1_source_s2.fgb",
+   "type": "application/flatgeobuf",
+   "roles": [
+    "stac-links"
+   ],
+   "title": "All ids, geometries and links in FlatGeobuf format"
+  }
+ },
+ "links": [
+  {
+   "rel": "license",
+   "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice",
+   "title": "License for Sentinel-2 data.",
+   "type": "application/pdf"
+  },
+  {
+   "rel": "self",
+   "href": "collection.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "parent",
+   "href": "../catalog.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "root",
+   "href": "../catalog.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_27N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 27N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_28N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 28N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_29N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 29N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_30N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 30N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_31N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 31N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_32N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 32N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_33N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 33N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_34N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 34N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_35N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 35N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_36N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 36N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_37N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 37N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_source_s2_38N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO Sentinel-2 training samples in UTM Zone 38N."
+  }
+ ]
+}

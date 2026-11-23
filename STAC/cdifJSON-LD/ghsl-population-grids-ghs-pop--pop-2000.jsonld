@@ -1,0 +1,231 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://data.source.coop/nlebovits/ghsl/pop-2000/collection.json",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Population 2000 (100 m, Mollweide)",
+  "schema:description": "Modelled residential population per 100 m grid cell for 2000, from the JRC Global Human Settlement Layer GHS-POP R2023A. Values are persons per pixel on the World Mollweide grid (ESRI:54009), an equal-area projection, so a cell covers the same ground area everywhere and per-cell density needs no latitude correction. Coverage is 332 tiles of 10000x10000 pixels. Ocean-only cells of the grid are not published upstream, and a further 43 tiles that upstream ships containing nothing but nodata are omitted here, since they carry no data and cannot hold the band statistics a renderer needs.\n\n**This is a derived, lossy product; its pixels are not bit-identical to the source.** The source was converted to allow partial reads over HTTP, which the upstream ZIP packaging prevents. The data type was narrowed from Float64 to Float32, which is lossless here because the source values carry only single-precision information (verified: identical GDAL checksums). Compression is LERC_ZSTD with a per-pixel error bound of 0.01 persons per cell, which is lossy. Across a 68-tile sample, the published population differs from the source by -0.000606% (-5,564 people). The largest absolute change to a tile total was 1,498 people. Among tiles holding over a million people, the largest relative shift was 0.0155%. Relative percentages are largest on nearly empty tiles because the quantization step is fixed; the absolute error there is a fraction of one person. Internal overviews and embedded statistics were added; neither exists upstream. For measurements, see [why this mirror exists](https://github.com/nlebovits/ghsl/blob/main/docs/upstream-gaps.md).\n\nQuery recipes are in the [collection agent guide](AGENTS.md). The authoritative original remains [JRC's own distribution](https://human-settlement.emergency.copernicus.eu/download.php?ds=pop).",
+  "schema:keywords": [
+    "population",
+    "demographics",
+    "GHSL",
+    "GHS-POP",
+    "JRC",
+    "gridded population",
+    "Mollweide",
+    "2000"
+  ],
+  "schema:license": [
+    {
+      "@id": "https://spdx.org/licenses/CC-BY-4.0"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "European Commission, Joint Research Centre",
+        "schema:url": "https://human-settlement.emergency.copernicus.eu/",
+        "schema:description": "Produced GHS-POP R2023A and published it under CC BY 4.0."
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Nissim Lebovits",
+      "schema:url": "https://github.com/nlebovits/ghsl",
+      "schema:description": "Converted the upstream rasters to Cloud Optimized GeoTIFF and maintains this mirror. Did not alter the model or its inputs."
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "licensor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "European Commission, Joint Research Centre",
+        "schema:url": "https://human-settlement.emergency.copernicus.eu/",
+        "schema:description": "Produced GHS-POP R2023A and published it under CC BY 4.0."
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "processor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Nissim Lebovits",
+        "schema:url": "https://github.com/nlebovits/ghsl",
+        "schema:description": "Converted the upstream rasters to Cloud Optimized GeoTIFF and maintains this mirror. Did not alter the model or its inputs."
+      }
+    }
+  ],
+  "schema:dateModified": "2026-08-18T06:55:59Z",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-61.29937 -179.987188 89.091383 179.986926"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2000-01-01T00:00:00Z/2000-12-31T23:59:59Z"
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.source.coop/nlebovits/ghsl/pop-2000/items.parquet",
+      "schema:name": "STAC-GeoParquet item index",
+      "schema:description": "All 332 items for this epoch in one file. Read it instead of fetching item JSON individually.",
+      "schema:encodingFormat": [
+        "application/vnd.apache.parquet"
+      ],
+      "schema:contentSize": "66104 B"
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "metadata",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.source.coop/nlebovits/ghsl/_assets/GHSL_Data_Package_2023_light.pdf",
+        "schema:name": "GHSL Data Package 2023 (JRC)",
+        "schema:encodingFormat": "application/pdf"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "metadata",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.source.coop/nlebovits/ghsl/_assets/GHS_POP_GLOBE_R2023A_input_metadata.xlsx",
+        "schema:name": "GHS-POP R2023A input metadata (JRC)",
+        "schema:encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "thumbnail",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.source.coop/nlebovits/ghsl/pop-2000/thumbnail.png",
+        "schema:name": "Population 2000, global preview",
+        "schema:encodingFormat": "image/png"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "describedby",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.source.coop/nlebovits/ghsl/pop-2000/README.md",
+        "schema:name": "Collection README",
+        "schema:encodingFormat": "text/markdown"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "cite-as",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://doi.org/10.2905/2FF68A52-5B5B-4A22-8F40-C41DA8332CFE",
+        "schema:name": "GHS-POP R2023A dataset DOI"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "via",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://human-settlement.emergency.copernicus.eu/download.php?ds=pop",
+        "schema:name": "Upstream GHSL population distribution",
+        "schema:encodingFormat": "text/html"
+      }
+    }
+  ],
+  "schema:identifier": "pop-2000",
+  "schema:url": "https://data.source.coop/nlebovits/ghsl/pop-2000/collection.json",
+  "schema:subjectOf": {
+    "@id": "https://data.source.coop/nlebovits/ghsl/pop-2000/collection.json#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: Population 2000 (100 m, Mollweide)",
+    "schema:about": {
+      "@id": "https://data.source.coop/nlebovits/ghsl/pop-2000/collection.json"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.1.0 Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "GHSL Population Grids (GHS-POP R2023A)",
+      "schema:url": "https://data.source.coop/nlebovits/ghsl/catalog.json"
+    }
+  }
+}

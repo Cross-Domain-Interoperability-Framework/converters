@@ -1,0 +1,155 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://data.geo.admin.ch/api/stac/v1/collections/ch.bafu.bundesinventare-bln",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Federal Inventory of Landscapes and Natural Monuments",
+  "schema:description": "Article 5 of the Federal Act of 1 July 1966 on the Protection of Nature and Cultural Heritage (NCHA) orders the Federal Council to compile inventories of sites of national importance (federal inventories). The cantons must be heard when these inventories are enacted. The Federal Inventory of Landscapes and Natural Monuments of National Importance (ILNM) is the first federal inventory under the NCHA. The preliminary stage is the CLN Inventory (Inventory of Landscapes and Natural Monuments of National Importance), a reference whose first edition was released by private organizations in 1963 and has been periodically expanded and revised. The ILNM inventory has gradually taken legal effect. To date, the Federal Council has approved four inventory development series: the first series in 1977 with 65 sites; the second series in 1983 with 54 sites; the third series in 1996 with 33 sites and 11 revised sites; and the fourth series in 1998 with 9 sites and 15 revised sites. In the 2017 revision a surface exchange between the objects 1605 and 1606 was made.",
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "https://opendata.swiss/en/terms-of-use/#terms_by",
+      "schema:name": "Terms of use"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Federal Office for the Environment FOEN",
+        "schema:url": "https://www.bafu.admin.ch/bafu/en/home.html"
+      }
+    ]
+  },
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "licensor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Federal Office for the Environment FOEN",
+        "schema:url": "https://www.bafu.admin.ch/bafu/en/home.html"
+      }
+    }
+  ],
+  "schema:dateModified": "2026-03-19T09:42:13Z",
+  "schema:dateCreated": "2022-11-24T12:31:00Z",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "45.82 5.96 47.81 10.49"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2022-11-15T00:00:00Z"
+  ],
+  "schema:url": "https://data.geo.admin.ch/browser/index.html#/collections/ch.bafu.bundesinventare-bln",
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "items",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.bafu.bundesinventare-bln/items"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "describedby",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.geocat.ch/geonetwork/srv/eng/catalog.search#/metadata/bc3f1564-1e56-44e9-98b6-f0d8c5130410",
+        "schema:name": "Metadata"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "about",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.bafu.admin.ch/bln",
+        "schema:name": "Further information"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "alternate",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.geo.admin.ch/browser/index.html#/collections/ch.bafu.bundesinventare-bln",
+        "schema:name": "STAC Browser",
+        "schema:encodingFormat": "text/html"
+      }
+    }
+  ],
+  "schema:identifier": "ch.bafu.bundesinventare-bln",
+  "schema:subjectOf": {
+    "@id": "https://data.geo.admin.ch/api/stac/v1/collections/ch.bafu.bundesinventare-bln#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: Federal Inventory of Landscapes and Natural Monuments",
+    "schema:about": {
+      "@id": "https://data.geo.admin.ch/api/stac/v1/collections/ch.bafu.bundesinventare-bln"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.0.0 Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "data.geo.admin.ch",
+      "schema:url": "https://data.geo.admin.ch/api/stac/v1/"
+    }
+  }
+}

@@ -1,0 +1,224 @@
+{
+ "type": "Collection",
+ "id": "council_districts_2024",
+ "stac_version": "1.1.0",
+ "description": "The ten Philadelphia City Council districts as redrawn after the 2020 census. Each district elects one council member, and the city also seats seven at-large members who represent no district.\n\nUse these boundaries to aggregate any other collection in this catalog by council district. The vacancy collections already carry a `councildistrict` column, so they need no spatial join. See [AGENTS.md](AGENTS.md) for both approaches.\n\nSource: [City Council Districts](https://opendataphilly.org/datasets/city-council-districts/) on OpenDataPhilly.",
+ "links": [
+  {
+   "rel": "root",
+   "href": "../catalog.json",
+   "type": "application/json",
+   "title": "Philadelphia Housing and Land Use"
+  },
+  {
+   "rel": "license",
+   "href": "https://opendataphilly.org/datasets/city-council-districts/",
+   "title": "License"
+  },
+  {
+   "rel": "parent",
+   "href": "../catalog.json",
+   "type": "application/json",
+   "title": "Phl Housing Demo"
+  },
+  {
+   "rel": "agents",
+   "href": "./AGENTS.md",
+   "type": "text/markdown",
+   "title": "Agent/LLM usage guide"
+  },
+  {
+   "rel": "describedby",
+   "href": "./README.md",
+   "type": "text/markdown",
+   "title": "Human-readable documentation"
+  },
+  {
+   "rel": "via",
+   "href": "https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/Council_Districts_2024/FeatureServer/0",
+   "type": "text/html",
+   "title": "Source ArcGIS layer: Council_Districts_2024"
+  },
+  {
+   "rel": "pmtiles",
+   "href": "https://data.source.coop/nlebovits/phl-housing-demo/council_districts_2024/council_districts_2024.pmtiles",
+   "type": "application/vnd.pmtiles",
+   "pmtiles:layers": [
+    "council_districts_2024"
+   ]
+  },
+  {
+   "rel": "license",
+   "href": "https://metadata.phila.gov/#help/help-faqs/what-are-the-terms-of-use/",
+   "title": "License"
+  },
+  {
+   "rel": "via",
+   "href": "https://opendataphilly.org/datasets/city-council-districts/",
+   "type": "text/html",
+   "title": "Original source"
+  }
+ ],
+ "stac_extensions": [
+  "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+  "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+  "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+  "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+  "https://stac-extensions.github.io/version/v1.2.0/schema.json"
+ ],
+ "geoparquet:geometry_type": "Polygon",
+ "geoparquet:feature_count": 10,
+ "table:row_count": 10,
+ "table:primary_geometry": "geometry",
+ "table:columns": [
+  {
+   "name": "objectid",
+   "type": "int64"
+  },
+  {
+   "name": "district",
+   "type": "string"
+  },
+  {
+   "name": "shape_leng",
+   "type": "double"
+  },
+  {
+   "name": "district_num",
+   "type": "int16"
+  },
+  {
+   "name": "Shape__Area",
+   "type": "double"
+  },
+  {
+   "name": "Shape__Length",
+   "type": "double"
+  },
+  {
+   "name": "bbox",
+   "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+  },
+  {
+   "name": "geometry",
+   "type": "binary"
+  }
+ ],
+ "updated": "2026-08-26T12:27:17Z",
+ "pmtiles:min_zoom": 0,
+ "pmtiles:max_zoom": 11,
+ "pmtiles:tile_type": "mvt",
+ "pmtiles:center": [
+  -75.1464843,
+  39.9770869,
+  11
+ ],
+ "pmtiles:layers": [
+  "council_districts_2024"
+ ],
+ "title": "City Council Districts (2024)",
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -75.280306754,
+     39.8674808914,
+     -74.9557424319,
+     40.1379348402
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2026-08-26T12:27:17Z",
+     "2026-08-26T12:27:17Z"
+    ]
+   ]
+  }
+ },
+ "license": "other",
+ "providers": [
+  {
+   "name": "City of Philadelphia",
+   "roles": [
+    "producer",
+    "licensor"
+   ],
+   "url": "https://opendataphilly.org/"
+  },
+  {
+   "name": "Nissim Lebovits",
+   "roles": [
+    "processor"
+   ],
+   "email": "nissim.lebovits@radiant.earth"
+  },
+  {
+   "name": "Source Cooperative",
+   "roles": [
+    "host"
+   ],
+   "url": "https://source.coop/"
+  }
+ ],
+ "assets": {
+  "council_districts_2024": {
+   "href": "https://data.source.coop/nlebovits/phl-housing-demo/council_districts_2024/council_districts_2024.parquet",
+   "type": "application/vnd.apache.parquet",
+   "file:size": 115853,
+   "file:checksum": "12200ce93afcff960e6a2f9e9486e9759f970325392969e6fb75f269a0953c0363b5",
+   "roles": [
+    "data"
+   ],
+   "version": "2026-08-26",
+   "created": "2026-08-26T12:27:17Z",
+   "phl:source_updated": null,
+   "table:row_count": 10,
+   "phl:content_hash": "115106611492830853626:10"
+  },
+  "styles/default": {
+   "href": "./styles/default.json",
+   "type": "application/vnd.mapbox.style+json",
+   "title": "Simple Style",
+   "file:size": 1171,
+   "file:checksum": "1220dca1346be9ad5fd6d17b64d2838142d075ab7a4eba3660dd3306a239d866fba5",
+   "roles": [
+    "style",
+    "default"
+   ]
+  },
+  "council_districts_2024-tiles": {
+   "href": "https://data.source.coop/nlebovits/phl-housing-demo/council_districts_2024/council_districts_2024.pmtiles",
+   "type": "application/vnd.pmtiles",
+   "title": "council_districts_2024 (vector tiles)",
+   "file:size": 31719,
+   "file:checksum": "1220c39c560919029a29b5bc4eb433a6a43371368711236217fe413a32701a88addc",
+   "roles": [
+    "visual"
+   ]
+  },
+  "thumbnail": {
+   "href": "./council_districts_2024.thumb.jpg",
+   "type": "image/jpeg",
+   "file:size": 113047,
+   "file:checksum": "12202ab0c3ca4f54a439b968a43656b29785b913d66496b8dbad3c11b91e8b44fd6d",
+   "roles": [
+    "thumbnail"
+   ]
+  },
+  "documentation": {
+   "href": "./README.md",
+   "type": "text/markdown",
+   "file:size": 2896,
+   "file:checksum": "122000e73c5ff6461b1aff7dbc1d02f14b44e25ca2a2cdcc8811a1bb74eb011d5805",
+   "roles": [
+    "documentation"
+   ]
+  }
+ },
+ "version": "2026-08-26",
+ "phl:source_updated": null,
+ "phl:update_frequency": "as needed",
+ "phl:update_frequency_source": "https://opendataphilly.org/datasets/city-council-districts/"
+}

@@ -1,0 +1,182 @@
+{
+ "type": "Collection",
+ "stac_version": "1.0.0",
+ "id": "rapidai4eo_v1_labels",
+ "description": "RapidAI4EO multiclass LULC labels.",
+ "license": "proprietary",
+ "providers": [
+  {
+   "name": "Copernicus Land Monitoring Service",
+   "roles": [
+    "producer"
+   ],
+   "url": "https://land.copernicus.eu/"
+  },
+  {
+   "name": "Vision Impulse",
+   "roles": [
+    "processor",
+    "licensor"
+   ],
+   "url": "https://www.vision-impulse.com/"
+  },
+  {
+   "name": "Radiant Earth Foundation",
+   "roles": [
+    "host"
+   ],
+   "url": "https://www.radiant.earth/"
+  }
+ ],
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -21.922952,
+     34.91712,
+     43.946754,
+     69.226345
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2018-01-01T00:00:00Z",
+     "2018-12-31T23:59:59Z"
+    ]
+   ]
+  }
+ },
+ "assets": {
+  "labels": {
+   "href": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_labels.csv.gz",
+   "title": "Multiclass LULC labels for all samples in RapidAI4EO.",
+   "type": "text/csv+gzip"
+  },
+  "label_mappings": {
+   "href": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_label_mappings.csv",
+   "title": "Mappings between LULC labels and the CLC class hierarchy.",
+   "type": "text/csv"
+  },
+  "geoparquet-items": {
+   "href": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_v1_labels.parquet",
+   "type": "application/x-parquet",
+   "roles": [
+    "stac-items"
+   ],
+   "title": "All STAC Items in GeoParquet format"
+  },
+  "geopackage-links": {
+   "href": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_v1_labels.gpkg",
+   "type": "application/geopackage+vnd.sqlite3",
+   "roles": [
+    "stac-links"
+   ],
+   "title": "All ids, geometries and links in GeoPackage format"
+  },
+  "flatgeobuf-links": {
+   "href": "https://radiantearth.blob.core.windows.net/mlhub/rapidai4eo/resources/rapidai4eo_v1_labels.fgb",
+   "type": "application/flatgeobuf",
+   "roles": [
+    "stac-links"
+   ],
+   "title": "All ids, geometries and links in FlatGeobuf format"
+  }
+ },
+ "links": [
+  {
+   "rel": "license",
+   "href": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32013R1159",
+   "title": "License for CORINE Land Cover labels.",
+   "type": "text/html"
+  },
+  {
+   "rel": "self",
+   "href": "collection.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "parent",
+   "href": "../catalog.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "root",
+   "href": "../catalog.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_27N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 27N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_28N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 28N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_29N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 29N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_30N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 30N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_31N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 31N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_32N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 32N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_33N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 33N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_34N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 34N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_35N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 35N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_36N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 36N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_37N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 37N."
+  },
+  {
+   "rel": "child",
+   "href": "rapidai4eo_v1_labels_38N/collection.json",
+   "type": "application/json",
+   "title": "RapidAI4EO multiclass LULC labels in UTM Zone 38N."
+  }
+ ]
+}

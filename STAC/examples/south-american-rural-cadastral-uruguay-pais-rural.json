@@ -1,0 +1,179 @@
+{
+ "type": "Collection",
+ "stac_version": "1.1.0",
+ "stac_extensions": [
+  "https://schemas.portolan-sdi.org/portolan/v0.1.2/schema.json",
+  "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+  "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+ ],
+ "id": "uruguay-pais-rural",
+ "title": "Uruguay — Rural Cadastral Parcels",
+ "updated": "2026-07-24T08:35:26Z",
+ "description": "Cadastral parcels for rural Uruguay, updated as of February 2, 2025. 250,074 polygons with national coverage.\n\n`PADRON` is the parcel number, and it is **not unique**. 250,074 rows carry 65,605 distinct `PADRON` values, and 242,899 distinct (`CODDEPTO`, `PADRON`) pairs, so a parcel number repeats both nationally and inside a department. Deduplicate before you count.\n\nAttributes include department name (`NOMDEPTO`), department code (`CODDEPTO`), cadastral office (`NOMOFIDEL`), parcel number (`PADRON`), cadastral section (`SECCAT`), sheet and grid references (`LAMINA`, `CUADRICULA`), area in hectares (`AREAHA`), area in square metres (`AREAMC`) and assessed value (`VALREAL`).",
+ "keywords": [
+  "cadastre",
+  "land tenure",
+  "parcels",
+  "South America",
+  "rural land",
+  "supply chain",
+  "Uruguay",
+  "padron"
+ ],
+ "license": "other",
+ "providers": [
+  {
+   "name": "Dirección Nacional de Catastro",
+   "description": "The national cadastral authority of Uruguay, under the Ministerio de Economía y Finanzas.",
+   "roles": [
+    "producer",
+    "licensor"
+   ],
+   "url": "https://www.gub.uy/ministerio-economia-finanzas/direccion-nacional-catastro"
+  },
+  {
+   "name": "Tristan Grupp",
+   "roles": [
+    "processor",
+    "host"
+   ],
+   "url": "https://source.coop/tristangruppwri/cadastral"
+  }
+ ],
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -58.43909639346159,
+     -35.03152495297042,
+     -53.18390732201072,
+     -30.085543035080853
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2025-02-02T00:00:00Z",
+     "2025-02-02T00:00:00Z"
+    ]
+   ]
+  }
+ },
+ "links": [
+  {
+   "rel": "root",
+   "href": "../catalog.json",
+   "type": "application/json",
+   "title": "South American Rural Cadastral Boundaries"
+  },
+  {
+   "rel": "parent",
+   "href": "../catalog.json",
+   "type": "application/json",
+   "title": "South American Rural Cadastral Boundaries"
+  },
+  {
+   "rel": "describedby",
+   "href": "./README.md",
+   "type": "text/markdown",
+   "title": "Collection README"
+  },
+  {
+   "rel": "agents",
+   "href": "./AGENTS.md",
+   "type": "text/markdown",
+   "title": "Collection agent guide"
+  },
+  {
+   "rel": "via",
+   "href": "https://catalogodatos.gub.uy/dataset/direccion-nacional-de-catastro-shapes-del-parcelario-rural-y-urbano",
+   "type": "text/html",
+   "title": "DNC parcel shapefiles on catalogodatos.gub.uy"
+  },
+  {
+   "rel": "license",
+   "href": "https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/documentos/publicaciones/licencia_de_datos_abiertos_0.pdf",
+   "type": "application/pdf",
+   "title": "Licencia de Datos Abiertos — Uruguay, version 0.1"
+  }
+ ],
+ "assets": {
+  "data": {
+   "href": "./uruguay_pais_rural.parquet",
+   "type": "application/vnd.apache.parquet",
+   "title": "Rural cadastral parcels (GeoParquet 1.1)",
+   "roles": [
+    "data"
+   ],
+   "file:size": 147369120,
+   "file:checksum": "12200570b7787997b0c3644aa16f10f99b5dfdab47b826f515f647652bb4f0c8e69a"
+  },
+  "thumbnail": {
+   "href": "./thumbnail.png",
+   "type": "image/png",
+   "file:size": 133054,
+   "file:checksum": "1220975012f0458b3b43181d7ca20405ff819c4083c8cbb12f7315c5f9439ee5f027",
+   "title": "Uruguay — Rural Cadastral Parcels — parcel density",
+   "description": "Parcel density over every row in this collection, binned from the bbox covering column. It is an overview of where the parcels are, not a rendering of their boundaries.",
+   "roles": [
+    "thumbnail",
+    "overview"
+   ]
+  }
+ },
+ "geoparquet:geometry_type": "MultiPolygon",
+ "geoparquet:feature_count": 250074,
+ "table:row_count": 250074,
+ "table:primary_geometry": "geometry",
+ "table:columns": [
+  {
+   "name": "NOMDEPTO",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "CODDEPTO",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "NOMOFIDEL",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "PADRON",
+   "type": "BIGINT"
+  },
+  {
+   "name": "SECCAT",
+   "type": "BIGINT"
+  },
+  {
+   "name": "LAMINA",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "CUADRICULA",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "AREAHA",
+   "type": "BIGINT"
+  },
+  {
+   "name": "AREAMC",
+   "type": "DOUBLE"
+  },
+  {
+   "name": "VALREAL",
+   "type": "DOUBLE"
+  },
+  {
+   "name": "bbox",
+   "type": "STRUCT(xmin DOUBLE, ymin DOUBLE, xmax DOUBLE, ymax DOUBLE)"
+  },
+  {
+   "name": "geometry",
+   "type": "GEOMETRY('{\"$schema\":\"https://proj.org/schemas/v0.7/projjson.schema.json\",\"type\":\"GeographicCRS\",\"name\":\"WGS 84\",\"datum_ensemble\":{\"name\":\"World Geodetic System 1984 ensemble\",\"members\":[{\"name\":\"World Geodetic System 1984 (Transit)\",\"id\":{\"authority\":\"EPSG\",\"code\":1166}},{\"name\":\"World Geodetic System 1984 (G730)\",\"id\":{\"authority\":\"EPSG\",\"code\":1152}},{\"name\":\"World Geodetic System 1984 (G873)\",\"id\":{\"authority\":\"EPSG\",\"code\":1153}},{\"name\":\"World Geodetic System 1984 (G1150)\",\"id\":{\"authority\":\"EPSG\",\"code\":1154}},{\"name\":\"World Geodetic System 1984 (G1674)\",\"id\":{\"authority\":\"EPSG\",\"code\":1155}},{\"name\":\"World Geodetic System 1984 (G1762)\",\"id\":{\"authority\":\"EPSG\",\"code\":1156}},{\"name\":\"World Geodetic System 1984 (G2139)\",\"id\":{\"authority\":\"EPSG\",\"code\":1309}},{\"name\":\"World Geodetic System 1984 (G2296)\",\"id\":{\"authority\":\"EPSG\",\"code\":1383}}],\"ellipsoid\":{\"name\":\"WGS 84\",\"semi_major_axis\":6378137,\"inverse_flattening\":298.257223563},\"accuracy\":\"2.0\",\"id\":{\"authority\":\"EPSG\",\"code\":6326}},\"coordinate_system\":{\"subtype\":\"ellipsoidal\",\"axis\":[{\"name\":\"Geodetic latitude\",\"abbreviation\":\"Lat\",\"direction\":\"north\",\"unit\":\"degree\"},{\"name\":\"Geodetic longitude\",\"abbreviation\":\"Lon\",\"direction\":\"east\",\"unit\":\"degree\"}]},\"scope\":\"Horizontal component of 3D system.\",\"area\":\"World.\",\"bbox\":{\"south_latitude\":-90,\"west_longitude\":-180,\"north_latitude\":90,\"east_longitude\":180},\"id\":{\"authority\":\"EPSG\",\"code\":4326}}')"
+  }
+ ]
+}

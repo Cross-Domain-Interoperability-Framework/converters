@@ -1,0 +1,153 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://doi.org/10.5194/essd-2020-11",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "MapSpam 2017",
+  "schema:description": "MapSPAM values are calculated from (a) results of SPAM 2017 (Spatial Production Allocation Model) which generates plausible values for area harvested and production, (b) International crop prices in International 2005 Dollars by FAO, and (c) Areas cultivated and production achieved in different farm sizes derived from household surveys assembled by EPAR. Harvested area by farmsize is the total harvested area x  the farm size share. Household surveys are from different years, SPAM2017 data are scaled to FAO average (2016-2018)",
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": {
+      "@id": "https://registry.identifiers.org/registry/doi"
+    },
+    "schema:value": "10.5194/essd-2020-11",
+    "schema:url": "https://doi.org/10.5194/essd-2020-11"
+  },
+  "schema:license": [
+    {
+      "@id": "https://spdx.org/licenses/CC-BY-4.0"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "IFPRI",
+        "schema:url": "https://ifpri.org/"
+      }
+    ]
+  },
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "AWS"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "licensor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "IFPRI",
+        "schema:url": "https://ifpri.org/"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "processor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Ulrike Wood-Sichra"
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "processor",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Pete Steward"
+      }
+    }
+  ],
+  "schema:dateModified": "2024-05-14T15:49:33Z",
+  "schema:dateCreated": "2024-05-14T15:49:33Z",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-46.950001 -25.349998 40 57.800004"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2016-01-01T00:00:00Z/2018-12-31T00:00:00Z"
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "cite-as",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://doi.org/10.5194/essd-2020-11"
+      }
+    }
+  ],
+  "schema:creditText": "Yu, Q., You, L., Wood-Sichra, U., Ru, Y., Joglekar, A. K. B., Fritz, S., Xiong, W., Lu, M., Wu, W., and Yang, P.: A cultivated planet in 2010: 2. the global gridded agricultural production maps, Earth Syst. Sci. Data Discuss., 2020. doi: 10.5194/essd-2020-11",
+  "schema:url": "https://digital-atlas.s3.amazonaws.com/stac/public_stac/exposure_catalog/mapspam2017/collection.json",
+  "schema:subjectOf": {
+    "@id": "https://doi.org/10.5194/essd-2020-11#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "STAC Collection for: MapSpam 2017",
+    "schema:about": {
+      "@id": "https://doi.org/10.5194/essd-2020-11"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a STAC 1.0.0 Collection to CDIF by stac_to_cdif.py.",
+    "schema:dateModified": "2026-11-22",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "African Agriculture Adaptation Atlas STAC catalog",
+      "schema:url": "https://digital-atlas.s3.amazonaws.com/stac/public_stac/catalog.json"
+    }
+  }
+}
