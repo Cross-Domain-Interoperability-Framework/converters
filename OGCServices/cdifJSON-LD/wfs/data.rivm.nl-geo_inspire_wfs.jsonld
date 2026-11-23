@@ -1,0 +1,1108 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Feature Service 2.0.0",
+    "schema:termCode": "OGC:WFS"
+  },
+  "schema:version": "2.0.0",
+  "schema:name": "RIVM environmental and public health feature data",
+  "schema:description": "Geodata feature services of the National Institute for Public Health and the Environment. Provides data of environmental and public health related research.",
+  "schema:keywords": [
+    "RIVM (nl)",
+    "Gezondheid (nl)",
+    "Health (en)",
+    "Enviroment (en)",
+    "Milieu (nl)"
+  ],
+  "schema:termsOfService": "Fees: NONE; Access constraints: NONE",
+  "schema:conditionsOfAccess": [
+    "NONE"
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://data.rivm.nl/geo/inspire/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeFeatureType",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://data.rivm.nl/geo/inspire/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://data.rivm.nl/geo/inspire/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "GML2",
+          "KML",
+          "SHAPE-ZIP",
+          "application/geo+json",
+          "application/json",
+          "application/vnd.google-earth.kml xml",
+          "application/vnd.google-earth.kml+xml",
+          "application/vnd.ogc.fg+json",
+          "csv",
+          "gml3",
+          "gml32",
+          "json",
+          "text/csv",
+          "text/xml; subtype=gml/2.1.2",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetPropertyValue",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://data.rivm.nl/geo/inspire/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ListStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://data.rivm.nl/geo/inspire/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://data.rivm.nl/geo/inspire/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "CreateStoredQuery",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://data.rivm.nl/geo/inspire/wfs",
+        "schema:httpMethod": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DropStoredQuery",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://data.rivm.nl/geo/inspire/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_pollutant_transfer_2011",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Afgevoerde hoeveelheid afval in 2011 vanuit de industrie",
+      "schema:identifier": "inspire:facility_pollutant_transfer_2011",
+      "schema:description": "Afgevoerde hoeveelheid afval in 2011 vanuit de industrie",
+      "schema:keywords": [
+        "features",
+        "vw_facility_pollutant_transfer_2011",
+        "inspire (en)",
+        "industry (en)"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.75659 3.616756 53.329687 6.94789"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://data.rivm.nl/meta/srv/dut/csw?Service=CSW&Request=GetRecordById&Version=2.0.2&id=50a2c5e6-c8e7-425d-854e-26f578196bc9&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_pollutant_transfer_2017",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Afgevoerde hoeveelheid afval in 2015 vanuit de industrie",
+      "schema:identifier": "inspire:facility_pollutant_transfer_2017",
+      "schema:description": "Afgevoerde hoeveelheid afval in 2015 vanuit de industrie. Voor het eerst gepubliceerd in 2017.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_pollutant_transfer_2017"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.854359 3.653131 53.329895 6.94896"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_pollutant_transfer_2018",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Afgevoerde hoeveelheid afval in 2018 vanuit de industrie",
+      "schema:identifier": "inspire:facility_pollutant_transfer_2018",
+      "schema:description": "Afgevoerde hoeveelheid afval in 2018 vanuit de industrie.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_pollutant_transfer_2018"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.868857 3.639809 53.329888 6.948961"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_waste_transfer_2011",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Emissies naar het riool in 2011 vanuit de industrie",
+      "schema:identifier": "inspire:facility_waste_transfer_2011",
+      "schema:description": "Emissies naar het riool in 2011 vanuit de industrie.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_waste_transfer_2011",
+        "waste (en)"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.75456 3.468686 53.450127 7.213685"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://data.rivm.nl/meta/srv/dut/csw?Service=CSW&Request=GetRecordById&Version=2.0.2&id=8b0b02a0-1e1b-4cda-bcfe-6fa0f738e38f&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_waste_transfer_2017",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Emissies naar het riool in 2015 vanuit de industrie",
+      "schema:identifier": "inspire:facility_waste_transfer_2017",
+      "schema:description": "Emissies naar het riool in 2015 vanuit de industrie. Gepubliceerd in 2017.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_waste_transfer_2017"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.754754 3.469175 53.462991 7.215296"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_waste_transfer_2018",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Emissies naar het riool in 2018 vanuit de industrie",
+      "schema:identifier": "inspire:facility_waste_transfer_2018",
+      "schema:description": "Emissies naar het riool in 2018 vanuit de industrie.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_waste_transfer_2018"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.974459 3.055321 53.462734 7.215296"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_pollutant_release_2011",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Emissies naar lucht en water in 2011 vanuit de industrie",
+      "schema:identifier": "inspire:facility_pollutant_release_2011",
+      "schema:description": "Emissies naar lucht en water in 2011 vanuit de industrie.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_pollutant_release_2011",
+        "air (en)",
+        "water (en)"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.75549 3.53286 53.450116 7.103411"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://data.rivm.nl/meta/srv/dut/csw?Service=CSW&Request=GetRecordById&Version=2.0.2&id=ad6caa40-89ab-47e3-85ab-3f8e32024a71&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_pollutant_release_2017",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Emissies naar lucht en water in 2015 vanuit de industrie",
+      "schema:identifier": "inspire:facility_pollutant_release_2017",
+      "schema:description": "Emissies naar lucht en water in 2015 vanuit de industrie. Voor het eerst gepubliceerd in 2017.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_pollutant_release_2017"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.755684 3.533629 53.456937 7.104747"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_pollutant_release_2018",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Emissies naar lucht en water in 2018 vanuit de industrie",
+      "schema:identifier": "inspire:facility_pollutant_release_2018",
+      "schema:description": "Emissies naar lucht en water in 2018 vanuit de industrie.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_pollutant_release_2018"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.805518 3.533627 53.456925 7.067019"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_pollutant_release",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Facility Pollutant Release",
+      "schema:identifier": "inspire:facility_pollutant_release",
+      "schema:description": "Emissies naar lucht en water vanuit de industrie worden via het e-MJV (elektronisch Milieujaarverslag) geregistreerd wanneer bedrijven verplicht zijn gegevens te rapporteren op grond van nationale en internationale milieuwetgeving, zoals het PRTR-protocol en de E-PRTR-verordening. Emissies naar lucht: Industriële bedrijven moeten emissies naar de lucht rapporteren wanneer zij stoffen uitstoten zoals stikstofoxiden (NOx), zwaveldioxide (SO₂), fijnstof (PM), vluchtige organische stoffen (VOS), broeikasgassen (zoals CO₂ en methaan), en zware metalen. De rapportage is verplicht als de emissievracht van een bepaalde stof op jaarbasis de gestelde drempelwaarde overschrijdt. Emissies naar water: Bedrijven moeten ook rapporteren over stoffen die zij direct lozen op oppervlaktewater of indirect via het riool (met vermelding van de behandeling). Het gaat onder andere om stikstof- en fosfaatverbindingen, zware metalen, en andere milieubelastende stoffen. Net als voor luchtemissies gelden hier drempelwaarden, afhankelijk van de emissiestof en het type lozing. De rapportage in het e-MJV is verplicht voor bedrijven die onder de reikwijdte van bijlage I van de E-PRTR-verordening vallen.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_pollutant_release",
+        "air (en)",
+        "water (en)",
+        "inspire (en)"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.7555 3.532574 53.456732 7.065939"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_pollutant_transfer",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Facility Pollutant Transfer",
+      "schema:identifier": "inspire:facility_pollutant_transfer",
+      "schema:description": "Emissies naar het riool vanuit de industrie worden via het e-MJV (elektronisch Milieujaarverslag) gerapporteerd wanneer bedrijven bepaalde drempelwaarden overschrijden, zoals vastgelegd in het EPRTR-protocol (European Pollutant Release and Transfer Register). Bij lozingen op het riool gaat het om stoffen die via industriële processen in het bedrijfsafvalwater terechtkomen en via het gemeentelijk riool naar een rioolwaterzuiveringsinstallatie (RWZI) worden afgevoerd. Bedrijven moeten deze emissies rapporteren als ze onder de reikwijdte van de E-PRTR-verordening vallen én als de emissies van bepaalde stoffen boven de rapportagedrempels uitkomen.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_pollutant_transfer",
+        "inspire (en)",
+        "water (en)",
+        "industry (en)"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.854179 3.638989 53.328425 6.986693"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:facility_waste_transfer",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Facility Waste Transfer",
+      "schema:identifier": "inspire:facility_waste_transfer",
+      "schema:description": "Voor het Integraal PRTR-verslag (PRTR) moeten bedrijven, wanneer zij de drempelwaarden overschrijden, rapporteren hoeveel afval zij hebben afgevoerd, en op welke wijze dit afval is verwerkt (afvoer binnen Nederland of naar het buitenland, en of het nuttig is toegepast of verwijderd). Deze verplichting geldt voor bedrijven die onder de reikwijdte van Annex I van de E-PRTR-verordening vallen.",
+      "schema:keywords": [
+        "features",
+        "vw_facility_waste_transfer",
+        "inspire (en)",
+        "waster (en)"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.754944 3.493652 53.463721 7.214273"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:gamma_radiation_2011",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Gamma straling 2011",
+      "schema:identifier": "inspire:gamma_radiation_2011",
+      "schema:description": "Gamma straling 2011.",
+      "schema:keywords": [
+        "radiation"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.755157 3.293594 53.423569 7.213926"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:airq_year_avg_2012",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Jaarcijfers Landelijk Meetnet Luchtkwaliteit 2012",
+      "schema:identifier": "inspire:airq_year_avg_2012",
+      "schema:description": "Jaarcijfers Landelijk Meetnet Luchtkwaliteit 2012",
+      "schema:keywords": [
+        "features",
+        "vw_airq_year_avg_2012"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.875317 3.674009 53.335137 6.959188"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://data.rivm.nl/meta/srv/srv/dut/csw?Service=CSW&Request=GetRecordById&Version=2.0.2&id=588a4cb1-b442-4ac1-87e4-40401e353166&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:airq_year_avg_2023",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Jaarcijfers Landelijk Meetnet Luchtkwaliteit 2023",
+      "schema:identifier": "inspire:airq_year_avg_2023",
+      "schema:description": "Jaarcijfers Landelijk Meetnet Luchtkwaliteit 2023",
+      "schema:keywords": [
+        "features",
+        "vw_airq_year_avg_2023"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.87777 3.652182 53.333689 6.958072"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://data.rivm.nl/meta/srv/dut/csw?Service=CSW&Request=GetRecordById&Version=2.0.2&id=588a4cb1-b442-4ac1-87e4-40401e353166&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:drinkwaterkwaliteit",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Kwaliteit van drinkwater in Nederland 2012 - heden",
+      "schema:identifier": "inspire:drinkwaterkwaliteit",
+      "schema:description": "In deze dataset zijn de jaargemiddelde concentraties van stoffen in het drinkwater opgenomen per drinkwaterpompstation. De metingen zijn uitgevoerd door de drinkwaterbedrijven daar waar het drinkwater na zuivering het pompstation verlaat. Alleen de meetresultaten boven de detectiegrens zijn weergegeven. De dataset bevat data van 2012 tot en met de meest recente jaargang.",
+      "schema:keywords": [
+        "features",
+        "vw_drinkwaterkwaliteit"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.839904 3.62517 53.485176 7.134194"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:large_combustion_plants",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "LCP emissies",
+      "schema:identifier": "inspire:large_combustion_plants",
+      "schema:description": "Bevat de emissies van stoffen naar de lucht en het brandstofverbruik van de grote vuurhaarden in Nederland (Large Combustion Plants) over de rapportagejaren 2019 t/m 2023.",
+      "schema:keywords": [
+        "features",
+        "vw_large_combustion_plants",
+        "inspire (en)",
+        "Large Combustion Plants (en)",
+        "Richtlijn industriële emissies (nl)"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.846131 3.615361 53.45841 7.066761"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:lcp_2016",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "LCP emissies (Richtlijn Industriële emissies) 2016",
+      "schema:identifier": "inspire:lcp_2016",
+      "schema:description": "LCP emissies (Richtlijn Industriële emissies) 2016.",
+      "schema:keywords": [
+        "features",
+        "vw_lcp_2016"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.846325 3.616415 53.458604 7.067831"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:aqd_zone",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Luchtkwaliteit zones",
+      "schema:identifier": "inspire:aqd_zone",
+      "schema:description": "Luchtkwaliteit zones",
+      "schema:keywords": [
+        "features",
+        "vw_aqd_zone"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.733541 3.206247 53.582979 7.245258"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:lmg",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Monitoring stations (Nitraatrichtlijn) 2024",
+      "schema:identifier": "inspire:lmg",
+      "schema:description": "De resultaten van het LMG zijn gepubliceerd als het aandeel stikstof van nitraat (NO3-N). De dataset bevat data uit de jaren 2020 - 2023 en betreft de rapportage van 2024.",
+      "schema:keywords": [
+        "features",
+        "vw_lmg"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.774411 3.360057 53.489437 7.176899"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:lmg_f2_2015",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Monitoring stations (Nitraatrichtlijn) diepe filters",
+      "schema:identifier": "inspire:lmg_f2_2015",
+      "schema:description": "Monitoring stations (Nitraatrichtlijn) diepe filters 2015.",
+      "schema:keywords": [
+        "water"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.793158 3.361109 53.489696 7.177973"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:lmg_f1_2015",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Monitoring stations (Nitraatrichtlijn) ondiepe filters",
+      "schema:identifier": "inspire:lmg_f1_2015",
+      "schema:description": "Monitoring stations (Nitraatrichtlijn) ondiepe filters 2015.",
+      "schema:keywords": [
+        "Water"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.774605 3.361109 53.489696 7.177973"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:nat_alpha_activity_2011",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Natuurlijke alfa activiteitsconcentratie in lucht Nationaal Meetnet Radioactiviteit 2011",
+      "schema:identifier": "inspire:nat_alpha_activity_2011",
+      "schema:description": "Natuurlijke alfa activiteitsconcentratie in lucht Nationaal Meetnet Radioactiviteit 2011.",
+      "schema:keywords": [
+        "features",
+        "vw_alpha_activity_2011",
+        "concentration",
+        "air"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.891882 3.674422 53.333859 6.949582"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://data.rivm.nl/meta/srv/dut/csw?Service=CSW&Request=GetRecordById&Version=2.0.2&id=e1e99000-ec47-4e9f-84a5-adad24fef0dc&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:ziekenhuizen_2013",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Ziekenhuizen 2013",
+      "schema:identifier": "inspire:ziekenhuizen_2013",
+      "schema:keywords": [
+        "features",
+        "vw_ziekenhuizen_2013"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.820034 3.395087 53.336435 7.045969"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:airq_zone_agglom_2013",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Zones en agglomeraties (Richtlijn Luchtkwaliteit) 2013",
+      "schema:identifier": "inspire:airq_zone_agglom_2013",
+      "schema:description": "Zones en agglomeraties (Richtlijn Luchtkwaliteit) 2013",
+      "schema:keywords": [
+        "vw_airq_zone_agglom_2013",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.733541 3.206247 53.582979 7.245258"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#layer/inspire:airq_zone_agglom_2024",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Zones en agglomeraties (Richtlijn Luchtkwaliteit) 2024",
+      "schema:identifier": "inspire:airq_zone_agglom_2024",
+      "schema:description": "Zones en agglomeraties (Richtlijn Luchtkwaliteit) 2024",
+      "schema:keywords": [
+        "vw_airq_zone_agglom_2024",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.734193 3.253729 53.559054 7.243156"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "47.974459 3.055321 53.582979 7.245258"
+      }
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "describedby",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.rivm.nl/meta/srv/dut/xml.metadata.get?uuid=",
+        "schema:name": "INSPIRE service metadata"
+      }
+    }
+  ],
+  "schema:inLanguage": "dut",
+  "schema:identifier": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "https://data.rivm.nl/geo/inspire/wfs",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities",
+    "schema:name": "WFS 2.0.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WFS capabilities for: RIVM environmental and public health feature data",
+    "schema:about": {
+      "@id": "https://data.rivm.nl/geo/inspire/wfs?service=WFS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WFS 2.0.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "PDOK (Netherlands NGR)"
+    }
+  }
+}

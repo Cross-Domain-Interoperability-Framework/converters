@@ -1,0 +1,936 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:name": "BGS OneGeology Europe geology",
+  "schema:description": "The 1:50k GeoSure (natural ground stability) data covering the map sheets for Loughborough and Kilmarnock are available in this OGC WMS service for your personal, non-commercial use only and is being served as a contribution to the OneGeology Europe initiative. For information about more of the British Geological Survey's maps and other digital products please visit https://www.bgs.ac.uk/geological-data/datasets/digital-data-product-development/",
+  "schema:keywords": [
+    "OneGeology",
+    "MD_LANG@ENG",
+    "MD_DATE@2019-01-22",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Geology",
+      "schema:inDefinedTermSet": "GEMET"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "infoMapAccessService",
+      "schema:inDefinedTermSet": "ISO"
+    }
+  ],
+  "schema:url": "https://www.bgs.ac.uk/geological-data/datasets/digital-data-product-development/",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "British Geological Survey (BGS)",
+      "schema:email": "enquiries@bgs.ac.uk",
+      "schema:telephone": "+44 (0)115 936 3100"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Mr Garry Baker",
+        "schema:jobTitle": "Chief Digital Officer",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "British Geological Survey (BGS)"
+        },
+        "schema:email": "enquiries@bgs.ac.uk",
+        "schema:telephone": "+44 (0)115 936 3100"
+      }
+    }
+  ],
+  "schema:termsOfService": "Fees: none; Access constraints: The data are available for free download on the basis it is only used for your personal, teaching, and research purposes - provided all are non-commercial in nature as described on https://www.bgs.ac.uk/bgs-intellectual-property-rights/using-bgs-copyright-material/. Where commercial use is required, licences are available from the British Geological Survey (BGS). Your use of any information provided by the BGS is at your own risk. BGS gives no warranty, condition or representation as to the quality, accuracy or completeness of the information or its suitability for any use or purpose. All implied conditions relating to the quality or suitability of the information, and all liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
+  "schema:conditionsOfAccess": [
+    "The data are available for free download on the basis it is only used for your personal, teaching, and research purposes - provided all are non-commercial in nature as described on https://www.bgs.ac.uk/bgs-intellectual-property-rights/using-bgs-copyright-material/. Where commercial use is required, licences are available from the British Geological Survey (BGS). Your use of any information provided by the BGS is at your own risk. BGS gives no warranty, condition or representation as to the quality, accuracy or completeness of the information or its suitability for any use or purpose. All implied conditions relating to the quality or suitability of the information, and all liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/png",
+          "image/jpeg",
+          "image/tiff",
+          "application/vnd.mapbox-vector-tile"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/html",
+          "application/vnd.ogc.gml",
+          "text/plain"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeLayer",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetLegendGraphic",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/png",
+          "image/jpeg",
+          "image/png; mode=8bit",
+          "image/vnd.jpeg-png",
+          "image/vnd.jpeg-png8"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetStyles",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?language=eng&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/ONEGEOLOGYEUROPE",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "BGS OneGeology Europe geology",
+      "schema:identifier": "ONEGEOLOGYEUROPE",
+      "schema:description": "The 1:50k GeoSure (natural ground stability) data covering the map sheets for Loughborough and Kilmarnock are available in this OGC WMS service for your personal, non-commercial use only and is being served as a contribution to the OneGeology Europe initiative. For information about more of the British Geological Survey's maps and other digital products please visit https://www.bgs.ac.uk/geological-data/datasets/digital-data-product-development/",
+      "schema:keywords": [
+        "OneGeology",
+        "MD_LANG@ENG",
+        "MD_DATE@2019-01-22",
+        {
+          "@type": [
+            "schema:DefinedTerm"
+          ],
+          "schema:name": "Geology",
+          "schema:inDefinedTermSet": "GEMET"
+        },
+        {
+          "@type": [
+            "schema:DefinedTerm"
+          ],
+          "schema:name": "infoMapAccessService",
+          "schema:inDefinedTermSet": "ISO"
+        }
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.8639 -8.6476 60.8622 1.76943"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GeoSure",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GeoSure",
+      "schema:identifier": "GeoSure",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.8639 -8.6476 60.8622 1.76943"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/Loughborough",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Loughborough",
+      "schema:identifier": "Loughborough",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.8639 -8.6476 60.8622 1.76943"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GBR_Loughborough_BGS_50K_SolubleRocks",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR Loughborough BGS 1:50K soluble rocks",
+      "schema:identifier": "GBR_Loughborough_BGS_50K_SolubleRocks",
+      "schema:description": "GBR Loughborough BGS 1:50K soluble rocks",
+      "schema:keywords": [
+        "OneGeology",
+        "thematic@Geology",
+        "thematic@Geologic hazards",
+        "GeoSure",
+        "soluble rocks",
+        "subarea@Loughborough",
+        "Natural ground stability",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2009-03-09"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.758311 -1.537317 52.908884 -1.195709"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13603030.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GBR_Loughborough_BGS_50K_ShrinkSwell",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR Loughborough BGS 1:50K shrink swell",
+      "schema:identifier": "GBR_Loughborough_BGS_50K_ShrinkSwell",
+      "schema:description": "GBR Loughborough BGS 1:50K shrink swell",
+      "schema:keywords": [
+        "OneGeology",
+        "thematic@Geology",
+        "thematic@Geologic hazards",
+        "GeoSure",
+        "shrink swell",
+        "subarea@Loughborough",
+        "Natural ground stability",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2009-03-09"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.739146 -1.629976 52.917249 -1.195225"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13603028.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GBR_Loughborough_BGS_50K_RunningSand",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR Loughborough BGS 1:50K running sand",
+      "schema:identifier": "GBR_Loughborough_BGS_50K_RunningSand",
+      "schema:description": "GBR Loughborough BGS 1:50K running sand",
+      "schema:keywords": [
+        "OneGeology",
+        "thematic@Geology",
+        "thematic@Geologic hazards",
+        "GeoSure",
+        "running sand",
+        "subarea@Loughborough",
+        "Natural ground stability",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2009-03-09"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.739146 -1.629976 52.917249 -1.195225"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13603027.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GBR_Loughborough_BGS_50K_Landslides",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR Loughborough BGS 1:50K landslides",
+      "schema:identifier": "GBR_Loughborough_BGS_50K_Landslides",
+      "schema:description": "GBR Loughborough BGS 1:50K landslides",
+      "schema:keywords": [
+        "OneGeology",
+        "thematic@Geology",
+        "thematic@Geologic hazards",
+        "GeoSure",
+        "Landslides",
+        "Slope Instability",
+        "subarea@Loughborough",
+        "Natural ground stability",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2009-03-09"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.739146 -1.629976 52.917249 -1.195225"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13603029.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GBR_Loughborough_BGS_50K_CompressibleGround",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR Loughborough BGS 1:50K Compressible Ground",
+      "schema:identifier": "GBR_Loughborough_BGS_50K_CompressibleGround",
+      "schema:description": "GBR Loughborough BGS 1:50K Compressible Ground",
+      "schema:keywords": [
+        "OneGeology",
+        "thematic@Geology",
+        "thematic@Geologic hazards",
+        "GeoSure",
+        "Compressible Ground",
+        "subarea@Loughborough",
+        "Natural ground stability",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2009-03-09"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.739146 -1.629976 52.917249 -1.195225"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13603026.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/Kilmarnock",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Kilmarnock",
+      "schema:identifier": "Kilmarnock",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.8639 -8.6476 60.8622 1.76943"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GBR_Kilmarnock_BGS_50K_SolubleRocks",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR Kilmarnock BGS 1:50K soluble rocks",
+      "schema:identifier": "GBR_Kilmarnock_BGS_50K_SolubleRocks",
+      "schema:description": "GBR Kilmarnock BGS 1:50K soluble rocks",
+      "schema:keywords": [
+        "OneGeology",
+        "thematic@Geology",
+        "thematic@Geologic hazards",
+        "GeoSure",
+        "soluble rocks",
+        "subarea@Kilmarnock",
+        "Natural ground stability",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2009-03-09"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "55.538103 -4.523977 55.793293 -4.215973"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13603030.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GBR_Kilmarnock_BGS_50K_ShrinkSwell",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR Kilmarnock BGS 1:50K shrink swell",
+      "schema:identifier": "GBR_Kilmarnock_BGS_50K_ShrinkSwell",
+      "schema:description": "GBR Kilmarnock BGS 1:50K shrink swell",
+      "schema:keywords": [
+        "OneGeology",
+        "thematic@Geology",
+        "thematic@Geologic hazards",
+        "GeoSure",
+        "shrink swell",
+        "subarea@Kilmarnock",
+        "Natural ground stability",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2009-03-09"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "55.53228 -4.524706 55.793395 -4.215438"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13603028.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GBR_Kilmarnock_BGS_50K_RunningSand",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR Kilmarnock BGS 1:50K running sand",
+      "schema:identifier": "GBR_Kilmarnock_BGS_50K_RunningSand",
+      "schema:description": "GBR Kilmarnock BGS 1:50K running sand",
+      "schema:keywords": [
+        "OneGeology",
+        "thematic@Geology",
+        "thematic@Geologic hazards",
+        "GeoSure",
+        "running sand",
+        "subarea@Kilmarnock",
+        "Natural ground stability",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2009-03-09"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "55.53228 -4.524706 55.793395 -4.215438"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13603027.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GBR_Kilmarnock_BGS_50K_Landslides",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR Kilmarnock BGS 1:50K landslides",
+      "schema:identifier": "GBR_Kilmarnock_BGS_50K_Landslides",
+      "schema:description": "GBR Kilmarnock BGS 1:50K landslides",
+      "schema:keywords": [
+        "OneGeology",
+        "thematic@Geology",
+        "thematic@Geologic hazards",
+        "GeoSure",
+        "Landslides",
+        "Slope Instability",
+        "subarea@Kilmarnock",
+        "Natural ground stability",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "55.53228 -4.524706 55.793395 -4.215438"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13603029.html"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#layer/GBR_Kilmarnock_BGS_50K_CompressibleGround",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR Kilmarnock BGS 1:50K Compressible Ground",
+      "schema:identifier": "GBR_Kilmarnock_BGS_50K_CompressibleGround",
+      "schema:description": "GBR Kilmarnock BGS 1:50K Compressible Ground",
+      "schema:keywords": [
+        "OneGeology",
+        "thematic@Geology",
+        "thematic@Geologic hazards",
+        "GeoSure",
+        "Compressible Ground",
+        "subarea@Kilmarnock",
+        "Natural ground stability",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2009-03-09"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "55.53228 -4.524706 55.793395 -4.215438"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://www.bgs.ac.uk/discoverymetadata/13603026.html"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "49.8639 -8.6476 60.8622 1.76943"
+      }
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "describedby",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&ID=f00173da-bb16-4be8-a612-3fd5aa6c7040&version=2.0.2&",
+        "schema:name": "INSPIRE service metadata"
+      }
+    }
+  ],
+  "schema:inLanguage": "eng",
+  "schema:identifier": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: BGS OneGeology Europe geology",
+    "schema:about": {
+      "@id": "https://ogc.bgs.ac.uk/cgi-bin/BGS_1GE_Geology/ows?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "British Geological Survey"
+    }
+  }
+}

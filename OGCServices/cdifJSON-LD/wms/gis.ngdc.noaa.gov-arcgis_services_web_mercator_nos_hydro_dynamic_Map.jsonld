@@ -1,0 +1,240 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://gis.ngdc.noaa.gov/arcgis/services//web_mercator/nos_hydro_dynamic/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:name": "web_mercator_nos_hydro_dynamic",
+  "schema:description": "WMS",
+  "schema:url": "https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?",
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/vnd.ogc.wms_xml",
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/bmp",
+          "image/jpeg",
+          "image/tiff",
+          "image/png",
+          "image/png8",
+          "image/png24",
+          "image/png32",
+          "image/gif",
+          "image/svg+xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/vnd.esri.wms_raw_xml",
+          "application/vnd.esri.wms_featureinfo_xml",
+          "application/vnd.ogc.wms_xml",
+          "application/geo+json",
+          "text/xml",
+          "text/html",
+          "text/plain"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetStyles",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://gis.ngdc.noaa.gov/arcgis/services/web_mercator/nos_hydro_dynamic/MapServer/WMSServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/vnd.ogc.sld+xml"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://gis.ngdc.noaa.gov/arcgis/services//web_mercator/nos_hydro_dynamic/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/0",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Surveys without Digital Sounding Data",
+      "schema:identifier": "0",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-14.298979 -179.99 78 179.99"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://gis.ngdc.noaa.gov/arcgis/services//web_mercator/nos_hydro_dynamic/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/1",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Surveys with Digital Sounding Data",
+      "schema:identifier": "1",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-17.560483 -179.999989 80.005966 179.99997"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://gis.ngdc.noaa.gov/arcgis/services//web_mercator/nos_hydro_dynamic/MapServer/WMSServer?service=WMS&request=GetCapabilities#layer/2",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Surveys with BAGs",
+      "schema:identifier": "2",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-17.560483 -177.503125 80.005966 166.663506"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-85 -179.99999 85 179.99999"
+      }
+    }
+  ],
+  "schema:identifier": "https://gis.ngdc.noaa.gov/arcgis/services//web_mercator/nos_hydro_dynamic/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:termsOfService": "not specified",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://gis.ngdc.noaa.gov/arcgis/services//web_mercator/nos_hydro_dynamic/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://gis.ngdc.noaa.gov/arcgis/services//web_mercator/nos_hydro_dynamic/MapServer/WMSServer?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: web_mercator_nos_hydro_dynamic",
+    "schema:about": {
+      "@id": "https://gis.ngdc.noaa.gov/arcgis/services//web_mercator/nos_hydro_dynamic/MapServer/WMSServer?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18"
+  }
+}

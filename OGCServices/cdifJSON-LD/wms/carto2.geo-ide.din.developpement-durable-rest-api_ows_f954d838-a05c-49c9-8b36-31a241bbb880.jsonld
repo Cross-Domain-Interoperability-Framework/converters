@@ -1,0 +1,270 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/f954d838-a05c-49c9-8b36-31a241bbb880?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:name": "LOCALISATION DES ELEVAGES PORÇINS DU FINISTERE",
+  "schema:description": "Localisation des élevages porçins du Finistère en cas de peste porçine",
+  "schema:url": "https://www.finistere.gouv.fr/",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "DDTM 29 (Direction Départementale des Territoires et de la Mer du Finistère)",
+      "schema:email": "ddtm-mpdd-geo@finistere.gouv.fr"
+    }
+  ],
+  "schema:termsOfService": "Fees: NONE; Access constraints: NONE",
+  "schema:conditionsOfAccess": [
+    "NONE"
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/png",
+          "image/jpeg",
+          "image/png; mode=8bit",
+          "image/vnd.jpeg-png",
+          "image/vnd.jpeg-png8"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/org_37996_f954d838-a05c-49c9-8b36-31a241bbb880/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/plain",
+          "application/vnd.ogc.gml",
+          "text/xml",
+          "application/vnd.ogc.gml/3.1.1",
+          "text/xml; subtype=gml/3.1.1",
+          "text/html",
+          "application/json"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/f954d838-a05c-49c9-8b36-31a241bbb880?service=WMS&request=GetCapabilities#layer/N_BRUIT_ZBR_INFRA_R_A_LD_S_029",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "N_BRUIT_ZBR_INFRA_R_A_LD_S_029",
+      "schema:identifier": "N_BRUIT_ZBR_INFRA_R_A_LD_S_029",
+      "schema:keywords": [
+        "features",
+        "N_BRUIT_ZBR_INFRA_R_A_LD_S_029"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.755361 -4.821251 48.749705 -3.377248"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/f954d838-a05c-49c9-8b36-31a241bbb880?service=WMS&request=GetCapabilities#layer/N_BRUIT_ZBR_INFRA_R_A_LN_S_029-f234e89d-6005-4aed-81d1-0d859e8373e5",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "N_BRUIT_ZBR_INFRA_R_A_LN_S_029",
+      "schema:identifier": "N_BRUIT_ZBR_INFRA_R_A_LN_S_029-f234e89d-6005-4aed-81d1-0d859e8373e5",
+      "schema:keywords": [
+        "features",
+        "N_BRUIT_ZBR_INFRA_R_A_LN_S_029"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.756196 -4.821039 48.748919 -3.377388"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/f954d838-a05c-49c9-8b36-31a241bbb880?service=WMS&request=GetCapabilities#layer/N_BRUIT_ZBR_INFRA_R_C_LD_S_029",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "N_BRUIT_ZBR_INFRA_R_C_LD_S_029",
+      "schema:identifier": "N_BRUIT_ZBR_INFRA_R_C_LD_S_029",
+      "schema:keywords": [
+        "features",
+        "N_BRUIT_ZBR_INFRA_R_C_LD_S_029"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.757051 -4.820648 48.748481 -3.381003"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/f954d838-a05c-49c9-8b36-31a241bbb880?service=WMS&request=GetCapabilities#layer/N_BRUIT_ZBR_INFRA_R_C_LN_S_029",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "N_BRUIT_ZBR_INFRA_R_C_LN_S_029",
+      "schema:identifier": "N_BRUIT_ZBR_INFRA_R_C_LN_S_029",
+      "schema:keywords": [
+        "features",
+        "N_BRUIT_ZBR_INFRA_R_C_LN_S_029"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.757179 -4.820325 48.748129 -3.38128"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "47.755361 -4.821251 48.749705 -3.377248"
+      }
+    }
+  ],
+  "schema:identifier": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/f954d838-a05c-49c9-8b36-31a241bbb880?service=WMS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/f954d838-a05c-49c9-8b36-31a241bbb880?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/f954d838-a05c-49c9-8b36-31a241bbb880?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: LOCALISATION DES ELEVAGES PORÇINS DU FINISTERE",
+    "schema:about": {
+      "@id": "https://carto2.geo-ide.din.developpement-durable.gouv.fr/rest-api/ows/f954d838-a05c-49c9-8b36-31a241bbb880?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "GeoNetwork demo"
+    }
+  }
+}

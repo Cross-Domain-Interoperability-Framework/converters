@@ -1,0 +1,4020 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:name": "GeoRhena WMS",
+  "schema:keywords": [
+    "WFS",
+    "WMS",
+    "GEOSERVER"
+  ],
+  "schema:url": "http://geoserver.org",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "GeoRhena"
+    }
+  ],
+  "schema:termsOfService": "Fees: NONE; Access constraints: NONE",
+  "schema:conditionsOfAccess": [
+    "NONE"
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://geoportal.georhena.eu/geoserver/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://geoportal.georhena.eu/geoserver/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/png",
+          "application/atom+xml",
+          "application/geopackage+sqlite3",
+          "application/json;type=utfgrid",
+          "application/pdf",
+          "application/rss+xml",
+          "application/vnd.google-earth.kml+xml",
+          "application/vnd.google-earth.kml+xml;mode=networklink",
+          "application/vnd.google-earth.kmz",
+          "image/bil",
+          "image/dds",
+          "image/geotiff",
+          "image/geotiff8",
+          "image/gif",
+          "image/jpeg",
+          "image/png; mode=8bit",
+          "image/svg+xml",
+          "image/tiff",
+          "image/tiff8",
+          "image/vnd.jpeg-png",
+          "image/vnd.jpeg-png8",
+          "text/html; subtype=openlayers",
+          "text/html; subtype=openlayers2",
+          "text/html; subtype=openlayers3"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://geoportal.georhena.eu/geoserver/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/plain",
+          "application/vnd.ogc.gml",
+          "text/xml",
+          "application/vnd.ogc.gml/3.1.1",
+          "text/xml; subtype=gml/3.1.1",
+          "text/html",
+          "application/json"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:AOI_dem_rhin",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Modèle numérique du fond du Rhin / Digitales Geländemodell des Flussbettes des Rheins",
+      "schema:identifier": "environment:AOI_dem_rhin",
+      "schema:description": "Cette donnée propose les altitudes absolues du fond du fleuve Rhin. Ces informations ont été générées sur base de relevés bathymétriques et aériens. Elles sont actuellement disponibles sur une zone expérimentale restreinte et délimitée par les bornes kilométriques 170 et 180. La résolution de ce fichier raster est de 1m. / Dieser Datensatz stellt die absoluten Höhen des Flussbettes des Rheins dar. Die Informationen sind mittels Vermessungsboot und Befliegung generiert worden. Sie sind in einzelne Untersuchungsgebiete (AOI) aufgeteilt; hier Flusskilometer 170-180. Die Auflösung beträgt 1m.",
+      "schema:keywords": [
+        "bathy_km170-180",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.590174 7.519137 47.664921 7.594764"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/a549b16c-e8a2-40df-9fce-f43ad2ca945a/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:AOI_ombrage_rhin",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Ombrage du fond du Rhin / Schummerung des Flussbettes des Rheins",
+      "schema:identifier": "environment:AOI_ombrage_rhin",
+      "schema:description": "Cette donnée propose un ombrage du relief du fond du fleuve Rhin. Ces informations ont été générées sur base de relevés bathymétriques et aériens. Elles sont actuellement disponibles sur une zone expérimentale restreinte et délimitée par les bornes kilométriques 170 et 180. La résolution de ce fichier raster est de 1m. / Dieser Datensatz stellt eine Schummerung des Flussbettes des Rheins dar. Die Informationen sind mittels Vermessungsboot und Befliegung generiert worden. Sie sind in einzelne Untersuchungsgebiete (AOI) aufgeteilt; hier Flusskilometer 170-180. Die Auflösung beträgt 1m.",
+      "schema:keywords": [
+        "ombrage_km170-180",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.590174 7.519137 47.664921 7.594764"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/eb144637-e9eb-4695-ad65-13e75bed9d97/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:AOI_rhin_isolignes",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Courbes de niveau du Rhin sur une zone d'intérêt / Höhenlinien des Rheins für ein AOI",
+      "schema:identifier": "environment:AOI_rhin_isolignes",
+      "schema:description": "Ces données correspondent aux courbes de niveau du fond du Rhin, c'est à dire des lignes reliant des points d'altitude égale. Celles-ci ont été produites sur base de relevés bathymétriques et aériens pour une zone d'intérêt spécifique (AOI). / Diese Daten repräsentieren mit Hilfe von Isolinien (Linien gleicher Höhe) das Flussbett des Rheins. Sie sind aus bathymetrischen Aufnahmen und Befliegungen generiert worden und in verschiedene Untersuchungsgebiete (AOI) aufgeteilt.",
+      "schema:keywords": [
+        "features",
+        "AOI_rhin_isolignes"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.592728 7.519447 47.663822 7.594521"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/bb8f8b39-406b-4fff-b306-2aa086a2234f/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:Acteurs_recherche",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Acteurs scientifiques / Wissenschaftliche Akteure",
+      "schema:identifier": "society:Acteurs_recherche",
+      "schema:description": "Acteurs du Transfert de Connaissances et de Technologie (TCT) dans le Rhin supérieur (RMT) / Akteure des Wissens- und Technologietransfers am Oberrhein am Oberrhein (TMO).",
+      "schema:keywords": [
+        "features",
+        "Acteurs_recherche"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.990768 6.924732 50.432407 9.150284"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:Mediation_recherche",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Médiateurs scientifiques / Wissenschaftsvermittler",
+      "schema:identifier": "society:Mediation_recherche",
+      "schema:description": "Acteurs de la médiation scientifique et de la culture scientifique et technique dans le Rhin supérieur (RMT) / Akteure der Wissenschaftsvermittlung und der Wissenschafts- und Technikkultur am Oberrhein (TMO)",
+      "schema:keywords": [
+        "features",
+        "Mediation_recherche"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.610275 6.960875 49.312054 8.897431"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:accueil_jeunes_poi",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Point d'intérêts pour la jeunesse / Interessenpunkt für Jugendliche",
+      "schema:identifier": "society:accueil_jeunes_poi",
+      "schema:keywords": [
+        "features",
+        "Accueil_Jeunes_poi"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.48538 7.021355 49.203488 8.451119"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/csw?request=GetRecordById&service=CSW&version=2.0.2&elementSetName=full&id=83092a33-3aaa-49f8-a083-16fe876b80de"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:adaptation_changement_climatique",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Bonnes pratiques d'adaptation au changement climatique",
+      "schema:identifier": "environment:adaptation_changement_climatique",
+      "schema:description": "Cette donnée illustre des exemples de projets (écoquartiers, démarches d'entreprises ou de communes) qui sont de bonnes pratiques d'adaptations au changement climatique. Ces informations sont partagées par Trion-Climate dans le cadre du projet INTERREG \"Clim’ability Care, pour une culture rhénane du risque climatique en entreprise\".",
+      "schema:keywords": [
+        "features",
+        "Adaptation_changement_climatique"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.466022 7.183415 49.114122 8.556546"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/17703323-02b5-424a-8f6e-098c50ed85cf/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:aeroports",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Aéroports / Flughafen",
+      "schema:identifier": "transportation:aeroports",
+      "schema:description": "Aéroports du Rhin Supérieur (2017) / Flughafen im Oberrhein (2017)",
+      "schema:keywords": [
+        "features",
+        "Aeroports"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.203373 6.13986 50.103962 8.687826"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/9c33460a-a72b-498e-9d1b-56d3f609e12b/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:air_station_mesure_qualite",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Stations de mesures de la qualité de l'air",
+      "schema:identifier": "environment:air_station_mesure_qualite",
+      "schema:description": "Localisation des stations de mesures des indicateurs suivants sur le territoire du Rhin Supérieur. PM10, PM2.5, Ammoniac, Ozone et Dioxyde d'azote.",
+      "schema:keywords": [
+        "features",
+        "Air_station_mesure_qualite"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.320458 7.069697 49.546953 8.749381"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/8419c400-34cd-41d9-92b4-8edbf6a55ab3/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:aires_covoiturage",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Aires de co-voiturage / Parkplätze für Fahrgemeinschaften",
+      "schema:identifier": "transportation:aires_covoiturage",
+      "schema:description": "Aires de co-voiturage du Rhin Superieur (2020) / Parkplätze für Fahrgemeinschaften im Oberrheingebiet (2020)",
+      "schema:keywords": [
+        "features",
+        "Aires_covoiturage"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.314114 7.010611 49.302002 8.609118"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/0518d25d-b823-4e94-a150-9a0ba99dcd06/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:amenagements_cyclables",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Infrastructures cyclables / Fahrradinfrastrukturen",
+      "schema:identifier": "transportation:amenagements_cyclables",
+      "schema:description": "Principaux aménagements cyclables du Rhin Supérieur / Wichtigste Fahrradwege am Oberrhein",
+      "schema:keywords": [
+        "features",
+        "Amenagements_cyclables"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.07436 6.883614 49.313793 8.890259"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/water:aquiferes",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Aquifères / Grundwasserleiter",
+      "schema:identifier": "water:aquiferes",
+      "schema:description": "Les aquifères du Rhin Supérieur sont représentés ici selon le type de milieu rocheux (porosité) et le rendement (importance du volume d’eau ou du débit pouvant être soutiré à la nappe contenue dans l’aquifère). / Die Grundwasserleiter des Oberrheins werden hier nach der Art des Gesteinsmediums (Porosität) und der Ergiebigkeit (Größe des Wasservolumens oder der Fördermenge, die dem im Grundwasserleiter enthaltenen Grundwasser entnommen werden kann) dargestellt.",
+      "schema:keywords": [
+        "features",
+        "Aquiferes"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/c8826e22-e824-4246-83b6-9f37f5cdc64e/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/water:bassin_versant",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Bassins versants",
+      "schema:identifier": "water:bassin_versant",
+      "schema:description": "Bassins versants du Rhin Supérieur (2016)",
+      "schema:keywords": [
+        "features",
+        "Bassin_versant"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074333 6.840193 49.344429 8.894849"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/csw?request=GetRecordById&service=CSW&version=2.0.2&elementSetName=full&id=aa10583b-ae00-4dca-ad1c-5102d7fb530f"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:bornes_recharge_voitures_electriques",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Bornes de recharge de véhicules électriques / Ladestationen für Elektrofahrzeuge",
+      "schema:identifier": "transportation:bornes_recharge_voitures_electriques",
+      "schema:description": "Bornes de recharge de véhicules électriques du Rhin Supérieur (2021) / Ladestationen für Elektrofahrzeuge am Oberrhein (2021)",
+      "schema:keywords": [
+        "features",
+        "Bornes_recharge_voitures_electriques"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.095261 6.855761 49.319618 8.858536"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/31904dca-c2e2-4ffc-8e72-f58997eaf188/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:bus_locaux_lignes",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Lignes de bus locales transfrontalières / Grenzüberschreitende lokale Buslinien",
+      "schema:identifier": "transportation:bus_locaux_lignes",
+      "schema:description": "Lignes de bus locales transfrontalière sur le territoire du Rhin Supérieur (2022). / Grenzüberschreitende lokale Buslinien auf dem Gebiet des Oberrheins (2022)",
+      "schema:keywords": [
+        "features",
+        "Bus_locaux_lignes"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.545879 7.34726 49.207684 8.155888"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/e6bc5cf0-4655-4ecd-ac84-3b14a5a49bcf/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:bus_locaux_terminus",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Terminus de bus des lignes locales transfrontalières / Busterminal der grenzüberschreitenden lokalen Linien",
+      "schema:identifier": "transportation:bus_locaux_terminus",
+      "schema:description": "Terminus de bus des lignes locales transfrontalières (2022) / Busterminal der grenzüberschreitenden lokalen Linien (2022)",
+      "schema:keywords": [
+        "features",
+        "Bus_locaux_terminus"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.545593 7.34726 49.154682 8.15539"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/4307a3a8-1865-4921-ac6c-a7eb447bc33c/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:bus_longue_distance_arrets",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Arrêts de bus des lignes transfrontalières longue distance / Grenzüberschreitende Fernbushaltestellen",
+      "schema:identifier": "transportation:bus_longue_distance_arrets",
+      "schema:description": "Arrêts de bus des lignes transfrontalières longue distance présents sur le territoire du Rhin Supérieur (2022). / Grenzüberschreitende Fernbushaltestellen, die sich auf dem Gebiet des Oberrheins befinden (2022)",
+      "schema:keywords": [
+        "features",
+        "Bus_longue_distance_arrets"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "41.39418 2.182959 54.311157 19.098501"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/4b1f5438-2922-4e85-adc5-73b86d8b1dfc/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:bus_longue_distance_lignes",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Lignes de bus transfrontalières longue distance / Grenzüberschreitende Fernbuslinien",
+      "schema:identifier": "transportation:bus_longue_distance_lignes",
+      "schema:description": "Lignes de bus transfrontalières longue distance traversant le territoire du Rhin Supérieur (2022). / Grenzüberschreitende Fernbuslinien, die das Gebiet des Oberrheins durchqueren (2022).",
+      "schema:keywords": [
+        "features",
+        "Bus_longue_distance_lignes"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "41.392262 2.17619 54.321217 19.09988"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/ce6774ab-4adf-4322-b899-c04ec1a529c9/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/boundaries:centroides_communes",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Centroïdes des communes / Zentren der Gemeinden",
+      "schema:identifier": "boundaries:centroides_communes",
+      "schema:description": "Centroïdes et population (2016) des communes du Rhin Supérieur - 2019 / Zentren und Bevölkerung (2016) der Gemeinden im Oberrheingebiet - 2019",
+      "schema:keywords": [
+        "features",
+        "Centroides_communes"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.096134 6.880061 49.310524 8.862236"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/f16935e8-2ffe-4103-a1ce-114b0aabab18/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:chateaux_rhenans",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Châteaux rhénans / Burgen am Oberrhein",
+      "schema:identifier": "society:chateaux_rhenans",
+      "schema:keywords": [
+        "features",
+        "Chateaux_rhenans"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.368732 6.959361 50.66515 8.270467"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/f74f5451-b198-4edf-abdd-a6b6b7caed81/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:chateaux_rhenans_exposition",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Inventaire archéologique des châteaux rhénans / Archäologisches Inventar der Rheinburgen",
+      "schema:identifier": "society:chateaux_rhenans_exposition",
+      "schema:description": "Informations issues de la base de données Edibat (2024) et vouées à être partagées à travers une exposition / Informationen aus der Edibat-Datenbank (2024), die durch eine Ausstellung weitergegeben werden sollen.",
+      "schema:keywords": [
+        "features",
+        "Chateaux_rhenans_exposition"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.236123 6.818228 49.454463 8.913864"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:chemins_grandes_randonnees",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Sentiers européens de grande randonnée / Europäische Fernwanderwege",
+      "schema:identifier": "society:chemins_grandes_randonnees",
+      "schema:description": "Sentiers européens de grande randonnée du Rhin Supérieur - 2019 / Europäische Fernwanderwege im Oberrheingebiet - 2019",
+      "schema:keywords": [
+        "features",
+        "Chemins_grandes_randonnees"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "34.728535 -5.6579 71.169327 34.076668"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/a414004e-47be-4ffc-a495-211f2aeb7f48/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:cinemas",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Cinémas du Rhin Supérieur / Kinos im Oberrheingebiet",
+      "schema:identifier": "society:cinemas",
+      "schema:description": "Cinémas du Rhin Supérieur - 2020 / Kinos im Oberrheingebiet - 2020",
+      "schema:keywords": [
+        "features",
+        "Cinemas"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.201633 7.004393 49.203404 8.703286"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/d0fcc3dc-fa67-4b6c-8adc-b83279d05ec8/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:climat_energie_projets_interreg",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Projets INTERREG liés au climat et à l'énergie",
+      "schema:identifier": "environment:climat_energie_projets_interreg",
+      "schema:keywords": [
+        "features",
+        "Energie_projets_interreg"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.729824 7.231014 49.217191 8.407379"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/89f4d4a0-e38f-4e49-aded-732b9797804c/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/water:cours_eau_dce",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Cours d’eau de la Directive Cadre sur l’Eau dans le Rhin Supérieur / Fließgewässer nach Wasserrahmenrichtlinie am Oberrhein",
+      "schema:identifier": "water:cours_eau_dce",
+      "schema:description": "Masses d’eau de surface du Rhin Supérieur / Fliessgewäsernetz des Oberrheins",
+      "schema:keywords": [
+        "features",
+        "Cours_eau_dce"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.075325 6.844448 49.583534 9.178617"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/c13d54f0-4f1a-4e72-85ac-fbf29fdcdeb8/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/boundaries:departements_landkreis_canton",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Départements Landkreise Kantonen",
+      "schema:identifier": "boundaries:departements_landkreis_canton",
+      "schema:description": "Départements (FR), Landkreise/Stadtkreise (DE) et Cantons (CH) du Rhin / Departements (FR), Landkreise/Stadtkreise (DE) und Kantonen (CH) des Oberrheins",
+      "schema:keywords": [
+        "features",
+        "Departements_Landkreis_Canton"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/6070c839-6e30-4e52-ba15-d30fa6a8a22c/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/boundaries:elus_territoires",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Elus_territoires",
+      "schema:identifier": "boundaries:elus_territoires",
+      "schema:description": "Les responsables politiques des principaux territoires administratifs de la Conférence du Rhin Supérieur / Die politischen Verantwortlichen der wichtigsten Verwaltungsgebiete der Oberrheinkonferenz",
+      "schema:keywords": [
+        "features",
+        "Elus_territoires"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 3.383639 50.942329 10.495574"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:emprise_rhin",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Emprise du Rhin / Umring Rhein",
+      "schema:identifier": "environment:emprise_rhin",
+      "schema:description": "Cette emprise du Rhin provient des données issues du programme COPERNICUS. / Dieser Umring des Rheins ist mit von COPERNICUS generiert worden.",
+      "schema:keywords": [
+        "features",
+        "Emprise_rhin"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.069527 7.239376 49.379246 8.74917"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/bab0bcef-0f70-480c-ba4a-1e7613ef0280/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:energie_hydrogene",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Sites de production, de transport et de recherche sur l'hydrogène / Standorte für die Herstellung, den Transport und die Erforschung von Wasserstoff",
+      "schema:identifier": "environment:energie_hydrogene",
+      "schema:description": "Géoréférencement de la filière hydrogène sur le territoire du Rhin Supérieur / Georeferenzierung der Wasserstoffbranche auf dem Gebiet des Oberrheins.",
+      "schema:keywords": [
+        "features",
+        "Energie_hydrogene"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.199254 7.126314 49.017437 8.50043"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/f3e213fe-9df5-4877-82a9-1420758e7b76/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:energie_hydrogene_transport",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Réseau schématique de transport d'hydrogène / Schematisches Wasserstofftransportnetz",
+      "schema:identifier": "environment:energie_hydrogene_transport",
+      "schema:description": "Tracés schématiques des potentiels réseaux de transport d'hydrogène sur le territoire du Rhin Supérieur / Schematische Verläufe der potenziellen Wasserstofftransportnetze auf dem Gebiet des Oberrheins.",
+      "schema:keywords": [
+        "features",
+        "Energie_hydrogene_transport"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.543531 6.96533 50.985583 9.684772"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/87c4b19d-72f7-42cf-bf52-26a1eca65908/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:energie_installations_transfrontalieres",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Sites de production d'énergie renouvelable transfrontaliers / Grenzüberschreitende Standorte für die Erzeugung erneuerbarer Energiers",
+      "schema:identifier": "environment:energie_installations_transfrontalieres",
+      "schema:keywords": [
+        "features",
+        "Energie_installations_transfrontalieres"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.524508 7.07374 49.021894 8.38414"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/89f4d4a0-e38f-4e49-aded-732b9797804c/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:energie_mobilite",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Enquête sur la mobilité décarbonée / Umfrage zu dekarbonisierten Mobilität",
+      "schema:identifier": "environment:energie_mobilite",
+      "schema:description": "Présentation de résultats d'une enquête réalisée auprès des collectivités territoriales dans le cadre du projet INTERREG C02Inno. / Vorstellung der Ergebnisse einer Umfrage, die im Rahmen des INTERREG-Projekts C02Inno bei lokalen und regionalen Gebietskörperschaften durchgeführt wurde.",
+      "schema:keywords": [
+        "features",
+        "Energie_mobilite"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.058576 6.701229 49.397443 8.937137"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:enseignement_recherche",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Enseignement et recherche / Lehre und Forschung",
+      "schema:identifier": "society:enseignement_recherche",
+      "schema:description": "Enseignement et recherche dans le Rhin Supérieur en 2020 / Lehre und Forschung im Oberrheingebiet in 2020",
+      "schema:keywords": [
+        "Enseignement_recherche",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.212208 7.085438 49.447258 8.821472"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/89e6fb54-8ea7-4b39-a984-1fdff4f7f428/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:eoliennes",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Eoliennes / Windkraftanlagen",
+      "schema:identifier": "environment:eoliennes",
+      "schema:description": "Eoliennes du Rhin Supérieur / Windkraftanlagen im Oberreheingebiet",
+      "schema:keywords": [
+        "features",
+        "Eoliennes"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.16547 6.945773 49.277638 8.619293"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/b979b4ee-b769-4ccf-be01-4b56095ca67a/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:eurovelo_itineraires",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Pistes cyclables EuroVelo / EuroVelo Fahrradwege",
+      "schema:identifier": "society:eurovelo_itineraires",
+      "schema:description": "Pistes cyclables EuroVelo du Rhin Supérieur (2019) / EuroVelo Fahrradwege im Oberrheingebiet (2019)",
+      "schema:keywords": [
+        "features",
+        "Eurovelo_itineraires"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.051918 5.495118 51.860168 13.728094"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/228cfe7e-76b6-4d52-b110-59811b14c84e/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:evenements_culturels_transfrontaliers",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Evénements culturels transfrontaliers",
+      "schema:identifier": "society:evenements_culturels_transfrontaliers",
+      "schema:keywords": [
+        "features",
+        "Evenements_culturels_transfrontaliers"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.338878 7.6631 49.122125 8.467818"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/csw?request=GetRecordById&service=CSW&version=2.0.2&elementSetName=full&id=502384bc-378b-41e9-a67b-cb476b21b304"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:franchissements_frontieres",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Moyens de franchissements des frontières / Möglichkeiten der Grenzüberschreitung",
+      "schema:identifier": "transportation:franchissements_frontieres",
+      "schema:description": "Franchissements (Rhin et frontières) du Rhin Supérieur (2026)&lt;br&gt;&#xd; Übergänge (Rhein und Grenzen) im Oberrheingebiet (2026)",
+      "schema:keywords": [
+        "features",
+        "Franchissements_frontieres"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.261654 6.883602 49.227707 8.607404"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/6bab871d-971a-4af9-9218-22dda9bfa77c/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/boundaries:frontieres_nationales",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Frontières élargies / Breite Grenzen",
+      "schema:identifier": "boundaries:frontieres_nationales",
+      "schema:description": "Frontières élargies du Rhin Supérieur /Oberrheingebiet breite Grenzen.",
+      "schema:keywords": [
+        "features",
+        "Frontieres_nationales"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "45.632103 5.166284 50.496651 11.33129"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/c3e13728-847e-4d69-90b6-54c7fbf23bf6/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:gestionnaire_point_mesure_electricite",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Gestionnaires des points de mesures pour l’électricité / Messstellenbetreiber für Elektrizität",
+      "schema:identifier": "environment:gestionnaire_point_mesure_electricite",
+      "schema:description": "Recensement des différents organismes collectant les données sur la consommation électrique dans le Rhin Supérieur selon une étude réalisée dans le cadre du projet Interreg Smart Meter Inclusif (SMI) en 2022 / Erfassung der verschiedenen Einrichtungen, die Daten über den Elektrizitätsverbrauch am Oberrhein sammeln, gemäß einer Studie, die im Rahmen des Interreg-Projekts Smart Meter Inclusive (SMI) im Jahr 2022 durchgeführt wird.",
+      "schema:keywords": [
+        "features",
+        "Gestionnaire_point_mesure_electricite"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.343796 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/c8826e22-e824-4246-83b6-9f37f5cdc64e/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/water:hydro_ligne",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Réseau hydrographique / Wassernetz",
+      "schema:identifier": "water:hydro_ligne",
+      "schema:description": "Réseau hydrographique linéaire du Rhin Supérieur / Oberrhein Lineares Wassernetz",
+      "schema:keywords": [
+        "features",
+        "Hydro_ligne"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.156338 6.90699 49.289814 8.700114"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/5a380a89-cfd2-4e9e-8638-8020c03c9750/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/water:hydro_surface",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Plans d'eau / Wasserfläche",
+      "schema:identifier": "water:hydro_surface",
+      "schema:description": "Plans d'eau du Rhin Supérieur (2016) / Oberrhein Wasserfläche (2016)",
+      "schema:keywords": [
+        "features",
+        "Hydro_surface"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.092995 6.859848 49.337025 8.875377"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/c36f954c-3f1b-48b0-8207-3859999128e4/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/elevation:isolignes_100",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Isolignes_100",
+      "schema:identifier": "elevation:isolignes_100",
+      "schema:description": "Isolignes à 100m du Rhin Supérieur / 100m Isolinien des Oberrheins",
+      "schema:keywords": [
+        "features",
+        "Isolignes_100"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.624611 6.17508 49.792301 9.578115"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/3226472f-f59b-46ee-8248-e11774732736/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/elevation:isolignes_250",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Isolignes_250",
+      "schema:identifier": "elevation:isolignes_250",
+      "schema:description": "Isolignes à 250m du Rhin Supérieur / 250m Isolinien des Oberrheins",
+      "schema:keywords": [
+        "features",
+        "Isolignes_250"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.624634 6.174869 49.787621 9.57461"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/742118b0-9814-4fdb-baf2-36ab9e75fee9/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/elevation:isolignes_50",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Isolignes_50",
+      "schema:identifier": "elevation:isolignes_50",
+      "schema:description": "Isolignes à 50m du Rhin Supérieur / 50m Isolinien des Oberrheins",
+      "schema:keywords": [
+        "features",
+        "Isolignes_50"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.624599 6.174869 49.793118 9.578213"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/cdb53829-ebe3-470a-8f64-19ced970b9e4/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/boundaries:limite_crs",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Périmètre CRS / ORK Perimeter",
+      "schema:identifier": "boundaries:limite_crs",
+      "schema:description": "Périmètre de la Conférence du Rhin Supérieur et de la Région Métropolitaine Trinationale du Rhin Supérieur / Oberrheinkonferenz und Trinationalen Metropolregion Oberrhein Perimeter.",
+      "schema:keywords": [
+        "features",
+        "Limite_crs"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/7b11840e-f144-4c80-bc76-19155199316c/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/boundaries:limites_communales",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Fond administratif avec limites communales / Verwaltungsbasis mit Gemeindegrenzen",
+      "schema:identifier": "boundaries:limites_communales",
+      "schema:description": "Fond administratif du Rhin Supérieur - 2023 / Oberrheingebiet Verwaltungsbasis - 2023",
+      "schema:keywords": [
+        "features",
+        "Limites_communales"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.343796 8.89452"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/acf56ec7-2719-46fb-bac6-725c47e6bfb1/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:missing_links",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Chaînons manquants / Netzlücken",
+      "schema:identifier": "transportation:missing_links",
+      "schema:description": "Interruptions présumées d'infrastructures cyclables au niveau des frontières du Rhin Supérieur / Vermutliche Lücken in der Fahrradinfrastruktur an den Grenzen des Oberrheins.",
+      "schema:keywords": [
+        "features",
+        "Missing_links_cyclables"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.42099 7.154911 49.04866 8.151293"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/basemaps:mnt_dem",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Modèle numérique de terrain / Digitales Geländemodell",
+      "schema:identifier": "basemaps:mnt_dem",
+      "schema:description": "Issu des données mises à disposition par le programme européen Copernicus. La résolution est de 25 mètres. / Aus den Daten, die vom europäischen Copernicus-Programm zur Verfügung gestellt werden. Die Auflösung beträgt 25 Meter.",
+      "schema:keywords": [
+        "mnt_dem",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.484412 5.804822 50.108964 9.808503"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/0dfbcf14-2f1e-4a2d-b186-6c532a00f9f2/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:musees_enseignement",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Musées Education-Formation / Museum Ausbildung",
+      "schema:identifier": "society:musees_enseignement",
+      "schema:description": "Les sites recensés pour accueillir des élèves dans des musées proposant du contenu et/ou des animations en français, allemand et dialecte dans le cadre du projet \"Tous ins Museum\". / Die erfassten Standorte, an denen Schülerinnen und Schüler in Museen empfangen werden können, die im Rahmen des Projekts \"Tous ins Museum\" Inhalte und/oder Animationen auf Französisch, Deutsch und Dialekt anbieten.",
+      "schema:keywords": [
+        "features",
+        "Musees_enseignement"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.533199 7.148976 49.999565 9.214847"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/bc89e8bd-25a1-4b9a-9b75-21b1048b4c98/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:museum_pass",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Museum Pass",
+      "schema:identifier": "society:museum_pass",
+      "schema:description": "Musées du Museum-Pass du Rhin Supérieur - 2020 / Museum von dem Museum-Pass im Oberrheingebiet - 2020",
+      "schema:keywords": [
+        "features",
+        "Museum_pass"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.681141 5.593735 50.003716 9.796062"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/6e029d61-6f74-4f69-9885-77adbd55f2e0/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:natura2000_zps",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Natura 2000: Directive oiseaux (ZPS) / Vogelschutzrichtlinie (VGLS)",
+      "schema:identifier": "environment:natura2000_zps",
+      "schema:description": "Zone Natura 2000 : Directive oiseaux (ZPS) du Rhin Supérieur au 01/01/2016 / Natura 2000 Gebiet : Vogelschutzrichtlinie -Richtlinie im Oberrheingebiet am 01/01/2016",
+      "schema:keywords": [
+        "Natura2000_zps",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.547794 6.841026 49.397076 8.551745"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/6861abf2-3cc3-4581-9103-785ea3e6b8c9/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:natura2000_zsc",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Natura 2000 : Directive habitat (ZSC) / Fauna-Flora-Habitat (FFH)",
+      "schema:identifier": "environment:natura2000_zsc",
+      "schema:description": "Natura 2000 : Directive habitat (ZSC) du Rhin Supérieur au 01/01/2016 / Natura 2000 Gebiet : Fauna-Flora-Habitat (FFH)-Richtlinie im Oberrheingebiet am 01/01/2016",
+      "schema:keywords": [
+        "features",
+        "Natura2000_zsc"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.426052 6.841023 49.397076 8.855851"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/6d4f7775-ae98-47ce-8ea5-67e0ea17b6ab/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/basemaps:occupation_sol_2018",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Corine Land Cover 2018",
+      "schema:identifier": "basemaps:occupation_sol_2018",
+      "schema:description": "Corine Land Cover 2018 sur le territoire de la conférence du Rhin Supérieur / Corine Land Cover 2018 im Gebiet der Oberrheinkonferenz.",
+      "schema:keywords": [
+        "features",
+        "Occupation_sol_2018"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/c0ccbf45-2620-4bde-93f8-869558e51d7e/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:parc_national",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Parcs nationaux / Nationalpark",
+      "schema:identifier": "environment:parc_national",
+      "schema:description": "Parcs nationaux (protection réglementaire) du Rhin Supérieur au 01/01/2016 / Nationalpark (Gesetzlicher Schutz) im Oberrheingebiet am 01/01/2016",
+      "schema:keywords": [
+        "features",
+        "Parc_national"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "48.491722 8.184047 48.695812 8.372782"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/4dd3c8ee-e258-4d9e-ac63-be3cd49e0b4e/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:parc_naturel",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Parcs naturels et réserves / Naturparks und Biosphärereservate",
+      "schema:identifier": "environment:parc_naturel",
+      "schema:description": "Parcs naturels et réserves du Rhin Supérieur - 2021 / Naturparks und Biosphärereservate im Oberreheingebiet - 2021",
+      "schema:keywords": [
+        "features",
+        "Parc_naturel"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.041771 6.362143 49.612938 9.101955"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/4dd3c8ee-e258-4d9e-ac63-be3cd49e0b4e/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:pfas_acteurs",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Acteurs des PFAS du Rhin Supérieur",
+      "schema:identifier": "environment:pfas_acteurs",
+      "schema:keywords": [
+        "features",
+        "Pfas_acteurs"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.475388 7.309064 50.005703 9.189719"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/planning:planification_regionale",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Documents de planification régionale - Übergeordneten Planungen",
+      "schema:identifier": "planning:planification_regionale",
+      "schema:description": "Documents de planification régionale - 30/10/2020 / Übergeordneten Planungen - 30/10/2020",
+      "schema:keywords": [
+        "Planification_regionale",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/1445a754-de0f-417c-97ac-106b8809a55c/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/planning:plans_amenagement_rs_gr",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Plans d'aménagement du Rhin Supérieur et de la Grande Région / Raumordnungspläne für den Oberrhein und die Großregion",
+      "schema:identifier": "planning:plans_amenagement_rs_gr",
+      "schema:keywords": [
+        "features",
+        "Plans_amenagement_RS_GR"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.901505 2.832277 51.017038 8.937137"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:population_15_65",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Population des 15-65 ans / Die Bevölkerung zwischen 15 und 65 Jahren",
+      "schema:identifier": "society:population_15_65",
+      "schema:description": "Les 15-65 ans dans la population du Rhin Supérieur au 01/01/2013 / Die Bevölkerung zwischen 15 und 65 Jahren im Oberheingebiet am 01/01/2013",
+      "schema:keywords": [
+        "features",
+        "Population_15_65"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/e8ba5adb-eeac-4bf4-ae9b-bde4fbc94079/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:population_communale_2006",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Population communale / Gemeindebevölkerung (2006)",
+      "schema:identifier": "society:population_communale_2006",
+      "schema:description": "Données statistiques démographiques communales du Rhin Supérieur (2006) / Statistische Daten (Demografie) im Oberrheingebiet auf Gemeinde Ebene (2006)",
+      "schema:keywords": [
+        "features",
+        "Population_communale_2006"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/367b46f8-60e5-4d7e-85b0-82dad867bcb5/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:population_communale_2016",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Population communale / Gemeindebevölkerung (2016)",
+      "schema:identifier": "society:population_communale_2016",
+      "schema:description": "Données statistiques démographiques communales du Rhin Supérieur (2016) / Statistische Daten (Demografie) im Oberrheingebiet auf Gemeinde Ebene (2016)",
+      "schema:keywords": [
+        "features",
+        "Population_communale_2016"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/5a8809cb-5d45-445b-9162-36a8c06a3f22/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:population_communale_2020",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Population communale / Gemeindebevölkerung (2020)",
+      "schema:identifier": "society:population_communale_2020",
+      "schema:description": "Cette donnée représente le nombre d'habitants par commune sur le territoire du Rhin Supérieur. Les données allemandes et suisses datent de 2020 et les données française de 2019. / Diese Daten stellen die Anzahl der Einwohner pro Kommune auf dem Gebiet des Oberrheins dar. Die deutschen und schweizerischen Daten stammen aus dem Jahr 2020, die französischen Daten aus dem Jahr 2019.",
+      "schema:keywords": [
+        "features",
+        "Population_communale_2020"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.343796 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/3ea1f7f7-e08b-4f09-bab7-2b86c96b6cf1/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:population_evolution_2006_2013",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Evolution de la population / Bevölkerungsentwicklung (2006-2013)",
+      "schema:identifier": "society:population_evolution_2006_2013",
+      "schema:description": "Evolution de la population communale du Rhin Supérieur entre le 01/01/2006 et 01/01/2013 en pourcentage / Bevölkerungsentwicklung der Gemeinden im Oberrheingebiet zwischen den 01/01/2006 und den 01/01/2013 in Prozenten",
+      "schema:keywords": [
+        "features",
+        "Population_evolution_2006_2013"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/4665f794-03e5-4397-b07a-0e1b7332b22a/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:population_indice_jeunesse",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Indice de jeunesse de la population / Jugendquotient der Bevölkerung",
+      "schema:identifier": "society:population_indice_jeunesse",
+      "schema:description": "Indice de jeunesse de la population du Rhin Supérieur au 01/01/2013 / Jugendquotient der Bevölkerung im Oberheingebiet am 01/01/2013",
+      "schema:keywords": [
+        "features",
+        "Population_indice_jeunesse"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/9afe3c4b-dbf5-47b9-ac8c-2e0a16c135a9/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:population_indice_renouvellement",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Indice de renouvellement de la population / Erneuerungsindex der Bevölkerung",
+      "schema:identifier": "society:population_indice_renouvellement",
+      "schema:description": "Indice de renouvellement par commune du Rhin Supérieur au 01/01/2013 / Erneuerungsindex pro Gemeinde im Oberheingebiet am 01/01/2013",
+      "schema:keywords": [
+        "features",
+        "Population_indice_renouvellement"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/45340bcf-0b1b-4179-9694-0be99d18b87d/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:population_indice_vieillissement",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Indice de vieillissement de la population / Alterungsindex der Bevölkerung",
+      "schema:identifier": "society:population_indice_vieillissement",
+      "schema:description": "Indice de vieillissement par commune du Rhin Supérieur au 01/01/2013 / Alterungsindex pro Gemeinde im Oberheingebiet am 01/01/2013",
+      "schema:keywords": [
+        "features",
+        "Population_indice_vieillissement"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/543c90c3-9461-440e-b0fb-08d93a770762/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:production_energies_renouvelables",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Installations productrices d'énergies renouvelables",
+      "schema:identifier": "environment:production_energies_renouvelables",
+      "schema:description": "Les installations recensées produisent plus d'1 MW d'électricité.",
+      "schema:keywords": [
+        "features",
+        "Production_energies_renouvelables"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.178927 6.804392 49.282336 8.776434"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/e3b6d1ff-53ad-43eb-88e9-194191d1594b/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:projets_offensive_science",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Projets scientifiques transfrontaliers / Grenzüberschreitende wissenschaftliche Projekte",
+      "schema:identifier": "society:projets_offensive_science",
+      "schema:description": "Projets transfrontaliers scientifiques financés dans le cadre du dispositif « Offensive Sciences » / Grenzüberschreitende Projekte im Bereich Wissenschaft, die durch das Förderinstrument „Wissenschaftsoffensive“ gefördert wurden / Scientific cross border projects financed by the initiative « Science Offensive »",
+      "schema:keywords": [
+        "features",
+        "Projets_offensive_science"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.519547 6.571399 50.336063 8.821443"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/c158a4b6-6fdd-4a9b-af25-ad809751a891/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:region_naturelle",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Regions Naturelles / Naturräume",
+      "schema:identifier": "environment:region_naturelle",
+      "schema:description": "Régions naturelles généralisés du Rhin Supérieur - 1 : 300 000 / Vereinfachte Naturräume im Oberrheingebiet - 1 : 300 000",
+      "schema:keywords": [
+        "features",
+        "Region_naturelle"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 6.840793 49.344383 8.894519"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/d1af7e66-fe98-4cfc-8617-f023bbd3fe4b/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/basemaps:relief_ombrage",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Ombrage / Schattierung",
+      "schema:identifier": "basemaps:relief_ombrage",
+      "schema:description": "Ombrage obtenu à partir d'un traitement fait sur le modèle numérique de terrain fourni par le service Copernicus de surveillance des terres (CLMS) / Schattierung, die sich aus der Bearbeitung des vom Copernicus-Landüberwachungsdienst (Copernicus Land Monitoring Service; CLMS) bereitgestellten digitalen Geländemodells ergibt.",
+      "schema:keywords": [
+        "ombrage_schattierung",
+        "WCS",
+        "GeoTIFF"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.484412 5.804822 50.108964 9.808503"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/a9879e36-c147-481c-8d3c-fae8f8893a5f/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:reseau_routier",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Routes principales du Rhin Supérieur",
+      "schema:identifier": "transportation:reseau_routier",
+      "schema:description": "Routes principales du Rhin Supérieur extraites depuis Openstreetmap (2026)",
+      "schema:keywords": [
+        "features",
+        "Reseau_routier"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.035477 6.694543 49.38333 8.944349"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/csw?request=GetRecordById&service=CSW&version=2.0.2&elementSetName=full&id=4c3d312d-0952-419f-a1b8-2e339f5fdc42"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:reserve_forestiere",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Réserve biologique forestière - Forêt de protection / Bann und Schonwälder",
+      "schema:identifier": "environment:reserve_forestiere",
+      "schema:description": "Réserve biologique forestière (protection réglementaire) et Forêt de protection (protection réglementaire) du Rhin Supérieur au 01/01/2016 / Bann und Schonwälder (Gesetzlicher Schutz) im Obrerrheingebiet am 01/01/2016",
+      "schema:keywords": [
+        "Reserve_forestiere",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.081364 6.928239 49.340427 8.813857"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/334f55b0-43bb-4b6b-87d7-ac079e630c49/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:reserve_naturelle",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Réserve naturelle et biotopes classés / Naturschutzgebiet",
+      "schema:identifier": "environment:reserve_naturelle",
+      "schema:description": "Réserve naturelle et biotopes classés (niveau national, régional, local) du Rhin Supérieur au 01/01/2016 / Naturschutzgebiet (Nationale Ebene, Regionale Ebene, Lokale Ebene) im Obrerrheingebiet am 01/01/2016",
+      "schema:keywords": [
+        "features",
+        "Reserve_naturelle"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.08762 6.84159 49.313648 8.879799"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/ccffcc1e-c540-4feb-a913-d8cbff97aab3/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:restaurant_etoiles_michelin",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Restaurants étoilés Michelin / Michelin Sterne Restaurant",
+      "schema:identifier": "society:restaurant_etoiles_michelin",
+      "schema:description": "Restaurants étoilés Michelin du Rhin Supérieur - 2020 / Michelin Sterne Restaurant im Oberrheingebiet - 2020",
+      "schema:keywords": [
+        "features",
+        "Restaurant_etoiles_michelin"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.223793 6.957038 49.117554 8.532201"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/bf503cac-60f2-422b-87e0-7e5314c863f2/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/water:rhin",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Rhin / Rhein",
+      "schema:identifier": "water:rhin",
+      "schema:description": "Le Rhin : de sa source à son exutoire / Der Rhein : von Quelle zu Vorfluter",
+      "schema:keywords": [
+        "features",
+        "Rhin"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "46.496334 4.049604 52.002979 9.670881"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/f5a74de0-5645-44b3-a143-c1ecb7d1be19/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:rhin_points_kilometriques",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Points Kilométriques sur le Rhin / Rheinkilometrierung",
+      "schema:identifier": "transportation:rhin_points_kilometriques",
+      "schema:description": "Points Kilométriques du Rhin - 2021 - 1 : 25 000 / Rheinkilometrierung - 2021 - 1 : 25 000",
+      "schema:keywords": [
+        "features",
+        "Rhin_points_kilometriques"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.589909 6.063714 51.865269 9.420302"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/920561f3-0269-4e9b-9967-68d1df49bbbf/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:routes_touristiques",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Routes touristiques / Touristische strassen",
+      "schema:identifier": "society:routes_touristiques",
+      "schema:description": "Routes touristiques du Rhin Supérieur / Touristische strassen im Oberrheingebiet",
+      "schema:keywords": [
+        "features",
+        "Routes_touristiques"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.421734 6.97388 49.321205 8.412251"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/8c700ca9-0733-4946-8169-6c117e3146cc/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:science_cluster_competence",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Les scientifiques du cluster de recherche / Wissenschaftler des Forschungsclusters",
+      "schema:identifier": "society:science_cluster_competence",
+      "schema:description": "Les scientifiques du cluster de recherche du Rhin Supérieur. Liste des organismes recensés lors du projet d'étude de faisabilité \"Région d'innovation Fessenheim\"/ Die Wissenschaftler des Forschungsclusters Oberrhein. Liste der während des Projekts der Machbarkeitsstudie \"Innovationsregion Fessenheim\" erfassten Organisationen",
+      "schema:keywords": [
+        "features",
+        "Science_cluster_competence"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.479374 7.297322 51.764763 11.937748"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/ca5a7347-034a-4187-886e-583ee89ba8a2/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:site_ramsar",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Sites Ramsar / Ramsar Gebiete",
+      "schema:identifier": "environment:site_ramsar",
+      "schema:description": "Sites Ramsar transfrontaliers du Rhin-supérieur 01/01/2016 / Oberrhein Grenzüberschreitendes Ramsar-Gebiet 01/01/2016",
+      "schema:keywords": [
+        "features",
+        "Site_ramsar"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.599438 7.498802 49.038254 8.346104"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/28b93ca5-d05c-4929-8a69-711304666dad/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:site_unesco_ponctuel",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Sites UNESCO du Rhin Supérieur / UNESCO Stäten am Oberrhein",
+      "schema:identifier": "society:site_unesco_ponctuel",
+      "schema:description": "Sites UNESCO ponctuels du Rhin Supérieur - 2018 / UNESCO punktliche Stäten am Oberrhein - 2018",
+      "schema:keywords": [
+        "features",
+        "Site_unesco_ponctuel"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.168747 7.059319 49.036762 8.812827"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/25db4489-8d6b-411e-ae3e-f6cd4debc8e5/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/society:site_unesco_surfacique",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Sites UNESCO du Rhin Supérieur / UNESCO Stäten am Oberrhein",
+      "schema:identifier": "society:site_unesco_surfacique",
+      "schema:description": "Sites UNESCO surfaciques du Rhin Supérieur - 2018 / UNESCO fläche Stäten am Oberrhein - 2018",
+      "schema:keywords": [
+        "features",
+        "Site_unesco_surfacique"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.591415 7.118684 49.612774 8.230359"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/95175c2f-1c2c-4316-b999-86006a3252ea/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/boundaries:territoires_cooperation",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Territoires de coopération / Kooperationsgebiete",
+      "schema:identifier": "boundaries:territoires_cooperation",
+      "schema:description": "Territoires de coopération du Rhin Supérieur - 2018 /Grenzüberschreitende Kooperationen im Oberrheingebiet - 2018",
+      "schema:keywords": [
+        "features",
+        "Territoires_cooperation"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.074341 2.8411 50.940903 8.984941"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/2e2ac169-2d73-4d49-ba37-46e5f2c1d860/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/c2c:test_datafeeder_",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "test datafeeder",
+      "schema:identifier": "c2c:test_datafeeder_",
+      "schema:description": "test datafeeder",
+      "schema:keywords": [
+        "features",
+        "test_datafeeder_"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "49.030816 1.762323 50.718123 4.055124"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/81743cc4-4b0b-4e75-b64b-06132e25ec28/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/eng/catalog.search#/metadata/81743cc4-4b0b-4e75-b64b-06132e25ec28"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:train_gares_principales",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Gare principale / Bahnhof der Kategorie 1 bis 4",
+      "schema:identifier": "transportation:train_gares_principales",
+      "schema:description": "are principale du Rhin Supérieur 2016 / Bahnhof der Kategorie 1 bis 4 der Oberrhein 2016",
+      "schema:keywords": [
+        "features",
+        "Train_gares_principales"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.163006 6.906054 49.341614 8.852972"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/3a8fb6aa-a8c4-441b-af4a-4f855ca52d30/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:train_gares_secondaires",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Gare secondaire / Bahnhof der Kategorie 5 bis 7",
+      "schema:identifier": "transportation:train_gares_secondaires",
+      "schema:description": "Gare secondaire du Rhin Supérieur 2016 / Bahnhof der Kategorie 5 bis 7 der Oberrhein 2016",
+      "schema:keywords": [
+        "features",
+        "Train_gares_secondaires"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.161324 6.896633 49.306034 8.775014"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/921e2e7c-157f-4e2b-95ea-a776a8a4c733/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:train_liaisons_transfrontalieres_gares",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Gares avec liaison(s) transfrontalière(s)",
+      "schema:identifier": "transportation:train_liaisons_transfrontalieres_gares",
+      "schema:description": "Gares du Rhin Supérieur proposant au moins une liaison ferroviaire transfrontalière",
+      "schema:keywords": [
+        "features",
+        "Train_liaisons_transfrontalieres_gares"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.455225 7.257645 49.358615 8.85138"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/17c311ac-716e-42fe-a5c0-dbacc18f2b24/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:train_lignes_transfrontalieres",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Liaisons ferroviaires transfrontalières / Grenzüberschreitende Zugverbindungen",
+      "schema:identifier": "transportation:train_lignes_transfrontalieres",
+      "schema:description": "Lignes régionales transfrontalières sur le territoire du Rhin Supérieur / Grenzüberschreitende regionale Linien auf dem Gebiet des Oberrheins",
+      "schema:keywords": [
+        "features",
+        "Train_liaisons_transfrontalieres"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.453251 7.174415 49.364768 9.986833"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/acaf5bc1-9a17-49ac-ae3c-4c6d10ae48de/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:train_voies_ferrees",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Voies ferrées / Eisenbahnen",
+      "schema:identifier": "transportation:train_voies_ferrees",
+      "schema:description": "Voies ferrées du Rhin Supérieur / Oberrhein Eisenbahnen",
+      "schema:keywords": [
+        "features",
+        "Train_voies_ferrees"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.152107 6.968709 49.344212 8.879014"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/22bfa151-ab07-40ea-9d34-e329c677b3d3/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/transportation:tram_lignes",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Lignes de tram transfrontalières / Grenzüberschreitende Tram Linien",
+      "schema:identifier": "transportation:tram_lignes",
+      "schema:description": "Lignes de tram transfrontalières (2022) du Rhin Supérieur / Grenzüberschreitende Tram Linien am Oberrhein (2022)",
+      "schema:keywords": [
+        "features",
+        "Tram_lignes"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.545593 7.552569 48.592342 7.816181"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/ace4a643-8307-4c98-88d2-908625101e95/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/boundaries:villes_principales",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Villes principales / Hauptstädte",
+      "schema:identifier": "boundaries:villes_principales",
+      "schema:description": "Principales villes du Rhin Supérieur / Hauptorte des Oberrheins",
+      "schema:keywords": [
+        "features",
+        "Villes_principales"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.207039 7.338011 49.199966 8.391251"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/8a035f1f-61a0-4f25-a551-c24297cd32a4/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/environment:vin_biodiv_partenaire",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "VINBIODIV - Domaines viticoles / Weingütern",
+      "schema:identifier": "environment:vin_biodiv_partenaire",
+      "schema:description": "Domaines viticoles participant à VinBiodiv, un projet transfrontalier qui développe la biodiversité dans les vignobles du Rhin Supérieur / Teilnehmenden Weingütern des Projeckts VinBiodiv. Grenzübergreifendes Projekt zur Steigerung der biologischen Artenvielfalt in den Weinbaugebietenam Oberrhein",
+      "schema:keywords": [
+        "features",
+        "Vin_biodiv_partenaire"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.630997 7.213734 49.376343 8.25668"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/85359e6f-f551-47e7-b056-4ce132c8ce43/formatters/xml"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#layer/boundaries:zone_interreg_RS",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Zonage Interreg pour la programmation 2021-2027",
+      "schema:identifier": "boundaries:zone_interreg_RS",
+      "schema:description": "La région du Rhin supérieur s’étend sur 350 kilomètres le long du Rhin, à cheval entre France, Allemagne et Suisse. Il est constitué de quatre territoires : l’Alsace, le Sud et Sud Ouest du Palatinat, une partie du Pays de Bade et les cinq cantons de Suisse du Nord-Ouest. Pour la période 2021-2027, la zone de programmation Interreg Rhin Supérieur évolue par rapport à 2014-2020. En effet, la circonscription de Pirmasens au Nord-Ouest complète désormais le Sud-Palatinat du côté allemand. Un projet est éligible s’il implique au moins deux partenaires de part et d’autre de la frontière, dans deux des trois pays composant le territoire. Le siège de l’organisation qui porte le projet doit se situer dans cette zone de programmation.",
+      "schema:keywords": [
+        "features",
+        "Zone_interreg_RS"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.058576 6.701229 49.397443 8.937137"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://geoportal.georhena.eu/geonetwork/srv/api/records/a33bbb40-500e-46fa-be30-f3c0b55bda8c/formatters/xml"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-1 -5.6579 71.169327 34.076668"
+      }
+    }
+  ],
+  "schema:identifier": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities",
+  "schema:description": "GeoRhena WMS",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: GeoRhena WMS",
+    "schema:about": {
+      "@id": "https://geoportal.georhena.eu/geoserver/ows?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Swiss geocat"
+    }
+  }
+}

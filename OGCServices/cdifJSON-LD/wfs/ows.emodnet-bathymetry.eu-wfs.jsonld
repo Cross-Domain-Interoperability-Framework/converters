@@ -1,0 +1,635 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Feature Service 2.0.0",
+    "schema:termCode": "OGC:WFS"
+  },
+  "schema:version": "2.0.0",
+  "schema:name": "EMODnet Bathymetry WFS",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "N4M5",
+      "schema:email": "niels@n4m5.nl"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Niels Meijer",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "N4M5"
+        },
+        "schema:email": "niels@n4m5.nl"
+      }
+    }
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeFeatureType",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "GML2",
+          "KML",
+          "SHAPE-ZIP",
+          "application/json",
+          "application/vnd.google-earth.kml xml",
+          "application/vnd.google-earth.kml+xml",
+          "csv",
+          "gml3",
+          "gml32",
+          "json",
+          "text/csv",
+          "text/xml; subtype=gml/2.1.2",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetPropertyValue",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ListStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "CreateStoredQuery",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DropStoredQuery",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "LockFeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureWithLock",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "GML2",
+          "KML",
+          "SHAPE-ZIP",
+          "application/json",
+          "application/vnd.google-earth.kml xml",
+          "application/vnd.google-earth.kml+xml",
+          "csv",
+          "gml3",
+          "gml32",
+          "json",
+          "text/csv",
+          "text/xml; subtype=gml/2.1.2",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/3.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "Transaction",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/wfs",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities#layer/emodnet:download_tiles",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Bathymetry product tiles",
+      "schema:identifier": "emodnet:download_tiles",
+      "schema:description": "Download schema for Bathymetry products tiles (most recent release)",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "11 -70.5 90 43"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=b79b28b4-182b-4f5d-9cdb-b23fd216cfee"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities#layer/emodnet:contours",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Depth contours",
+      "schema:identifier": "emodnet:contours",
+      "schema:description": "Generalised bathymetric contour lines. (50, 100, 200, 500, 1000, 2000, 5000 meter interval)",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "11.001041 -70.5 86.661888 43.001377"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=4f7ab468-f4b9-4c2c-8d3b-49a375cf9964"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities#layer/emodnet:hr_bathymetry_area",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "High resolution bathymetric data",
+      "schema:identifier": "emodnet:hr_bathymetry_area",
+      "schema:description": "Layer with EMODnet bathymetry show case areas available in a higher resolution than 1/16 arc minute",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "12.029333 -68.875333 76.466409 30.043886"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=b86926a1-8653-471b-9954-c0bf29417342"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities#layer/emodnet:quality_index",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Quality index",
+      "schema:identifier": "emodnet:quality_index",
+      "schema:description": "Representation of various quality indicators for the individual bathymetric surveys and composite DTM’s that contribute to the EMODnet Bathymetry DTM",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "11 -70.5 90 43.003125"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=6572ee07-a078-4adc-b868-fd1f7084c660"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities#layer/world:sea_names",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Sea names",
+      "schema:identifier": "world:sea_names",
+      "schema:description": "Maintained and provided by SeaDataNet",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "16.111529 -30.082426 84.340308 41.184264"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=f8683e4b-a9a8-4b4f-a506-766ffde6e2c9"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities#layer/emodnet:source_references",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Source references",
+      "schema:identifier": "emodnet:source_references",
+      "schema:description": "Coverage of individual bathymetric surveys and Composite DTMs that contribute to the EMODnet Bathymetry DTM.",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "11 -70.5 90 43.003125"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=6a72639d-2548-4d46-828f-16753fedbfd1"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities#layer/gebco:undersea_features",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "undersea_features",
+      "schema:identifier": "gebco:undersea_features",
+      "schema:keywords": [
+        "features",
+        "undersea_features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-79 -180 89.333336 180"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=cf51df64-56f9-4a99-b1aa-36b8d7b743a1"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-79 -180 90 180"
+      }
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "describedby",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=0327b8515dcea79a4fc3b4e80b8531bf1368f30d",
+        "schema:name": "INSPIRE service metadata"
+      }
+    }
+  ],
+  "schema:inLanguage": "eng",
+  "schema:identifier": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities",
+  "schema:description": "EMODnet Bathymetry WFS",
+  "schema:dateModified": "1900-01-01",
+  "schema:url": "http://ows.emodnet-bathymetry.eu/wfs",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:termsOfService": "not specified",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities",
+    "schema:name": "WFS 2.0.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WFS capabilities for: EMODnet Bathymetry WFS",
+    "schema:about": {
+      "@id": "http://ows.emodnet-bathymetry.eu/wfs?service=WFS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WFS 2.0.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Ifremer Sextant"
+    }
+  }
+}

@@ -1,0 +1,985 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:name": "High Resolution, Airborne Magnetic, Radiometric, VLF Survey over north Midlands of GB",
+  "schema:description": "High Resolution, Airborne Magnetic, Radiometric, VLF Survey over north Midlands of GB. Your use of any information provided by the BGS is at your own risk. BGS gives no warranty, condition or representation as to the quality, accuracy or completeness of the information or its suitability for any use or purpose. All implied conditions relating to the quality or suitability of the information, and all liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
+  "schema:keywords": [
+    "Maps",
+    "Geology",
+    "United Kingdom",
+    "Geophysics",
+    "Magnetic",
+    "Radiometric",
+    "VLF Survey",
+    "OneGeology",
+    "MD_DATE@2022",
+    "MD_LANG@ENG"
+  ],
+  "schema:url": "http://www.bgs.ac.uk/products/geophysics/hires.html",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "British Geological Survey",
+      "schema:email": "enquiries@bgs.ac.uk",
+      "schema:telephone": "+44 (0)115 936 3100"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Garry Baker",
+        "schema:jobTitle": "Head of BGS Data Centre",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "British Geological Survey"
+        },
+        "schema:email": "enquiries@bgs.ac.uk",
+        "schema:telephone": "+44 (0)115 936 3100"
+      }
+    }
+  ],
+  "schema:termsOfService": "Fees: none; Access constraints: These data are delivered under the terms of the Open Government Licence (http://www.nationalarchives.gov.uk/doc/open-government-licence/), subject to the following acknowledgement accompanying the reproduced BGS materials: Contains British Geological Survey materials copyright NERC [year]. Contact us if you create something new and innovative that could benefit others usingbgsdata@bgs.ac.uk.",
+  "schema:conditionsOfAccess": [
+    "These data are delivered under the terms of the Open Government Licence (http://www.nationalarchives.gov.uk/doc/open-government-licence/), subject to the following acknowledgement accompanying the reproduced BGS materials: Contains British Geological Survey materials copyright NERC [year]. Contact us if you create something new and innovative that could benefit others usingbgsdata@bgs.ac.uk."
+  ],
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "http://www.nationalarchives.gov.uk/doc/open-government-licence/"
+    }
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/vnd.ogc.wms_xml",
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/bmp",
+          "image/jpeg",
+          "image/tiff",
+          "image/png",
+          "image/png8",
+          "image/png24",
+          "image/png32",
+          "image/gif",
+          "image/svg+xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/vnd.esri.wms_raw_xml",
+          "application/vnd.esri.wms_featureinfo_xml",
+          "application/vnd.ogc.wms_xml",
+          "application/geo+json",
+          "text/xml",
+          "text/html",
+          "text/plain"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Magnetic.Radiometric.VLF.Survey.North.Midlands.GB",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "High Resolution, Airborne Magnetic, Radiometric, VLF Survey over north Midlands GB",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Magnetic.Radiometric.VLF.Survey.North.Midlands.GB",
+      "schema:description": "The HiRES-1 project acquired airborne geophysical data during 1998. Coverage included the Central Midlands of England and into the associated Welsh Borderland. Survey flying for the collaborative BGS and World Geoscience Corporation Ltd (WGC) high resolution geophysical and environmental survey was completed in early September 1998. The data comprise multi-channel gamma ray spectrometer, magnetometer and dual frequency VLF-EM. Flight line spacing was 400 m with tie lines at 1200 m and the total area surveyed is some 14 000 km2. Flight-line orientations are W–E over the western survey area, SW–NE over the eastern area. Ground clearance was maintained at 90 m in rural areas, increasing to about 240 m in built-up zones. The project and data descriptions are provided in an internal BGS report: R J Peart, R J Cuss, D Beamish and D G Jones, 2003. The High Resolution Airborne Resource and Environmental Survey- Phase 1 (HiRES-1): background, data processing and dissemination and future prospects. British Geological Survey Internal Report, IR/03/112. 28pp.",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Magnetic",
+        "Radiometric",
+        "VLF Survey",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Radiometry"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.699041 -3.364403 53.382349 -0.309824"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Radiometric.URA",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Radiometric URA",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Radiometric.URA",
+      "schema:description": "Midlands HiRes1 Airborne Radiometric URA",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Radiometric",
+        "VLF Survey",
+        "URA",
+        "Uranium",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Radiometry"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.699077 -3.364399 53.382221 -0.312405"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Radiometric.TOT",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Radiometric TOT",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Radiometric.TOT",
+      "schema:description": "Midlands HiRes1 Airborne Radiometric TOT",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Radiometric",
+        "VLF Survey",
+        "TOT",
+        "Total count",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Radiometry"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.699446 -3.363789 53.381937 -0.313106"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Radiometric.THO",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Radiometric THO",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Radiometric.THO",
+      "schema:description": "Midlands HiRes1 Airborne Radiometric THO",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Radiometric",
+        "VLF Survey",
+        "THO",
+        "Thorium",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Radiometry"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.699446 -3.363789 53.381937 -0.313106"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Radiometric.TERN",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Radiometric TERN",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Radiometric.TERN",
+      "schema:description": "Midlands HiRes1 Airborne Radiometric TERN",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Radiometric",
+        "VLF Survey",
+        "TERN",
+        "Ternary",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Radiometry"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.699077 -3.364399 53.382221 -0.312405"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Radiometric.POT",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Radiometric POT",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Radiometric.POT",
+      "schema:description": "Midlands HiRes1 Airborne Radiometric POT",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Radiometric",
+        "VLF Survey",
+        "POT",
+        "Potassium",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Radiometry"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.699446 -3.363789 53.381937 -0.313106"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Radiometric.KTh",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Radiometric KTh",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Radiometric.KTh",
+      "schema:description": "Midlands HiRes1 Airborne Radiometric KTh",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Radiometric",
+        "VLF Survey",
+        "KTh",
+        "Potassium",
+        "Thorium",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Radiometry"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.699077 -3.364403 53.382349 -0.312399"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Magnetic.TILT",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Magnetic TILT",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Magnetic.TILT",
+      "schema:description": "Midlands HiRes1 Airborne Magnetic TILT",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Magnetic",
+        "VLF Survey",
+        "TILT",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Geomagnetics"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.69976 -3.361768 53.375132 -0.31011"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Magnetic.RTP_1VD",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Magnetic RTP_1VD",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Magnetic.RTP_1VD",
+      "schema:description": "Midlands HiRes1 Airborne Magnetic RTP_1VD",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Magnetic",
+        "VLF Survey",
+        "RTP_1VD",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Geomagnetics"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.699761 -3.361767 53.375087 -0.310188"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Magnetic.RTP",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Magnetic RTP",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Magnetic.RTP",
+      "schema:description": "Midlands HiRes1 Airborne Magnetic RTP",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Magnetic",
+        "VLF Survey",
+        "RTP",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Geomagnetics"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.699761 -3.361767 53.375087 -0.310188"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Magnetic.PSGRAV",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Magnetic PSGRAV",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Magnetic.PSGRAV",
+      "schema:description": "Midlands HiRes1 Airborne Magnetic PSGRAV",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Magnetic",
+        "VLF Survey",
+        "PSGRAV",
+        "Pseudo Gravity",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Geomagnetics"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.69976 -3.361768 53.375132 -0.31011"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Magnetic.HGPSGRAV",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Magnetic HGPSGRAV",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Magnetic.HGPSGRAV",
+      "schema:description": "Midlands HiRes1 Airborne Magnetic HGPSGRAV",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Magnetic",
+        "VLF Survey",
+        "HGPSGRAV",
+        "HGM PS Gravity",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Geomagnetics"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.69976 -3.361768 53.375132 -0.31011"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#layer/Midlands.HiRes1.Airborne.Magnetic.AS",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "GBR BGS Midlands HiRes1 Airborne Magnetic AS",
+      "schema:identifier": "Midlands.HiRes1.Airborne.Magnetic.AS",
+      "schema:description": "Midlands HiRes1 Airborne Magnetic AS",
+      "schema:keywords": [
+        "Maps",
+        "Geology",
+        "United Kingdom",
+        "Geophysics",
+        "Magnetic",
+        "VLF Survey",
+        "AS",
+        "OneGeology",
+        "continent@Europe",
+        "subcontinent@Northern Europe",
+        "geographicarea@United Kingdom of Great Britain and Northern Ireland",
+        "subarea@GB-ENG",
+        "dataprovider@British Geological Survey",
+        "serviceprovider@British Geological Survey",
+        "DS_TOPIC@geoscientificinformation",
+        "DS_DATE@2022",
+        "thematic@Geophysics",
+        "thematic@Geomagnetics"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.699761 -3.361767 53.375087 -0.310188"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=1722a574-9514-3b21-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "52.699041 -3.364403 53.382349 -0.309824"
+      }
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "describedby",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://metadata.bgs.ac.uk/geonetwork/srv/eng/csw?SERVICE=CSW&REQUEST=GetRecordById&ID=266035a6-5cf1-64df-e054-002128a47908&elementSetName=full&OutputSchema=http://www.isotc211.org/2005/gmd&version=2.0.2&",
+        "schema:name": "INSPIRE service metadata"
+      }
+    }
+  ],
+  "schema:inLanguage": "eng",
+  "schema:identifier": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: High Resolution, Airborne Magnetic, Radiometric, VLF Survey over north Midlands of GB",
+    "schema:about": {
+      "@id": "https://map.bgs.ac.uk/arcgis/services/GeoIndex_Onshore/geophysics_midlands_hires/MapServer/WmsServer?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "British Geological Survey"
+    }
+  }
+}

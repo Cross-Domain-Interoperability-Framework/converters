@@ -1,0 +1,2839 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Feature Service 2.0.0",
+    "schema:termCode": "OGC:WFS"
+  },
+  "schema:version": "2.0.0",
+  "schema:name": "Service de téléchargement (WFS) des données IGN sur Auvergne-Rhône-Alpes: BD Topo/BD Forêt",
+  "schema:description": "Ce service de téléchargement (WFS) permet d'accéder depuis un SIG aux données spatiales vectorielles et attributaires de la BD Topo et BD Forêt de l'IGN (millésime 2026) sur la région Auvergne-Rhône-Alpes. Il est conseillé d'utiliser des filtres attributaires ou spatiaux pour limiter le volume de données demandé.",
+  "schema:keywords": [
+    "IGN",
+    "BD TOPO",
+    "boundaries",
+    "location",
+    "transportation",
+    "utilitiesCommunication",
+    "BD FORET",
+    "biota",
+    "environment",
+    "planningCadastre",
+    "OGC:WFS",
+    "WFS 1.1.0",
+    "WFS 2.0.0",
+    "wfs.craig.fr",
+    "wfs.craig.fr/ign"
+  ],
+  "schema:url": "http://www.craig.fr",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Centre Régional Auvergne-Rhône-Alpes de l'Information Géographique (CRAIG)",
+      "schema:email": "admin@craig.fr",
+      "schema:telephone": "+33972622531"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Landry BREUIL",
+        "schema:jobTitle": "Responsable Informatique",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Centre Régional Auvergne-Rhône-Alpes de l'Information Géographique (CRAIG)"
+        },
+        "schema:email": "admin@craig.fr",
+        "schema:telephone": "+33972622531"
+      }
+    }
+  ],
+  "schema:termsOfService": "Fees: None; Access constraints: Service accessible sans limite d'accès",
+  "schema:conditionsOfAccess": [
+    "Service accessible sans limite d'accès"
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://wfs.craig.fr/ign?language=fra&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeFeatureType",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://wfs.craig.fr/ign?language=fra&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "text/xml; subtype=gml/3.2.1",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/2.1.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://wfs.craig.fr/ign?language=fra&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "text/xml; subtype=gml/3.2.1",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/2.1.2",
+          "application/json",
+          "SHAPE-ZIP",
+          "geopackage",
+          "FLATGEOBUF"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetPropertyValue",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://wfs.craig.fr/ign?language=fra&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "application/gml+xml; version=3.2",
+          "text/xml; subtype=gml/3.2.1",
+          "text/xml; subtype=gml/3.1.1",
+          "text/xml; subtype=gml/2.1.2"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "ListStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://wfs.craig.fr/ign?language=fra&",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "DescribeStoredQueries",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://wfs.craig.fr/ign?language=fra&",
+        "schema:httpMethod": [
+          "GET"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:dallage_scan_25_par_annee",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Dallage Scan 25 (avec années d'éditions au 2022-04-01)",
+      "schema:identifier": "ign:dallage_scan_25_par_annee",
+      "schema:description": "Dallage du scan 25 avec métadonnées (années d'édition, date d'actualisation et d'intégration, etc) sur la région complète",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.991584 1.949961 46.860164 7.327327"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://wfs.craig.fr/ign?language=fra&request=GetMetadata&layer=dallage_scan_25_par_annee"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_troncon_de_route",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Tronçons de routes",
+      "schema:identifier": "ign:transport_troncon_de_route",
+      "schema:description": "Tronçons de routes du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_point_de_repere",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Point de repère PK",
+      "schema:identifier": "ign:transport_point_de_repere",
+      "schema:description": "Points de repère du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_section_de_points_de_repere",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Section de point de repère PK",
+      "schema:identifier": "ign:transport_section_de_points_de_repere",
+      "schema:description": "Sections de points de repère du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_route_numerotee_ou_nommee",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Routes numérotées ou nommées",
+      "schema:identifier": "ign:transport_route_numerotee_ou_nommee",
+      "schema:description": "Routes numérotées ou nommées du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_voie_nommee",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Voies nommées",
+      "schema:identifier": "ign:transport_voie_nommee",
+      "schema:description": "Voies nommées du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_equipement",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Equipement de transport",
+      "schema:identifier": "ign:transport_equipement",
+      "schema:description": "Equipements du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_troncon_de_voie_ferree",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Troncons de voie ferrée",
+      "schema:identifier": "ign:transport_troncon_de_voie_ferree",
+      "schema:description": "Troncons de voie ferrée du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_par_cable",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Transport par câble",
+      "schema:identifier": "ign:transport_par_cable",
+      "schema:description": "Transport par câble du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_voie_ferree_nommee",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Voies ferrées nommées",
+      "schema:identifier": "ign:transport_voie_ferree_nommee",
+      "schema:description": "Voires ferrées nommées du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_point_du_reseau",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Barrières/passages à niveaux",
+      "schema:identifier": "ign:transport_point_du_reseau",
+      "schema:description": "Points du réseau du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_aerodrome",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Aérodrome",
+      "schema:identifier": "ign:transport_aerodrome",
+      "schema:description": "Aérodromes du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_piste_aerodrome",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Piste d'aérodrome",
+      "schema:identifier": "ign:transport_piste_aerodrome",
+      "schema:description": "Pistes d'aérodromes du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:transport_itineraire_autre",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Itinéraires autre",
+      "schema:identifier": "ign:transport_itineraire_autre",
+      "schema:description": "Itinéraires autre du thême transport de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:services_et_activites_canalisations",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Canalisations",
+      "schema:identifier": "ign:services_et_activites_canalisations",
+      "schema:description": "Canalisations du thême services et activités de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:services_et_activites_poste_de_transformation",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Postes de transformation",
+      "schema:identifier": "ign:services_et_activites_poste_de_transformation",
+      "schema:description": "Postes de transformation du thême services et activités de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:services_et_activites_ligne_electrique",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Lignes électriques",
+      "schema:identifier": "ign:services_et_activites_ligne_electrique",
+      "schema:description": "Lignes électriques du thême services et activités de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:hydrographie_troncon_hydrographique",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Tronçons hydrographiques",
+      "schema:identifier": "ign:hydrographie_troncon_hydrographique",
+      "schema:description": "Tronçons du thême hydrographie de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:hydrographie_cours_d_eau",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Cours d'eau",
+      "schema:identifier": "ign:hydrographie_cours_d_eau",
+      "schema:description": "Cours d'eau du thême hydrographie de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:hydrographie_noeud_hydrographique",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Noeuds hydrographiques",
+      "schema:identifier": "ign:hydrographie_noeud_hydrographique",
+      "schema:description": "Noeuds du thême hydrographie de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:hydrographie_surface_eau",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Surfaces hydrographiques",
+      "schema:identifier": "ign:hydrographie_surface_eau",
+      "schema:description": "Surfaces hydrographiques du thême hydrographie de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:hydrographie_bassin_versant",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Bassins versants",
+      "schema:identifier": "ign:hydrographie_bassin_versant",
+      "schema:description": "Bassins versants du thême hydrographie de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:hydrographie_plan_d_eau",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Plans d'eau",
+      "schema:identifier": "ign:hydrographie_plan_d_eau",
+      "schema:description": "Plans d'eau du thême hydrographie de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:hydrographie_detail",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Détail Hydrographique",
+      "schema:identifier": "ign:hydrographie_detail",
+      "schema:description": "Détails du thême hydrographie de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:ocsol_zone_de_vegetation",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Zones de végétation",
+      "schema:identifier": "ign:ocsol_zone_de_vegetation",
+      "schema:description": "Zones de végétation du thême occupation du sol de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:ocsol_haie",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Haies",
+      "schema:identifier": "ign:ocsol_haie",
+      "schema:description": "Haies du thême occupation du sol de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bati_batiment",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Bâtiments",
+      "schema:identifier": "ign:bati_batiment",
+      "schema:description": "Bâtiments du thême bâti de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bati_cimetiere",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Cimetières",
+      "schema:identifier": "ign:bati_cimetiere",
+      "schema:description": "Cimetières du thême bâti de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bati_construction_lineaire",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Constructions linéaires",
+      "schema:identifier": "ign:bati_construction_lineaire",
+      "schema:description": "Constructions linéaires du thême bâti de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bati_construction_ponctuelle",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Constructions ponctuelles",
+      "schema:identifier": "ign:bati_construction_ponctuelle",
+      "schema:description": "Constructions ponctuelles du thême bâti de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bati_construction_surfacique",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Constructions surfaciques",
+      "schema:identifier": "ign:bati_construction_surfacique",
+      "schema:description": "Constructions surfaciques du thême bâti de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bati_reservoir",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Réservoirs",
+      "schema:identifier": "ign:bati_reservoir",
+      "schema:description": "Réservoirs du thême bâti de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bati_terrain_sport",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Terrains de sport",
+      "schema:identifier": "ign:bati_terrain_sport",
+      "schema:description": "Terrains de sport du thême bâti de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bati_ligne_orographie",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Lignes orographiques",
+      "schema:identifier": "ign:bati_ligne_orographie",
+      "schema:description": "Lignes orographiques du thême bâti de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bati_pylone",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Pylônes",
+      "schema:identifier": "ign:bati_pylone",
+      "schema:description": "Pylônes du thême bâti de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:administratif_commune",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Communes",
+      "schema:identifier": "ign:administratif_commune",
+      "schema:description": "Communes du thême administratif de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:administratif_commune_associee",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Communes associées",
+      "schema:identifier": "ign:administratif_commune_associee",
+      "schema:description": "Communes associées du thême administratif de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:administratif_region",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Régions",
+      "schema:identifier": "ign:administratif_region",
+      "schema:description": "Régions du thême administratif de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:administratif_departement",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Départements",
+      "schema:identifier": "ign:administratif_departement",
+      "schema:description": "Départements du thême administratif de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:administratif_arrondissement",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Arrondissements",
+      "schema:identifier": "ign:administratif_arrondissement",
+      "schema:description": "Arrondissements du thême administratif de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:administratif_epci",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "EPCI",
+      "schema:identifier": "ign:administratif_epci",
+      "schema:description": "EPCI du thême administratif de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:administratif_arrondissement_municipal",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Arrondissements Municipaux",
+      "schema:identifier": "ign:administratif_arrondissement_municipal",
+      "schema:description": "Arrondissements municipaux du thême administratif de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:services_et_activites_zone_d_activite_ou_d_interet",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Zones d'activités ou d'intêret",
+      "schema:identifier": "ign:services_et_activites_zone_d_activite_ou_d_interet",
+      "schema:description": "Zones d'activités ou d'intêret du thême services et activités de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:services_et_activites_erp",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "ERP",
+      "schema:identifier": "ign:services_et_activites_erp",
+      "schema:description": "ERP du thême services et activités de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:zones_reglementees_parc_ou_reserve",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Parcs ou réserves",
+      "schema:identifier": "ign:zones_reglementees_parc_ou_reserve",
+      "schema:description": "Parcs ou réserves du thême zones reglementées de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:zones_reglementees_foret_publique",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Forêts publiques",
+      "schema:identifier": "ign:zones_reglementees_foret_publique",
+      "schema:description": "Forêts publiques du thême zones reglementées de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:lieux_nommes_zone_d_habitation",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Zones d'habitation",
+      "schema:identifier": "ign:lieux_nommes_zone_d_habitation",
+      "schema:description": "Zones d'habitation du thême lieux nommés de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:lieux_nommes_lieu_dit_non_habite",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Lieux-dits non habités",
+      "schema:identifier": "ign:lieux_nommes_lieu_dit_non_habite",
+      "schema:description": "Lieux-dits non habités du thême lieux nommés de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:lieux_nommes_detail_orographique",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "Détails orographiques",
+      "schema:identifier": "ign:lieux_nommes_detail_orographique",
+      "schema:description": "Détails orographiques du thême lieux nommés de la BDTopo IGN",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "43.717238 1.553869 46.9502 7.465592"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/2eab86c1-8114-432a-9d42-ed968bb7fb49/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/2eab86c1-8114-432a-9d42-ed968bb7fb49"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bdforet_v1",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "BD Forêt V1",
+      "schema:identifier": "ign:bdforet_v1",
+      "schema:description": "Couche BD Forêt V1",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "44.068786 2.03139 46.804034 7.254336"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/970c1563-b317-49d2-ac2a-a71a9393299f/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/970c1563-b317-49d2-ac2a-a71a9393299f"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#layer/ign:bdforet_v2",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WFS feature type"
+      ],
+      "schema:name": "BD Forêt V2",
+      "schema:identifier": "ign:bdforet_v2",
+      "schema:description": "Couche BD Forêt V2",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "44.069046 2.030768 46.805061 7.254416"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/geocat/srv/api/records/e8ac430c-07c0-48aa-a910-f19dd675677f/formatters/xml"
+          }
+        },
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://ids.craig.fr/datahub/dataset/e8ac430c-07c0-48aa-a910-f19dd675677f"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "43.717238 1.553869 46.9502 7.465592"
+      }
+    }
+  ],
+  "schema:identifier": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities",
+    "schema:name": "WFS 2.0.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WFS capabilities for: Service de téléchargement (WFS) des données IGN sur Auvergne-Rhône-Alpes: BD Topo/BD Forêt",
+    "schema:about": {
+      "@id": "https://wfs.craig.fr/ign?service=WFS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WFS 2.0.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "GeoNetwork demo"
+    }
+  }
+}

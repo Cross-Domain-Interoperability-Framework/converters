@@ -1,0 +1,2314 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:name": "Landschapsatlas",
+  "schema:description": "Deze viewservice bevat verschilende kaartlagen van de Landschapsatlas van de RCE.",
+  "schema:keywords": [
+    "monument",
+    "archeologie",
+    "historische geografie",
+    "stedenbouwkunde",
+    "cultuurhistorie"
+  ],
+  "schema:url": "http://services.rce.geovoorziening.nl/landschapsatlas/wms",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Rijksdienst voor het Cultureel Erfgoed",
+      "schema:email": "info@cultureelerfgoed.nl",
+      "schema:telephone": "0031(0) 33 421 7 421"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Infodesk Rijksdienst voor het Cultureel Erfgoed",
+        "schema:jobTitle": "pointOfContact",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Rijksdienst voor het Cultureel Erfgoed"
+        },
+        "schema:email": "info@cultureelerfgoed.nl",
+        "schema:telephone": "0031(0) 33 421 7 421"
+      }
+    }
+  ],
+  "schema:termsOfService": "Fees: none; Access constraints: none",
+  "schema:conditionsOfAccess": [
+    "none"
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://services.rce.geovoorziening.nl/landschapsatlas/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://services.rce.geovoorziening.nl/landschapsatlas/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/png",
+          "application/atom+xml",
+          "application/json;type=utfgrid",
+          "application/pdf",
+          "application/rss+xml",
+          "application/vnd.google-earth.kml+xml",
+          "application/vnd.google-earth.kml+xml;mode=networklink",
+          "application/vnd.google-earth.kmz",
+          "image/geotiff",
+          "image/geotiff8",
+          "image/gif",
+          "image/jpeg",
+          "image/png; mode=8bit",
+          "image/svg+xml",
+          "image/tiff",
+          "image/tiff8",
+          "image/vnd.jpeg-png",
+          "image/vnd.jpeg-png8",
+          "text/html; subtype=openlayers",
+          "text/html; subtype=openlayers2",
+          "text/html; subtype=openlayers3"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "https://services.rce.geovoorziening.nl/landschapsatlas/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/plain",
+          "application/vnd.ogc.gml",
+          "text/xml",
+          "application/vnd.ogc.gml/3.1.1",
+          "text/xml; subtype=gml/3.1.1",
+          "text/html",
+          "application/json"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/Boerderijen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Rijksmonumentale boerderijen",
+      "schema:identifier": "Boerderijen",
+      "schema:keywords": [
+        "Boerderijen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.721781 3.243072 53.463014 7.239354"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/Eendenkooien",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Eendenkooien",
+      "schema:identifier": "Eendenkooien",
+      "schema:keywords": [
+        "Eendenkooien",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.267008 3.465149 53.484442 6.735447"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/Geesten",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Geesten",
+      "schema:identifier": "Geesten",
+      "schema:keywords": [
+        "features",
+        "Geesten"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.975578 4.126338 52.732951 4.804436"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/Hunebedden",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Hunebedden",
+      "schema:identifier": "Hunebedden",
+      "schema:keywords": [
+        "features",
+        "Hunebedden"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "52.781314 6.218985 53.119764 6.950766"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.nationaalgeoregister.nl/geonetwork/srv/nl/csw?Service=CSW&Request=GetRecordById&Version=2.0.2&id=15dc2644-1822-4fc2-8536-2bb2058c4a43&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/KLDkaart",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "KLDkaart",
+      "schema:identifier": "KLDkaart",
+      "schema:keywords": [
+        "WCS",
+        "WorldImage",
+        "KLDkaart"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.579921 3.115456 53.745628 7.357637"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/LandinrichtingNL",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Landinrichting in Nederland",
+      "schema:identifier": "LandinrichtingNL",
+      "schema:description": "Landinrichting 80 jaar is een overzicht van alle wettelijke verkavelingsprojecten van Nederland. Dit zijn alle afgeronde wettelijke verkavelingsprojecten vanaf de eerste ruilverkavelingswet in 1924 tot het intreden van de Wet Inrichting Landelijk Gebied (WILG) op 1 januari 2007. Van de niet afgeronde herverkavelingsprojecten op 1 januari 2007 zijn alleen diegene opgenomen die na 1 januari 2007 onder de WILG zijn opgenomen en dus onder een wet vallen. Ook alle nieuwe landinrichtingsprojecten die onder de WILG vallen zijn opgenomen in dit bestand. Peildatum van dit bestand is 1-3-2015.",
+      "schema:keywords": [
+        "ruilverkaveling",
+        "landinrichting"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.734449 3.266314 53.473208 7.240526"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "http://www.nationaalgeoregister.nl/geonetwork/srv/dut/xml.metadata.get?uuid=a00cada3-6ae6-4408-a466-da391d27fac6"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/Molens",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Molens",
+      "schema:identifier": "Molens",
+      "schema:keywords": [
+        "Molens",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.748838 3.290194 53.455381 7.210931"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/autosnelwegen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "autosnelwegen",
+      "schema:identifier": "autosnelwegen",
+      "schema:keywords": [
+        "autosnelwegen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.742297 3.5264 53.21008 7.228817"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/begraafplaatsen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "begraafplaatsen",
+      "schema:identifier": "begraafplaatsen",
+      "schema:keywords": [
+        "begraafplaatsen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.74687 3.262746 53.488391 7.226815"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/bestaande_vuurtorens",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "bestaande_vuurtorens",
+      "schema:identifier": "bestaande_vuurtorens",
+      "schema:keywords": [
+        "features",
+        "bestaande_vuurtorens"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.336608 3.346944 53.547193 6.575778"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/boerderijtypen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Boerderijtypen",
+      "schema:identifier": "boerderijtypen",
+      "schema:keywords": [
+        "features",
+        "boerderijtypen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.925431 3.470296 53.397858 7.188682"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/bosinbeweging_bostoponiemen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Verdwenen middeleeuws bos: bos-plaatsnamen",
+      "schema:identifier": "bosinbeweging_bostoponiemen",
+      "schema:keywords": [
+        "features",
+        "bosinbeweging_bostoponiemen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.745826 3.444138 53.39439 7.181917"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/bosinbeweging_middeleeuwse_bosvermelding",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Verdwenen middeleeuws bos: historische vermeldingen",
+      "schema:identifier": "bosinbeweging_middeleeuwse_bosvermelding",
+      "schema:keywords": [
+        "features",
+        "bosinbeweging_middeleeuwse_bosvermelding"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.779618 4.24678 53.219946 7.138439"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/bruinkoolgroeves",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "bruinkoolgroeves",
+      "schema:identifier": "bruinkoolgroeves",
+      "schema:keywords": [
+        "bruinkoolgroeves",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.884571 5.796341 50.990809 6.07261"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/cultuurhistorischebosjesgroenehart",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cultuurhistorischebosjesgroenehart",
+      "schema:identifier": "cultuurhistorischebosjesgroenehart",
+      "schema:keywords": [
+        "features",
+        "cultuurhistorischebosjesgroenehart"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.851844 4.457495 52.246319 5.156512"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/cultuurhistorischebosjesmiddendelfland",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cultuurhistorischebosjesmiddendelfland",
+      "schema:identifier": "cultuurhistorischebosjesmiddendelfland",
+      "schema:keywords": [
+        "features",
+        "cultuurhistorischebosjesmiddendelfland"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.92159 4.277425 52.006438 4.42765"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/cultuurlandschappen_nederland",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "cultuurlandschappen_nederland",
+      "schema:identifier": "cultuurlandschappen_nederland",
+      "schema:keywords": [
+        "features",
+        "cultuurlandschappen_nederland"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.734355 3.253101 53.559808 7.243071"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/drgmk_molens_gemalen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "molens en gemalen (droogmakerijen)",
+      "schema:identifier": "drgmk_molens_gemalen",
+      "schema:description": "Molens en gemalen (droogmakerijen)",
+      "schema:keywords": [
+        "features",
+        "drgmk_molens_gemalen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.922858 4.245287 53.238789 6.073701"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/droogmakerijen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "droogmakerijen",
+      "schema:identifier": "droogmakerijen",
+      "schema:keywords": [
+        "droogmakerijen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.922423 4.214221 53.242732 6.094762"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/essen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Essenkaart",
+      "schema:identifier": "essen",
+      "schema:keywords": [
+        "essen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.127263 4.218091 53.171325 7.164401"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/fabrieksschoorstenen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "fabrieksschoorstenen",
+      "schema:identifier": "fabrieksschoorstenen",
+      "schema:keywords": [
+        "fabrieksschoorstenen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.816476 3.533168 53.397031 7.164274"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/gebiedsbiografieen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gebiedsbiografieën",
+      "schema:identifier": "gebiedsbiografieen",
+      "schema:keywords": [
+        "features",
+        "gebiedsbiografieen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.730775 3.049014 53.582848 7.245498"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/gemalen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "gemalen",
+      "schema:identifier": "gemalen",
+      "schema:keywords": [
+        "gemalen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.903146 3.287519 53.438285 7.207831"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/grafheuvels",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "grafheuvels",
+      "schema:identifier": "grafheuvels",
+      "schema:keywords": [
+        "grafheuvels",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.748024 4.757673 53.146656 7.032195"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/grintwegen_tmk_1850_aggn",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "grintwegen_tmk_1850_aggn",
+      "schema:identifier": "grintwegen_tmk_1850_aggn",
+      "schema:keywords": [
+        "grintwegen_tmk_1850_aggn",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.726399 3.319912 53.43284 7.257822"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/groenerfgoed",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Landschappelijk groen erfgoed",
+      "schema:identifier": "groenerfgoed",
+      "schema:description": "Landschappelijk groen erfgoed (...)",
+      "schema:keywords": [
+        "features",
+        "groenerfgoed"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.737266 3.27401 53.501147 7.17769"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/groenerfgoed_bomenstruiken_pnt",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Landschappelijk groen erfgoed - inheemse bomen en struiken (puntlocaties)",
+      "schema:identifier": "groenerfgoed_bomenstruiken_pnt",
+      "schema:description": "Landschappelijk groen erfgoed - inheemse bomen en struiken (puntlocaties)",
+      "schema:keywords": [
+        "groenerfgoed_bomenstruiken_pnt",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.728486 4.273814 53.510291 7.191427"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/groenerfgoed_inventarisatiedata_punt",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Landschappelijk groen erfgoed - wilde bomen en struiken",
+      "schema:identifier": "groenerfgoed_inventarisatiedata_punt",
+      "schema:keywords": [
+        "groenerfgoed_inventarisatiedata_punt",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.737615 3.278129 53.496562 7.176979"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/groenerfgoed_inventarisatiedata_vlak",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Landschappelijk groen erfgoed - veldopnamen",
+      "schema:identifier": "groenerfgoed_inventarisatiedata_vlak",
+      "schema:keywords": [
+        "features",
+        "groenerfgoed_inventarisatiedata_vlak"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.7375 3.274492 53.500339 7.177319"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/groenerfgoed_veldopnamen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Landschappelijk groen erfgoed - veldopnamen",
+      "schema:identifier": "groenerfgoed_veldopnamen",
+      "schema:description": "Landschappelijk groen erfgoed - veldopnamen (....)",
+      "schema:keywords": [
+        "groenerfgoed_veldopnamen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.728362 3.822497 53.51411 7.194577"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/haltes_metro_en_sneltram",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "haltes_metro_en_sneltram",
+      "schema:identifier": "haltes_metro_en_sneltram",
+      "schema:keywords": [
+        "features",
+        "haltes_metro_en_sneltram"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.83135 4.095448 52.402826 5.185173"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/hertenkampen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "hertenkampen",
+      "schema:identifier": "hertenkampen",
+      "schema:keywords": [
+        "hertenkampen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.827288 3.298036 53.422747 7.222539"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/historische_metrospoorwegen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "historische_metrospoorwegen",
+      "schema:identifier": "historische_metrospoorwegen",
+      "schema:keywords": [
+        "features",
+        "historische_metrospoorwegen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.830205 4.093539 52.40639 4.999486"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/historische_spoorwegen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "historische_spoorwegen",
+      "schema:identifier": "historische_spoorwegen",
+      "schema:keywords": [
+        "historische_spoorwegen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.652394 4.466515 53.471269 7.256225"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/historische_tramwegen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "historische_tramwegen",
+      "schema:identifier": "historische_tramwegen",
+      "schema:keywords": [
+        "historische_tramwegen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.689955 4.695317 53.366141 7.182697"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/historische_vloeiweiden",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Historische vloeiweiden",
+      "schema:identifier": "historische_vloeiweiden",
+      "schema:keywords": [
+        "features",
+        "historische_vloeiweiden"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.878352 4.219527 53.247159 7.099652"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/historische_wegen_1850",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "historische_wegen_1850",
+      "schema:identifier": "historische_wegen_1850",
+      "schema:keywords": [
+        "features",
+        "historische_wegen_1850"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.670416 3.318858 53.432647 7.25675"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/hoofdwaterwegen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "hoofdwaterwegen",
+      "schema:identifier": "hoofdwaterwegen",
+      "schema:keywords": [
+        "features",
+        "hoofdwaterwegen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.799341 3.642214 53.522658 6.952521"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/hoofdwaterwegen_historie",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "hoofdwaterwegen_historie",
+      "schema:identifier": "hoofdwaterwegen_historie",
+      "schema:keywords": [
+        "features",
+        "hoofdwaterwegen_historie"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.771202 3.059667 53.429498 7.226185"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/hoogstamboomgaarden",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "hoogstamboomgaarden",
+      "schema:identifier": "hoogstamboomgaarden",
+      "schema:keywords": [
+        "hoogstamboomgaarden",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.773571 3.88547 53.45264 7.204552"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/kastelen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "kastelen",
+      "schema:identifier": "kastelen",
+      "schema:keywords": [
+        "kastelen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.758135 3.810793 53.412011 7.08711"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/knooppunten_asw",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "knooppunten_asw",
+      "schema:identifier": "knooppunten_asw",
+      "schema:keywords": [
+        "features",
+        "knooppunten_asw"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.859245 3.671063 53.304843 6.974154"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/landschapskarakterisering",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Regio's Landschapskarakterisering",
+      "schema:identifier": "landschapskarakterisering",
+      "schema:description": "Regio's Landschapskarakterisering",
+      "schema:keywords": [
+        "features",
+        "landschapskarakterisering"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.718217 2.336059 54.871101 7.302284"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/landweren",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "landweren",
+      "schema:identifier": "landweren",
+      "schema:keywords": [
+        "landweren_landschapsatlas",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.741551 5.000529 53.203378 7.165485"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/landweren_pnt",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "landweren (globale ligging)",
+      "schema:identifier": "landweren_pnt",
+      "schema:keywords": [
+        "features",
+        "landweren_pnt"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.838245 5.439791 52.766744 6.975764"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/luchtwachttorens",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "luchtwachttorens",
+      "schema:identifier": "luchtwachttorens",
+      "schema:keywords": [
+        "luchtwachttorens",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.820476 3.348205 53.489685 7.023914"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/monumentale_bomen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Landelijk Register Monumentale Bomen",
+      "schema:identifier": "monumentale_bomen",
+      "schema:keywords": [
+        "features",
+        "monumentale_bomen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.720368 3.241554 53.494582 7.231741"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/mudpalen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "mudpalen",
+      "schema:identifier": "mudpalen",
+      "schema:keywords": [
+        "features",
+        "mudpalen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.333092 3.387246 52.949177 4.801872"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/objecten_infrastructuur",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "objecten_infrastructuur",
+      "schema:identifier": "objecten_infrastructuur",
+      "schema:keywords": [
+        "features",
+        "objecten_infrastructuur"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.97496 3.05096 53.547188 7.218749"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/provinciale_wegen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "provinciale_wegen",
+      "schema:identifier": "provinciale_wegen",
+      "schema:keywords": [
+        "features",
+        "provinciale_wegen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.737192 3.260613 53.451697 7.236671"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/rijksmonumentaal_groen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "rijksbeschermde groenaanleggen",
+      "schema:identifier": "rijksmonumentaal_groen",
+      "schema:description": "De webservice Rijksbeschermde groenaanleggen bevat parken, tuinen en begraafplaatsen die beschermd zijn als rijksmonument. Een groenaanleg is een aanleg van onder meer paden, waterpartijen en beplantingen.",
+      "schema:keywords": [
+        "features",
+        "rijksmonumentaal_groen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.734875 3.311315 53.46292 7.244603"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/rijksmonumentale_infrastructuur",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "rijksmonumentale_infrastructuur",
+      "schema:identifier": "rijksmonumentale_infrastructuur",
+      "schema:keywords": [
+        "features",
+        "rijksmonumentale_infrastructuur"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "47.97496 3.05096 53.547187 7.218749"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/rijksmonumentale_verdedigingswerken_punten",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "rijksmonumentale_verdedigingswerken_punten",
+      "schema:identifier": "rijksmonumentale_verdedigingswerken_punten",
+      "schema:keywords": [
+        "features",
+        "rijksmonumentale_verdedigingswerken_punten"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.809401 3.287092 53.366316 7.226976"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/rijksmonumentale_verdedigingswerken_vlakken",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "rijksmonumentale_verdedigingswerken_vlakken",
+      "schema:identifier": "rijksmonumentale_verdedigingswerken_vlakken",
+      "schema:keywords": [
+        "features",
+        "rijksmonumentale_verdedigingswerken_vlakken"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.266762 3.285464 53.330501 6.604183"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/sluizen_stuwen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "rijksmonumentale sluizen en stuwen",
+      "schema:identifier": "sluizen_stuwen",
+      "schema:keywords": [
+        "features",
+        "sluizen_stuwen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.760768 3.533922 53.455745 7.143045"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/steenkoolmijnen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "steenkoolmijnen",
+      "schema:identifier": "steenkoolmijnen",
+      "schema:keywords": [
+        "steenkoolmijnen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.852527 5.816179 51.184999 6.153007"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/straatwegen_tmk_1850_aggn",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "straatwegen_tmk_1850_aggn",
+      "schema:identifier": "straatwegen_tmk_1850_aggn",
+      "schema:keywords": [
+        "features",
+        "straatwegen_tmk_1850_aggn"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.670767 3.334367 53.338032 7.180148"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/structuurdragers_landschap",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "structuurdragers_landschap",
+      "schema:identifier": "structuurdragers_landschap",
+      "schema:keywords": [
+        "structuurdragers_landschap",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.735354 3.253187 53.555754 7.242959"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/tiendwegen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Tiendwegen",
+      "schema:identifier": "tiendwegen",
+      "schema:keywords": [
+        "features",
+        "tiendwegen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.456212 4.581208 52.185022 6.023253"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/transformatorhuisjes",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "transformatorhuisjes",
+      "schema:identifier": "transformatorhuisjes",
+      "schema:keywords": [
+        "transformatorhuisjes",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.84313 4.144565 53.476137 7.119849"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/treinstations",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "treinstations",
+      "schema:identifier": "treinstations",
+      "schema:keywords": [
+        "features",
+        "treinstations"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.759021 3.506231 53.467397 7.212942"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/trolleybussen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "trolleybussen",
+      "schema:identifier": "trolleybussen",
+      "schema:keywords": [
+        "features",
+        "trolleybussen"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.934666 5.83456 53.234851 6.588348"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/turfwinning",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "turfwinning",
+      "schema:identifier": "turfwinning",
+      "schema:keywords": [
+        "turfwinning",
+        "features",
+        "energie"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.20049 3.285688 53.315069 7.230216"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/veerverbindingen_1850",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "veerverbindingen_1850",
+      "schema:identifier": "veerverbindingen_1850",
+      "schema:keywords": [
+        "features",
+        "veerverbindingen_1850"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.759235 3.299825 53.439348 6.739064"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/verdwenen_vuurtorens",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "verdwenen_vuurtorens",
+      "schema:identifier": "verdwenen_vuurtorens",
+      "schema:keywords": [
+        "features",
+        "verdwenen_vuurtorens"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.335214 3.34326 53.549107 6.940041"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/verdwenenmolens",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "verdwenenmolens",
+      "schema:identifier": "verdwenenmolens",
+      "schema:keywords": [
+        "features",
+        "verdwenenmolens"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.746793 3.267 53.491703 7.227815"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/vliedbergen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "vliedbergen",
+      "schema:identifier": "vliedbergen",
+      "schema:keywords": [
+        "vliedbergen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.304381 3.458197 51.732892 4.100912"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/vliegvelden",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "vliegvelden",
+      "schema:identifier": "vliegvelden",
+      "schema:keywords": [
+        "vliegvelden",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.839334 3.493333 53.454618 7.052351"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/waterstaatskaart1_bladwijzer",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "waterstaatskaart1_bladwijzer",
+      "schema:identifier": "waterstaatskaart1_bladwijzer",
+      "schema:keywords": [
+        "features",
+        "waterstaatskaart1_bladwijzer"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.664734 3.047393 53.606547 7.29806"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/watertorens",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "watertorens",
+      "schema:identifier": "watertorens",
+      "schema:keywords": [
+        "watertorens",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "50.759073 3.405604 53.484063 7.059766"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/waterwegen_mcn",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "waterwegen_mcn",
+      "schema:identifier": "waterwegen_mcn",
+      "schema:keywords": [
+        "waterwegen_mcn",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "53.198526 5.796602 53.210807 5.801208"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/wegtransport_geschiedenis",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "wegtransport_geschiedenis",
+      "schema:identifier": "wegtransport_geschiedenis",
+      "schema:keywords": [
+        "wegtransport_geschiedenis",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "53.196713 5.768933 53.207699 5.798139"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/weidemolens_en_windmotoren",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "weidemolens en windmotoren",
+      "schema:identifier": "weidemolens_en_windmotoren",
+      "schema:keywords": [
+        "weidemolens_en_windmotoren",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.544332 3.432461 53.377744 6.902657"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#layer/wielen",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "wielen",
+      "schema:identifier": "wielen",
+      "schema:keywords": [
+        "wielen",
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "51.04285 3.275187 53.460359 7.242909"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "47.97496 2.336059 54.871101 7.357637"
+      }
+    }
+  ],
+  "schema:identifier": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: Landschapsatlas",
+    "schema:about": {
+      "@id": "https://services.rce.geovoorziening.nl/landschapsatlas/wms?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "PDOK (Netherlands NGR)"
+    }
+  }
+}

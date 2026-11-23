@@ -1,0 +1,880 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities",
+  "@type": [
+    "schema:Dataset",
+    "schema:WebAPI"
+  ],
+  "schema:serviceType": {
+    "@type": [
+      "schema:DefinedTerm"
+    ],
+    "schema:name": "OGC Web Map Service 1.3.0",
+    "schema:termCode": "OGC:WMS"
+  },
+  "schema:version": "1.3.0",
+  "schema:name": "EMODnet Bathymetry WMS",
+  "schema:url": "http://n4m5.nl",
+  "schema:provider": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "N4M5",
+      "schema:email": "niels@n4m5.nl"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Niels Meijer",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "N4M5"
+        },
+        "schema:email": "niels@n4m5.nl"
+      }
+    }
+  ],
+  "schema:termsOfService": "Fees: None; Access constraints: None",
+  "schema:conditionsOfAccess": [
+    "None"
+  ],
+  "schema:potentialAction": [
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetCapabilities",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/xml"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetMap",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "image/png",
+          "application/atom+xml",
+          "application/json;type=utfgrid",
+          "application/pdf",
+          "application/rss+xml",
+          "application/vnd.google-earth.kml+xml",
+          "application/vnd.google-earth.kml+xml;mode=networklink",
+          "application/vnd.google-earth.kmz",
+          "image/geotiff",
+          "image/geotiff8",
+          "image/gif",
+          "image/jpeg",
+          "image/png; mode=8bit",
+          "image/svg+xml",
+          "image/tiff",
+          "image/tiff8",
+          "image/vnd.jpeg-png",
+          "image/vnd.jpeg-png8",
+          "text/html; subtype=openlayers",
+          "text/html; subtype=openlayers2",
+          "text/html; subtype=openlayers3"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Action"
+      ],
+      "schema:name": "GetFeatureInfo",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:urlTemplate": "http://ows.emodnet-bathymetry.eu/ows?SERVICE=WMS&",
+        "schema:httpMethod": [
+          "GET"
+        ],
+        "schema:contentType": [
+          "text/plain",
+          "application/vnd.ogc.gml",
+          "text/xml",
+          "application/vnd.ogc.gml/3.1.1",
+          "text/xml; subtype=gml/3.1.1",
+          "text/html",
+          "application/json"
+        ]
+      }
+    }
+  ],
+  "schema:dataset": [
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/coastlines",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Coastlines",
+      "schema:identifier": "coastlines",
+      "schema:description": "Coastlines of Europe",
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-85.221938 -180 83.666473 180"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=36821cff-56db-4e96-8426-ddfe68240c4b"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:contours",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Depth contours",
+      "schema:identifier": "emodnet:contours",
+      "schema:description": "Generalised bathymetric contour lines. (50, 100, 200, 500, 1000, 2000, 5000 meter interval)",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "11.001041 -70.5 86.661888 43.001377"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=4f7ab468-f4b9-4c2c-8d3b-49a375cf9964"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:download_tiles",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Bathymetry product tiles",
+      "schema:identifier": "emodnet:download_tiles",
+      "schema:description": "Download schema for Bathymetry products tiles (most recent release)",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "11 -70.5 90 43"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=b79b28b4-182b-4f5d-9cdb-b23fd216cfee"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:hr_bathymetry_area",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "High resolution bathymetric data",
+      "schema:identifier": "emodnet:hr_bathymetry_area",
+      "schema:description": "Layer with EMODnet bathymetry show case areas available in a higher resolution than 1/16 arc minute",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "12.029333 -68.875333 76.466409 30.043886"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=b86926a1-8653-471b-9954-c0bf29417342"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:mean",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Mean depth",
+      "schema:identifier": "emodnet:mean",
+      "schema:description": "Mean depth based on source resolution of 1/16 arc minute (~125 meter). Ocean overlay without land cover.",
+      "schema:keywords": [
+        "WCS"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "11 -70.5 90 43"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=cf51df64-56f9-4a99-b1aa-36b8d7b743a1"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:mean_2016",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Mean depth (DTM release 2016)",
+      "schema:identifier": "emodnet:mean_2016",
+      "schema:description": "Mean depth based on source resolution of 1/8 arc minute (~250 meter). Ocean overlay without land cover.",
+      "schema:keywords": [
+        "WCS"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "25 -36 85 43"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=c7b53704-999d-4721-b1a3-04ec60c87238"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:mean_2018",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Mean depth (DTM release 2018)",
+      "schema:identifier": "emodnet:mean_2018",
+      "schema:description": "Mean depth based on source resolution of 1/16 arc minute (~125 meter). Ocean overlay without land cover.",
+      "schema:keywords": [
+        "WCS"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "14.998958 -36 90 43.001042"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=18ff0d48-b203-4a65-94a9-5fd8b0ec35f6"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:mean_2020",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Mean depth (DTM release 2020)",
+      "schema:identifier": "emodnet:mean_2020",
+      "schema:description": "Mean depth based on source resolution of 1/16 arc minute (~125 meter). Ocean overlay without land cover.",
+      "schema:keywords": [
+        "WCS"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "15 -36 90 43"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=bb6a87dd-e579-4036-abe1-e649cea9881a"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:mean_2022",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Mean depth (DTM release 2022)",
+      "schema:identifier": "emodnet:mean_2022",
+      "schema:description": "Mean depth based on source resolution of 1/16 arc minute (~125 meter). Ocean overlay without land cover.",
+      "schema:keywords": [
+        "WCS"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "11 -70.5 90 43"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=ff3aff8a-cff1-44a3-a2c8-1910bf109f85"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:mean_atlas_land",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Mean depth full coverage with land coverage",
+      "schema:identifier": "emodnet:mean_atlas_land",
+      "schema:description": "Mean depth based on source resolution of 1/16 arc minute (~125 meter). Full coverage ocean and land DTM in traditional atlas style colours.",
+      "schema:keywords": [
+        "WCS"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "5.625 -73.125 90 45"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=cf51df64-56f9-4a99-b1aa-36b8d7b743a1"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:mean_multicolour",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Mean depth in multi colour",
+      "schema:identifier": "emodnet:mean_multicolour",
+      "schema:description": "Mean depth based on source resolution of 1/16 arc minute (~125 meter). Ocean overlay without land cover in multi colour style.",
+      "schema:keywords": [
+        "WCS"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "5.625 -73.125 90 45"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=cf51df64-56f9-4a99-b1aa-36b8d7b743a1"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:mean_rainbowcolour",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Mean depth rainbow colour ramp",
+      "schema:identifier": "emodnet:mean_rainbowcolour",
+      "schema:description": "Mean depth based on source resolution of 1/16 arc minute (~125 meter). Ocean overlay without land cover in rainbow (multi) colour ramp style.",
+      "schema:keywords": [
+        "WCS"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "5.625 -73.125 90 45"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=cf51df64-56f9-4a99-b1aa-36b8d7b743a1"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:quality_index",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Quality index",
+      "schema:identifier": "emodnet:quality_index",
+      "schema:description": "Representation of various quality indicators for the individual bathymetric surveys and composite DTM’s that contribute to the EMODnet Bathymetry DTM",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "11 -70.5 90 43.003125"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=6572ee07-a078-4adc-b868-fd1f7084c660"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/world:sea_names",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Sea names",
+      "schema:identifier": "world:sea_names",
+      "schema:description": "Maintained and provided by SeaDataNet",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "16.111529 -30.082426 84.340308 41.184264"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=f8683e4b-a9a8-4b4f-a506-766ffde6e2c9"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/emodnet:source_references",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "Source references",
+      "schema:identifier": "emodnet:source_references",
+      "schema:description": "Coverage of individual bathymetric surveys and Composite DTMs that contribute to the EMODnet Bathymetry DTM.",
+      "schema:keywords": [
+        "features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "11 -70.5 90 43.003125"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=6a72639d-2548-4d46-828f-16753fedbfd1"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#layer/gebco:undersea_features",
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:additionalType": [
+        "WMS layer"
+      ],
+      "schema:name": "undersea_features",
+      "schema:identifier": "gebco:undersea_features",
+      "schema:keywords": [
+        "features",
+        "undersea_features"
+      ],
+      "schema:spatialCoverage": [
+        {
+          "@type": [
+            "schema:Place"
+          ],
+          "schema:geo": {
+            "@type": [
+              "schema:GeoShape"
+            ],
+            "schema:box": "-79 -180 89.333336 180"
+          }
+        }
+      ],
+      "schema:relatedLink": [
+        {
+          "@type": [
+            "schema:LinkRole"
+          ],
+          "schema:linkRelationship": "describedby",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=cf51df64-56f9-4a99-b1aa-36b8d7b743a1"
+          }
+        }
+      ]
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "-85.221938 -180 90 180"
+      }
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "describedby",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?request=GetRecordById&elementSetName=full&service=CSW&version=2.0.2&OutputSchema=http://www.isotc211.org/2005/gmd&id=f2b6c9f5a6134638b2b5f8a92bd314e434ca9be4",
+        "schema:name": "INSPIRE service metadata"
+      }
+    }
+  ],
+  "schema:inLanguage": "eng",
+  "schema:identifier": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities",
+  "schema:description": "EMODnet Bathymetry WMS",
+  "schema:dateModified": "1900-01-01",
+  "schema:documentation": {
+    "@type": [
+      "schema:CreativeWork"
+    ],
+    "schema:url": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities",
+    "schema:name": "WMS 1.3.0 capabilities"
+  },
+  "schema:subjectOf": {
+    "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "OGC WMS capabilities for: EMODnet Bathymetry WMS",
+    "schema:about": {
+      "@id": "http://ows.emodnet-bathymetry.eu/ows?service=WMS&request=GetCapabilities"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from an OGC WMS 1.3.0 GetCapabilities response to CDIF by ogc_services_to_cdif.py.",
+    "schema:dateModified": "2026-11-18",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Ifremer Sextant"
+    }
+  }
+}
