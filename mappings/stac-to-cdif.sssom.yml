@@ -1,0 +1,69 @@
+mapping_set_id: https://w3id.org/cdif/mappings/stac-to-cdif
+mapping_set_title: STAC 1.x Collection to CDIF
+mapping_set_description: |
+  Property correspondences applied by STAC/stac_to_cdif.py (a STAC 1.x
+  Collection -> CDIF JSON-LD, one record per Collection; Items are not
+  converted). This table drives the converter: it is read at runtime, and each
+  transform names a shaper (tf_<transform>) in stac_to_cdif.py.
+
+  subject_json_path is a path from the Collection root: dot-separated member
+  names, '*' for every member of an object, '[*]' for every item of an array,
+  and '[?key=a|b]' for the array items whose key is (or, for a list such as
+  roles, contains) a or b. subject_id and subject_class use stac: (and the
+  extension prefixes sci:, themes:, contacts:, gee:) only as labels. Rows run
+  in file order: for a scalar target the first row to fill it wins; array
+  targets accumulate. A row with no transform documents members that are not
+  converted.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/STAC/stac_to_cdif.py
+mapping_date: 2026-11-22
+subject_source: https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md
+object_source: https://w3id.org/cdif/core/2.0
+see_also:
+  - https://stacspec.org/
+  - https://github.com/stac-extensions/scientific
+  - https://github.com/stac-extensions/contacts
+  - https://github.com/stac-extensions/themes
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_json_path
+    property: https://w3id.org/cdif/mappings/subjectJsonPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  text          the first non-empty value
+  multitext     the first non-empty value, line breaks kept
+  texts         every distinct non-empty value
+  date          an ISO 8601 date or date-time
+  doi           sci:doi -> PropertyValue (not when it is also a sci:publications DOI)
+  keywords      keyword strings
+  themes        themes concepts -> DefinedTerms in their scheme
+  summaryterms  summaries platform / constellation / instruments -> DefinedTerms
+  license       an SPDX id -> its spdx.org page
+  licensetext   any other licence value -> 'License: <value>'
+  licenselink   rel=license links -> CreativeWork
+  creators      producers -> creator {"@list": [Organization ...]}
+  organizations providers -> Organizations
+  providerroles licensors and processors -> schema:Role contributors
+  contacts      contacts extension -> schema:Role pointOfContact
+  bbox          extent.spatial.bbox -> Places with a GeoShape box
+  interval      extent.temporal.interval -> ISO 8601 intervals
+  assets        data assets -> DataDownloads
+  assetlinks    other assets -> LinkRoles by role
+  landing       an HTML alternate link -> schema:url
+  links         links -> LinkRoles by relation
+  publications  sci:publications -> CreativeWorks
+curie_map:
+  contacts: https://stac-extensions.github.io/contacts/v0.1.1/schema.json#
+  gee: https://developers.google.com/earth-engine/datasets/
+  schema: http://schema.org/
+  sci: https://stac-extensions.github.io/scientific/v1.0.0/schema.json#
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sssom: https://w3id.org/sssom/
+  stac: https://schemas.stacspec.org/v1.1.0/collection-spec/json-schema/collection.json#
+  themes: https://stac-extensions.github.io/themes/v1.0.0/schema.json#

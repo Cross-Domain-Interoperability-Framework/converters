@@ -22,6 +22,7 @@ expose their conversion as an importable function.
 | [`EML/eml_to_cdif.py`](EML/eml_to_cdif.py) | Ecological Metadata Language 2.0.1–2.2.0 (GBIF, DataONE, LTER) → CDIF core/discovery/provenance, plus data_description from `dataTable` attribute lists (table-driven) | EML XML |
 | [`FGDC/fgdc_to_cdif.py`](FGDC/fgdc_to_cdif.py) | FGDC CSDGM (FGDC-STD-001-1998, Biological Data Profile) → CDIF core/discovery/provenance, with entity attributes as variables (table-driven) | FGDC CSDGM XML |
 | [`OGCServices/ogc_services_to_cdif.py`](OGCServices/ogc_services_to_cdif.py) | OGC WMS 1.3 / WFS 2.0, 1.1 GetCapabilities (file or URL) → one CDIF core/discovery record per service: `schema:Dataset` + `schema:WebAPI`, its layers or feature types under `schema:dataset` (table-driven) | OGC capabilities XML |
+| [`STAC/stac_to_cdif.py`](STAC/stac_to_cdif.py) | STAC 1.x Collection (file or URL) → one CDIF core/discovery record per Collection; its Items are not converted (table-driven) | STAC JSON |
 | [`FAIR2/fair2_to_cdif.py`](FAIR2/fair2_to_cdif.py) | FAIR² `fair2.json` (file **or URL**) → CDIF (reuses the Croissant converter for the Croissant core) | FAIR² |
 | [`DDI/ddi_to_cdif.py`](DDI/ddi_to_cdif.py) | DDI Codebook 2.5 (Harvard Dataverse) → CDIF | DDI Codebook XML |
 | [`DDI/ddi122_to_cdif.py`](DDI/ddi122_to_cdif.py) | DDI 1.2.2 (ICPSR, source-agnostic) → CDIF | DDI XML |
@@ -43,6 +44,7 @@ produce. For converting a SOSO file or URL you already have, use `soso2cdif.py`.
 |------|--------|-------|
 | [`harvesters/geocodes_harvester.py`](harvesters/geocodes_harvester.py) | EarthCube GeoCodes SPARQL catalog → source landing-page JSON-LD → CDIF core/discovery | Moved from the `validation` repo |
 | [`harvesters/harvest_format_examples.py`](harvesters/harvest_format_examples.py) | re3data-sampled OAI-PMH / CSW endpoints, DataCite, DataONE, GBIF, EDI, WAFs → example records in each source format (ISO 19115-3, ISO 19139, DataCite, EML, FGDC, Dublin Core, WMS/WFS, SDMX via the SDMX Global Discovery Service) | Writes each converter's `examples/` and an `INDEX.json` of sources; the endpoint inventory is in `harvesters/endpoints/` |
+| [`harvesters/harvest_stac_examples.py`](harvesters/harvest_stac_examples.py) | The public catalogs listed in STAC Index (stacindex.org), STAC APIs and static catalogs → example Collections | Writes `STAC/examples/` and its `INDEX.json` |
 
 `geocodes_harvester.py` and `soso/ConvertFromSOSO.py` share one schema.org
 naming step, [`schemaorg_names.py`](schemaorg_names.py): an unprefixed name
