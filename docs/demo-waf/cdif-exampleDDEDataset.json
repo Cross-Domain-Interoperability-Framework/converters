@@ -1,0 +1,200 @@
+{
+    "@context": {
+        "schema": "http://schema.org/",
+        "dde": "https://www.ddeworld.org/resource/",
+        "cdif": "https://w3id.org/cdif/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "time": "http://www.w3.org/2006/time#",
+        "prov": "http://www.w3.org/ns/prov#"
+    },
+    "@id": "urn:dde:example-hydrogeological-map",
+    "@type": [
+        "schema:Dataset"
+    ],
+    "schema:name": "China 1:500K Hydrogeological Map",
+    "schema:description": "National-scale hydrogeological map of China at 1:500,000 scale, depicting aquifer types, groundwater flow systems, and hydrogeological units across all provinces. Compiled from regional geological survey data by the China Geological Survey.",
+    "schema:identifier": "urn:cgs:hydrogeology-500k-2020",
+    "schema:dateModified": "2020-11-15",
+    "schema:inLanguage": "zho",
+    "schema:license": [
+        "licenceUnrestricted"
+    ],
+    "schema:url": "http://en.cgs.gov.cn/",
+    "schema:subjectOf": {
+        "@id": "urn:uuid:dde-dataset-catalog-record",
+        "@type": [
+            "schema:Dataset"
+        ],
+        "schema:additionalType": [
+            {
+                "@id": "dcat:CatalogRecord"
+            }
+        ],
+        "schema:about": {
+            "@id": "urn:dde:example-hydrogeological-map"
+        },
+        "dcterms:conformsTo": [
+            {
+                "@id": "https://w3id.org/cdif/core/2.0"
+            },
+            {
+                "@id": "https://w3id.org/cdif/discovery/2.0"
+            },
+            {
+                "@id": "https://w3id.org/cdif/dde/1.0/DDEDataset"
+            }
+        ],
+        "schema:sdDatePublished": "2020-11-15"
+    },
+    "schema:additionalType": [
+        {
+            "@type": [
+                "schema:DefinedTerm"
+            ],
+            "schema:name": "Geographic Dataset",
+            "schema:termCode": "geographicDataset",
+            "schema:inDefinedTermSet": "dde:codelist/ResourceTypeCode"
+        }
+    ],
+    "schema:keywords": [
+        {
+            "@type": [
+                "schema:DefinedTerm"
+            ],
+            "schema:name": "Geoscientific Information",
+            "schema:termCode": "geoscientificInformation",
+            "schema:inDefinedTermSet": "dde:codelist/TopicCategoryCode"
+        },
+        {
+            "@type": [
+                "schema:DefinedTerm"
+            ],
+            "schema:name": "Geological Mapping",
+            "schema:termCode": "geologicalMapping",
+            "schema:inDefinedTermSet": "dde:codelist/AcquisitionTypeCode"
+        },
+        "hydrogeology",
+        "groundwater",
+        "aquifer",
+        "China"
+    ],
+    "schema:image": [
+        {
+            "@type": [
+                "schema:ImageObject"
+            ],
+            "schema:contentUrl": "https://example.org/thumbnails/hydrogeological-map-500k.png",
+            "schema:name": "thumbnail",
+            "schema:encodingFormat": "image/png"
+        }
+    ],
+    "schema:spatialCoverage": [
+        {
+            "@type": [
+                "schema:Place"
+            ],
+            "schema:geo": {
+                "@type": [
+                    "schema:GeoShape"
+                ],
+                "schema:box": "18.1609 73.499 53.5585 135.08"
+            }
+        }
+    ],
+    "schema:temporalCoverage": [
+        {
+            "@type": [
+                "time:ProperInterval"
+            ],
+            "time:hasBeginning": {
+                "@type": [
+                    "time:Instant"
+                ],
+                "time:inTimePosition": {
+                    "@type": [
+                        "time:TimePosition"
+                    ],
+                    "time:hasTRS": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian",
+                    "time:numericPosition": 2015
+                }
+            },
+            "time:hasEnd": {
+                "@type": [
+                    "time:Instant"
+                ],
+                "time:inTimePosition": {
+                    "@type": [
+                        "time:TimePosition"
+                    ],
+                    "time:hasTRS": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian",
+                    "time:numericPosition": 2020
+                }
+            }
+        }
+    ],
+    "schema:distribution": [
+        {
+            "@type": [
+                "schema:DataDownload"
+            ],
+            "schema:name": "Hydrogeological Map Shapefile",
+            "schema:description": "Vector data in ESRI Shapefile format",
+            "schema:contentUrl": "https://example.org/data/hydrogeology-500k.zip",
+            "schema:encodingFormat": [
+                "application/x-shapefile"
+            ]
+        }
+    ],
+    "schema:additionalProperty": [
+        {
+            "@type": [
+                "schema:PropertyValue"
+            ],
+            "schema:propertyID": [
+                {
+                    "@id": "dde:spatialRepresentationType"
+                }
+            ],
+            "schema:name": "Spatial Representation Type",
+            "schema:value": "vector"
+        },
+        {
+            "@type": [
+                "schema:PropertyValue"
+            ],
+            "schema:propertyID": [
+                {
+                    "@id": "dde:spatialResolution"
+                }
+            ],
+            "schema:name": "Spatial Resolution",
+            "schema:value": "1:500000"
+        },
+        {
+            "@type": [
+                "schema:PropertyValue"
+            ],
+            "schema:propertyID": [
+                {
+                    "@id": "dde:referenceSystemType"
+                }
+            ],
+            "schema:name": "Reference System Type",
+            "schema:value": "geodeticGeographic2D"
+        },
+        {
+            "@type": [
+                "schema:PropertyValue"
+            ],
+            "schema:propertyID": [
+                {
+                    "@id": "dde:referenceSystemIdentifier"
+                }
+            ],
+            "schema:name": "Coordinate Reference System",
+            "schema:value": "EPSG:4326",
+            "schema:url": "https://epsg.io/4326"
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "ex": "https://example.org/",
+    "cdifa1": "https://w3id.org/cdif/access/profile1/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  },
+  "@type": [
+    "schema:Dataset"
+  ],
+  "@id": "ex:dataset/3936",
+  "schema:name": "Example restricted-access survey dataset",
+  "schema:conditionsOfAccess": [
+    "Users located in the UK may download the data after assenting to the End User Licence.",
+    {
+      "@id": "https://example.org/odrloffer/13adb49c-f641-4ac7-aa90-18651cc211ce"
+    }
+  ],
+  "schema:subjectOf": {
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/access/2.0"
+      }
+    ]
+  },
+  "schema:distribution": [
+    {
+      "@id": "ex:dataset/3936/distribution/csv",
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "Survey responses (CSV)",
+      "schema:contentUrl": "https://example.org/data/3936/responses.csv",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "odrl:hasPolicy": [
+        {
+          "@type": [
+            "odrl:Offer"
+          ],
+          "@id": "https://example.org/odrloffer/13adb49c-f641-4ac7-aa90-18651cc211ce",
+          "odrl:profile": {
+            "@id": "https://w3id.org/cdif/access/profile1/cdifa1.ttl"
+          },
+          "odrl:assigner": {
+            "@id": "https://example.org/repository"
+          },
+          "odrl:permission": [
+            {
+              "odrl:target": {
+                "@id": "https://example.org/dataset/3936/distribution/csv"
+              },
+              "odrl:action": {
+                "@id": "cdifa1:download"
+              },
+              "odrl:constraint": [
+                {
+                  "@type": [
+                    "odrl:Constraint"
+                  ],
+                  "odrl:leftOperand": {
+                    "@id": "odrl:spatial"
+                  },
+                  "odrl:operator": {
+                    "@id": "odrl:eq"
+                  },
+                  "odrl:rightOperand": {
+                    "@id": "http://publications.europa.eu/resource/authority/country/GBR"
+                  }
+                }
+              ],
+              "odrl:duty": [
+                {
+                  "odrl:action": {
+                    "@id": "cdifa1:assent"
+                  },
+                  "odrl:constraint": [
+                    {
+                      "@type": [
+                        "odrl:Constraint"
+                      ],
+                      "odrl:leftOperand": {
+                        "@id": "odrl:event"
+                      },
+                      "odrl:operator": {
+                        "@id": "odrl:lt"
+                      },
+                      "odrl:rightOperand": {
+                        "@id": "odrl:policyUsage"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "odrl:obligation": [
+            {
+              "odrl:target": {
+                "@id": "https://example.org/dataset/3936/distribution/csv"
+              },
+              "odrl:action": {
+                "@id": "cdifa1:datadestruction"
+              }
+            }
+          ],
+          "odrl:prohibition": [
+            {
+              "odrl:target": {
+                "@id": "https://example.org/dataset/3936/distribution/csv"
+              },
+              "odrl:action": {
+                "@id": "cdifa1:shareTRECredentials"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
