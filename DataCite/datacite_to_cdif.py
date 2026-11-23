@@ -470,6 +470,11 @@ def tf_description(values, ctx):
     return "\n\n".join(parts) if parts else None
 
 
+def _fmt(n):
+    """A coordinate to six decimal places (about 0.1 m), as the ISO converter writes it."""
+    return ("%.6f" % float(n)).rstrip("0").rstrip(".")
+
+
 def _number(t):
     try:
         return float(t)
@@ -488,8 +493,7 @@ def _box(el):
         s, w, n, e = nums if len(nums) == 4 else (None,) * 4
     if None in (s, w, n, e):
         return None
-    return {"@type": ["schema:GeoShape"], "schema:box": "%s %s %s %s" % tuple(
-        ("%g" % x) for x in (s, w, n, e))}
+    return {"@type": ["schema:GeoShape"], "schema:box": " ".join(_fmt(x) for x in (s, w, n, e))}
 
 
 def _point(el):
@@ -514,11 +518,11 @@ def _polygon(el):
             lat = _number(text(child(p, "pointLatitude")))
             lon = _number(text(child(p, "pointLongitude")))
             if lat is not None and lon is not None:
-                pts.append("%g %g" % (lat, lon))
+                pts.append("%s %s" % (_fmt(lat), _fmt(lon)))
     else:                                  # kernel 3: 'lat lon lat lon ...'
         nums = [_number(x) for x in text(el).split()]
         if None not in nums and len(nums) % 2 == 0:
-            pts = ["%g %g" % (nums[i], nums[i + 1]) for i in range(0, len(nums), 2)]
+            pts = ["%s %s" % (_fmt(nums[i]), _fmt(nums[i + 1])) for i in range(0, len(nums), 2)]
     return {"@type": ["schema:GeoShape"], "schema:polygon": " ".join(pts)} if len(pts) >= 4 else None
 
 
