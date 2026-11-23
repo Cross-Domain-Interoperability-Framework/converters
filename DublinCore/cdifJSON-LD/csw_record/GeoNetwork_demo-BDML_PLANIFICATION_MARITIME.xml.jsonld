@@ -1,0 +1,212 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "urn:dc:BDML_PLANIFICATION_MARITIME.xml",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "dc:identifier",
+    "schema:value": "BDML_PLANIFICATION_MARITIME.xml"
+  },
+  "schema:name": "Maritime Spatial Planning",
+  "schema:dateModified": "2024-12-12T17:18:35Z",
+  "schema:datePublished": "2024-12-12T17:18:35Z",
+  "schema:description": "The « Maritime Spatial Planning » product contains 2D areas vector objects representing the extent of the maritime spatial plan (« MSP Spatial Plan » layer) and the extent of the corresponding vocation zones (« MSP Zoning Element » layer), defined in each strategic façade document.",
+  "schema:keywords": [
+    "MSP spatial plan",
+    "Zoning Element",
+    "open data",
+    "Product",
+    "Area management, restriction, regulation zones and reporting units",
+    "Nationales",
+    "Observation de la terre et environnement",
+    "oceans"
+  ],
+  "schema:additionalType": [
+    "dataset"
+  ],
+  "schema:encodingFormat": [
+    "GeoPackage"
+  ],
+  "schema:inLanguage": "fre",
+  "schema:conditionsOfAccess": [
+    "license",
+    "otherRestrictions"
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "40 -10.3 51.6 10.3"
+      }
+    }
+  ],
+  "prov:wasDerivedFrom": [
+    "The source data used to develop this product comes from the strategic sections of the Strategic Façade Documents (MSP plans per façade) of the four façades of French mainland, in force on the date of publication of this product. The Interregional Sea Directorates (DIRM) are the reference services and producers of the data for this product. Shom was mandated by DGAMPA (Directorate-General for Maritime Affairs, Fisheries and Aquaculture) to provide a geomatic support to the DIRM for the production of dataset in vector format."
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "WWW:LINK-1.0-http--link",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.shom.fr",
+        "schema:name": "Shom Geoportal"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "OGC Web Map Service",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://services.data.shom.fr/INSPIRE/wms/v?service=WMS&request=GetCapabilities&version=1.3.0",
+        "schema:name": "PLANIFICATION_MARITIME_SPATIALPLAN_BDD_WMSV"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "OGC Web Map Service",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://services.data.shom.fr/INSPIRE/wms/v?service=WMS&request=GetCapabilities&version=1.3.0",
+        "schema:name": "PLANIFICATION_MARITIME_ZONINGELEMENT_BDD_WMSV"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "OGC Web Feature Service",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://services.data.shom.fr/INSPIRE/wfs?service=WFS&request=GetCapabilities&version=2.0.0",
+        "schema:name": "PLANIFICATION_MARITIME_BDD_WFS:spatialplan"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "OGC Web Feature Service",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://services.data.shom.fr/INSPIRE/wfs?service=WFS&request=GetCapabilities&version=2.0.0",
+        "schema:name": "PLANIFICATION_MARITIME_BDD_WFS:zoningelement"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "WWW:LINK-1.0-http--link",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://services.data.shom.fr/INSPIRE/telechargement/prepackageGroup/PLANIFICATION_MARITIME_PACK_DL/prepackage/PLANIFICATION_MARITIME_PACK/file/PLANIFICATION_MARITIME_PACK.7z",
+        "schema:name": "Download link Maritime Spatial Planning"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "WWW:LINK-1.0-http--link",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://diffusion.shom.fr/",
+        "schema:name": "Shom marketplace"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "image/png",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://services.data.shom.fr/static/imagettes/MD/planif.png",
+        "schema:name": "thumbnail"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "image/png",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://services.data.shom.fr/static/imagettes/MD/planif.png",
+        "schema:name": "large_thumbnail"
+      }
+    }
+  ],
+  "schema:url": "https://demo.georchestra.org/geonetwork/srv/eng/catalog.search#/metadata/BDML_PLANIFICATION_MARITIME.xml",
+  "schema:subjectOf": {
+    "@id": "https://demo.georchestra.org/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetRecordById&outputSchema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&elementSetName=full&id=BDML_PLANIFICATION_MARITIME.xml",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Dublin Core metadata record for: Maritime Spatial Planning",
+    "schema:about": {
+      "@id": "urn:dc:BDML_PLANIFICATION_MARITIME.xml"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a Dublin Core csw:Record record to CDIF by dc_to_cdif.py.",
+    "schema:identifier": "BDML_PLANIFICATION_MARITIME.xml",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "GeoNetwork demo",
+      "schema:url": "https://demo.georchestra.org/geonetwork/srv/eng/csw"
+    }
+  }
+}

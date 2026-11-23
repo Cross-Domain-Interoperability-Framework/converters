@@ -1,0 +1,102 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "urn:dc:recensement-de-la-population-en-bretagne-structure-de-la-population",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "dc:identifier",
+    "schema:value": "recensement-de-la-population-en-bretagne-structure-de-la-population"
+  },
+  "schema:name": "Recensement de la population en Bretagne - Structure de la population",
+  "schema:dateModified": "2026-06-07T03:28:51Z",
+  "schema:datePublished": "2026-06-07T03:28:51Z",
+  "schema:description": "La donnée fournit des résultats sur la structure par âge et par sexe de la population; les indicateurs démographiques essentiels, les informations sur la structure de la population par catégorie socioprofessionnelle. Cette donnée est disponible pour l'ensemble de la région Bretagne selon les contours de l'année en cours et pour les niveaux géographiques suivants : les communes, les établissements publics de coopération intercommunale (EPCI) et les pays. 8 groupes sociaux-professionnels : 1 Agriculteurs exploitants 2 Artisans, commerçants et chefs d’entreprise 3 Cadres et professions intellectuelles supérieures 4 Professions intermédiaires 5 Employés 6 Ouvriers 7 Retraités 8 Autres personnes sans activité professionnelle",
+  "schema:keywords": [
+    "Bretagne",
+    "données ouvertes",
+    "population",
+    "233500016"
+  ],
+  "schema:conditionsOfAccess": [
+    "license"
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "47.258058 -5.141277 48.900972 -1.015613"
+      }
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.bretagne.bzh/explore/dataset/recensement-de-la-population-en-bretagne-structure-de-la-population/download?format=csv",
+      "schema:name": "Recensement de la population en Bretagne - Structure de la population"
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "OGC:WFS-1.1.0-http-getfeature",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.bretagne.bzh/api/wfs?SERVICE=WFS&REQUEST=GetFeature&TYPENAME=recensement-de-la-population-en-bretagne-structure-de-la-population",
+        "schema:name": "Recensement de la population en Bretagne - Structure de la population"
+      }
+    }
+  ],
+  "schema:url": "https://demo.georchestra.org/geonetwork/srv/eng/catalog.search#/metadata/recensement-de-la-population-en-bretagne-structure-de-la-population",
+  "schema:subjectOf": {
+    "@id": "https://demo.georchestra.org/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetRecordById&outputSchema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&elementSetName=full&id=recensement-de-la-population-en-bretagne-structure-de-la-population",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Dublin Core metadata record for: Recensement de la population en Bretagne - Structure de la population",
+    "schema:about": {
+      "@id": "urn:dc:recensement-de-la-population-en-bretagne-structure-de-la-population"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a Dublin Core csw:Record record to CDIF by dc_to_cdif.py.",
+    "schema:identifier": "recensement-de-la-population-en-bretagne-structure-de-la-population",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "GeoNetwork demo",
+      "schema:url": "https://demo.georchestra.org/geonetwork/srv/eng/csw"
+    }
+  }
+}

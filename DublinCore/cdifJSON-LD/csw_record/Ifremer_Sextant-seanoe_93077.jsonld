@@ -1,0 +1,144 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "urn:dc:seanoe:93077",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "dc:identifier",
+    "schema:value": "seanoe:93077"
+  },
+  "schema:name": "2000-2021 In situ profiles colocalized with AMEDA eddy detections from 1/8 AVISO altimetry in the Mediterranean sea",
+  "schema:dateModified": "2025-02-18",
+  "schema:datePublished": "2025-02-18",
+  "schema:description": "Mesoscale eddy detection from 2000 to 2021 are computed using the AMEDA algorithm applied on AVISO L4 absolute dynamic topography at 1/8th degree. Eddy numbers correspond to tracks referenced in the DYNED atlas (https://doi.org/10.14768/2019130201.2). Detection is based on AVISO delyed-time product from 2000 to 2019 and on day+6 near-real-time altimetry from 2020 to 2021. Colocalisation is then made with available in situ profiles from Coriolis Ocean Dataset for Reanalysis (CORA) delayed-time data (113486 profiles) and Copernicus near-real-time profiles (43567).",
+  "schema:keywords": [
+    "mesoscale",
+    "in situ",
+    "eddy",
+    "colocalisation",
+    "profile",
+    "Physical oceanography",
+    "Currents",
+    "CDS-CORIOLIS",
+    "/Observational data/in-situ",
+    "oceans"
+  ],
+  "schema:additionalType": [
+    "dataset"
+  ],
+  "schema:encodingFormat": [
+    "NC, NETCDF"
+  ],
+  "schema:inLanguage": "eng",
+  "schema:conditionsOfAccess": [
+    "otherRestrictions"
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "36 30 -6 45"
+      }
+    }
+  ],
+  "prov:wasDerivedFrom": [
+    "Combination of L4 satellite altimetry passed through a Lagrangian eddy tracking algorithm and colocalized with in situ data (multiplatform Glider, CTD, XBT, Argo floats)"
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://www.seanoe.org/data/00819/93077/data/99539.nc",
+      "schema:name": "Processed data",
+      "schema:description": "2000-2021 vertical profiles colocalized with mesoscale eddies in the Mediterranean sea - 580 MB"
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "DOI",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://doi.org/10.17882/93077",
+        "schema:name": "DOI of the product"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "rel-canonical",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.seanoe.org/data/00819/93077/",
+        "schema:name": "Seanoe"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "image/gif",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://www.seanoe.org/data/00819/93077/illustration.gif"
+      }
+    }
+  ],
+  "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/catalog.search#/metadata/seanoe%3A93077",
+  "schema:subjectOf": {
+    "@id": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetRecordById&outputSchema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&elementSetName=full&id=seanoe%3A93077",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Dublin Core metadata record for: 2000-2021 In situ profiles colocalized with AMEDA eddy detections from 1/8 AVISO altimetry in the Mediterranean sea",
+    "schema:about": {
+      "@id": "urn:dc:seanoe:93077"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from a Dublin Core csw:Record record to CDIF by dc_to_cdif.py.",
+    "schema:identifier": "seanoe:93077",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Ifremer Sextant",
+      "schema:url": "https://sextant.ifremer.fr/geonetwork/srv/eng/csw"
+    }
+  }
+}
