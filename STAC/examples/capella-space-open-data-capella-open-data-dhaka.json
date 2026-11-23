@@ -1,0 +1,181 @@
+{
+ "type": "Collection",
+ "id": "capella-open-data-dhaka",
+ "stac_version": "1.0.0",
+ "description": "Capella Open Data Dhaka",
+ "links": [
+  {
+   "rel": "root",
+   "href": "../../catalog.json",
+   "type": "application/json",
+   "title": "Capella Open Data"
+  },
+  {
+   "rel": "license",
+   "href": "https://creativecommons.org/licenses/by/4.0/",
+   "title": "CC BY 4.0"
+  },
+  {
+   "rel": "item",
+   "href": "../../capella-open-data-by-datetime/capella-open-data-2024/capella-open-data-2024-11/capella-open-data-2024-11-22/CAPELLA_C10_SP_SLC_HH_20241122174840_20241122174904/CAPELLA_C10_SP_SLC_HH_20241122174840_20241122174904.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "../../capella-open-data-by-datetime/capella-open-data-2024/capella-open-data-2024-11/capella-open-data-2024-11-22/CAPELLA_C10_SP_SICD_HH_20241122174840_20241122174904/CAPELLA_C10_SP_SICD_HH_20241122174840_20241122174904.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "../../capella-open-data-by-datetime/capella-open-data-2024/capella-open-data-2024-11/capella-open-data-2024-11-22/CAPELLA_C10_SP_GEC_HH_20241122174840_20241122174904/CAPELLA_C10_SP_GEC_HH_20241122174840_20241122174904.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "item",
+   "href": "../../capella-open-data-by-datetime/capella-open-data-2024/capella-open-data-2024-11/capella-open-data-2024-11-22/CAPELLA_C10_SP_GEO_HH_20241122174840_20241122174904/CAPELLA_C10_SP_GEO_HH_20241122174840_20241122174904.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "parent",
+   "href": "../catalog.json",
+   "type": "application/json",
+   "title": "By Capital"
+  }
+ ],
+ "stac_extensions": [
+  "https://stac-extensions.github.io/sat/v1.0.0/schema.json",
+  "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+  "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+  "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+ ],
+ "item_assets": {
+  "HH": {
+   "title": "SAR file",
+   "type": "image/tiff; application=geotiff",
+   "roles": [
+    "data"
+   ],
+   "sar:polarizations": [
+    "HH"
+   ]
+  },
+  "VV": {
+   "title": "SAR file",
+   "type": "image/tiff; application=geotiff",
+   "roles": [
+    "data"
+   ],
+   "sar:polarizations": [
+    "VV"
+   ]
+  },
+  "thumbnail": {
+   "title": "Thumbnail",
+   "type": "image/png",
+   "roles": [
+    "thumbnail"
+   ]
+  },
+  "preview": {
+   "title": "Preview image",
+   "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+   "roles": [
+    "overview"
+   ]
+  },
+  "metadata": {
+   "title": "Extended metadata",
+   "type": "application/json",
+   "roles": [
+    "metadata"
+   ]
+  }
+ },
+ "title": "Dhaka",
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -180,
+     -90,
+     180,
+     90
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2020-03-30T00:00:00Z",
+     null
+    ]
+   ]
+  }
+ },
+ "license": "proprietary",
+ "keywords": [
+  "sar"
+ ],
+ "providers": [
+  {
+   "name": "Capella Space",
+   "roles": [
+    "licensor",
+    "producer",
+    "processor"
+   ],
+   "url": "https://www.capellaspace.com"
+  },
+  {
+   "name": "AWS",
+   "roles": [
+    "host"
+   ],
+   "url": "http://www.amazonaws.com/"
+  }
+ ],
+ "summaries": {
+  "constellation": [
+   "capella"
+  ],
+  "instruments": [
+   "capella-radar-2",
+   "capella-radar-3",
+   "capella-radar-4",
+   "capella-radar-5",
+   "capella-radar-6",
+   "capella-radar-7",
+   "capella-radar-8",
+   "capella-radar-9",
+   "capella-radar-10",
+   "capella-radar-11",
+   "capella-radar-13",
+   "capella-radar-14",
+   "capella-radar-15"
+  ],
+  "sar:frequency_band": [
+   "X"
+  ],
+  "sar:product_type": [
+   "SLC",
+   "GEO",
+   "GEC",
+   "SICD",
+   "SIDD",
+   "CPHD"
+  ],
+  "sar:instrument_mode": [
+   "stripmap",
+   "spotlight",
+   "sliding_spotlight"
+  ],
+  "sar:observation_direction": [
+   "left",
+   "right"
+  ],
+  "sar:polarizations": [
+   "HH",
+   "VV"
+  ]
+ }
+}

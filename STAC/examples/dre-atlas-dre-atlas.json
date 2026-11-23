@@ -1,0 +1,876 @@
+{
+ "type": "Collection",
+ "id": "dre-atlas",
+ "stac_version": "1.1.0",
+ "description": "This collection hosts the underlying data for the [DRE Atlas Planning Platform](https://dre.energydata.info), hosted on [energydata.info](https://energydata.info) — produced by [VIDA](https://vida.place), commissioned and funded by the [Energy Sector Management Assistance Program (ESMAP)](https://www.esmap.org), the [World Bank](https://www.worldbank.org/en/topic/energy), and the [International Finance Corporation (IFC)](https://www.ifc.org).\n\nSettlement-level data for distributed renewable energy (DRE) planning, covering over 1.9 million settlements across 58 countries in Sub-Saharan Africa, Asia, the Pacific, and the Americas. Each settlement carries 50+ attributes covering buildings, population, electricity access, grid infrastructure, energy demand, solar potential, road access, social infrastructure, wealth, agriculture, and security.\n\n- **Interactive platform:** [dre.energydata.info](https://dre.energydata.info) — [User guide](https://vidaplace.notion.site/dre-atlas-user-guide)\n- **Technical documentation:** [DRE Atlas Technical Documentation (PDF)](https://dre.energydata.info/static/DRE-Atlas-Technical-Documentation.pdf)",
+ "links": [
+  {
+   "rel": "root",
+   "href": "https://data.source.coop/vida/dre-atlas/collection.json",
+   "type": "application/json",
+   "title": "Distributed Renewable Energy (DRE) Atlas: Settlements"
+  },
+  {
+   "rel": "self",
+   "href": "https://data.source.coop/vida/dre-atlas/collection.json",
+   "type": "application/json"
+  },
+  {
+   "rel": "alternate",
+   "href": "https://source.coop/vida/dre-atlas",
+   "type": "text/html",
+   "title": "DRE Atlas on Source Cooperative"
+  },
+  {
+   "rel": "related",
+   "href": "https://dre.energydata.info",
+   "type": "text/html",
+   "title": "DRE Atlas Interactive Platform"
+  },
+  {
+   "rel": "derived_from",
+   "href": "https://source.coop/vida/google-microsoft-osm-open-buildings",
+   "type": "text/html",
+   "title": "Google-Microsoft-OSM Open Buildings - combined by VIDA"
+  },
+  {
+   "rel": "pmtiles",
+   "href": "https://data.source.coop/vida/dre-atlas/dre_atlas.pmtiles",
+   "type": "application/vnd.pmtiles",
+   "pmtiles:layers": [
+    "dre_atlas"
+   ]
+  },
+  {
+   "rel": "agents",
+   "href": "./AGENTS.md",
+   "type": "text/markdown",
+   "title": "Guidance for AI agents"
+  },
+  {
+   "rel": "describedby",
+   "href": "./README.md",
+   "type": "text/markdown",
+   "title": "Human-readable documentation"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=AGO/AGO.json",
+   "type": "application/geo+json",
+   "title": "Angola"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=BDI/BDI.json",
+   "type": "application/geo+json",
+   "title": "Burundi"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=BEN/BEN.json",
+   "type": "application/geo+json",
+   "title": "Benin"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=BFA/BFA.json",
+   "type": "application/geo+json",
+   "title": "Burkina Faso"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=BGD/BGD.json",
+   "type": "application/geo+json",
+   "title": "Bangladesh"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=BWA/BWA.json",
+   "type": "application/geo+json",
+   "title": "Botswana"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=CAF/CAF.json",
+   "type": "application/geo+json",
+   "title": "Central African Republic"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=CIV/CIV.json",
+   "type": "application/geo+json",
+   "title": "Côte d'Ivoire"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=CMR/CMR.json",
+   "type": "application/geo+json",
+   "title": "Cameroon"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=COD/COD.json",
+   "type": "application/geo+json",
+   "title": "Congo, The Democratic Republic of the"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=COG/COG.json",
+   "type": "application/geo+json",
+   "title": "Congo"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=COM/COM.json",
+   "type": "application/geo+json",
+   "title": "Comoros"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=DJI/DJI.json",
+   "type": "application/geo+json",
+   "title": "Djibouti"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=ERI/ERI.json",
+   "type": "application/geo+json",
+   "title": "Eritrea"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=ETH/ETH.json",
+   "type": "application/geo+json",
+   "title": "Ethiopia"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=FSM/FSM.json",
+   "type": "application/geo+json",
+   "title": "Micronesia, Federated States of"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=GAB/GAB.json",
+   "type": "application/geo+json",
+   "title": "Gabon"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=GHA/GHA.json",
+   "type": "application/geo+json",
+   "title": "Ghana"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=GIN/GIN.json",
+   "type": "application/geo+json",
+   "title": "Guinea"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=GMB/GMB.json",
+   "type": "application/geo+json",
+   "title": "Gambia"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=GNB/GNB.json",
+   "type": "application/geo+json",
+   "title": "Guinea-Bissau"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=GNQ/GNQ.json",
+   "type": "application/geo+json",
+   "title": "Equatorial Guinea"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=HND/HND.json",
+   "type": "application/geo+json",
+   "title": "Honduras"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=HTI/HTI.json",
+   "type": "application/geo+json",
+   "title": "Haiti"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=KEN/KEN.json",
+   "type": "application/geo+json",
+   "title": "Kenya"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=KHM/KHM.json",
+   "type": "application/geo+json",
+   "title": "Cambodia"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=LBR/LBR.json",
+   "type": "application/geo+json",
+   "title": "Liberia"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=LSO/LSO.json",
+   "type": "application/geo+json",
+   "title": "Lesotho"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=MDG/MDG.json",
+   "type": "application/geo+json",
+   "title": "Madagascar"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=MLI/MLI.json",
+   "type": "application/geo+json",
+   "title": "Mali"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=MMR/MMR.json",
+   "type": "application/geo+json",
+   "title": "Myanmar"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=MOZ/MOZ.json",
+   "type": "application/geo+json",
+   "title": "Mozambique"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=MRT/MRT.json",
+   "type": "application/geo+json",
+   "title": "Mauritania"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=MWI/MWI.json",
+   "type": "application/geo+json",
+   "title": "Malawi"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=NAM/NAM.json",
+   "type": "application/geo+json",
+   "title": "Namibia"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=NER/NER.json",
+   "type": "application/geo+json",
+   "title": "Niger"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=NGA/NGA.json",
+   "type": "application/geo+json",
+   "title": "Nigeria"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=NIC/NIC.json",
+   "type": "application/geo+json",
+   "title": "Nicaragua"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=PAK/PAK.json",
+   "type": "application/geo+json",
+   "title": "Pakistan"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=PNG/PNG.json",
+   "type": "application/geo+json",
+   "title": "Papua New Guinea"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=RWA/RWA.json",
+   "type": "application/geo+json",
+   "title": "Rwanda"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=SDN/SDN.json",
+   "type": "application/geo+json",
+   "title": "Sudan"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=SEN/SEN.json",
+   "type": "application/geo+json",
+   "title": "Senegal"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=SLB/SLB.json",
+   "type": "application/geo+json",
+   "title": "Solomon Islands"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=SLE/SLE.json",
+   "type": "application/geo+json",
+   "title": "Sierra Leone"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=SOM/SOM.json",
+   "type": "application/geo+json",
+   "title": "Somalia"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=SSD/SSD.json",
+   "type": "application/geo+json",
+   "title": "South Sudan"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=STP/STP.json",
+   "type": "application/geo+json",
+   "title": "Sao Tome and Principe"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=SWZ/SWZ.json",
+   "type": "application/geo+json",
+   "title": "Eswatini"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=TCD/TCD.json",
+   "type": "application/geo+json",
+   "title": "Chad"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=TGO/TGO.json",
+   "type": "application/geo+json",
+   "title": "Togo"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=TLS/TLS.json",
+   "type": "application/geo+json",
+   "title": "Timor-Leste"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=TZA/TZA.json",
+   "type": "application/geo+json",
+   "title": "Tanzania, United Republic of"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=UGA/UGA.json",
+   "type": "application/geo+json",
+   "title": "Uganda"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=VUT/VUT.json",
+   "type": "application/geo+json",
+   "title": "Vanuatu"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=ZAF/ZAF.json",
+   "type": "application/geo+json",
+   "title": "South Africa"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=ZMB/ZMB.json",
+   "type": "application/geo+json",
+   "title": "Zambia"
+  },
+  {
+   "rel": "item",
+   "href": "./by_country/country_iso=ZWE/ZWE.json",
+   "type": "application/geo+json",
+   "title": "Zimbabwe"
+  }
+ ],
+ "stac_extensions": [
+  "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json",
+  "https://stac-extensions.github.io/alternate-assets/v1.2.0/schema.json",
+  "https://stac-extensions.github.io/contacts/v0.1.1/schema.json",
+  "https://stac-extensions.github.io/storage/v2.0.0/schema.json",
+  "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+  "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+  "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+ ],
+ "partition:scheme": "directory",
+ "partition:keys": [
+  {
+   "name": "country_iso",
+   "type": "string",
+   "description": "ISO 3166-1 alpha-3 country code, one GeoParquet file per country."
+  }
+ ],
+ "partition:glob": "s3://vida/dre-atlas/by_country/country_iso=*/*.parquet",
+ "table:primary_geometry": "geometry",
+ "contacts": [
+  {
+   "name": "Malin Fischer",
+   "organization": "VIDA.place GmbH",
+   "emails": [
+    {
+     "value": "malin@vida.place"
+    }
+   ]
+  },
+  {
+   "name": "Jessica La Costa",
+   "organization": "VIDA.place GmbH",
+   "emails": [
+    {
+     "value": "jess@vida.place"
+    }
+   ]
+  },
+  {
+   "name": "Giorgio Basile",
+   "organization": "VIDA.place GmbH",
+   "emails": [
+    {
+     "value": "giorgio@vida.place"
+    }
+   ]
+  },
+  {
+   "name": "Benjamin P. Stewart",
+   "organization": "World Bank Group",
+   "emails": [
+    {
+     "value": "bstewart@worldbankgroup.org"
+    }
+   ]
+  }
+ ],
+ "storage:schemes": {
+  "source-coop": {
+   "type": "custom-s3",
+   "platform": "https://data.source.coop"
+  }
+ },
+ "table:columns": [
+  {
+   "name": "geohash",
+   "type": "string",
+   "description": "Unique identifier (based on coordinates)"
+  },
+  {
+   "name": "geometry",
+   "type": "binary",
+   "description": "Settlement boundary polygon (WGS 84)."
+  },
+  {
+   "name": "lat",
+   "type": "double",
+   "description": "Latitude of settlement centroid (EPSG:4326)"
+  },
+  {
+   "name": "lon",
+   "type": "double",
+   "description": "Longitude of settlement centroid (EPSG:4326)"
+  },
+  {
+   "name": "village_name",
+   "type": "string",
+   "description": "Name of the settlement derived from reverse geocoding, if available - note that in some cases this might refer to the name of a larger settlement in the surrounding or an administrative sub-division, and official or local names can be different."
+  },
+  {
+   "name": "admin_cgaz_1",
+   "type": "string",
+   "description": "Name of the administrative sub-division level 1 in which the settlement is located (display name according to country conventions). We do not endorse or guarantee the accuracy of any country boundaries shown, which may be subject to dispute or variation."
+  },
+  {
+   "name": "admin_cgaz_2",
+   "type": "string",
+   "description": "Name of the administrative sub-division level 2 in which the settlement is located (display name according to country conventions). We do not endorse or guarantee the accuracy of any country boundaries shown, which may be subject to dispute or variation."
+  },
+  {
+   "name": "hull_area",
+   "type": "double",
+   "description": "Total area of the settlement"
+  },
+  {
+   "name": "building_density_percent",
+   "type": "double",
+   "description": "Building density as settlement area covered by building footprints (in %)"
+  },
+  {
+   "name": "num_buildings",
+   "type": "int64",
+   "description": "Total number of buildings (min. 15 m2 footprint size, excluding small structures) within the settlement. Note that in few countries buildings from OpenStreetMap as well as WorldPop building counts layers were used in addition for better coverage."
+  },
+  {
+   "name": "large_buildings",
+   "type": "int64",
+   "description": "Number of buildings > 200 m2 (footprint size)"
+  },
+  {
+   "name": "medium_buildings",
+   "type": "int64",
+   "description": "Number of buildings 120-200 m2 (footprint size)"
+  },
+  {
+   "name": "small_buildings",
+   "type": "int64",
+   "description": "Number of buildings 15-120 m2 (footprint size)"
+  },
+  {
+   "name": "very_small_structures",
+   "type": "int64",
+   "description": "Number of buildings < 15 m2 (footprint size) - these are typically non-inhabited built-up structures which are not relevant for electrification (e.g. animal sheds, outdoor kitchens, storage space), and are therefore not included in the total building count"
+  },
+  {
+   "name": "population",
+   "type": "int64",
+   "description": "Population estimates by VIDA derived from building counts and urban/rural classifications based on the Global Human Settlement Layer (GHSL), calibrated against World Bank sub-national population statistics."
+  },
+  {
+   "name": "closest_distance_water",
+   "type": "double",
+   "description": "Distance to the closest river or lake"
+  },
+  {
+   "name": "main_road_access",
+   "type": "bool",
+   "description": "Yes/true, if the settlement is within 500 meter of a main road (see below)"
+  },
+  {
+   "name": "dist_main_road_km",
+   "type": "double",
+   "description": "Distance to the closest main road (types: motorway, trunk, primary, secondary - these are mostly paved and/or well-maintained main transportation routes)"
+  },
+  {
+   "name": "nearest_hub_name",
+   "type": "string",
+   "description": "Name of the closest regional hub, if available (see below)"
+  },
+  {
+   "name": "dist_nearest_hub_km",
+   "type": "double",
+   "description": "Distance to the closest regional hub (populated places of types: city, town)"
+  },
+  {
+   "name": "num_education_facilities",
+   "type": "int64",
+   "description": "Number of education facilities within 500m of the settlement (OSM: schools, colleges, universities, kindergartens, language schools, and general educational institutions)"
+  },
+  {
+   "name": "has_education_facility",
+   "type": "bool",
+   "description": "Yes/true, if at least one education facility (see above) is within 500m of the settlement. Not displayed in site details, but available as a filter and in raw data.."
+  },
+  {
+   "name": "num_health_facilities",
+   "type": "int64",
+   "description": "Number of healthcare facilities within 500m of the settlement (OSM: doctors, dentists, clinics, hospitals, pharmacies and other general healthcare facilities)"
+  },
+  {
+   "name": "has_health_facility",
+   "type": "bool",
+   "description": "Yes/true, if at least one healthcare facility (see above) is within 500m of the settlement. Not displayed in site details, but available as a filter and in raw data."
+  },
+  {
+   "name": "mean_rwi",
+   "type": "double",
+   "description": "Mean relative wealth index within the settlement (index derived from survey data, satellite imagery, connectivity, and other geodata) - note that not all settlements and countries are covered by this index."
+  },
+  {
+   "name": "distance_to_existing_transmission_lines",
+   "type": "double",
+   "description": "Distance to the closest existing transmission grid line (unknown or mixed voltages) - note that public grid data can be outdated / inaccurate. "
+  },
+  {
+   "name": "has_nightlight",
+   "type": "bool",
+   "description": "Yes/true, if settlement overlap with nightlight areas is > 0 % (areas where light was detected by night from NASA's VIIRS nighttime light data over a period of one year - Sep 2022 to Aug 2023)"
+  },
+  {
+   "name": "overlap_percentage",
+   "type": "double",
+   "description": "Share of settlement area overlapping with nightlight area (areas where light was detected by night from NASA's VIIRS nighttime light data over a period of one year - Sep 2022 to Aug 2023)"
+  },
+  {
+   "name": "distance_to_gridlight_targets",
+   "type": "int32",
+   "description": "Distance to closest nightlight area (where light was detected by night from NASA's VIIRS nighttime light data over a period of one year - Sep 2022 to Aug 2023)"
+  },
+  {
+   "name": "pv_value",
+   "type": "double",
+   "description": "Longterm yearly average (1994-2015) of potential PV electricity production under optimum conditions"
+  },
+  {
+   "name": "crop_types",
+   "type": "string",
+   "description": "The five dominant crops grown in the administrative subdivision level 2. SPAM data is not available in selected countries / subdivisions."
+  },
+  {
+   "name": "ag_area",
+   "type": "double",
+   "description": "Agricultural (harvested) area within administrative subdivision level 2. SPAM data is not available in selected countries / subdivisions."
+  },
+  {
+   "name": "ag_value",
+   "type": "int64",
+   "description": "Total crop value within administrative subdivision level 2. SPAM data is not available in selected countries / subdivisions."
+  },
+  {
+   "name": "ag_yield",
+   "type": "double",
+   "description": "Total crop yield within administrative subdivision level 2. SPAM data is not available in selected countries / subdivisions."
+  },
+  {
+   "name": "ag_value_area",
+   "type": "int64",
+   "description": "Total crop value per area within administrative subdivision level 2. SPAM data is not available in selected countries / subdivisions."
+  },
+  {
+   "name": "fatalities_within_25km",
+   "type": "string",
+   "description": "Number of fatalities from armed conflicts from 2020-2022 within 25 km of the settlement by conflict type (battles, riots, violence against civilians, explosions) - in selected countries, less years are available as displayed on the platform."
+  },
+  {
+   "name": "fatalities_within_50km",
+   "type": "string",
+   "description": "Number of fatalities from armed conflicts from 2020-2022 within 50 km of the settlement by conflict type (battles, riots, violence against civilians, explosions) - in selected countries, less years are available as displayed on the platform."
+  },
+  {
+   "name": "total_incidents_50km",
+   "type": "int64",
+   "description": "Number of incidents (armed conflicts of types battles, riots, violence against civilians, explosions) from 2020-2022 within 20 km of the settlement- in selected countries, less years are available as displayed on the platform."
+  },
+  {
+   "name": "security_risk",
+   "type": "string",
+   "description": "Security indicator based on number of fatalities as described above: high: 1+ fatalities within 25 (or 10) km, medium: 1+ fatalities within 50 (or 25) km, low: all other"
+  },
+  {
+   "name": "num_connections",
+   "type": "int64",
+   "description": "Number of estimated potential connections corresponding to the total number of buildings (min. 15 m2 footprint size)"
+  },
+  {
+   "name": "demand",
+   "type": "double",
+   "description": "Estimated energy demand of all potential connections / buildings (min. 15 m2 footprint size), with the following assumptions: large buildings: 1,100 Wh/day, medium buildings: 650 Wh/day, small buildings: 10 % with 650 Wh/day & 90 % with 300 Wh/day"
+  },
+  {
+   "name": "demand_connection",
+   "type": "double",
+   "description": "Mean energy demand per connection"
+  },
+  {
+   "name": "country_iso",
+   "type": "string",
+   "description": "ISO 3166-1 alpha-3 country code."
+  },
+  {
+   "name": "bbox",
+   "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+   "description": "Bounding box of the settlement geometry (xmin, ymin, xmax, ymax)."
+  },
+  {
+   "name": "distance_to_planned_transmission_lines",
+   "type": "double",
+   "description": "Distance to the closest planned transmission grid line (unknown or mixed voltages) - note that public grid data can be outdated / inaccurate."
+  },
+  {
+   "name": "fatalities_within_10km",
+   "type": "string",
+   "description": "Number of fatalities from armed conflicts from 2020-2022 within 10 km of the settlement by conflict type (battles, riots, violence against civilians, explosions) - in selected countries, less years are available as displayed on the platform."
+  },
+  {
+   "name": "fatalities_within_20km",
+   "type": "string",
+   "description": "Number of fatalities from armed conflicts from 2020-2022 within 20 km of the settlement by conflict type (battles, riots, violence against civilians, explosions) - in selected countries, less years are available as displayed on the platform."
+  },
+  {
+   "name": "total_incidents_20km",
+   "type": "int64",
+   "description": "Number of incidents (armed conflicts of types battles, riots, violence against civilians, explosions) from 2020-2022 within 20 km of the settlement- in selected countries, less years are available as displayed on the platform."
+  },
+  {
+   "name": "distance_to_substation",
+   "type": "double",
+   "description": "Distance to the closest substation - note that public substation data can be outdated / inaccurate."
+  },
+  {
+   "name": "distance_to_existing_mv_transmission_lines",
+   "type": "double",
+   "description": "Distance to the closest existing medium-voltage (MV) transmission grid line (MV classification according to original data) - note that public grid data can be outdated / inaccurate."
+  },
+  {
+   "name": "distance_to_existing_hv_transmission_lines",
+   "type": "double",
+   "description": "Distance to the closest existing high-voltage (HV) transmission grid line (MV classification according to original data) - note that public grid data can be outdated / inaccurate."
+  },
+  {
+   "name": "distance_to_planned_hv_transmission_lines",
+   "type": "double",
+   "description": "Distance to the closest planned high-voltage (HV) transmission grid line (MV classification according to original data) - note that public grid data can be outdated / inaccurate."
+  },
+  {
+   "name": "distance_to_transformer",
+   "type": "double",
+   "description": "Distance to the closest transformer - note that public transformer data can be outdated / inaccurate."
+  },
+  {
+   "name": "distance_to_transmission_lines",
+   "type": "double",
+   "description": "Distance to the closest existing or planned transmission grid line (unknown or mixed voltages) - note that public grid data can be outdated / inaccurate."
+  },
+  {
+   "name": "distance_to_existing_unidentified_transmission_lines",
+   "type": "double",
+   "description": "Distance to the closest existing transmission grid line (unknown voltage) - note that public grid data can be outdated / inaccurate."
+  },
+  {
+   "name": "distance_to_existing_transmission_lines_uc",
+   "type": "double",
+   "description": "Distance to the closest existing transmission grid line under construction - note that public grid data can be outdated / inaccurate."
+  }
+ ],
+ "summaries": {
+  "dre:total_connections": {
+   "minimum": 13767,
+   "maximum": 59792902
+  },
+  "dre:avg_connections": {
+   "minimum": 33.77,
+   "maximum": 962.38
+  },
+  "dre:total_demand": {
+   "minimum": 7211.8,
+   "maximum": 24929901.7
+  },
+  "dre:demand_per_connection": {
+   "minimum": 0.13795,
+   "maximum": 0.56627
+  }
+ },
+ "item_assets": {
+  "parquet": {
+   "title": "GeoParquet",
+   "description": "Settlement-level GeoParquet 1.1.0 file.",
+   "type": "application/vnd.apache.parquet",
+   "roles": [
+    "data"
+   ]
+  },
+  "pmtiles": {
+   "title": "PMTiles",
+   "description": "Vector tile archive.",
+   "type": "application/vnd.pmtiles",
+   "roles": [
+    "visual"
+   ]
+  }
+ },
+ "title": "Distributed Renewable Energy (DRE) Atlas: Settlements",
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -89.316158888,
+     -34.82965003,
+     170.23313397,
+     36.864883151
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2025-06-10T00:00:00Z",
+     "2025-06-10T00:00:00Z"
+    ]
+   ]
+  }
+ },
+ "license": "CC-BY-4.0",
+ "providers": [
+  {
+   "name": "World Bank Group",
+   "roles": [
+    "licensor"
+   ],
+   "url": "https://www.worldbank.org/en/topic/energy"
+  },
+  {
+   "name": "VIDA",
+   "roles": [
+    "producer",
+    "host"
+   ],
+   "url": "https://vida.place"
+  }
+ ],
+ "assets": {
+  "pmtiles": {
+   "href": "https://data.source.coop/vida/dre-atlas/dre_atlas.pmtiles",
+   "type": "application/vnd.pmtiles",
+   "title": "Combined PMTiles",
+   "alternate": {
+    "s3": {
+     "href": "s3://vida/dre-atlas/dre_atlas.pmtiles",
+     "storage:refs": [
+      "source-coop"
+     ]
+    }
+   },
+   "file:size": 6247395380,
+   "file:checksum": "1220a4a4e21037320a5e130a41cc19434c5d9e283d357829e59dca3ba8386a8fe7c8",
+   "roles": [
+    "visual"
+   ]
+  },
+  "data_dictionary": {
+   "href": "https://data.source.coop/vida/dre-atlas/data_dictionary.csv",
+   "type": "text/csv",
+   "title": "Data Dictionary",
+   "file:size": 14825,
+   "file:checksum": "1220710699f426c6e661c27a8ddb51e531cd2846241cd8f68d6678ccff9e31848ddb",
+   "roles": [
+    "metadata"
+   ]
+  },
+  "style-default": {
+   "href": "https://data.source.coop/vida/dre-atlas/styles/default.json",
+   "type": "application/vnd.mapbox.style+json",
+   "title": "Default MapLibre style",
+   "file:size": 429,
+   "file:checksum": "1220af33d8485deec0474d741123789bf215cffa1002a7f60262ade3fd351fd8b331",
+   "roles": [
+    "style",
+    "default"
+   ]
+  },
+  "thumbnail": {
+   "href": "https://data.source.coop/vida/dre-atlas/docs/map_preview.png",
+   "type": "image/png",
+   "title": "Preview rendered with the default style",
+   "file:size": 52193,
+   "file:checksum": "1220cff46913fe8cf7c367d9cfbc99a07eaba691d8c8925b840acf28062129320b39",
+   "roles": [
+    "thumbnail"
+   ]
+  }
+ }
+}

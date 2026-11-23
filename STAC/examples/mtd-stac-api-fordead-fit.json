@@ -1,0 +1,98 @@
+{
+ "id": "fordead-fit",
+ "type": "Collection",
+ "links": [
+  {
+   "rel": "items",
+   "type": "application/geo+json",
+   "href": "https://api.stac.teledetection.fr/collections/fordead-fit/items"
+  },
+  {
+   "rel": "parent",
+   "type": "application/json",
+   "href": "https://api.stac.teledetection.fr/"
+  },
+  {
+   "rel": "root",
+   "type": "application/json",
+   "href": "https://api.stac.teledetection.fr/"
+  },
+  {
+   "rel": "self",
+   "type": "application/json",
+   "href": "https://api.stac.teledetection.fr/collections/fordead-fit"
+  },
+  {
+   "rel": "http://www.opengis.net/def/rel/ogc/1.0/queryables",
+   "type": "application/schema+json",
+   "title": "Queryables",
+   "href": "https://api.stac.teledetection.fr/collections/fordead-fit/queryables"
+  }
+ ],
+ "title": "FORDEAD harmonic model",
+ "assets": {
+  "QL": {
+   "href": "https://s3-data.meso.umontpellier.fr/sm1-gdc-media/fordead-fit.png",
+   "type": "image/png",
+   "roles": [
+    "thumbnail"
+   ],
+   "description": "quicklook"
+  }
+ },
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -1.785712865826906,
+     42.302451615096686,
+     9.13521359578018,
+     50.55229211014782
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2016-01-01T00:00:00Z",
+     "2020-12-31T00:00:00Z"
+    ]
+   ]
+  }
+ },
+ "license": "CC BY-SA 4.0",
+ "contacts": [
+  {
+   "name": "Florian de Boissieu",
+   "organization": "INRAE"
+  },
+  {
+   "name": "Rémi Cresson",
+   "organization": "INRAE"
+  }
+ ],
+ "providers": [
+  {
+   "url": "www.inrae.fr",
+   "name": "INRAE",
+   "roles": []
+  },
+  {
+   "name": "UMR TETIS",
+   "roles": [
+    "producer"
+   ]
+  }
+ ],
+ "description": "Fordead harmonic model produced using Sentinel-2 Level 2A data",
+ "stac_version": "1.1.0",
+ "stac_extensions": [
+  "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+  "https://stac-extensions.github.io/grid/v1.1.0/schema.json",
+  "https://stac-extensions.github.io/sentinel-2/v1.0.0/schema.json",
+  "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+  "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+  "https://forge.inrae.fr/teledec/stac-extensions/schemas/-/raw/main/production/v1.1.0/schema.json",
+  "https://stac-extensions.github.io/contacts/v0.1.1/schema.json"
+ ]
+}

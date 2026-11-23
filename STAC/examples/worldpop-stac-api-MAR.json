@@ -1,0 +1,139 @@
+{
+ "id": "MAR",
+ "type": "Collection",
+ "links": [
+  {
+   "rel": "items",
+   "type": "application/geo+json",
+   "href": "https://api.stac.worldpop.org/collections/MAR/items"
+  },
+  {
+   "rel": "parent",
+   "type": "application/json",
+   "href": "https://api.stac.worldpop.org/"
+  },
+  {
+   "rel": "root",
+   "type": "application/json",
+   "href": "https://api.stac.worldpop.org/"
+  },
+  {
+   "rel": "self",
+   "type": "application/json",
+   "href": "https://api.stac.worldpop.org/collections/MAR"
+  },
+  {
+   "rel": "http://www.opengis.net/def/rel/ogc/1.0/queryables",
+   "type": "application/schema+json",
+   "title": "Queryables",
+   "href": "https://api.stac.worldpop.org/collections/MAR/queryables"
+  },
+  {
+   "rel": "child",
+   "href": "https://api.stac.worldpop.org/collections/MAR/Age and Sex Structures",
+   "type": "application/json",
+   "title": "Age and Sex Structures"
+  },
+  {
+   "rel": "child",
+   "href": "https://api.stac.worldpop.org/collections/MAR/Degree of Urbanisation",
+   "type": "application/json",
+   "title": "Degree of Urbanisation"
+  },
+  {
+   "rel": "child",
+   "href": "https://api.stac.worldpop.org/collections/MAR/Population",
+   "type": "application/json",
+   "title": "Population"
+  }
+ ],
+ "title": "Morocco (MAR)",
+ "assets": {
+  "thumbnail": {
+   "href": "https://api.stac.worldpop.org/thumbnails/collections/MAR",
+   "type": "image/png",
+   "roles": [
+    "overview"
+   ],
+   "title": "Thumbnail"
+  }
+ },
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     -13.172500667310002,
+     27.666666891999988,
+     -0.9966673826800019,
+     35.92250019230999
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2015-01-01T00:00:00Z",
+     "2030-12-31T00:00:00Z"
+    ]
+   ]
+  }
+ },
+ "license": "CC-BY-4.0",
+ "summaries": {
+  "years": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026,
+   2027,
+   2028,
+   2029,
+   2030
+  ],
+  "project": [
+   "Age and Sex Structures",
+   "Degree of Urbanisation",
+   "Population"
+  ],
+  "version": [
+   "v1"
+  ],
+  "projects": [
+   "Population",
+   "Age and Sex Structures",
+   "Degree of Urbanisation"
+  ],
+  "resolutions": [
+   "100m",
+   "1km_ua"
+  ]
+ },
+ "description": "WorldPop produces different types of gridded population count datasets, depending on the methods used and end application. Please make sure you have read our page on choosing the right WorldPop population data before downloading a dataset. ",
+ "stac_version": "1.1.0",
+ "last_modified": "2026-01-21T17:07:47.796288",
+ "item_properties": {
+  "year": {
+   "type": "integer",
+   "title": "Year",
+   "description": "The year of population data"
+  },
+  "project": {
+   "type": "string",
+   "title": "Project",
+   "description": "The WorldPop project name"
+  },
+  "resolution": {
+   "type": "string",
+   "title": "Resolution",
+   "description": "Spatial resolution of the data"
+  }
+ }
+}

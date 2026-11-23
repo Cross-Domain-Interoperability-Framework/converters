@@ -1,0 +1,143 @@
+{
+ "type": "Collection",
+ "id": "SkySatCollect",
+ "stac_version": "1.1.0",
+ "stac_extensions": [
+  "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+ ],
+ "description": "Post-event ~0.7 m SkySat collects acquired 8–9 June 2026 over the earthquake-affected area in the southern Philippines (Mindanao). 5 scenes; each Item carries visual + pansharpened COGs and usable-data masks (UDM2/UDM).",
+ "license": "CC-BY-NC-4.0",
+ "pl:item_type": "SkySatCollect",
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     124.93579610316033,
+     5.784640757619345,
+     125.25081117895276,
+     6.211325837054979
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "2026-06-08T23:24:26Z",
+     "2026-06-09T22:54:06Z"
+    ]
+   ]
+  }
+ },
+ "links": [
+  {
+   "rel": "root",
+   "href": "../../catalog.json",
+   "type": "application/json",
+   "title": "Disaster Data Releases from Planet Labs PBC"
+  },
+  {
+   "rel": "parent",
+   "href": "../catalog.json",
+   "type": "application/json",
+   "title": "Planet Crisis Response — Philippines Earthquake (2026)"
+  },
+  {
+   "rel": "license",
+   "href": "https://creativecommons.org/licenses/by-nc/4.0/",
+   "type": "text/html",
+   "title": "CC-BY-NC-4.0"
+  },
+  {
+   "rel": "item",
+   "href": "./20260608_232426_ssc1_u0001.json",
+   "type": "application/geo+json",
+   "title": "SkySat scene 20260608_232426_ssc1_u0001"
+  },
+  {
+   "rel": "item",
+   "href": "./20260608_232426_ssc1_u0002.json",
+   "type": "application/geo+json",
+   "title": "SkySat scene 20260608_232426_ssc1_u0002"
+  },
+  {
+   "rel": "item",
+   "href": "./20260609_225358_ssc12_u0001.json",
+   "type": "application/geo+json",
+   "title": "SkySat scene 20260609_225358_ssc12_u0001"
+  },
+  {
+   "rel": "item",
+   "href": "./20260609_225406_ssc12_u0001.json",
+   "type": "application/geo+json",
+   "title": "SkySat scene 20260609_225406_ssc12_u0001"
+  },
+  {
+   "rel": "item",
+   "href": "./20260609_225406_ssc12_u0002.json",
+   "type": "application/geo+json",
+   "title": "SkySat scene 20260609_225406_ssc12_u0002"
+  },
+  {
+   "rel": "thumbnail",
+   "href": "../thumbnail.png",
+   "type": "image/png",
+   "title": "Preview"
+  },
+  {
+   "rel": "items",
+   "href": "./items.parquet",
+   "type": "application/vnd.apache.parquet",
+   "title": "STAC-GeoParquet item index"
+  },
+  {
+   "rel": "agents",
+   "href": "./AGENTS.md",
+   "type": "text/markdown",
+   "title": "AGENTS.md (agent guide)"
+  },
+  {
+   "rel": "describedby",
+   "href": "./README.md",
+   "type": "text/markdown",
+   "title": "README.md"
+  }
+ ],
+ "title": "Post-event SkySat Imagery",
+ "providers": [
+  {
+   "name": "Planet Labs PBC",
+   "description": "Planet Crisis Response Program",
+   "roles": [
+    "producer",
+    "processor",
+    "licensor",
+    "host"
+   ],
+   "url": "https://www.planet.com/disasterdata/",
+   "email": "crisis-response@planet.com"
+  }
+ ],
+ "assets": {
+  "thumbnail": {
+   "href": "../thumbnail.png",
+   "type": "image/png",
+   "title": "Thumbnail",
+   "roles": [
+    "thumbnail"
+   ],
+   "file:size": 172910,
+   "file:checksum": "12202a12fa7ece4dc95d68c5f9970173a2f7978f0d77f10cb8f0d4772352f0699246"
+  },
+  "geoparquet-items": {
+   "title": "STAC-GeoParquet item index",
+   "href": "./items.parquet",
+   "type": "application/vnd.apache.parquet",
+   "roles": [
+    "metadata",
+    "collection-mirror"
+   ],
+   "file:size": 71822,
+   "file:checksum": "122051f6fa10367ba750627fcbfde0247338a7fdf752390b72eda1e4415a8ac22773"
+  }
+ }
+}

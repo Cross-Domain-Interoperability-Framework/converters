@@ -1,0 +1,171 @@
+{
+ "id": "grassland-age",
+ "type": "Collection",
+ "links": [
+  {
+   "rel": "items",
+   "type": "application/geo+json",
+   "href": "https://eodata.thuenen.de/stac/api/v1/collections/grassland-age/items"
+  },
+  {
+   "rel": "parent",
+   "type": "application/json",
+   "href": "https://eodata.thuenen.de/stac/api/v1/"
+  },
+  {
+   "rel": "root",
+   "type": "application/json",
+   "href": "https://eodata.thuenen.de/stac/api/v1/"
+  },
+  {
+   "rel": "self",
+   "type": "application/json",
+   "href": "https://eodata.thuenen.de/stac/api/v1/collections/grassland-age"
+  },
+  {
+   "rel": "license",
+   "href": "https://creativecommons.org/licenses/by/4.0/",
+   "title": "License"
+  },
+  {
+   "rel": "cite-as",
+   "href": "https://doi.org/10.5281/zenodo.20413368",
+   "title": "Dataset on Zenodo"
+  },
+  {
+   "rel": "cite-as",
+   "href": "https://doi.org/10.1016/j.rse.2026.115465",
+   "title": "Publication in Remote Sensing of Environment (2026)"
+  },
+  {
+   "rel": "related",
+   "href": "https://eodata.thuenen.de/viewer/?dataset=age",
+   "type": "text/html",
+   "title": "Open in the ThEO Map Viewer"
+  },
+  {
+   "rel": "http://www.opengis.net/def/rel/ogc/1.0/queryables",
+   "type": "application/schema+json",
+   "title": "Queryables",
+   "href": "https://eodata.thuenen.de/stac/api/v1/collections/grassland-age/queryables"
+  }
+ ],
+ "title": "Grassland Age",
+ "assets": {
+  "thumbnail": {
+   "href": "https://eodata.thuenen.de/thumbnails/grassland-age/grassland-age.png",
+   "type": "image/png",
+   "roles": [
+    "thumbnail"
+   ],
+   "title": "Thumbnail preview"
+  }
+ },
+ "extent": {
+  "spatial": {
+   "bbox": [
+    [
+     5.866,
+     47.27,
+     15.042,
+     55.058
+    ]
+   ]
+  },
+  "temporal": {
+   "interval": [
+    [
+     "1990-01-01T00:00:00Z",
+     "2023-12-31T00:00:00Z"
+    ]
+   ]
+  }
+ },
+ "license": "CC-BY-4.0",
+ "sci:doi": "10.1016/j.rse.2026.115465",
+ "keywords": [
+  "grassland",
+  "grassland age",
+  "land use change",
+  "Germany",
+  "Landsat",
+  "Sentinel-2",
+  "time series",
+  "COG",
+  "STAC"
+ ],
+ "providers": [
+  {
+   "url": "https://thuenen.de/theo",
+   "name": "Thünen Earth Observation",
+   "roles": [
+    "producer",
+    "licensor"
+   ]
+  }
+ ],
+ "summaries": {
+  "gsd": [
+   30.0
+  ],
+  "platform": [
+   "landsat-5",
+   "landsat-7",
+   "landsat-8",
+   "landsat-9",
+   "sentinel-2a",
+   "sentinel-2b"
+  ],
+  "proj:epsg": [
+   3035
+  ],
+  "instruments": [
+   "tm",
+   "etm+",
+   "oli",
+   "msi"
+  ],
+  "target:variable": [
+   "grassland_age"
+  ]
+ },
+ "description": "Germany-wide estimates of the **year of the last land-use change** for grassland from 1990 to 2023, used as a measure of **grassland age** (the number of years since the last land-use change) - a key indicator for carbon sequestration potential, biodiversity and ecosystem resilience. Grassland history was estimated from a multidecadal Landsat (from 1986) and Sentinel-2 satellite image time series using the [FORCE framework](https://force-eo.readthedocs.io/) [(Frantz, 2019)](https://doi.org/10.3390/rs11091124): clear-sky observations over grassland were classified as bare soil / non-bare soil, per-pixel bare-soil occurrence was normalised to a seasonal frequency, and a calibrated rule set derived the year of the last land-use change. The raster stores that year (0 = grassland already present before 1990).\n\nGrassland age is estimated for all areas used as permanent or temporary grassland between 2017 and 2023 according to the [crop type maps](https://eodata.thuenen.de/browser/collections/crop-type-map-v302). This includes some temporary grassland, which was part of agricultural crop rotation between 2017 and 2023. Those parcels get attributed very recent establishment years by our method and explain the high share of very young grassland in the dataset.",
+ "item_assets": {
+  "data": {
+   "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+   "bands": [
+    {
+     "name": "grassland_age",
+     "unit": "year",
+     "nodata": -32768,
+     "data_type": "int16",
+     "description": "Year of the last grassland land-use change (0 = grassland prior to 1990)",
+     "raster:scale": 1.0,
+     "raster:offset": 0.0,
+     "raster:sampling": "area",
+     "raster:bits_per_sample": 16,
+     "raster:spatial_resolution": 30.0
+    }
+   ],
+   "roles": [
+    "data"
+   ]
+  }
+ },
+ "stac_version": "1.1.0",
+ "stac_extensions": [
+  "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+  "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+  "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+  "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+  "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+ ],
+ "sci:publications": [
+  {
+   "doi": "10.1016/j.rse.2026.115465",
+   "year": 2026,
+   "title": "Grassland age estimates for Germany (1990-2023) derived from Landsat and Sentinel-2 time series",
+   "citation": "Blickensdörfer, L., Broeg, T., Lobert, F., Schwieder, M., Hostert, P., Erasmi, S., 2026. Grassland age estimates for Germany (1990-2023) derived from Landsat and Sentinel-2 time series. Remote Sensing of Environment. doi:10.1016/j.rse.2026.115465."
+  }
+ ]
+}
