@@ -1,4 +1,4 @@
-# ISO19115/ — ISO 19115 XML → CDIF
+# ISO19115/ — ISO 19115 XML ↔ CDIF
 
 [`iso_to_cdif.py`](iso_to_cdif.py) converts ISO 19115 metadata XML to CDIF JSON-LD. It reads both XML encodings of ISO 19115:
 
@@ -81,3 +81,77 @@ python ISO19115/build_cdif_examples.py
 ```
 
 The build converts every example to `cdifJSON-LD/<encoding>/`, then validates each record against every profile it claims. Each check uses the profile's `resolvedSchema.json` and its SHACL bundle, both from the metadataBuildingBlocks checkout beside this repository; it is the same check as the NIAID build. The results are in `cdifJSON-LD/INDEX.json`.
+
+## CDIF → ISO 19115-3
+
+[`cdif_to_iso.py`](cdif_to_iso.py) goes the other way: it converts a CDIF JSON-LD record to one ISO 19115-3 `mdb:MD_Metadata`. Its mapping is a Python port of the DDE GeoNetwork's `convert/fromJsonCdif.xsl` (the `iso19115-3.2018` schema plugin), written as the table [`mappings/cdif-to-iso19115-3.sssom.tsv`](../mappings/cdif-to-iso19115-3.sssom.tsv), which is read at runtime.
+
+```bash
+python ISO19115/cdif_to_iso.py record.jsonld -o out/
+python ISO19115/cdif_to_iso.py DataCite/cdifJSON-LD/ -o out/ --xsd path/to/iso19115-3.2018/schema.xsd
+```
+
+- **`subject_json_path`** names the CDIF values, as a path from the record root.
+  - Steps are property names, as CDIF writes them, separated by dots: `schema:subjectOf.dcterms:conformsTo`.
+  - `[*]` takes every item, and `@id` / `@type` the node's own keywords.
+  - Arrays and `@list`s are always expanded.
+  - An `@id` reference into the document's `@graph` is replaced by the node it names.
+- **`object_xpath`** is where the shaper's elements go, as a path from `mdb:MD_Metadata`.
+- **`transform`** is the shaper `tf_<transform>`. Arguments go in parentheses: `party(author,first)` calls `tf_party` with `author, first`.
+
+**Order:** the record is assembled in the element order the ISO 19115-3 XML Schema requires (`SLOTS` in the converter), not in table order.
+- Within one location, rows run in table order.
+- A location that holds one element keeps the first row's.
+- The `FUNDING`, `MEASUREMENT TECHNIQUE`, `PUBLISHING PRINCIPLES` and `VARIABLES MEASURED` lines are joined into one `supplementalInformation`.
+
+**Validation:** with `--xsd`, or a GeoNetwork checkout at `../../geonetwork/core-geonetwork`, each output is checked against the XML Schema. That checkout's schema plugin holds the ISO XSDs.
+
+### Where it differs from fromJsonCdif.xsl
+
+The stylesheet runs inside GeoNetwork on a JSON-LD-framed record that has been converted to XML. The port reads the CDIF JSON-LD directly.
+
+**Fixes that keep the output schema-valid:**
+- `mrd:distributor` comes before `mrd:transferOptions`, as the schema requires.
+- Each `gml:id` is unique.
+- `mdb:dateInfo`, which is mandatory, falls back to the resource's `dateModified`, else a `cit:date` with `gco:nilReason="missing"`.
+- A unit name with a space or colon (`1 Year`) is not a valid `gco:UomIdentifier`, so it is written as `unitText: …` in the attribute's `constrainedBy` instead.
+
+**Values the stylesheet dropped:**
+- Every bounding box and point of `spatialCoverage` is written, not just the first.
+- `conditionsOfAccess` is written alongside a licence, not only when there is none.
+- Each licence gets its own `MD_LegalConstraints`, its IRI as the online resource.
+- The resource's `dateModified` and `dateCreated` go on its citation. The `1900-01-01` placeholder is not written.
+- A place named by a DefinedTerm, and a `time:ProperInterval` of XSD dates, are converted.
+
+**Values that now round-trip:**
+- Keywords are grouped by vocabulary, with `inDefinedTermSet` as the `thesaurusName`.
+- An open interval end (`..`) is `indeterminatePosition="unknown"`. An instant is written as a period whose begin and end are the same.
+- A related link's title and URL go in the associated resource's `mri:name` citation, which names the linked resource. The stylesheet used `mri:metadataReference`.
+- A Person with no affiliation is a `CI_Individual`. The stylesheet named an organisation after the person.
+- An agent with no type is a `CI_Organisation` alone.
+
+**Choices that differ:**
+- The metadata identifier is the catalog record's identifier, else a UUID made from the dataset `@id`, so a record always gets the same one. The stylesheet used the UUID GeoNetwork assigns.
+- The feature catalogue's `versionDate` is `datePublished`, else `dateModified`. The stylesheet used the conversion date.
+- Code lists point at the ISO TC 211 codelists, rather than GeoNetwork's `codeListLocation` placeholder.
+
+### The build
+
+```bash
+python ISO19115/build_iso_examples.py
+```
+
+The build takes 6 records from each CDIF corpus in this repository: DataCite, Dublin Core, EML, FGDC, ISO 19115, NIAID, OGC services, SDMX, STAC and DCAT. It writes their ISO records to `isoFromCDIF/<corpus>/`, validates each against the XML Schema, and converts each back to CDIF with `iso_to_cdif.py`. `isoFromCDIF/INDEX.json` records, for each record, the schema result and any property that did not survive the round trip. The output is deterministic.
+
+All 60 records are valid against the ISO 19115-3 XML Schema. Every property compared survives the round trip in every record that has it:
+- name, description, identifier;
+- the dates and version;
+- creators, contributors and publisher;
+- keywords, licence and conditions of access;
+- spatial and temporal coverage;
+- distributions, variables and related links;
+- funding, and `wasGeneratedBy` / `wasDerivedFrom`.
+
+The round trip adds a little:
+- the landing page comes back as a distribution, because it is written as a transfer option when there is no download URL;
+- `additionalType` values come back as keywords.
