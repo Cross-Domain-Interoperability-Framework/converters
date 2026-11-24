@@ -37,6 +37,20 @@ expose their conversion as an importable function.
 | [`ROCrate/ROCrateToCDIF.py`](ROCrate/ROCrateToCDIF.py) | RO-Crate 1.2 → CDIF | RO-Crate |
 | [`ROCrate/ValidateROCrate.py`](ROCrate/ValidateROCrate.py) | RO-Crate structural + SHACL validator | RO-Crate |
 
+**Repositories that mint DataCite DOIs** (figshare, Zenodo, Dryad, Dataverse, …) need no
+dedicated converter: resolve the DOI to DataCite XML by content negotiation and run
+`DataCite/datacite_to_cdif.py`.
+
+```bash
+curl -L -H "Accept: application/vnd.datacite.datacite+xml" https://doi.org/<doi> -o record.xml
+python DataCite/datacite_to_cdif.py record.xml -o out/
+```
+
+This is discovery-level: the DataCite projection omits the file-level distributions (download
+URLs, sizes, checksums), the depositor's own keywords, and funding that the repository's native
+API may carry — e.g. figshare's `files[]`, `tags` and `funding_list`. Convert the native API
+record instead where those matter.
+
 ### Harvesters (`harvesters/`)
 
 Harvesters fetch records from a catalogue and convert them to CDIF. They differ
