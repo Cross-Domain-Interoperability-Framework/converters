@@ -31,6 +31,7 @@ PORTALS = [
     ("open.canada.ca/data", "Open Government Canada", "spatial", 5),
     ("data.gov.ie", "data.gov.ie", "boundary", 5),
     ("data.humdata.org", "Humanitarian Data Exchange", "population", 4),
+    ("ckan.govdata.de", "GovData Deutschland", "grenzen", 4),
 ]
 
 
