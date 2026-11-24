@@ -1,0 +1,324 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://ckan.govdata.de/dataset/grenzen-der-hauptbetriebsplanflachen",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Grenzen der Hauptbetriebsplanflächen BB",
+  "schema:description": "Der Datensatz beinhaltet Daten des LBGR über die Grenzen der Hauptbetriebsplanflächen Brandenburgs und wird über je einen Darstellungs- und Downloaddienst bereitgestellt. Es werden die Gültigkeitsbereiche von Hauptbetriebsplänen für Bergbaubetriebe unter Bergaufsicht dargestellt. Für die Errichtung und Führung eines Betriebes ist ein Hauptbetriebsplan für einen in der Regel zwei Jahre nicht überschreitenden Zeitraum aufzustellen (§ 52 Abs. 1 S. 1 Bundesberggesetz). Er bedarf der Zulassung durch das LBGR.",
+  "schema:keywords": [
+    "bboxbebb",
+    "bergbau",
+    "betriebsplan",
+    "erdbeobachtung-und-umwelt",
+    "opendata",
+    "regional",
+    "rohstoff",
+    "sgd_rohstoffe",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Wirtschaft und Finanzen",
+      "schema:inDefinedTermSet": "CKAN groups",
+      "schema:termCode": "econ"
+    }
+  ],
+  "schema:publisher": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Open Data Brandenburg",
+      "schema:identifier": "8c15f4b5-ecf1-4013-a04e-0d7e90719fd3"
+    }
+  ],
+  "schema:dateCreated": "2024-12-11T19:25:42",
+  "schema:dateModified": "2026-11-24T04:22:12",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "51.3591 11.2657 53.559 14.7658"
+      }
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://geo.brandenburg.de/?page=Bergbau",
+      "schema:name": "Fachinformationssystem Bergbau",
+      "schema:description": "Fachinformationssystem Bergbau",
+      "schema:encodingFormat": [
+        "http://publications.europa.eu/resource/authority/file-type/HTML"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://inspire.brandenburg.de/services/bergbau_wfs?REQUEST=GetCapabilities&SERVICE=WFS",
+      "schema:name": "WFS Bergbau BB (WFS-BERGBAU)",
+      "schema:description": "Der Downloaddienst (WFS) Bergbau Brandenburg stellt Daten zu den Standorten, der unter Bergaufsicht stehenden Betriebsstätten, des Bergbaues, die Felder aktuell bestehender Bergbaubauberechtigungen auf bergfreie Bodenschätze, die Gültigkeitsbereiche von Betriebsplänen (Abschluß-, Haupt- und Rahmenbetriebsplanflächen), die Flächen der Baubeschränkungsgebiete sowie die Altbergbauflächen bereit. Die Gültigkeitsbereiche der Betriebspläne gliedern sich in Rahmen-, Haupt- und Abschlussbetriebspläne. Betriebspläne werden auf Grundlage des BBergG durch das LBGR zugelassen. Baubeschränkungsgebiete sind jene Flächen, in denen eine baurechtliche Genehmigung oder Zustimmung oder eine diese einschließende Genehmigung für die Errichtung, Erweiterung, Änderung oder Nutzungsänderung baulicher Anlagen nur mit Zustimmungen der Bergbehörde erteilt werden darf. Die Betriebsstätten sind die Standorte der unter Bergbauficht stehenden Betriebe des Erkundungs-, Gewinnungs-, Sanierungs- und Speicherbergbaues in Brandenburg. Bergbauberechtigungen berechtigen in Form einer Erlaubnis zur Erkundung, in Form einer Bewilligung oder eines Bergwerkseigentums zur Aufsuchung und Gewinnung bergfreier Bodenschätze. Sie werden für räumlich durch Koordinaten definierte Felder erteilt bzw. verliehen. Bei Flächen unter Bergaufsicht (§ 69 Abs. 1 Bundesberggesetz) unterliegt die Aufsicht über diese Flächen der zuständigen Behörde (LBGR). Unter dem Begriff Altbergbau bezeichnet man Bereiche oder Anlagen, in denen früher Bergbau umgegangen ist und die nicht mehr der bergbehördlichen Aufsicht unterliegen. Der WFS beinhaltet die folgenden FeatureType: - Betriebsstätten [app:bgbetriebsst], - Bergbauberechtigungen [app:bgberechtig], - Rahmenbetriebsplan [app:bgbprahmen], - Hauptbetriebsplan [app:bgbphaupt], - Abschlussbetriebsplan [app:bgbpabschluss], - Baubeschränkungsgebiete [app:bgbaubeschr], - Altbergbaugebiete [app:altbergbaugebiete], - Pufferzonen (50m) [app:pufferzonen_50m], - Flächen unter Bergaufsicht [app:fl_bergaufsicht].",
+      "schema:encodingFormat": [
+        "http://publications.europa.eu/resource/authority/file-type/WFS_SRVC"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://inspire.brandenburg.de/services/bergbau_wms?REQUEST=GetCapabilities&SERVICE=WMS",
+      "schema:name": "WMS Bergbau BB (WMS-BERGBAU)",
+      "schema:description": "Der Darstellungsdienst (WMS) Bergbau Brandenburg stellt Daten zu den Standorten, der unter Bergaufsicht stehenden Betriebsstätten, des Bergbaues, die Felder aktuell bestehender Bergbaubauberechtigungen auf bergfreie Bodenschätze, die Gültigkeitsbereiche von Betriebsplänen (Abschluß-, Haupt- und Rahmenbetriebsplanflächen), die Flächen der Baubeschränkungsgebiete sowie die Altbergbauflächen bereit. Die Gültigkeitsbereiche der Betriebspläne gliedern sich in Rahmen-, Haupt- und Abschlussbetriebspläne. Betriebspläne werden auf der Grundlage des BBergG durch das LBGR zugelassen. Baubeschränkungsgebiete sind jene Flächen, in denen eine baurechtliche Genehmigung oder Zustimmung oder eine diese einschließende Genehmigung für die Errichtung, Erweiterung, Änderung oder Nutzungsänderung baulicher Anlagen nur mit Zustimmungen der Bergbehörde erteilt werden darf. Die Betriebsstätten sind die Standorte der unter Bergaufsicht stehenden Betriebe des Erkundungs-, Gewinnungs-, Sanierungs- und Speicherbergbaues in Brandenburg. Bergbauberechtigungen berechtigen in Form einer Erlaubnis zur Erkundung, in Form einer Bewilligung oder eines Bergwerkseigentums zur Aufsuchung und Gewinnung bergfreier Bodenschätze. Sie werden für räumlich durch Koordinaten definierte Felder erteilt bzw. verliehen. Bei Flächen unter Bergaufsicht (§ 69 Abs. 1 Bundesberggesetz) unterliegt die Aufsicht über diese Flächen der zuständigen Behörde (LBGR). Unter dem Begriff Altbergbau bezeichnet man Bereiche oder Anlagen, in denen früher Bergbau umgegangen ist und die nicht mehr der bergbehördlichen Aufsicht unterliegen. Der WMS beinhaltet die folgenden Layer: - Betriebsstätten [bgbetriebsst], - Sole [bgberechtig_sole], - Steinsalz [bgberechtig_steinsalz], - Ton [bgberechtig_ton], - Torf [bgberechtig_torf], - Untergrundspeicherung [bgberechtig_untergrundspeicherung], - Braunkohle [bgberechtig_braunkohle], - Erdöl und Erdgas [bgberechtig_erdoel_erdgas], - Erdwärme [bgberechtig_erdwaerme], - Erze [bgberechtig_erze], - Hartgestein [bgberechtig_hartgestein], - Kiese und Sande [bgberechtig_kiese_sande], - Rahmenbetriebsplan [bgbprahmen], - Hauptbetriebsplan [bgbphaupt], - Abschlussbetriebsplan [bgbpabschluss], - Baubeschränkungsgebiete [bgbaubeschr], - Altbergbaugebiete [altbergbaugebiete], - Pufferzonen (50m) [pufferzonen_50m], - Flächen unter Bergaufsicht [fl_bergaufsicht].",
+      "schema:encodingFormat": [
+        "http://publications.europa.eu/resource/authority/file-type/WMS_SRVC"
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://ogc-api.geobasis-bb.de/datasets/bergbau",
+      "schema:name": "OAF Bergbau BB (OAF-BERGBAU)",
+      "schema:description": "Der Downloaddienst (OAF) Bergbau Brandenburg stellt Daten zu den Standorten, der unter Bergaufsicht stehenden Betriebsstätten, des Bergbaues, die Felder aktuell bestehender Bergbaubauberechtigungen auf bergfreie Bodenschätze, die Gültigkeitsbereiche von Betriebsplänen (Abschluß-, Haupt- und Rahmenbetriebsplanflächen), die Flächen der Baubeschränkungsgebiete sowie die Altbergbauflächen bereit. Die Gültigkeitsbereiche der Betriebspläne gliedern sich in Rahmen-, Haupt- und Abschlussbetriebspläne. Betriebspläne werden auf Grundlage des BBergG durch das LBGR zugelassen. Baubeschränkungsgebiete sind jene Flächen, in denen eine baurechtliche Genehmigung oder Zustimmung oder eine diese einschließende Genehmigung für die Errichtung, Erweiterung, Änderung oder Nutzungsänderung baulicher Anlagen nur mit Zustimmungen der Bergbehörde erteilt werden darf. Die Betriebsstätten sind die Standorte der unter Bergbauficht stehenden Betriebe des Erkundungs-, Gewinnungs-, Sanierungs- und Speicherbergbaues in Brandenburg. Bergbauberechtigungen berechtigen in Form einer Erlaubnis zur Erkundung, in Form einer Bewilligung oder eines Bergwerkseigentums zur Aufsuchung und Gewinnung bergfreier Bodenschätze. Sie werden für räumlich durch Koordinaten definierte Felder erteilt bzw. verliehen. Bei Flächen unter Bergaufsicht (§ 69 Abs. 1 Bundesberggesetz) unterliegt die Aufsicht über diese Flächen der zuständigen Behörde (LBGR). Unter dem Begriff Altbergbau bezeichnet man Bereiche oder Anlagen, in denen früher Bergbau umgegangen ist und die nicht mehr der bergbehördlichen Aufsicht unterliegen. Die API beinhaltet die folgenden Collections: - Betriebsstätten, - Bergbauberechtigungen, - Rahmenbetriebsplan, - Hauptbetriebsplan, - Abschlussbetriebsplan, - Baubeschränkungsgebiete, - Altbergbaugebiete, - Pufferzonen (50m), - Flächen unter Bergaufsicht.",
+      "schema:encodingFormat": [
+        "Download"
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "access_rights",
+      "schema:value": "Die Daten können gemäß der „Datenlizenz Deutschland - Namensnennung - Version 2.0“ (https://www.govdata.de/dl-de/by-2-0) genutzt werden. Namensnennung: \"Landesamt für Bergbau, Geologie und Rohstoffe Brandenburg\", Beispiel: „© Landesamt für Bergbau, Geologie und Rohstoffe Brandenburg, dl-de/by-2-0, (Daten geändert)“, (Klammer = optional)"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "alternate_identifier",
+      "schema:value": "[\"d955dbee-3688-4fe5-a586-b7f6d527c84f\"]"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "applicable_legislation",
+      "schema:value": "[\"http://data.europa.eu/eli/reg_impl/2023/138/oj\"]"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "contact_city",
+      "schema:value": "Cottbus"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "contact_email",
+      "schema:value": "webdienste@lbgr.brandenburg.de"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "contact_name",
+      "schema:value": "Landesamt für Bergbau, Geologie und Rohstoffe Brandenburg (LBGR)"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "contact_street",
+      "schema:value": "Inselstraße 26"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "contact_url",
+      "schema:value": "https://lbgr.brandenburg.de"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "contact_zip",
+      "schema:value": "03046"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "contributorID",
+      "schema:value": "[\"http://dcat-ap.de/def/contributors/openDataBrandenburg\"]"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "dcat_type",
+      "schema:value": "http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "frequency",
+      "schema:value": "http://publications.europa.eu/resource/authority/frequency/CONT"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "guid",
+      "schema:value": "https://piveau.offene.daten-brandenburg.de/api/hub/repo/datasets/d955dbee-3688-4fe5-a586-b7f6d527c84f"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "homepage",
+      "schema:value": "https://ckan.govdata.de"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "hvd_category",
+      "schema:value": "[\"http://data.europa.eu/bna/c_dd313021\"]"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "identifier",
+      "schema:value": "d955dbee-3688-4fe5-a586-b7f6d527c84f"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "issued",
+      "schema:value": "1992-01-01T00:00:00"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "language",
+      "schema:value": "[\"http://publications.europa.eu/resource/authority/language/DEU\"]"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "metadata_harvested_portal",
+      "schema:value": "http://open-data-brandenburg.de"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "modified",
+      "schema:value": "2026-08-04T12:03:03"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "publisher_email",
+      "schema:value": "webdienste@lbgr.brandenburg.de"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "publisher_name",
+      "schema:value": "Landesamt für Bergbau, Geologie und Rohstoffe Brandenburg (LBGR)"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "spatial_text",
+      "schema:value": "Land Brandenburg"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "theme",
+      "schema:value": "[\"http://publications.europa.eu/resource/authority/data-theme/ECON\"]"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "uri",
+      "schema:value": "https://piveau.offene.daten-brandenburg.de/api/hub/repo/datasets/d955dbee-3688-4fe5-a586-b7f6d527c84f"
+    }
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "CKAN id",
+    "schema:value": "86993136-07da-4e3e-bfe2-a5a73bd8ebe9"
+  },
+  "schema:url": "https://ckan.govdata.de/dataset/grenzen-der-hauptbetriebsplanflachen",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://ckan.govdata.de/dataset/grenzen-der-hauptbetriebsplanflachen#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "CKAN package for: Grenzen der Hauptbetriebsplanflächen BB",
+    "schema:about": {
+      "@id": "https://ckan.govdata.de/dataset/grenzen-der-hauptbetriebsplanflachen"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from the CKAN package https://ckan.govdata.de/api/3/action/package_show?id=grenzen-der-hauptbetriebsplanflachen to CDIF by ckan_to_cdif.py.",
+    "schema:dateModified": "2026-11-24T04:22:12",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "GovData Deutschland",
+      "schema:url": "https://ckan.govdata.de/"
+    }
+  }
+}
