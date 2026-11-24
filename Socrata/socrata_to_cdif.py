@@ -458,12 +458,15 @@ def tf_soda(values, ctx):
                                       "&$order={order}&$limit={limit}&$offset={offset}"
                                       % (ctx["host"], view["id"]),
                 "schema:httpMethod": ["GET"],
-                # The formats are here and not in a schema:result: a result is a
-                # schema:DataDownload, and core's SHACL requires a contentUrl of
-                # every DataDownload, which a generated response does not have.
-                "schema:contentType": ["application/json", "text/csv", "application/geo+json"],
             },
             "schema:query-input": inputs,
+            # The response format, as a schema:result. A result is a
+            # schema:DataDownload with no contentUrl (the response is generated
+            # per request); core's SHACL exempts an action result from the
+            # contentUrl rule.
+            "schema:result": {"@type": ["schema:DataDownload"],
+                              "schema:encodingFormat": ["application/json", "text/csv",
+                                                        "application/geo+json"]},
         }],
     }]
 
