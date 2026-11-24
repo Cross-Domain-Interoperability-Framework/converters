@@ -21,8 +21,11 @@ embedded `#` header, runs the XSD-completeness check, and compiles
 `ddi_mappings.json`. The converter-set *tables* are otherwise hand-maintained.
 
 Counts are rows, and in brackets the rows with a target (`object_id`), as of
-2026-10-09. **(reads it)** marks a table the converter reads at runtime; the
-others document a hand-coded converter and are checked against it in CI.
+2026-10-09 — except `disco-to-cdif`, added 2026-11-24. **(reads it)** marks a
+table the converter reads at runtime; the others document a hand-coded converter
+and are checked against it in CI. `disco-to-cdif` is the one set that documents
+**no** converter, so nothing checks it: it is a crosswalk worksheet, and its
+sidecar says so.
 
 | File | Direction | Converter | Rows (mapped) |
 |------|-----------|-----------|----------|
@@ -41,6 +44,7 @@ others document a hand-coded converter and are checked against it in CI.
 | [`ddi-common-to-cdif.sssom.tsv`](ddi-common-to-cdif.sssom.tsv) | DDI Codebook (2.5 ∩ 1.2.2 common core) → CDIF | compiled to `ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py` **(reads it)** | 210 (184) |
 | [`ddi25-to-cdif.sssom.tsv`](ddi25-to-cdif.sssom.tsv) | DDI Codebook 2.5 *extras* → CDIF | as above, for 2.5 (`ddi2cdif.py`, `ddi_to_cdif.py`, `DDICodebook/ddi25_to_cdif.py`) | 137 (108) |
 | [`ddi122-to-cdif.sssom.tsv`](ddi122-to-cdif.sssom.tsv) | DDI Codebook 1.2.2 *extras* → CDIF | as above, for 1.2.2 | 7 (1) |
+| [`disco-to-cdif.sssom.tsv`](disco-to-cdif.sssom.tsv) | DDI-RDF Discovery (Disco) → CDIF | *(none — draft, unreviewed)* | 66 (43) |
 
 Sets are keyed by **source vocabulary → target**, so the two DDI 2.5 converters
 (the Harvard-Dataverse `ddi_to_cdif.py` and the source-agnostic
