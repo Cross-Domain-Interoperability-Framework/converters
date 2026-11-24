@@ -1,0 +1,67 @@
+mapping_set_id: https://w3id.org/cdif/mappings/ckan-to-cdif
+mapping_set_title: CKAN package to CDIF
+mapping_set_description: |
+  Property correspondences applied by CKAN/ckan_to_cdif.py (a CKAN dataset, the
+  "package" the Action API returns from package_show -> CDIF JSON-LD, one record
+  per package). This table drives the converter: it is read at runtime, and each
+  transform names a shaper (tf_<transform>) in ckan_to_cdif.py.
+
+  subject_json_path is a path from the package root: dot-separated member names,
+  '[*]' for every item of an array. subject_id and subject_class use ckan: only
+  as labels. Rows run in file order: for a scalar target the first row to fill
+  it wins; array targets accumulate. A row with no transform documents members
+  that are not converted, or that another row reads.
+
+  A package carries metadata in three places, all reached by the paths here:
+  base CKAN fields (title, notes, tags, resources, organization, license_*);
+  DCAT fields a scheming portal promotes to the top level (spatial,
+  time_period_coverage_start, issued, theme, the *_translated pairs); and
+  extras, a list of {key, value} the converter also exposes as _extras.<key>.
+  The 'other extras' row, which must come last, writes every extra no row
+  mapped as a schema:additionalProperty.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/CKAN/ckan_to_cdif.py
+mapping_date: 2026-11-24
+subject_source: https://docs.ckan.org/en/latest/api/
+object_source: https://w3id.org/cdif/core/2.0
+see_also:
+  - https://docs.ckan.org/en/latest/api/
+  - https://github.com/ckan/ckanext-dcat
+  - https://github.com/ckan/ckanext-spatial
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_json_path
+    property: https://w3id.org/cdif/mappings/subjectJsonPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  text          the first non-empty value
+  langtext      a string or a {lang: value} map -> the preferred-language string
+  date          a date or date-time (space- or T-separated) -> ISO 8601
+  tags          CKAN tags -> keyword strings or DefinedTerms (by vocabulary_id)
+  langkeywords  a list / string / {lang: [list]} keyword field, flattened
+  definedterms  theme / subject / topic_category / groups -> DefinedTerms
+  license       license_title / license_id / license_url -> CreativeWork
+  openaccess    isopen = true -> a conditionsOfAccess note
+  creator       author (+author_email) -> creator {"@list": [agent]}
+  maintainer    maintainer (+maintainer_email) -> Role pointOfContact
+  contact       contact_name / contact_email -> Role pointOfContact
+  publisher     organization -> schema:Organization
+  date          see above
+  interval      a start field (+ its end) -> an ISO 8601 interval
+  spatial       a GeoJSON geometry -> a Place with its bounding box
+  bbox          the ckanext-spatial bbox-* extras -> a Place box
+  places        a named region -> a Place
+  resources     resources -> schema:DataDownloads
+  homepage      the package url field -> a LinkRole 'homepage'
+  extras        unmapped extras -> PropertyValues
+curie_map:
+  ckan: https://docs.ckan.org/en/latest/api/#ckan.logic.action.get.package_show#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sssom: https://w3id.org/sssom/

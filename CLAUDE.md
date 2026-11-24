@@ -42,7 +42,11 @@ different roles — check which before editing either side:
   (`Socrata/socrata_to_cdif.py`: `subject_json_path` from the view root; a
   portal's own field is a row with the path
   `metadata.custom_fields.*.<field>`, and the `customfields` row, which
-  must stay after those rows, writes every field no row mapped),
+  must stay after those rows, writes every field no row mapped), CKAN
+  (`CKAN/ckan_to_cdif.py`: `subject_json_path` from the package root; an extra
+  is reached by `_extras.<key>`, and the `extras` row, which must stay last,
+  writes every extra no row mapped; a package does not name its portal, so a
+  file needs `--host`),
   DDI (worksheets compiled to
   `mappings/ddi_mappings.json`, applied by `DDI/ddi_sssom_to_cdif.py`). A
   mapping change for these is a table edit; code is only for structural
