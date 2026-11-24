@@ -1,0 +1,5 @@
+# Normalize all text files to LF in the repository and the working tree.
+# The repo had no .gitattributes and core.autocrlf left some corpora committed
+# with CRLF, which showed as permanent "modified" churn against the LF the
+# converters write. text=auto lets git auto-detect binary; eol=lf pins text to LF.
+* text=auto eol=lf
