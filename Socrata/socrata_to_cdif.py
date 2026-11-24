@@ -342,14 +342,23 @@ def tf_variables(values, ctx):
         if col.get("id") is not None and col.get("id") == ctx["view"].get("rowIdentifierColumnId"):
             var["cdif:role"] = "UnitIdentifier"
         cached = col.get("cachedContents") or {}
-        if col.get("dataTypeName") in NUMERIC:
+        numeric = col.get("dataTypeName") in NUMERIC
+        if numeric:
             for key, target in (("smallest", "schema:minValue"), ("largest", "schema:maxValue")):
                 if _num(cached.get(key)) is not None:
                     var[target] = _num(cached[key])
         stats = _column_statistics(cached)
         if stats:
-            var["cdif:isDescribedBy_StatisticsCollection"] = {
-                "@type": ["cdi:StatisticsCollection"], "cdif:has_Statistics": stats}
+            collection = {"@type": ["cdi:StatisticsCollection"], "cdif:has_Statistics": stats}
+            # smallest and largest of a non-numeric column cannot be a cdi:Statistic
+            # (whose value is a number), so carry them as a labelled description.
+            if not numeric:
+                extremes = ["%s: %s" % (label, text(cached.get(key)))
+                            for label, key in (("Smallest value", "smallest"),
+                                               ("Largest value", "largest")) if text(cached.get(key))]
+                if extremes:
+                    collection["schema:description"] = ". ".join(extremes)
+            var["cdif:isDescribedBy_StatisticsCollection"] = collection
         out.append(var)
     return out
 

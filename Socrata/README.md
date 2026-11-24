@@ -36,7 +36,7 @@ Only the view describes the columns, and only the view carries the portal's own 
   - `count`, `non_null` and `null` are one `cdi:Statistics` `count`, with `cdi:computationBase` `Total`, `ValidOnly` and `MissingOnly`;
   - `top`, the most frequent values, are its `cdi:CategoryStatistics`;
   - `cardinality` is a `cdi:Statistics` `distinct count`;
-  - `smallest` and `largest` of a numeric column are `schema:minValue` and `schema:maxValue`. Those of a text or date column are not converted, because a `cdi:Statistic` value is a number;
+  - `smallest` and `largest` of a numeric column are `schema:minValue` and `schema:maxValue`. Those of a text or date column go in the collection's `schema:description`, labelled, because a `cdi:Statistic` value is a number;
   - when every column gives the same `count`, it is the dataset's `row count` under `cdif:statistics`.
 - **The row identifier** (`rowIdentifierColumnId`) is the `cdif:hasPrimaryKey`, and its variable has `cdif:role` `UnitIdentifier`.
 - **Agents:**
