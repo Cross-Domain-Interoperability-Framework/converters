@@ -114,6 +114,12 @@ There is no unit-test suite. What exists:
 
 ## DCAT corpus (`DCAT/cdifOK/`)
 
+- A DCAT-US 1.1 / Project Open Data `data.json` names its `@context` by URL
+  instead of inlining it, so its keys stay unprefixed (`title`, not
+  `dcterms:title`) and match no rule. `dcat_to_cdif.py` detects this
+  (`has_remote_context`) and round-trips the document through rdflib to apply
+  the context before mapping; `load_context` lives in the converter and
+  `build_corpus.py` imports it, so the two agree on prefixes.
 - Regenerate with `python DCAT/build_corpus.py` after any change to the DCAT
   table or converter; commit it separately with a `[generated]` subject.
 - Output is not deterministic (conversion-time `dateModified`, random blank-node

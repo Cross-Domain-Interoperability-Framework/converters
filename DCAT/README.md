@@ -245,6 +245,13 @@ compare them.
 
 ## Usage
 
+A DCAT-US 1.1 / Project Open Data `data.json` is accepted directly: its
+`@context` is named by URL, so the converter fetches and applies it before
+mapping (`build_corpus.py` did this for POD corpus files; the command line now
+does it too). A dataset entry with no `@id` of its own takes a stable one from
+its `dcterms:identifier` or landing page, and output filenames that would
+collide on a truncated title are disambiguated by a hash of the `@id`.
+
 ### List datasets in a DCAT catalog
 
 ```bash

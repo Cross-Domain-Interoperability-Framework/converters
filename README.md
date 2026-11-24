@@ -12,7 +12,7 @@ expose their conversion as an importable function.
 | [`soso/ConvertFromSOSO.py`](soso/ConvertFromSOSO.py) | SOSO → CDIF core+discovery | Science-on-Schema.org |
 | [`croissant/ConvertToCroissant.py`](croissant/ConvertToCroissant.py) | CDIF → Croissant 1.1 | MLCommons Croissant |
 | [`croissant/ConvertFromCroissant.py`](croissant/ConvertFromCroissant.py) | Croissant → CDIF | MLCommons Croissant |
-| [`DCAT/dcat_to_cdif.py`](DCAT/dcat_to_cdif.py) | DCAT → CDIF | W3C DCAT |
+| [`DCAT/dcat_to_cdif.py`](DCAT/dcat_to_cdif.py) | DCAT catalog or dataset (file or URL) → CDIF core/discovery (table-driven); DCAT-AP, DCAT-US 3.0, and DCAT-US 1.1 / Project Open Data `data.json` (its URL-named `@context` is fetched and applied) | W3C DCAT (JSON-LD or POD `data.json`) |
 | [`DCAT/cdif_to_dcat.py`](DCAT/cdif_to_dcat.py) | CDIF → DCAT 3 (JSON-LD `@graph`: Dataset, CatalogRecord, Catalog) | W3C DCAT |
 | [`UMM/umm_to_cdif.py`](UMM/umm_to_cdif.py) | NASA CMR UMM-C (file **or URL**) → CDIF core+discovery | NASA UMM-C JSON |
 | [`ISO19115/iso_to_cdif.py`](ISO19115/iso_to_cdif.py) | ISO 19115-3 and ISO 19139 / 19115-2 XML (file, URL or CSW response) → CDIF (table-driven; DDE conventions where ISO has no CDIF property) | ISO 19115 XML |
@@ -173,7 +173,11 @@ docs: [`croissant/CDIFtoCroissant.md`](croissant/CDIFtoCroissant.md) (forward) a
 form, mapping DCAT / Dublin Core properties to their schema.org equivalents per
 the CDIF DCAT implementation guide. It can list the datasets in a catalog,
 convert a selection, and optionally (`--validate`) frame and validate each record
-against the schema of every profile it declares. `cdif_to_dcat.py` goes the other
+against the schema of every profile it declares. A DCAT-US 1.1 / Project Open
+Data `data.json`, whose `@context` is named by URL rather than inlined, is
+converted directly — the converter fetches and applies that context first; a
+record whose DCAT entry carries no identifier of its own takes a stable `@id`
+from its `dcterms:identifier` or landing page. `cdif_to_dcat.py` goes the other
 way, CDIF to W3C DCAT 3, driven by `mappings/cdif-to-dcat.sssom.tsv`. See
 [`DCAT/README.md`](DCAT/README.md).
 
