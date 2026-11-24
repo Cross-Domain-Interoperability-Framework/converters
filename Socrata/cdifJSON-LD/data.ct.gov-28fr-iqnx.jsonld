@@ -1,0 +1,6755 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/",
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@id": "https://data.ct.gov/d/28fr-iqnx",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "COVID-19 Tests, Cases, and Deaths (By Town) - ARCHIVE",
+  "schema:description": "DPH is updating and streamlining the COVID-19 cases, deaths, and testing data.  As of 6/27/2022, the data will be published in four tables instead of twelve.\nThe COVID-19 Cases, Deaths, and Tests by Day dataset contains cases and test data by date of sample submission.  The death data are by date of death.  This dataset is updated daily and contains information back to the beginning of the pandemic.  The data can be found at https://data.ct.gov/Health-and-Human-Services/COVID-19-Cases-Deaths-and-Tests-by-Day/g9vi-2ahj.\nThe COVID-19 State Metrics dataset contains over 93 columns of data.  This dataset is updated daily and currently contains information starting June 21, 2022 to the present.  The data can be found at https://data.ct.gov/Health-and-Human-Services/COVID-19-State-Level-Data/qmgw-5kp6 .\nThe COVID-19 County Metrics dataset contains 25 columns of data.  This dataset is updated daily and currently contains information starting June 16, 2022 to the present.  The data can be found at https://data.ct.gov/Health-and-Human-Services/COVID-19-County-Level-Data/ujiq-dy22 .\nThe COVID-19 Town Metrics dataset contains 16 columns of data.  This dataset is updated daily and currently contains information starting June 16, 2022 to the present.  The data can be found at https://data.ct.gov/Health-and-Human-Services/COVID-19-Town-Level-Data/icxw-cada .   To protect confidentiality, if a town has fewer than 5 cases or positive NAAT tests over the past 7 days, those data will be suppressed.\n\nCOVID-19 cases, tests, and associated deaths from COVID-19 that have been reported among Connecticut residents. All data in this report are preliminary; data for previous dates will be updated as new reports are received and data errors are corrected. Deaths reported to the either the Office of the Chief Medical Examiner (OCME) or Department of Public Health (DPH) are included in the daily COVID-19 update. \n\nThe case rate per 100,000 includes probable and confirmed cases. Probable and confirmed are defined using the CSTE case definition, which is available online: https://cdn.ymaws.com/www.cste.org/resource/resmgr/2020ps/Interim-20-ID-01_COVID-19.pdf\n\nThe population data used to calculate rates is based on the CT DPH population statistics for 2019, which is available online here: https://portal.ct.gov/DPH/Health-Information-Systems--Reporting/Population/Population-Statistics. Prior to 5/10/2021, the population estimates from 2018 were used.\n\nData on Connecticut deaths were obtained from the Connecticut Deaths Registry maintained by the DPH Office of Vital Records. Cause of death was determined by a death certifier (e.g., physician, APRN, medical examiner) using their best clinical judgment. Additionally, all COVID-19 deaths, including suspected or related, are required to be reported to OCME. On April 4, 2020, CT DPH and OCME released a joint memo to providers and facilities within Connecticut providing guidelines for certifying deaths due to COVID-19 that were consistent with the CDC’s guidelines and a reminder of the required reporting to OCME.25,26  As of July 1, 2021, OCME had reviewed every case reported and performed additional investigation on about one-third of reported deaths to better ascertain if COVID-19 did or did not cause or contribute to the death. Some of these investigations resulted in the OCME performing postmortem swabs for PCR testing on individuals whose deaths were suspected to be due to COVID-19, but antemortem diagnosis was unable to be made.31  The OCME issued or re-issued about 10% of COVID-19 death certificates and, when appropriate, removed COVID-19 from the death certificate. For standardization and tabulation of mortality statistics, written cause of death statements made by the certifiers on death certificates are sent to the National Center for Health Statistics (NCHS) at the CDC which assigns cause of death codes according to the International Causes of Disease 10th Revision (ICD-10) classification system.25,26  COVID-19 deaths in this report are defined as those for which the death certificate has an ICD-10 code of U07.1 as either a primary (underlying) or a contributing cause of death. More information on COVID-19 mortality can be found at the following link: https://portal.ct.gov/DPH/Health-Information-Systems--Reporting/Mortality/Mortality-Statistics\n\nData are reported daily, with timestamps indicated in the daily briefings posted at: portal.ct.gov/coronavirus. Data are subject to future revision as reporting changes.\n\nStarting in July 2020, this dataset will be updated every weekday. \n\nAdditional notes:\nDue to an issue with the town-level data dated 1/17/2021, the data was temporarily unavailable; as of 11:19 AM on 1/19/2021 the data has been restored.\n\nAs of 11/5/2020, CT DPH has added antigen testing for SARS-CoV-2 to reported test counts in this dataset. The tests included in this dataset include both molecular and antigen datasets. Molecular tests reported include polymerase chain reaction (PCR) and nucleic acid amplicfication (NAAT) tests.\n\nA delay in the data pull schedule occurred on 06/23/2020. Data from 06/22/2020 was processed on 06/23/2020 at 3:30 PM. The normal data cycle resumed with the data for 06/23/2020.\n\nA network outage on 05/19/2020 resulted in a change in the data pull schedule. Data from 5/19/2020 was processed on 05/20/2020 at 12:00 PM. Data from 5/20/2020 was processed on 5/20/2020 8:30 PM. The normal data cycle resumed on 05/20/2020 with the 8:30 PM data pull. As a result of the network outage, the timestamp on the datasets on the Open Data Portal differ from the timestamp in DPH's daily PDF reports.\n\nStarting 5/10/2021, the date field will represent the date this data was updated on data.ct.gov. Previously the date the data was pulled by DPH was listed, which typically coincided with the date before the data was published on data.ct.gov. This change was made to standardize the COVID-19 data sets on data.ct.gov.\n\nOn 5/16/2022, 8,622 historical cases were included in the data.  The date range for these cases were from August 2021 – April 2022.”",
+  "schema:identifier": "28fr-iqnx",
+  "schema:keywords": [
+    "covid archive",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Health and Human Services",
+      "schema:inDefinedTermSet": "data.ct.gov categories"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "License: Public Domain"
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Department of Public Health",
+        "schema:url": "https://portal.ct.gov/DPH"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Gary Archambault",
+        "schema:identifier": "dby8-627v"
+      }
+    ]
+  },
+  "schema:datePublished": "2020-06-01T19:43:54Z",
+  "schema:dateCreated": "2020-04-02T03:13:22Z",
+  "schema:dateModified": "2022-06-24T19:02:33Z",
+  "schema:variableMeasured": [
+    {
+      "@id": "#lastupdatedate",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Last update date",
+      "schema:alternateName": [
+        "lastupdatedate"
+      ],
+      "schema:description": "Date dataset was last updated",
+      "cdif:physicalDataType": "xsd:dateTime",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-03-24T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-03-25T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-03-26T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-03-27T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-03-28T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-03-29T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-03-30T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-03-31T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-01T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-02T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-03T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-04T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-05T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-06T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-07T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-08T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-09T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-10T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-11T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-04-12T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 169
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 605
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#town_no",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Town number",
+      "schema:alternateName": [
+        "town_no"
+      ],
+      "schema:description": "Town number",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 1,
+      "schema:maxValue": 169,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "9"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "11"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "12"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "13"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "14"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "15"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "16"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "17"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "18"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "19"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "20"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 169
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#town",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Town",
+      "schema:alternateName": [
+        "town"
+      ],
+      "schema:description": "Town name",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Warren"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Voluntown"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Sharon"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Bristol"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Woodstock"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Killingworth"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Norfolk"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Monroe"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Andover"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Griswold"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "East Haven"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Chaplin"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Bethlehem"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Thompson"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Meriden"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Woodbury"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Granby"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Waterbury"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Branford"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Pomfret"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 169
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#towntotalcases",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Total cases",
+      "schema:alternateName": [
+        "towntotalcases"
+      ],
+      "schema:description": "Sum of confirmed and probable COVID-19 cases",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 0,
+      "schema:maxValue": 42752,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "0"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 885
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 731
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 719
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 617
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "9"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 578
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "13"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 570
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "15"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 562
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 560
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 505
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 495
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 466
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "14"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 449
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "12"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 442
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 440
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "16"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 436
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "11"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 351
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "23"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 344
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "18"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 331
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "29"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 330
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "21"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 328
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 11456
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#townconfirmedcases",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Confirmed cases",
+      "schema:alternateName": [
+        "townconfirmedcases"
+      ],
+      "schema:description": "Number of laboratory-confirmed COVID-19 cases",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 0,
+      "schema:maxValue": 38547,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 90753,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 11492,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "13"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 449
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 407
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "15"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 363
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "14"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 324
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 320
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "12"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 300
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "9"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 292
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "16"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 283
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "11"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 274
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "26"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 264
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "28"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 250
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 246
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "22"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 242
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 236
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 235
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "31"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 229
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "27"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 227
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "35"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 227
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "0"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 225
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "18"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 221
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 10792
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#townprobablecases",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Probable cases",
+      "schema:alternateName": [
+        "townprobablecases"
+      ],
+      "schema:description": "Number of probable COVID-19 cases",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 0,
+      "schema:maxValue": 4252,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 90753,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 11492,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "0"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 5872
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3934
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2510
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1954
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1905
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1594
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1471
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1410
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1393
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "14"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 977
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 967
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "12"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 947
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "9"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 942
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "13"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 918
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "22"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 834
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "11"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 802
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "15"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 802
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "18"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 651
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "23"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 643
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "25"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 608
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 2347
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#towncaserate",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Case rate",
+      "schema:alternateName": [
+        "towncaserate"
+      ],
+      "schema:description": "Rate of cases per 100,000",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 0,
+      "schema:maxValue": 31406,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 98358,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 3887,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "0"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 353
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "595"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 159
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "278"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 129
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "357"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 125
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "670"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 115
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1235"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 113
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "283"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 107
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "479"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 102
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "53"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 100
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "279"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 100
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "663"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 94
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "204"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 93
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "365"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 92
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "276"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 84
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "447"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 83
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "286"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 83
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "259"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 82
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "470"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 78
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "380"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 77
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "351"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 76
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 22079
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#towntotaldeaths",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Total deaths",
+      "schema:alternateName": [
+        "towntotaldeaths"
+      ],
+      "schema:description": "Sum of confirmed and probable COVID-19-associated deaths",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 0,
+      "schema:maxValue": 503,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "0"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14783
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7043
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 6654
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 5150
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3901
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2647
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2572
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1929
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "9"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1491
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "11"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1420
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "19"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1413
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1375
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "12"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1202
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "13"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1139
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "31"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1024
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1000
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "25"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 981
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "23"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 957
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "33"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 928
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "32"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 891
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 468
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#townconfirmeddeaths",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Confirmed deaths",
+      "schema:alternateName": [
+        "townconfirmeddeaths"
+      ],
+      "schema:description": "Number of confirmed COVID-19-associated deaths",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 0,
+      "schema:maxValue": 442,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 90753,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 11492,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "0"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 12232
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 6195
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 5745
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3710
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3417
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2667
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2532
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1672
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "12"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1618
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1551
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "11"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1465
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "9"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1330
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "22"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1193
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1166
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "16"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1159
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "38"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1039
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "28"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1012
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "18"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 996
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "17"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 990
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "21"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 891
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 401
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#townprobabledeaths",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Probable deaths",
+      "schema:alternateName": [
+        "townprobabledeaths"
+      ],
+      "schema:description": "Number of probable COVID-19-associated deaths",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 0,
+      "schema:maxValue": 81,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 90753,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 11492,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "0"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 26862
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 12075
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 5690
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4927
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3247
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2985
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2965
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2421
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2355
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "13"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1820
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "11"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1710
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "9"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1658
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "12"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1554
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1400
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "20"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1363
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "18"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1218
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "14"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1145
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "21"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1063
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "15"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1022
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "19"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 894
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 81
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#peopletested",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "People tested",
+      "schema:alternateName": [
+        "peopletested"
+      ],
+      "schema:description": "Number of people tested",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 13,
+      "schema:maxValue": 140154,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 93288,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 8957,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "357"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 65
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "358"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 47
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "335"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 46
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "339"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 42
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "737"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 35
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "356"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 33
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "355"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 33
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "340"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 32
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "353"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 30
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "751"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 29
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "360"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 28
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "331"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 28
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "844"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 28
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "750"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 27
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "696"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 26
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "326"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 26
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "160"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 26
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "225"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 26
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "325"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 25
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "780"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 25
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 30940
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#ratetested100k",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Rate tested per 100k",
+      "schema:alternateName": [
+        "ratetested100k"
+      ],
+      "schema:description": "Rate of people tested per 100,000",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 852,
+      "schema:maxValue": 143111,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 92612,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 9633,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "33903"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 52
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "33998"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 32
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "32194"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 29
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "45215"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 22
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "33713"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 20
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "31374"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 20
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "32289"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 20
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "33808"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 19
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "31814"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 19
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "34093"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 17
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "28529"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 17
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "46012"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 17
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "48466"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 16
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "28589"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "45153"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "42500"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "60071"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "30900"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "46074"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "42378"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 55734
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#numberoftests",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Number of tests",
+      "schema:alternateName": [
+        "numberoftests"
+      ],
+      "schema:description": "Number of molecular COVID-19 tests reported",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 17,
+      "schema:maxValue": 928333,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 90753,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 11492,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "182"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "646"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "468"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "419"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "171"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "266"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "687"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1375"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "345"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1236"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "517"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "83"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "642"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "134"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "898"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "659"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "395"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "250"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "602"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1626"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 53234
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#numberofpositives",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Number of positives",
+      "schema:alternateName": [
+        "numberofpositives"
+      ],
+      "schema:description": "Number of positive tests",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 0,
+      "schema:maxValue": 55043,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 90753,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 11492,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 324
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "9"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 305
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "18"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 301
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "14"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 283
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "32"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 280
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "45"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 271
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "16"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 265
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 242
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "15"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 242
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "0"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 225
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 217
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "19"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 215
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "35"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 214
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "17"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 208
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 200
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "13"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 198
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 195
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 194
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "29"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 190
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "37"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 190
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 12805
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#numberofnegatives",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Number of negatives",
+      "schema:alternateName": [
+        "numberofnegatives"
+      ],
+      "schema:description": "Number of negative tests",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 12,
+      "schema:maxValue": 882389,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 90753,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 11492,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "238"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 17
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "108"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 17
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "301"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 16
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1085"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "72"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "308"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "278"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1115"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "375"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "70"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "499"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "366"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "174"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1175"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "136"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "556"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "458"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "159"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "640"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1201"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 52304
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#numberofindeterminates",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Number of indeterminates",
+      "schema:alternateName": [
+        "numberofindeterminates"
+      ],
+      "schema:description": "Number of indeterminate tests",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 0,
+      "schema:maxValue": 1296,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 102245,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 90753,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 11492,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "0"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7786
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4583
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4450
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3439
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3205
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2343
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "9"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1928
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1920
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1910
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "11"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1784
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1673
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "16"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1637
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "12"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1612
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "17"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1498
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "13"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1443
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1440
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "14"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1328
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "15"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1255
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "25"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1154
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "18"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1078
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 915
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "cdif:statistics": [
+    {
+      "@type": [
+        "cdi:Statistics"
+      ],
+      "cdif:typeOfStatistic": "row count",
+      "cdi:statistic": [
+        {
+          "cdi:content": 102245
+        }
+      ]
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "cdi:TabularTextDataSet"
+      ],
+      "schema:name": "CSV export",
+      "schema:contentUrl": "https://data.ct.gov/api/views/28fr-iqnx/rows.csv?accessType=DOWNLOAD",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "cdi:isDelimited": true,
+      "csvw:delimiter": ",",
+      "csvw:quoteChar": "\"",
+      "csvw:headerRowCount": 1,
+      "cdif:hasPhysicalMapping": [
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 0,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#lastupdatedate"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 1,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#town_no"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 2,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#town"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 3,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#towntotalcases"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 4,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#townconfirmedcases"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 5,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#townprobablecases"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 6,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#towncaserate"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 7,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#towntotaldeaths"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 8,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#townconfirmeddeaths"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 9,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#townprobabledeaths"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 10,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#peopletested"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 11,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#ratetested100k"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 12,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#numberoftests"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 13,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#numberofpositives"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 14,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#numberofnegatives"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 15,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#numberofindeterminates"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Socrata Open Data API (SODA) endpoint",
+      "schema:serviceType": "Socrata Open Data API (SODA)",
+      "schema:termsOfService": "not specified",
+      "schema:documentation": "https://dev.socrata.com/foundry/data.ct.gov/28fr-iqnx",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:name": "Query rows",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:description": "Columns are named by their API field name (the alternate name of each variable). Results are paged.",
+            "schema:urlTemplate": "https://data.ct.gov/resource/28fr-iqnx.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
+            "schema:httpMethod": [
+              "GET"
+            ],
+            "schema:contentType": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          },
+          "schema:query-input": [
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "format",
+              "schema:description": "The response format: json, csv or geojson.",
+              "schema:valueRequired": true,
+              "schema:valuePattern": "json|csv|geojson"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "select",
+              "schema:description": "SoQL $select: the columns to return, by API field name. Empty for all.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "where",
+              "schema:description": "SoQL $where: a filter on the rows. Empty for none.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "order",
+              "schema:description": "SoQL $order: the column(s) to sort by. Empty for the default order.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "limit",
+              "schema:description": "The number of rows to return. The endpoint returns 1000 when it is not given.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "offset",
+              "schema:description": "The number of rows to skip, for paging.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "Town level metrics"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "COVID-19: Geography",
+      "schema:value": "Town"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "COVID-19: Temporal coverage",
+      "schema:value": "Cumulative"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "COVID-19: Community vs. congregate setting",
+      "schema:value": "Community and congregate settings"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "COVID-19: Topic",
+      "schema:value": "Tests, cases, hospitalizations, and deaths"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Agency: Agency",
+      "schema:value": "Department of Public Health"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Details: Update Frequency",
+      "schema:value": "Not updated (historical data)"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Details: Temporal Coverage",
+      "schema:value": "The COVID-19 Pandemic"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Details: Geographic Unit",
+      "schema:value": "Municipality"
+    }
+  ],
+  "schema:url": "https://data.ct.gov/d/28fr-iqnx",
+  "schema:subjectOf": {
+    "@id": "https://data.ct.gov/d/28fr-iqnx#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: COVID-19 Tests, Cases, and Deaths (By Town) - ARCHIVE",
+    "schema:about": {
+      "@id": "https://data.ct.gov/d/28fr-iqnx"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.ct.gov/api/views/28fr-iqnx.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2023-08-02T15:39:17Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Gary Archambault",
+      "schema:identifier": "dby8-627v"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Connecticut Open Data",
+      "schema:url": "https://data.ct.gov/"
+    }
+  }
+}

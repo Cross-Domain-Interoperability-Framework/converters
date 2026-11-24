@@ -1,0 +1,6441 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/",
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@id": "https://data.cityofnewyork.us/d/vx8i-nprf",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Civil Service List (Active)",
+  "schema:description": "A Civil Service List consists of all candidates who passed an exam, ranked in score order. An established list is considered active for no less than one year and no more than four years from the date of establishment. For more information visit DCAS’ “Why You Should Work for the City” webpage at: https://www.nyc.gov/site/dcas/employment/how-can-you-find-upcoming-exams.page. \n\nFor any questions about the civil service list, the civil service process, exams, or this data please contact us at and direct your inquiries to: https://a856-exams.nyc.gov/OASysWeb/contact.",
+  "schema:identifier": "vx8i-nprf",
+  "schema:keywords": [
+    "civil service list",
+    "exam",
+    "name",
+    "score",
+    "rank",
+    "dcas",
+    "department of citywide administrative services",
+    "ogc",
+    "office of general counsel",
+    "fbm",
+    "fiscal and business management",
+    "cts",
+    "construction and technical services",
+    "dem",
+    "department of energy management",
+    "hc",
+    "human capital",
+    "fm",
+    "facilities management",
+    "res",
+    "eal estate services",
+    "cei",
+    "citywide equity and inclusion",
+    "admin",
+    "fleet",
+    "ocp",
+    "office of citywide procurement",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "City Government",
+      "schema:inDefinedTermSet": "data.cityofnewyork.us categories"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Department of Citywide Administrative Services (DCAS)"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "NYC OpenData",
+        "schema:identifier": "5fuc-pqz2"
+      }
+    ]
+  },
+  "schema:datePublished": "2024-01-12T16:15:05Z",
+  "schema:dateCreated": "2016-06-14T21:12:15Z",
+  "schema:dateModified": "2026-11-24T14:19:57Z",
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "attachment",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.cityofnewyork.us/api/views/vx8i-nprf/files/5aded84d-1d6d-455b-8b00-50f7e26f55dc?download=true&filename=Civil_Service_List__Active__Data_Dictionary.xlsx",
+        "schema:name": "Civil_Service_List__Active__Data_Dictionary.xlsx"
+      }
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "#exam_no",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Exam No",
+      "schema:alternateName": [
+        "exam_no"
+      ],
+      "schema:description": "A four (4) digit number that identifies a civil service examination.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6601"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 31856
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2060"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 31309
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4044"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 20687
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7604"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13020
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8600"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9170
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4600"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7332
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1195"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4554
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2538"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4410
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1128"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4354
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5342"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4228
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5025"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3475
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3132"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3389
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3332"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3372
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "0144"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3361
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2110"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2921
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5065"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2900
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3116"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2751
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1507"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2728
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3069"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2692
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3120"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2653
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#list_no",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "List No",
+      "schema:alternateName": [
+        "list_no"
+      ],
+      "schema:description": "An eligible candidate’s placement on a given list as of the business day that the data set is populated.",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 0.2,
+      "schema:maxValue": 31852,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "1"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1533
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1298
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "3"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1173
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "4"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1096
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "5"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1048
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "6"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1013
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "7"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 977
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "8"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 949
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "9"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 928
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 901
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "11"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 877
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "12"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 873
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "13"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 864
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "14"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 839
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "15"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 822
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "16"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 815
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "17"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 797
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "18"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 788
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "19"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 776
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "20"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 765
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#first_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "First Name",
+      "schema:alternateName": [
+        "first_name"
+      ],
+      "schema:description": "A candidate’s first name as it appears on their application.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "MICHAEL"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 6801
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "CHRISTOPHER"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4435
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "ANTHONY"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4260
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "JOSEPH"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4062
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "JOHN"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3555
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "MATTHEW"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2939
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DANIEL"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2934
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "KEVIN"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2806
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "JAMES"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2738
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DAVID"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2699
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "NICHOLAS"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2625
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "ROBERT"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2532
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "JONATHAN"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2373
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "THOMAS"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2098
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "JASON"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2082
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "JUSTIN"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2072
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "ANDREW"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1993
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "MD"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1890
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "RYAN"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1804
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "WILLIAM"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1794
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#mi",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "MI",
+      "schema:alternateName": [
+        "mi"
+      ],
+      "schema:description": "A candidate’s middle initial (MI) as it appears on their application.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 206943,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 201443,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "A"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 31070
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "M"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 22889
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "J"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 22561
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "S"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 12774
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "L"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 11922
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "D"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 11852
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "R"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 11839
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "C"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 10686
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "E"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9802
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "T"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 8044
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "N"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7120
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "P"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 6470
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "K"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 6347
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "G"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4771
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "B"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4434
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "F"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4185
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "H"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3476
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "I"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3346
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "W"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3203
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "O"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3016
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#last_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Last Name",
+      "schema:alternateName": [
+        "last_name"
+      ],
+      "schema:description": "A candidate’s last name as it appears on their application.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "WILLIAMS"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3354
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "RODRIGUEZ"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2868
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "BROWN"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2402
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "SMITH"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2344
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "JOHNSON"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2320
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "JONES"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1759
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "RIVERA"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1568
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "THOMAS"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1507
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "PEREZ"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1438
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "MARTINEZ"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1425
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "GARCIA"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1395
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "GONZALEZ"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1359
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DAVIS"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1314
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "LOPEZ"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1216
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "HERNANDEZ"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1194
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "RAHMAN"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1180
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "ISLAM"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1165
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "KHAN"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1111
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "TORRES"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1085
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "LEE"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1063
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#adj_fa",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Adj. FA",
+      "schema:alternateName": [
+        "adj_fa"
+      ],
+      "schema:description": "The Adjusted Final Average (“Adj. FA” or “AFA”) is an eligible candidate’s test score in addition to any additional credits granted.",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 65,
+      "schema:maxValue": 130,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "100"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 51802
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "70"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 21057
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "90"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 17362
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "85"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 17169
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "80"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15776
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "93"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 15622
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "88"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14755
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "91"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14072
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "94"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13816
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "95"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13784
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "89"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13231
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "84"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13139
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "78"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 12957
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "86"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 12357
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "83"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 12200
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "75"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 11941
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "82"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 10705
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "76"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 10558
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "96"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9929
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "81"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9640
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#list_title_code",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "List Title Code",
+      "schema:alternateName": [
+        "list_title_code"
+      ],
+      "schema:description": "A five (5) digit number that corresponds to and represents a civil service title.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "70210"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 42376
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "91207"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 40081
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "70112"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 31309
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "70310"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 22506
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "91211"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14263
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "70410"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 11777
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10260"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9452
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "90744"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9170
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "71012"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7966
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "60817"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7692
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10124"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7082
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10025"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 6359
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "91203"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 5772
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "53052"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 5364
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "70235"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4410
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "71651"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3740
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "10251"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3731
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "56314"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3475
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "12749"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3389
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "91724"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3227
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#list_title_desc",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "List Title Desc",
+      "schema:alternateName": [
+        "list_title_desc"
+      ],
+      "schema:description": "A descriptive name that identifies a civil service title.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "POLICE OFFICER"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 42376
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "CONDUCTOR"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 40081
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "SANITATION WORKER"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 31309
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "FIREFIGHTER"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 22506
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "TRAIN OPERATOR"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 14263
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "CORRECTION OFFICER"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 11777
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "CALL CENTER REPRESENTATIVE"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9452
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "TRACK WORKER"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9170
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "POLICE COMMUNICATIONS TECHNICIAN"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7966
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "SCHOOL SAFETY AGENT"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7692
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "PRINCIPAL ADMINISTRATIVE ASSOCIATE"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7082
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "ADMINISTRATIVE MANAGER"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 6359
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "BUS OPERATOR"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 5772
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "EMERGENCY MEDICAL SPECIALIST TRAINEE"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 5364
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "SERGEANT (POLICE)"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4410
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "TRAFFIC ENFORCEMENT AGENT"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3740
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "CLERICAL ASSOCIATE"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3731
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "BENEFITS OPPORTUNITY SPECIALIST"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3475
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "STAFF ANALYST TRAINEE"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3389
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "TRANSIT ELECTRICAL HELPER"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3227
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#group_no",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Group No",
+      "schema:alternateName": [
+        "group_no"
+      ],
+      "schema:description": "Represents the certification order for a list. (e.g. – eligible candidates on a list with a 01 group number may be considered for appointment before an eligible candidate on primary list with a 00 group number).",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 405933
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "001"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2453
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#list_agency_code",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "List Agency Code",
+      "schema:alternateName": [
+        "list_agency_code"
+      ],
+      "schema:description": "A three (3) digit number used to identify an agency (For Promotion List Only).",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 360650
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "998"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 11733
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "056"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9080
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "057"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 8581
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "069"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2723
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "996"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2504
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "827"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2130
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "841"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1707
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "067"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1298
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "826"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1244
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "072"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1134
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "846"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 952
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "816"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 762
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "040"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 691
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "836"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 422
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "868"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 340
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "806"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 318
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "858"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 297
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "781"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 288
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "071"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 282
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#list_agency_desc",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "List Agency Desc",
+      "schema:alternateName": [
+        "list_agency_desc"
+      ],
+      "schema:description": "The name of an appointing Agency.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "OPEN COMPETITIVE"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 359104
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "N.Y.C. TRANSIT AUTHORITY"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 11732
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "POLICE DEPARTMENT"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9080
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "FIRE DEPARTMENT"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 8567
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "HRA/DEPARTMENT OF SOCIAL SERVICES"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2719
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "N.Y.C. HOUSING AUTHORITY"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2504
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF SANITATION"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2128
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF TRANSPORTATION"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1705
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "ADMINISTRATION FOR CHILDREN'S SERVICES"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1297
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF ENVIRONMENTAL PROTECTION"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1243
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF CORRECTION"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1134
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF PARKS & RECREATION"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 951
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF HEALTH AND MENTAL HYGIENE"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 762
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF EDUCATION"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 688
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF FINANCE"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 422
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF CITYWIDE ADMINISTRATIVE SERVICES"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 340
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "HOUSING PRESERVATION & DEVELOPMENT"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 318
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF INFORMATION TECHNOLOGY AND TELECOMMUNICATIONS"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 294
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF PROBATION"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 288
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "DEPARTMENT OF HOMELESS SERVICES"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 282
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#list_div_code",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "List Div Code",
+      "schema:alternateName": [
+        "list_div_code"
+      ],
+      "schema:description": "The promotional division codes/descriptions within the New York City Transit Authority only.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#published_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Published Date",
+      "schema:alternateName": [
+        "published_date"
+      ],
+      "schema:description": "The date on which an eligible list is made available for review by the general public and appointing agencies.",
+      "cdif:physicalDataType": "xsd:dateTime",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 124414,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 283972,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2023-07-12T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 33951
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2026-05-06T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7697
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2022-07-06T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 5148
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2023-05-10T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4410
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2022-03-09T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4354
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-11-26T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3645
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2023-09-06T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2692
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2022-02-23T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2611
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-05-28T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2569
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-04-09T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2482
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2022-05-18T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1831
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2024-11-06T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1819
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2022-06-29T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1804
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-10-01T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1774
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-06-25T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1746
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2023-12-13T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1656
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2021-12-29T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1593
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2023-02-22T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1587
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2024-05-15T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1584
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2024-11-13T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1477
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#established_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Established Date",
+      "schema:alternateName": [
+        "established_date"
+      ],
+      "schema:description": "The date on which an eligible list is made available for certification to agencies to consider an eligible candidate for appointment.",
+      "cdif:physicalDataType": "xsd:dateTime",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 375134,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 33252,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2018-02-14T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 31856
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2024-02-28T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 31309
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2026-01-21T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 20723
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2018-09-19T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13020
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2020-01-08T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9170
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-04-23T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 8775
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-04-09T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 6744
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2022-09-28T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4726
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-08-13T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4722
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2023-05-24T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4620
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2023-07-12T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4474
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-02-19T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4452
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2022-03-30T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4354
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-12-24T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3930
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-02-12T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3766
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2025-04-30T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3757
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2024-01-10T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3629
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2024-04-10T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3596
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2024-06-12T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3560
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2023-12-27T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3531
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#anniversary_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Anniversary Date",
+      "schema:alternateName": [
+        "anniversary_date"
+      ],
+      "schema:description": "The date on which an eligible list is scheduled to expire.",
+      "cdif:physicalDataType": "xsd:dateTime",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 375134,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 33252,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2022-02-14T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 31856
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2028-02-28T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 31309
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2030-01-21T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 20723
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2022-09-19T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13020
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2024-01-08T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9170
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2029-04-23T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 8775
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2029-04-09T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 6744
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2026-09-28T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4726
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2029-08-13T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4722
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-05-24T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4620
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-07-12T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4473
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2029-02-19T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4452
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2026-03-30T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4354
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2029-12-24T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3843
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2029-02-12T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3766
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2029-04-30T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3757
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2028-01-10T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3629
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2028-04-10T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3596
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2028-06-12T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3560
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-12-27T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3531
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#extension_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Extension Date",
+      "schema:alternateName": [
+        "extension_date"
+      ],
+      "schema:description": "The date on which a list will be extended beyond its original expiration date.",
+      "cdif:physicalDataType": "xsd:dateTime",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 92070,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 316316,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-02-14T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 31856
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-09-19T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 13020
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-01-08T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 9170
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-09-28T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4554
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-03-30T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 4354
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-02-23T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3361
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-07-06T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 3259
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-01-12T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2728
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-03-23T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2457
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-07-20T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2430
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-03-31T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1954
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-08-17T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1805
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-05-18T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1620
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-04-13T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1129
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-03-21T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1000
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-05-23T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 721
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-08-04T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 721
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-06-16T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 671
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-06-20T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 638
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "2027-01-20T00:00:00.000"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 605
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#veteran_credit",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Veteran Credit",
+      "schema:alternateName": [
+        "veteran_credit"
+      ],
+      "schema:description": "An additional credit given to a Veteran (5 points) or disabled veteran (10 points) when s/he accepts a permanent position from an eligible list.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 9255,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 399131,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Veteran's Credit"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 7201
+                  }
+                ]
+              },
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Disabled Veteran's Credit"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 2054
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#parent_lgy_credit",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Parent Lgy Credit",
+      "schema:alternateName": [
+        "parent_lgy_credit"
+      ],
+      "schema:description": "A “Parent Legacy credit” is an additional credit given on an exam (10 points) to a candidate who lost a parent (FDNY, NYPD, or a First Responder, during or as a result of 911).",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 1443,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 406943,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Parent Legacy Credit"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 1442
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#sibling_lgy_credit",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Sibling Lgy Credit",
+      "schema:alternateName": [
+        "sibling_lgy_credit"
+      ],
+      "schema:description": "A “Sibling Legacy Credit” is additional credit given on an exam (10 points) to a candidate who lost a sibling (FDNY, NYPD, or a First Responder, during or as a result of 911).",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 634,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 407752,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Sibling Legacy Credit"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 634
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#residency_credit",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Residency Credit",
+      "schema:alternateName": [
+        "residency_credit"
+      ],
+      "schema:description": "An additional credit given on an exam to a candidate who maintains a continuous period of residency in New York City as described in the Notice of Examination for a specific title.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 69516,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 338870,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ],
+            "cdif:has_CategoryStatistics": [
+              {
+                "@type": [
+                  "cdi:CategoryStatistics"
+                ],
+                "cdi:for": {
+                  "@type": [
+                    "cdi:Category"
+                  ],
+                  "cdif:name": "Residency Credit"
+                },
+                "cdif:typeOfStatistic": "count",
+                "cdi:statistic": [
+                  {
+                    "cdi:content": 69516
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 408386
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "cdif:statistics": [
+    {
+      "@type": [
+        "cdi:Statistics"
+      ],
+      "cdif:typeOfStatistic": "row count",
+      "cdi:statistic": [
+        {
+          "cdi:content": 408386
+        }
+      ]
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "cdi:TabularTextDataSet"
+      ],
+      "schema:name": "CSV export",
+      "schema:contentUrl": "https://data.cityofnewyork.us/api/views/vx8i-nprf/rows.csv?accessType=DOWNLOAD",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "cdi:isDelimited": true,
+      "csvw:delimiter": ",",
+      "csvw:quoteChar": "\"",
+      "csvw:headerRowCount": 1,
+      "cdif:hasPhysicalMapping": [
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 0,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#exam_no"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 1,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#list_no"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 2,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#first_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 3,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#mi"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 4,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#last_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 5,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#adj_fa"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 6,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#list_title_code"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 7,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#list_title_desc"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 8,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#group_no"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 9,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#list_agency_code"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 10,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#list_agency_desc"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 11,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#list_div_code"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 12,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#published_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 13,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#established_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 14,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#anniversary_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 15,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#extension_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 16,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#veteran_credit"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 17,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#parent_lgy_credit"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 18,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#sibling_lgy_credit"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 19,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#residency_credit"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Socrata Open Data API (SODA) endpoint",
+      "schema:serviceType": "Socrata Open Data API (SODA)",
+      "schema:termsOfService": "not specified",
+      "schema:documentation": "https://dev.socrata.com/foundry/data.cityofnewyork.us/vx8i-nprf",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:name": "Query rows",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:description": "Columns are named by their API field name (the alternate name of each variable). Results are paged.",
+            "schema:urlTemplate": "https://data.cityofnewyork.us/resource/vx8i-nprf.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
+            "schema:httpMethod": [
+              "GET"
+            ],
+            "schema:contentType": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          },
+          "schema:query-input": [
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "format",
+              "schema:description": "The response format: json, csv or geojson.",
+              "schema:valueRequired": true,
+              "schema:valuePattern": "json|csv|geojson"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "select",
+              "schema:description": "SoQL $select: the columns to return, by API field name. Empty for all.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "where",
+              "schema:description": "SoQL $where: a filter on the rows. Empty for none.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "order",
+              "schema:description": "SoQL $order: the column(s) to sort by. Empty for the default order.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "limit",
+              "schema:description": "The number of rows to return. The endpoint returns 1000 when it is not given.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "offset",
+              "schema:description": "The number of rows to skip, for paging.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "candidate who passed an exam"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Update: Automation",
+      "schema:value": "Yes"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Update: Date Made Public",
+      "schema:value": "7/12/2016"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Update: Update Frequency",
+      "schema:value": "Daily"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Update: Data Change Frequency",
+      "schema:value": "Daily"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Dataset Information: Agency",
+      "schema:value": "Department of Citywide Administrative Services (DCAS)"
+    }
+  ],
+  "schema:url": "https://data.cityofnewyork.us/d/vx8i-nprf",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://data.cityofnewyork.us/d/vx8i-nprf#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: Civil Service List (Active)",
+    "schema:about": {
+      "@id": "https://data.cityofnewyork.us/d/vx8i-nprf"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.cityofnewyork.us/api/views/vx8i-nprf.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2026-11-24T14:01:58Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "NYC OpenData",
+      "schema:identifier": "5fuc-pqz2"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "NYC Open Data",
+      "schema:url": "https://data.cityofnewyork.us/"
+    }
+  }
+}

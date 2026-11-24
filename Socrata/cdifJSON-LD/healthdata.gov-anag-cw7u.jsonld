@@ -1,0 +1,2909 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/",
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@id": "https://healthdata.gov/d/anag-cw7u",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "COVID-19 Reported Patient Impact and Hospital Capacity by Facility",
+  "schema:description": "After May 3, 2024, this dataset and webpage will no longer be updated because hospitals are no longer required to report data on COVID-19 hospital admissions, and hospital capacity and occupancy data, to HHS through CDC’s National Healthcare Safety Network. Data voluntarily reported to NHSN after May 1, 2024, will be available starting May 10, 2024, at COVID Data Tracker Hospitalizations.\n\nThe following dataset provides facility-level data for hospital utilization aggregated on a weekly basis (Sunday to Saturday). These are derived from reports with facility-level granularity across two main sources: (1) HHS TeleTracking, and (2) reporting provided directly to HHS Protect by state/territorial health departments on behalf of their healthcare facilities.\n\nThe hospital population includes all hospitals registered with Centers for Medicare & Medicaid Services (CMS) as of June 1, 2020. It includes non-CMS hospitals that have reported since July 15, 2020. It does not include psychiatric, rehabilitation, Indian Health Service (IHS) facilities, U.S. Department of Veterans Affairs (VA) facilities, Defense Health Agency (DHA) facilities, and religious non-medical facilities.\n\nFor a given entry, the term “collection_week” signifies the start of the period that is aggregated. For example, a “collection_week” of 2020-11-15 means the average/sum/coverage of the elements captured from that given facility starting and including Sunday, November 15, 2020, and ending and including reports for Saturday, November 21, 2020.\n\nReported elements include an append of either “_coverage”, “_sum”, or “_avg”.\n\nA “_coverage” append denotes how many times the facility reported that element during that collection week.\n\nA “_sum” append denotes the sum of the reports provided for that facility for that element during that collection week.\n\nA “_avg” append is the average of the reports provided for that facility for that element during that collection week.\n\nThe file will be updated weekly. No statistical analysis is applied to impute non-response. For averages, calculations are based on the number of values collected for a given hospital in that collection week. Suppression is applied to the file for sums and averages less than four (4). In these cases, the field will be replaced with “-999,999”. \n\n A story page was created to display both corrected and raw datasets and can be accessed at this link: https://healthdata.gov/stories/s/nhgk-5gpv \n\nThis data is preliminary and subject to change as more data become available. Data is available starting on July 31, 2020.\n\nSometimes, reports for a given facility will be provided to both HHS TeleTracking and HHS Protect. When this occurs, to ensure that there are not duplicate reports, deduplication is applied according to prioritization rules within HHS Protect.\n\nFor influenza fields listed in the file, the current HHS guidance marks these fields as optional. As a result, coverage of these elements are varied.\n\nFor recent updates to the dataset, scroll to the bottom of the dataset description.\n\nOn May 3, 2021, the following fields have been added to this data set.\nhhs_ids\nprevious_day_admission_adult_covid_confirmed_7_day_coverage\nprevious_day_admission_pediatric_covid_confirmed_7_day_coverage\nprevious_day_admission_adult_covid_suspected_7_day_coverage\nprevious_day_admission_pediatric_covid_suspected_7_day_coverage\nprevious_week_personnel_covid_vaccinated_doses_administered_7_day_sum\ntotal_personnel_covid_vaccinated_doses_none_7_day_sum\ntotal_personnel_covid_vaccinated_doses_one_7_day_sum\ntotal_personnel_covid_vaccinated_doses_all_7_day_sum\nprevious_week_patients_covid_vaccinated_doses_one_7_day_sum\nprevious_week_patients_covid_vaccinated_doses_all_7_day_sum\n\nOn May 8, 2021, this data set has been converted to a corrected data set.  The corrections applied to this data set are to smooth out data anomalies caused by keyed in data errors.  To help determine which records have had corrections made to it.  An additional Boolean field called is_corrected has been added.  \n\nOn May 13, 2021 Changed vaccination fields from sum to max or min fields. This reflects the maximum or minimum number reported for that metric in a given week.\n\nOn June 7, 2021 Changed vaccination fields from max or min fields to Wednesday reported only. This reflects that the number reported for that metric is only reported on Wednesdays in a given week.\n\nOn September 20, 2021, the following has been updated:  The use of analytic dataset as a source.\n\nOn January 19, 2022, the following fields have been added to this dataset: \n\ninpatient_beds_used_covid_7_day_avg\ninpatient_beds_used_covid_7_day_sum\ninpatient_beds_used_covid_7_day_coverage\n\nOn April 28, 2022, the following pediatric fields have been added to this dataset: \n\nall_pediatric_inpatient_bed_occupied_7_day_avg\nall_pediatric_inpatient_bed_occupied_7_day_coverage\nall_pediatric_inpatient_bed_occupied_7_day_sum\nall_pediatric_inpatient_beds_7_day_avg\nall_pediatric_inpatient_beds_7_day_coverage\nall_pediatric_inpatient_beds_7_day_sum\nprevious_day_admission_pediatric_covid_confirmed_0_4_7_day_sum\nprevious_day_admission_pediatric_covid_confirmed_12_17_7_day_sum\nprevious_day_admission_pediatric_covid_confirmed_5_11_7_day_sum\nprevious_day_admission_pediatric_covid_confirmed_unknown_7_day_sum\nstaffed_icu_pediatric_patients_confirmed_covid_7_day_avg\nstaffed_icu_pediatric_patients_confirmed_covid_7_day_coverage\nstaffed_icu_pediatric_patients_confirmed_covid_7_day_sum\nstaffed_pediatric_icu_bed_occupancy_7_day_avg\nstaffed_pediatric_icu_bed_occupancy_7_day_coverage\nstaffed_pediatric_icu_bed_occupancy_7_day_sum\ntotal_staffed_pediatric_icu_beds_7_day_avg\ntotal_staffed_pediatric_icu_beds_7_day_coverage\ntotal_staffed_pediatric_icu_beds_7_day_sum\n\nOn October 24, 2022, the data includes more analytical calculations in efforts to provide a cleaner dataset. For a raw version of this dataset, please follow this link: https://healthdata.gov/Hospital/COVID-19-Reported-Patient-Impact-and-Hospital-Capa/uqq2-txqb\n\nDue to changes in reporting requirements, after June 19, 2023, a collection week is defined as starting on a Sunday and ending on the next Saturday.",
+  "schema:identifier": "anag-cw7u",
+  "schema:keywords": [
+    "covid-19",
+    "hhs covid-19",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Hospital",
+      "schema:inDefinedTermSet": "healthdata.gov categories"
+    }
+  ],
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "https://www.usa.gov/government-works",
+      "schema:name": "Public Domain U.S. Government"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "U.S. Department of Health & Human Services"
+      },
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Office of Chief Data Officer (OCDO)",
+        "schema:identifier": "7rgq-62vg"
+      }
+    ]
+  },
+  "schema:publisher": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "U.S. Department of Health and Human Services"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "HealthData.gov Team",
+        "schema:email": "HealthData@hhs.gov"
+      }
+    }
+  ],
+  "schema:datePublished": "2022-05-02T15:25:07Z",
+  "schema:dateCreated": "2020-12-12T15:22:33Z",
+  "schema:dateModified": "2024-05-03T01:57:35Z",
+  "schema:variableMeasured": [
+    {
+      "@id": "#hospital_pk",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "hospital_pk",
+      "schema:description": "This unique key for the given hospital that will match the ccn column if it exists, otherwise, it is a derived unique key.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#collection_week",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "collection_week",
+      "schema:description": "This date indicates the start of the period of reporting (the starting Friday).",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "state",
+      "schema:description": "[FAQ - 1. d)] The two digit state/territory code for the hospital.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#ccn",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ccn",
+      "schema:description": "[FAQ - 1. b)] CMS Certification Number (CCN) of the given facility",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#hospital_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "hospital_name",
+      "schema:description": "[FAQ - 1. a)] The name of the facility reporting.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#address",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "address",
+      "schema:description": "The address of the facility reporting.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "city",
+      "schema:description": "The city of the facility reporting.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#zip",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "zip",
+      "schema:description": "The 5-digit zip code of the facility reporting.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#hospital_subtype",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "hospital_subtype",
+      "schema:description": "The sub-type of the facility reporting. Valid values are: Children's Hospitals, Critical Access Hospitals, Long Term, Psychiatric, Rehabilitation & Short Term. Some facilities are not designated with this field.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#fips_code",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "fips_code",
+      "schema:description": "The Federal Information Processing Standard (FIPS) code of the location of the hospital.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#is_metro_micro",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "is_metro_micro",
+      "schema:description": "This is based on whether the facility serves a Metropolitan or Micropolitan area. True if yes, and false if no.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#total_beds_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_beds_7_day_avg",
+      "schema:description": "[FAQ - 2. a)] Average of total number of all staffed inpatient and outpatient beds in the hospital, including all overflow, observation, and active surge/expansion beds used for inpatients and for outpatients (including all ICU, ED, and observation) reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_adult_hospital_beds_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_adult_hospital_beds_7_day_avg",
+      "schema:description": "[FAQ - 2. b)] Average of all staffed inpatient and outpatient adult beds in the hospital, including all overflow and active surge/expansion beds for inpatients and for outpatients (including all ICU, ED, and observation) reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_adult_hospital_inpatient_beds_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_adult_hospital_inpatient_beds_7_day_avg",
+      "schema:description": "[FAQ - 3. b)] Average of total number of staffed inpatient adult beds in the hospital including all overflow and active surge/expansion beds used for inpatients (including all designated ICU beds) reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#inpatient_beds_used_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "inpatient_beds_used_7_day_avg",
+      "schema:description": "[FAQ - 4. a)] Average of total number of staffed inpatient beds that are occupied reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_adult_hospital_inpatient_bed_occupied_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_adult_hospital_inpatient_bed_occupied_7_day_avg",
+      "schema:description": "[FAQ - 4. b)] Average of total number of staffed inpatient adult beds that are occupied reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#inpatient_beds_used_covid_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "inpatient_beds_used_covid_7_day_avg",
+      "schema:description": "Average of reported patients currently hospitalized in an inpatient bed who have suspected or confirmed COVID-19 reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg",
+      "schema:description": "[FAQ - 9. a)] Average number of patients currently hospitalized in an adult inpatient bed who have laboratory-confirmed or suspected COVID19, including those in observation beds reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_adult_patients_hospitalized_confirmed_covid_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_adult_patients_hospitalized_confirmed_covid_7_day_avg",
+      "schema:description": "[FAQ - 9. b)] Average number of patients currently hospitalized in an adult inpatient bed who have laboratory-confirmed COVID-19, including those in observation beds. This average includes patients who have both laboratory-confirmed COVID-19 and laboratory-confirmed influenza.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg",
+      "schema:description": "[FAQ - 10. a)] Average number of patients currently hospitalized in a pediatric inpatient bed, including NICU, PICU, newborn, and nursery, who are suspected or laboratory-confirmed-positive for COVID-19. This average includes those in observation beds reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_pediatric_patients_hospitalized_confirmed_covid_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_pediatric_patients_hospitalized_confirmed_covid_7_day_avg",
+      "schema:description": "[FAQ - 10. b)] Average number of patients currently hospitalized in a pediatric inpatient bed, including NICU, PICU, newborn, and nursery, who have laboratory-confirmed COVID-19. Including those in observation beds. Including patients who have both laboratory-confirmed COVID-19 and laboratory confirmed influenza in this field reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#inpatient_beds_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "inpatient_beds_7_day_avg",
+      "schema:description": "[FAQ - 3. a)] Average number of total number of staffed inpatient beds in your hospital including all overflow, observation, and active surge/expansion beds used for inpatients (including all ICU beds) reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_icu_beds_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_icu_beds_7_day_avg",
+      "schema:description": "[FAQ - 5. a)] Average number of total number of staffed inpatient ICU beds reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_staffed_adult_icu_beds_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_staffed_adult_icu_beds_7_day_avg",
+      "schema:description": "[FAQ - 5. b)] Average number of total number of staffed inpatient adult ICU beds reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#icu_beds_used_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "icu_beds_used_7_day_avg",
+      "schema:description": "[FAQ - 6. a)] Average number of total number of staffed inpatient ICU beds that are occupied reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_adult_icu_bed_occupancy_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_adult_icu_bed_occupancy_7_day_avg",
+      "schema:description": "[FAQ - 6. b)] Average of total number of staffed inpatient adult ICU beds that are occupied reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_avg",
+      "schema:description": "[FAQ - 12. a)] Average number of patients currently hospitalized in a designated adult ICU bed who have suspected or laboratory-confirmed COVID-19 reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_icu_adult_patients_confirmed_covid_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_icu_adult_patients_confirmed_covid_7_day_avg",
+      "schema:description": "[FAQ - 12. b)] Average number of patients currently hospitalized in a designated adult ICU bed who have laboratory-confirmed COVID-19. Including patients who have both laboratory-confirmed COVID-19 and laboratory-confirmed influenza in this field reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_patients_hospitalized_confirmed_influenza_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_patients_hospitalized_confirmed_influenza_7_day_avg",
+      "schema:description": "[FAQ - 33] Average number of patients (all ages) currently hospitalized in an inpatient bed who have laboratory-confirmed influenza. Including those in observation beds reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#icu_patients_confirmed_influenza_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "icu_patients_confirmed_influenza_7_day_avg",
+      "schema:description": "[FAQ - 35] Average of patients (all ages) currently hospitalized in a designated ICU bed with laboratory-confirmed influenza in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_patients_hospitalized_confirmed_influenza_and_covid_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_patients_hospitalized_confirmed_influenza_and_covid_7_day_avg",
+      "schema:description": "[FAQ - 36] Average number of patients (all ages) currently hospitalized in an inpatient bed who have laboratory-confirmed COVID-19 and laboratory-confirmed influenza reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_beds_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_beds_7_day_sum",
+      "schema:description": "[FAQ - 2. a)] Sum of reports of total number of all staffed inpatient and outpatient beds in the hospital, including all overflow, observation, and active surge/expansion beds used for inpatients and for outpatients (including all ICU, ED, and observation) reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_adult_hospital_beds_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_adult_hospital_beds_7_day_sum",
+      "schema:description": "[FAQ - 2. b)] Sum of reports of all staffed inpatient and outpatient adult beds in the hospital, including all overflow and active surge/expansion beds for inpatients and for outpatients (including all ICU, ED, and observation) reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_adult_hospital_inpatient_beds_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_adult_hospital_inpatient_beds_7_day_sum",
+      "schema:description": "[FAQ - 3. b)] Sum of reports of all staffed inpatient and outpatient adult beds in the hospital, including all overflow and active surge/expansion beds for inpatients and for outpatients (including all ICU, ED, and observation) reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#inpatient_beds_used_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "inpatient_beds_used_7_day_sum",
+      "schema:description": "[FAQ - 4. a)] Sum of reports of total number of staffed inpatient beds that are occupied reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_adult_hospital_inpatient_bed_occupied_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_adult_hospital_inpatient_bed_occupied_7_day_sum",
+      "schema:description": "[FAQ - 4. b)] Sum of reports of total number of staffed inpatient adult beds that are occupied reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#inpatient_beds_used_covid_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "inpatient_beds_used_covid_7_day_sum",
+      "schema:description": "Sum of reported patients currently hospitalized in an inpatient bed who have suspected or confirmed COVID-19 reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_sum",
+      "schema:description": "[FAQ - 9. a)] Sum of reports of patients currently hospitalized in an adult inpatient bed who have laboratory-confirmed or suspected COVID19. Including those in observation beds reported during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_adult_patients_hospitalized_confirmed_covid_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_adult_patients_hospitalized_confirmed_covid_7_day_sum",
+      "schema:description": "[FAQ - 9. b)] Sum of reports of patients currently hospitalized in an adult inpatient bed who have laboratory-confirmed COVID-19. Including those in observation beds. Including patients who have both laboratory-confirmed COVID-19 and laboratory confirmed influenza in this field during the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_sum",
+      "schema:description": "[FAQ - 10. a)] Sum of reports of patients currently hospitalized in a pediatric inpatient bed, including NICU, PICU, newborn, and nursery, who are suspected or laboratory-confirmed-positive for COVID-19. Including those in observation beds reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_pediatric_patients_hospitalized_confirmed_covid_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_pediatric_patients_hospitalized_confirmed_covid_7_day_sum",
+      "schema:description": "[FAQ - 10. b)] Sum of reports of patients currently hospitalized in a pediatric inpatient bed, including NICU, PICU, newborn, and nursery, who have laboratory-confirmed COVID-19. Including those in observation beds. Including patients who have both laboratory-confirmed COVID-19 and laboratory confirmed influenza in this field reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#inpatient_beds_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "inpatient_beds_7_day_sum",
+      "schema:description": "[FAQ - 3. a)] Sum of reports of total number of staffed inpatient beds in your hospital including all overflow, observation, and active surge/expansion beds used for inpatients (including all ICU beds) reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_icu_beds_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_icu_beds_7_day_sum",
+      "schema:description": "[FAQ - 5. a)] Sum of reports of total number of staffed inpatient ICU beds reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_staffed_adult_icu_beds_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_staffed_adult_icu_beds_7_day_sum",
+      "schema:description": "[FAQ - 5. b)] Sum of reports of total number of staffed inpatient adult ICU beds reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#icu_beds_used_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "icu_beds_used_7_day_sum",
+      "schema:description": "[FAQ - 6. a)] Sum of reports of total number of staffed inpatient ICU beds reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_adult_icu_bed_occupancy_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_adult_icu_bed_occupancy_7_day_sum",
+      "schema:description": "[FAQ - 6. b)] Sum of reports of total number of staffed inpatient adult ICU beds that are occupied reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_sum",
+      "schema:description": "[FAQ - 12. a)] Sum of reports of patients currently hospitalized in a designated adult ICU bed who have suspected or laboratory-confirmed COVID-19 reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_icu_adult_patients_confirmed_covid_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_icu_adult_patients_confirmed_covid_7_day_sum",
+      "schema:description": "[FAQ - 12. b)] Sum of reports of patients currently hospitalized in a designated adult ICU bed who have laboratory-confirmed COVID-19. Including patients who have both laboratory-confirmed COVID-19 and laboratory-confirmed influenza in this field reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_patients_hospitalized_confirmed_influenza_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_patients_hospitalized_confirmed_influenza_7_day_sum",
+      "schema:description": "[FAQ - 33] Sum of reports of patients (all ages) currently hospitalized in an inpatient bed who have laboratory-confirmed influenza. Including those in observation beds reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#icu_patients_confirmed_influenza_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "icu_patients_confirmed_influenza_7_day_sum",
+      "schema:description": "[FAQ - 35] Sum of reports of patients (all ages) currently hospitalized in a designated ICU bed with laboratory-confirmed influenza reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_patients_hospitalized_confirmed_influenza_and_covid_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_patients_hospitalized_confirmed_influenza_and_covid_7_day_sum",
+      "schema:description": "[FAQ - 36] Sum of reports of patients (all ages) currently hospitalized in an inpatient bed who have laboratory-confirmed COVID-19 and laboratory-confirmed influenza reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_beds_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_beds_7_day_coverage",
+      "schema:description": "[FAQ - 2. a)] Number of times in the 7 day period that the facility reported total number of all staffed inpatient and outpatient beds in your hospital, including all overflow, observation, and active surge/expansion beds used for inpatients and for outpatients (including all ICU, ED, and observation).",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_adult_hospital_beds_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_adult_hospital_beds_7_day_coverage",
+      "schema:description": "[FAQ - 2. b)] Number of times in the 7-day period that the facility reported total number of all staffed inpatient and outpatient adult beds in your hospital, including all overflow and active surge/expansion beds for inpatients and for outpatients (including all ICU, ED, and observation).",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_adult_hospital_inpatient_beds_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_adult_hospital_inpatient_beds_7_day_coverage",
+      "schema:description": "[FAQ - 3. b)] Number of times in the 7-day period that the facility reported total number of staffed inpatient adult beds in your hospital including all overflow and active surge/expansion beds used for inpatients (including all designated ICU beds).",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#inpatient_beds_used_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "inpatient_beds_used_7_day_coverage",
+      "schema:description": "[FAQ - 4. a)] Number of times in the 7-day period that the facility reported total number of staffed inpatient beds that are occupied.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_adult_hospital_inpatient_bed_occupied_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_adult_hospital_inpatient_bed_occupied_7_day_coverage",
+      "schema:description": "[FAQ - 4. b)] Number of times in the 7-day period that the facility reported total number of staffed inpatient adult beds that are occupied.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#inpatient_beds_used_covid_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "inpatient_beds_used_covid_7_day_coverage",
+      "schema:description": "Number of times in the 7-day period that the facility reported \"inpatient_beds_used_covid.\"",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_coverage",
+      "schema:description": "[FAQ - 9. a)] Number of times in the 7-day period that the facility reported patients currently hospitalized in an adult inpatient bed who have laboratory-confirmed or suspected COVID19. Including those in observation beds.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_adult_patients_hospitalized_confirmed_covid_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_adult_patients_hospitalized_confirmed_covid_7_day_coverage",
+      "schema:description": "[FAQ - 9. b)] Number of times in the 7-day period that the facility reported patients currently hospitalized in an adult inpatient bed who have laboratory-confirmed COVID-19. Including those in observation beds. Including patients who have both laboratory-confirmed COVID-19 and laboratory confirmed influenza in this field.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_coverage",
+      "schema:description": "[FAQ - 10. a)] Number of times in the 7-day period that the facility reported Patients currently hospitalized in a pediatric inpatient bed, including NICU, PICU, newborn, and nursery, who are suspected or laboratory-confirmed-positive for COVID-19. Including those in observation beds.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_pediatric_patients_hospitalized_confirmed_covid_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_pediatric_patients_hospitalized_confirmed_covid_7_day_coverage",
+      "schema:description": "[FAQ - 10. b)] Number of times in the 7-day period that the facility reported patients currently hospitalized in a pediatric inpatient bed, including NICU, PICU, newborn, and nursery, who have laboratory-confirmed COVID-19. Including those in observation beds. Including patients who have both laboratory-confirmed COVID-19 and laboratory confirmed influenza in this field.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#inpatient_beds_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "inpatient_beds_7_day_coverage",
+      "schema:description": "[FAQ - 3. a)] Number of times in the 7-day period that the facility reported total number of staffed inpatient beds in your hospital including all overflow, observation, and active surge/expansion beds used for inpatients (including all ICU beds).",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_icu_beds_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_icu_beds_7_day_coverage",
+      "schema:description": "[FAQ - 5. a)] Number of times in the 7-day period that the facility reported total number of staffed inpatient ICU beds.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_staffed_adult_icu_beds_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_staffed_adult_icu_beds_7_day_coverage",
+      "schema:description": "[FAQ - 5. b)] Number of times in the 7-day period that the facility reported total number of staffed inpatient adult ICU beds.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#icu_beds_used_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "icu_beds_used_7_day_coverage",
+      "schema:description": "[FAQ - 6. a)] Number of times in the 7-day period that the facility reported total number of staffed inpatient ICU beds.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_adult_icu_bed_occupancy_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_adult_icu_bed_occupancy_7_day_coverage",
+      "schema:description": "[FAQ - 6. b)] Number of times in the 7-day period that the facility reported total number of staffed inpatient adult ICU beds that are occupied.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_coverage",
+      "schema:description": "[FAQ - 12. a)] Number of times in the 7-day period that the facility reported patients currently hospitalized in a designated adult ICU bed who have suspected or laboratory-confirmed COVID-19.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_icu_adult_patients_confirmed_covid_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_icu_adult_patients_confirmed_covid_7_day_coverage",
+      "schema:description": "[FAQ - 12. b)] Number of times in the 7-day period that the facility reported patients currently hospitalized in a designated adult ICU bed who have laboratory-confirmed COVID-19. Including patients who have both laboratory-confirmed COVID-19 and laboratory-confirmed influenza in this field.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_patients_hospitalized_confirmed_influenza_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_patients_hospitalized_confirmed_influenza_7_day_coverage",
+      "schema:description": "[FAQ - 33] Number of times in the 7-day period that the facility reported patients (all ages) currently hospitalized in an inpatient bed who have laboratory-confirmed influenza. Including those in observation beds.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#icu_patients_confirmed_influenza_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "icu_patients_confirmed_influenza_7_day_coverage",
+      "schema:description": "[FAQ - 35] Number of times in the 7-day period that the facility reported patients (all ages) currently hospitalized in a designated ICU bed with laboratory-confirmed influenza.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_patients_hospitalized_confirmed_influenza_and_covid_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_patients_hospitalized_confirmed_influenza_and_covid_7_day_coverage",
+      "schema:description": "[FAQ - 36] Number of times in the 7-day period that the facility reported patients (all ages) currently hospitalized in an inpatient bed who have laboratory-confirmed COVID-19 and laboratory-confirmed influenza.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_7_day_sum",
+      "schema:description": "[FAQ - 17. a)] Sum of number of patients who were admitted to an adult inpatient bed on the previous calendar day who had confirmed COVID-19 at the time of admission reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_18_19_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_18-19_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_confirmed_18_19_7_day_sum"
+      ],
+      "schema:description": "[FAQ - 17. a1)] Sum of number of patients age 18-19 who were admitted to an adult inpatient bed on the previous calendar day who had confirmed COVID-19 at the time of admission reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_20_29_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_20-29_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_confirmed_20_29_7_day_sum"
+      ],
+      "schema:description": "[FAQ - 17. a2)] Sum of number of patients age 20-29 who were admitted to an adult inpatient bed on the previous calendar day who had confirmed COVID-19 at the time of admission reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_30_39_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_30-39_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_confirmed_30_39_7_day_sum"
+      ],
+      "schema:description": "[FAQ - 17. a3)] Sum of number of patients age 30-39 who were admitted to an adult inpatient bed on the previous calendar day who had confirmed COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_40_49_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_40-49_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_confirmed_40_49_7_day_sum"
+      ],
+      "schema:description": "[FAQ - 17. a4)] Sum of number of patients age 40-49 who were admitted to an adult inpatient bed on the previous calendar day who had confirmed COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_50",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_50-59_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_confirmed_50"
+      ],
+      "schema:description": "[FAQ - 17. a5)] Sum of number of patients age 50-59 who were admitted to an adult inpatient bed on the previous calendar day who had confirmed COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_60",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_60-69_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_confirmed_60"
+      ],
+      "schema:description": "[FAQ - 17. a6)] Sum of number of patients age 60-69 who were admitted to an adult inpatient bed on the previous calendar day who had confirmed COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_70",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_70-79_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_confirmed_70"
+      ],
+      "schema:description": "[FAQ - 17. a7)] Sum of number of patients age 70-79 who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_80",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_80+_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_confirmed_80"
+      ],
+      "schema:description": "[FAQ - 17. a8)] Sum of number of patients 80 or older who were admitted to an adult inpatient bed on the previous calendar day who had confirmed COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_unknown_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_unknown_7_day_sum",
+      "schema:description": "[FAQ - 17. a9)] Sum of number of patients age unknown who were admitted to an adult inpatient bed on the previous calendar day who had confirmed COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_pediatric_covid_confirmed_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_pediatric_covid_confirmed_7_day_sum",
+      "schema:description": "[FAQ - 18. a)] Sum of number of pediatric patients who were admitted to an inpatient bed, including NICU, PICU, newborn, and nursery, on the previous calendar day who had confirmed COVID-19 at the time of admission.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_covid_ed_visits_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_covid_ED_visits_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_covid_ed_visits_7_day_sum"
+      ],
+      "schema:description": "[FAQ - 20] Sum of total number of ED visits who were seen on the previous calendar day who had a visit related to COVID-19 (meets suspected or confirmed definition or presents for COVID diagnostic testing – do not count patients who present for pre-procedure screening) reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_7_day_sum",
+      "schema:description": "[FAQ - 17. b)] Sum of number of patients who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_18",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_18-19_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_suspected_18"
+      ],
+      "schema:description": "[FAQ - 17. b1)] Sum of number of patients age 18-19 who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_20",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_20-29_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_suspected_20"
+      ],
+      "schema:description": "[FAQ - 17. b2)] Sum of number of patients age 20-29 who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_30",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_30-39_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_suspected_30"
+      ],
+      "schema:description": "[FAQ - 17. b3)] Sum of number of patients age 30-39 who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_40",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_40-49_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_suspected_40"
+      ],
+      "schema:description": "[FAQ - 17. b4)] Sum of number of patients age 40-49 who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_50",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_50-59_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_suspected_50"
+      ],
+      "schema:description": "[FAQ - 17. b5)] Sum of number of patients age 50-59 who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_60",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_60-69_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_suspected_60"
+      ],
+      "schema:description": "[FAQ - 17. b6)] Sum of number of patients age 60-69 who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_70_79_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_70-79_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_suspected_70_79_7_day_sum"
+      ],
+      "schema:description": "[FAQ - 17. b7)] Sum of number of patients age 70-79 who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_80",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_80+_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_admission_adult_covid_suspected_80"
+      ],
+      "schema:description": "[FAQ - 17. b8)] Sum of number of patients 80 or older who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_unknown_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_unknown_7_day_sum",
+      "schema:description": "[FAQ - 17. b9)] Sum of number of patients age unknown who were admitted to an adult inpatient bed on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_pediatric_covid_suspected_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_pediatric_covid_suspected_7_day_sum",
+      "schema:description": "[FAQ - 18. b)] Sum of number of pediatrics patients who were admitted to an inpatient bed, including NICU, PICU, newborn, and nursery, on the previous calendar day who had suspected COVID-19 at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_total_ed_visits_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_total_ED_visits_7_day_sum",
+      "schema:alternateName": [
+        "previous_day_total_ed_visits_7_day_sum"
+      ],
+      "schema:description": "[FAQ - 19] Sum of total number of patient visits to the ED who were seen on the previous calendar day regardless of reason for visit. Including all patients who are triaged even if they leave before being seen by a provider reported in the 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_influenza_confirmed_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_influenza_confirmed_7_day_sum",
+      "schema:description": "[FAQ - 34] Sum of number of patients (all ages) who were admitted to an inpatient bed on the previous calendar day who had laboratory-confirmed influenza at the time of admission reported in 7-day period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#geocoded_hospital_address",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "geocoded_hospital_address",
+      "schema:description": "The geocoded latitude and longitude of the facility reporting.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#hhs_ids",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "hhs_ids",
+      "schema:description": "As a part of an effort to improve the granularity of spatial data, unique identifiers (named “HHS IDs” in the datasets) have been assigned to each individual facility. These unique identifiers are provided so data users can reference each individual “brick and mortar” facility that is reporting data to HHS, even in cases when multiple facilities report under the same CMS Certification Number (CCN). Additional datasets and further details related to HHS IDs will be released at a later date.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_confirmed_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_confirmed_7_day_coverage",
+      "schema:description": "[FAQ - 17a] Number of times in the 7 day period that the facility reported the number of patients admitted to adult inpatient bed on previous calendar day with confirmed COVID-19",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_pediatric_covid_confirmed_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_pediatric_covid_confirmed_7_day_coverage",
+      "schema:description": "[FAQ - 18a] Number of times in the 7 day period that the facility reported the number of pediatric patients admitted to an inpatient bed on previous calendar day with confirmed COVID-19",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_adult_covid_suspected_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_adult_covid_suspected_7_day_coverage",
+      "schema:description": "[FAQ - 17b] Number of times in the 7 day period that the facility reported the number of patients admitted to adult inpatient bed on previous calendar day with suspected COVID-19",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_pediatric_covid_suspected_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_pediatric_covid_suspected_7_day_coverage",
+      "schema:description": "[FAQ - 18b] Number of times in the 7 day period that the facility reported the number of pediatric patients admitted to inpatient bed on previous calendar day with suspected COVID-19",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_week_personnel_covid_vaccinated_doses_administered_7_day",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_week_personnel_covid_vaccinated_doses_administered_7_day",
+      "schema:description": "[FAQ - 41] The number reported of COVID-19 vaccination doses administered in the previous week regardless of whether it is a first or second dose in a series. (Collected on Wednesdays only)",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_personnel_covid_vaccinated_doses_none_7_day",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_personnel_covid_vaccinated_doses_none_7_day",
+      "schema:description": "[FAQ - 42] The number reported of healthcare personnel who have not yet received a single vaccine dose. (Collected on Wednesdays only)",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_personnel_covid_vaccinated_doses_one_7_day",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_personnel_covid_vaccinated_doses_one_7_day",
+      "schema:description": "[FAQ - 43] The current number reported of healthcare personnel who have received at least one dose of COVID-19 vaccination that is administered in a multi-dose series. This field is meant to represent those who have begun but not completed the vaccination process. Does not include those who received a single-dose vaccine in this field. (Collected on Wednesdays only)",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_personnel_covid_vaccinated_doses_all_7_day",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_personnel_covid_vaccinated_doses_all_7_day",
+      "schema:description": "[FAQ - 44] The current number reported of healthcare personnel who have received a complete series of a COVID-19vaccination.Includes those who have received all doses in a multi-dose series as well as those who received a single-dose vaccine. (Collected on Wednesdays only)",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_week_patients_covid_vaccinated_doses_one_7_day",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_week_patients_covid_vaccinated_doses_one_7_day",
+      "schema:description": "[FAQ - 46] The number reported of patients who received the first dose of a COVID-19 vaccine that is administered in a multi-dose series. (Collected on Wednesdays only)",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_week_patients_covid_vaccinated_doses_all_7_day",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_week_patients_covid_vaccinated_doses_all_7_day",
+      "schema:description": "[FAQ - 47] The number reported of patients who received the final dose in a COVID-19 vaccination series. (Collected on Wednesdays only)",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#is_corrected",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "is_corrected",
+      "schema:description": "If a fields has been altered from it's submitted form to smooth out data anomalies, this flag will be set to true",
+      "cdif:physicalDataType": "xsd:boolean"
+    },
+    {
+      "@id": "#all_pediatric_inpatient_bed_occupied_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_pediatric_inpatient_bed_occupied_7_day_avg",
+      "schema:description": "Average number of set-up and staffed inpatient pediatric beds that are occupied by a patient. Includes both PICU and med-surge beds (beds in which medical or surgical pediatric patients may be routinely placed). Include any occupied surge/hallway/overflow beds that are open for use. This count excludes NICU, newborn nursery, and outpatient surgery beds. This is a subset of #4a, and reflects occupancy levels for beds reported in #3c. This field is required as of 2/2/2022.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_pediatric_inpatient_bed_occupied_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_pediatric_inpatient_bed_occupied_7_day_coverage",
+      "schema:description": "Total number of set-up and staffed inpatient pediatric beds that are occupied by a patient (coverage). Includes both PICU and med-surge beds (beds in which medical or surgical pediatric patients may be routinely placed). Include any occupied surge/hallway/overflow beds that are open for use. This count excludes NICU, newborn nursery, and outpatient surgery beds. This is a subset of #4a, and reflects occupancy levels for beds reported in #3c. This field is required as of 2/2/2022.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_pediatric_inpatient_bed_occupied_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_pediatric_inpatient_bed_occupied_7_day_sum",
+      "schema:description": "Sum of set-up and staffed inpatient pediatric beds that are occupied by a patient. Includes both PICU and med-surge beds (beds in which medical or surgical pediatric patients may be routinely placed). Include any occupied surge/hallway/overflow beds that are open for use. This count excludes NICU, newborn nursery, and outpatient surgery beds. This is a subset of #4a, and reflects occupancy levels for beds reported in #3c. This field is required as of 2/2/2022.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_pediatric_inpatient_beds_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_pediatric_inpatient_beds_7_day_avg",
+      "schema:description": "Average number of pediatric beds in the facility that are currently set-up, staffed and able to be used for a patient within the reporting period (coverage). This count includes occupied and unoccupied inpatient pediatric beds including both PICU and med-surge beds (beds in which medical or surgical pediatric patients may be routinely placed). Include any surge/hallway/overflow beds that are open for use for a patient, regardless of whether they are occupied or available. This count excludes NICU, newborn nursery beds, and outpatient surgery beds. This is a subset of #3a. This field is required as of 2/2/2022.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_pediatric_inpatient_beds_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_pediatric_inpatient_beds_7_day_coverage",
+      "schema:description": "Total number of pediatric beds in the facility that are currently set-up, staffed and able to be used for a patient within the reporting period (coverage). This count includes occupied and unoccupied inpatient pediatric beds including both PICU and med-surge beds (beds in which medical or surgical pediatric patients may be routinely placed). Include any surge/hallway/overflow beds that are open for use for a patient, regardless of whether they are occupied or available. This count excludes NICU, newborn nursery beds, and outpatient surgery beds. This is a subset of #3a. This field is required as of 2/2/2022.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#all_pediatric_inpatient_beds_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "all_pediatric_inpatient_beds_7_day_sum",
+      "schema:description": "Sum of pediatric beds in the facility that are currently set-up, staffed and able to be used for a patient within the reporting period (coverage). This count includes occupied and unoccupied inpatient pediatric beds including both PICU and med-surge beds (beds in which medical or surgical pediatric patients may be routinely placed). Include any surge/hallway/overflow beds that are open for use for a patient, regardless of whether they are occupied or available. This count excludes NICU, newborn nursery beds, and outpatient surgery beds. This is a subset of #3a. This field is required as of 2/2/2022.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_pediatric_covid_confirmed_0_4_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_pediatric_covid_confirmed_0_4_7_day_sum",
+      "schema:description": "Sum of patients, by age group, who were admitted to an inpatient or ICU bed on the previous calendar day who had laboratory-confirmed COVID19 at the time of admission. The summary of age breakdowns should be identical to #18a. This includes patients ages 0-4, 5-11, and 12-17 years old admitted to any inpatient bed, regardless of whether the bed is designated as pediatric vs. adult. This field is required as of 2/2/2022. See Appendix D for the definition of laboratory-confirmed COVID-19.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_pediatric_covid_confirmed_12_17_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_pediatric_covid_confirmed_12_17_7_day_sum",
+      "schema:description": "Sum of patients, by age group, who were admitted to an inpatient or ICU bed on the previous calendar day who had laboratory-confirmed COVID19 at the time of admission. The summary of age breakdowns should be identical to #18a. This includes patients ages 0-4, 5-11, and 12-17 years old admitted to any inpatient bed, regardless of whether the bed is designated as pediatric vs. adult. This field is required as of 2/2/2022. See Appendix D for the definition of laboratory-confirmed COVID-19.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_pediatric_covid_confirmed_5_11_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_pediatric_covid_confirmed_5_11_7_day_sum",
+      "schema:description": "Sum of patients, by age group, who were admitted to an inpatient or ICU bed on the previous calendar day who had laboratory-confirmed COVID19 at the time of admission. The summary of age breakdowns should be identical to #18a. This includes patients ages 0-4, 5-11, and 12-17 years old admitted to any inpatient bed, regardless of whether the bed is designated as pediatric vs. adult. This field is required as of 2/2/2022. See Appendix D for the definition of laboratory-confirmed COVID-19.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#previous_day_admission_pediatric_covid_confirmed_unknown_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "previous_day_admission_pediatric_covid_confirmed_unknown_7_day_sum",
+      "schema:description": "Sum of patients, by age group, who were admitted to an inpatient or ICU bed on the previous calendar day who had laboratory-confirmed COVID19 at the time of admission. The summary of age breakdowns should be identical to #18a. This includes patients ages 0-4, 5-11, and 12-17 years old admitted to any inpatient bed, regardless of whether the bed is designated as pediatric vs. adult. This field is required as of 2/2/2022. See Appendix D for the definition of laboratory-confirmed COVID-19.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_icu_pediatric_patients_confirmed_covid_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_icu_pediatric_patients_confirmed_covid_7_day_avg",
+      "schema:description": "Average number of pediatric ICU beds occupied by laboratory confirmed positive COVID-19 patients. This is a subset of #6c, occupied pediatric ICU beds. This count excludes NICU, newborn nursery, and outpatient surgery beds. This field is required as of 2/2/2022. See Appendix D for the definition of laboratory-confirmed COVID-19.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_icu_pediatric_patients_confirmed_covid_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_icu_pediatric_patients_confirmed_covid_7_day_coverage",
+      "schema:description": "Total number of pediatric ICU beds occupied by laboratory confirmed positive COVID-19 patients (coverage). This is a subset of #6c, occupied pediatric ICU beds. This count excludes NICU, newborn nursery, and outpatient surgery beds. This field is required as of 2/2/2022. See Appendix D for the definition of laboratory-confirmed COVID-19.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_icu_pediatric_patients_confirmed_covid_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_icu_pediatric_patients_confirmed_covid_7_day_sum",
+      "schema:description": "Sum of pediatric ICU beds occupied by laboratory confirmed positive COVID-19 patients. This is a subset of #6c, occupied pediatric ICU beds. This count excludes NICU, newborn nursery, and outpatient surgery beds. This field is required as of 2/2/2022. See Appendix D for the definition of laboratory-confirmed COVID-19.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_pediatric_icu_bed_occupancy_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_pediatric_icu_bed_occupancy_7_day_avg",
+      "schema:description": "Average of set-up and staffed pediatric ICU beds occupied by a patient. This count excludes NICU, newborn nursery, and outpatient surgery beds. This is subset of #4c and #6a. This field is required as of 2/2/2022. Note: All occupied pediatric ICU beds should be considered, regardless of the unit on which the bed is housed. This includes ICU beds located in non-ICU locations, such as mixed acuity units.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_pediatric_icu_bed_occupancy_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_pediatric_icu_bed_occupancy_7_day_coverage",
+      "schema:description": "Total number of set-up and staffed pediatric ICU beds occupied by a patient (coverage). This count excludes NICU, newborn nursery, and outpatient surgery beds. This is subset of #4c and #6a. This field is required as of 2/2/2022. Note: All occupied pediatric ICU beds should be considered, regardless of the unit on which the bed is housed. This includes ICU beds located in non-ICU locations, such as mixed acuity units.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#staffed_pediatric_icu_bed_occupancy_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "staffed_pediatric_icu_bed_occupancy_7_day_sum",
+      "schema:description": "Sum of set-up and staffed pediatric ICU beds occupied by a patient. This count excludes NICU, newborn nursery, and outpatient surgery beds. This is subset of #4c and #6a. This field is required as of 2/2/2022. Note: All occupied pediatric ICU beds should be considered, regardless of the unit on which the bed is housed. This includes ICU beds located in non-ICU locations, such as mixed acuity units.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_staffed_pediatric_icu_beds_7_day_avg",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_staffed_pediatric_icu_beds_7_day_avg",
+      "schema:description": "Average number of pediatric ICU beds in the facility that are currently set-up, staffed and are or could be used for a patient within the reporting period. This count includes occupied and unoccupied ICU beds, including any ICU beds that are, or could be, staffed and used for a pediatric patient. This count excludes NICU, newborn nursery, and outpatient surgery beds. This is a subset of #3c and #5a. Any beds counted in #5c should NOT be counted in #5b. This field is required as of 2/2/2022. Note: All pediatric ICU beds should be considered, regardless of the unit on which the bed is housed. This includes ICU beds located in non-ICU locations, such as mixed acuity units.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_staffed_pediatric_icu_beds_7_day_coverage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_staffed_pediatric_icu_beds_7_day_coverage",
+      "schema:description": "Total number of pediatric ICU beds in the facility that are currently set-up, staffed and are or could be used for a patient within the reporting period (coverage). This count includes occupied and unoccupied ICU beds, including any ICU beds that are, or could be, staffed and used for a pediatric patient. This count excludes NICU, newborn nursery, and outpatient surgery beds. This is a subset of #3c and #5a. Any beds counted in #5c should NOT be counted in #5b. This field is required as of 2/2/2022. Note: All pediatric ICU beds should be considered, regardless of the unit on which the bed is housed. This includes ICU beds located in non-ICU locations, such as mixed acuity units.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_staffed_pediatric_icu_beds_7_day_sum",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_staffed_pediatric_icu_beds_7_day_sum",
+      "schema:description": "Sum of pediatric ICU beds in the facility that are currently set-up, staffed and are or could be used for a patient within the reporting period. This count includes occupied and unoccupied ICU beds, including any ICU beds that are, or could be, staffed and used for a pediatric patient. This count excludes NICU, newborn nursery, and outpatient surgery beds. This is a subset of #3c and #5a. Any beds counted in #5c should NOT be counted in #5b. This field is required as of 2/2/2022. Note: All pediatric ICU beds should be considered, regardless of the unit on which the bed is housed. This includes ICU beds located in non-ICU locations, such as mixed acuity units.",
+      "cdif:physicalDataType": "xsd:decimal"
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "cdi:TabularTextDataSet"
+      ],
+      "schema:name": "CSV export",
+      "schema:contentUrl": "https://healthdata.gov/api/views/anag-cw7u/rows.csv?accessType=DOWNLOAD",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "cdi:isDelimited": true,
+      "csvw:delimiter": ",",
+      "csvw:quoteChar": "\"",
+      "csvw:headerRowCount": 1,
+      "cdif:hasPhysicalMapping": [
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 0,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#hospital_pk"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 1,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#collection_week"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 2,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 3,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#ccn"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 4,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#hospital_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 5,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#address"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 6,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 7,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#zip"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 8,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#hospital_subtype"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 9,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fips_code"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 10,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#is_metro_micro"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 11,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_beds_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 12,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_adult_hospital_beds_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 13,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_adult_hospital_inpatient_beds_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 14,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#inpatient_beds_used_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 15,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_adult_hospital_inpatient_bed_occupied_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 16,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#inpatient_beds_used_covid_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 17,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 18,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_adult_patients_hospitalized_confirmed_covid_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 19,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 20,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_pediatric_patients_hospitalized_confirmed_covid_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 21,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#inpatient_beds_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 22,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_icu_beds_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 23,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_staffed_adult_icu_beds_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 24,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#icu_beds_used_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 25,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_adult_icu_bed_occupancy_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 26,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 27,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_icu_adult_patients_confirmed_covid_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 28,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_patients_hospitalized_confirmed_influenza_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 29,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#icu_patients_confirmed_influenza_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 30,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_patients_hospitalized_confirmed_influenza_and_covid_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 31,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_beds_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 32,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_adult_hospital_beds_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 33,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_adult_hospital_inpatient_beds_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 34,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#inpatient_beds_used_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 35,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_adult_hospital_inpatient_bed_occupied_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 36,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#inpatient_beds_used_covid_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 37,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 38,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_adult_patients_hospitalized_confirmed_covid_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 39,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 40,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_pediatric_patients_hospitalized_confirmed_covid_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 41,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#inpatient_beds_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 42,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_icu_beds_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 43,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_staffed_adult_icu_beds_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 44,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#icu_beds_used_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 45,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_adult_icu_bed_occupancy_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 46,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 47,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_icu_adult_patients_confirmed_covid_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 48,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_patients_hospitalized_confirmed_influenza_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 49,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#icu_patients_confirmed_influenza_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 50,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_patients_hospitalized_confirmed_influenza_and_covid_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 51,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_beds_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 52,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_adult_hospital_beds_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 53,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_adult_hospital_inpatient_beds_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 54,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#inpatient_beds_used_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 55,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_adult_hospital_inpatient_bed_occupied_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 56,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#inpatient_beds_used_covid_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 57,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 58,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_adult_patients_hospitalized_confirmed_covid_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 59,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 60,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_pediatric_patients_hospitalized_confirmed_covid_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 61,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#inpatient_beds_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 62,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_icu_beds_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 63,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_staffed_adult_icu_beds_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 64,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#icu_beds_used_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 65,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_adult_icu_bed_occupancy_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 66,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 67,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_icu_adult_patients_confirmed_covid_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 68,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_patients_hospitalized_confirmed_influenza_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 69,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#icu_patients_confirmed_influenza_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 70,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_patients_hospitalized_confirmed_influenza_and_covid_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 71,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 72,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_18_19_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 73,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_20_29_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 74,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_30_39_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 75,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_40_49_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 76,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_50"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 77,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_60"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 78,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_70"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 79,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_80"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 80,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_unknown_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 81,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_pediatric_covid_confirmed_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 82,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_covid_ed_visits_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 83,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 84,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_18"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 85,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_20"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 86,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_30"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 87,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_40"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 88,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_50"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 89,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_60"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 90,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_70_79_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 91,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_80"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 92,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_unknown_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 93,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_pediatric_covid_suspected_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 94,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_total_ed_visits_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 95,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_influenza_confirmed_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 96,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#geocoded_hospital_address"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 97,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#hhs_ids"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 98,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_confirmed_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 99,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_pediatric_covid_confirmed_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 100,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_adult_covid_suspected_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 101,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_pediatric_covid_suspected_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 102,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_week_personnel_covid_vaccinated_doses_administered_7_day"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 103,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_personnel_covid_vaccinated_doses_none_7_day"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 104,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_personnel_covid_vaccinated_doses_one_7_day"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 105,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_personnel_covid_vaccinated_doses_all_7_day"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 106,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_week_patients_covid_vaccinated_doses_one_7_day"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 107,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_week_patients_covid_vaccinated_doses_all_7_day"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 108,
+          "cdif:physicalDataType": "xsd:boolean",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#is_corrected"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 109,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_pediatric_inpatient_bed_occupied_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 110,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_pediatric_inpatient_bed_occupied_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 111,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_pediatric_inpatient_bed_occupied_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 112,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_pediatric_inpatient_beds_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 113,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_pediatric_inpatient_beds_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 114,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#all_pediatric_inpatient_beds_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 115,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_pediatric_covid_confirmed_0_4_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 116,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_pediatric_covid_confirmed_12_17_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 117,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_pediatric_covid_confirmed_5_11_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 118,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#previous_day_admission_pediatric_covid_confirmed_unknown_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 119,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_icu_pediatric_patients_confirmed_covid_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 120,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_icu_pediatric_patients_confirmed_covid_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 121,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_icu_pediatric_patients_confirmed_covid_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 122,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_pediatric_icu_bed_occupancy_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 123,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_pediatric_icu_bed_occupancy_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 124,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#staffed_pediatric_icu_bed_occupancy_7_day_sum"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 125,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_staffed_pediatric_icu_beds_7_day_avg"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 126,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_staffed_pediatric_icu_beds_7_day_coverage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 127,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_staffed_pediatric_icu_beds_7_day_sum"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Socrata Open Data API (SODA) endpoint",
+      "schema:serviceType": "Socrata Open Data API (SODA)",
+      "schema:termsOfService": "not specified",
+      "schema:documentation": "https://dev.socrata.com/foundry/healthdata.gov/anag-cw7u",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:name": "Query rows",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:description": "Columns are named by their API field name (the alternate name of each variable). Results are paged.",
+            "schema:urlTemplate": "https://healthdata.gov/resource/anag-cw7u.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
+            "schema:httpMethod": [
+              "GET"
+            ],
+            "schema:contentType": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          },
+          "schema:query-input": [
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "format",
+              "schema:description": "The response format: json, csv or geojson.",
+              "schema:valueRequired": true,
+              "schema:valuePattern": "json|csv|geojson"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "select",
+              "schema:description": "SoQL $select: the columns to return, by API field name. Empty for all.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "where",
+              "schema:description": "SoQL $where: a filter on the rows. Empty for none.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "order",
+              "schema:description": "SoQL $order: the column(s) to sort by. Empty for the default order.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "limit",
+              "schema:description": "The number of rows to return. The endpoint returns 1000 when it is not given.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "offset",
+              "schema:description": "The number of rows to skip, for paging.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "Aggregated Facility Report for a Given Collection Week"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Archive: Archive Repository",
+      "schema:value": "https://healthdata.gov/d/j4ip-wfsv"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Language",
+      "schema:value": "English"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Update Frequency",
+      "schema:value": "R/P1W"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Last Update",
+      "schema:value": "May 3, 2024"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Program Code",
+      "schema:value": "009:028"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Is Quality Data",
+      "schema:value": "true"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Bureau Code",
+      "schema:value": "009:00"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Public Access Level",
+      "schema:value": "public"
+    }
+  ],
+  "schema:url": "https://healthdata.gov/d/anag-cw7u",
+  "schema:subjectOf": {
+    "@id": "https://healthdata.gov/d/anag-cw7u#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: COVID-19 Reported Patient Impact and Hospital Capacity by Facility",
+    "schema:about": {
+      "@id": "https://healthdata.gov/d/anag-cw7u"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://healthdata.gov/api/views/anag-cw7u.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2025-07-03T14:26:47Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Office of Chief Data Officer (OCDO)",
+      "schema:identifier": "7rgq-62vg"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "HealthData.gov",
+      "schema:url": "https://healthdata.gov/"
+    }
+  }
+}

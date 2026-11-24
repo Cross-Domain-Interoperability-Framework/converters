@@ -1,0 +1,929 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/",
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@id": "https://data.wa.gov/d/9nnw-c693",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Lobbyist Compensation and Expenses by Source",
+  "schema:description": "This dataset contains compensation and expense summaries from monthly lobbying reports. Includes one record per client who paid compensation or incurred expenses during the filing period. Records for lobbyist firm expenses not reimbursed by clients are also included. Reports with no compensation or expenses have no records in this dataset.\n\nThis dataset is a best-effort by the PDC to provide a complete set of records as described herewith and may contain incomplete or incorrect information. The PDC provides access to the original reports for the purpose of record verification.\n\nData Coverage and Limitations: The data set covers that prior 16 years plus the current election year starting 2016. Pre-2016 records are available in the separate \"Pre-2016 Lobbyist Compensation and Expenses by Source\" dataset. This is a best-effort compilation that may contain incomplete or incorrect information. Original reports remain accessible for record verification.\n\nDescriptions attached to this dataset do not constitute legal definitions; please consult RCW 42.17A and WAC Title 390 for legal definitions and additional information regarding political finance disclosure requirements.\n\nCONDITION OF RELEASE: This publication constitutes a list of individuals prepared by the Washington State Public Disclosure Commission and may not be used for commercial purposes. This list is provided on the condition and with the understanding that the persons receiving it agree to this statutorily imposed limitation on its use. See RCW 42.56.070(9) and AGO 1975 No. 15.",
+  "schema:identifier": "9nnw-c693",
+  "schema:keywords": [
+    "political finance",
+    "elections",
+    "contributions",
+    "campaign",
+    "political committee",
+    "disclosure",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Politics",
+      "schema:inDefinedTermSet": "data.wa.gov categories"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "License: Public Domain"
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Public Disclosure Commission",
+        "schema:url": "http://www.pdc.wa.gov"
+      },
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "PDC-IT",
+        "schema:identifier": "79jf-2se2"
+      }
+    ]
+  },
+  "schema:datePublished": "2024-12-26T16:59:00Z",
+  "schema:dateCreated": "2017-01-06T21:15:52Z",
+  "schema:dateModified": "2026-11-24T02:48:49Z",
+  "schema:variableMeasured": [
+    {
+      "@id": "#id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "id",
+      "schema:description": "PDC internal identifier that corresponds to unique record for a lobbyist in a given year.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:role": "UnitIdentifier"
+    },
+    {
+      "@id": "#report_number",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "report_number",
+      "schema:description": "This is the identifying number of the filed L2 from the PDC Accesshub online filing system.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#origin",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "origin",
+      "schema:description": "This value shows how the report was filed: FE = Filed electronically; FP = Paper filed.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#filer_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "filer_id",
+      "schema:description": "The unique id assigned to a lobbyist. The filer id is consistent across years.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#filer_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "filer_name",
+      "schema:description": "The lobbyist's registered name. Names remain consistent for each filer within a given election year, but may vary between years if the lobbyist legally changes their name.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "type",
+      "schema:description": "Shows if this report was filed for an employer or for a lobbyist.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#funding_source_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "funding_source_id",
+      "schema:description": "Unique identifier for the contractual relationship between the firm and client.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#funding_source",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "funding_source_name",
+      "schema:alternateName": [
+        "funding_source"
+      ],
+      "schema:description": "Name or label of the the contractual relationship between the firm and client.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#filing_period",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "filing_period",
+      "schema:description": "The filing period for this report.",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#first_filed_at",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "first_filed_at",
+      "schema:description": "This indicates the first submission date of the L2 report.",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#receipt_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "receipt_date",
+      "schema:description": "The date that the report was filed.",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#employer_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "employer_id",
+      "schema:description": "This ID consistently identifies a given lobbyist client/employer across all years in PDC records.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#employer_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "employer_name",
+      "schema:description": "The name of a given lobbyist client/employer referenced in the L2.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#compensation",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "compensation",
+      "schema:description": "Total compensation reported for this client/employer for this L2 and filing period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#sub_lobbyist_compensation",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "sub_lobbyist_compensation",
+      "schema:description": "Payments made to other lobbyists who were hired by the lobbyist or paid by the lobbyist using funds received from the client/employer for this L2 and filing period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#net_compensation",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "net_compensation",
+      "schema:description": "The total compensation the lobbyist received after paying any subcontracted lobbyists for this L2 and filing period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#personal_expenses",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "personal_expenses",
+      "schema:description": "The total amount of all personal expenses for travel, food and refreshments incurred by the lobbyist, from all employers for this L2 and filing period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#entertainment",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "entertainment",
+      "schema:description": "The total amount of expenditures incurred by the lobbyist or lobbyist client/employer(s) for legislators, state officials, state employees and members of their immediate families for this L2 and filing period. Expenditures include meals, beverages, tickets, passes, and other forms of entertainment; receptions; travel, lodging and subsistence expenses for speeches, presentations, appearances, trade missions, seminars or educational programs; and enrollment and course fees for seminars or educational programs.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#contributions",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "contributions",
+      "schema:description": "The total amount of contributions to a Washington State candidate or committee that were given or transmitted by the lobbyist for this L2 and filing period. Contributions are described as monetary or in-kind, with in-kind being described as goods or services that were made directly to a political campaign, including political advertising that was coordinated with the campaign.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#advertising",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "advertising",
+      "schema:description": "Deprecated field (legacy format only). The total amount of all advertising expenses incurred by the lobbyist, from all employers for this L2 and filing period. Advertising expenses include advertising costs, printing costs, and the cost of informational literature.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#political_ads",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "political_ads",
+      "schema:description": "Deprecated field (legacy format only). Total political advertising expenses across all employers for this L2 and filing period. Includes expenditures for political advertising supporting or opposing candidates/ballot measures, plus lobbying-related public relations, telemarketing, polling, and similar activities.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#independent_expenditures_candidate",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "independent_expenditures_candidate",
+      "schema:description": "The total amount of independent expenditures made by the lobbyist or lobbyist's client (employer) in support of or opposition to any Washington State candidate that costs $1,000 or more for this L2 and filing period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#independent_expenditures_ballot",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "independent_expenditures_ballot",
+      "schema:description": "The total amount of independent expenditures made by the lobbyist or lobbyist's client (employer) in support of or opposition to any Washington State ballot measure that costs $1,000 or more for this L2 and filing period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#other",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "other",
+      "schema:description": "The total amount of other expenses incurred by the lobbyist, from all employers for this L2 and filing period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#direct_expenses",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "direct_expenses",
+      "schema:description": "The total amount of expenses directly related to lobbying the legislature or state agencies, such as printing and literature, public relations and polling, and consulting and payments to expert witnesses for this L2 and filing period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#indirect_expenses",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "indirect_expenses",
+      "schema:description": "The total amount of indirect lobbying, or grassroots lobbying, involving campaigns funded by client/employer general treasury funds to encourage the public to contact their legislators for this L2 and filing period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#contributions_total",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "contributions_total",
+      "schema:description": "The total amount of contributions for the L2 and filing period.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_expenses",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "total_expenses",
+      "schema:description": "The total amount of expenses incurred by the lobbyist for this L2 and reporting period, excluding compensation. This sum includes personal expenses, entertainment, contributions, advertising, political ads, independent expenditures (candidate and ballot measure), other expenses, and direct and indirect lobbying expenses.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#net_total",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "net_total",
+      "schema:description": "The total of all expenses and compensation, minus any amount paid to a subcontractor to lobby on behalf of a client. Subcontractors report their own compensation and expenses.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#employment_registration_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "employment_registration_id",
+      "schema:description": "Unique identifier for the contractual relationship between the firm and client.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#employment_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "employment_type",
+      "schema:description": "Signifies a direct or subcontracted employment relationship.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contractor_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "contractor_id",
+      "schema:description": "The unique id assigned to a lobbyist. The contractor id is used to express when a lobbyist is sub contracted for another.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contractor_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "contractor_name",
+      "schema:description": "This is the contractor name, as reported on the filed L2.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#url",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "url",
+      "schema:description": "Link to the original report filed with the PDC.",
+      "cdif:physicalDataType": "xsd:anyURI"
+    }
+  ],
+  "cdif:hasPrimaryKey": {
+    "@type": [
+      "cdif:Key"
+    ],
+    "cdif:isComposedOf": [
+      {
+        "@type": [
+          "cdi:ComponentPosition"
+        ],
+        "cdi:indexes": {
+          "@id": "#id"
+        },
+        "cdi:value": 1
+      }
+    ]
+  },
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "cdi:TabularTextDataSet"
+      ],
+      "schema:name": "CSV export",
+      "schema:contentUrl": "https://data.wa.gov/api/views/9nnw-c693/rows.csv?accessType=DOWNLOAD",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "cdi:isDelimited": true,
+      "csvw:delimiter": ",",
+      "csvw:quoteChar": "\"",
+      "csvw:headerRowCount": 1,
+      "cdif:hasPhysicalMapping": [
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 0,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 1,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#report_number"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 2,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#origin"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 3,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#filer_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 4,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#filer_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 5,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 6,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#funding_source_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 7,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#funding_source"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 8,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#filing_period"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 9,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#first_filed_at"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 10,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#receipt_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 11,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#employer_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 12,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#employer_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 13,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#compensation"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 14,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#sub_lobbyist_compensation"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 15,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#net_compensation"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 16,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#personal_expenses"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 17,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#entertainment"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 18,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contributions"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 19,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#advertising"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 20,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#political_ads"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 21,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#independent_expenditures_candidate"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 22,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#independent_expenditures_ballot"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 23,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#other"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 24,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#direct_expenses"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 25,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#indirect_expenses"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 26,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contributions_total"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 27,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_expenses"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 28,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#net_total"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 29,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#employment_registration_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 30,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#employment_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 31,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contractor_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 32,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contractor_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 33,
+          "cdif:physicalDataType": "xsd:anyURI",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#url"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Socrata Open Data API (SODA) endpoint",
+      "schema:serviceType": "Socrata Open Data API (SODA)",
+      "schema:termsOfService": "not specified",
+      "schema:documentation": "https://dev.socrata.com/foundry/data.wa.gov/9nnw-c693",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:name": "Query rows",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:description": "Columns are named by their API field name (the alternate name of each variable). Results are paged.",
+            "schema:urlTemplate": "https://data.wa.gov/resource/9nnw-c693.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
+            "schema:httpMethod": [
+              "GET"
+            ],
+            "schema:contentType": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          },
+          "schema:query-input": [
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "format",
+              "schema:description": "The response format: json, csv or geojson.",
+              "schema:valueRequired": true,
+              "schema:valuePattern": "json|csv|geojson"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "select",
+              "schema:description": "SoQL $select: the columns to return, by API field name. Empty for all.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "where",
+              "schema:description": "SoQL $where: a filter on the rows. Empty for none.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "order",
+              "schema:description": "SoQL $order: the column(s) to sort by. Empty for the default order.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "limit",
+              "schema:description": "The number of rows to return. The endpoint returns 1000 when it is not given.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "offset",
+              "schema:description": "The number of rows to skip, for paging.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "Lobbyist/client monthly report"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Temporal: Posting Frequency",
+      "schema:value": "Daily"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Temporal: Period of Time",
+      "schema:value": "From 2016"
+    }
+  ],
+  "schema:url": "https://data.wa.gov/d/9nnw-c693",
+  "schema:subjectOf": {
+    "@id": "https://data.wa.gov/d/9nnw-c693#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: Lobbyist Compensation and Expenses by Source",
+    "schema:about": {
+      "@id": "https://data.wa.gov/d/9nnw-c693"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.wa.gov/api/views/9nnw-c693.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2026-03-07T19:10:04Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "PDC-IT",
+      "schema:identifier": "79jf-2se2"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Washington State Open Data Portal",
+      "schema:url": "https://data.wa.gov/"
+    }
+  }
+}

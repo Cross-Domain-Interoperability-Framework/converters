@@ -1,0 +1,1385 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/",
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@id": "https://data.cityofchicago.org/d/85ca-t3if",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Traffic Crashes - Crashes",
+  "schema:description": "Note: As of 5/20/2026 we have added IDOT_CONTROL_NO to the dataset. -- Crash data shows information about each traffic crash on city streets within the City of Chicago limits and under the jurisdiction of Chicago Police Department (CPD). Data are shown as is from the electronic crash reporting system (E-Crash) at CPD, excluding any personally identifiable information. Records are added to the data portal when a crash report is finalized or when amendments are made to an existing report in E-Crash. Data from E-Crash are available for some police districts in 2015, but citywide data are not available until September 2017. About half of all crash reports, mostly minor crashes, are self-reported at the police district by the driver(s) involved and the other half are recorded at the scene by the police officer responding to the crash. Many of the crash parameters, including street condition data, weather condition, and posted speed limits, are recorded by the reporting officer based on best available information at the time, but many of these may disagree with posted information or other assessments on road conditions. If any new or updated information on a crash is received, the reporting officer may amend the crash report at a later time. A traffic crash within the city limits for which CPD is not the responding police agency, typically crashes on interstate highways, freeway ramps, and on local roads along the City boundary, are excluded from this dataset.\n\nAll crashes are recorded as per the format specified in the Traffic Crash Report, SR1050, of the Illinois Department of Transportation. The crash data published on the Chicago data portal mostly follows the data elements in SR1050 form. The current version of the SR1050 instructions manual with detailed information on each data elements is available here.\n\nAs per Illinois statute, only crashes with a property damage value of $1,500 or more or involving bodily injury to any person(s) and that happen on a public roadway and that involve at least one moving vehicle, except bike dooring, are considered reportable crashes. However, CPD records every reported traffic crash event, regardless of the statute of limitations, and hence any formal Chicago crash dataset released by Illinois Department of Transportation may not include all the crashes listed here.\n\nChange 11/21/2023: We have removed the RD_NO (Chicago Police Department report number) for privacy reasons.",
+  "schema:identifier": "85ca-t3if",
+  "schema:keywords": [
+    "transportation",
+    "public safety",
+    "vision zero",
+    "traffic crashes",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Transportation",
+      "schema:inDefinedTermSet": "data.cityofchicago.org categories"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "License: See Terms of Use"
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "City of Chicago",
+        "schema:url": "http://www.chicago.gov"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Jonathan Levy",
+        "schema:identifier": "vewm-vupz"
+      }
+    ]
+  },
+  "schema:datePublished": "2026-05-20T20:31:26Z",
+  "schema:dateCreated": "2017-10-19T22:02:56Z",
+  "schema:dateModified": "2026-11-23T16:57:11Z",
+  "schema:variableMeasured": [
+    {
+      "@id": "#crash_record_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CRASH_RECORD_ID",
+      "schema:alternateName": [
+        "crash_record_id"
+      ],
+      "schema:description": "This number can be used to link to the same crash in the Vehicles and People datasets. This number also serves as a unique ID in this dataset.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:role": "UnitIdentifier"
+    },
+    {
+      "@id": "#crash_date_est_i",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CRASH_DATE_EST_I",
+      "schema:alternateName": [
+        "crash_date_est_i"
+      ],
+      "schema:description": "Crash date estimated by desk officer or reporting party (only used in cases where crash is reported at police station days after the crash)",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#crash_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CRASH_DATE",
+      "schema:alternateName": [
+        "crash_date"
+      ],
+      "schema:description": "Date and time of crash as entered by the reporting officer",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#posted_speed_limit",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "POSTED_SPEED_LIMIT",
+      "schema:alternateName": [
+        "posted_speed_limit"
+      ],
+      "schema:description": "Posted speed limit, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#traffic_control_device",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TRAFFIC_CONTROL_DEVICE",
+      "schema:alternateName": [
+        "traffic_control_device"
+      ],
+      "schema:description": "Traffic control device present at crash location, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#device_condition",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "DEVICE_CONDITION",
+      "schema:alternateName": [
+        "device_condition"
+      ],
+      "schema:description": "Condition of traffic control device, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#weather_condition",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "WEATHER_CONDITION",
+      "schema:alternateName": [
+        "weather_condition"
+      ],
+      "schema:description": "Weather condition at time of crash, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#lighting_condition",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LIGHTING_CONDITION",
+      "schema:alternateName": [
+        "lighting_condition"
+      ],
+      "schema:description": "Light condition at time of crash, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#first_crash_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FIRST_CRASH_TYPE",
+      "schema:alternateName": [
+        "first_crash_type"
+      ],
+      "schema:description": "Type of first collision in crash",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#trafficway_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TRAFFICWAY_TYPE",
+      "schema:alternateName": [
+        "trafficway_type"
+      ],
+      "schema:description": "Trafficway type, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#lane_cnt",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LANE_CNT",
+      "schema:alternateName": [
+        "lane_cnt"
+      ],
+      "schema:description": "Total number of through lanes in either direction, excluding turn lanes, as determined by reporting officer (0 = intersection)",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#alignment",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ALIGNMENT",
+      "schema:alternateName": [
+        "alignment"
+      ],
+      "schema:description": "Street alignment at crash location, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#roadway_surface_cond",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ROADWAY_SURFACE_COND",
+      "schema:alternateName": [
+        "roadway_surface_cond"
+      ],
+      "schema:description": "Road surface condition, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#road_defect",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ROAD_DEFECT",
+      "schema:alternateName": [
+        "road_defect"
+      ],
+      "schema:description": "Road defects, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#report_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REPORT_TYPE",
+      "schema:alternateName": [
+        "report_type"
+      ],
+      "schema:description": "Administrative report type (at scene, at desk, amended)",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#crash_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CRASH_TYPE",
+      "schema:alternateName": [
+        "crash_type"
+      ],
+      "schema:description": "A general severity classification for the crash. Can be either Injury and/or Tow Due to Crash or No Injury / Drive Away",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#intersection_related_i",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INTERSECTION_RELATED_I",
+      "schema:alternateName": [
+        "intersection_related_i"
+      ],
+      "schema:description": "A field observation by the police officer whether an intersection played a role in the crash. Does not represent whether or not the crash occurred within the intersection.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#private_property_i",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "NOT_RIGHT_OF_WAY_I",
+      "schema:alternateName": [
+        "private_property_i"
+      ],
+      "schema:description": "Whether the crash begun or first contact was made outside of the public right-of-way.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#hit_and_run_i",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "HIT_AND_RUN_I",
+      "schema:alternateName": [
+        "hit_and_run_i"
+      ],
+      "schema:description": "Crash did/did not involve a driver who caused the crash and fled the scene without exchanging information and/or rendering aid",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#damage",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "DAMAGE",
+      "schema:alternateName": [
+        "damage"
+      ],
+      "schema:description": "A field observation of estimated damage.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#date_police_notified",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "DATE_POLICE_NOTIFIED",
+      "schema:alternateName": [
+        "date_police_notified"
+      ],
+      "schema:description": "Calendar date on which police were notified of the crash",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#prim_contributory_cause",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PRIM_CONTRIBUTORY_CAUSE",
+      "schema:alternateName": [
+        "prim_contributory_cause"
+      ],
+      "schema:description": "The factor which was most significant in causing the crash, as determined by officer judgment",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#sec_contributory_cause",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "SEC_CONTRIBUTORY_CAUSE",
+      "schema:alternateName": [
+        "sec_contributory_cause"
+      ],
+      "schema:description": "The factor which was second most significant in causing the crash, as determined by officer judgment",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#street_no",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "STREET_NO",
+      "schema:alternateName": [
+        "street_no"
+      ],
+      "schema:description": "Street address number of crash location, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#street_direction",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "STREET_DIRECTION",
+      "schema:alternateName": [
+        "street_direction"
+      ],
+      "schema:description": "Street address direction (N,E,S,W) of crash location, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#street_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "STREET_NAME",
+      "schema:alternateName": [
+        "street_name"
+      ],
+      "schema:description": "Street address name of crash location, as determined by reporting officer",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#beat_of_occurrence",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "BEAT_OF_OCCURRENCE",
+      "schema:alternateName": [
+        "beat_of_occurrence"
+      ],
+      "schema:description": "Chicago Police Department Beat ID. Boundaries available at https://data.cityofchicago.org/d/aerh-rz74",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#photos_taken_i",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PHOTOS_TAKEN_I",
+      "schema:alternateName": [
+        "photos_taken_i"
+      ],
+      "schema:description": "Whether the Chicago Police Department took photos at the location of the crash",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#statements_taken_i",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "STATEMENTS_TAKEN_I",
+      "schema:alternateName": [
+        "statements_taken_i"
+      ],
+      "schema:description": "Whether statements were taken from unit(s) involved in crash",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#dooring_i",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "DOORING_I",
+      "schema:alternateName": [
+        "dooring_i"
+      ],
+      "schema:description": "Whether crash involved a motor vehicle occupant opening a door into the travel path of a bicyclist, causing a crash",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#work_zone_i",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "WORK_ZONE_I",
+      "schema:alternateName": [
+        "work_zone_i"
+      ],
+      "schema:description": "Whether the crash occurred in an active work zone",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#work_zone_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "WORK_ZONE_TYPE",
+      "schema:alternateName": [
+        "work_zone_type"
+      ],
+      "schema:description": "The type of work zone, if any",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#workers_present_i",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "WORKERS_PRESENT_I",
+      "schema:alternateName": [
+        "workers_present_i"
+      ],
+      "schema:description": "Whether construction workers were present in an active work zone at crash location",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#num_units",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "NUM_UNITS",
+      "schema:alternateName": [
+        "num_units"
+      ],
+      "schema:description": "Number of units involved in the crash. A unit can be a motor vehicle, a pedestrian, a bicyclist, or another non-passenger roadway user. Each unit represents a mode of traffic with an independent trajectory.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#crash_month",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CRASH_MONTH",
+      "schema:alternateName": [
+        "crash_month"
+      ],
+      "schema:description": "The month component of CRASH_DATE.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#most_severe_injury",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "MOST_SEVERE_INJURY",
+      "schema:alternateName": [
+        "most_severe_injury"
+      ],
+      "schema:description": "Most severe injury sustained by any person involved in the crash",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#injuries_total",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INJURIES_TOTAL",
+      "schema:alternateName": [
+        "injuries_total"
+      ],
+      "schema:description": "Total persons sustaining fatal, incapacitating, non-incapacitating, and possible injuries as determined by the reporting officer",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#injuries_fatal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INJURIES_FATAL",
+      "schema:alternateName": [
+        "injuries_fatal"
+      ],
+      "schema:description": "Total persons sustaining fatal injuries in the crash",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#injuries_incapacitating",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INJURIES_INCAPACITATING",
+      "schema:alternateName": [
+        "injuries_incapacitating"
+      ],
+      "schema:description": "Total persons sustaining incapacitating/serious injuries in the crash as determined by the reporting officer. Any injury other than fatal injury, which prevents the injured person from walking, driving, or normally continuing the activities they were capable of performing before the injury occurred. Includes severe lacerations, broken limbs, skull or chest injuries, and abdominal injuries.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#injuries_non_incapacitating",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INJURIES_NON_INCAPACITATING",
+      "schema:alternateName": [
+        "injuries_non_incapacitating"
+      ],
+      "schema:description": "Total persons sustaining non-incapacitating injuries in the crash as determined by the reporting officer. Any injury, other than fatal or incapacitating injury, which is evident to observers at the scene of the crash. Includes lump on head, abrasions, bruises, and minor lacerations.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#injuries_reported_not_evident",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INJURIES_REPORTED_NOT_EVIDENT",
+      "schema:alternateName": [
+        "injuries_reported_not_evident"
+      ],
+      "schema:description": "Total persons sustaining possible injuries in the crash as determined by the reporting officer. Includes momentary unconsciousness, claims of injuries not evident, limping, complaint of pain, nausea, and hysteria.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#injuries_no_indication",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INJURIES_NO_INDICATION",
+      "schema:alternateName": [
+        "injuries_no_indication"
+      ],
+      "schema:description": "Total persons sustaining no injuries in the crash as determined by the reporting officer",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#injuries_unknown",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "INJURIES_UNKNOWN",
+      "schema:alternateName": [
+        "injuries_unknown"
+      ],
+      "schema:description": "Total persons for whom injuries sustained, if any, are unknown",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#crash_hour",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CRASH_HOUR",
+      "schema:alternateName": [
+        "crash_hour"
+      ],
+      "schema:description": "The hour of the day component of CRASH_DATE.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#crash_day_of_week",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CRASH_DAY_OF_WEEK",
+      "schema:alternateName": [
+        "crash_day_of_week"
+      ],
+      "schema:description": "The day of the week component of CRASH_DATE. Sunday=1",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#idot_control_no",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "IDOT_CONTROL_NO",
+      "schema:alternateName": [
+        "idot_control_no"
+      ],
+      "schema:description": "A unique 10-digit number for each crash report, assigned by the Illinois Department of Transportation. Amended reports and additional pages for the same crash report will have the same IDOT Control Number.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#latitude",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LATITUDE",
+      "schema:alternateName": [
+        "latitude"
+      ],
+      "schema:description": "The latitude of the crash location, as determined by reporting officer, as derived from the reported address of crash",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#longitude",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LONGITUDE",
+      "schema:alternateName": [
+        "longitude"
+      ],
+      "schema:description": "The longitude of the crash location, as determined by reporting officer, as derived from the reported address of crash",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#location",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LOCATION",
+      "schema:alternateName": [
+        "location"
+      ],
+      "schema:description": "The crash location, as determined by reporting officer, as derived from the reported address of crash, in a column type that allows for mapping and other geographic analysis in the data portal software",
+      "cdif:physicalDataType": "xsd:string"
+    }
+  ],
+  "cdif:hasPrimaryKey": {
+    "@type": [
+      "cdif:Key"
+    ],
+    "cdif:isComposedOf": [
+      {
+        "@type": [
+          "cdi:ComponentPosition"
+        ],
+        "cdi:indexes": {
+          "@id": "#crash_record_id"
+        },
+        "cdi:value": 1
+      }
+    ]
+  },
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "cdi:TabularTextDataSet"
+      ],
+      "schema:name": "CSV export",
+      "schema:contentUrl": "https://data.cityofchicago.org/api/views/85ca-t3if/rows.csv?accessType=DOWNLOAD",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "cdi:isDelimited": true,
+      "csvw:delimiter": ",",
+      "csvw:quoteChar": "\"",
+      "csvw:headerRowCount": 1,
+      "cdif:hasPhysicalMapping": [
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 0,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#crash_record_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 1,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#crash_date_est_i"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 2,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#crash_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 3,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#posted_speed_limit"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 4,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#traffic_control_device"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 5,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#device_condition"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 6,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#weather_condition"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 7,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#lighting_condition"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 8,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#first_crash_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 9,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#trafficway_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 10,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#lane_cnt"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 11,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#alignment"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 12,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#roadway_surface_cond"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 13,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#road_defect"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 14,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#report_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 15,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#crash_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 16,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#intersection_related_i"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 17,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#private_property_i"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 18,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#hit_and_run_i"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 19,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#damage"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 20,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#date_police_notified"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 21,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#prim_contributory_cause"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 22,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#sec_contributory_cause"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 23,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#street_no"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 24,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#street_direction"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 25,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#street_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 26,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#beat_of_occurrence"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 27,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#photos_taken_i"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 28,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#statements_taken_i"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 29,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#dooring_i"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 30,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#work_zone_i"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 31,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#work_zone_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 32,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#workers_present_i"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 33,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#num_units"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 34,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#crash_month"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 35,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#most_severe_injury"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 36,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#injuries_total"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 37,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#injuries_fatal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 38,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#injuries_incapacitating"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 39,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#injuries_non_incapacitating"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 40,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#injuries_reported_not_evident"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 41,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#injuries_no_indication"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 42,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#injuries_unknown"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 43,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#crash_hour"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 44,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#crash_day_of_week"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 45,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#idot_control_no"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 46,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#latitude"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 47,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#longitude"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 48,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Socrata Open Data API (SODA) endpoint",
+      "schema:serviceType": "Socrata Open Data API (SODA)",
+      "schema:termsOfService": "not specified",
+      "schema:documentation": "https://dev.socrata.com/foundry/data.cityofchicago.org/85ca-t3if",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:name": "Query rows",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:description": "Columns are named by their API field name (the alternate name of each variable). Results are paged.",
+            "schema:urlTemplate": "https://data.cityofchicago.org/resource/85ca-t3if.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
+            "schema:httpMethod": [
+              "GET"
+            ],
+            "schema:contentType": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          },
+          "schema:query-input": [
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "format",
+              "schema:description": "The response format: json, csv or geojson.",
+              "schema:valueRequired": true,
+              "schema:valuePattern": "json|csv|geojson"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "select",
+              "schema:description": "SoQL $select: the columns to return, by API field name. Empty for all.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "where",
+              "schema:description": "SoQL $where: a filter on the rows. Empty for none.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "order",
+              "schema:description": "SoQL $order: the column(s) to sort by. Empty for the default order.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "limit",
+              "schema:description": "The number of rows to return. The endpoint returns 1000 when it is not given.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "offset",
+              "schema:description": "The number of rows to skip, for paging.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "Traffic Crash"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Metadata: Time Period",
+      "schema:value": "2015 to present (All police districts September 2017 - present)"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Metadata: Changes and Other Historical Information Useful to Understanding This Dataset",
+      "schema:value": "https://www.google.com/search?q=site:data.cityofchicago.org/stories+\"Related+dataset+ID+s\"+\"85ca-t3if\""
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Metadata: Frequency",
+      "schema:value": "Daily"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Metadata: Data Owner",
+      "schema:value": "Chicago Police Department"
+    }
+  ],
+  "schema:url": "https://data.cityofchicago.org/d/85ca-t3if",
+  "schema:subjectOf": {
+    "@id": "https://data.cityofchicago.org/d/85ca-t3if#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: Traffic Crashes - Crashes",
+    "schema:about": {
+      "@id": "https://data.cityofchicago.org/d/85ca-t3if"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.cityofchicago.org/api/views/85ca-t3if.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2026-05-20T22:54:53Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Jonathan Levy",
+      "schema:identifier": "vewm-vupz"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Chicago Data Portal",
+      "schema:url": "https://data.cityofchicago.org/"
+    }
+  }
+}
