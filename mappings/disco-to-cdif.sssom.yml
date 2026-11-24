@@ -1,0 +1,133 @@
+mapping_set_id: https://w3id.org/cdif/mappings/disco-to-cdif
+mapping_set_title: DDI-RDF Discovery Vocabulary (Disco) to CDIF
+mapping_set_description: |
+  Term correspondences from the DDI-RDF Discovery Vocabulary (Disco) to CDIF.
+
+  DRAFT, UNREVIEWED. No converter reads this table yet -- unlike the other sets
+  here it documents no implementation, so there is nothing for CI to check it
+  against. It is a crosswalk worksheet: every Disco class and property is
+  enumerated whether or not CDIF has a target, in the manner of the three DDI
+  Codebook sets, so that the gaps are visible rather than merely absent.
+
+  Lineage matters here and is easy to get wrong. Disco is a simplified RDF
+  projection of DDI-Codebook and DDI-Lifecycle; CDIF's `cdi:` namespace is
+  DDI-CDI, a different and later DDI standard. The two are sibling descendants
+  of different DDI generations, not one vocabulary reused -- so
+  disco:RepresentedVariable and cdi:RepresentedVariable denote the same DDI
+  concept arriving by two routes. The vocabulary dates from the 2011-2013
+  Dagstuhl work (see the spec's acknowledgements); the 2026-06-26 header is a
+  republication.
+
+  Disco's own source content is ALREADY mapped from its XML form by
+  ddi-common-to-cdif / ddi25-to-cdif / ddi122-to-cdif. This set is therefore not
+  new semantic ground: it is the serialization a Linked Data publisher exposes,
+  where those three cover the Codebook XML a repository holds.
+
+  Two Disco terms are already in use in CDIF, as the schema:propertyID IRI of a
+  schema:PropertyValue rather than as properties: discovery#caseQuantity and
+  discovery#variableQuantity. They appear in CDIF example records and in
+  DDI-CDI/ddicdi_jsonld_to_cdif.py (count_property). Those rows are marked
+  "ALREADY IN USE"; this set is the first place that usage is written down.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_date: 2026-11-24
+subject_source: http://rdf-vocabulary.ddialliance.org/discovery#
+object_source: https://w3id.org/cdif/complete/2.0
+see_also:
+  - https://rdf-vocabulary.ddialliance.org/discovery.html
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+curie_map:
+  cdi: http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/
+  cdif: https://w3id.org/cdif/
+  dcterms: http://purl.org/dc/terms/
+  disco: http://rdf-vocabulary.ddialliance.org/discovery#
+  foaf: http://xmlns.com/foaf/0.1/
+  prov: http://www.w3.org/ns/prov#
+  qb: http://purl.org/linked-data/cube#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+comment: |
+  66 rows: 43 with a CDIF target, 23 without. The inventory is the UNION of the
+  spec's Vocabulary Reference appendix, its section 11 mapping tables and its
+  narrative, because none of the three is complete on its own -- the appendix
+  omits roughly half the properties the narrative uses (kindOfData, startDate,
+  endDate, fundedBy, instrument, dataFile, representation, purpose, subtitle and
+  the ten named statistic properties among them).
+
+  subject_class disambiguates, as in dcat-to-cdif: Disco is a graph and the same
+  property means different things by class. disco:variable is declared on both
+  Study and LogicalDataSet; disco:universe over six domains. A blank
+  subject_class on a row whose subject_id is a class means the subject IS the
+  class.
+
+  There is no `transform` column. The other converter sets use it to name the
+  shaper the converter applies, and there is no Disco converter to name one in.
+
+  No author_id / reviewer_id: nothing here has been reviewed, and the DDI sets'
+  convention of stamping an ORCID into both columns would misreport that.
+
+  The three structural incompatibilities, none of which a row can express on its
+  own:
+
+  1. Different base class. disco:LogicalDataSet is rdfs:subClassOf dcat:Dataset
+     and disco:DataFile a subclass of dcat:Distribution; CDIF roots on
+     schema:Dataset and schema:DataDownload. Neither pair is a subclass of the
+     other, so Disco and CDIF cannot be blended in one node -- every row across
+     that boundary is skos:closeMatch at best, and a translation is required.
+
+  2. dcat:CatalogRecord means something else. The spec's EXAMPLE 33 co-types a
+     disco:Study as a dcat:CatalogRecord carrying foaf:primaryTopic. CDIF uses
+     dcat:CatalogRecord strictly as the node schema:subjectOf points AT, and
+     cdifd:CDIFSubjectOfPlacementShape (cdifCore/rules.shacl) requires that the
+     subject NOT itself be a dcat:CatalogRecord. A Disco graph following that
+     example trips a Violation-severity CDIF shape.
+
+  3. Statistics are shaped differently. Disco gives each statistic its own named
+     property; CDIF gives one shape -- cdif:typeOfStatistic naming the kind, the
+     number in cdi:content. Disco-to-CDIF is mechanical; CDIF-to-Disco only
+     works where the statistic type falls inside Disco's closed set of ten.
+
+  Direction. Disco-to-CDIF is the useful direction and the only one Disco itself
+  endorses ("the vice-versa process is not intended", spec section 2.1). A
+  CDIF-to-Disco set would be worth the discovery subset only: everything
+  `cdi:`-structural (wide/long/dimensional structures, physical mappings, keys)
+  has no Disco target at all.
+
+  Declared loss, Disco to CDIF. Universe, AnalysisUnit, Instrument,
+  Questionnaire, Question, questionText, responseDomain, collectionMode,
+  StudyGroup/inGroup, aggregation and inputVariable have NO CDIF target --
+  verified 2026-11-24 by grepping every schema.yaml in metadataBuildingBlocks
+  for each term, 0 hits. That is Disco's survey-instrumentation core and CDIF's
+  blank spot. The honest landing place for them is schema:additionalProperty
+  with a propertyID IRI, which is exactly the pattern caseQuantity already uses.
+
+  Defects observed in the published specification (2026-06-26), each verified in
+  the document text and worth raising with its editors rather than worked around
+  here:
+
+  * disco:product's range is given as http://purl.org/linked-data/cube#LogicalDataSet
+    -- the Data Cube namespace with a Disco class name. It resolves to nothing.
+  * disco:summaryStatisticType (section 7.3) vs disco:summaryStatisticsType
+    (Vocabulary Reference). Only one can be the real IRI.
+  * disco:responseDomain is listed under "11.2.1 Classes" (#10). It is an object
+    property.
+  * EXAMPLE 19 writes `a disco:Datafile`; the class is disco:DataFile.
+  * EXAMPLE 26 writes disco:QuestionText for two of three questions; the
+    property is disco:questionText.
+  * The domain and range columns of the section 11 tables are blank for nearly
+    every row.
+
+  Out of scope, with rows recording why: disco:Mapping, disco:mapping,
+  disco:context, disco:ddi-L-XPath and disco:ddi-L-Documentation are Disco's own
+  meta-vocabulary for publishing its DDI-L mappings as RDF (section 11.1), not
+  dataset content.
+
+  Structural behaviour that is not a term-to-term mapping, so has no row: a CDIF
+  catalog record is ADDED, and its dcterms:conformsTo is derived from content by
+  detect_conformance rather than copied from the source.
