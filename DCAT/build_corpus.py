@@ -76,23 +76,7 @@ SUFFIX_FORMAT = {
 SLUG_MAX = 40
 
 
-def load_context():
-    """The JSON-LD context to compact into, from the mapping set's curie_map.
-
-    Taken from the table rather than restated so the prefixes the corpus is
-    written in are exactly the ones the converter's rules match on. A prefix
-    that drifts here would make every rule for that vocabulary silently miss.
-    """
-    import yaml
-    ctx = {}
-    for name in ("dcat-to-cdif.sssom.yml", "dcat-aliases.sssom.yml"):
-        meta = yaml.safe_load((MAPPINGS / name).read_text(encoding="utf-8"))
-        for prefix, iri in (meta.get("curie_map") or {}).items():
-            if prefix not in ("semapv",):
-                ctx.setdefault(prefix, iri)
-    ctx.setdefault("foaf", "http://xmlns.com/foaf/0.1/")
-    ctx.setdefault("owl", "http://www.w3.org/2002/07/owl#")
-    return ctx
+load_context = C.load_context
 
 
 def slug(text, limit=SLUG_MAX):
