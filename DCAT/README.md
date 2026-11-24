@@ -252,6 +252,14 @@ does it too). A dataset entry with no `@id` of its own takes a stable one from
 its `dcterms:identifier` or landing page, and output filenames that would
 collide on a truncated title are disambiguated by a hash of the `@id`.
 
+The input may be a file or an `http(s)` URL. A DCAT JSON-LD written in a
+different prefix set than the mapping rules expect -- most often a
+[`ckanext-dcat`](https://github.com/ckan/ckanext-dcat) dataset or catalog
+`.jsonld`, which uses `dct:` and an `@graph` -- is converted with `--normalize`,
+which round-trips it through rdflib to the converter's own `@context` before
+mapping. (A Project Open Data `data.json` names its `@context` by URL and is
+normalized automatically, with or without the flag.)
+
 ### List datasets in a DCAT catalog
 
 ```bash

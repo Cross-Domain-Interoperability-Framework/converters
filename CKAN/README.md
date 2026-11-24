@@ -16,6 +16,18 @@ A `package_show` response envelope (`{"success": true, "result": {…}}`) is unw
 
 The native package dict is **universal** across CKAN installations. A portal also serves DCAT (DCAT-AP / DCAT-US / schema.org) **only when it runs [`ckanext-dcat`](https://github.com/ckan/ckanext-dcat)** — for those portals, fetching that DCAT and running [`../DCAT/dcat_to_cdif.py`](../DCAT/dcat_to_cdif.py) (which handles a DCAT-US `data.json` directly) is the richer path. This converter is the fallback that works everywhere.
 
+When a portal **does** run `ckanext-dcat`, point the DCAT converter at its DCAT output:
+
+```bash
+# a DCAT-US 1.1 / Project Open Data data.json (its @context is fetched automatically)
+python DCAT/dcat_to_cdif.py https://{host}/data.json -o out/
+
+# a per-dataset or catalog DCAT JSON-LD (ckanext-dcat writes it with the dct: prefix and an
+# @graph, so --normalize round-trips it to the converter's own prefixes first)
+python DCAT/dcat_to_cdif.py https://{host}/dataset/{id}.jsonld --normalize -o out/
+python DCAT/dcat_to_cdif.py https://{host}/catalog.jsonld --normalize -o out/
+```
+
 ## Three places a package carries metadata — all handled
 
 1. **Base CKAN fields:** `title`, `notes`, `tags`, `resources`, `organization`, `license_*`, `author` / `maintainer`, `metadata_created` / `metadata_modified`, `url`.

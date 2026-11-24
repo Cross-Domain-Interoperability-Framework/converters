@@ -2127,17 +2127,36 @@ def main():
     parser.add_argument("--static-conformance", action="store_true",
                         help="Use the built-in conformsTo instead of deriving it "
                              "from content via detect_conformance")
+    parser.add_argument("--normalize", action="store_true",
+                        help="round-trip the input through rdflib to the converter's @context "
+                             "before mapping; use for DCAT JSON-LD written in a different prefix "
+                             "set than the rules expect, e.g. a ckanext-dcat dataset/catalog .jsonld")
     parser.add_argument("--verbose", "-v", action="store_true")
     args = parser.parse_args()
 
-    # Load input
-    with open(args.input, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    # Load input: a file path, or an http(s) URL (e.g. a CKAN ckanext-dcat
+    # endpoint, https://{host}/dataset/{id}.jsonld or /catalog.jsonld).
+    if re.match(r"^https?://", args.input):
+        import urllib.request
+        req = urllib.request.Request(args.input, headers={
+            "User-Agent": "cdif-converters/0.1",
+            "Accept": "application/ld+json, application/json"})
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        url_base = args.input
+    else:
+        with open(args.input, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        url_base = None
 
     if has_remote_context(data):
-        base = args.catalog_url or (data.get("@id") if str(data.get("@id", "")).startswith("http") else None)
+        base = args.catalog_url or url_base or (data.get("@id") if str(data.get("@id", "")).startswith("http") else None)
         data = expand_remote_context(data, base or "urn:dcat-source:")
         print("Applied the document's remote @context")
+    elif args.normalize:
+        base = args.catalog_url or url_base or (data.get("@id") if str(data.get("@id", "")).startswith("http") else None)
+        data = expand_remote_context(data, base or "urn:dcat-source:")
+        print("Normalized the DCAT graph to the converter's @context")
 
     # Find datasets
     graph = build_node_index(data)
