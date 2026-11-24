@@ -1,0 +1,73 @@
+mapping_set_id: https://w3id.org/cdif/mappings/socrata-to-cdif
+mapping_set_title: Socrata view to CDIF
+mapping_set_description: |
+  Property correspondences applied by Socrata/socrata_to_cdif.py (a Socrata
+  asset's native metadata, the view served at /api/views/{id}.json -> CDIF
+  JSON-LD, one record per view). This table drives the converter: it is read
+  at runtime, and each transform names a shaper (tf_<transform>) in
+  socrata_to_cdif.py.
+
+  subject_json_path is a path from the view root: dot-separated member names
+  (which may contain spaces), '*' for every member of an object and '[*]' for
+  every item of an array. subject_id and subject_class use socrata: only as
+  labels. Rows run in file order: for a scalar target the first row to fill it
+  wins; array targets accumulate. A row with no transform documents members
+  that are not converted, or that another row reads.
+
+  A portal defines its own fields, in groups, under metadata.custom_fields. A
+  row whose path is metadata.custom_fields.*.<field> maps that field in
+  whatever group it is; the 'other custom fields' row, which must come after
+  them, writes every field no row mapped as a schema:additionalProperty.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_provider: https://cross-domain-interoperability-framework.github.io/
+mapping_tool: converters/Socrata/socrata_to_cdif.py
+mapping_date: 2026-11-24
+subject_source: https://dev.socrata.com/docs/other/metadata.html
+object_source: https://w3id.org/cdif/core/2.0
+see_also:
+  - https://dev.socrata.com/
+  - https://resources.data.gov/resources/dcat-us/
+extension_definitions:
+  - slot_name: object_json_path
+    property: https://w3id.org/cdif/mappings/objectJsonPath
+  - slot_name: subject_class
+    property: https://w3id.org/cdif/mappings/subjectClass
+  - slot_name: subject_json_path
+    property: https://w3id.org/cdif/mappings/subjectJsonPath
+  - slot_name: transform
+    property: https://w3id.org/cdif/mappings/transform
+transforms: |
+  text          the first non-empty value
+  texts         every distinct non-empty value
+  htmltext      the first non-empty value, HTML markup removed, line breaks kept
+  epoch         seconds since 1970 -> an ISO 8601 UTC date-time
+  date          an ISO 8601 date or date-time
+  keywords      keyword strings
+  category      the portal's category -> DefinedTerm
+  license       a licence with a termsLink -> CreativeWork
+  licensetext   a licence without one -> 'License: <name>'
+  creator       attribution and attributionLink -> creator {"@list": [Organization]}
+  author        tableAuthor account -> added to the creator list
+  maintainer    owner account -> Person or Organization
+  organizations names -> Organizations
+  contact       Contact Name and Contact Email -> schema:Role pointOfContact
+  interval      an ISO 8601 date or start/end interval
+  places        names -> Places
+  homepage      a URL -> LinkRole 'homepage'
+  attachments   metadata.attachments -> LinkRoles 'attachment'
+  variables     columns -> cdi:InstanceVariables, with their statistics
+  primarykey    rowIdentifierColumnId -> cdif:Key
+  rowcount      the columns' common count -> cdi:Statistics 'row count'
+  rowlabel      metadata.rowLabel -> PropertyValue 'Row label'
+  csv           a tabular view -> its CSV export, with physical mappings
+  soda          a tabular view -> its SODA endpoint as a schema:WebAPI
+  blob          a file asset -> DataDownload
+  accesspoints  an external link's access points -> DataDownloads
+  customfields  unmapped custom fields -> PropertyValues
+curie_map:
+  cdif: https://w3id.org/cdif/
+  schema: http://schema.org/
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  socrata: https://dev.socrata.com/docs/other/metadata.html#
+  sssom: https://w3id.org/sssom/

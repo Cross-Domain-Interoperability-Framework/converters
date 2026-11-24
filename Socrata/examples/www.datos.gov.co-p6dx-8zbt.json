@@ -1,0 +1,833 @@
+{
+ "id": "p6dx-8zbt",
+ "name": "SECOP II - Procesos de Contratación",
+ "assetType": "dataset",
+ "attribution": "Agencia Nacional de Contratación Pública - Colombia Compra Eficiente, Bogotá D.C.",
+ "attributionLink": "https://www.colombiacompra.gov.co",
+ "averageRating": 0,
+ "category": "Estadísticas Nacionales",
+ "createdAt": 1569904921,
+ "description": "Registro de los procesos de compra, sean o no adjudicados, hechos en la plataforma SECOP II desde su lanzamiento",
+ "diciBackend": false,
+ "displayType": "table",
+ "downloadCount": 168878,
+ "hideFromCatalog": false,
+ "hideFromDataJson": false,
+ "licenseId": "CC_40_BY_SA",
+ "locked": false,
+ "newBackend": true,
+ "numberOfComments": 35,
+ "oid": 42759004,
+ "provenance": "official",
+ "publicationAppendEnabled": false,
+ "publicationDate": 1794726340,
+ "publicationGroup": 16601046,
+ "publicationStage": "published",
+ "rowsUpdatedAt": 1795473389,
+ "rowsUpdatedBy": "mb3d-8f4b",
+ "tableId": 20721095,
+ "totalTimesRated": 0,
+ "viewCount": 1879229,
+ "viewLastModified": 1794726340,
+ "viewType": "tabular",
+ "approvals": [
+  {
+   "reviewedAt": 1606510712,
+   "reviewedAutomatically": false,
+   "state": "approved",
+   "submissionId": 7861488,
+   "submissionObject": "public_audience_request",
+   "submissionOutcome": "change_audience",
+   "submittedAt": 1606509600,
+   "targetAudience": "public",
+   "workflowId": 2188,
+   "reviewer": {
+    "id": "r4qn-dwdd",
+    "displayName": "Ministerio de Tecnologías de la Información y las Comunicaciones - Datos Abiertos"
+   },
+   "submissionDetails": {
+    "permissionType": "read"
+   },
+   "submissionOutcomeApplication": {
+    "endedAt": 1606510719,
+    "failureCount": 0,
+    "startedAt": 1606510712,
+    "status": "success"
+   },
+   "submitter": {
+    "id": "e8qe-xtd4",
+    "displayName": "Colombia Compra Eficiente"
+   }
+  }
+ ],
+ "clientContext": {
+  "clientContextVariables": [],
+  "inheritedVariables": {}
+ },
+ "columns": [
+  {
+   "id": 651645788,
+   "name": "Entidad",
+   "dataTypeName": "text",
+   "description": "Nombre de la Entidad que publica el proceso de compra pública",
+   "fieldName": "entidad",
+   "position": 1,
+   "renderTypeName": "text",
+   "tableColumnId": 88482275,
+   "format": {}
+  },
+  {
+   "id": 651645789,
+   "name": "Nit Entidad",
+   "dataTypeName": "text",
+   "description": "NIT de la Entidad que publicó el proceso",
+   "fieldName": "nit_entidad",
+   "position": 2,
+   "renderTypeName": "text",
+   "tableColumnId": 88482294,
+   "format": {}
+  },
+  {
+   "id": 651645790,
+   "name": "Departamento Entidad",
+   "dataTypeName": "text",
+   "description": "Departamento en el cual está registrada la entidad\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+   "fieldName": "departamento_entidad",
+   "position": 3,
+   "renderTypeName": "text",
+   "tableColumnId": 88482259,
+   "format": {}
+  },
+  {
+   "id": 651645791,
+   "name": "Ciudad Entidad",
+   "dataTypeName": "text",
+   "description": "Ciudad en la cual está registrada la entidad\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+   "fieldName": "ciudad_entidad",
+   "position": 4,
+   "renderTypeName": "text",
+   "tableColumnId": 88482300,
+   "format": {}
+  },
+  {
+   "id": 651645792,
+   "name": "OrdenEntidad",
+   "dataTypeName": "text",
+   "description": "Orden de la Entidad (Nacional, Regional)\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+   "fieldName": "ordenentidad",
+   "position": 5,
+   "renderTypeName": "text",
+   "tableColumnId": 88482305,
+   "format": {}
+  },
+  {
+   "id": 651645848,
+   "name": "Entidad Centralizada",
+   "dataTypeName": "text",
+   "description": "Indica si la entidad es o no centralizada",
+   "fieldName": "entidad_centralizada",
+   "position": 6,
+   "renderTypeName": "text",
+   "tableColumnId": 173772370,
+   "format": {}
+  },
+  {
+   "id": 651645794,
+   "name": "ID del Proceso",
+   "dataTypeName": "text",
+   "description": "Identificador Único del Proceso, valor generado por la plataforma\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+   "fieldName": "id_del_proceso",
+   "position": 8,
+   "renderTypeName": "text",
+   "tableColumnId": 88482260,
+   "format": {}
+  },
+  {
+   "id": 651645795,
+   "name": "Referencia del Proceso",
+   "dataTypeName": "text",
+   "description": "Identificador del Proceso, valor generado por la Entidad\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+   "fieldName": "referencia_del_proceso",
+   "position": 9,
+   "renderTypeName": "text",
+   "tableColumnId": 88482293,
+   "format": {}
+  },
+  {
+   "id": 651645796,
+   "name": "PCI",
+   "dataTypeName": "text",
+   "description": "Codigo de Unidad - Sub Unidad Contratación\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+   "fieldName": "ppi",
+   "position": 10,
+   "renderTypeName": "text",
+   "tableColumnId": 88482266,
+   "format": {}
+  },
+  {
+   "id": 651645797,
+   "name": "ID del Portafolio",
+   "dataTypeName": "text",
+   "description": "Identificador del Portafolio al cual corresponde el proceso de compra\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+   "fieldName": "id_del_portafolio",
+   "position": 11,
+   "renderTypeName": "text",
+   "tableColumnId": 88482291,
+   "format": {}
+  },
+  {
+   "id": 651645798,
+   "name": "Nombre del Procedimiento",
+   "dataTypeName": "text",
+   "description": "Nombre dado al proceso de compra por la Entidad\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+   "fieldName": "nombre_del_procedimiento",
+   "position": 12,
+   "renderTypeName": "text",
+   "tableColumnId": 88482252,
+   "format": {}
+  },
+  {
+   "id": 651645799,
+   "name": "Descripción del Procedimiento",
+   "dataTypeName": "text",
+   "description": "Primera definición de las características principales del proceso\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+   "fieldName": "descripci_n_del_procedimiento",
+   "position": 13,
+   "renderTypeName": "text",
+   "tableColumnId": 88482286,
+   "format": {}
+  },
+  {
+   "id": 651645800,
+   "name": "Fase",
+   "dataTypeName": "text",
+   "description": "Fase en la que actualmente se encuentra el proceso",
+   "fieldName": "fase",
+   "position": 14,
+   "renderTypeName": "text",
+   "tableColumnId": 88482298,
+   "format": {}
+  },
+  {
+   "id": 651645801,
+   "name": "Fecha de Publicacion del Proceso",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha de la publicación inicial del proceso de compra",
+   "fieldName": "fecha_de_publicacion_del",
+   "position": 15,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 88482255,
+   "format": {
+    "view": "date_time"
+   }
+  },
+  {
+   "id": 651645802,
+   "name": "Fecha de Ultima Publicación",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha de la última publicación hecha para el proceso de compra",
+   "fieldName": "fecha_de_ultima_publicaci",
+   "position": 16,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 88482307,
+   "format": {
+    "view": "date_time"
+   }
+  },
+  {
+   "id": 651645803,
+   "name": "Fecha de Publicacion (Fase Planeacion Precalificacion)",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha de publicación, dentro del proceso, de la fase de Planeación en Precalificación",
+   "fieldName": "fecha_de_publicacion_fase",
+   "position": 17,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 88482295,
+   "format": {
+    "view": "date_time"
+   }
+  },
+  {
+   "id": 651645804,
+   "name": "Fecha de Publicacion (Fase Seleccion Precalificacion)",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha de publicación, dentro del proceso, de la fase de Selección en Precalificación",
+   "fieldName": "fecha_de_publicacion_fase_1",
+   "position": 18,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 88482265,
+   "format": {
+    "view": "date"
+   }
+  },
+  {
+   "id": 651645805,
+   "name": "Fecha de Publicacion (Manifestacion de Interes)",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha de publicación, dentro del proceso, de la fase de Manifestación de Interés",
+   "fieldName": "fecha_de_publicacion",
+   "position": 19,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 88482287,
+   "format": {
+    "view": "date_time"
+   }
+  },
+  {
+   "id": 651645806,
+   "name": "Fecha de Publicacion (Fase Borrador)",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha de publicación, dentro del proceso, de la fase Borrador",
+   "fieldName": "fecha_de_publicacion_fase_2",
+   "position": 20,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 88482273,
+   "format": {
+    "view": "date_time"
+   }
+  },
+  {
+   "id": 651645807,
+   "name": "Fecha de Publicacion (Fase Seleccion)",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha de publicación, dentro del proceso, de la fase Selección",
+   "fieldName": "fecha_de_publicacion_fase_3",
+   "position": 21,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 88482257,
+   "format": {
+    "view": "date_time"
+   }
+  },
+  {
+   "id": 651645847,
+   "name": "ID Contrato",
+   "dataTypeName": "text",
+   "description": "ID del contrato electrónico",
+   "fieldName": "id_contrato",
+   "position": 22,
+   "renderTypeName": "text",
+   "tableColumnId": 173772369,
+   "format": {}
+  },
+  {
+   "id": 651645808,
+   "name": "Precio Base",
+   "dataTypeName": "number",
+   "description": "Precio Base, proyectado, del proceso de Compra",
+   "fieldName": "precio_base",
+   "position": 23,
+   "renderTypeName": "number",
+   "tableColumnId": 88482281,
+   "format": {
+    "precisionStyle": "currency",
+    "currencyStyle": "COP"
+   }
+  },
+  {
+   "id": 651645809,
+   "name": "Modalidad de Contratacion",
+   "dataTypeName": "text",
+   "description": "Modalidad de selección bajo la cual se desarrolla el proceso de Compra",
+   "fieldName": "modalidad_de_contratacion",
+   "position": 24,
+   "renderTypeName": "text",
+   "tableColumnId": 88482279,
+   "format": {}
+  },
+  {
+   "id": 651645810,
+   "name": "Justificación Modalidad de Contratación",
+   "dataTypeName": "text",
+   "description": "En caso de requerirse, Justificación para la modalidad de selección elegida para el proceso de compra",
+   "fieldName": "justificaci_n_modalidad_de",
+   "position": 25,
+   "renderTypeName": "text",
+   "tableColumnId": 88482302,
+   "format": {}
+  },
+  {
+   "id": 651645811,
+   "name": "Duracion",
+   "dataTypeName": "number",
+   "description": "Valor de la Duración estimada del proceso de compra pública",
+   "fieldName": "duracion",
+   "position": 26,
+   "renderTypeName": "number",
+   "tableColumnId": 88482277,
+   "format": {}
+  },
+  {
+   "id": 651645812,
+   "name": "Unidad de Duracion",
+   "dataTypeName": "text",
+   "description": "Unidad que aplica a la Duración estimada del proceso de compra pública",
+   "fieldName": "unidad_de_duracion",
+   "position": 27,
+   "renderTypeName": "text",
+   "tableColumnId": 88482292,
+   "format": {}
+  },
+  {
+   "id": 651645813,
+   "name": "Fecha de Recepcion de Respuestas",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha asignada para la recepción de respuestas por parte de los proveedores, dentro del proceso de compra",
+   "fieldName": "fecha_de_recepcion_de",
+   "position": 28,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 88482284,
+   "format": {
+    "view": "date_time"
+   }
+  },
+  {
+   "id": 651645814,
+   "name": "Fecha de Apertura de Respuesta",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha Estimada para la Apertura de las respuestas ",
+   "fieldName": "fecha_de_apertura_de_respuesta",
+   "position": 29,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 88482263,
+   "format": {
+    "view": "date_time"
+   }
+  },
+  {
+   "id": 651645815,
+   "name": "Fecha de Apertura Efectiva",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha Real para la Apertura de las respuestas ",
+   "fieldName": "fecha_de_apertura_efectiva",
+   "position": 30,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 88482256,
+   "format": {
+    "view": "date_time"
+   }
+  },
+  {
+   "id": 651645816,
+   "name": "Ciudad de la Unidad de Contratación",
+   "dataTypeName": "text",
+   "description": "Cuidad en la que aparece registrada la unidad de contratación de la Entidad",
+   "fieldName": "ciudad_de_la_unidad_de",
+   "position": 31,
+   "renderTypeName": "text",
+   "tableColumnId": 88482262,
+   "format": {}
+  },
+  {
+   "id": 651645817,
+   "name": "Nombre de la Unidad de Contratación",
+   "dataTypeName": "text",
+   "description": "Nombre de la unidad de contratación de la Entidad",
+   "fieldName": "nombre_de_la_unidad_de",
+   "position": 32,
+   "renderTypeName": "text",
+   "tableColumnId": 88482254,
+   "format": {}
+  },
+  {
+   "id": 651645818,
+   "name": "Proveedores Invitados",
+   "dataTypeName": "number",
+   "description": "Número de Proveedores invitados a participar del proceso, en total",
+   "fieldName": "proveedores_invitados",
+   "position": 33,
+   "renderTypeName": "number",
+   "tableColumnId": 88482274,
+   "format": {}
+  },
+  {
+   "id": 651645819,
+   "name": "Proveedores con Invitacion Directa",
+   "dataTypeName": "number",
+   "description": "Proveedores con Invitación a participar hecha de forma directa",
+   "fieldName": "proveedores_con_invitacion",
+   "position": 34,
+   "renderTypeName": "number",
+   "tableColumnId": 88482288,
+   "format": {}
+  },
+  {
+   "id": 651645820,
+   "name": "Visualizaciones del Procedimiento",
+   "dataTypeName": "number",
+   "description": "Número de Visualizaciones hechas a través de la herramienta, del Proceso de Compra",
+   "fieldName": "visualizaciones_del",
+   "position": 35,
+   "renderTypeName": "number",
+   "tableColumnId": 88482308,
+   "format": {}
+  },
+  {
+   "id": 651645821,
+   "name": "Proveedores que Manifestaron Interes",
+   "dataTypeName": "number",
+   "description": "Proveedores que Manifestaron Interés en el proceso a través de la plataforma",
+   "fieldName": "proveedores_que_manifestaron",
+   "position": 36,
+   "renderTypeName": "number",
+   "tableColumnId": 88482280,
+   "format": {}
+  },
+  {
+   "id": 651645822,
+   "name": "Respuestas al Procedimiento",
+   "dataTypeName": "number",
+   "description": "Respuestas hechas al procedimiento, tanto de proveedores como de la misma entidad",
+   "fieldName": "respuestas_al_procedimiento",
+   "position": 37,
+   "renderTypeName": "number",
+   "tableColumnId": 88482269,
+   "format": {}
+  },
+  {
+   "id": 651645823,
+   "name": "Respuestas Externas",
+   "dataTypeName": "number",
+   "description": "Número de Respuestas hechas por entes externos",
+   "fieldName": "respuestas_externas",
+   "position": 38,
+   "renderTypeName": "number",
+   "tableColumnId": 88482272,
+   "format": {}
+  },
+  {
+   "id": 651645824,
+   "name": "Conteo de Respuestas a Ofertas",
+   "dataTypeName": "number",
+   "description": "Número de Respuestas hechas de forma directa en las ofertas",
+   "fieldName": "conteo_de_respuestas_a_ofertas",
+   "position": 39,
+   "renderTypeName": "number",
+   "tableColumnId": 88482296,
+   "format": {}
+  },
+  {
+   "id": 651645825,
+   "name": "Proveedores Unicos con Respuestas",
+   "dataTypeName": "number",
+   "description": "Proveedores Únicos que han redactado respuestas en el proceso",
+   "fieldName": "proveedores_unicos_con",
+   "position": 40,
+   "renderTypeName": "number",
+   "tableColumnId": 88482253,
+   "format": {}
+  },
+  {
+   "id": 651645826,
+   "name": "Numero de Lotes",
+   "dataTypeName": "number",
+   "description": "Número de lotes de articulos solicitados dentro del proceso",
+   "fieldName": "numero_de_lotes",
+   "position": 41,
+   "renderTypeName": "number",
+   "tableColumnId": 88482303,
+   "format": {}
+  },
+  {
+   "id": 651645827,
+   "name": "Estado del Procedimiento",
+   "dataTypeName": "text",
+   "description": "Estado actual de desarrollo del procedimiento de compra pública",
+   "fieldName": "estado_del_procedimiento",
+   "position": 42,
+   "renderTypeName": "text",
+   "tableColumnId": 88482267,
+   "format": {}
+  },
+  {
+   "id": 651645828,
+   "name": "ID Estado del Procedimiento",
+   "dataTypeName": "number",
+   "description": "Identificador del Estado del procedimiento",
+   "fieldName": "id_estado_del_procedimiento",
+   "position": 43,
+   "renderTypeName": "number",
+   "tableColumnId": 88482276,
+   "format": {}
+  },
+  {
+   "id": 651645829,
+   "name": "Adjudicado",
+   "dataTypeName": "text",
+   "description": "Determina si el proceso fue adjudicado",
+   "fieldName": "adjudicado",
+   "position": 44,
+   "renderTypeName": "text",
+   "tableColumnId": 88482283,
+   "format": {}
+  },
+  {
+   "id": 651645830,
+   "name": "ID Adjudicacion",
+   "dataTypeName": "text",
+   "description": "Identificador de la adjudicación",
+   "fieldName": "id_adjudicacion",
+   "position": 45,
+   "renderTypeName": "text",
+   "tableColumnId": 88482299,
+   "format": {}
+  },
+  {
+   "id": 651645831,
+   "name": "CodigoProveedor",
+   "dataTypeName": "text",
+   "description": "Código, en la plataforma, del proveedor adjudicado",
+   "fieldName": "codigoproveedor",
+   "position": 46,
+   "renderTypeName": "text",
+   "tableColumnId": 88482258,
+   "format": {}
+  },
+  {
+   "id": 651645832,
+   "name": "Departamento Proveedor",
+   "dataTypeName": "text",
+   "description": "Departamento en el que está registrado el proveedor adjudicado",
+   "fieldName": "departamento_proveedor",
+   "position": 47,
+   "renderTypeName": "text",
+   "tableColumnId": 88482289,
+   "format": {}
+  },
+  {
+   "id": 651645833,
+   "name": "Ciudad Proveedor",
+   "dataTypeName": "text",
+   "description": "Ciudad en la que está registrado el proveedor adjudicado",
+   "fieldName": "ciudad_proveedor",
+   "position": 48,
+   "renderTypeName": "text",
+   "tableColumnId": 88482268,
+   "format": {}
+  },
+  {
+   "id": 651645834,
+   "name": "Fecha Adjudicacion",
+   "dataTypeName": "calendar_date",
+   "description": "Fecha en la que se hizo la adjudicación del proceso para el proveedor seleccionado",
+   "fieldName": "fecha_adjudicacion",
+   "position": 49,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 89013223,
+   "format": {
+    "view": "date_time",
+    "align": "right"
+   }
+  },
+  {
+   "id": 651645835,
+   "name": "Valor Total Adjudicacion",
+   "dataTypeName": "number",
+   "description": "Valor total Adjudicado",
+   "fieldName": "valor_total_adjudicacion",
+   "position": 50,
+   "renderTypeName": "number",
+   "tableColumnId": 89013222,
+   "format": {
+    "precisionStyle": "currency",
+    "currencyStyle": "COP"
+   }
+  },
+  {
+   "id": 651645836,
+   "name": "Nombre del Adjudicador",
+   "dataTypeName": "text",
+   "description": "Nombre del Usuario que ejecutó la accion de adjudicación",
+   "fieldName": "nombre_del_adjudicador",
+   "position": 51,
+   "renderTypeName": "text",
+   "tableColumnId": 88482271,
+   "format": {}
+  },
+  {
+   "id": 651645837,
+   "name": "Nombre del Proveedor Adjudicado",
+   "dataTypeName": "text",
+   "description": "Nombre del Proveedor Adjudicado ",
+   "fieldName": "nombre_del_proveedor",
+   "position": 52,
+   "renderTypeName": "text",
+   "tableColumnId": 88482290,
+   "format": {}
+  },
+  {
+   "id": 651645838,
+   "name": "NIT del Proveedor Adjudicado",
+   "dataTypeName": "text",
+   "description": "NIT del Proveedor Adjudicado",
+   "fieldName": "nit_del_proveedor_adjudicado",
+   "position": 53,
+   "renderTypeName": "text",
+   "tableColumnId": 88482278,
+   "format": {}
+  },
+  {
+   "id": 651645839,
+   "name": "Codigo Principal de Categoria",
+   "dataTypeName": "text",
+   "description": "Codigo UNSPSC de la categoría principal del producto o servicio adquirido en proceso de compra",
+   "fieldName": "codigo_principal_de_categoria",
+   "position": 54,
+   "renderTypeName": "text",
+   "tableColumnId": 88482261,
+   "format": {}
+  },
+  {
+   "id": 651645840,
+   "name": "Estado de Apertura del Proceso",
+   "dataTypeName": "text",
+   "description": "Estado actual de Apertura de información del proceso",
+   "fieldName": "estado_de_apertura_del_proceso",
+   "position": 55,
+   "renderTypeName": "text",
+   "tableColumnId": 88482297,
+   "format": {}
+  },
+  {
+   "id": 651645841,
+   "name": "Tipo de Contrato",
+   "dataTypeName": "text",
+   "description": "Tipo de Contrato definido para el proceso de compra",
+   "fieldName": "tipo_de_contrato",
+   "position": 56,
+   "renderTypeName": "text",
+   "tableColumnId": 88482270,
+   "format": {}
+  },
+  {
+   "id": 651645842,
+   "name": "Subtipo de Contrato",
+   "dataTypeName": "text",
+   "description": "Subtipo de Contrato definido para el proceso de compra",
+   "fieldName": "subtipo_de_contrato",
+   "position": 57,
+   "renderTypeName": "text",
+   "tableColumnId": 88482264,
+   "format": {}
+  },
+  {
+   "id": 651645843,
+   "name": "Categorias Adicionales",
+   "dataTypeName": "text",
+   "description": "Identificador de las categorías UNSPSC adicionales, incluidas en el producto o servicio adquirido en proceso de compra",
+   "fieldName": "categorias_adicionales",
+   "position": 58,
+   "renderTypeName": "text",
+   "tableColumnId": 88482304,
+   "format": {}
+  },
+  {
+   "id": 651645844,
+   "name": "URLProceso",
+   "dataTypeName": "url",
+   "description": "URL, en la plataforma, en la que se puede consultar el proceso de compra",
+   "fieldName": "urlproceso",
+   "position": 59,
+   "renderTypeName": "url",
+   "tableColumnId": 88482301,
+   "format": {},
+   "subColumnTypes": [
+    "url",
+    "description"
+   ]
+  },
+  {
+   "id": 651645845,
+   "name": "Codigo Entidad",
+   "dataTypeName": "number",
+   "description": "Código de la entidad en la plataforma SECOPII",
+   "fieldName": "codigo_entidad",
+   "position": 60,
+   "renderTypeName": "number",
+   "tableColumnId": 151285047,
+   "format": {}
+  },
+  {
+   "id": 651645846,
+   "name": "Estado Resumen",
+   "dataTypeName": "text",
+   "description": "Resumen del estado del proceso de compra pública",
+   "fieldName": "estado_resumen",
+   "position": 61,
+   "renderTypeName": "text",
+   "tableColumnId": 151285046,
+   "format": {}
+  }
+ ],
+ "grants": [
+  {
+   "inherited": false,
+   "type": "viewer",
+   "flags": [
+    "public"
+   ]
+  }
+ ],
+ "license": {
+  "name": "Creative Commons Attribution | Share Alike 4.0 International",
+  "logoUrl": "images/licenses/cc30bysa.png",
+  "termsLink": "http://creativecommons.org/licenses/by-sa/4.0/legalcode"
+ },
+ "metadata": {
+  "custom_fields": {
+   "Información de la Entidad": {
+    "Municipio": "Bogotá D.C.",
+    "Nombre de la Entidad": "Agencia Nacional de Contratación Pública - Colombia Compra Eficiente, Bogotá D.C.",
+    "DIVIPOLA Municipio": "11001",
+    "Orden": "Nacional",
+    "Sector": "Planeación",
+    "Área o dependencia": "Subdirecci",
+    "Departamento": "Bogotá D.C."
+   },
+   "Información de Datos": {
+    "Cobertura Geográfica": "Nacional",
+    "Idioma": "Español",
+    "Frecuencia de Actualización": "Diaria"
+   }
+  },
+  "availableDisplayTypes": [
+   "table",
+   "fatrow",
+   "page"
+  ]
+ },
+ "owner": {
+  "id": "mb3d-8f4b",
+  "displayName": "Datos Abiertos CCE",
+  "screenName": "Datos Abiertos CCE",
+  "type": "interactive",
+  "flags": [
+   "acceptedEula",
+   "mayBeStoriesCoOwner"
+  ]
+ },
+ "query": {},
+ "rights": [
+  "read"
+ ],
+ "tableAuthor": {
+  "id": "mb3d-8f4b",
+  "displayName": "Datos Abiertos CCE",
+  "screenName": "Datos Abiertos CCE",
+  "type": "interactive",
+  "flags": [
+   "acceptedEula",
+   "mayBeStoriesCoOwner"
+  ]
+ },
+ "tags": [
+  "secop",
+  "procesos de compra"
+ ],
+ "flags": [
+  "default",
+  "ownerMayBeContacted",
+  "restorable",
+  "restorePossibleForType"
+ ]
+}
