@@ -1505,6 +1505,48 @@ def _apply_table(doc, ds, changes, graph=None):
 # Dataset discovery
 # ---------------------------------------------------------------------------
 
+def load_context():
+    """The JSON-LD context to compact into, from the mapping set's curie_map.
+
+    Taken from the table rather than restated so the prefixes a source is
+    rewritten in are exactly the ones the converter's rules match on. A prefix
+    that drifts here would make every rule for that vocabulary silently miss.
+    """
+    import yaml
+    ctx = {}
+    for name in ("dcat-to-cdif.sssom.yml", "dcat-aliases.sssom.yml"):
+        meta = yaml.safe_load((_MAPPINGS_DIR / name).read_text(encoding="utf-8"))
+        for prefix, iri in (meta.get("curie_map") or {}).items():
+            if prefix not in ("semapv",):
+                ctx.setdefault(prefix, iri)
+    ctx.setdefault("foaf", "http://xmlns.com/foaf/0.1/")
+    ctx.setdefault("owl", "http://www.w3.org/2002/07/owl#")
+    return ctx
+
+
+def has_remote_context(data):
+    """True when a document names its @context by URL instead of carrying it.
+
+    A Project Open Data (DCAT-US 1.1) data.json does: its keys are bare
+    ('title', 'keyword', 'distribution') and mean nothing until the context at
+    that URL is applied. The rules match prefixed keys (dcterms:title), so
+    such a document converts to records with no title and nothing mapped."""
+    ctx = data.get("@context") if isinstance(data, dict) else None
+    return isinstance(ctx, str) or (isinstance(ctx, list) and any(isinstance(c, str) for c in ctx))
+
+
+def expand_remote_context(data, base=None):
+    """The document re-written in the prefixes the rules match on: parsed as
+    RDF, which fetches and applies its @context, and compacted into
+    load_context(). base resolves relative IRIs; without one rdflib uses the
+    working directory, and a file: IRI would be written into the records."""
+    import rdflib
+    graph = rdflib.Graph()
+    graph.parse(data=json.dumps(data), format="json-ld", publicID=base)
+    return json.loads(graph.serialize(format="json-ld", context=load_context(),
+                                      auto_compact=True))
+
+
 def find_datasets(obj, results=None):
     """Recursively find all dcat:Dataset nodes in a JSON-LD structure."""
     if results is None:
@@ -1557,7 +1599,7 @@ def convert_agent(agent):
         result["@type"] = ["schema:Organization"]
 
     # Name
-    for name_key in ("foaf:name", "rdfs:label", "schema:name", "vcard:fn"):
+    for name_key in ("foaf:name", "rdfs:label", "schema:name", "vcard:fn", "skos:prefLabel"):
         name = agent.get(name_key)
         if name:
             result["schema:name"] = _get_str(name)
@@ -1884,6 +1926,19 @@ def convert_dcat_to_cdif(ds, catalog_name="", catalog_url="", profile="core",
     for prefix in ("psdiDcat:", "dcat:"):
         if dsid.startswith(prefix):
             dsid = f"http://metadata.psdi.ac.uk/psdi-dcat/{dsid[len(prefix):]}"
+    if not dsid or dsid.startswith("_:"):
+        # The source gives the dataset no IRI (a DCAT-US 1.1 data.json entry has
+        # none), so the @id would be empty or a blank-node label that changes on
+        # every run. Its identifier, or else its landing page, is the stable name
+        # it does have.
+        for key in ("dcterms:identifier", "dcat:landingPage"):
+            value = ds.get(key)
+            if isinstance(value, list) and value:
+                value = value[0]
+            value = value.get("@id") if isinstance(value, dict) and "@id" in value else _get_str(value)
+            if isinstance(value, str) and value.startswith(("http://", "https://")):
+                dsid = value
+                break
     doc["@id"] = dsid
     doc["@type"] = ["schema:Dataset"]
 
@@ -2079,6 +2134,11 @@ def main():
     with open(args.input, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    if has_remote_context(data):
+        base = args.catalog_url or (data.get("@id") if str(data.get("@id", "")).startswith("http") else None)
+        data = expand_remote_context(data, base or "urn:dcat-source:")
+        print("Applied the document's remote @context")
+
     # Find datasets
     graph = build_node_index(data)
     if isinstance(data, dict) and data.get("@type") == "dcat:Dataset":
@@ -2105,6 +2165,7 @@ def main():
         indices = list(range(len(datasets)))
 
     os.makedirs(args.output, exist_ok=True)
+    written = set()
 
     # Convert
     for i in indices:
@@ -2127,6 +2188,16 @@ def main():
         # Derive filename
         safe = re.sub(r"[^a-z0-9-]", "", title[:40].lower().replace(" ", "-"))
         filename = f"dcat-{safe}.jsonld"
+        if filename in written:
+            # Titles that agree in their first 40 characters would overwrite each
+            # other; tell them apart by a hash of the record's @id (or, for a
+            # record without one, its position in the source).
+            import hashlib
+            key = converted.get("@id") or ""
+            if not key or key.startswith("_:"):
+                key = str(i)
+            filename = f"dcat-{safe}-{hashlib.sha1(key.encode('utf-8')).hexdigest()[:8]}.jsonld"
+        written.add(filename)
         outpath = os.path.join(args.output, filename)
 
         with open(outpath, "w", encoding="utf-8") as f:
