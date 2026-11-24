@@ -1,0 +1,148 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://data.seattle.gov/d/d9jj-ygvn",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "All Cadastral GIS Data (FGDB)",
+  "schema:description": "This compressed file geodatabase contains the following layers:\nLegal Subdivisions - Line\nLegal Subdivisions - Polygon\nLegal Annotation\nCadastral Control Points\n\nThis dataset is updated on a weekly basis.",
+  "schema:identifier": "d9jj-ygvn",
+  "schema:keywords": [
+    "gis",
+    "legal",
+    "subdivisions",
+    "legal line",
+    "legal control",
+    "annotation",
+    "property",
+    "lot",
+    "parcel",
+    "cadastral",
+    "cadastre",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Land Base",
+      "schema:inDefinedTermSet": "data.seattle.gov categories"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Seattle IT"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "MAP_GIS",
+        "schema:identifier": "meq4-irdj"
+      }
+    ]
+  },
+  "schema:publisher": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "data.seattle.gov"
+    }
+  ],
+  "schema:datePublished": "2019-03-25T20:10:50Z",
+  "schema:dateCreated": "2019-03-25T19:37:48Z",
+  "schema:dateModified": "2019-03-25T19:37:48Z",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.seattle.gov/download/d9jj-ygvn/application%2Fzip",
+      "schema:name": "COS_LegalSubdivisions.gdb.zip",
+      "schema:encodingFormat": [
+        "application/zip"
+      ],
+      "schema:contentSize": "346154885 B"
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "GIS"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Department: Department",
+      "schema:value": "Seattle Information Technology"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Contact Email",
+      "schema:value": "open.data@seattle.gov"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Refresh Frequency: Frequency",
+      "schema:value": "Monthly"
+    }
+  ],
+  "schema:url": "https://data.seattle.gov/d/d9jj-ygvn",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://data.seattle.gov/d/d9jj-ygvn#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: All Cadastral GIS Data (FGDB)",
+    "schema:about": {
+      "@id": "https://data.seattle.gov/d/d9jj-ygvn"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.seattle.gov/api/views/d9jj-ygvn.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2025-01-29T06:44:26Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "MAP_GIS",
+      "schema:identifier": "meq4-irdj"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "City of Seattle Open Data",
+      "schema:url": "https://data.seattle.gov/"
+    }
+  }
+}

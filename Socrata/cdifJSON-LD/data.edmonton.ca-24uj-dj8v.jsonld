@@ -1,0 +1,1809 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/",
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@id": "https://data.edmonton.ca/d/24uj-dj8v",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "General Building Permits",
+  "schema:description": "List of issued building permits from the City of Edmonton - Urban Planning & Economy Department for the public to do construction or maintenance on a structure located in the City. Note - All records start from January 1, 2009.\nPlease note : the decision was made to not release applicant information on this dataset as it was seen as a potential privacy issue. For instance, if a high profile member of the public were to apply for a permit, their name (and consequently address) would show up on this table and become easily searchable by the public.  We viewed this as a potential issue and decided to publish the dataset without applicant information.\n\nAlso Note: The General Building Permits dataset now includes an \"Occupancy Date\" to indicate when a building has met the requirements for use or habitation. \n- Residential: Permits finalized on or after January 1, 2022.\n- Non-Residential: Permits completed on or after January 1, 2024, only if an occupancy record exists.\n- Historical Data: Records before these dates are blank for accuracy, or if no permit was required.\n- Usage: For trend analysis only; not a legal confirmation of occupancy for property transactions.",
+  "schema:identifier": "24uj-dj8v",
+  "schema:keywords": [
+    "building permits",
+    "odd2022yeg",
+    "fcm2026",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Urban Planning & Economy",
+      "schema:inDefinedTermSet": "data.edmonton.ca categories"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "License: See Terms of Use"
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "City of Edmonton"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Beta Test Site",
+        "schema:identifier": "efip-by44"
+      }
+    ]
+  },
+  "schema:datePublished": "2026-05-19T15:03:51Z",
+  "schema:dateCreated": "2014-06-30T20:10:32Z",
+  "schema:dateModified": "2026-11-24T12:34:44Z",
+  "schema:variableMeasured": [
+    {
+      "@id": "#row_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Row ID",
+      "schema:alternateName": [
+        "row_id"
+      ],
+      "schema:description": "I system generated ID used to identify a particular row of data.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: 0-100001232. Largest value: 9-99875479"
+      }
+    },
+    {
+      "@id": "#issue_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PERMIT_DATE",
+      "schema:alternateName": [
+        "issue_date"
+      ],
+      "schema:description": "The date when Building Permit has been issued.",
+      "cdif:physicalDataType": "xsd:dateTime",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: 2009-01-05T00:00:00.000. Largest value: 2026-11-23T00:00:00.000"
+      }
+    },
+    {
+      "@id": "#permit_number",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PERMIT_NUMBER",
+      "schema:alternateName": [
+        "permit_number"
+      ],
+      "schema:description": "The unique City-issued permit number. This column of data has been blanked due to FOIP reasons.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#permit_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REPORT_PERMIT_DATE",
+      "schema:alternateName": [
+        "permit_date"
+      ],
+      "schema:description": "Report label",
+      "cdif:physicalDataType": "xsd:dateTime",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: 2009-01-05T00:00:00.000. Largest value: 2026-11-23T00:00:00.000"
+      }
+    },
+    {
+      "@id": "#year",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "YEAR",
+      "schema:alternateName": [
+        "year"
+      ],
+      "schema:description": "Year when permit was issued.",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 2009,
+      "schema:maxValue": 2026,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#month_number",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "MONTH_NUMBER",
+      "schema:alternateName": [
+        "month_number"
+      ],
+      "schema:description": "Month number of when permit was issued",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 1,
+      "schema:maxValue": 12,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#job_category",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "JOB_CATEGORY",
+      "schema:alternateName": [
+        "job_category"
+      ],
+      "schema:description": "Type of Building Permit",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: Accessory Building Combination. Largest value: Uncovered Deck Combination"
+      }
+    },
+    {
+      "@id": "#job_description",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "JOB_DESCRIPTION",
+      "schema:alternateName": [
+        "job_description"
+      ],
+      "schema:description": "Description of the building permit issued.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249172,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 42,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: =. Largest value: Z"
+      }
+    },
+    {
+      "@id": "#building_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "BUILDING_TYPE",
+      "schema:alternateName": [
+        "building_type"
+      ],
+      "schema:description": "Type of Building Structure",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 246652,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 2562,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: Animal and Plant Services (410). Largest value: Utility Buildings (480)"
+      }
+    },
+    {
+      "@id": "#work_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "WORK_TYPE",
+      "schema:alternateName": [
+        "work_type"
+      ],
+      "schema:description": "Type of work to be done.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 185067,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 64147,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: (01) Building - New. Largest value: (99) Demolition"
+      }
+    },
+    {
+      "@id": "#construction_value",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONSTRUCTION_VALUE",
+      "schema:alternateName": [
+        "construction_value"
+      ],
+      "schema:description": "Estimated value of construction work",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": -1,
+      "schema:maxValue": 480256671,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 212388,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 36826,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#floor_area",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "FLOOR_AREA",
+      "schema:alternateName": [
+        "floor_area"
+      ],
+      "schema:description": "Square footage of floor area",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": -2185,
+      "schema:maxValue": 107638989.24,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 146697,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 102517,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#units_added",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "UNITS_ADDED",
+      "schema:alternateName": [
+        "units_added"
+      ],
+      "schema:description": "Change in dwelling unit",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": -140,
+      "schema:maxValue": 483,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 185255,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 63959,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#address",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ADDRESS",
+      "schema:alternateName": [
+        "address"
+      ],
+      "schema:description": "Address that the Building Permit was issued for",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249146,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 68,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: 0020, 10123 - 99 STREET NW. Largest value: Y100B, 1 - LONDONDERRY MALL NW"
+      }
+    },
+    {
+      "@id": "#legal_description",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LEGAL_DESCRIPTION",
+      "schema:alternateName": [
+        "legal_description"
+      ],
+      "schema:description": "Legal description for address where building permit was issued for.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 248976,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 238,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: 11-16-51-25-4;12-16-51-25-4. Largest value: SW-9-53-25-4"
+      }
+    },
+    {
+      "@id": "#zoning",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ZONING",
+      "schema:alternateName": [
+        "zoning"
+      ],
+      "schema:description": "Land use zone",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 234990,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 14224,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: 2069. Largest value: UW, UW, UW"
+      }
+    },
+    {
+      "@id": "#neighbourhood_numberr",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "NEIGHBOURHOOD_NUMBER",
+      "schema:alternateName": [
+        "neighbourhood_numberr"
+      ],
+      "schema:description": "NEIGHBOURHOOD_NUMBER",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249165,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 49,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: 1010. Largest value: 8889"
+      }
+    },
+    {
+      "@id": "#neighbourhood",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "NEIGHBOURHOOD",
+      "schema:alternateName": [
+        "neighbourhood"
+      ],
+      "schema:description": "City Neighbourhood name.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249165,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 49,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: ABBOTTSFIELD. Largest value: YOUNGSTOWN INDUSTRIAL"
+      }
+    },
+    {
+      "@id": "#bia",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "BIA",
+      "schema:alternateName": [
+        "bia"
+      ],
+      "schema:description": "If the permit location falls within a Business Improvement Area (BIA), the name of that BIA.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 10382,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 238832,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: 124 Street and Area. Largest value: The Crossroads"
+      }
+    },
+    {
+      "@id": "#count",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "COUNT",
+      "schema:alternateName": [
+        "count"
+      ],
+      "schema:description": "Used for reporting",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 1,
+      "schema:maxValue": 1,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 0,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#latitude",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LATITUDE",
+      "schema:alternateName": [
+        "latitude"
+      ],
+      "schema:description": "Horizontal spatial coordinate",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": 53.341530607592716,
+      "schema:maxValue": 53.71513129860006,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 231550,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 17664,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#longitude",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LONGITUDE",
+      "schema:alternateName": [
+        "longitude"
+      ],
+      "schema:description": "Vertical spatial coordinate",
+      "cdif:physicalDataType": "xsd:decimal",
+      "schema:minValue": -113.71298197985078,
+      "schema:maxValue": -113.28731342887656,
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 231550,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 17664,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#location",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LOCATION",
+      "schema:alternateName": [
+        "location"
+      ],
+      "schema:description": "Spatial coordinates for address",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#geometry_point",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Geometry Point",
+      "schema:alternateName": [
+        "geometry_point"
+      ],
+      "schema:description": "Geometry Point",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 231550,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 17664,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@id": "#occupancy_granted_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Occupancy Date",
+      "schema:alternateName": [
+        "occupancy_granted_date"
+      ],
+      "schema:description": "Occupancy Date",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:isDescribedBy_StatisticsCollection": {
+        "@type": [
+          "cdi:StatisticsCollection"
+        ],
+        "cdif:has_Statistics": [
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214,
+                "cdi:computationBase": "Total"
+              },
+              {
+                "cdi:content": 26286,
+                "cdi:computationBase": "ValidOnly"
+              },
+              {
+                "cdi:content": 222928,
+                "cdi:computationBase": "MissingOnly"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "cdi:Statistics"
+            ],
+            "cdif:typeOfStatistic": "distinct count",
+            "cdi:statistic": [
+              {
+                "cdi:content": 249214
+              }
+            ]
+          }
+        ],
+        "schema:description": "Smallest value: 2022-01-03. Largest value: 2026-11-20"
+      }
+    }
+  ],
+  "cdif:statistics": [
+    {
+      "@type": [
+        "cdi:Statistics"
+      ],
+      "cdif:typeOfStatistic": "row count",
+      "cdi:statistic": [
+        {
+          "cdi:content": 249214
+        }
+      ]
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "cdi:TabularTextDataSet"
+      ],
+      "schema:name": "CSV export",
+      "schema:contentUrl": "https://data.edmonton.ca/api/views/24uj-dj8v/rows.csv?accessType=DOWNLOAD",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "cdi:isDelimited": true,
+      "csvw:delimiter": ",",
+      "csvw:quoteChar": "\"",
+      "csvw:headerRowCount": 1,
+      "cdif:hasPhysicalMapping": [
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 0,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#row_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 1,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#issue_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 2,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#permit_number"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 3,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#permit_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 4,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#year"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 5,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#month_number"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 6,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#job_category"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 7,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#job_description"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 8,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#building_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 9,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#work_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 10,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#construction_value"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 11,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#floor_area"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 12,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#units_added"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 13,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#address"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 14,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#legal_description"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 15,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#zoning"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 16,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#neighbourhood_numberr"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 17,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#neighbourhood"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 18,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#bia"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 19,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#count"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 20,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#latitude"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 21,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#longitude"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 22,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 23,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#geometry_point"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 24,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#occupancy_granted_date"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Socrata Open Data API (SODA) endpoint",
+      "schema:serviceType": "Socrata Open Data API (SODA)",
+      "schema:termsOfService": "not specified",
+      "schema:documentation": "https://dev.socrata.com/foundry/data.edmonton.ca/24uj-dj8v",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:name": "Query rows",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:description": "Columns are named by their API field name (the alternate name of each variable). Results are paged.",
+            "schema:urlTemplate": "https://data.edmonton.ca/resource/24uj-dj8v.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          },
+          "schema:query-input": [
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "format",
+              "schema:description": "The response format: json, csv or geojson.",
+              "schema:valueRequired": true,
+              "schema:valuePattern": "json|csv|geojson"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "select",
+              "schema:description": "SoQL $select: the columns to return, by API field name. Empty for all.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "where",
+              "schema:description": "SoQL $where: a filter on the rows. Empty for none.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "order",
+              "schema:description": "SoQL $order: the column(s) to sort by. Empty for the default order.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "limit",
+              "schema:description": "The number of rows to return. The endpoint returns 1000 when it is not given.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "offset",
+              "schema:description": "The number of rows to skip, for paging.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            }
+          ],
+          "schema:result": {
+            "@type": [
+              "schema:DataDownload"
+            ],
+            "schema:encodingFormat": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "Building Permits"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Time Frame: Update Frequency",
+      "schema:value": "Daily"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Time Frame: Period of Coverage",
+      "schema:value": "January 1, 2009 to present"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Time Frame: Automated or Manual",
+      "schema:value": "Automated"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Spatial: Datum",
+      "schema:value": "NAD 83"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Spatial: Coordinate System",
+      "schema:value": "LL-WGS84"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "General Information: Purpose",
+      "schema:value": "To provide a list of issued building permits"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "General Information: Primary Dataset or View",
+      "schema:value": "Primary"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Quality Indicators: Duplicates Removed",
+      "schema:value": "Yes"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Quality Indicators: Verified for Accuracy",
+      "schema:value": "Yes"
+    }
+  ],
+  "schema:url": "https://data.edmonton.ca/d/24uj-dj8v",
+  "schema:subjectOf": {
+    "@id": "https://data.edmonton.ca/d/24uj-dj8v#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: General Building Permits",
+    "schema:about": {
+      "@id": "https://data.edmonton.ca/d/24uj-dj8v"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.edmonton.ca/api/views/24uj-dj8v.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2026-11-24T12:32:58Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Beta Test Site",
+      "schema:identifier": "efip-by44"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "City of Edmonton Open Data",
+      "schema:url": "https://data.edmonton.ca/"
+    }
+  }
+}

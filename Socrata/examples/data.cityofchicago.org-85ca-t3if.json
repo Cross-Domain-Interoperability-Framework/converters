@@ -1,0 +1,921 @@
+{
+ "id": "85ca-t3if",
+ "name": "Traffic Crashes - Crashes",
+ "assetType": "dataset",
+ "attribution": "City of Chicago",
+ "attributionLink": "http://www.chicago.gov",
+ "averageRating": 0,
+ "category": "Transportation",
+ "createdAt": 1508450576,
+ "description": "<b> Note: As of 5/20/2026 we have added IDOT_CONTROL_NO to the dataset.</b> -- Crash data shows information about each traffic crash on city streets within the City of Chicago limits and under the jurisdiction of Chicago Police Department (CPD). Data are shown as is from the electronic crash reporting system (E-Crash) at CPD, excluding any personally identifiable information. Records are added to the data portal when a crash report is finalized or when amendments are made to an existing report in E-Crash. Data from E-Crash are available for some police districts in 2015, but citywide data are not available until September 2017. About half of all crash reports, mostly minor crashes, are self-reported at the police district by the driver(s) involved and the other half are recorded at the scene by the police officer responding to the crash. Many of the crash parameters, including street condition data, weather condition, and posted speed limits, are recorded by the reporting officer based on best available information at the time, but many of these may disagree with posted information or other assessments on road conditions. If any new or updated information on a crash is received, the reporting officer may amend the crash report at a later time. A traffic crash within the city limits for which CPD is not the responding police agency, typically crashes on interstate highways, freeway ramps, and on local roads along the City boundary, are excluded from this dataset.\n\nAll crashes are recorded as per the format specified in the Traffic Crash Report, SR1050, of the Illinois Department of Transportation. The crash data published on the Chicago data portal mostly follows the data elements in SR1050 form. The current version of the SR1050 instructions manual with detailed information on each data elements is available <a href=\"https://idot.illinois.gov/content/dam/soi/en/web/idot/documents/transportation-system/manuals-guides-and-handbooks/safety/illinois-traffic-crash-report-sr-1050-instruction-manual-2019.pdf\" target=\"_blank\">here</a>.\n\nAs per Illinois statute, only crashes with a property damage value of $1,500 or more or involving bodily injury to any person(s) and that happen on a public roadway and that involve at least one moving vehicle, except bike dooring, are considered reportable crashes. However, CPD records every reported traffic crash event, regardless of the statute of limitations, and hence any formal Chicago crash dataset released by Illinois Department of Transportation may not include all the crashes listed here.\n\nChange 11/21/2023: We have removed the RD_NO (Chicago Police Department report number) for privacy reasons.",
+ "diciBackend": false,
+ "displayType": "table",
+ "downloadCount": 92157,
+ "hideFromCatalog": false,
+ "hideFromDataJson": false,
+ "licenseId": "SEE_TERMS_OF_USE",
+ "locale": "en_US",
+ "locked": false,
+ "newBackend": true,
+ "numberOfComments": 0,
+ "oid": 42153815,
+ "provenance": "official",
+ "publicationAppendEnabled": false,
+ "publicationDate": 1779309086,
+ "publicationGroup": 14546854,
+ "publicationStage": "published",
+ "rowIdentifierColumnId": 633377847,
+ "rowsUpdatedAt": 1795453031,
+ "rowsUpdatedBy": "n9j5-zhen",
+ "tableId": 20388027,
+ "totalTimesRated": 0,
+ "viewCount": 1466159,
+ "viewLastModified": 1779317693,
+ "viewType": "tabular",
+ "approvals": [
+  {
+   "reviewedAt": 1772566211,
+   "reviewedAutomatically": false,
+   "state": "approved",
+   "submissionId": 7484932,
+   "submissionObject": "public_audience_request",
+   "submissionOutcome": "change_audience",
+   "submittedAt": 1772566199,
+   "targetAudience": "public",
+   "workflowId": 2226,
+   "reviewer": {
+    "id": "vs4g-kpg5",
+    "displayName": "Lauren Tietje"
+   },
+   "submissionDetails": {
+    "permissionType": "read"
+   },
+   "submissionOutcomeApplication": {
+    "endedAt": 1772566211,
+    "failureCount": 0,
+    "startedAt": 1772566211,
+    "status": "success"
+   },
+   "submitter": {
+    "id": "vs4g-kpg5",
+    "displayName": "Lauren Tietje"
+   }
+  }
+ ],
+ "clientContext": {
+  "clientContextVariables": [],
+  "inheritedVariables": {}
+ },
+ "columns": [
+  {
+   "id": 633377847,
+   "name": "CRASH_RECORD_ID",
+   "dataTypeName": "text",
+   "description": "This number can be used to link to the same crash in the Vehicles and People datasets. This number also serves as a unique ID in this dataset.",
+   "fieldName": "crash_record_id",
+   "position": 1,
+   "renderTypeName": "text",
+   "tableColumnId": 94538188,
+   "format": {}
+  },
+  {
+   "id": 633377849,
+   "name": "CRASH_DATE_EST_I",
+   "dataTypeName": "text",
+   "description": "Crash date estimated by desk officer or reporting party (only used in cases where crash is reported at police station days after the crash)",
+   "fieldName": "crash_date_est_i",
+   "position": 3,
+   "renderTypeName": "text",
+   "tableColumnId": 55097524,
+   "width": 200,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377850,
+   "name": "CRASH_DATE",
+   "dataTypeName": "calendar_date",
+   "description": "Date and time of crash as entered by the reporting officer",
+   "fieldName": "crash_date",
+   "position": 4,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 55097525,
+   "width": 174,
+   "format": {
+    "view": "date_time",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377851,
+   "name": "POSTED_SPEED_LIMIT",
+   "dataTypeName": "number",
+   "description": "Posted speed limit, as determined by reporting officer",
+   "fieldName": "posted_speed_limit",
+   "position": 5,
+   "renderTypeName": "number",
+   "tableColumnId": 55097526,
+   "width": 209,
+   "format": {
+    "precisionStyle": "standard",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377852,
+   "name": "TRAFFIC_CONTROL_DEVICE",
+   "dataTypeName": "text",
+   "description": "Traffic control device present at crash location, as determined by reporting officer",
+   "fieldName": "traffic_control_device",
+   "position": 6,
+   "renderTypeName": "text",
+   "tableColumnId": 55097528,
+   "width": 292,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377853,
+   "name": "DEVICE_CONDITION",
+   "dataTypeName": "text",
+   "description": "Condition of traffic control device, as determined by reporting officer",
+   "fieldName": "device_condition",
+   "position": 7,
+   "renderTypeName": "text",
+   "tableColumnId": 55097530,
+   "width": 364,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377854,
+   "name": "WEATHER_CONDITION",
+   "dataTypeName": "text",
+   "description": "Weather condition at time of crash, as determined by reporting officer",
+   "fieldName": "weather_condition",
+   "position": 8,
+   "renderTypeName": "text",
+   "tableColumnId": 55097532,
+   "width": 230,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377855,
+   "name": "LIGHTING_CONDITION",
+   "dataTypeName": "text",
+   "description": "Light condition at time of crash, as determined by reporting officer",
+   "fieldName": "lighting_condition",
+   "position": 9,
+   "renderTypeName": "text",
+   "tableColumnId": 55097534,
+   "width": 246,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377856,
+   "name": "FIRST_CRASH_TYPE",
+   "dataTypeName": "text",
+   "description": "Type of first collision in crash",
+   "fieldName": "first_crash_type",
+   "position": 10,
+   "renderTypeName": "text",
+   "tableColumnId": 55097536,
+   "width": 211,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377857,
+   "name": "TRAFFICWAY_TYPE",
+   "dataTypeName": "text",
+   "description": "Trafficway type, as determined by reporting officer",
+   "fieldName": "trafficway_type",
+   "position": 11,
+   "renderTypeName": "text",
+   "tableColumnId": 55097538,
+   "width": 270,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377858,
+   "name": "LANE_CNT",
+   "dataTypeName": "number",
+   "description": "Total number of through lanes in either direction, excluding turn lanes, as determined by reporting officer (0 = intersection)",
+   "fieldName": "lane_cnt",
+   "position": 12,
+   "renderTypeName": "number",
+   "tableColumnId": 55097539,
+   "width": 149,
+   "format": {
+    "precisionStyle": "standard",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377859,
+   "name": "ALIGNMENT",
+   "dataTypeName": "text",
+   "description": "Street alignment at crash location, as determined by reporting officer",
+   "fieldName": "alignment",
+   "position": 13,
+   "renderTypeName": "text",
+   "tableColumnId": 55097541,
+   "width": 230,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377860,
+   "name": "ROADWAY_SURFACE_COND",
+   "dataTypeName": "text",
+   "description": "Road surface condition, as determined by reporting officer",
+   "fieldName": "roadway_surface_cond",
+   "position": 14,
+   "renderTypeName": "text",
+   "tableColumnId": 55097543,
+   "width": 248,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377861,
+   "name": "ROAD_DEFECT",
+   "dataTypeName": "text",
+   "description": "Road defects, as determined by reporting officer",
+   "fieldName": "road_defect",
+   "position": 15,
+   "renderTypeName": "text",
+   "tableColumnId": 55097545,
+   "width": 180,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377862,
+   "name": "REPORT_TYPE",
+   "dataTypeName": "text",
+   "description": "Administrative report type (at scene, at desk, amended)",
+   "fieldName": "report_type",
+   "position": 16,
+   "renderTypeName": "text",
+   "tableColumnId": 55097547,
+   "width": 304,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377863,
+   "name": "CRASH_TYPE",
+   "dataTypeName": "text",
+   "description": "A general severity classification for the crash. Can be either Injury and/or Tow Due to Crash or No Injury / Drive Away ",
+   "fieldName": "crash_type",
+   "position": 17,
+   "renderTypeName": "text",
+   "tableColumnId": 55097549,
+   "width": 292,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377864,
+   "name": "INTERSECTION_RELATED_I",
+   "dataTypeName": "text",
+   "description": "A field observation by the police officer whether an intersection played a role in the crash. Does not represent whether or not the crash occurred within the intersection.",
+   "fieldName": "intersection_related_i",
+   "position": 18,
+   "renderTypeName": "text",
+   "tableColumnId": 55097550,
+   "width": 242,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 633377865,
+   "name": "NOT_RIGHT_OF_WAY_I",
+   "dataTypeName": "text",
+   "description": "Whether the crash begun or first contact was made outside of the public right-of-way.",
+   "fieldName": "private_property_i",
+   "position": 19,
+   "renderTypeName": "text",
+   "tableColumnId": 55097551,
+   "width": 219,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 633377866,
+   "name": "HIT_AND_RUN_I",
+   "dataTypeName": "text",
+   "description": "Crash did/did not involve a driver who caused the crash and fled the scene without exchanging information and/or rendering aid",
+   "fieldName": "hit_and_run_i",
+   "position": 20,
+   "renderTypeName": "text",
+   "tableColumnId": 55097552,
+   "width": 192,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377867,
+   "name": "DAMAGE",
+   "dataTypeName": "text",
+   "description": "A field observation of estimated damage.",
+   "fieldName": "damage",
+   "position": 21,
+   "renderTypeName": "text",
+   "tableColumnId": 55097554,
+   "width": 145,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 633377868,
+   "name": "DATE_POLICE_NOTIFIED",
+   "dataTypeName": "calendar_date",
+   "description": "Calendar date on which police were notified of the crash",
+   "fieldName": "date_police_notified",
+   "position": 22,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 55097555,
+   "width": 169,
+   "format": {
+    "view": "date_time",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377869,
+   "name": "PRIM_CONTRIBUTORY_CAUSE",
+   "dataTypeName": "text",
+   "description": "The factor which was most significant in causing the crash, as determined by officer judgment",
+   "fieldName": "prim_contributory_cause",
+   "position": 23,
+   "renderTypeName": "text",
+   "tableColumnId": 55097557,
+   "width": 372,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377870,
+   "name": "SEC_CONTRIBUTORY_CAUSE",
+   "dataTypeName": "text",
+   "description": "The factor which was second most significant in causing the crash, as determined by officer judgment",
+   "fieldName": "sec_contributory_cause",
+   "position": 24,
+   "renderTypeName": "text",
+   "tableColumnId": 55097559,
+   "width": 436,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377871,
+   "name": "STREET_NO",
+   "dataTypeName": "number",
+   "description": "Street address number of crash location, as determined by reporting officer",
+   "fieldName": "street_no",
+   "position": 25,
+   "renderTypeName": "number",
+   "tableColumnId": 55097561,
+   "width": 159,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377872,
+   "name": "STREET_DIRECTION",
+   "dataTypeName": "text",
+   "description": "Street address direction (N,E,S,W) of crash location, as determined by reporting officer",
+   "fieldName": "street_direction",
+   "position": 26,
+   "renderTypeName": "text",
+   "tableColumnId": 55097562,
+   "width": 203,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377873,
+   "name": "STREET_NAME",
+   "dataTypeName": "text",
+   "description": "Street address name of crash location, as determined by reporting officer",
+   "fieldName": "street_name",
+   "position": 27,
+   "renderTypeName": "text",
+   "tableColumnId": 55097563,
+   "width": 232,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377874,
+   "name": "BEAT_OF_OCCURRENCE",
+   "dataTypeName": "number",
+   "description": "Chicago Police Department Beat ID. Boundaries available at https://data.cityofchicago.org/d/aerh-rz74",
+   "fieldName": "beat_of_occurrence",
+   "position": 28,
+   "renderTypeName": "number",
+   "tableColumnId": 55097569,
+   "width": 240,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377875,
+   "name": "PHOTOS_TAKEN_I",
+   "dataTypeName": "text",
+   "description": "Whether the Chicago Police Department took photos at the location of the crash",
+   "fieldName": "photos_taken_i",
+   "position": 29,
+   "renderTypeName": "text",
+   "tableColumnId": 55097570,
+   "width": 207,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377876,
+   "name": "STATEMENTS_TAKEN_I",
+   "dataTypeName": "text",
+   "description": "Whether statements were taken from unit(s) involved in crash",
+   "fieldName": "statements_taken_i",
+   "position": 30,
+   "renderTypeName": "text",
+   "tableColumnId": 55097571,
+   "width": 226,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377877,
+   "name": "DOORING_I",
+   "dataTypeName": "text",
+   "description": "Whether crash involved a motor vehicle occupant opening a door into the travel path of a bicyclist, causing a crash",
+   "fieldName": "dooring_i",
+   "position": 31,
+   "renderTypeName": "text",
+   "tableColumnId": 55097574,
+   "width": 163,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377878,
+   "name": "WORK_ZONE_I",
+   "dataTypeName": "text",
+   "description": "Whether the crash occurred in an active work zone",
+   "fieldName": "work_zone_i",
+   "position": 32,
+   "renderTypeName": "text",
+   "tableColumnId": 55097575,
+   "width": 189,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377879,
+   "name": "WORK_ZONE_TYPE",
+   "dataTypeName": "text",
+   "description": "The type of work zone, if any",
+   "fieldName": "work_zone_type",
+   "position": 33,
+   "renderTypeName": "text",
+   "tableColumnId": 55097577,
+   "width": 208,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377880,
+   "name": "WORKERS_PRESENT_I",
+   "dataTypeName": "text",
+   "description": "Whether construction workers were present in an active work zone at crash location",
+   "fieldName": "workers_present_i",
+   "position": 34,
+   "renderTypeName": "text",
+   "tableColumnId": 55097578,
+   "width": 215,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377881,
+   "name": "NUM_UNITS",
+   "dataTypeName": "number",
+   "description": "Number of units involved in the crash. A unit can be a motor vehicle, a pedestrian, a bicyclist, or another non-passenger roadway user. Each unit represents a mode of traffic with an independent trajectory. ",
+   "fieldName": "num_units",
+   "position": 35,
+   "renderTypeName": "number",
+   "tableColumnId": 55097585,
+   "width": 169,
+   "format": {
+    "precisionStyle": "standard",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377892,
+   "name": "CRASH_MONTH",
+   "dataTypeName": "number",
+   "description": "The month component of CRASH_DATE.",
+   "fieldName": "crash_month",
+   "position": 36,
+   "renderTypeName": "number",
+   "tableColumnId": 60392523,
+   "width": 169,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "precision": "0",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377882,
+   "name": "MOST_SEVERE_INJURY",
+   "dataTypeName": "text",
+   "description": "Most severe injury sustained by any person involved in the crash",
+   "fieldName": "most_severe_injury",
+   "position": 37,
+   "renderTypeName": "text",
+   "tableColumnId": 60350033,
+   "width": 237,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 633377883,
+   "name": "INJURIES_TOTAL",
+   "dataTypeName": "number",
+   "description": "Total persons sustaining fatal, incapacitating, non-incapacitating, and possible injuries as determined by the reporting officer",
+   "fieldName": "injuries_total",
+   "position": 38,
+   "renderTypeName": "number",
+   "tableColumnId": 60350045,
+   "width": 177,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "precision": "0",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377884,
+   "name": "INJURIES_FATAL",
+   "dataTypeName": "number",
+   "description": "Total persons sustaining fatal injuries in the crash",
+   "fieldName": "injuries_fatal",
+   "position": 39,
+   "renderTypeName": "number",
+   "tableColumnId": 60350052,
+   "width": 173,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "precision": "0",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377885,
+   "name": "INJURIES_INCAPACITATING",
+   "dataTypeName": "number",
+   "description": "Total persons sustaining incapacitating/serious injuries in the crash as determined by the reporting officer. Any injury other than fatal injury, which prevents the injured person from walking, driving, or normally continuing the activities they were capable of performing before the injury occurred. Includes severe lacerations, broken limbs, skull or chest injuries, and abdominal injuries.",
+   "fieldName": "injuries_incapacitating",
+   "position": 40,
+   "renderTypeName": "number",
+   "tableColumnId": 60350059,
+   "width": 239,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "precision": "0",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377886,
+   "name": "INJURIES_NON_INCAPACITATING",
+   "dataTypeName": "number",
+   "description": "Total persons sustaining non-incapacitating injuries in the crash as determined by the reporting officer. Any injury, other than fatal or incapacitating injury, which is evident to observers at the scene of the crash. Includes lump on head, abrasions, bruises, and minor lacerations.",
+   "fieldName": "injuries_non_incapacitating",
+   "position": 41,
+   "renderTypeName": "number",
+   "tableColumnId": 60350066,
+   "width": 272,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "precision": "0",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377887,
+   "name": "INJURIES_REPORTED_NOT_EVIDENT",
+   "dataTypeName": "number",
+   "description": "Total persons sustaining possible injuries in the crash as determined by the reporting officer. Includes momentary unconsciousness, claims of injuries not evident, limping, complaint of pain, nausea, and hysteria.",
+   "fieldName": "injuries_reported_not_evident",
+   "position": 42,
+   "renderTypeName": "number",
+   "tableColumnId": 60350103,
+   "width": 300,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "precision": "0",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377888,
+   "name": "INJURIES_NO_INDICATION",
+   "dataTypeName": "number",
+   "description": "Total persons sustaining no injuries in the crash as determined by the reporting officer",
+   "fieldName": "injuries_no_indication",
+   "position": 43,
+   "renderTypeName": "number",
+   "tableColumnId": 60350104,
+   "width": 230,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "precision": "0",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377889,
+   "name": "INJURIES_UNKNOWN",
+   "dataTypeName": "number",
+   "description": "Total persons for whom injuries sustained, if any, are unknown",
+   "fieldName": "injuries_unknown",
+   "position": 44,
+   "renderTypeName": "number",
+   "tableColumnId": 60350107,
+   "width": 203,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "precision": "0",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377890,
+   "name": "CRASH_HOUR",
+   "dataTypeName": "number",
+   "description": "The hour of the day component of CRASH_DATE.",
+   "fieldName": "crash_hour",
+   "position": 45,
+   "renderTypeName": "number",
+   "tableColumnId": 60392456,
+   "width": 158,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "precision": "0",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377891,
+   "name": "CRASH_DAY_OF_WEEK",
+   "dataTypeName": "number",
+   "description": "The day of the week component of CRASH_DATE. Sunday=1\n\n",
+   "fieldName": "crash_day_of_week",
+   "position": 46,
+   "renderTypeName": "number",
+   "tableColumnId": 60392490,
+   "width": 221,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377910,
+   "name": "IDOT_CONTROL_NO",
+   "dataTypeName": "text",
+   "description": "A unique 10-digit number for each crash report, assigned by the Illinois Department of Transportation. Amended reports and additional pages for the same crash report will have the same IDOT Control Number.",
+   "fieldName": "idot_control_no",
+   "position": 47,
+   "renderTypeName": "text",
+   "tableColumnId": 167901765,
+   "width": 185,
+   "format": {}
+  },
+  {
+   "id": 633377893,
+   "name": "LATITUDE",
+   "dataTypeName": "number",
+   "description": "The latitude of the crash location, as determined by reporting officer, as derived from the reported address of crash",
+   "fieldName": "latitude",
+   "position": 48,
+   "renderTypeName": "number",
+   "tableColumnId": 55097586,
+   "width": 142,
+   "format": {
+    "precisionStyle": "standard",
+    "decimalSeparator": ".",
+    "groupSeparator": ",",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377894,
+   "name": "LONGITUDE",
+   "dataTypeName": "number",
+   "description": "The longitude of the crash location, as determined by reporting officer, as derived from the reported address of crash",
+   "fieldName": "longitude",
+   "position": 49,
+   "renderTypeName": "number",
+   "tableColumnId": 55097587,
+   "width": 153,
+   "format": {
+    "precisionStyle": "standard",
+    "decimalSeparator": ".",
+    "groupSeparator": ",",
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377895,
+   "name": "LOCATION",
+   "dataTypeName": "point",
+   "description": "The crash location, as determined by reporting officer, as derived from the reported address of crash, in a column type that allows for mapping and other geographic analysis in the data portal software",
+   "fieldName": "location",
+   "position": 50,
+   "renderTypeName": "point",
+   "tableColumnId": 55138492,
+   "width": 100,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 633377908,
+   "name": "Boundaries - ZIP Codes",
+   "dataTypeName": "number",
+   "description": "This column was automatically created in order to record in what polygon from the dataset 'Boundaries - ZIP Codes' (rpca-8um6) the point in column 'location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+   "fieldName": ":@computed_region_rpca_8um6",
+   "position": 62,
+   "renderTypeName": "number",
+   "tableColumnId": 147624674,
+   "computationStrategy": {
+    "source_columns": [
+     "location"
+    ],
+    "type": "georegion_match_on_point",
+    "parameters": {
+     "region": "_rpca-8um6",
+     "primary_key": "_feature_id"
+    }
+   },
+   "format": {}
+  }
+ ],
+ "grants": [
+  {
+   "inherited": false,
+   "type": "viewer",
+   "flags": [
+    "public"
+   ]
+  }
+ ],
+ "license": {
+  "name": "See Terms of Use"
+ },
+ "metadata": {
+  "rdfSubject": "0",
+  "sidebar": {
+   "width": 361
+  },
+  "custom_fields": {
+   "Metadata": {
+    "Time Period": "2015 to present (All police districts September 2017 - present)",
+    "Changes and Other Historical Information Useful to Understanding This Dataset": "https://www.google.com/search?q=site:data.cityofchicago.org/stories+\"Related+dataset+ID+s\"+\"85ca-t3if\"",
+    "Frequency": "Daily",
+    "Data Owner": "Chicago Police Department"
+   }
+  },
+  "filterCondition": {
+   "metadata": {
+    "advanced": true,
+    "unifiedVersion": 2
+   },
+   "children": [
+    {
+     "metadata": {
+      "tableColumnId": {
+       "14546854": 55097525
+      },
+      "operator": "BETWEEN"
+     },
+     "type": "operator",
+     "value": "OR"
+    },
+    {
+     "metadata": {
+      "tableColumnId": {
+       "14546854": 55097523
+      },
+      "operator": "EQUALS"
+     },
+     "type": "operator",
+     "value": "OR"
+    }
+   ],
+   "type": "operator",
+   "value": "AND"
+  },
+  "rowIdentifier": 633377847,
+  "rowLabel": "Traffic Crash",
+  "availableDisplayTypes": [
+   "table",
+   "fatrow",
+   "page"
+  ],
+  "renderTypeConfig": {
+   "visible": {
+    "table": true
+   }
+  }
+ },
+ "owner": {
+  "id": "vewm-vupz",
+  "displayName": "Jonathan Levy",
+  "screenName": "Jonathan Levy",
+  "type": "interactive",
+  "flags": [
+   "acceptedEula",
+   "mayBeStoriesCoOwner"
+  ]
+ },
+ "query": {},
+ "rights": [
+  "read"
+ ],
+ "tableAuthor": {
+  "id": "vewm-vupz",
+  "displayName": "Jonathan Levy",
+  "screenName": "Jonathan Levy",
+  "type": "interactive",
+  "flags": [
+   "acceptedEula",
+   "mayBeStoriesCoOwner"
+  ]
+ },
+ "tags": [
+  "transportation",
+  "public safety",
+  "vision zero",
+  "traffic crashes"
+ ],
+ "flags": [
+  "default",
+  "ownerMayBeContacted",
+  "restorable",
+  "restorePossibleForType"
+ ]
+}

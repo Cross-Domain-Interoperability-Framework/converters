@@ -1,0 +1,1984 @@
+{
+ "id": "ydr8-5enu",
+ "name": "Building Permits",
+ "assetType": "dataset",
+ "attribution": "City of Chicago",
+ "attributionLink": "http://www.cityofchicago.org",
+ "averageRating": 0,
+ "category": "Buildings",
+ "createdAt": 1317384008,
+ "description": "<b>Note, 10/27/2026:</b> We have added a RESIDENTIAL_UNIT_CHANGE column. See <a href=\"https://data.cityofchicago.org/stories/s/at9p-zwgd\" target=\"_blank\">this post</a> for more details.\n\nThis dataset includes information about building permits issued by the City of Chicago from 2006 to the present, excluding permits that have been voided or revoked after issuance. Most types of permits are issued subject to payment of the applicable permit fee. Work under a permit may not begin until the applicable permit fee is paid. \n\nFor more information about building permits, see http://www.chicago.gov/permit.",
+ "diciBackend": false,
+ "displayType": "table",
+ "downloadCount": 172133,
+ "hideFromCatalog": false,
+ "hideFromDataJson": false,
+ "licenseId": "SEE_TERMS_OF_USE",
+ "locked": false,
+ "newBackend": true,
+ "numberOfComments": 0,
+ "oid": 42698924,
+ "provenance": "official",
+ "publicationAppendEnabled": false,
+ "publicationDate": 1793057831,
+ "publicationGroup": 226331,
+ "publicationStage": "published",
+ "resourceName": "building-permits",
+ "rowIdentifierColumnId": 649768894,
+ "rowsUpdatedAt": 1795525761,
+ "rowsUpdatedBy": "n9j5-zhen",
+ "tableId": 20692670,
+ "totalTimesRated": 0,
+ "viewCount": 6808878,
+ "viewLastModified": 1793135810,
+ "viewType": "tabular",
+ "approvals": [
+  {
+   "reviewedAt": 1563092639,
+   "reviewedAutomatically": true,
+   "state": "approved",
+   "submissionId": 7825598,
+   "submissionObject": "public_audience_request",
+   "submissionOutcome": "change_audience",
+   "submittedAt": 1563092639,
+   "targetAudience": "public",
+   "workflowId": 2226,
+   "submissionDetails": {
+    "permissionType": "READ"
+   },
+   "submissionOutcomeApplication": {
+    "failureCount": 0,
+    "status": "success"
+   },
+   "submitter": {
+    "id": "scy9-9wg4",
+    "displayName": "cocadmin"
+   }
+  }
+ ],
+ "clientContext": {
+  "clientContextVariables": [],
+  "inheritedVariables": {}
+ },
+ "columns": [
+  {
+   "id": 649768893,
+   "name": "ID",
+   "dataTypeName": "text",
+   "description": "Unique database record identifier",
+   "fieldName": "id",
+   "position": 1,
+   "renderTypeName": "text",
+   "tableColumnId": 3297716,
+   "width": 132,
+   "format": {}
+  },
+  {
+   "id": 649768894,
+   "name": "PERMIT#",
+   "dataTypeName": "text",
+   "description": "Tracking number assigned at beginning of permit application process",
+   "fieldName": "permit_",
+   "position": 2,
+   "renderTypeName": "text",
+   "tableColumnId": 1450514,
+   "width": 150,
+   "format": {
+    "align": "right",
+    "aggregate": "count"
+   }
+  },
+  {
+   "id": 649768895,
+   "name": "PERMIT_STATUS",
+   "dataTypeName": "text",
+   "description": "Current status of permit (not available for all permit types).",
+   "fieldName": "permit_status",
+   "position": 3,
+   "renderTypeName": "text",
+   "tableColumnId": 152325350,
+   "format": {}
+  },
+  {
+   "id": 649768896,
+   "name": "PERMIT_MILESTONE",
+   "dataTypeName": "text",
+   "description": "Current milestone of permit (not available for all permit types).",
+   "fieldName": "permit_milestone",
+   "position": 4,
+   "renderTypeName": "text",
+   "tableColumnId": 152325349,
+   "format": {}
+  },
+  {
+   "id": 649768897,
+   "name": "PERMIT_TYPE",
+   "dataTypeName": "text",
+   "description": "Type of permit",
+   "fieldName": "permit_type",
+   "position": 5,
+   "rdfProperties": "http://purl.org/dc/terms/type",
+   "renderTypeName": "text",
+   "tableColumnId": 1449867,
+   "width": 226,
+   "format": {
+    "rdf": "http://purl.org/dc/terms/type",
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768898,
+   "name": "REVIEW_TYPE",
+   "dataTypeName": "text",
+   "description": "Process used to review permit application",
+   "fieldName": "review_type",
+   "position": 6,
+   "renderTypeName": "text",
+   "tableColumnId": 84026737,
+   "format": {}
+  },
+  {
+   "id": 649768899,
+   "name": "APPLICATION_START_DATE",
+   "dataTypeName": "calendar_date",
+   "description": "Date when City began reviewing permit application",
+   "fieldName": "application_start_date",
+   "position": 7,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 84026738,
+   "format": {
+    "view": "date"
+   }
+  },
+  {
+   "id": 649768900,
+   "name": "ISSUE_DATE",
+   "dataTypeName": "calendar_date",
+   "description": "For most permit types, date when City determined permit was ready to issue, subject to payment of permit fees; For Express Permit Program, date when permit issued based on full payment of applicable permit fee",
+   "fieldName": "issue_date",
+   "position": 8,
+   "rdfProperties": "http://purl.org/dc/terms/date",
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 84026736,
+   "width": 155,
+   "format": {
+    "view": "date",
+    "rdf": "http://purl.org/dc/terms/date",
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768901,
+   "name": "PROCESSING_TIME",
+   "dataTypeName": "number",
+   "description": "Number of days between APPLICATION_START_DATE and ISSUE_DATE",
+   "fieldName": "processing_time",
+   "position": 9,
+   "renderTypeName": "number",
+   "tableColumnId": 84026743,
+   "width": 180,
+   "format": {
+    "precisionStyle": "standard",
+    "precision": "0"
+   }
+  },
+  {
+   "id": 649768902,
+   "name": "STREET_NUMBER",
+   "dataTypeName": "number",
+   "description": "Address number - for buildings with address ranges, primary address is used",
+   "fieldName": "street_number",
+   "position": 10,
+   "renderTypeName": "number",
+   "tableColumnId": 1449873,
+   "width": 75,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "true",
+    "align": "right"
+   }
+  },
+  {
+   "id": 649768903,
+   "name": "STREET_DIRECTION",
+   "dataTypeName": "text",
+   "description": "Street direction",
+   "fieldName": "street_direction",
+   "position": 11,
+   "renderTypeName": "text",
+   "tableColumnId": 1449874,
+   "width": 50,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768904,
+   "name": "STREET_NAME",
+   "dataTypeName": "text",
+   "description": "Street name",
+   "fieldName": "street_name",
+   "position": 12,
+   "renderTypeName": "text",
+   "tableColumnId": 1449875,
+   "width": 157,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768905,
+   "name": "WORK_TYPE",
+   "dataTypeName": "text",
+   "description": "Classification of activity authorized by permit (not available for all permit types).",
+   "fieldName": "work_type",
+   "position": 13,
+   "renderTypeName": "text",
+   "tableColumnId": 152325348,
+   "format": {}
+  },
+  {
+   "id": 649768906,
+   "name": "WORK_DESCRIPTION",
+   "dataTypeName": "text",
+   "description": "Description of work authorized by the permit",
+   "fieldName": "work_description",
+   "position": 14,
+   "renderTypeName": "text",
+   "tableColumnId": 1449878,
+   "width": 261,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768907,
+   "name": "PERMIT_CONDITION",
+   "dataTypeName": "text",
+   "description": "Conditions or comments added by reviewing department(s)",
+   "fieldName": "permit_condition",
+   "position": 15,
+   "renderTypeName": "text",
+   "tableColumnId": 162450381,
+   "width": 282,
+   "format": {}
+  },
+  {
+   "id": 649768908,
+   "name": "RESIDENTIAL_UNIT_CHANGE",
+   "dataTypeName": "number",
+   "description": "The net change in residential units as a result of the permit.",
+   "fieldName": "residential_unit_change",
+   "position": 16,
+   "renderTypeName": "number",
+   "tableColumnId": 173165352,
+   "width": 247,
+   "format": {}
+  },
+  {
+   "id": 649768909,
+   "name": "BUILDING_FEE_PAID",
+   "dataTypeName": "number",
+   "description": "Amount of building permit fees received",
+   "fieldName": "building_fee_paid",
+   "position": 17,
+   "renderTypeName": "number",
+   "tableColumnId": 84026757,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 649768910,
+   "name": "ZONING_FEE_PAID",
+   "dataTypeName": "number",
+   "description": "Amount of zoning review fees received",
+   "fieldName": "zoning_fee_paid",
+   "position": 18,
+   "renderTypeName": "number",
+   "tableColumnId": 84026756,
+   "width": 179,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 649768911,
+   "name": "OTHER_FEE_PAID",
+   "dataTypeName": "number",
+   "description": "Amount of other permit-related fees received",
+   "fieldName": "other_fee_paid",
+   "position": 19,
+   "renderTypeName": "number",
+   "tableColumnId": 84026755,
+   "width": 172,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 649768912,
+   "name": "SUBTOTAL_PAID",
+   "dataTypeName": "number",
+   "description": "Sum of BUILDING_FEE_PAID, ZONING_FEE_PAID and OTHER_FEE_PAID",
+   "fieldName": "subtotal_paid",
+   "position": 20,
+   "renderTypeName": "number",
+   "tableColumnId": 84026754,
+   "width": 177,
+   "format": {
+    "precisionStyle": "currency",
+    "currencyStyle": "USD",
+    "noCommas": "false",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 649768913,
+   "name": "BUILDING_FEE_UNPAID",
+   "dataTypeName": "number",
+   "description": "Amount of building permit fees due",
+   "fieldName": "building_fee_unpaid",
+   "position": 21,
+   "renderTypeName": "number",
+   "tableColumnId": 84026753,
+   "width": 219,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 649768914,
+   "name": "ZONING_FEE_UNPAID",
+   "dataTypeName": "number",
+   "description": "Amount of zoning review fees due",
+   "fieldName": "zoning_fee_unpaid",
+   "position": 22,
+   "renderTypeName": "number",
+   "tableColumnId": 84026752,
+   "width": 205,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 649768915,
+   "name": "OTHER_FEE_UNPAID",
+   "dataTypeName": "number",
+   "description": "Amount of other permit-related fees due",
+   "fieldName": "other_fee_unpaid",
+   "position": 23,
+   "renderTypeName": "number",
+   "tableColumnId": 84026751,
+   "width": 203,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 649768916,
+   "name": "SUBTOTAL_UNPAID",
+   "dataTypeName": "number",
+   "description": "Sum of BUILDING_FEE_UNPAID, ZONING_FEE_UNPAID and OTHER_FEE_UNPAID",
+   "fieldName": "subtotal_unpaid",
+   "position": 24,
+   "renderTypeName": "number",
+   "tableColumnId": 84026750,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 649768917,
+   "name": "BUILDING_FEE_WAIVED",
+   "dataTypeName": "number",
+   "description": "Amount of building permit fees waived",
+   "fieldName": "building_fee_waived",
+   "position": 25,
+   "renderTypeName": "number",
+   "tableColumnId": 84026748,
+   "width": 214,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 649768918,
+   "name": "BUILDING_FEE_SUBTOTAL",
+   "dataTypeName": "number",
+   "description": "Sum of BUILDING_FEE_PAID, BUILDING_FEE_UNPAID and BUILDING_FEE_WAIVED",
+   "fieldName": "building_fee_subtotal",
+   "position": 26,
+   "renderTypeName": "number",
+   "tableColumnId": 152325342,
+   "format": {
+    "precisionStyle": "currency"
+   }
+  },
+  {
+   "id": 649768919,
+   "name": "ZONING_FEE_SUBTOTAL",
+   "dataTypeName": "number",
+   "description": "Sum of ZONING_FEE_PAID, ZONING _FEE_UNPAID and ZONING _FEE_WAIVED",
+   "fieldName": "zoning_fee_subtotal",
+   "position": 27,
+   "renderTypeName": "number",
+   "tableColumnId": 152325341,
+   "format": {
+    "precisionStyle": "currency"
+   }
+  },
+  {
+   "id": 649768920,
+   "name": "OTHER_FEE_SUBTOTAL",
+   "dataTypeName": "number",
+   "description": "Sum of OTHER_FEE_PAID, OTHER _FEE_UNPAID and OTHER _FEE_WAIVED",
+   "fieldName": "other_fee_subtotal",
+   "position": 28,
+   "renderTypeName": "number",
+   "tableColumnId": 152325340,
+   "format": {
+    "precisionStyle": "currency"
+   }
+  },
+  {
+   "id": 649768921,
+   "name": "ZONING_FEE_WAIVED",
+   "dataTypeName": "number",
+   "description": "Amount of zoning review fees waived",
+   "fieldName": "zoning_fee_waived",
+   "position": 29,
+   "renderTypeName": "number",
+   "tableColumnId": 84026747,
+   "width": 200,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 649768922,
+   "name": "OTHER_FEE_WAIVED",
+   "dataTypeName": "number",
+   "description": "Amount of other permit-related fees waived",
+   "fieldName": "other_fee_waived",
+   "position": 30,
+   "renderTypeName": "number",
+   "tableColumnId": 84026746,
+   "width": 197,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 649768923,
+   "name": "SUBTOTAL_WAIVED",
+   "dataTypeName": "number",
+   "description": "Sum of BUILDING_FEE_WAIVED, ZONING_FEE_WAIVED and OTHER_FEE_WAIVED",
+   "fieldName": "subtotal_waived",
+   "position": 31,
+   "renderTypeName": "number",
+   "tableColumnId": 84026745,
+   "width": 248,
+   "format": {
+    "precisionStyle": "currency",
+    "humane": "false",
+    "currencyStyle": "USD",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 649768924,
+   "name": "TOTAL_FEE",
+   "dataTypeName": "number",
+   "description": "Sum of SUBTOTAL_PAID, SUBTOTAL_UNPAID and SUBTOTAL_WAIVED",
+   "fieldName": "total_fee",
+   "position": 32,
+   "renderTypeName": "number",
+   "tableColumnId": 84026744,
+   "width": 162,
+   "format": {
+    "precisionStyle": "currency",
+    "currencyStyle": "USD",
+    "noCommas": "false",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 649768925,
+   "name": "CONTACT_1_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 1's relationship to permit",
+   "fieldName": "contact_1_type",
+   "position": 33,
+   "renderTypeName": "text",
+   "tableColumnId": 1449889,
+   "width": 262,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768926,
+   "name": "CONTACT_1_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 1's full name",
+   "fieldName": "contact_1_name",
+   "position": 34,
+   "renderTypeName": "text",
+   "tableColumnId": 1449890,
+   "width": 201,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768927,
+   "name": "CONTACT_1_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 1's primary address city",
+   "fieldName": "contact_1_city",
+   "position": 35,
+   "renderTypeName": "text",
+   "tableColumnId": 1449892,
+   "width": 208,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768928,
+   "name": "CONTACT_1_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 1's primary address state",
+   "fieldName": "contact_1_state",
+   "position": 36,
+   "renderTypeName": "text",
+   "tableColumnId": 1449893,
+   "width": 77,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768929,
+   "name": "CONTACT_1_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 1's primary address ZIP code",
+   "fieldName": "contact_1_zipcode",
+   "position": 37,
+   "renderTypeName": "text",
+   "tableColumnId": 1449894,
+   "width": 74,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768930,
+   "name": "CONTACT_2_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 2's relationship to permit",
+   "fieldName": "contact_2_type",
+   "position": 38,
+   "renderTypeName": "text",
+   "tableColumnId": 1449896,
+   "width": 226,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768931,
+   "name": "CONTACT_2_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 2's full name",
+   "fieldName": "contact_2_name",
+   "position": 39,
+   "renderTypeName": "text",
+   "tableColumnId": 1449897,
+   "width": 226,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768932,
+   "name": "CONTACT_2_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 2's primary address city",
+   "fieldName": "contact_2_city",
+   "position": 40,
+   "renderTypeName": "text",
+   "tableColumnId": 1449899,
+   "width": 109,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768933,
+   "name": "CONTACT_2_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 2's primary address state",
+   "fieldName": "contact_2_state",
+   "position": 41,
+   "renderTypeName": "text",
+   "tableColumnId": 1449900,
+   "width": 72,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768934,
+   "name": "CONTACT_2_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 2's primary address ZIP code",
+   "fieldName": "contact_2_zipcode",
+   "position": 42,
+   "renderTypeName": "text",
+   "tableColumnId": 1449901,
+   "width": 69,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768935,
+   "name": "CONTACT_3_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 3's relationship to permit",
+   "fieldName": "contact_3_type",
+   "position": 43,
+   "renderTypeName": "text",
+   "tableColumnId": 1449903,
+   "width": 226,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768936,
+   "name": "CONTACT_3_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 3's full name",
+   "fieldName": "contact_3_name",
+   "position": 44,
+   "renderTypeName": "text",
+   "tableColumnId": 1449904,
+   "width": 226,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768937,
+   "name": "CONTACT_3_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 3's primary address city",
+   "fieldName": "contact_3_city",
+   "position": 45,
+   "renderTypeName": "text",
+   "tableColumnId": 1449906,
+   "width": 93,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768938,
+   "name": "CONTACT_3_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 3's primary address state",
+   "fieldName": "contact_3_state",
+   "position": 46,
+   "renderTypeName": "text",
+   "tableColumnId": 1449907,
+   "width": 50,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768939,
+   "name": "CONTACT_3_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 3's primary address ZIP code",
+   "fieldName": "contact_3_zipcode",
+   "position": 47,
+   "renderTypeName": "text",
+   "tableColumnId": 1449908,
+   "width": 68,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768940,
+   "name": "CONTACT_4_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 4's relationship to permit",
+   "fieldName": "contact_4_type",
+   "position": 48,
+   "renderTypeName": "text",
+   "tableColumnId": 1449910,
+   "width": 198,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768941,
+   "name": "CONTACT_4_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 4's full name",
+   "fieldName": "contact_4_name",
+   "position": 49,
+   "renderTypeName": "text",
+   "tableColumnId": 1449911,
+   "width": 187,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768942,
+   "name": "CONTACT_4_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 4's primary address city",
+   "fieldName": "contact_4_city",
+   "position": 50,
+   "renderTypeName": "text",
+   "tableColumnId": 1449913,
+   "width": 82,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768943,
+   "name": "CONTACT_4_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 4's primary address state",
+   "fieldName": "contact_4_state",
+   "position": 51,
+   "renderTypeName": "text",
+   "tableColumnId": 1449914,
+   "width": 59,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768944,
+   "name": "CONTACT_4_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 4's primary address ZIP code",
+   "fieldName": "contact_4_zipcode",
+   "position": 52,
+   "renderTypeName": "text",
+   "tableColumnId": 1449915,
+   "width": 67,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768945,
+   "name": "CONTACT_5_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 5's relationship to permit",
+   "fieldName": "contact_5_type",
+   "position": 53,
+   "renderTypeName": "text",
+   "tableColumnId": 1449917,
+   "width": 216,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768946,
+   "name": "CONTACT_5_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 5's full name",
+   "fieldName": "contact_5_name",
+   "position": 54,
+   "renderTypeName": "text",
+   "tableColumnId": 1449918,
+   "width": 203,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768947,
+   "name": "CONTACT_5_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 5's primary address city",
+   "fieldName": "contact_5_city",
+   "position": 55,
+   "renderTypeName": "text",
+   "tableColumnId": 1449920,
+   "width": 111,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768948,
+   "name": "CONTACT_5_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 5's primary address state",
+   "fieldName": "contact_5_state",
+   "position": 56,
+   "renderTypeName": "text",
+   "tableColumnId": 1449921,
+   "width": 55,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768949,
+   "name": "CONTACT_5_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 5's primary address ZIP code",
+   "fieldName": "contact_5_zipcode",
+   "position": 57,
+   "renderTypeName": "text",
+   "tableColumnId": 1449922,
+   "width": 54,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768950,
+   "name": "CONTACT_6_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 6's relationship to permit",
+   "fieldName": "contact_6_type",
+   "position": 58,
+   "renderTypeName": "text",
+   "tableColumnId": 1449926,
+   "width": 204,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768951,
+   "name": "CONTACT_6_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 6's full name",
+   "fieldName": "contact_6_name",
+   "position": 59,
+   "renderTypeName": "text",
+   "tableColumnId": 1449928,
+   "width": 183,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768952,
+   "name": "CONTACT_6_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 6's primary address city",
+   "fieldName": "contact_6_city",
+   "position": 60,
+   "renderTypeName": "text",
+   "tableColumnId": 1449932,
+   "width": 88,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768953,
+   "name": "CONTACT_6_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 6's primary address state",
+   "fieldName": "contact_6_state",
+   "position": 61,
+   "renderTypeName": "text",
+   "tableColumnId": 1449934,
+   "width": 50,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768954,
+   "name": "CONTACT_6_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 6's primary address ZIP code",
+   "fieldName": "contact_6_zipcode",
+   "position": 62,
+   "renderTypeName": "text",
+   "tableColumnId": 1449935,
+   "width": 61,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768955,
+   "name": "CONTACT_7_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 7's relationship to permit",
+   "fieldName": "contact_7_type",
+   "position": 63,
+   "renderTypeName": "text",
+   "tableColumnId": 1449940,
+   "width": 167,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768956,
+   "name": "CONTACT_7_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 7's full name",
+   "fieldName": "contact_7_name",
+   "position": 64,
+   "renderTypeName": "text",
+   "tableColumnId": 1449942,
+   "width": 145,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768957,
+   "name": "CONTACT_7_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 7's primary address city",
+   "fieldName": "contact_7_city",
+   "position": 65,
+   "renderTypeName": "text",
+   "tableColumnId": 1449945,
+   "width": 93,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768958,
+   "name": "CONTACT_7_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 7's primary address state",
+   "fieldName": "contact_7_state",
+   "position": 66,
+   "renderTypeName": "text",
+   "tableColumnId": 1449947,
+   "width": 50,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768959,
+   "name": "CONTACT_7_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 7's primary address ZIP code",
+   "fieldName": "contact_7_zipcode",
+   "position": 67,
+   "renderTypeName": "text",
+   "tableColumnId": 1449949,
+   "width": 63,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768960,
+   "name": "CONTACT_8_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 8's relationship to permit",
+   "fieldName": "contact_8_type",
+   "position": 68,
+   "renderTypeName": "text",
+   "tableColumnId": 1449954,
+   "width": 136,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768961,
+   "name": "CONTACT_8_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 8's full name",
+   "fieldName": "contact_8_name",
+   "position": 69,
+   "renderTypeName": "text",
+   "tableColumnId": 1449956,
+   "width": 133,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768962,
+   "name": "CONTACT_8_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 8's primary address city",
+   "fieldName": "contact_8_city",
+   "position": 70,
+   "renderTypeName": "text",
+   "tableColumnId": 1449959,
+   "width": 73,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768963,
+   "name": "CONTACT_8_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 8's primary address state",
+   "fieldName": "contact_8_state",
+   "position": 71,
+   "renderTypeName": "text",
+   "tableColumnId": 1449961,
+   "width": 65,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768964,
+   "name": "CONTACT_8_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 8's primary address ZIP code",
+   "fieldName": "contact_8_zipcode",
+   "position": 72,
+   "renderTypeName": "text",
+   "tableColumnId": 1450869,
+   "width": 62,
+   "format": {
+    "precisionStyle": "standard",
+    "noCommas": "false",
+    "align": "right"
+   }
+  },
+  {
+   "id": 649768965,
+   "name": "CONTACT_9_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 9's relationship to permit",
+   "fieldName": "contact_9_type",
+   "position": 73,
+   "renderTypeName": "text",
+   "tableColumnId": 1449967,
+   "width": 119,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768966,
+   "name": "CONTACT_9_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 9's full name",
+   "fieldName": "contact_9_name",
+   "position": 74,
+   "renderTypeName": "text",
+   "tableColumnId": 1449970,
+   "width": 136,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768967,
+   "name": "CONTACT_9_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 9's primary address city",
+   "fieldName": "contact_9_city",
+   "position": 75,
+   "renderTypeName": "text",
+   "tableColumnId": 1449974,
+   "width": 125,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768968,
+   "name": "CONTACT_9_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 9's primary address state",
+   "fieldName": "contact_9_state",
+   "position": 76,
+   "renderTypeName": "text",
+   "tableColumnId": 1449976,
+   "width": 124,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768969,
+   "name": "CONTACT_9_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 9's primary address ZIP code",
+   "fieldName": "contact_9_zipcode",
+   "position": 77,
+   "renderTypeName": "text",
+   "tableColumnId": 1449977,
+   "width": 105,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768970,
+   "name": "CONTACT_10_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 10's relationship to permit",
+   "fieldName": "contact_10_type",
+   "position": 78,
+   "renderTypeName": "text",
+   "tableColumnId": 1449981,
+   "width": 133,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768971,
+   "name": "CONTACT_10_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 10's full name",
+   "fieldName": "contact_10_name",
+   "position": 79,
+   "renderTypeName": "text",
+   "tableColumnId": 1449983,
+   "width": 128,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768972,
+   "name": "CONTACT_10_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 10's primary address city",
+   "fieldName": "contact_10_city",
+   "position": 80,
+   "renderTypeName": "text",
+   "tableColumnId": 1449987,
+   "width": 92,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768973,
+   "name": "CONTACT_10_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 10's primary address state",
+   "fieldName": "contact_10_state",
+   "position": 81,
+   "renderTypeName": "text",
+   "tableColumnId": 1449989,
+   "width": 56,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768974,
+   "name": "CONTACT_10_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 10's primary address ZIP code",
+   "fieldName": "contact_10_zipcode",
+   "position": 82,
+   "renderTypeName": "text",
+   "tableColumnId": 1449991,
+   "width": 76,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768975,
+   "name": "CONTACT_11_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 11's relationship to permit",
+   "fieldName": "contact_11_type",
+   "position": 83,
+   "renderTypeName": "text",
+   "tableColumnId": 1449995,
+   "width": 171,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768976,
+   "name": "CONTACT_11_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 11's full name",
+   "fieldName": "contact_11_name",
+   "position": 84,
+   "renderTypeName": "text",
+   "tableColumnId": 1449998,
+   "width": 167,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768977,
+   "name": "CONTACT_11_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 11's primary address city",
+   "fieldName": "contact_11_city",
+   "position": 85,
+   "renderTypeName": "text",
+   "tableColumnId": 1450002,
+   "width": 82,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768978,
+   "name": "CONTACT_11_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 11's primary address state",
+   "fieldName": "contact_11_state",
+   "position": 86,
+   "renderTypeName": "text",
+   "tableColumnId": 1450003,
+   "width": 50,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768979,
+   "name": "CONTACT_11_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 11's primary address ZIP code",
+   "fieldName": "contact_11_zipcode",
+   "position": 87,
+   "renderTypeName": "text",
+   "tableColumnId": 1450005,
+   "width": 78,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768980,
+   "name": "CONTACT_12_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 12's relationship to permit",
+   "fieldName": "contact_12_type",
+   "position": 88,
+   "renderTypeName": "text",
+   "tableColumnId": 1450009,
+   "width": 189,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768981,
+   "name": "CONTACT_12_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 12's full name",
+   "fieldName": "contact_12_name",
+   "position": 89,
+   "renderTypeName": "text",
+   "tableColumnId": 1450011,
+   "width": 134,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768982,
+   "name": "CONTACT_12_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 12's primary address city",
+   "fieldName": "contact_12_city",
+   "position": 90,
+   "renderTypeName": "text",
+   "tableColumnId": 1450015,
+   "width": 97,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768983,
+   "name": "CONTACT_12_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 12's primary address state",
+   "fieldName": "contact_12_state",
+   "position": 91,
+   "renderTypeName": "text",
+   "tableColumnId": 1450016,
+   "width": 53,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768984,
+   "name": "CONTACT_12_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 12's primary address ZIP code",
+   "fieldName": "contact_12_zipcode",
+   "position": 92,
+   "renderTypeName": "text",
+   "tableColumnId": 1450018,
+   "width": 92,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768985,
+   "name": "CONTACT_13_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 13's relationship to permit",
+   "fieldName": "contact_13_type",
+   "position": 93,
+   "renderTypeName": "text",
+   "tableColumnId": 1450022,
+   "width": 179,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768986,
+   "name": "CONTACT_13_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 13's full name",
+   "fieldName": "contact_13_name",
+   "position": 94,
+   "renderTypeName": "text",
+   "tableColumnId": 1450024,
+   "width": 141,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768987,
+   "name": "CONTACT_13_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 13's primary address city",
+   "fieldName": "contact_13_city",
+   "position": 95,
+   "renderTypeName": "text",
+   "tableColumnId": 1450029,
+   "width": 113,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768988,
+   "name": "CONTACT_13_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 13's primary address state",
+   "fieldName": "contact_13_state",
+   "position": 96,
+   "renderTypeName": "text",
+   "tableColumnId": 1450031,
+   "width": 64,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768989,
+   "name": "CONTACT_13_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 13's primary address ZIP code",
+   "fieldName": "contact_13_zipcode",
+   "position": 97,
+   "renderTypeName": "text",
+   "tableColumnId": 1450032,
+   "width": 86,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768990,
+   "name": "CONTACT_14_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 14's relationship to permit",
+   "fieldName": "contact_14_type",
+   "position": 98,
+   "renderTypeName": "text",
+   "tableColumnId": 1450036,
+   "width": 175,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768991,
+   "name": "CONTACT_14_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 14's full name",
+   "fieldName": "contact_14_name",
+   "position": 99,
+   "renderTypeName": "text",
+   "tableColumnId": 1450038,
+   "width": 177,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768992,
+   "name": "CONTACT_14_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 14's primary address city",
+   "fieldName": "contact_14_city",
+   "position": 100,
+   "renderTypeName": "text",
+   "tableColumnId": 1450042,
+   "width": 111,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768993,
+   "name": "CONTACT_14_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 14's primary address state",
+   "fieldName": "contact_14_state",
+   "position": 101,
+   "renderTypeName": "text",
+   "tableColumnId": 1450044,
+   "width": 60,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768994,
+   "name": "CONTACT_14_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 14's primary address ZIP code",
+   "fieldName": "contact_14_zipcode",
+   "position": 102,
+   "renderTypeName": "text",
+   "tableColumnId": 1450046,
+   "width": 87,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768995,
+   "name": "CONTACT_15_TYPE",
+   "dataTypeName": "text",
+   "description": "Contact 15's relationship to permit",
+   "fieldName": "contact_15_type",
+   "position": 103,
+   "renderTypeName": "text",
+   "tableColumnId": 1450050,
+   "width": 188,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768996,
+   "name": "CONTACT_15_NAME",
+   "dataTypeName": "text",
+   "description": "Contact 15's full name",
+   "fieldName": "contact_15_name",
+   "position": 104,
+   "renderTypeName": "text",
+   "tableColumnId": 1450052,
+   "width": 172,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768997,
+   "name": "CONTACT_15_CITY",
+   "dataTypeName": "text",
+   "description": "Contact 15's primary address city",
+   "fieldName": "contact_15_city",
+   "position": 105,
+   "renderTypeName": "text",
+   "tableColumnId": 1450055,
+   "width": 100,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768998,
+   "name": "CONTACT_15_STATE",
+   "dataTypeName": "text",
+   "description": "Contact 15's primary address state",
+   "fieldName": "contact_15_state",
+   "position": 106,
+   "renderTypeName": "text",
+   "tableColumnId": 1450057,
+   "width": 55,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649768999,
+   "name": "CONTACT_15_ZIPCODE",
+   "dataTypeName": "text",
+   "description": "Contact 15's primary address ZIP code",
+   "fieldName": "contact_15_zipcode",
+   "position": 107,
+   "renderTypeName": "text",
+   "tableColumnId": 1450059,
+   "width": 102,
+   "format": {
+    "align": "left"
+   }
+  },
+  {
+   "id": 649769000,
+   "name": "REPORTED_COST",
+   "dataTypeName": "number",
+   "description": "Estimated cost of work provided by applicant (not available for all permits)",
+   "fieldName": "reported_cost",
+   "position": 108,
+   "renderTypeName": "number",
+   "tableColumnId": 84026749,
+   "width": 157,
+   "format": {
+    "precisionStyle": "currency",
+    "currencyStyle": "USD",
+    "noCommas": "false",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 649769001,
+   "name": "PIN_LIST",
+   "dataTypeName": "text",
+   "description": "Property index number(s) (PINs) disclosed by applicant and verified by city staff as part of permit application review (not available for all permits); PINs are assigned to parcels of land for property tax purposes. This column replaces columns PIN1 through PIN10, which will be removed soon, no earlier than 6/1/2024.",
+   "fieldName": "pin_list",
+   "position": 109,
+   "renderTypeName": "text",
+   "tableColumnId": 152325347,
+   "format": {}
+  },
+  {
+   "id": 649769002,
+   "name": "COMMUNITY_AREA",
+   "dataTypeName": "number",
+   "description": "The Chicago community area of the property's primary address. The community area map is available in a separate dataset.",
+   "fieldName": "community_area",
+   "position": 110,
+   "renderTypeName": "number",
+   "tableColumnId": 84026740,
+   "format": {}
+  },
+  {
+   "id": 649769003,
+   "name": "CENSUS_TRACT",
+   "dataTypeName": "number",
+   "description": "The census tract of the property's primary address. The census tract map is available in a separate dataset.",
+   "fieldName": "census_tract",
+   "position": 111,
+   "renderTypeName": "number",
+   "tableColumnId": 84026739,
+   "format": {
+    "noCommas": "true"
+   }
+  },
+  {
+   "id": 649769004,
+   "name": "WARD",
+   "dataTypeName": "number",
+   "description": "The ward (city council district) of the property's primary address at the time of permit issuance. The ward map is available in a separate dataset.",
+   "fieldName": "ward",
+   "position": 112,
+   "renderTypeName": "number",
+   "tableColumnId": 84026758,
+   "format": {
+    "noCommas": "true",
+    "precision": "0"
+   }
+  },
+  {
+   "id": 649769005,
+   "name": "XCOORDINATE",
+   "dataTypeName": "number",
+   "description": "The east-west coordinate of the property's primary address, defined in feet, based on NAD 83 - State Plane Eastern IL",
+   "fieldName": "xcoordinate",
+   "position": 113,
+   "renderTypeName": "number",
+   "tableColumnId": 84026742,
+   "format": {
+    "noCommas": "true"
+   }
+  },
+  {
+   "id": 649769006,
+   "name": "YCOORDINATE",
+   "dataTypeName": "number",
+   "description": "The north-south coordinate of the property's primary address, defined in feet, based on NAD 83 - State Plane Eastern IL",
+   "fieldName": "ycoordinate",
+   "position": 114,
+   "renderTypeName": "number",
+   "tableColumnId": 84026741,
+   "format": {
+    "noCommas": "true"
+   }
+  },
+  {
+   "id": 649769007,
+   "name": "LATITUDE",
+   "dataTypeName": "number",
+   "description": "The latitude of the property's primary address",
+   "fieldName": "latitude",
+   "position": 115,
+   "renderTypeName": "number",
+   "tableColumnId": 3297756,
+   "width": 100,
+   "format": {}
+  },
+  {
+   "id": 649769008,
+   "name": "LONGITUDE",
+   "dataTypeName": "number",
+   "description": "The longitude of the property's primary address",
+   "fieldName": "longitude",
+   "position": 116,
+   "renderTypeName": "number",
+   "tableColumnId": 3297757,
+   "width": 100,
+   "format": {}
+  },
+  {
+   "id": 649769009,
+   "name": "LOCATION",
+   "dataTypeName": "point",
+   "description": "The location of the property's primary address in a format that allows for creation of maps and other geographic operations on this data portal",
+   "fieldName": "location",
+   "position": 117,
+   "renderTypeName": "point",
+   "tableColumnId": 84144409,
+   "format": {}
+  },
+  {
+   "id": 649769014,
+   "name": "Boundaries - ZIP Codes",
+   "dataTypeName": "number",
+   "description": "",
+   "fieldName": ":@computed_region_rpca_8um6",
+   "position": 130,
+   "renderTypeName": "number",
+   "tableColumnId": 84161699,
+   "computationStrategy": {
+    "source_columns": [
+     "location"
+    ],
+    "type": "georegion_match_on_point",
+    "parameters": {
+     "region": "_rpca-8um6",
+     "primary_key": "_feature_id"
+    }
+   },
+   "format": {}
+  },
+  {
+   "id": 649769015,
+   "name": "Community Areas",
+   "dataTypeName": "number",
+   "description": "",
+   "fieldName": ":@computed_region_vrxf_vc4k",
+   "position": 131,
+   "renderTypeName": "number",
+   "tableColumnId": 84161700,
+   "computationStrategy": {
+    "source_columns": [
+     "location"
+    ],
+    "type": "georegion_match_on_point",
+    "parameters": {
+     "region": "_vrxf-vc4k",
+     "primary_key": "_feature_id"
+    }
+   },
+   "format": {}
+  },
+  {
+   "id": 649769016,
+   "name": "Zip Codes",
+   "dataTypeName": "number",
+   "description": "",
+   "fieldName": ":@computed_region_6mkv_f3dw",
+   "position": 132,
+   "renderTypeName": "number",
+   "tableColumnId": 84161701,
+   "computationStrategy": {
+    "source_columns": [
+     "location"
+    ],
+    "type": "georegion_match_on_point",
+    "parameters": {
+     "region": "_6mkv-f3dw",
+     "primary_key": "_feature_id"
+    }
+   },
+   "format": {}
+  },
+  {
+   "id": 649769017,
+   "name": "Census Tracts",
+   "dataTypeName": "number",
+   "description": "",
+   "fieldName": ":@computed_region_bdys_3d7i",
+   "position": 133,
+   "renderTypeName": "number",
+   "tableColumnId": 84161702,
+   "computationStrategy": {
+    "source_columns": [
+     "location"
+    ],
+    "type": "georegion_match_on_point",
+    "parameters": {
+     "region": "_bdys-3d7i",
+     "primary_key": "_feature_id"
+    }
+   },
+   "format": {}
+  },
+  {
+   "id": 649769018,
+   "name": "Wards",
+   "dataTypeName": "number",
+   "description": "",
+   "fieldName": ":@computed_region_43wa_7qmu",
+   "position": 134,
+   "renderTypeName": "number",
+   "tableColumnId": 84161703,
+   "computationStrategy": {
+    "source_columns": [
+     "location"
+    ],
+    "type": "georegion_match_on_point",
+    "parameters": {
+     "region": "_43wa-7qmu",
+     "primary_key": "_feature_id"
+    }
+   },
+   "format": {}
+  },
+  {
+   "id": 649769019,
+   "name": "Historical Wards 2003-2015",
+   "dataTypeName": "number",
+   "description": "",
+   "fieldName": ":@computed_region_awaf_s7ux",
+   "position": 135,
+   "renderTypeName": "number",
+   "tableColumnId": 84161704,
+   "computationStrategy": {
+    "source_columns": [
+     "location"
+    ],
+    "type": "georegion_match_on_point",
+    "parameters": {
+     "region": "_awaf-s7ux",
+     "primary_key": "_feature_id"
+    }
+   },
+   "format": {}
+  }
+ ],
+ "grants": [
+  {
+   "inherited": false,
+   "type": "viewer",
+   "flags": [
+    "public"
+   ]
+  }
+ ],
+ "license": {
+  "name": "See Terms of Use"
+ },
+ "metadata": {
+  "rdfSubject": "0",
+  "custom_fields": {
+   "Metadata": {
+    "Time Period": "2006 to present",
+    "Changes and Other Historical Information Useful to Understanding This Dataset": "https://www.google.com/search?q=site:data.cityofchicago.org/stories+\"Related+dataset+ID+s\"+\"ydr8-5enu\"",
+    "Frequency": "Data are updated daily",
+    "Data Owner": "Department of Buildings"
+   }
+  },
+  "filterCondition": {
+   "metadata": {
+    "advanced": true,
+    "unifiedVersion": 2
+   },
+   "children": [
+    {
+     "metadata": {
+      "tableColumnId": {
+       "226331": 1450514
+      },
+      "operator": "EQUALS"
+     },
+     "type": "operator",
+     "value": "OR"
+    },
+    {
+     "metadata": {
+      "tableColumnId": {
+       "226331": 1449867
+      },
+      "includeAuto": 20,
+      "operator": "EQUALS"
+     },
+     "type": "operator",
+     "value": "OR"
+    },
+    {
+     "metadata": {
+      "tableColumnId": {
+       "226331": 1449868
+      },
+      "operator": "EQUALS"
+     },
+     "type": "operator",
+     "value": "OR"
+    },
+    {
+     "metadata": {
+      "tableColumnId": {
+       "226331": 1449873
+      },
+      "operator": "BETWEEN"
+     },
+     "type": "operator",
+     "value": "OR"
+    },
+    {
+     "metadata": {
+      "tableColumnId": {
+       "226331": 1449874
+      },
+      "includeAuto": 20,
+      "operator": "EQUALS"
+     },
+     "type": "operator",
+     "value": "OR"
+    },
+    {
+     "metadata": {
+      "tableColumnId": {
+       "226331": 1449875
+      },
+      "operator": "CONTAINS_INSENSITIVE"
+     },
+     "type": "operator",
+     "value": "OR"
+    },
+    {
+     "metadata": {
+      "tableColumnId": {
+       "226331": 1449876
+      },
+      "includeAuto": 20,
+      "operator": "EQUALS"
+     },
+     "type": "operator",
+     "value": "OR"
+    }
+   ],
+   "type": "operator",
+   "value": "AND"
+  },
+  "rowIdentifier": 649768894,
+  "rowLabel": "Building Permit",
+  "availableDisplayTypes": [
+   "table",
+   "fatrow",
+   "page"
+  ],
+  "renderTypeConfig": {
+   "visible": {
+    "table": true
+   }
+  }
+ },
+ "owner": {
+  "id": "scy9-9wg4",
+  "displayName": "cocadmin",
+  "profileImageUrlLarge": "/api/users/scy9-9wg4/profile_images/LARGE",
+  "profileImageUrlMedium": "/api/users/scy9-9wg4/profile_images/THUMB",
+  "profileImageUrlSmall": "/api/users/scy9-9wg4/profile_images/TINY",
+  "screenName": "cocadmin",
+  "type": "interactive",
+  "flags": [
+   "acceptedEula",
+   "mayBeStoriesCoOwner"
+  ]
+ },
+ "query": {},
+ "rights": [
+  "read"
+ ],
+ "tableAuthor": {
+  "id": "scy9-9wg4",
+  "displayName": "cocadmin",
+  "profileImageUrlLarge": "/api/users/scy9-9wg4/profile_images/LARGE",
+  "profileImageUrlMedium": "/api/users/scy9-9wg4/profile_images/THUMB",
+  "profileImageUrlSmall": "/api/users/scy9-9wg4/profile_images/TINY",
+  "screenName": "cocadmin",
+  "type": "interactive",
+  "flags": [
+   "acceptedEula",
+   "mayBeStoriesCoOwner"
+  ]
+ },
+ "tags": [
+  "permits",
+  "buildings"
+ ],
+ "flags": [
+  "default",
+  "ownerMayBeContacted",
+  "restorable",
+  "restorePossibleForType"
+ ]
+}

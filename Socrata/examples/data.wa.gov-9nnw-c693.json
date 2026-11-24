@@ -1,0 +1,903 @@
+{
+ "id": "9nnw-c693",
+ "name": "Lobbyist Compensation and Expenses by Source",
+ "assetType": "dataset",
+ "attribution": "Public Disclosure Commission",
+ "attributionLink": "http://www.pdc.wa.gov",
+ "averageRating": 0,
+ "category": "Politics",
+ "createdAt": 1483737352,
+ "description": "This dataset contains compensation and expense summaries from monthly lobbying reports. Includes one record per client who paid compensation or incurred expenses during the filing period. Records for lobbyist firm expenses not reimbursed by clients are also included. Reports with no compensation or expenses have no records in this dataset.\n\nThis dataset is a best-effort by the PDC to provide a complete set of records as described herewith and may contain incomplete or incorrect information. The PDC provides access to the original reports for the purpose of record verification.\n\nData Coverage and Limitations: The data set covers that prior 16 years plus the current election year starting 2016. Pre-2016 records are available in the separate \"Pre-2016 Lobbyist Compensation and Expenses by Source\" dataset. This is a best-effort compilation that may contain incomplete or incorrect information. Original reports remain accessible for record verification.\n\nDescriptions attached to this dataset do not constitute legal definitions; please consult RCW 42.17A and WAC Title 390 for legal definitions and additional information regarding political finance disclosure requirements.\n\nCONDITION OF RELEASE: This publication constitutes a list of individuals prepared by the Washington State Public Disclosure Commission and may not be used for commercial purposes. This list is provided on the condition and with the understanding that the persons receiving it agree to this statutorily imposed limitation on its use. See RCW 42.56.070(9) and AGO 1975 No. 15.",
+ "diciBackend": false,
+ "displayType": "table",
+ "downloadCount": 9564,
+ "hideFromCatalog": false,
+ "hideFromDataJson": false,
+ "iconUrl": "fileId:924b0858-18c8-4215-9918-b7603a9f4ec7",
+ "licenseId": "PUBLIC_DOMAIN",
+ "locked": false,
+ "newBackend": true,
+ "numberOfComments": 0,
+ "oid": 41023461,
+ "provenance": "official",
+ "publicationAppendEnabled": false,
+ "publicationDate": 1735232340,
+ "publicationGroup": 13986925,
+ "publicationStage": "published",
+ "resourceName": "lobbyist_compensation_and_expenses_by_source",
+ "rowIdentifierColumnId": 603230789,
+ "rowsUpdatedAt": 1795488529,
+ "rowsUpdatedBy": "u89u-rx5w",
+ "tableId": 19722179,
+ "totalTimesRated": 0,
+ "viewCount": 186228,
+ "viewLastModified": 1772910604,
+ "viewType": "tabular",
+ "approvals": [
+  {
+   "reviewedAt": 1520433131,
+   "reviewedAutomatically": true,
+   "state": "approved",
+   "submissionId": 6662913,
+   "submissionObject": "public_audience_request",
+   "submissionOutcome": "change_audience",
+   "submittedAt": 1520433131,
+   "targetAudience": "public",
+   "workflowId": 2106,
+   "submissionDetails": {
+    "permissionType": "READ"
+   },
+   "submissionOutcomeApplication": {
+    "failureCount": 0,
+    "status": "success"
+   },
+   "submitter": {
+    "id": "6hhm-htpq",
+    "displayName": "Washington Public Disclosure Commission"
+   }
+  }
+ ],
+ "clientContext": {
+  "clientContextVariables": [],
+  "inheritedVariables": {}
+ },
+ "columns": [
+  {
+   "id": 603230789,
+   "name": "id",
+   "dataTypeName": "text",
+   "description": "PDC internal identifier that corresponds to unique record for a lobbyist in a given year.",
+   "fieldName": "id",
+   "position": 1,
+   "renderTypeName": "text",
+   "tableColumnId": 42468693,
+   "width": 100,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230790,
+   "name": "report_number",
+   "dataTypeName": "text",
+   "description": "This is the identifying number of the filed L2 from the PDC Accesshub online filing system.",
+   "fieldName": "report_number",
+   "position": 2,
+   "renderTypeName": "text",
+   "tableColumnId": 42466748,
+   "width": 160,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230791,
+   "name": "origin",
+   "dataTypeName": "text",
+   "description": "This value shows how the report was filed: FE = Filed electronically; FP = Paper filed.",
+   "fieldName": "origin",
+   "position": 3,
+   "renderTypeName": "text",
+   "tableColumnId": 42466751,
+   "width": 172,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230792,
+   "name": "filer_id",
+   "dataTypeName": "text",
+   "description": "The unique id assigned to a lobbyist. The filer id is consistent across years.",
+   "fieldName": "filer_id",
+   "position": 4,
+   "renderTypeName": "text",
+   "tableColumnId": 42582712,
+   "width": 100,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230793,
+   "name": "filer_name",
+   "dataTypeName": "text",
+   "description": "The lobbyist's registered name. Names remain consistent for each filer within a given election year, but may vary between years if the lobbyist legally changes their name.",
+   "fieldName": "filer_name",
+   "position": 5,
+   "renderTypeName": "text",
+   "tableColumnId": 42466747,
+   "width": 268,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230794,
+   "name": "type",
+   "dataTypeName": "text",
+   "description": "Shows if this report was filed for an employer or for a lobbyist.",
+   "fieldName": "type",
+   "position": 6,
+   "renderTypeName": "text",
+   "tableColumnId": 42757397,
+   "width": 100,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230795,
+   "name": "funding_source_id",
+   "dataTypeName": "text",
+   "description": "Unique identifier for the contractual relationship between the firm and client.",
+   "fieldName": "funding_source_id",
+   "position": 7,
+   "renderTypeName": "text",
+   "tableColumnId": 42466750,
+   "width": 83,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230796,
+   "name": "funding_source_name",
+   "dataTypeName": "text",
+   "description": "Name or label of the the contractual relationship between the firm and client.",
+   "fieldName": "funding_source",
+   "position": 8,
+   "renderTypeName": "text",
+   "tableColumnId": 42466752,
+   "width": 281,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230797,
+   "name": "filing_period",
+   "dataTypeName": "calendar_date",
+   "description": "The filing period for this report.",
+   "fieldName": "filing_period",
+   "position": 9,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 42582670,
+   "width": 124,
+   "format": {
+    "view": "date_my",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230822,
+   "name": "first_filed_at",
+   "dataTypeName": "calendar_date",
+   "description": "This indicates the first submission date of the L2 report.",
+   "fieldName": "first_filed_at",
+   "position": 10,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 156004828,
+   "format": {
+    "view": "date"
+   }
+  },
+  {
+   "id": 603230798,
+   "name": "receipt_date",
+   "dataTypeName": "calendar_date",
+   "description": "The date that the report was filed.",
+   "fieldName": "receipt_date",
+   "position": 11,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 42582669,
+   "width": 100,
+   "format": {
+    "view": "date",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230799,
+   "name": "employer_id",
+   "dataTypeName": "text",
+   "description": "This ID consistently identifies a given lobbyist client/employer across all years in PDC records.",
+   "fieldName": "employer_id",
+   "position": 12,
+   "renderTypeName": "text",
+   "tableColumnId": 42582710,
+   "width": 100,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230800,
+   "name": "employer_name",
+   "dataTypeName": "text",
+   "description": "The name of a given lobbyist client/employer referenced in the L2.",
+   "fieldName": "employer_name",
+   "position": 13,
+   "renderTypeName": "text",
+   "tableColumnId": 42582711,
+   "width": 100,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230801,
+   "name": "compensation",
+   "dataTypeName": "number",
+   "description": "Total compensation reported for this client/employer for this L2 and filing period.",
+   "fieldName": "compensation",
+   "position": 14,
+   "renderTypeName": "number",
+   "tableColumnId": 42466754,
+   "width": 244,
+   "format": {
+    "precisionStyle": "standard",
+    "currencyStyle": "USD",
+    "noCommas": "false",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 603230802,
+   "name": "sub_lobbyist_compensation",
+   "dataTypeName": "number",
+   "description": "Payments made to other lobbyists who were hired by the lobbyist or paid by the lobbyist using funds received from the client/employer for this L2 and filing period.",
+   "fieldName": "sub_lobbyist_compensation",
+   "position": 15,
+   "renderTypeName": "number",
+   "tableColumnId": 61560092,
+   "width": 100,
+   "format": {
+    "precisionStyle": "currency",
+    "currencyStyle": "USD",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 603230803,
+   "name": "net_compensation",
+   "dataTypeName": "number",
+   "description": "The total compensation the lobbyist received after paying any subcontracted lobbyists for this L2 and filing period.",
+   "fieldName": "net_compensation",
+   "position": 16,
+   "renderTypeName": "number",
+   "tableColumnId": 61560119,
+   "width": 100,
+   "format": {
+    "precisionStyle": "currency",
+    "currencyStyle": "USD",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 603230804,
+   "name": "personal_expenses",
+   "dataTypeName": "number",
+   "description": "The total amount of all personal expenses for travel, food and refreshments incurred by the lobbyist, from all employers for this L2 and filing period.",
+   "fieldName": "personal_expenses",
+   "position": 17,
+   "renderTypeName": "number",
+   "tableColumnId": 42466753,
+   "width": 304,
+   "format": {
+    "precisionStyle": "standard",
+    "currencyStyle": "USD",
+    "noCommas": "false",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 603230805,
+   "name": "entertainment",
+   "dataTypeName": "number",
+   "description": "The total amount of expenditures incurred by the lobbyist or lobbyist client/employer(s) for legislators, state officials, state employees and members of their immediate families for this L2 and filing period. Expenditures include meals, beverages, tickets, passes, and other forms of entertainment; receptions; travel, lodging and subsistence expenses for speeches, presentations, appearances, trade missions, seminars or educational programs; and enrollment and course fees for seminars or educational programs.",
+   "fieldName": "entertainment",
+   "position": 18,
+   "renderTypeName": "number",
+   "tableColumnId": 42466755,
+   "width": 256,
+   "format": {
+    "precisionStyle": "standard",
+    "currencyStyle": "USD",
+    "noCommas": "false",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 603230806,
+   "name": "contributions",
+   "dataTypeName": "number",
+   "description": "The total amount of contributions to a Washington State candidate or committee that were given or transmitted by the lobbyist for this L2 and filing period. Contributions are described as monetary or in-kind, with in-kind being described as goods or services that were made directly to a political campaign, including political advertising that was coordinated with the campaign.",
+   "fieldName": "contributions",
+   "position": 19,
+   "renderTypeName": "number",
+   "tableColumnId": 42466756,
+   "width": 256,
+   "format": {
+    "precisionStyle": "currency",
+    "humane": "false",
+    "currencyStyle": "USD",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 603230807,
+   "name": "advertising",
+   "dataTypeName": "number",
+   "description": "Deprecated field (legacy format only). The total amount of all advertising expenses incurred by the lobbyist, from all employers for this L2 and filing period. Advertising expenses include advertising costs, printing costs, and the cost of informational literature.",
+   "fieldName": "advertising",
+   "position": 20,
+   "renderTypeName": "number",
+   "tableColumnId": 42466759,
+   "width": 232,
+   "format": {
+    "precisionStyle": "standard",
+    "currencyStyle": "USD",
+    "noCommas": "false",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 603230808,
+   "name": "political_ads",
+   "dataTypeName": "number",
+   "description": "Deprecated field (legacy format only). Total political advertising expenses across all employers for this L2 and filing period. Includes expenditures for political advertising supporting or opposing candidates/ballot measures, plus lobbying-related public relations, telemarketing, polling, and similar activities.",
+   "fieldName": "political_ads",
+   "position": 21,
+   "renderTypeName": "number",
+   "tableColumnId": 42466760,
+   "width": 256,
+   "format": {
+    "precisionStyle": "standard",
+    "currencyStyle": "USD",
+    "noCommas": "false",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 603230809,
+   "name": "independent_expenditures_candidate",
+   "dataTypeName": "number",
+   "description": "The total amount of independent expenditures made by the lobbyist or lobbyist's client (employer) in support of or opposition to any Washington State candidate that costs $1,000 or more for this L2 and filing period.",
+   "fieldName": "independent_expenditures_candidate",
+   "position": 22,
+   "renderTypeName": "number",
+   "tableColumnId": 155342744,
+   "format": {}
+  },
+  {
+   "id": 603230810,
+   "name": "independent_expenditures_ballot",
+   "dataTypeName": "number",
+   "description": "The total amount of independent expenditures made by the lobbyist or lobbyist's client (employer) in support of or opposition to any Washington State ballot measure that costs $1,000 or more for this L2 and filing period.",
+   "fieldName": "independent_expenditures_ballot",
+   "position": 23,
+   "renderTypeName": "number",
+   "tableColumnId": 155342743,
+   "format": {}
+  },
+  {
+   "id": 603230811,
+   "name": "other",
+   "dataTypeName": "number",
+   "description": "The total amount of other expenses incurred by the lobbyist, from all employers for this L2 and filing period.",
+   "fieldName": "other",
+   "position": 24,
+   "renderTypeName": "number",
+   "tableColumnId": 42466761,
+   "width": 160,
+   "format": {
+    "precisionStyle": "standard",
+    "currencyStyle": "USD",
+    "noCommas": "false",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 603230812,
+   "name": "direct_expenses",
+   "dataTypeName": "number",
+   "description": "The total amount of expenses directly related to lobbying the legislature or state agencies, such as printing and literature, public relations and polling, and consulting and payments to expert witnesses for this L2 and filing period.",
+   "fieldName": "direct_expenses",
+   "position": 25,
+   "renderTypeName": "number",
+   "tableColumnId": 154879373,
+   "format": {}
+  },
+  {
+   "id": 603230813,
+   "name": "indirect_expenses",
+   "dataTypeName": "number",
+   "description": "The total amount of indirect lobbying, or grassroots lobbying, involving campaigns funded by client/employer general treasury funds to encourage the public to contact their legislators for this L2 and filing period.",
+   "fieldName": "indirect_expenses",
+   "position": 26,
+   "renderTypeName": "number",
+   "tableColumnId": 154879372,
+   "format": {}
+  },
+  {
+   "id": 603230814,
+   "name": "contributions_total",
+   "dataTypeName": "number",
+   "description": "The total amount of contributions for the L2 and filing period.",
+   "fieldName": "contributions_total",
+   "position": 27,
+   "renderTypeName": "number",
+   "tableColumnId": 155342742,
+   "format": {}
+  },
+  {
+   "id": 603230815,
+   "name": "total_expenses",
+   "dataTypeName": "number",
+   "description": "The total amount of expenses incurred by the lobbyist for this L2 and reporting period, excluding compensation. This sum includes personal expenses, entertainment, contributions, advertising, political ads, independent expenditures (candidate and ballot measure), other expenses, and direct and indirect lobbying expenses.",
+   "fieldName": "total_expenses",
+   "position": 28,
+   "renderTypeName": "number",
+   "tableColumnId": 61560164,
+   "width": 100,
+   "format": {
+    "precisionStyle": "currency",
+    "currencyStyle": "USD",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 603230816,
+   "name": "net_total",
+   "dataTypeName": "number",
+   "description": "The total of all expenses and compensation, minus any amount paid to a subcontractor to lobby on behalf of a client. Subcontractors report their own compensation and expenses.",
+   "fieldName": "net_total",
+   "position": 29,
+   "renderTypeName": "number",
+   "tableColumnId": 61560197,
+   "width": 100,
+   "format": {
+    "precisionStyle": "currency",
+    "currencyStyle": "USD",
+    "precision": "2"
+   }
+  },
+  {
+   "id": 603230817,
+   "name": "employment_registration_id",
+   "dataTypeName": "text",
+   "description": "Unique identifier for the contractual relationship between the firm and client.",
+   "fieldName": "employment_registration_id",
+   "position": 30,
+   "renderTypeName": "text",
+   "tableColumnId": 42758729,
+   "width": 177,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230818,
+   "name": "employment_type",
+   "dataTypeName": "text",
+   "description": "Signifies a direct or subcontracted employment relationship.",
+   "fieldName": "employment_type",
+   "position": 31,
+   "renderTypeName": "text",
+   "tableColumnId": 42758730,
+   "width": 166,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230819,
+   "name": "contractor_id",
+   "dataTypeName": "text",
+   "description": "The unique id assigned to a lobbyist. The contractor id is used to express when a lobbyist is sub contracted for another.",
+   "fieldName": "contractor_id",
+   "position": 32,
+   "renderTypeName": "text",
+   "tableColumnId": 42466762,
+   "width": 268,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230820,
+   "name": "contractor_name",
+   "dataTypeName": "text",
+   "description": "This is the contractor name, as reported on the filed L2.",
+   "fieldName": "contractor_name",
+   "position": 33,
+   "renderTypeName": "text",
+   "tableColumnId": 42466763,
+   "width": 280,
+   "format": {
+    "displayStyle": "plain",
+    "align": "left"
+   }
+  },
+  {
+   "id": 603230821,
+   "name": "url",
+   "dataTypeName": "url",
+   "description": "Link to the original report filed with the PDC.",
+   "fieldName": "url",
+   "position": 34,
+   "renderTypeName": "url",
+   "tableColumnId": 42466764,
+   "width": 136,
+   "format": {
+    "align": "left"
+   },
+   "subColumnTypes": [
+    "url",
+    "description"
+   ]
+  }
+ ],
+ "grants": [
+  {
+   "inherited": false,
+   "type": "viewer",
+   "flags": [
+    "public"
+   ]
+  }
+ ],
+ "license": {
+  "name": "Public Domain"
+ },
+ "metadata": {
+  "rdfSubject": "0",
+  "custom_fields": {
+   "Temporal": {
+    "Posting Frequency": "Daily",
+    "Period of Time": "From 2016"
+   }
+  },
+  "rowIdentifier": 603230789,
+  "rowLabel": "Lobbyist/client monthly report",
+  "availableDisplayTypes": [
+   "table",
+   "fatrow",
+   "page"
+  ],
+  "renderTypeConfig": {
+   "visible": {
+    "table": true
+   }
+  }
+ },
+ "owner": {
+  "id": "79jf-2se2",
+  "createdAt": 1738620373,
+  "displayName": "PDC-IT",
+  "screenName": "PDC-IT",
+  "type": "team",
+  "members": [
+   {
+    "id": "prrr-ps5v",
+    "createdAt": 1492022136,
+    "displayName": "Bill King",
+    "screenName": "Bill King",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "ux2g-av4t",
+    "createdAt": 1724340944,
+    "displayName": "David Metzler",
+    "screenName": "David Metzler",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "7ufr-e4xv",
+    "createdAt": 1707850431,
+    "displayName": "Dillon Ching",
+    "screenName": "Dillon Ching",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "y884-6s37",
+    "createdAt": 1493835524,
+    "displayName": "James Gutholm (PDC)",
+    "profileImageUrlLarge": "/api/users/y884-6s37/profile_images/LARGE",
+    "profileImageUrlMedium": "/api/users/y884-6s37/profile_images/THUMB",
+    "profileImageUrlSmall": "/api/users/y884-6s37/profile_images/TINY",
+    "screenName": "James Gutholm (PDC)",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "qkg5-hqnb",
+    "createdAt": 1720717790,
+    "displayName": "Jim Coleman",
+    "screenName": "Jim Coleman",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "beqm-ecd8",
+    "createdAt": 1738698255,
+    "displayName": "Lindy Myers",
+    "screenName": "Lindy Myers",
+    "teamId": 1705846,
+    "teamRole": "member",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "wbgp-mrig",
+    "createdAt": 1707850470,
+    "displayName": "michael.dailey",
+    "screenName": "michael.dailey",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "v65d-qje9",
+    "createdAt": 1787266185,
+    "displayName": "Nick Holmquist",
+    "screenName": "Nick Holmquist",
+    "teamId": 1705846,
+    "teamRole": "member",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "6u2g-9ajj",
+    "createdAt": 1724341154,
+    "displayName": "Sravya Yandamuri",
+    "screenName": "Sravya Yandamuri",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "u89u-rx5w",
+    "createdAt": 1701793082,
+    "displayName": "WA Public Disclosure Commission",
+    "profileImageUrlLarge": "/api/users/u89u-rx5w/profile_images/LARGE",
+    "profileImageUrlMedium": "/api/users/u89u-rx5w/profile_images/THUMB",
+    "profileImageUrlSmall": "/api/users/u89u-rx5w/profile_images/TINY",
+    "screenName": "WA Public Disclosure Commission",
+    "teamId": 1705846,
+    "teamRole": "member",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   }
+  ]
+ },
+ "query": {},
+ "rights": [
+  "read"
+ ],
+ "tableAuthor": {
+  "id": "79jf-2se2",
+  "createdAt": 1738620373,
+  "displayName": "PDC-IT",
+  "screenName": "PDC-IT",
+  "type": "team",
+  "members": [
+   {
+    "id": "prrr-ps5v",
+    "createdAt": 1492022136,
+    "displayName": "Bill King",
+    "screenName": "Bill King",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "ux2g-av4t",
+    "createdAt": 1724340944,
+    "displayName": "David Metzler",
+    "screenName": "David Metzler",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "7ufr-e4xv",
+    "createdAt": 1707850431,
+    "displayName": "Dillon Ching",
+    "screenName": "Dillon Ching",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "y884-6s37",
+    "createdAt": 1493835524,
+    "displayName": "James Gutholm (PDC)",
+    "profileImageUrlLarge": "/api/users/y884-6s37/profile_images/LARGE",
+    "profileImageUrlMedium": "/api/users/y884-6s37/profile_images/THUMB",
+    "profileImageUrlSmall": "/api/users/y884-6s37/profile_images/TINY",
+    "screenName": "James Gutholm (PDC)",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "qkg5-hqnb",
+    "createdAt": 1720717790,
+    "displayName": "Jim Coleman",
+    "screenName": "Jim Coleman",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "beqm-ecd8",
+    "createdAt": 1738698255,
+    "displayName": "Lindy Myers",
+    "screenName": "Lindy Myers",
+    "teamId": 1705846,
+    "teamRole": "member",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "wbgp-mrig",
+    "createdAt": 1707850470,
+    "displayName": "michael.dailey",
+    "screenName": "michael.dailey",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "v65d-qje9",
+    "createdAt": 1787266185,
+    "displayName": "Nick Holmquist",
+    "screenName": "Nick Holmquist",
+    "teamId": 1705846,
+    "teamRole": "member",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "6u2g-9ajj",
+    "createdAt": 1724341154,
+    "displayName": "Sravya Yandamuri",
+    "screenName": "Sravya Yandamuri",
+    "teamId": 1705846,
+    "teamRole": "owner",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   },
+   {
+    "id": "u89u-rx5w",
+    "createdAt": 1701793082,
+    "displayName": "WA Public Disclosure Commission",
+    "profileImageUrlLarge": "/api/users/u89u-rx5w/profile_images/LARGE",
+    "profileImageUrlMedium": "/api/users/u89u-rx5w/profile_images/THUMB",
+    "profileImageUrlSmall": "/api/users/u89u-rx5w/profile_images/TINY",
+    "screenName": "WA Public Disclosure Commission",
+    "teamId": 1705846,
+    "teamRole": "member",
+    "type": "interactive",
+    "flags": [
+     "siteMember"
+    ]
+   }
+  ]
+ },
+ "tags": [
+  "political finance",
+  "elections",
+  "contributions",
+  "campaign",
+  "political committee",
+  "disclosure"
+ ],
+ "flags": [
+  "default",
+  "ownerMayBeContacted",
+  "restorable",
+  "restorePossibleForType"
+ ]
+}

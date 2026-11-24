@@ -1,0 +1,270 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://data.cdc.gov/d/mbd7-r32t",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "COVID-19 Case Surveillance Restricted Access Detailed Data",
+  "schema:description": "Note:\nReporting of new COVID-19 Case Surveillance data will be discontinued July 1, 2024, to align with the process of removing SARS-CoV-2 infections (COVID-19 cases) from the list of nationally notifiable diseases. Although these data will continue to be publicly available, the dataset will no longer be updated. \n\nAuthorizations to collect certain public health data expired at the end of the U.S. public health emergency declaration on May 11, 2023. The following jurisdictions discontinued COVID-19 case notifications to CDC: Iowa (11/8/21), Kansas (5/12/23), Kentucky (1/1/24), Louisiana (10/31/23), New Hampshire (5/23/23), and Oklahoma (5/2/23). Please note that these jurisdictions will not routinely send new case data after the dates indicated. As of 7/13/23, case notifications from Oregon will only include pediatric cases resulting in death.\n\nThis case surveillance publicly available dataset has 33 elements for all COVID-19 cases shared with CDC and includes demographics, geography (county and state of residence), any exposure history, disease severity indicators and outcomes, and presence of any underlying medical conditions and risk behaviors. This dataset requires a registration process and a data use agreement.\n\nCDC has three COVID-19 case surveillance datasets:COVID-19 Case Surveillance Public Use Data with Geography: Public use, patient-level dataset with clinical data (including symptoms), demographics, and county and state of residence. (19 data elements)\nCOVID-19 Case Surveillance Public Use Data: Public use, patient-level dataset with clinical and symptom data and demographics, with no geographic data. (12 data elements)\nCOVID-19 Case Surveillance Restricted Access Detailed Data: Restricted access, patient-level dataset with clinical and symptom data, demographics, and state and county of residence. Access requires a registration process and a data use agreement. (33 data elements)\n\nRequesting Access to the COVID-19 Case Surveillance Restricted Access Detailed Data\nPlease review the following documents to determine your interest in accessing the COVID-19 Case Surveillance Restricted Access Detailed Data file:\n1)  CDC COVID-19 Case Surveillance Restricted Access Detailed Data: Summary, Guidance, Limitations Information, and Restricted Access Data Use Agreement Information\n\n2)  Data Dictionary for the COVID-19 Case Surveillance Restricted Access Detailed Data\n\nThe next step is to complete the Registration Information and Data Use Restrictions Agreement (RIDURA). Once complete, CDC will review your agreement. After access is granted, Ask SRRG (eocevent394@cdc.gov) will email you information about how to access the data through GitHub. If you have questions about obtaining access, email eocevent394@cdc.gov. \n\nOverview\n\nThe COVID-19 case surveillance database includes individual-level data reported to U.S. states and autonomous reporting entities, including New York City and the District of Columbia (D.C.), as well as U.S. territories and affiliates. On April 5, 2020, COVID-19 was added to the Nationally Notifiable Condition List and classified as “immediately notifiable, urgent (within 24 hours)” by a Council of State and Territorial Epidemiologists (CSTE) Interim Position Statement (Interim-20-ID-01). CSTE updated the position statement on August 5, 2020, to clarify the interpretation of antigen detection tests and serologic test results within the case classification (Interim-20-ID-02). The statement also recommended that all states and territories enact laws to make COVID-19 reportable in their jurisdiction, and that jurisdictions conducting surveillance should submit case notifications to CDC. COVID-19 case surveillance data are collected by jurisdictions and reported voluntarily to CDC.\n\nCOVID-19 case surveillance data are collected by jurisdictions and are shared voluntarily with CDC. For more information, visit:\nhttps://www.cdc.gov/coronavirus/2019-ncov/covid-data/about-us-cases-deaths.html.\n\nThe deidentified data in the restricted access dataset include demographic characteristics, state and county of residence, any exposure history, disease severity indicators and outcomes, clinical data, laboratory diagnostic test results, and comorbidities.\n\nAll data elements can be found on the COVID-19 case report form located at www.cdc.gov/coronavirus/2019-ncov/downloads/pui-form.pdf.\n\nCOVID-19 case reports have been routinely submitted using standardized case reporting forms.\n\nOn April 5, 2020, CSTE released an Interim Position Statement with national surveillance case definitions for COVID-19 included. Current versions of these case definitions are available here: https://ndc.services.cdc.gov/case-definitions/coronavirus-disease-2019-2021/.\n\nCSTE updated the position statement on August 5, 2020, to clarify the interpretation of antigen detection tests and serologic test results within the case classification. All cases reported on or after were requested to be shared by public health departments to CDC using the standardized case definitions for lab-confirmed or probable cases.\n\nOn May 5, 2020, the standardized case reporting form was revised. Case reporting using this new form is ongoing among U.S. states and territories.\n\nData are Considered Provisional\nThe COVID-19 case surveillance data are dynamic; case reports can be modified at any time by the jurisdictions sharing COVID-19 data with CDC. CDC may update prior cases shared with CDC based on any updated information from jurisdictions. For instance, as new information is gathered about previously reported cases, health departments provide updated data to CDC. As more information and data become available, analyses might find changes in surveillance data and trends during a previously reported time window. Data may also be shared late with CDC due to the volume of COVID-19 cases.\nAnnual finalized data: To create the final NNDSS data used in the annual tables, CDC works carefully with the reporting jurisdictions to reconcile the data received during the year until each state or territorial epidemiologist confirms that the data from their area are correct.\n\nAccess Addressing Gaps in Public Health Reporting of Race and Ethnicity for COVID-19, a report from the Council of State and Territorial Epidemiologists, to better understand the challenges in completing race and ethnicity data for COVID-19 and recommendations for improvement.\n\nData Limitations\nTo learn more about the limitations in using case surveillance data, visit FAQ: COVID-19 Data and Surveillance.\n\nData Quality Assurance Procedures\nCDC’s Case Surveillance Section routinely performs data quality assurance procedures (i.e., ongoing corrections and logic checks to address data errors). To date, the following data cleaning steps have been implemented:\nQuestions that have been left unanswered (blank) on the case report form are reclassified to a Missing value, if applicable to the question. For example, in the question \"Was the individual hospitalized?\" where the possible answer choices include \"Yes,\" \"No,\" or \"Unknown,\" the blank value is recoded to \"Missing\" because the case report form did not include a response to the question.\nLogic checks are performed for date data. If an illogical date has been provided, CDC reviews the data with the reporting jurisdiction. For example, if a symptom onset date in the future is reported to CDC, this value is set to null until the reporting jurisdiction updates the date appropriately.\nAdditional data quality processing to recode free text data is ongoing. Data on symptoms, race, ethnicity, and healthcare worker status have been prioritized.\n\nData Suppression\nTo prevent release of data that could be used to identify people, data cells are suppressed for low frequency (Additional COVID-19 Data\nCOVID-19 data are available to the public as summary or aggregate count files, including total counts of cases and deaths by state and by county. These and other COVID-19 data are available from multiple public locations: COVID Data Tracker; United States COVID-19 Cases and Deaths by State; COVID-19 Vaccination Reporting Data Systems; and COVID-19 Death Data and Resources.\n\nNotes:\n\nMarch 1, 2022: The \"COVID-19 Case Surveillance Restricted Access Detailed Data\" will be updated on a monthly basis. \n\nApril 7, 2022: An adjustment was made to CDC’s cleaning algorithm for COVID-19 line level case notification data.  An assumption in CDC's algorithm led to misclassifying deaths that were not COVID-19 related. The algorithm has since been revised, and this dataset update reflects corrected individual level information about death status for all cases collected to date. \n\nJune 9, 2022: Two new data elements, “race” and “ethnicity”, were added to the dataset to provide information on race and Hispanic origin, respectively. These two new elements were to replace the column “race_ethnicity_combined” that encoded the combined race and Hispanic origin information in previous versions. Codes and related details used for these two new elements are available at: Data Dictionary for the COVID-19 Case Surveillance Restricted Access Detailed Data. Conversion logic is also provided in the data dictionary for users to derive a combined race and Hispanic origin item similar to the item “race_ethnicity_combined” in previous release, using the current “race” and “ethnicity” variables.  \n\nJune 25, 2024: An adjustment was made to CDC’s cleaning algorithm for COVID-19 line level case notification data. An assumption in CDC's algorithm led to misclassification of pediatric deaths from New York State. The algorithm has since been revised, and this dataset update reflects corrected individual level information about death status for all cases collected to date for New York State.  \n\nJune 26, 2024: Reported COVID-19 cases resulting in death of Texas residents should be interpreted with caution. In November 2023, CDC and Texas Department of State Health Services (DSHS) identified an unresolved issue in the demographics of COVID-19 patient case deaths as reported to CDC by Texas DSHS. As a result, Texas case deaths reported to COVID-19 line level case notification data are disproportionate compared with reporting by Texas DSHS and National Center for Health Statistics (NCHS). Because of this issue, an adjustment could not be implemented to correct the misclassifications. However, provisional COVID-19 death counts from the National Center for Health Statistics (NCHS) are updated with information from death certificates and offers accurate death counts.”",
+  "schema:identifier": "mbd7-r32t",
+  "schema:keywords": [
+    "covid-19",
+    "coronavirus",
+    "cases",
+    "surveillance",
+    "covid",
+    "covid19",
+    "restricted",
+    "ncird-corvd",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Case Surveillance",
+      "schema:inDefinedTermSet": "data.cdc.gov categories"
+    }
+  ],
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "https://www.usa.gov/government-works",
+      "schema:name": "Public Domain U.S. Government"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "CDC Data, Analytics and Visualization Task Force",
+        "schema:url": "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/index.html"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "NCIRD-CORVD",
+        "schema:identifier": "n2qk-w5rg"
+      }
+    ]
+  },
+  "schema:publisher": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "CDC"
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "CORVD Informatics",
+        "schema:email": "corvdinformatics@cdc.gov"
+      }
+    }
+  ],
+  "schema:datePublished": "2020-05-17",
+  "schema:dateCreated": "2020-11-20T14:41:28Z",
+  "schema:dateModified": "2020-11-20T14:41:28Z",
+  "schema:temporalCoverage": [
+    "2020-01-01/2024-06-21"
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "US"
+    }
+  ],
+  "schema:creditText": "Centers for Disease Control and Prevention, COVID-19 Response. COVID-19 Case Surveillance Restricted Data Access, Summary, and Limitations (dataset access date: June 21, 2024).",
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "attachment",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.cdc.gov/api/views/mbd7-r32t/files/4697b7f1-c0ea-403a-9583-6a02fd33a21c?download=true&filename=data_dictionary_covid_cases_restricted_detailed_updated.xlsx",
+        "schema:name": "data_dictionary_covid_cases_restricted_detailed_updated.xlsx"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "attachment",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.cdc.gov/api/views/mbd7-r32t/files/1aa22b7d-08c4-4a75-9370-5add178c2aaa?download=true&filename=Public%2033%20Data%20Profile.pdf",
+        "schema:name": "Public 33 Data Profile.pdf"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "attachment",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.cdc.gov/api/views/mbd7-r32t/files/53195382-2916-4a7a-b97f-010111f3aaa1?download=true&filename=public%2033%20utility%20summary.pdf",
+        "schema:name": "public 33 utility summary.pdf"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "attachment",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.cdc.gov/api/views/mbd7-r32t/files/827683ca-97f5-4de6-a79a-94fed251741b?download=true&filename=summary_guidance_and_limitations_information_and_restricted_access_data_use_agreement_information_updated_2026.pdf",
+        "schema:name": "summary_guidance_and_limitations_information_and_restricted_access_data_use_agreement_information_updated_2026.pdf"
+      }
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "Deidentified Patient"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Data Quality: Geospatial Resolution",
+      "schema:value": "State, County"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Described By",
+      "schema:value": "https://data.cdc.gov/api/views/mbd7-r32t/files/4697b7f1-c0ea-403a-9583-6a02fd33a21c?download=true&filename=data_dictionary_covid_cases_restricted_detailed_updated.xlsx"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: References",
+      "schema:value": "https://data.cdc.gov/api/views/mbd7-r32t/files/53195382-2916-4a7a-b97f-010111f3aaa1?download=true&filename=public%2033%20utility%20summary.pdf"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Update Frequency",
+      "schema:value": "Monthly"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Program Code",
+      "schema:value": "009:020"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core: Bureau Code",
+      "schema:value": "009:20"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core 3: Described By",
+      "schema:value": "https://data.cdc.gov/api/views/mbd7-r32t/files/4697b7f1-c0ea-403a-9583-6a02fd33a21c?download=true&filename=data_dictionary_covid_cases_restricted_detailed_updated.xlsx"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core 3: Update Frequency",
+      "schema:value": "Monthly"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core 3: Program Code",
+      "schema:value": "009:020"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Common Core 3: Bureau Code",
+      "schema:value": "009:20"
+    }
+  ],
+  "schema:url": "https://data.cdc.gov/d/mbd7-r32t",
+  "schema:subjectOf": {
+    "@id": "https://data.cdc.gov/d/mbd7-r32t#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: COVID-19 Case Surveillance Restricted Access Detailed Data",
+    "schema:about": {
+      "@id": "https://data.cdc.gov/d/mbd7-r32t"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.cdc.gov/api/views/mbd7-r32t.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2026-09-09T22:44:10Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "NCIRD-CORVD",
+      "schema:identifier": "n2qk-w5rg"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Centers for Disease Control and Prevention",
+      "schema:url": "https://data.cdc.gov/"
+    }
+  }
+}

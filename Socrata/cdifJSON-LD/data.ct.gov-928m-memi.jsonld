@@ -1,0 +1,139 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://data.ct.gov/d/928m-memi",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Connecticut Department of Social Services - People Served - CY 2012-2025",
+  "schema:description": "This report provides information at the state and town level of people served by the Connecticut Department of Social Services for the Calendar Years 2012-2025 by demographics (gender, age-groups, race, and ethnicity) at the state and town level by Medical Benefit Plan (Husky A-D, Husky limited benefit, MSP and Other Medical); Assistance Type (Cash, Food, Medical, Other); and Program (CADAP, CHCPE, CHIP, ConnTRANS, Medicaid, Medical, MSP, Refugee Cash, Repatriation, SAGA, SAGA Funeral, SNAP, Social Work Services, State Funded Medical, State Supplement, TFA).\nNOTE: On March 2020, Connecticut opted to add a new Medicaid coverage group: the COVID-19 Testing Coverage for the Uninsured. Enrollment data on this limited-benefit Medicaid coverage group is being incorporated into Medicaid data effective January 1, 2021. Enrollment data for this coverage group prior to January 1, 2021, was listed under State Funded Medical. Effective January 1, 2021, this coverage group have been separated: (1) the COVID-19 Testing Coverage for the Uninsured is now G06-I and is now listed as a limited benefit plan that rolls up into “Program Name” of Medicaid and “Medical Benefit Plan” of HUSKY Limited Benefit; (2) the emergency medical coverage has been separated into G06-II as a limited benefit plan that rolls up into “Program Name” of Emergency Medical and “Medical Benefit Plan” of Other Medical. \nNOTE: On April 22, 2019 the methodology for determining HUSKY A Newborn recipients changed, which caused an increase of recipients for that benefit starting in October 2016. We now count recipients recorded in the ImpaCT system as well as in the HIX system for that assistance type, instead using HIX exclusively.\nAlso, the methodology for determining the address of the recipients has changed:\n    1. The address of a recipient in the ImpaCT system is now correctly determined specific to that month instead of using the address of the most recent month. This resulted in some shuffling of the recipients among townships starting in October 2016.\n    2. If, in a given month, a recipient has benefit records in both the HIX system and in the ImpaCT system, the address of the recipient is now calculated as follows to resolve conflicts: Use the residential address in ImpaCT if it exists, else use the mailing address in ImpaCT if it exists, else use the address in HIX. This change in methodology causes a reduction in counts for most townships starting in March 2017 because a single address is now used instead of two when the systems do not agree.\nNOTE: On February 14 2019, the enrollment counts for 2012-2015 across all programs were updated to account for an error in the data integration process. As a result, the count of the number of people served increased by 13% for 2012, 10% for 2013, 8% for 2014 and 4% for 2015. Counts for 2016, 2017 and 2018 remain unchanged.",
+  "schema:identifier": "928m-memi",
+  "schema:keywords": [
+    "dss",
+    "town",
+    "enrollment counts",
+    "department of social services",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Health and Human Services",
+      "schema:inDefinedTermSet": "data.ct.gov categories"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "License: Public Domain"
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Department of Social Services"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Vijay Subrahmaniam",
+        "schema:identifier": "xcia-iysg"
+      }
+    ]
+  },
+  "schema:datePublished": "2019-01-03T13:06:41Z",
+  "schema:dateCreated": "2019-01-03T13:05:15Z",
+  "schema:dateModified": "2019-01-03T13:05:15Z",
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "attachment",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.ct.gov/api/views/928m-memi/files/4ee862f7-cbd1-47b3-8f30-a8ca81dc7fb2?download=true&filename=DSSEnrollmentDataReleaseSept2018.pdf",
+        "schema:name": "DSSEnrollmentDataReleaseSept2018.pdf"
+      }
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://data.ct.gov/download/928m-memi/application%2Fpdf",
+      "schema:name": "People Served - Full Report.pdf",
+      "schema:encodingFormat": [
+        "application/pdf"
+      ],
+      "schema:contentSize": "8248387 B"
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Agency: Agency",
+      "schema:value": "Department of Social Services"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Details: Update Frequency",
+      "schema:value": "Annually"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Details: Geographic Unit",
+      "schema:value": "Not applicable"
+    }
+  ],
+  "schema:url": "https://data.ct.gov/d/928m-memi",
+  "schema:subjectOf": {
+    "@id": "https://data.ct.gov/d/928m-memi#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: Connecticut Department of Social Services - People Served - CY 2012-2025",
+    "schema:about": {
+      "@id": "https://data.ct.gov/d/928m-memi"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.ct.gov/api/views/928m-memi.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2026-03-24T17:08:37Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Vijay Subrahmaniam",
+      "schema:identifier": "xcia-iysg"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Connecticut Open Data",
+      "schema:url": "https://data.ct.gov/"
+    }
+  }
+}

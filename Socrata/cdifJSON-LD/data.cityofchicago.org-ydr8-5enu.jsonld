@@ -1,0 +1,2952 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/",
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@id": "https://data.cityofchicago.org/d/ydr8-5enu",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Building Permits",
+  "schema:description": "Note, 10/27/2026: We have added a RESIDENTIAL_UNIT_CHANGE column. See this post for more details.\n\nThis dataset includes information about building permits issued by the City of Chicago from 2006 to the present, excluding permits that have been voided or revoked after issuance. Most types of permits are issued subject to payment of the applicable permit fee. Work under a permit may not begin until the applicable permit fee is paid. \n\nFor more information about building permits, see http://www.chicago.gov/permit.",
+  "schema:identifier": "ydr8-5enu",
+  "schema:keywords": [
+    "permits",
+    "buildings",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Buildings",
+      "schema:inDefinedTermSet": "data.cityofchicago.org categories"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "License: See Terms of Use"
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "City of Chicago",
+        "schema:url": "http://www.cityofchicago.org"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "cocadmin",
+        "schema:identifier": "scy9-9wg4"
+      }
+    ]
+  },
+  "schema:datePublished": "2026-10-26T23:37:11Z",
+  "schema:dateCreated": "2011-09-30T12:00:08Z",
+  "schema:dateModified": "2026-11-24T13:09:21Z",
+  "schema:variableMeasured": [
+    {
+      "@id": "#id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ID",
+      "schema:alternateName": [
+        "id"
+      ],
+      "schema:description": "Unique database record identifier",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#permit_",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PERMIT#",
+      "schema:alternateName": [
+        "permit_"
+      ],
+      "schema:description": "Tracking number assigned at beginning of permit application process",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:role": "UnitIdentifier"
+    },
+    {
+      "@id": "#permit_status",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PERMIT_STATUS",
+      "schema:alternateName": [
+        "permit_status"
+      ],
+      "schema:description": "Current status of permit (not available for all permit types).",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#permit_milestone",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PERMIT_MILESTONE",
+      "schema:alternateName": [
+        "permit_milestone"
+      ],
+      "schema:description": "Current milestone of permit (not available for all permit types).",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#permit_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PERMIT_TYPE",
+      "schema:alternateName": [
+        "permit_type"
+      ],
+      "schema:description": "Type of permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#review_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REVIEW_TYPE",
+      "schema:alternateName": [
+        "review_type"
+      ],
+      "schema:description": "Process used to review permit application",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#application_start_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "APPLICATION_START_DATE",
+      "schema:alternateName": [
+        "application_start_date"
+      ],
+      "schema:description": "Date when City began reviewing permit application",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#issue_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ISSUE_DATE",
+      "schema:alternateName": [
+        "issue_date"
+      ],
+      "schema:description": "For most permit types, date when City determined permit was ready to issue, subject to payment of permit fees; For Express Permit Program, date when permit issued based on full payment of applicable permit fee",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#processing_time",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PROCESSING_TIME",
+      "schema:alternateName": [
+        "processing_time"
+      ],
+      "schema:description": "Number of days between APPLICATION_START_DATE and ISSUE_DATE",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#street_number",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "STREET_NUMBER",
+      "schema:alternateName": [
+        "street_number"
+      ],
+      "schema:description": "Address number - for buildings with address ranges, primary address is used",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#street_direction",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "STREET_DIRECTION",
+      "schema:alternateName": [
+        "street_direction"
+      ],
+      "schema:description": "Street direction",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#street_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "STREET_NAME",
+      "schema:alternateName": [
+        "street_name"
+      ],
+      "schema:description": "Street name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#work_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "WORK_TYPE",
+      "schema:alternateName": [
+        "work_type"
+      ],
+      "schema:description": "Classification of activity authorized by permit (not available for all permit types).",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#work_description",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "WORK_DESCRIPTION",
+      "schema:alternateName": [
+        "work_description"
+      ],
+      "schema:description": "Description of work authorized by the permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#permit_condition",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PERMIT_CONDITION",
+      "schema:alternateName": [
+        "permit_condition"
+      ],
+      "schema:description": "Conditions or comments added by reviewing department(s)",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#residential_unit_change",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "RESIDENTIAL_UNIT_CHANGE",
+      "schema:alternateName": [
+        "residential_unit_change"
+      ],
+      "schema:description": "The net change in residential units as a result of the permit.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#building_fee_paid",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "BUILDING_FEE_PAID",
+      "schema:alternateName": [
+        "building_fee_paid"
+      ],
+      "schema:description": "Amount of building permit fees received",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#zoning_fee_paid",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ZONING_FEE_PAID",
+      "schema:alternateName": [
+        "zoning_fee_paid"
+      ],
+      "schema:description": "Amount of zoning review fees received",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#other_fee_paid",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OTHER_FEE_PAID",
+      "schema:alternateName": [
+        "other_fee_paid"
+      ],
+      "schema:description": "Amount of other permit-related fees received",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#subtotal_paid",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "SUBTOTAL_PAID",
+      "schema:alternateName": [
+        "subtotal_paid"
+      ],
+      "schema:description": "Sum of BUILDING_FEE_PAID, ZONING_FEE_PAID and OTHER_FEE_PAID",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#building_fee_unpaid",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "BUILDING_FEE_UNPAID",
+      "schema:alternateName": [
+        "building_fee_unpaid"
+      ],
+      "schema:description": "Amount of building permit fees due",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#zoning_fee_unpaid",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ZONING_FEE_UNPAID",
+      "schema:alternateName": [
+        "zoning_fee_unpaid"
+      ],
+      "schema:description": "Amount of zoning review fees due",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#other_fee_unpaid",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OTHER_FEE_UNPAID",
+      "schema:alternateName": [
+        "other_fee_unpaid"
+      ],
+      "schema:description": "Amount of other permit-related fees due",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#subtotal_unpaid",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "SUBTOTAL_UNPAID",
+      "schema:alternateName": [
+        "subtotal_unpaid"
+      ],
+      "schema:description": "Sum of BUILDING_FEE_UNPAID, ZONING_FEE_UNPAID and OTHER_FEE_UNPAID",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#building_fee_waived",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "BUILDING_FEE_WAIVED",
+      "schema:alternateName": [
+        "building_fee_waived"
+      ],
+      "schema:description": "Amount of building permit fees waived",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#building_fee_subtotal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "BUILDING_FEE_SUBTOTAL",
+      "schema:alternateName": [
+        "building_fee_subtotal"
+      ],
+      "schema:description": "Sum of BUILDING_FEE_PAID, BUILDING_FEE_UNPAID and BUILDING_FEE_WAIVED",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#zoning_fee_subtotal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ZONING_FEE_SUBTOTAL",
+      "schema:alternateName": [
+        "zoning_fee_subtotal"
+      ],
+      "schema:description": "Sum of ZONING_FEE_PAID, ZONING _FEE_UNPAID and ZONING _FEE_WAIVED",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#other_fee_subtotal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OTHER_FEE_SUBTOTAL",
+      "schema:alternateName": [
+        "other_fee_subtotal"
+      ],
+      "schema:description": "Sum of OTHER_FEE_PAID, OTHER _FEE_UNPAID and OTHER _FEE_WAIVED",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#zoning_fee_waived",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ZONING_FEE_WAIVED",
+      "schema:alternateName": [
+        "zoning_fee_waived"
+      ],
+      "schema:description": "Amount of zoning review fees waived",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#other_fee_waived",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "OTHER_FEE_WAIVED",
+      "schema:alternateName": [
+        "other_fee_waived"
+      ],
+      "schema:description": "Amount of other permit-related fees waived",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#subtotal_waived",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "SUBTOTAL_WAIVED",
+      "schema:alternateName": [
+        "subtotal_waived"
+      ],
+      "schema:description": "Sum of BUILDING_FEE_WAIVED, ZONING_FEE_WAIVED and OTHER_FEE_WAIVED",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#total_fee",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TOTAL_FEE",
+      "schema:alternateName": [
+        "total_fee"
+      ],
+      "schema:description": "Sum of SUBTOTAL_PAID, SUBTOTAL_UNPAID and SUBTOTAL_WAIVED",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#contact_1_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_1_TYPE",
+      "schema:alternateName": [
+        "contact_1_type"
+      ],
+      "schema:description": "Contact 1's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_1_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_1_NAME",
+      "schema:alternateName": [
+        "contact_1_name"
+      ],
+      "schema:description": "Contact 1's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_1_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_1_CITY",
+      "schema:alternateName": [
+        "contact_1_city"
+      ],
+      "schema:description": "Contact 1's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_1_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_1_STATE",
+      "schema:alternateName": [
+        "contact_1_state"
+      ],
+      "schema:description": "Contact 1's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_1_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_1_ZIPCODE",
+      "schema:alternateName": [
+        "contact_1_zipcode"
+      ],
+      "schema:description": "Contact 1's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_2_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_2_TYPE",
+      "schema:alternateName": [
+        "contact_2_type"
+      ],
+      "schema:description": "Contact 2's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_2_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_2_NAME",
+      "schema:alternateName": [
+        "contact_2_name"
+      ],
+      "schema:description": "Contact 2's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_2_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_2_CITY",
+      "schema:alternateName": [
+        "contact_2_city"
+      ],
+      "schema:description": "Contact 2's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_2_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_2_STATE",
+      "schema:alternateName": [
+        "contact_2_state"
+      ],
+      "schema:description": "Contact 2's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_2_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_2_ZIPCODE",
+      "schema:alternateName": [
+        "contact_2_zipcode"
+      ],
+      "schema:description": "Contact 2's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_3_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_3_TYPE",
+      "schema:alternateName": [
+        "contact_3_type"
+      ],
+      "schema:description": "Contact 3's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_3_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_3_NAME",
+      "schema:alternateName": [
+        "contact_3_name"
+      ],
+      "schema:description": "Contact 3's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_3_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_3_CITY",
+      "schema:alternateName": [
+        "contact_3_city"
+      ],
+      "schema:description": "Contact 3's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_3_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_3_STATE",
+      "schema:alternateName": [
+        "contact_3_state"
+      ],
+      "schema:description": "Contact 3's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_3_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_3_ZIPCODE",
+      "schema:alternateName": [
+        "contact_3_zipcode"
+      ],
+      "schema:description": "Contact 3's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_4_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_4_TYPE",
+      "schema:alternateName": [
+        "contact_4_type"
+      ],
+      "schema:description": "Contact 4's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_4_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_4_NAME",
+      "schema:alternateName": [
+        "contact_4_name"
+      ],
+      "schema:description": "Contact 4's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_4_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_4_CITY",
+      "schema:alternateName": [
+        "contact_4_city"
+      ],
+      "schema:description": "Contact 4's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_4_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_4_STATE",
+      "schema:alternateName": [
+        "contact_4_state"
+      ],
+      "schema:description": "Contact 4's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_4_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_4_ZIPCODE",
+      "schema:alternateName": [
+        "contact_4_zipcode"
+      ],
+      "schema:description": "Contact 4's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_5_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_5_TYPE",
+      "schema:alternateName": [
+        "contact_5_type"
+      ],
+      "schema:description": "Contact 5's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_5_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_5_NAME",
+      "schema:alternateName": [
+        "contact_5_name"
+      ],
+      "schema:description": "Contact 5's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_5_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_5_CITY",
+      "schema:alternateName": [
+        "contact_5_city"
+      ],
+      "schema:description": "Contact 5's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_5_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_5_STATE",
+      "schema:alternateName": [
+        "contact_5_state"
+      ],
+      "schema:description": "Contact 5's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_5_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_5_ZIPCODE",
+      "schema:alternateName": [
+        "contact_5_zipcode"
+      ],
+      "schema:description": "Contact 5's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_6_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_6_TYPE",
+      "schema:alternateName": [
+        "contact_6_type"
+      ],
+      "schema:description": "Contact 6's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_6_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_6_NAME",
+      "schema:alternateName": [
+        "contact_6_name"
+      ],
+      "schema:description": "Contact 6's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_6_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_6_CITY",
+      "schema:alternateName": [
+        "contact_6_city"
+      ],
+      "schema:description": "Contact 6's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_6_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_6_STATE",
+      "schema:alternateName": [
+        "contact_6_state"
+      ],
+      "schema:description": "Contact 6's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_6_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_6_ZIPCODE",
+      "schema:alternateName": [
+        "contact_6_zipcode"
+      ],
+      "schema:description": "Contact 6's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_7_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_7_TYPE",
+      "schema:alternateName": [
+        "contact_7_type"
+      ],
+      "schema:description": "Contact 7's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_7_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_7_NAME",
+      "schema:alternateName": [
+        "contact_7_name"
+      ],
+      "schema:description": "Contact 7's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_7_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_7_CITY",
+      "schema:alternateName": [
+        "contact_7_city"
+      ],
+      "schema:description": "Contact 7's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_7_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_7_STATE",
+      "schema:alternateName": [
+        "contact_7_state"
+      ],
+      "schema:description": "Contact 7's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_7_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_7_ZIPCODE",
+      "schema:alternateName": [
+        "contact_7_zipcode"
+      ],
+      "schema:description": "Contact 7's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_8_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_8_TYPE",
+      "schema:alternateName": [
+        "contact_8_type"
+      ],
+      "schema:description": "Contact 8's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_8_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_8_NAME",
+      "schema:alternateName": [
+        "contact_8_name"
+      ],
+      "schema:description": "Contact 8's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_8_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_8_CITY",
+      "schema:alternateName": [
+        "contact_8_city"
+      ],
+      "schema:description": "Contact 8's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_8_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_8_STATE",
+      "schema:alternateName": [
+        "contact_8_state"
+      ],
+      "schema:description": "Contact 8's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_8_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_8_ZIPCODE",
+      "schema:alternateName": [
+        "contact_8_zipcode"
+      ],
+      "schema:description": "Contact 8's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_9_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_9_TYPE",
+      "schema:alternateName": [
+        "contact_9_type"
+      ],
+      "schema:description": "Contact 9's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_9_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_9_NAME",
+      "schema:alternateName": [
+        "contact_9_name"
+      ],
+      "schema:description": "Contact 9's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_9_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_9_CITY",
+      "schema:alternateName": [
+        "contact_9_city"
+      ],
+      "schema:description": "Contact 9's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_9_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_9_STATE",
+      "schema:alternateName": [
+        "contact_9_state"
+      ],
+      "schema:description": "Contact 9's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_9_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_9_ZIPCODE",
+      "schema:alternateName": [
+        "contact_9_zipcode"
+      ],
+      "schema:description": "Contact 9's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_10_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_10_TYPE",
+      "schema:alternateName": [
+        "contact_10_type"
+      ],
+      "schema:description": "Contact 10's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_10_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_10_NAME",
+      "schema:alternateName": [
+        "contact_10_name"
+      ],
+      "schema:description": "Contact 10's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_10_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_10_CITY",
+      "schema:alternateName": [
+        "contact_10_city"
+      ],
+      "schema:description": "Contact 10's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_10_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_10_STATE",
+      "schema:alternateName": [
+        "contact_10_state"
+      ],
+      "schema:description": "Contact 10's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_10_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_10_ZIPCODE",
+      "schema:alternateName": [
+        "contact_10_zipcode"
+      ],
+      "schema:description": "Contact 10's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_11_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_11_TYPE",
+      "schema:alternateName": [
+        "contact_11_type"
+      ],
+      "schema:description": "Contact 11's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_11_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_11_NAME",
+      "schema:alternateName": [
+        "contact_11_name"
+      ],
+      "schema:description": "Contact 11's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_11_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_11_CITY",
+      "schema:alternateName": [
+        "contact_11_city"
+      ],
+      "schema:description": "Contact 11's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_11_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_11_STATE",
+      "schema:alternateName": [
+        "contact_11_state"
+      ],
+      "schema:description": "Contact 11's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_11_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_11_ZIPCODE",
+      "schema:alternateName": [
+        "contact_11_zipcode"
+      ],
+      "schema:description": "Contact 11's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_12_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_12_TYPE",
+      "schema:alternateName": [
+        "contact_12_type"
+      ],
+      "schema:description": "Contact 12's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_12_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_12_NAME",
+      "schema:alternateName": [
+        "contact_12_name"
+      ],
+      "schema:description": "Contact 12's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_12_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_12_CITY",
+      "schema:alternateName": [
+        "contact_12_city"
+      ],
+      "schema:description": "Contact 12's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_12_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_12_STATE",
+      "schema:alternateName": [
+        "contact_12_state"
+      ],
+      "schema:description": "Contact 12's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_12_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_12_ZIPCODE",
+      "schema:alternateName": [
+        "contact_12_zipcode"
+      ],
+      "schema:description": "Contact 12's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_13_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_13_TYPE",
+      "schema:alternateName": [
+        "contact_13_type"
+      ],
+      "schema:description": "Contact 13's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_13_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_13_NAME",
+      "schema:alternateName": [
+        "contact_13_name"
+      ],
+      "schema:description": "Contact 13's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_13_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_13_CITY",
+      "schema:alternateName": [
+        "contact_13_city"
+      ],
+      "schema:description": "Contact 13's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_13_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_13_STATE",
+      "schema:alternateName": [
+        "contact_13_state"
+      ],
+      "schema:description": "Contact 13's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_13_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_13_ZIPCODE",
+      "schema:alternateName": [
+        "contact_13_zipcode"
+      ],
+      "schema:description": "Contact 13's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_14_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_14_TYPE",
+      "schema:alternateName": [
+        "contact_14_type"
+      ],
+      "schema:description": "Contact 14's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_14_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_14_NAME",
+      "schema:alternateName": [
+        "contact_14_name"
+      ],
+      "schema:description": "Contact 14's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_14_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_14_CITY",
+      "schema:alternateName": [
+        "contact_14_city"
+      ],
+      "schema:description": "Contact 14's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_14_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_14_STATE",
+      "schema:alternateName": [
+        "contact_14_state"
+      ],
+      "schema:description": "Contact 14's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_14_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_14_ZIPCODE",
+      "schema:alternateName": [
+        "contact_14_zipcode"
+      ],
+      "schema:description": "Contact 14's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_15_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_15_TYPE",
+      "schema:alternateName": [
+        "contact_15_type"
+      ],
+      "schema:description": "Contact 15's relationship to permit",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_15_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_15_NAME",
+      "schema:alternateName": [
+        "contact_15_name"
+      ],
+      "schema:description": "Contact 15's full name",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_15_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_15_CITY",
+      "schema:alternateName": [
+        "contact_15_city"
+      ],
+      "schema:description": "Contact 15's primary address city",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_15_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_15_STATE",
+      "schema:alternateName": [
+        "contact_15_state"
+      ],
+      "schema:description": "Contact 15's primary address state",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#contact_15_zipcode",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CONTACT_15_ZIPCODE",
+      "schema:alternateName": [
+        "contact_15_zipcode"
+      ],
+      "schema:description": "Contact 15's primary address ZIP code",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#reported_cost",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "REPORTED_COST",
+      "schema:alternateName": [
+        "reported_cost"
+      ],
+      "schema:description": "Estimated cost of work provided by applicant (not available for all permits)",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#pin_list",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "PIN_LIST",
+      "schema:alternateName": [
+        "pin_list"
+      ],
+      "schema:description": "Property index number(s) (PINs) disclosed by applicant and verified by city staff as part of permit application review (not available for all permits); PINs are assigned to parcels of land for property tax purposes. This column replaces columns PIN1 through PIN10, which will be removed soon, no earlier than 6/1/2024.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#community_area",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "COMMUNITY_AREA",
+      "schema:alternateName": [
+        "community_area"
+      ],
+      "schema:description": "The Chicago community area of the property's primary address. The community area map is available in a separate dataset.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#census_tract",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "CENSUS_TRACT",
+      "schema:alternateName": [
+        "census_tract"
+      ],
+      "schema:description": "The census tract of the property's primary address. The census tract map is available in a separate dataset.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#ward",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "WARD",
+      "schema:alternateName": [
+        "ward"
+      ],
+      "schema:description": "The ward (city council district) of the property's primary address at the time of permit issuance. The ward map is available in a separate dataset.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#xcoordinate",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "XCOORDINATE",
+      "schema:alternateName": [
+        "xcoordinate"
+      ],
+      "schema:description": "The east-west coordinate of the property's primary address, defined in feet, based on NAD 83 - State Plane Eastern IL",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#ycoordinate",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "YCOORDINATE",
+      "schema:alternateName": [
+        "ycoordinate"
+      ],
+      "schema:description": "The north-south coordinate of the property's primary address, defined in feet, based on NAD 83 - State Plane Eastern IL",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#latitude",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LATITUDE",
+      "schema:alternateName": [
+        "latitude"
+      ],
+      "schema:description": "The latitude of the property's primary address",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#longitude",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LONGITUDE",
+      "schema:alternateName": [
+        "longitude"
+      ],
+      "schema:description": "The longitude of the property's primary address",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#location",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "LOCATION",
+      "schema:alternateName": [
+        "location"
+      ],
+      "schema:description": "The location of the property's primary address in a format that allows for creation of maps and other geographic operations on this data portal",
+      "cdif:physicalDataType": "xsd:string"
+    }
+  ],
+  "cdif:hasPrimaryKey": {
+    "@type": [
+      "cdif:Key"
+    ],
+    "cdif:isComposedOf": [
+      {
+        "@type": [
+          "cdi:ComponentPosition"
+        ],
+        "cdi:indexes": {
+          "@id": "#permit_"
+        },
+        "cdi:value": 1
+      }
+    ]
+  },
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "cdi:TabularTextDataSet"
+      ],
+      "schema:name": "CSV export",
+      "schema:contentUrl": "https://data.cityofchicago.org/api/views/ydr8-5enu/rows.csv?accessType=DOWNLOAD",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "cdi:isDelimited": true,
+      "csvw:delimiter": ",",
+      "csvw:quoteChar": "\"",
+      "csvw:headerRowCount": 1,
+      "cdif:hasPhysicalMapping": [
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 0,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 1,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#permit_"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 2,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#permit_status"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 3,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#permit_milestone"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 4,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#permit_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 5,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#review_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 6,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#application_start_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 7,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#issue_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 8,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#processing_time"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 9,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#street_number"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 10,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#street_direction"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 11,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#street_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 12,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#work_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 13,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#work_description"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 14,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#permit_condition"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 15,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#residential_unit_change"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 16,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#building_fee_paid"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 17,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#zoning_fee_paid"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 18,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#other_fee_paid"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 19,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#subtotal_paid"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 20,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#building_fee_unpaid"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 21,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#zoning_fee_unpaid"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 22,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#other_fee_unpaid"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 23,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#subtotal_unpaid"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 24,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#building_fee_waived"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 25,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#building_fee_subtotal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 26,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#zoning_fee_subtotal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 27,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#other_fee_subtotal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 28,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#zoning_fee_waived"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 29,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#other_fee_waived"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 30,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#subtotal_waived"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 31,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#total_fee"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 32,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_1_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 33,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_1_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 34,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_1_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 35,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_1_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 36,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_1_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 37,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_2_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 38,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_2_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 39,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_2_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 40,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_2_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 41,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_2_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 42,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_3_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 43,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_3_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 44,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_3_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 45,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_3_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 46,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_3_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 47,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_4_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 48,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_4_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 49,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_4_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 50,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_4_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 51,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_4_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 52,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_5_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 53,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_5_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 54,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_5_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 55,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_5_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 56,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_5_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 57,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_6_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 58,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_6_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 59,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_6_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 60,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_6_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 61,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_6_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 62,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_7_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 63,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_7_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 64,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_7_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 65,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_7_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 66,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_7_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 67,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_8_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 68,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_8_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 69,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_8_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 70,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_8_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 71,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_8_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 72,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_9_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 73,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_9_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 74,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_9_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 75,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_9_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 76,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_9_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 77,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_10_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 78,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_10_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 79,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_10_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 80,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_10_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 81,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_10_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 82,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_11_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 83,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_11_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 84,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_11_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 85,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_11_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 86,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_11_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 87,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_12_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 88,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_12_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 89,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_12_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 90,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_12_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 91,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_12_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 92,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_13_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 93,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_13_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 94,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_13_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 95,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_13_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 96,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_13_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 97,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_14_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 98,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_14_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 99,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_14_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 100,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_14_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 101,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_14_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 102,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_15_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 103,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_15_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 104,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_15_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 105,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_15_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 106,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#contact_15_zipcode"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 107,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#reported_cost"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 108,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#pin_list"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 109,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#community_area"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 110,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#census_tract"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 111,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#ward"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 112,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#xcoordinate"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 113,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#ycoordinate"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 114,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#latitude"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 115,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#longitude"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 116,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Socrata Open Data API (SODA) endpoint",
+      "schema:serviceType": "Socrata Open Data API (SODA)",
+      "schema:termsOfService": "not specified",
+      "schema:documentation": "https://dev.socrata.com/foundry/data.cityofchicago.org/ydr8-5enu",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:name": "Query rows",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:description": "Columns are named by their API field name (the alternate name of each variable). Results are paged.",
+            "schema:urlTemplate": "https://data.cityofchicago.org/resource/ydr8-5enu.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          },
+          "schema:query-input": [
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "format",
+              "schema:description": "The response format: json, csv or geojson.",
+              "schema:valueRequired": true,
+              "schema:valuePattern": "json|csv|geojson"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "select",
+              "schema:description": "SoQL $select: the columns to return, by API field name. Empty for all.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "where",
+              "schema:description": "SoQL $where: a filter on the rows. Empty for none.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "order",
+              "schema:description": "SoQL $order: the column(s) to sort by. Empty for the default order.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "limit",
+              "schema:description": "The number of rows to return. The endpoint returns 1000 when it is not given.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "offset",
+              "schema:description": "The number of rows to skip, for paging.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            }
+          ],
+          "schema:result": {
+            "@type": [
+              "schema:DataDownload"
+            ],
+            "schema:encodingFormat": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "Building Permit"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Metadata: Time Period",
+      "schema:value": "2006 to present"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Metadata: Changes and Other Historical Information Useful to Understanding This Dataset",
+      "schema:value": "https://www.google.com/search?q=site:data.cityofchicago.org/stories+\"Related+dataset+ID+s\"+\"ydr8-5enu\""
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Metadata: Frequency",
+      "schema:value": "Data are updated daily"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Metadata: Data Owner",
+      "schema:value": "Department of Buildings"
+    }
+  ],
+  "schema:url": "https://data.cityofchicago.org/d/ydr8-5enu",
+  "schema:subjectOf": {
+    "@id": "https://data.cityofchicago.org/d/ydr8-5enu#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: Building Permits",
+    "schema:about": {
+      "@id": "https://data.cityofchicago.org/d/ydr8-5enu"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.cityofchicago.org/api/views/ydr8-5enu.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2026-10-27T21:16:50Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "cocadmin",
+      "schema:identifier": "scy9-9wg4"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Chicago Data Portal",
+      "schema:url": "https://data.cityofchicago.org/"
+    }
+  }
+}

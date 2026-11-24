@@ -1,0 +1,591 @@
+{
+ "id": "54pj-3dxy",
+ "name": "Winners List of Texas Lottery® Prizes",
+ "assetType": "dataset",
+ "attribution": "IT Lottery & Charitable Bingo, Texas Department of Licensing & Regulation",
+ "attributionLink": "https://www.texaslottery.com/export/sites/lottery/Misc/copyright.html",
+ "averageRating": 0,
+ "category": "See Category Tile",
+ "createdAt": 1643932939,
+ "description": "List of winner claims for Texas Lottery® prizes with player (excluding identity of those designated anonymous), prize, game and selling retailer information.\nGOV'T § 466.411: A prize winner, or owner of a legal entity that is a prize winner, of a lottery prize in an amount equal to $1 million or more may choose to remain anonymous.  If the prize is an annuity, then the prize winner may be anonymous for 30 days after the prize is claimed.",
+ "diciBackend": false,
+ "displayType": "table",
+ "downloadCount": 26425,
+ "hideFromCatalog": false,
+ "hideFromDataJson": false,
+ "licenseId": "SEE_TERMS_OF_USE",
+ "locked": false,
+ "newBackend": true,
+ "numberOfComments": 0,
+ "oid": 38367831,
+ "provenance": "official",
+ "publicationAppendEnabled": false,
+ "publicationDate": 1649229634,
+ "publicationGroup": 18585487,
+ "publicationStage": "published",
+ "resourceName": "ITLCB-ODP-004",
+ "rowIdentifierColumnId": 558464243,
+ "rowsUpdatedAt": 1794941823,
+ "rowsUpdatedBy": "6w3n-95ae",
+ "tableId": 18664016,
+ "totalTimesRated": 0,
+ "viewCount": 311588,
+ "viewLastModified": 1756760326,
+ "viewType": "tabular",
+ "approvals": [
+  {
+   "reviewedAt": 1649233240,
+   "reviewedAutomatically": true,
+   "state": "approved",
+   "submissionId": 4595062,
+   "submissionObject": "public_audience_request",
+   "submissionOutcome": "change_audience",
+   "submittedAt": 1649233240,
+   "targetAudience": "public",
+   "workflowId": 1858,
+   "submissionDetails": {
+    "permissionType": "READ"
+   },
+   "submissionOutcomeApplication": {
+    "endedAt": 1649233240,
+    "failureCount": 0,
+    "startedAt": 1649233240,
+    "status": "success"
+   },
+   "submitter": {
+    "id": "6w3n-95ae",
+    "displayName": "ODP Publisher"
+   }
+  }
+ ],
+ "clientContext": {
+  "clientContextVariables": [],
+  "inheritedVariables": {}
+ },
+ "columns": [
+  {
+   "id": 558464243,
+   "name": "Row ID",
+   "dataTypeName": "text",
+   "description": "Unique key.",
+   "fieldName": "row_id",
+   "position": 1,
+   "renderTypeName": "text",
+   "tableColumnId": 140792214,
+   "format": {}
+  },
+  {
+   "id": 558464244,
+   "name": "Claim Number",
+   "dataTypeName": "number",
+   "description": "A number assigned by the Claims Process.  A claim may contain multiple claim lines.",
+   "fieldName": "claim_number",
+   "position": 2,
+   "renderTypeName": "number",
+   "tableColumnId": 140792196,
+   "format": {
+    "noCommas": "true",
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464245,
+   "name": "Amount Won",
+   "dataTypeName": "number",
+   "description": "Amount won for winning play if cash prize.  Prize value for 2nd Chance promotion if merchandise prize.",
+   "fieldName": "won_amount",
+   "position": 3,
+   "renderTypeName": "number",
+   "tableColumnId": 140792200,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "2",
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464246,
+   "name": "Date Claim Paid",
+   "dataTypeName": "calendar_date",
+   "description": "The date the claim was paid.",
+   "fieldName": "claim_paid_date",
+   "position": 4,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 140792222,
+   "format": {
+    "view": "date",
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464247,
+   "name": "Player ID",
+   "dataTypeName": "number",
+   "description": "Number assigned by the payment processing system to the claimant, or claim number for anonymous claimant. ",
+   "fieldName": "player_id",
+   "position": 5,
+   "renderTypeName": "number",
+   "tableColumnId": 140792210,
+   "format": {
+    "noCommas": "true",
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464248,
+   "name": "Annuity Indicator",
+   "dataTypeName": "text",
+   "description": "Indicator if the claim is an annuity (YES) or cash value option (NO).",
+   "fieldName": "annuity_indicator",
+   "position": 6,
+   "renderTypeName": "text",
+   "tableColumnId": 140954075,
+   "format": {
+    "displayStyle": "yesno"
+   }
+  },
+  {
+   "id": 558464249,
+   "name": "Anonymous Indicator",
+   "dataTypeName": "text",
+   "description": "Indicator of player's request to remain anonymous.",
+   "fieldName": "anonymity_indicator",
+   "position": 7,
+   "renderTypeName": "text",
+   "tableColumnId": 140954074,
+   "format": {
+    "displayStyle": "yesno"
+   }
+  },
+  {
+   "id": 558464250,
+   "name": "Claim Center Location",
+   "dataTypeName": "text",
+   "description": "Name of lottery claim center office that processed the claim.",
+   "fieldName": "office_name",
+   "position": 8,
+   "renderTypeName": "text",
+   "tableColumnId": 140792191,
+   "format": {}
+  },
+  {
+   "id": 558464251,
+   "name": "Claim Type",
+   "dataTypeName": "text",
+   "description": "Indicator if the claim was claimed as an individual or legal entity.",
+   "fieldName": "recipient_type",
+   "position": 9,
+   "renderTypeName": "text",
+   "tableColumnId": 140792220,
+   "format": {}
+  },
+  {
+   "id": 558464252,
+   "name": "US Citizen Flag",
+   "dataTypeName": "text",
+   "description": "Indicator if claimant is US Citizen (YES/NO) or not provided.",
+   "fieldName": "citizen_resident_indicator",
+   "position": 10,
+   "renderTypeName": "text",
+   "tableColumnId": 140792198,
+   "format": {}
+  },
+  {
+   "id": 558464253,
+   "name": "Last Name",
+   "dataTypeName": "text",
+   "description": "The last name of individual claimant or the full entity name if an entity.  If anonymity requested, anonymous will be displayed for individuals.",
+   "fieldName": "last_name",
+   "position": 11,
+   "renderTypeName": "text",
+   "tableColumnId": 140792211,
+   "format": {}
+  },
+  {
+   "id": 558464254,
+   "name": "First Name",
+   "dataTypeName": "text",
+   "description": "The first name of the claimant.  If anonymity requested, anonymous will be displayed for individuals.",
+   "fieldName": "first_name",
+   "position": 12,
+   "renderTypeName": "text",
+   "tableColumnId": 140792218,
+   "format": {}
+  },
+  {
+   "id": 558464255,
+   "name": "Claimant Name and Player ID",
+   "dataTypeName": "text",
+   "description": "The last name, first name and player id for individuals or the full entity name and player id if an entity.  If anonymity requested, anonymous will be displayed along with claim number for individuals.",
+   "fieldName": "player_name_w_id",
+   "position": 13,
+   "renderTypeName": "text",
+   "tableColumnId": 140792192,
+   "format": {}
+  },
+  {
+   "id": 558464256,
+   "name": "Claimant City",
+   "dataTypeName": "text",
+   "description": "The city where the claimant resides.",
+   "fieldName": "claimant_city",
+   "position": 14,
+   "renderTypeName": "text",
+   "tableColumnId": 140792217,
+   "format": {}
+  },
+  {
+   "id": 558464257,
+   "name": "Claimant State",
+   "dataTypeName": "text",
+   "description": "The state where the claimant resides.",
+   "fieldName": "claimant_state",
+   "position": 15,
+   "renderTypeName": "text",
+   "tableColumnId": 140792201,
+   "format": {}
+  },
+  {
+   "id": 558464258,
+   "name": "Claimant County",
+   "dataTypeName": "text",
+   "description": "The county where the claimant resides.",
+   "fieldName": "claimant_county",
+   "position": 16,
+   "renderTypeName": "text",
+   "tableColumnId": 140792197,
+   "format": {}
+  },
+  {
+   "id": 558464259,
+   "name": "Claimant Country",
+   "dataTypeName": "text",
+   "description": "The country where the claimant resides.",
+   "fieldName": "claimant_country",
+   "position": 17,
+   "renderTypeName": "text",
+   "tableColumnId": 140792205,
+   "format": {}
+  },
+  {
+   "id": 558464260,
+   "name": "Prize or Merchandise Indicator",
+   "dataTypeName": "text",
+   "description": "Indicator if claim is prize (money) or merchandise.",
+   "fieldName": "prize_merchandise_code",
+   "position": 18,
+   "renderTypeName": "text",
+   "tableColumnId": 140792188,
+   "format": {}
+  },
+  {
+   "id": 558464261,
+   "name": "Scratch Ticket or Draw Game",
+   "dataTypeName": "text",
+   "description": "The lottery game category of the ticket.  Draw Game or Scratch Ticket.",
+   "fieldName": "game_category",
+   "position": 19,
+   "renderTypeName": "text",
+   "tableColumnId": 140792193,
+   "format": {}
+  },
+  {
+   "id": 558464262,
+   "name": "Date of Draw",
+   "dataTypeName": "calendar_date",
+   "description": "The date the draw game drawing occurred.",
+   "fieldName": "draw_date",
+   "position": 20,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 140792212,
+   "format": {
+    "view": "date",
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464263,
+   "name": "Draw Time of Day",
+   "dataTypeName": "text",
+   "description": "The time of the day the draw occurred: Morning, Day, Evening or Night.",
+   "fieldName": "game_draw_time",
+   "position": 21,
+   "renderTypeName": "text",
+   "tableColumnId": 140792195,
+   "format": {}
+  },
+  {
+   "id": 558464264,
+   "name": "Prize Level",
+   "dataTypeName": "text",
+   "description": "Describes the prize level of the winning play for Draw Games only.",
+   "fieldName": "tier_code",
+   "position": 22,
+   "renderTypeName": "text",
+   "tableColumnId": 140792208,
+   "format": {}
+  },
+  {
+   "id": 558464265,
+   "name": "Date Ticket Sold",
+   "dataTypeName": "calendar_date",
+   "description": "The date the draw game ticket was sold.",
+   "fieldName": "ticket_sold_date",
+   "position": 23,
+   "renderTypeName": "calendar_date",
+   "tableColumnId": 140792215,
+   "format": {
+    "view": "date",
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464266,
+   "name": "Scratch Ticket Game Number",
+   "dataTypeName": "number",
+   "description": "The game number of the scratch ticket.",
+   "fieldName": "instant_game_number",
+   "position": 24,
+   "renderTypeName": "number",
+   "tableColumnId": 140792190,
+   "format": {
+    "noCommas": "true",
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464267,
+   "name": "Scratch Ticket Cost",
+   "dataTypeName": "number",
+   "description": "The cost per scratch ticket dollar amount.",
+   "fieldName": "instant_price_point",
+   "position": 25,
+   "renderTypeName": "number",
+   "tableColumnId": 140792209,
+   "format": {
+    "precisionStyle": "currency",
+    "precision": "0",
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464268,
+   "name": "Retailer Number",
+   "dataTypeName": "number",
+   "description": "The retailer number that sold the ticket.",
+   "fieldName": "retailer_number",
+   "position": 26,
+   "renderTypeName": "number",
+   "tableColumnId": 140792216,
+   "format": {
+    "noCommas": "true",
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464269,
+   "name": "Retailer Name",
+   "dataTypeName": "text",
+   "description": "The retailer name that sold the ticket.",
+   "fieldName": "location_name",
+   "position": 27,
+   "renderTypeName": "text",
+   "tableColumnId": 140792189,
+   "format": {}
+  },
+  {
+   "id": 558464270,
+   "name": "Retailer Number and Name",
+   "dataTypeName": "text",
+   "description": "The retailer number/name that sold the ticket.",
+   "fieldName": "retailer_number_name",
+   "position": 28,
+   "renderTypeName": "text",
+   "tableColumnId": 140792187,
+   "format": {}
+  },
+  {
+   "id": 558464271,
+   "name": "Retailer Address 1",
+   "dataTypeName": "text",
+   "description": "The address line 1 of the retailer that sold the ticket.",
+   "fieldName": "location_address",
+   "position": 29,
+   "renderTypeName": "text",
+   "tableColumnId": 140792202,
+   "format": {}
+  },
+  {
+   "id": 558464272,
+   "name": "Retailer Address 2",
+   "dataTypeName": "text",
+   "description": "The address line 2 of the retailer that sold the ticket.",
+   "fieldName": "location_address2",
+   "position": 30,
+   "renderTypeName": "text",
+   "tableColumnId": 140792207,
+   "format": {}
+  },
+  {
+   "id": 558464273,
+   "name": "Retailer City",
+   "dataTypeName": "text",
+   "description": "The city of the retailer that sold the ticket.",
+   "fieldName": "location_city",
+   "position": 31,
+   "renderTypeName": "text",
+   "tableColumnId": 140792186,
+   "format": {}
+  },
+  {
+   "id": 558464274,
+   "name": "Retailer State",
+   "dataTypeName": "text",
+   "description": "The state of the retailer that sold the ticket.",
+   "fieldName": "location_state",
+   "position": 32,
+   "renderTypeName": "text",
+   "tableColumnId": 140792194,
+   "format": {}
+  },
+  {
+   "id": 558464275,
+   "name": "Retailer Zip Code",
+   "dataTypeName": "text",
+   "description": "The zip code of the retailer that sold the ticket.",
+   "fieldName": "location_zip",
+   "position": 33,
+   "renderTypeName": "text",
+   "tableColumnId": 140792213,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464276,
+   "name": "Retailer Zip Code +4",
+   "dataTypeName": "text",
+   "description": "The zip code+4 of the retailer that sold the ticket.",
+   "fieldName": "location_zip_plus_4",
+   "position": 34,
+   "renderTypeName": "text",
+   "tableColumnId": 140792221,
+   "format": {
+    "align": "right"
+   }
+  },
+  {
+   "id": 558464277,
+   "name": "Retailer County",
+   "dataTypeName": "text",
+   "description": "The county of the retailer that sold the ticket.",
+   "fieldName": "location_county_desc",
+   "position": 35,
+   "renderTypeName": "text",
+   "tableColumnId": 140792204,
+   "format": {}
+  }
+ ],
+ "grants": [
+  {
+   "inherited": false,
+   "type": "viewer",
+   "flags": [
+    "public"
+   ]
+  }
+ ],
+ "license": {
+  "name": "See Terms of Use"
+ },
+ "metadata": {
+  "custom_fields": {
+   "Dataset Category": {
+    "Agency": "Texas Department of Licensing and Regulation",
+    "Category Tile": "Business and Economy"
+   },
+   "Publishing Information": {
+    "Update Frequency": "Weekly"
+   }
+  },
+  "filterCondition": {
+   "metadata": {
+    "advanced": true,
+    "unifiedVersion": 2
+   },
+   "type": "operator",
+   "value": "AND"
+  },
+  "rowIdentifier": 558464243,
+  "rowLabel": "Winning claim, player, prize, game and selling retailer identity and location information.",
+  "availableDisplayTypes": [
+   "table",
+   "fatrow",
+   "page"
+  ],
+  "renderTypeConfig": {
+   "visible": {
+    "table": true
+   }
+  }
+ },
+ "owner": {
+  "id": "6w3n-95ae",
+  "displayName": "ODP Publisher",
+  "screenName": "ODP Publisher",
+  "type": "interactive",
+  "flags": [
+   "acceptedEula",
+   "mayBeStoriesCoOwner"
+  ]
+ },
+ "query": {},
+ "rights": [
+  "read"
+ ],
+ "tableAuthor": {
+  "id": "6w3n-95ae",
+  "displayName": "ODP Publisher",
+  "screenName": "ODP Publisher",
+  "type": "interactive",
+  "flags": [
+   "acceptedEula",
+   "mayBeStoriesCoOwner"
+  ]
+ },
+ "tags": [
+  "lottery",
+  "texas lottery",
+  "texas lottery commission",
+  "education",
+  "gaming",
+  "draw",
+  "scratch ticket",
+  "bingo",
+  "charitable bingo",
+  "employee",
+  "employees",
+  "powerball",
+  "mega millions",
+  "lotto texas",
+  "texas two step",
+  "all or nothing",
+  "pick 3",
+  "daily 4",
+  "cash five",
+  "veterans",
+  "foundation school fund",
+  "texas education",
+  "texas veterans",
+  "fund for veterans assistance",
+  "texas department of licensing and regulation",
+  "texas department of licensing & regulation",
+  "lottery & charitable bingo"
+ ],
+ "flags": [
+  "default",
+  "ownerMayBeContacted",
+  "restorable",
+  "restorePossibleForType"
+ ]
+}

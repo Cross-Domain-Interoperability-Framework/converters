@@ -1,0 +1,509 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/",
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@id": "https://data.austintexas.gov/d/dx9v-zd7x",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Real-Time Traffic Incident Reports",
+  "schema:description": "This dataset contains traffic incident information from the Austin-Travis County traffic reports collected from the various Public Safety agencies through a data feed from the Combined Transportation, Emergency, and Communications Center (CTECC). \n\nFor further context, see:\n- Active Incidents: Map and Context\n- Data Trends and Analysis\n\nThe dataset is updated every 5 minutes with the latest snapshot of active traffic incidents.",
+  "schema:identifier": "dx9v-zd7x",
+  "schema:keywords": [
+    "pedestrians",
+    "roads",
+    "safety",
+    "transportation",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Transportation and Mobility",
+      "schema:inDefinedTermSet": "data.austintexas.gov categories"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "City of Austin, Texas - data.austintexas.gov"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "transportation.data@austintexas.gov",
+        "schema:identifier": "8t3r-wq64"
+      }
+    ]
+  },
+  "schema:datePublished": "2024-01-26T19:55:45Z",
+  "schema:dateCreated": "2017-09-25T13:48:03Z",
+  "schema:dateModified": "2026-11-24T15:15:35Z",
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "attachment",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:url": "https://data.austintexas.gov/api/views/dx9v-zd7x/files/2157d7b2-dc58-4045-9dab-04bfd5cdc697?download=true&filename=52244122875_884a740669_c.jpg",
+        "schema:name": "dataset_cover_photo"
+      }
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "#traffic_report_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Traffic Report ID",
+      "schema:alternateName": [
+        "traffic_report_id"
+      ],
+      "schema:description": "Unique identifier for the traffic report",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:role": "UnitIdentifier"
+    },
+    {
+      "@id": "#published_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Published Date",
+      "schema:alternateName": [
+        "published_date"
+      ],
+      "schema:description": "The date the report was published",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#issue_reported",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Issue Reported",
+      "schema:alternateName": [
+        "issue_reported"
+      ],
+      "schema:description": "The reported issue, based on the selection by reporting agency",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#location",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Location",
+      "schema:alternateName": [
+        "location"
+      ],
+      "schema:description": "The reported incident location (point)",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#latitude",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Latitude",
+      "schema:alternateName": [
+        "latitude"
+      ],
+      "schema:description": "Latitude of the reported incident location",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#longitude",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Longitude",
+      "schema:alternateName": [
+        "longitude"
+      ],
+      "schema:description": "Longitude of the reported incident location",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#address",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Address",
+      "schema:alternateName": [
+        "address"
+      ],
+      "schema:description": "The address at which the incident was reported.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#traffic_report_status",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Status",
+      "schema:alternateName": [
+        "traffic_report_status"
+      ],
+      "schema:description": "Indicates if the reported incident is active or archived.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#traffic_report_status_date_time",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Status Date",
+      "schema:alternateName": [
+        "traffic_report_status_date_time"
+      ],
+      "schema:description": "The date/time at which the traffic incident was last updated.",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#agency",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Agency",
+      "schema:alternateName": [
+        "agency"
+      ],
+      "schema:description": "The agency reporting the incident",
+      "cdif:physicalDataType": "xsd:string"
+    }
+  ],
+  "cdif:hasPrimaryKey": {
+    "@type": [
+      "cdif:Key"
+    ],
+    "cdif:isComposedOf": [
+      {
+        "@type": [
+          "cdi:ComponentPosition"
+        ],
+        "cdi:indexes": {
+          "@id": "#traffic_report_id"
+        },
+        "cdi:value": 1
+      }
+    ]
+  },
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "cdi:TabularTextDataSet"
+      ],
+      "schema:name": "CSV export",
+      "schema:contentUrl": "https://data.austintexas.gov/api/views/dx9v-zd7x/rows.csv?accessType=DOWNLOAD",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "cdi:isDelimited": true,
+      "csvw:delimiter": ",",
+      "csvw:quoteChar": "\"",
+      "csvw:headerRowCount": 1,
+      "cdif:hasPhysicalMapping": [
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 0,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#traffic_report_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 1,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#published_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 2,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#issue_reported"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 3,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 4,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#latitude"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 5,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#longitude"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 6,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#address"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 7,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#traffic_report_status"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 8,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#traffic_report_status_date_time"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 9,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#agency"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Socrata Open Data API (SODA) endpoint",
+      "schema:serviceType": "Socrata Open Data API (SODA)",
+      "schema:termsOfService": "not specified",
+      "schema:documentation": "https://dev.socrata.com/foundry/data.austintexas.gov/dx9v-zd7x",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:name": "Query rows",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:description": "Columns are named by their API field name (the alternate name of each variable). Results are paged.",
+            "schema:urlTemplate": "https://data.austintexas.gov/resource/dx9v-zd7x.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          },
+          "schema:query-input": [
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "format",
+              "schema:description": "The response format: json, csv or geojson.",
+              "schema:valueRequired": true,
+              "schema:valuePattern": "json|csv|geojson"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "select",
+              "schema:description": "SoQL $select: the columns to return, by API field name. Empty for all.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "where",
+              "schema:description": "SoQL $where: a filter on the rows. Empty for none.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "order",
+              "schema:description": "SoQL $order: the column(s) to sort by. Empty for the default order.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "limit",
+              "schema:description": "The number of rows to return. The endpoint returns 1000 when it is not given.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "offset",
+              "schema:description": "The number of rows to skip, for paging.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            }
+          ],
+          "schema:result": {
+            "@type": [
+              "schema:DataDownload"
+            ],
+            "schema:encodingFormat": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "Traffic Incident"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Ownership: Program Name",
+      "schema:value": "Data and Technology Services Division"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Ownership: Department name",
+      "schema:value": "Austin Transportation and Public Works"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Publishing Information: Update Frequency",
+      "schema:value": "Multiple Per Day"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Citywide Strategic Plan: Strategic Priority",
+      "schema:value": "Mobility & Critical Infrastructure"
+    }
+  ],
+  "schema:url": "https://data.austintexas.gov/d/dx9v-zd7x",
+  "schema:license": [
+    {
+      "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://data.austintexas.gov/d/dx9v-zd7x#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: Real-Time Traffic Incident Reports",
+    "schema:about": {
+      "@id": "https://data.austintexas.gov/d/dx9v-zd7x"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.austintexas.gov/api/views/dx9v-zd7x.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2026-07-16T17:25:49Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "transportation.data@austintexas.gov",
+      "schema:identifier": "8t3r-wq64"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "City of Austin Open Data",
+      "schema:url": "https://data.austintexas.gov/"
+    }
+  }
+}

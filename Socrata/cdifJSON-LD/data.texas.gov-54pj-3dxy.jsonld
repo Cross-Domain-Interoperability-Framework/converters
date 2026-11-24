@@ -1,0 +1,1084 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/",
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@id": "https://data.texas.gov/d/54pj-3dxy",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Winners List of Texas Lottery® Prizes",
+  "schema:description": "List of winner claims for Texas Lottery® prizes with player (excluding identity of those designated anonymous), prize, game and selling retailer information.\nGOV'T § 466.411: A prize winner, or owner of a legal entity that is a prize winner, of a lottery prize in an amount equal to $1 million or more may choose to remain anonymous.  If the prize is an annuity, then the prize winner may be anonymous for 30 days after the prize is claimed.",
+  "schema:identifier": "54pj-3dxy",
+  "schema:keywords": [
+    "lottery",
+    "texas lottery",
+    "texas lottery commission",
+    "education",
+    "gaming",
+    "draw",
+    "scratch ticket",
+    "bingo",
+    "charitable bingo",
+    "employee",
+    "employees",
+    "powerball",
+    "mega millions",
+    "lotto texas",
+    "texas two step",
+    "all or nothing",
+    "pick 3",
+    "daily 4",
+    "cash five",
+    "veterans",
+    "foundation school fund",
+    "texas education",
+    "texas veterans",
+    "fund for veterans assistance",
+    "texas department of licensing and regulation",
+    "texas department of licensing & regulation",
+    "lottery & charitable bingo",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "See Category Tile",
+      "schema:inDefinedTermSet": "data.texas.gov categories"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "License: See Terms of Use"
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "IT Lottery & Charitable Bingo, Texas Department of Licensing & Regulation",
+        "schema:url": "https://www.texaslottery.com/export/sites/lottery/Misc/copyright.html"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "ODP Publisher",
+        "schema:identifier": "6w3n-95ae"
+      }
+    ]
+  },
+  "schema:datePublished": "2022-04-06T07:20:34Z",
+  "schema:dateCreated": "2022-02-04T00:02:19Z",
+  "schema:dateModified": "2026-11-17T18:57:03Z",
+  "schema:variableMeasured": [
+    {
+      "@id": "#row_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Row ID",
+      "schema:alternateName": [
+        "row_id"
+      ],
+      "schema:description": "Unique key.",
+      "cdif:physicalDataType": "xsd:string",
+      "cdif:role": "UnitIdentifier"
+    },
+    {
+      "@id": "#claim_number",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Claim Number",
+      "schema:alternateName": [
+        "claim_number"
+      ],
+      "schema:description": "A number assigned by the Claims Process. A claim may contain multiple claim lines.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#won_amount",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Amount Won",
+      "schema:alternateName": [
+        "won_amount"
+      ],
+      "schema:description": "Amount won for winning play if cash prize. Prize value for 2nd Chance promotion if merchandise prize.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#claim_paid_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Date Claim Paid",
+      "schema:alternateName": [
+        "claim_paid_date"
+      ],
+      "schema:description": "The date the claim was paid.",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#player_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Player ID",
+      "schema:alternateName": [
+        "player_id"
+      ],
+      "schema:description": "Number assigned by the payment processing system to the claimant, or claim number for anonymous claimant.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#annuity_indicator",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Annuity Indicator",
+      "schema:alternateName": [
+        "annuity_indicator"
+      ],
+      "schema:description": "Indicator if the claim is an annuity (YES) or cash value option (NO).",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#anonymity_indicator",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Anonymous Indicator",
+      "schema:alternateName": [
+        "anonymity_indicator"
+      ],
+      "schema:description": "Indicator of player's request to remain anonymous.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#office_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Claim Center Location",
+      "schema:alternateName": [
+        "office_name"
+      ],
+      "schema:description": "Name of lottery claim center office that processed the claim.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#recipient_type",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Claim Type",
+      "schema:alternateName": [
+        "recipient_type"
+      ],
+      "schema:description": "Indicator if the claim was claimed as an individual or legal entity.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#citizen_resident_indicator",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "US Citizen Flag",
+      "schema:alternateName": [
+        "citizen_resident_indicator"
+      ],
+      "schema:description": "Indicator if claimant is US Citizen (YES/NO) or not provided.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#last_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Last Name",
+      "schema:alternateName": [
+        "last_name"
+      ],
+      "schema:description": "The last name of individual claimant or the full entity name if an entity. If anonymity requested, anonymous will be displayed for individuals.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#first_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "First Name",
+      "schema:alternateName": [
+        "first_name"
+      ],
+      "schema:description": "The first name of the claimant. If anonymity requested, anonymous will be displayed for individuals.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#player_name_w_id",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Claimant Name and Player ID",
+      "schema:alternateName": [
+        "player_name_w_id"
+      ],
+      "schema:description": "The last name, first name and player id for individuals or the full entity name and player id if an entity. If anonymity requested, anonymous will be displayed along with claim number for individuals.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#claimant_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Claimant City",
+      "schema:alternateName": [
+        "claimant_city"
+      ],
+      "schema:description": "The city where the claimant resides.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#claimant_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Claimant State",
+      "schema:alternateName": [
+        "claimant_state"
+      ],
+      "schema:description": "The state where the claimant resides.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#claimant_county",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Claimant County",
+      "schema:alternateName": [
+        "claimant_county"
+      ],
+      "schema:description": "The county where the claimant resides.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#claimant_country",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Claimant Country",
+      "schema:alternateName": [
+        "claimant_country"
+      ],
+      "schema:description": "The country where the claimant resides.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#prize_merchandise_code",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Prize or Merchandise Indicator",
+      "schema:alternateName": [
+        "prize_merchandise_code"
+      ],
+      "schema:description": "Indicator if claim is prize (money) or merchandise.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#game_category",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Scratch Ticket or Draw Game",
+      "schema:alternateName": [
+        "game_category"
+      ],
+      "schema:description": "The lottery game category of the ticket. Draw Game or Scratch Ticket.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#draw_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Date of Draw",
+      "schema:alternateName": [
+        "draw_date"
+      ],
+      "schema:description": "The date the draw game drawing occurred.",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#game_draw_time",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Draw Time of Day",
+      "schema:alternateName": [
+        "game_draw_time"
+      ],
+      "schema:description": "The time of the day the draw occurred: Morning, Day, Evening or Night.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#tier_code",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Prize Level",
+      "schema:alternateName": [
+        "tier_code"
+      ],
+      "schema:description": "Describes the prize level of the winning play for Draw Games only.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#ticket_sold_date",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Date Ticket Sold",
+      "schema:alternateName": [
+        "ticket_sold_date"
+      ],
+      "schema:description": "The date the draw game ticket was sold.",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#instant_game_number",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Scratch Ticket Game Number",
+      "schema:alternateName": [
+        "instant_game_number"
+      ],
+      "schema:description": "The game number of the scratch ticket.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#instant_price_point",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Scratch Ticket Cost",
+      "schema:alternateName": [
+        "instant_price_point"
+      ],
+      "schema:description": "The cost per scratch ticket dollar amount.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#retailer_number",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Retailer Number",
+      "schema:alternateName": [
+        "retailer_number"
+      ],
+      "schema:description": "The retailer number that sold the ticket.",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#location_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Retailer Name",
+      "schema:alternateName": [
+        "location_name"
+      ],
+      "schema:description": "The retailer name that sold the ticket.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#retailer_number_name",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Retailer Number and Name",
+      "schema:alternateName": [
+        "retailer_number_name"
+      ],
+      "schema:description": "The retailer number/name that sold the ticket.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#location_address",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Retailer Address 1",
+      "schema:alternateName": [
+        "location_address"
+      ],
+      "schema:description": "The address line 1 of the retailer that sold the ticket.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#location_address2",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Retailer Address 2",
+      "schema:alternateName": [
+        "location_address2"
+      ],
+      "schema:description": "The address line 2 of the retailer that sold the ticket.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#location_city",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Retailer City",
+      "schema:alternateName": [
+        "location_city"
+      ],
+      "schema:description": "The city of the retailer that sold the ticket.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#location_state",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Retailer State",
+      "schema:alternateName": [
+        "location_state"
+      ],
+      "schema:description": "The state of the retailer that sold the ticket.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#location_zip",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Retailer Zip Code",
+      "schema:alternateName": [
+        "location_zip"
+      ],
+      "schema:description": "The zip code of the retailer that sold the ticket.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#location_zip_plus_4",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Retailer Zip Code +4",
+      "schema:alternateName": [
+        "location_zip_plus_4"
+      ],
+      "schema:description": "The zip code+4 of the retailer that sold the ticket.",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#location_county_desc",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Retailer County",
+      "schema:alternateName": [
+        "location_county_desc"
+      ],
+      "schema:description": "The county of the retailer that sold the ticket.",
+      "cdif:physicalDataType": "xsd:string"
+    }
+  ],
+  "cdif:hasPrimaryKey": {
+    "@type": [
+      "cdif:Key"
+    ],
+    "cdif:isComposedOf": [
+      {
+        "@type": [
+          "cdi:ComponentPosition"
+        ],
+        "cdi:indexes": {
+          "@id": "#row_id"
+        },
+        "cdi:value": 1
+      }
+    ]
+  },
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "cdi:TabularTextDataSet"
+      ],
+      "schema:name": "CSV export",
+      "schema:contentUrl": "https://data.texas.gov/api/views/54pj-3dxy/rows.csv?accessType=DOWNLOAD",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "cdi:isDelimited": true,
+      "csvw:delimiter": ",",
+      "csvw:quoteChar": "\"",
+      "csvw:headerRowCount": 1,
+      "cdif:hasPhysicalMapping": [
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 0,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#row_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 1,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#claim_number"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 2,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#won_amount"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 3,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#claim_paid_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 4,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#player_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 5,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#annuity_indicator"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 6,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#anonymity_indicator"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 7,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#office_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 8,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#recipient_type"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 9,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#citizen_resident_indicator"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 10,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#last_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 11,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#first_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 12,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#player_name_w_id"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 13,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#claimant_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 14,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#claimant_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 15,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#claimant_county"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 16,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#claimant_country"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 17,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#prize_merchandise_code"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 18,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#game_category"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 19,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#draw_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 20,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#game_draw_time"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 21,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#tier_code"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 22,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#ticket_sold_date"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 23,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#instant_game_number"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 24,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#instant_price_point"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 25,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#retailer_number"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 26,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 27,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#retailer_number_name"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 28,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location_address"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 29,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location_address2"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 30,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location_city"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 31,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location_state"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 32,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location_zip"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 33,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location_zip_plus_4"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 34,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#location_county_desc"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Socrata Open Data API (SODA) endpoint",
+      "schema:serviceType": "Socrata Open Data API (SODA)",
+      "schema:termsOfService": "not specified",
+      "schema:documentation": "https://dev.socrata.com/foundry/data.texas.gov/54pj-3dxy",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:name": "Query rows",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:description": "Columns are named by their API field name (the alternate name of each variable). Results are paged.",
+            "schema:urlTemplate": "https://data.texas.gov/resource/54pj-3dxy.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          },
+          "schema:query-input": [
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "format",
+              "schema:description": "The response format: json, csv or geojson.",
+              "schema:valueRequired": true,
+              "schema:valuePattern": "json|csv|geojson"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "select",
+              "schema:description": "SoQL $select: the columns to return, by API field name. Empty for all.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "where",
+              "schema:description": "SoQL $where: a filter on the rows. Empty for none.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "order",
+              "schema:description": "SoQL $order: the column(s) to sort by. Empty for the default order.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "limit",
+              "schema:description": "The number of rows to return. The endpoint returns 1000 when it is not given.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "offset",
+              "schema:description": "The number of rows to skip, for paging.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            }
+          ],
+          "schema:result": {
+            "@type": [
+              "schema:DataDownload"
+            ],
+            "schema:encodingFormat": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Row label",
+      "schema:value": "Winning claim, player, prize, game and selling retailer identity and location information."
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Dataset Category: Agency",
+      "schema:value": "Texas Department of Licensing and Regulation"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Dataset Category: Category Tile",
+      "schema:value": "Business and Economy"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Publishing Information: Update Frequency",
+      "schema:value": "Weekly"
+    }
+  ],
+  "schema:url": "https://data.texas.gov/d/54pj-3dxy",
+  "schema:subjectOf": {
+    "@id": "https://data.texas.gov/d/54pj-3dxy#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: Winners List of Texas Lottery® Prizes",
+    "schema:about": {
+      "@id": "https://data.texas.gov/d/54pj-3dxy"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://data.texas.gov/api/views/54pj-3dxy.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2025-09-01T20:58:46Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "ODP Publisher",
+      "schema:identifier": "6w3n-95ae"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Texas Open Data Portal",
+      "schema:url": "https://data.texas.gov/"
+    }
+  }
+}

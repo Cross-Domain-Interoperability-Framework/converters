@@ -1,0 +1,2474 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "cdif": "https://w3id.org/cdif/",
+    "csvw": "http://www.w3.org/ns/csvw#"
+  },
+  "@id": "https://www.datos.gov.co/d/jbjy-vk9h",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "SECOP II - Contratos Electrónicos",
+  "schema:description": "Información de los contratos registrados en SECOP II desde su lanzamiento",
+  "schema:identifier": "jbjy-vk9h",
+  "schema:keywords": [
+    "procesos de contratación",
+    "compra pública",
+    "contratos",
+    "secop",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Estadísticas Nacionales",
+      "schema:inDefinedTermSet": "www.datos.gov.co categories"
+    }
+  ],
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:url": "http://creativecommons.org/licenses/by-sa/4.0/legalcode",
+      "schema:name": "Creative Commons Attribution | Share Alike 4.0 International"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Agencia Nacional de Contratación Pública - Colombia Compra Eficiente, Bogotá D.C.",
+        "schema:url": "https://colombiacompra.gov.co"
+      },
+      {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Datos Abiertos CCE",
+        "schema:identifier": "mb3d-8f4b"
+      }
+    ]
+  },
+  "schema:publisher": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Agencia Nacional de Contratación Pública - Colombia Compra Eficiente, Bogotá D.C."
+    }
+  ],
+  "schema:datePublished": "2026-10-25T05:45:25Z",
+  "schema:dateCreated": "2019-10-01T04:42:13Z",
+  "schema:dateModified": "2026-11-23T12:02:02Z",
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "Nacional"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@id": "#nombre_entidad",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Nombre Entidad",
+      "schema:alternateName": [
+        "nombre_entidad"
+      ],
+      "schema:description": "Nombre de la entidad del estado que publica el contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#nit_entidad",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Nit Entidad",
+      "schema:alternateName": [
+        "nit_entidad"
+      ],
+      "schema:description": "NIT de la entidad del estado que publica el contrato",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#departamento",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Departamento",
+      "schema:alternateName": [
+        "departamento"
+      ],
+      "schema:description": "Departamento en el cual se registró la entidad del estado que publica el contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#ciudad",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Ciudad",
+      "schema:alternateName": [
+        "ciudad"
+      ],
+      "schema:description": "Ciudad en el cual se registró la entidad del estado que publica el contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#localizaci_n",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Localización",
+      "schema:alternateName": [
+        "localizaci_n"
+      ],
+      "schema:description": "Ubicación completa de la entidad del estado que publica el contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#orden",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Orden",
+      "schema:alternateName": [
+        "orden"
+      ],
+      "schema:description": "Orden entidad del estado que publica el contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#sector",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Sector",
+      "schema:alternateName": [
+        "sector"
+      ],
+      "schema:description": "Sector entidad del estado que publica el contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#rama",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Rama",
+      "schema:alternateName": [
+        "rama"
+      ],
+      "schema:description": "Rama del estado de la entidad que publica el contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#entidad_centralizada",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Entidad Centralizada",
+      "schema:alternateName": [
+        "entidad_centralizada"
+      ],
+      "schema:description": "Define si la entidad es descentralizada o centralizada",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#proceso_de_compra",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Proceso de Compra",
+      "schema:alternateName": [
+        "proceso_de_compra"
+      ],
+      "schema:description": "Identificador del proceso de compra publicado",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#id_contrato",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "ID Contrato",
+      "schema:alternateName": [
+        "id_contrato"
+      ],
+      "schema:description": "Identificador del contrato firmado, generado por la plataforma",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#referencia_del_contrato",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Referencia del Contrato",
+      "schema:alternateName": [
+        "referencia_del_contrato"
+      ],
+      "schema:description": "Identificador del contrato firmado, generado por la entidad del estado",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#estado_contrato",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Estado Contrato",
+      "schema:alternateName": [
+        "estado_contrato"
+      ],
+      "schema:description": "Estado del contrato, frente a su ejecución, firma o liquidación",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#codigo_de_categoria_principal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Codigo de Categoria Principal",
+      "schema:alternateName": [
+        "codigo_de_categoria_principal"
+      ],
+      "schema:description": "Codigo UNSPSC de la categoría principal para el contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#descripcion_del_proceso",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Descripcion del Proceso",
+      "schema:alternateName": [
+        "descripcion_del_proceso"
+      ],
+      "schema:description": "Descripción del objeto del proceso de compra",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#tipo_de_contrato",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Tipo de Contrato",
+      "schema:alternateName": [
+        "tipo_de_contrato"
+      ],
+      "schema:description": "Tipo de contrato de acuerdo a su marco jurídico",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#modalidad_de_contratacion",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Modalidad de Contratacion",
+      "schema:alternateName": [
+        "modalidad_de_contratacion"
+      ],
+      "schema:description": "Modalidad de contratación de acuerdo al modelo de selección",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#justificacion_modalidad_de",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Justificacion Modalidad de Contratacion",
+      "schema:alternateName": [
+        "justificacion_modalidad_de"
+      ],
+      "schema:description": "Justificación de la modalidad, el escenario bajo el cual se toma la decisión de definir una u otra modalidad de contratación",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#fecha_de_firma",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Fecha de Firma",
+      "schema:alternateName": [
+        "fecha_de_firma"
+      ],
+      "schema:description": "Fecha de firma del contrato electronico",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#fecha_de_inicio_del_contrato",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Fecha de Inicio del Contrato",
+      "schema:alternateName": [
+        "fecha_de_inicio_del_contrato"
+      ],
+      "schema:description": "Fecha de inicio de las responsabilidades contractuales",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#fecha_de_fin_del_contrato",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Fecha de Fin del Contrato",
+      "schema:alternateName": [
+        "fecha_de_fin_del_contrato"
+      ],
+      "schema:description": "Fecha de fin de las responsabilidades contractuales",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#condiciones_de_entrega",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Condiciones de Entrega",
+      "schema:alternateName": [
+        "condiciones_de_entrega"
+      ],
+      "schema:description": "Condiciones bajo las cuales se entrega el producto o servicio",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#tipodocproveedor",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "TipoDocProveedor",
+      "schema:alternateName": [
+        "tipodocproveedor"
+      ],
+      "schema:description": "Tipo de documento del proveedor adjudicado",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#documento_proveedor",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Documento Proveedor",
+      "schema:alternateName": [
+        "documento_proveedor"
+      ],
+      "schema:description": "Número de documento del proveedor adjudicado",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#proveedor_adjudicado",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Proveedor Adjudicado",
+      "schema:alternateName": [
+        "proveedor_adjudicado"
+      ],
+      "schema:description": "Nombre del proveedor adjudicado",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#es_grupo",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Es Grupo",
+      "schema:alternateName": [
+        "es_grupo"
+      ],
+      "schema:description": "Determina el proveedor es un grupo de entidades, existe un conjunto de datos de CCE que contiene la conformación de los grupos",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#es_pyme",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Es Pyme",
+      "schema:alternateName": [
+        "es_pyme"
+      ],
+      "schema:description": "Determina si la empresa es una Pyme",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#habilita_pago_adelantado",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Habilita Pago Adelantado",
+      "schema:alternateName": [
+        "habilita_pago_adelantado"
+      ],
+      "schema:description": "Determina si el contrato tiene habilitada la opción de pago de adelantos",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#liquidaci_n",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Liquidación",
+      "schema:alternateName": [
+        "liquidaci_n"
+      ],
+      "schema:description": "Determina si el contrato ha sido liquidado",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#obligaci_n_ambiental",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Obligación Ambiental",
+      "schema:alternateName": [
+        "obligaci_n_ambiental"
+      ],
+      "schema:description": "Determina si el contrato tiene compromisos de cumplimiento a obligaciones ambientales",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#obligaciones_postconsumo",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Obligaciones Postconsumo",
+      "schema:alternateName": [
+        "obligaciones_postconsumo"
+      ],
+      "schema:description": "Determina si el contrato tiene compromisos de cumplimiento a obligaciones posteriores a la entrega del producto o prestación del servicio",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#reversion",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Reversion",
+      "schema:alternateName": [
+        "reversion"
+      ],
+      "schema:description": "Determina si el contrato ha sido reversado",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#origen_de_los_recursos",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Origen de los Recursos",
+      "schema:alternateName": [
+        "origen_de_los_recursos"
+      ],
+      "schema:description": "Origen de los Recursos, a nivel presupuestal",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#destino_gasto",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Destino Gasto",
+      "schema:alternateName": [
+        "destino_gasto"
+      ],
+      "schema:description": "Destino del gasto, a nivel presupuestal",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#valor_del_contrato",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Valor del Contrato",
+      "schema:alternateName": [
+        "valor_del_contrato"
+      ],
+      "schema:description": "Valor total del contrato",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#valor_de_pago_adelantado",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Valor de pago adelantado",
+      "schema:alternateName": [
+        "valor_de_pago_adelantado"
+      ],
+      "schema:description": "Valor del pago por adelantado",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#valor_facturado",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Valor Facturado",
+      "schema:alternateName": [
+        "valor_facturado"
+      ],
+      "schema:description": "Valor Facturado a la fecha",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#valor_pendiente_de_pago",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Valor Pendiente de Pago",
+      "schema:alternateName": [
+        "valor_pendiente_de_pago"
+      ],
+      "schema:description": "Valor Pendiente de Pago a la fecha",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#valor_pagado",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Valor Pagado",
+      "schema:alternateName": [
+        "valor_pagado"
+      ],
+      "schema:description": "Valor Pagado a la fecha",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#valor_amortizado",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Valor Amortizado",
+      "schema:alternateName": [
+        "valor_amortizado"
+      ],
+      "schema:description": "Valor Amortizado a la fecha",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#valor_pendiente_de",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Valor Pendiente de Amortizacion",
+      "schema:alternateName": [
+        "valor_pendiente_de"
+      ],
+      "schema:description": "Valor Pendiente de Amortizacion a la fecha",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#valor_pendiente_de_ejecucion",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Valor Pendiente de Ejecucion",
+      "schema:alternateName": [
+        "valor_pendiente_de_ejecucion"
+      ],
+      "schema:description": "Valor Pendiente de Ejecucion a la fecha",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#saldo_cdp",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Saldo CDP",
+      "schema:alternateName": [
+        "saldo_cdp"
+      ],
+      "schema:description": "Saldo del CDP asignado al proceso y al contrato",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#saldo_vigencia",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Saldo Vigencia",
+      "schema:alternateName": [
+        "saldo_vigencia"
+      ],
+      "schema:description": "Saldo actual para la vigencia del CDP asignado al proceso y al contrato",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#espostconflicto",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "EsPostConflicto",
+      "schema:alternateName": [
+        "espostconflicto"
+      ],
+      "schema:description": "Determina si el proceso está asociado a algún evento de acuerdo de paz",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#dias_adicionados",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Dias adicionados",
+      "schema:alternateName": [
+        "dias_adicionados"
+      ],
+      "schema:description": "Días adicionados al contrato electrónico",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#puntos_del_acuerdo",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Puntos del Acuerdo",
+      "schema:alternateName": [
+        "puntos_del_acuerdo"
+      ],
+      "schema:description": "Pilares del acuerdo de paz, si el contrato es post conflicto",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#pilares_del_acuerdo",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Pilares del Acuerdo",
+      "schema:alternateName": [
+        "pilares_del_acuerdo"
+      ],
+      "schema:description": "Pilares del acuerdo de paz",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#urlproceso",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "URLProceso",
+      "schema:alternateName": [
+        "urlproceso"
+      ],
+      "schema:description": "URL del proceso de compra en la plataforma SECOP II",
+      "cdif:physicalDataType": "xsd:anyURI"
+    },
+    {
+      "@id": "#nombre_representante_legal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Nombre Representante Legal",
+      "schema:alternateName": [
+        "nombre_representante_legal"
+      ],
+      "schema:description": "Nombre del representante legal de la entidad",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#nacionalidad_representante_legal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Nacionalidad Representante Legal",
+      "schema:alternateName": [
+        "nacionalidad_representante_legal"
+      ],
+      "schema:description": "Nacionalidad del representante legal de la entidad",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#domicilio_representante_legal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Domicilio Representante Legal",
+      "schema:alternateName": [
+        "domicilio_representante_legal"
+      ],
+      "schema:description": "Dirección de domicilio del representante legal de la entidad",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#tipo_de_identificaci_n_representante_legal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Tipo de Identificación Representante Legal",
+      "schema:alternateName": [
+        "tipo_de_identificaci_n_representante_legal"
+      ],
+      "schema:description": "Tipo de identificación del representante legal de la entidad",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#identificaci_n_representante_legal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Identificación Representante Legal",
+      "schema:alternateName": [
+        "identificaci_n_representante_legal"
+      ],
+      "schema:description": "Numero de identificación del representante legal de la entidad",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#g_nero_representante_legal",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Género Representante Legal",
+      "schema:alternateName": [
+        "g_nero_representante_legal"
+      ],
+      "schema:description": "Género sexual del representante legal de la entidad",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#presupuesto_general_de_la_nacion_pgn",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Presupuesto General de la Nacion – PGN",
+      "schema:alternateName": [
+        "presupuesto_general_de_la_nacion_pgn"
+      ],
+      "schema:description": "Valor de origen de los recursos que corresponde al Presupuesto General de la Nacion – PGN",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#sistema_general_de_participaciones",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Sistema General de Participaciones",
+      "schema:alternateName": [
+        "sistema_general_de_participaciones"
+      ],
+      "schema:description": "Valor de origen de los recursos que corresponde al Sistema General de Participaciones",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#sistema_general_de_regal_as",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Sistema General de Regalías",
+      "schema:alternateName": [
+        "sistema_general_de_regal_as"
+      ],
+      "schema:description": "Valor de origen de los recursos que corresponde al Sistema General de Regalías",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#recursos_propios_alcald_as_gobernaciones_y_resguardos_ind_genas_",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Recursos Propios (Alcaldías y Gobernaciones)",
+      "schema:alternateName": [
+        "recursos_propios_alcald_as_gobernaciones_y_resguardos_ind_genas_"
+      ],
+      "schema:description": "Indica el valor de recursos de la entidad en el contrato electronico",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#recursos_de_credito",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Recursos de Credito",
+      "schema:alternateName": [
+        "recursos_de_credito"
+      ],
+      "schema:description": "Valor de origen de los recursos que corresponde a Recursos de Credito",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#recursos_propios",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Otros Recursos (Especie, Privados, Cooperación, Propios Entidades Autónomas)",
+      "schema:alternateName": [
+        "recursos_propios"
+      ],
+      "schema:description": "Valor de origen de los recursos que corresponde a Recursos Propios",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#ultima_actualizacion",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Ultima Actualizacion",
+      "schema:alternateName": [
+        "ultima_actualizacion"
+      ],
+      "schema:description": "Fecha de última actualización del contrato electronico",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#codigo_entidad",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Codigo Entidad",
+      "schema:alternateName": [
+        "codigo_entidad"
+      ],
+      "schema:description": "Codigo de la entidad en la plataforma SECOPII",
+      "cdif:physicalDataType": "xsd:decimal"
+    },
+    {
+      "@id": "#codigo_proveedor",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Codigo Proveedor",
+      "schema:alternateName": [
+        "codigo_proveedor"
+      ],
+      "schema:description": "Codigo del proveedor edn la plataforma SECOPII",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#fecha_inicio_liquidacion",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Fecha Inicio Liquidacion",
+      "schema:alternateName": [
+        "fecha_inicio_liquidacion"
+      ],
+      "schema:description": "Fecha de inicio de liquidación del contrato electrónico",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#fecha_fin_liquidacion",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Fecha Fin Liquidacion",
+      "schema:alternateName": [
+        "fecha_fin_liquidacion"
+      ],
+      "schema:description": "Fecha de fin de liquidación del contrato electrónico",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#objeto_del_contrato",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Objeto del Contrato",
+      "schema:alternateName": [
+        "objeto_del_contrato"
+      ],
+      "schema:description": "Objeto del contrato electrónico",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#duraci_n_del_contrato",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Duración del contrato",
+      "schema:alternateName": [
+        "duraci_n_del_contrato"
+      ],
+      "schema:description": "Describe la duración del contrato en el tiempo",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#nombre_del_banco",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Nombre del banco",
+      "schema:alternateName": [
+        "nombre_del_banco"
+      ],
+      "schema:description": "Indica el nombre del banco en donde se consignaran los pagos del contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#tipo_de_cuenta",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Tipo de cuenta",
+      "schema:alternateName": [
+        "tipo_de_cuenta"
+      ],
+      "schema:description": "Tipo de cuenta en la que se se consignaran los pago del contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#n_mero_de_cuenta",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Número de cuenta",
+      "schema:alternateName": [
+        "n_mero_de_cuenta"
+      ],
+      "schema:description": "Numero de cuenta en donde se haran los pagos del contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#el_contrato_puede_ser_prorrogado",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "El contrato puede ser prorrogado",
+      "schema:alternateName": [
+        "el_contrato_puede_ser_prorrogado"
+      ],
+      "schema:description": "Indica si el contrato puede ser o no prorrogado",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#fecha_de_notificaci_n_de_prorrogaci_n",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Fecha de notificación de prorrogación",
+      "schema:alternateName": [
+        "fecha_de_notificaci_n_de_prorrogaci_n"
+      ],
+      "schema:description": "Infica la fecha de notificación de la prorrogación del contrato",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#nombre_ordenador_del_gasto",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Nombre ordenador del gasto",
+      "schema:alternateName": [
+        "nombre_ordenador_del_gasto"
+      ],
+      "schema:description": "Describe el nombre del ordenador del gasto de la entidad compradora",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#tipo_de_documento_ordenador_del_gasto",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Tipo de documento Ordenador del gasto",
+      "schema:alternateName": [
+        "tipo_de_documento_ordenador_del_gasto"
+      ],
+      "schema:description": "Indica el tipo de documento del ordenador del gasto de la entidad compradora",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#n_mero_de_documento_ordenador_del_gasto",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Número de documento Ordenador del gasto",
+      "schema:alternateName": [
+        "n_mero_de_documento_ordenador_del_gasto"
+      ],
+      "schema:description": "Indica el número de documento del ordenador del gasto",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#nombre_supervisor",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Nombre supervisor",
+      "schema:alternateName": [
+        "nombre_supervisor"
+      ],
+      "schema:description": "Describe el nombre del supervisor de la entidad compradora",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#tipo_de_documento_supervisor",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Tipo de documento supervisor",
+      "schema:alternateName": [
+        "tipo_de_documento_supervisor"
+      ],
+      "schema:description": "Indica el tipo de documento del supervisor de la entidad compradora",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#n_mero_de_documento_supervisor",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Número de documento supervisor",
+      "schema:alternateName": [
+        "n_mero_de_documento_supervisor"
+      ],
+      "schema:description": "Indica el número de documento del supervisor",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#nombre_ordenador_de_pago",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Nombre Ordenador de Pago",
+      "schema:alternateName": [
+        "nombre_ordenador_de_pago"
+      ],
+      "schema:description": "Describe el nombre del Ordenador de Pago de la entidad compradora",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#tipo_de_documento_ordenador_de_pago",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Tipo de documento Ordenador de Pago",
+      "schema:alternateName": [
+        "tipo_de_documento_ordenador_de_pago"
+      ],
+      "schema:description": "Indica el tipo de documento del Ordenador de Pago de la entidad compradora",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#n_mero_de_documento_ordenador_de_pago",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Número de documento Ordenador de Pago",
+      "schema:alternateName": [
+        "n_mero_de_documento_ordenador_de_pago"
+      ],
+      "schema:description": "Indica el número de documento del Ordenador de Pago",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#documentos_tipo",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Documentos Tipo",
+      "schema:alternateName": [
+        "documentos_tipo"
+      ],
+      "schema:description": "Indica si se utilizaron documentos tipo en el contrato",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#descripcion_documentos_tipo",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Descripcion Documentos Tipo",
+      "schema:alternateName": [
+        "descripcion_documentos_tipo"
+      ],
+      "schema:description": "Descripción de los documentos tipo utilizados",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#direcci_n_de_ejecuci_n_del_contrato",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Dirección de ejecución del contrato",
+      "schema:alternateName": [
+        "direcci_n_de_ejecuci_n_del_contrato"
+      ],
+      "schema:description": "Dirección en donde se ejecuto el contrato durante su vigencia",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#criterios_de_sostenibilidad_ambiental",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Criterios de sostenibilidad ambiental",
+      "schema:alternateName": [
+        "criterios_de_sostenibilidad_ambiental"
+      ],
+      "schema:description": "Indica si se definieron los Criterios de sostenibilidad ambiental",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#requisitos_ambientales_en_las_especificaciones_t_cnicas",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Requisitos ambientales en las especificaciones técnicas",
+      "schema:alternateName": [
+        "requisitos_ambientales_en_las_especificaciones_t_cnicas"
+      ],
+      "schema:description": "Indica si se definieron Requisitos ambientales en las especificaciones técnicas",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#criterios_ambientales_en_la_evaluaci_n_de_las_ofertas",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Criterios ambientales en la evaluación de las ofertas",
+      "schema:alternateName": [
+        "criterios_ambientales_en_la_evaluaci_n_de_las_ofertas"
+      ],
+      "schema:description": "Indica si se definieron Criterios ambientales en la evaluación de las ofertas",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#obligaciones_contractuales_o_poscontractuales_a_nivel_ambiental",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Obligaciones contractuales o poscontractuales a nivel ambiental",
+      "schema:alternateName": [
+        "obligaciones_contractuales_o_poscontractuales_a_nivel_ambiental"
+      ],
+      "schema:description": "Indica si se definieron Obligaciones contractuales o poscontractuales a nivel ambiental",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#uso_de_etiquetado_ecol_gico",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Uso de etiquetado ecológico",
+      "schema:alternateName": [
+        "uso_de_etiquetado_ecol_gico"
+      ],
+      "schema:description": "Indica si se definió Uso de etiquetado ecológico",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#obligaciones_posconsumo",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Obligaciones posconsumo",
+      "schema:alternateName": [
+        "obligaciones_posconsumo"
+      ],
+      "schema:description": "Indica si se definieron Obligaciones posconsumo",
+      "cdif:physicalDataType": "xsd:string"
+    },
+    {
+      "@id": "#fecha_inicio_obligaciones_posconsumo",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Fecha inicio obligaciones posconsumo",
+      "schema:alternateName": [
+        "fecha_inicio_obligaciones_posconsumo"
+      ],
+      "schema:description": "Fecha de inicio de ejecución de las obligaciones post consumo",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#fecha_fin_obligaciones_posconsumo",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Fecha fin obligaciones posconsumo",
+      "schema:alternateName": [
+        "fecha_fin_obligaciones_posconsumo"
+      ],
+      "schema:description": "Fecha de fin de ejecución de las obligaciones post consumo",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#fecha_inicio_reversi_n",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Fecha inicio reversión",
+      "schema:alternateName": [
+        "fecha_inicio_reversi_n"
+      ],
+      "schema:description": "Fecha de inicio de ejecución de la reversión",
+      "cdif:physicalDataType": "xsd:dateTime"
+    },
+    {
+      "@id": "#fecha_fin_reversi_n",
+      "@type": [
+        "schema:PropertyValue",
+        "cdi:InstanceVariable"
+      ],
+      "schema:name": "Fecha fin reversión",
+      "schema:alternateName": [
+        "fecha_fin_reversi_n"
+      ],
+      "schema:description": "Fecha de fin de ejecución de la reversión",
+      "cdif:physicalDataType": "xsd:dateTime"
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload",
+        "cdi:TabularTextDataSet"
+      ],
+      "schema:name": "CSV export",
+      "schema:contentUrl": "https://www.datos.gov.co/api/views/jbjy-vk9h/rows.csv?accessType=DOWNLOAD",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "cdi:isDelimited": true,
+      "csvw:delimiter": ",",
+      "csvw:quoteChar": "\"",
+      "csvw:headerRowCount": 1,
+      "cdif:hasPhysicalMapping": [
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 0,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#nombre_entidad"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 1,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#nit_entidad"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 2,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#departamento"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 3,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#ciudad"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 4,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#localizaci_n"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 5,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#orden"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 6,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#sector"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 7,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#rama"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 8,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#entidad_centralizada"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 9,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#proceso_de_compra"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 10,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#id_contrato"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 11,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#referencia_del_contrato"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 12,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#estado_contrato"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 13,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#codigo_de_categoria_principal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 14,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#descripcion_del_proceso"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 15,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#tipo_de_contrato"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 16,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#modalidad_de_contratacion"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 17,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#justificacion_modalidad_de"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 18,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fecha_de_firma"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 19,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fecha_de_inicio_del_contrato"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 20,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fecha_de_fin_del_contrato"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 21,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#condiciones_de_entrega"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 22,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#tipodocproveedor"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 23,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#documento_proveedor"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 24,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#proveedor_adjudicado"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 25,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#es_grupo"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 26,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#es_pyme"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 27,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#habilita_pago_adelantado"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 28,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#liquidaci_n"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 29,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#obligaci_n_ambiental"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 30,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#obligaciones_postconsumo"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 31,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#reversion"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 32,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#origen_de_los_recursos"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 33,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#destino_gasto"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 34,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#valor_del_contrato"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 35,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#valor_de_pago_adelantado"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 36,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#valor_facturado"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 37,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#valor_pendiente_de_pago"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 38,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#valor_pagado"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 39,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#valor_amortizado"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 40,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#valor_pendiente_de"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 41,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#valor_pendiente_de_ejecucion"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 42,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#saldo_cdp"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 43,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#saldo_vigencia"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 44,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#espostconflicto"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 45,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#dias_adicionados"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 46,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#puntos_del_acuerdo"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 47,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#pilares_del_acuerdo"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 48,
+          "cdif:physicalDataType": "xsd:anyURI",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#urlproceso"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 49,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#nombre_representante_legal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 50,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#nacionalidad_representante_legal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 51,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#domicilio_representante_legal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 52,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#tipo_de_identificaci_n_representante_legal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 53,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#identificaci_n_representante_legal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 54,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#g_nero_representante_legal"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 55,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#presupuesto_general_de_la_nacion_pgn"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 56,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#sistema_general_de_participaciones"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 57,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#sistema_general_de_regal_as"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 58,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#recursos_propios_alcald_as_gobernaciones_y_resguardos_ind_genas_"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 59,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#recursos_de_credito"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 60,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#recursos_propios"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 61,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#ultima_actualizacion"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 62,
+          "cdif:physicalDataType": "xsd:decimal",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#codigo_entidad"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 63,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#codigo_proveedor"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 64,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fecha_inicio_liquidacion"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 65,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fecha_fin_liquidacion"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 66,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#objeto_del_contrato"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 67,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#duraci_n_del_contrato"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 68,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#nombre_del_banco"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 69,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#tipo_de_cuenta"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 70,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#n_mero_de_cuenta"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 71,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#el_contrato_puede_ser_prorrogado"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 72,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fecha_de_notificaci_n_de_prorrogaci_n"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 73,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#nombre_ordenador_del_gasto"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 74,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#tipo_de_documento_ordenador_del_gasto"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 75,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#n_mero_de_documento_ordenador_del_gasto"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 76,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#nombre_supervisor"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 77,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#tipo_de_documento_supervisor"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 78,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#n_mero_de_documento_supervisor"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 79,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#nombre_ordenador_de_pago"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 80,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#tipo_de_documento_ordenador_de_pago"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 81,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#n_mero_de_documento_ordenador_de_pago"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 82,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#documentos_tipo"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 83,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#descripcion_documentos_tipo"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 84,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#direcci_n_de_ejecuci_n_del_contrato"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 85,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#criterios_de_sostenibilidad_ambiental"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 86,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#requisitos_ambientales_en_las_especificaciones_t_cnicas"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 87,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#criterios_ambientales_en_la_evaluaci_n_de_las_ofertas"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 88,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#obligaciones_contractuales_o_poscontractuales_a_nivel_ambiental"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 89,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#uso_de_etiquetado_ecol_gico"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 90,
+          "cdif:physicalDataType": "xsd:string",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#obligaciones_posconsumo"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 91,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fecha_inicio_obligaciones_posconsumo"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 92,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fecha_fin_obligaciones_posconsumo"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 93,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fecha_inicio_reversi_n"
+          }
+        },
+        {
+          "@type": [
+            "cdif:PhysicalMapping"
+          ],
+          "cdif:index": 94,
+          "cdif:physicalDataType": "xsd:dateTime",
+          "cdif:formats_InstanceVariable": {
+            "@id": "#fecha_fin_reversi_n"
+          }
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:WebAPI"
+      ],
+      "schema:name": "Socrata Open Data API (SODA) endpoint",
+      "schema:serviceType": "Socrata Open Data API (SODA)",
+      "schema:termsOfService": "not specified",
+      "schema:documentation": "https://dev.socrata.com/foundry/www.datos.gov.co/jbjy-vk9h",
+      "schema:potentialAction": [
+        {
+          "@type": [
+            "schema:SearchAction"
+          ],
+          "schema:name": "Query rows",
+          "schema:target": {
+            "@type": [
+              "schema:EntryPoint"
+            ],
+            "schema:description": "Columns are named by their API field name (the alternate name of each variable). Results are paged.",
+            "schema:urlTemplate": "https://www.datos.gov.co/resource/jbjy-vk9h.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
+            "schema:httpMethod": [
+              "GET"
+            ]
+          },
+          "schema:query-input": [
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "format",
+              "schema:description": "The response format: json, csv or geojson.",
+              "schema:valueRequired": true,
+              "schema:valuePattern": "json|csv|geojson"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "select",
+              "schema:description": "SoQL $select: the columns to return, by API field name. Empty for all.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "where",
+              "schema:description": "SoQL $where: a filter on the rows. Empty for none.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "order",
+              "schema:description": "SoQL $order: the column(s) to sort by. Empty for the default order.",
+              "schema:valueRequired": false
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "limit",
+              "schema:description": "The number of rows to return. The endpoint returns 1000 when it is not given.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            },
+            {
+              "@type": [
+                "schema:PropertyValueSpecification"
+              ],
+              "schema:valueName": "offset",
+              "schema:description": "The number of rows to skip, for paging.",
+              "schema:valueRequired": false,
+              "schema:valuePattern": "[0-9]+"
+            }
+          ],
+          "schema:result": {
+            "@type": [
+              "schema:DataDownload"
+            ],
+            "schema:encodingFormat": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Información de la Entidad: Municipio",
+      "schema:value": "Bogotá D.C."
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Información de la Entidad: DIVIPOLA Municipio",
+      "schema:value": "11001"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Información de la Entidad: Orden",
+      "schema:value": "Nacional"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Información de la Entidad: Sector",
+      "schema:value": "Planeación"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Información de la Entidad: Área o dependencia",
+      "schema:value": "Subdirección de Información y Desarrollo Tecnológico"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Información de la Entidad: Departamento",
+      "schema:value": "Bogotá D.C."
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Información de Datos: Idioma",
+      "schema:value": "Español"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Información de Datos: Frecuencia de Actualización",
+      "schema:value": "Diaria"
+    }
+  ],
+  "schema:url": "https://www.datos.gov.co/d/jbjy-vk9h",
+  "schema:subjectOf": {
+    "@id": "https://www.datos.gov.co/d/jbjy-vk9h#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "Socrata view for: SECOP II - Contratos Electrónicos",
+    "schema:about": {
+      "@id": "https://www.datos.gov.co/d/jbjy-vk9h"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/2.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/data_description/2.0"
+      }
+    ],
+    "schema:description": "Converted from the Socrata view https://www.datos.gov.co/api/views/jbjy-vk9h.json to CDIF by socrata_to_cdif.py.",
+    "schema:dateModified": "2026-10-25T05:45:25Z",
+    "schema:maintainer": {
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Datos Abiertos CCE",
+      "schema:identifier": "mb3d-8f4b"
+    },
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "Datos Abiertos Colombia",
+      "schema:url": "https://www.datos.gov.co/"
+    }
+  }
+}
