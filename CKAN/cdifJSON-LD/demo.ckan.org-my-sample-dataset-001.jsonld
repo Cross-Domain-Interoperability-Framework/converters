@@ -1,0 +1,141 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://demo.ckan.org/dataset/my-sample-dataset-001",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "My Sample Dataset 001",
+  "schema:description": "This is a sample dataset created for demonstration",
+  "schema:keywords": [
+    "climate",
+    "temperature"
+  ],
+  "schema:license": [
+    "cc-by"
+  ],
+  "schema:creator": [
+    {
+      "@list": [
+        {
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "John Doe",
+          "schema:email": "john.doe@example.com"
+        }
+      ]
+    }
+  ],
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "pointOfContact",
+      "schema:contributor": {
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Jane Smith",
+        "schema:email": "jane.smith@example.com"
+      }
+    }
+  ],
+  "schema:publisher": [
+    {
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "DEMO ORGANIZATION",
+      "schema:identifier": "56222204-3045-4e48-b54d-3e713fd14a11",
+      "schema:description": "My Demo"
+    }
+  ],
+  "schema:dateCreated": "2025-10-06T16:40:28",
+  "schema:dateModified": "2025-10-06T16:40:28",
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://example.com/data/temperature.csv",
+      "schema:name": "Temperature Data CSV",
+      "schema:description": "Daily temperature measurements",
+      "schema:encodingFormat": [
+        "CSV"
+      ]
+    }
+  ],
+  "schema:additionalProperty": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "data_source",
+      "schema:value": "National Meteorological Agency"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "geographic_coverage",
+      "schema:value": "Global"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "temporal_coverage_end",
+      "schema:value": "2020-12-31"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "temporal_coverage_start",
+      "schema:value": "2000-01-01"
+    }
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "CKAN id",
+    "schema:value": "5c7eaeed-8ddc-4ebd-a9e7-44337e0606ab"
+  },
+  "schema:url": "https://demo.ckan.org/dataset/my-sample-dataset-001",
+  "schema:subjectOf": {
+    "@id": "https://demo.ckan.org/dataset/my-sample-dataset-001#metadata",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:name": "CKAN package for: My Sample Dataset 001",
+    "schema:about": {
+      "@id": "https://demo.ckan.org/dataset/my-sample-dataset-001"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/2.0"
+      }
+    ],
+    "schema:description": "Converted from the CKAN package https://demo.ckan.org/api/3/action/package_show?id=my-sample-dataset-001 to CDIF by ckan_to_cdif.py.",
+    "schema:dateModified": "2025-10-06T16:40:28",
+    "schema:includedInDataCatalog": {
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "CKAN Demo",
+      "schema:url": "https://demo.ckan.org/"
+    }
+  }
+}
