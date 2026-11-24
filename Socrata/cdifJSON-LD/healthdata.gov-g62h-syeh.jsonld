@@ -54153,11 +54153,6 @@
             "schema:urlTemplate": "https://healthdata.gov/resource/g62h-syeh.{format}?$select={select}&$where={where}&$order={order}&$limit={limit}&$offset={offset}",
             "schema:httpMethod": [
               "GET"
-            ],
-            "schema:contentType": [
-              "application/json",
-              "text/csv",
-              "application/geo+json"
             ]
           },
           "schema:query-input": [
@@ -54212,7 +54207,17 @@
               "schema:valueRequired": false,
               "schema:valuePattern": "[0-9]+"
             }
-          ]
+          ],
+          "schema:result": {
+            "@type": [
+              "schema:DataDownload"
+            ],
+            "schema:encodingFormat": [
+              "application/json",
+              "text/csv",
+              "application/geo+json"
+            ]
+          }
         }
       ]
     }
