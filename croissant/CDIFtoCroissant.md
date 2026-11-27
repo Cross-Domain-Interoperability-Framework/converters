@@ -58,7 +58,7 @@ The output uses the standard Croissant 1.1 `@context` (schema.org IRIs are `http
 | `schema:version` | `version` | Direct; defaults to `"not assigned"` when absent |
 | `schema:inLanguage` | `inLanguage` | Direct match |
 | `schema:sameAs` | `sameAs` | Croissant expects a URL; when CDIF carries a `PropertyValue`/object the converter extracts its `schema:url`/`@id`/`schema:value` |
-| `schema:funding` | `funding` | Both support `MonetaryGrant`; converter maps description and funder |
+| `schema:funding` | `funding` | Both support `MonetaryGrant`; converter maps description and funder (a funder known only by link stays an `{"@id": …}`) |
 
 ### CDIF identifier to Croissant citeAs
 
@@ -102,7 +102,7 @@ Croissant requires `contentUrl`, `encodingFormat`, and `sha256`/`md5` on every `
 | `schema:contentUrl` | `contentUrl` | Direct; placeholder when missing |
 | `schema:encodingFormat` (array) | `encodingFormat` (string) | Converter takes first element; placeholder when missing |
 | `schema:size` (`QuantitativeValue`) | `contentSize` (string) | Converter formats as "NNN B" |
-| `spdx:checksum` (string or object) | `sha256` | Handles bare hex, `{spdx:checksumValue}` objects, and sha256 in `schema:description`; nil placeholder otherwise |
+| `spdx:checksum` (string or object) | `sha256` or `md5` | Handles bare hex, `{spdx:checksumValue}` objects, and sha256 in `schema:description`. `spdx:algorithm` picks the property (unstated means SHA-256); other algorithms are dropped. Nil `sha256` placeholder when there is none (not on archive components) |
 | `schema:name` | `name` | Direct |
 
 ## Property Mapping: Data Description (variables → RecordSet/Field)
@@ -114,7 +114,7 @@ Croissant requires `contentUrl`, `encodingFormat`, and `sha256`/`md5` on every `
 | `cdi:TabularTextDataSet` distribution + `cdif:hasPhysicalMapping` | `cr:RecordSet` | Both describe structured tabular data |
 | `cdi:InstanceVariable` (item of `schema:variableMeasured`) | `cr:Field` | Both describe a named data element with type and description |
 | `cdif:hasPhysicalMapping[]` entry (`cdif:index`, `cdif:formats_InstanceVariable`) | `cr:Field.source.extract.column` | Connects a variable to its physical column (ordinal `cdif:index`, link `cdif:formats_InstanceVariable`) |
-| `cdif:hasPrimaryKey` → `cdif:Key` / `cdif:isComposedOf` | `cr:RecordSet.key` | The key variables map to the RecordSet's key field `@id`s |
+| `cdif:has_PrimaryKey` (data structure) or `cdif:hasPrimaryKey` (dataset) → `cdif:Key` / `cdif:isComposedOf` | `cr:RecordSet.key` | The key variables map to the RecordSet's key field `@id`s |
 
 ### RecordSet generation
 
@@ -127,7 +127,7 @@ Croissant requires `contentUrl`, `encodingFormat`, and `sha256`/`md5` on every `
    - `dataType`: mapped from the variable's `cdi:hasIntendedDataType`, then its `cdif:physicalDataType`, then the mapping's `cdif:physicalDataType`
    - `description`: from the linked InstanceVariable (`schema:description`/`cdif:definition`)
    - `equivalentProperty`: from `schema:propertyID` or `cdif:uses`
-4. If the dataset declares `cdif:hasPrimaryKey`, its composing variable `@id`s are resolved to the matching field `@id`s and emitted as `cr:RecordSet.key`.
+4. The RecordSet's `key` comes from `cdif:has_PrimaryKey` on the file's data structure (`cdi:isStructuredBy`) when all its variables are fields of this file; otherwise from the dataset-level `cdif:hasPrimaryKey` (inline or by `@id` reference), limited to the variables in this file. Variables are read from each `cdi:ComponentPosition` (`cdi:indexes`, ordered by `cdi:value`) and resolved to field `@id`s.
 
 ### Data type mapping
 
@@ -157,10 +157,10 @@ The CDIF **Data Structure profile** (`https://w3id.org/cdif/data_structure/1.0`)
 
 | CDIF (Data Structure profile) | Croissant | Handling |
 |---|---|---|
-| `cdi:isStructuredBy` → `cdi:DataStructure` / `cdi:WideDataStructure` / `cdi:LongDataStructure` / `cdi:DimensionalDataStructure` | `cr:RecordSet` (one per structured file) | The structure flavour is not represented in Croissant; the RecordSet is generated from the physical mappings, not the component list |
+| `cdi:isStructuredBy` → `cdi:WideDataStructure` / `cdi:LongDataStructure` / `cdi:DimensionalDataStructure` (`cdi:DataStructure` is abstract and never appears in a record) | `cr:RecordSet` (one per structured file) | The structure flavour is not represented in Croissant; the RecordSet is generated from the physical mappings, not the component list |
 | `cdi:has_DataStructureComponent` → `IdentifierComponent` / `MeasureComponent` / `AttributeComponent` / `DimensionComponent` (the `cdif:role`) | _(no equivalent)_ | Croissant `cr:Field` has no role concept; component role is carried only in passed-through CDIF properties |
-| `cdif:has_PrimaryKey` (DataStructure level) and dataset-level `cdif:hasPrimaryKey` | `cr:RecordSet.key` | Realized: key variables → key field `@id`s |
-| `cdif:has_ForeignKey` → `cdif:ForeignKey` (references another structure/variable) | `cr:Field.references` (`{"@id": <target field>}`) | The closest analog; emitted only when the target resolves to a field in the generated RecordSets |
+| `cdif:has_PrimaryKey` (data structure level) and dataset-level `cdif:hasPrimaryKey` | `cr:RecordSet.key` | Realized: key variables → key field `@id`s; the file's structure key takes precedence |
+| `cdif:has_ForeignKey` → `cdif:ForeignKey` (`cdif:isComposedOf`, `cdif:references_PrimaryKey`) | `cr:Field.references` | The closest analog; not implemented |
 | InstanceVariable `cdif:isDefinedBy_RepresentedVariable` → `cdi:RepresentedVariable` (not the components' `cdif:isDefinedBy_Variable`) | _(not followed)_ | Not implemented: a `cr:Field` takes its name, description and data type from the InstanceVariable alone. When a variable defers those to its RepresentedVariable (the CDIF rule once this link is set), the field is generated without them; the RepresentedVariable node is not reproduced |
 
 > **`cdif:qualifies` (formerly `cdi:qualifies`) is not a foreign key.** A variable's `cdif:qualifies` (attribute-qualifies-measure, i.e. metadata-about-data such as a quality flag) is **not** mapped to `cr:Field.references`. `references` is reserved for true foreign keys (`cdif:ForeignKey`). `cdif:qualifies` has no clean Croissant equivalent and is passed through in the CDIF properties.

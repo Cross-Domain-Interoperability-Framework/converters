@@ -15,7 +15,8 @@ Mapping summary (current CDIF DataDescription / DataStructure schema, cdif: name
   CDIF cdif:physicalDataType /     → cr:Field.dataType
        cdi:hasIntendedDataType
   CDIF schema:propertyID / cdif:uses → cr:Field.equivalentProperty
-  CDIF cdif:hasPrimaryKey          → cr:RecordSet.key
+  CDIF cdif:has_PrimaryKey /       → cr:RecordSet.key
+       cdif:hasPrimaryKey
   CDIF cdif:qualifies              → not mapped (metadata about another variable,
                                      not a foreign key; see _convert_record_sets)
 
@@ -265,29 +266,40 @@ def _is_nil_url(url):
     return not url or url == "" or "withheld" in url
 
 
-def _extract_sha256(obj):
-    """Extract a SHA-256 hash from CDIF metadata.
+def _extract_checksum(obj):
+    """A CDIF node's checksum as {"sha256": hex} or {"md5": hex}, else {}.
 
     Handles three patterns:
-      1. spdx:checksum as bare hex string
-      2. spdx:checksum as object with spdx:checksumValue
+      1. spdx:checksum as bare hex string (SHA-256)
+      2. spdx:checksum as object with spdx:checksumValue; spdx:algorithm picks
+         the Croissant property, and an unstated one is taken as SHA-256
       3. sha256 hash embedded in schema:description text
+
+    Croissant has no property for any other algorithm, so those are dropped.
     """
     cksum = _get(obj, "spdx:checksum")
     if isinstance(cksum, str) and len(cksum) == 64:
-        return cksum
+        return {"sha256": cksum}
     if isinstance(cksum, dict):
         val = _get(cksum, "spdx:checksumValue")
         if val and isinstance(val, str):
-            return val
+            # spdx:checksumAlgorithm: records written before ConvertFromCroissant
+            # was corrected
+            algorithm = re.sub(r"[^a-z0-9]", "", str(_get(
+                cksum, "spdx:algorithm", "spdx:checksumAlgorithm",
+                default="")).lower())
+            if algorithm.endswith("md5"):
+                return {"md5": val}
+            if not algorithm or algorithm.endswith("sha256"):
+                return {"sha256": val}
 
     # Fall back: extract sha256:XXXX from description
     desc = _get(obj, "schema:description", default="")
     if isinstance(desc, str):
         m = re.search(r"sha256:([0-9a-fA-F]{64})", desc)
         if m:
-            return m.group(1)
-    return None
+            return {"sha256": m.group(1)}
+    return {}
 
 
 def _convert_distribution(cdif, verbose=False):
@@ -342,7 +354,6 @@ def _convert_archive_distribution(dist, di, cr_dist, tabular_files,
 
     archive_name = _get(dist, "schema:name") or f"archive-{di}.zip"
     archive_id = _sanitize_id(archive_name)
-    archive_sha = _extract_sha256(dist)
 
     # Archive FileObject
     archive_obj = {
@@ -356,10 +367,8 @@ def _convert_archive_distribution(dist, di, cr_dist, tabular_files,
     desc = _get(dist, "schema:description")
     if desc:
         archive_obj["description"] = desc
-    if archive_sha:
-        archive_obj["sha256"] = archive_sha
-    else:
-        archive_obj["sha256"] = "0" * 64  # nil placeholder - archive checksum not available
+    # nil placeholder when the archive checksum is not available
+    archive_obj.update(_extract_checksum(dist) or {"sha256": "0" * 64})
     cr_dist.append(archive_obj)
 
     # Component files -- flat in distribution with containedIn back-reference
@@ -395,9 +404,7 @@ def _convert_archive_distribution(dist, di, cr_dist, tabular_files,
         if size_str:
             fobj["contentSize"] = size_str
 
-        sha = _extract_sha256(part)
-        if sha:
-            fobj["sha256"] = sha
+        fobj.update(_extract_checksum(part))
 
         cr_dist.append(fobj)
 
@@ -440,8 +447,7 @@ def _convert_simple_distribution(dist, di, cr_dist, content_url, enc):
 
     # Croissant requires sha256 or md5 on every FileObject. Use the real
     # checksum when present, otherwise a nil placeholder (the inverse strips it).
-    sha = _extract_sha256(dist)
-    fobj["sha256"] = sha if sha else "0" * 64
+    fobj.update(_extract_checksum(dist) or {"sha256": "0" * 64})
 
     cr_dist.append(fobj)
     return cr_dist, dist_id
@@ -511,13 +517,57 @@ def _var_name(var_obj, default=""):
     return nm or default
 
 
+def _node_index(node, index=None):
+    """@id -> the node describing it, wherever in the document it sits."""
+    index = {} if index is None else index
+    if isinstance(node, dict):
+        if "@id" in node and len(node) > 1:
+            index.setdefault(node["@id"], node)
+        node = list(node.values())
+    if isinstance(node, list):
+        for item in node:
+            _node_index(item, index)
+    return index
+
+
+def _key_variable_ids(key, index):
+    """Variable @ids of a cdif:Key (inline or by reference), in key order.
+
+    cdif:isComposedOf holds cdi:ComponentPosition wrappers; records written
+    before ConvertFromCroissant was corrected hold bare variable references.
+    """
+    if not isinstance(key, dict):
+        return []
+    key = index.get(key.get("@id"), key)
+    positions = sorted(
+        _as_list(_get(key, "cdif:isComposedOf", default=[])),
+        key=lambda c: c.get("cdi:value", 0) if isinstance(c, dict) else 0)
+    ids = []
+    for position in positions:
+        ref = (position.get("cdi:indexes", position)
+               if isinstance(position, dict) else position)
+        var_id = ref.get("@id") if isinstance(ref, dict) else ref
+        if var_id:
+            ids.append(var_id)
+    return ids
+
+
+def _structure_keys(part_obj, index):
+    """The primary key of each data structure attached to this file."""
+    for structure in _as_list(_get(part_obj, "cdi:isStructuredBy", default=[])):
+        if isinstance(structure, dict):
+            structure = index.get(structure.get("@id"), structure)
+            yield _key_variable_ids(structure.get("cdif:has_PrimaryKey"), index)
+
+
 def _convert_record_sets(tabular_files, var_index, cdif, verbose=False):
     """Build Croissant RecordSets from tabular files + physical mappings.
 
     Reads the current CDIF DataDescription shape:
       cdif:hasPhysicalMapping[] with cdif:index, cdif:formats_InstanceVariable,
       cdif:physicalDataType; InstanceVariable carries cdi:hasIntendedDataType.
-    Emits cr:RecordSet.key from the dataset-level cdif:hasPrimaryKey.
+    Emits cr:RecordSet.key from the primary key on the file's data structure
+    (cdif:has_PrimaryKey), else from the dataset-level cdif:hasPrimaryKey.
 
     Does NOT emit cr:Field.references. It once claimed to, from a variable's
     cdif:qualifies (then cdi:qualifies), and that was wrong twice over: it says a
@@ -528,14 +578,8 @@ def _convert_record_sets(tabular_files, var_index, cdif, verbose=False):
     """
     record_sets = []
 
-    # Dataset-level primary key: cdif:hasPrimaryKey -> cdif:Key -> cdif:isComposedOf
-    pk = _get(cdif, "cdif:hasPrimaryKey")
-    pk_var_ids = []
-    if isinstance(pk, dict):
-        for c in _as_list(_get(pk, "cdif:isComposedOf", default=[])):
-            cid = c.get("@id") if isinstance(c, dict) else c
-            if cid:
-                pk_var_ids.append(cid)
+    index = _node_index(cdif)
+    pk_var_ids = _key_variable_ids(_get(cdif, "cdif:hasPrimaryKey"), index)
 
     for file_id, part_obj in tabular_files:
         mappings = _as_list(_get(part_obj, "cdif:hasPhysicalMapping", default=[]))
@@ -615,8 +659,12 @@ def _convert_record_sets(tabular_files, var_index, cdif, verbose=False):
             "field": fields,
         }
 
-        # Primary key -> cr:RecordSet.key (only keys whose variables are in this file)
-        key_field_ids = [var_id_to_field_id[v] for v in pk_var_ids
+        # Primary key -> cr:RecordSet.key. The table's own key counts only whole;
+        # of the dataset-level key, take the variables that are in this file.
+        key_vars = next(
+            (ids for ids in _structure_keys(part_obj, index)
+             if ids and all(v in var_id_to_field_id for v in ids)), pk_var_ids)
+        key_field_ids = [var_id_to_field_id[v] for v in key_vars
                          if v in var_id_to_field_id]
         if key_field_ids:
             rs["key"] = ([{"@id": fid} for fid in key_field_ids]
@@ -838,6 +886,8 @@ def _x_funding(value, cdif, rule, cr):
             agent = _convert_agent(funder)
             if agent:
                 node["funder"] = agent
+            elif str(funder.get("@id", "")).startswith(("http://", "https://", "urn:")):
+                node["funder"] = {"@id": funder["@id"]}    # known only by link
         # A CDIF identifier may be a PropertyValue node. Croissant has no
         # shape for one, and copying it in would put CDIF's vocabulary inside
         # a Croissant document, so only a plain value travels.

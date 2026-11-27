@@ -8,7 +8,8 @@ Handles the lossless subset:
   - Discovery-level metadata (name, description, creators, license, ...)
   - Distribution / FileObject inventory (flat + archive with containedIn)
   - Tabular RecordSet / Field -> cdi:InstanceVariable + cdif:hasPhysicalMapping
-  - RecordSet key -> cdif:hasPrimaryKey
+  - RecordSet key -> cdif:hasPrimaryKey, or per table on its data structure
+  - Field references -> cdi:WideDataStructure with primary and foreign keys
 
 See CroissantToCDIF.md for the full mapping and limitations.
 
@@ -19,7 +20,11 @@ Mapping summary (current CDIF cdif: schema):
   Croissant cr:Field                   -> CDIF schema:variableMeasured InstanceVariable
   Croissant cr:Field.dataType          -> cdif:physicalDataType (+ cdi:hasIntendedDataType)
   Croissant equivalentProperty         -> CDIF schema:propertyID
-  Croissant cr:RecordSet.key           -> CDIF cdif:hasPrimaryKey (cdif:Key/cdif:isComposedOf)
+  Croissant cr:RecordSet.key           -> CDIF cdif:hasPrimaryKey (one table) or
+                                          cdif:has_PrimaryKey on each table's
+                                          cdi:WideDataStructure (several)
+  Croissant cr:Field.references        -> cdif:ForeignKey on a cdi:WideDataStructure
+                                          (distribution cdi:isStructuredBy)
   Croissant citeAs (DOI)               -> CDIF schema:identifier PropertyValue
 
 Usage:
@@ -385,7 +390,7 @@ def _convert_agent(agent):
                 prefixed.append(f"schema:{t}")
             else:
                 prefixed.append(t)
-        out["@type"] = prefixed if len(prefixed) > 1 else prefixed[0]
+        out["@type"] = prefixed
 
     if agent.get("@id"):
         out["@id"] = agent["@id"]
@@ -428,6 +433,76 @@ def _convert_publisher(croissant):
     return _convert_agent(croissant.get("publisher"))
 
 
+def _grant_identifier(value):
+    """A grant identifier as the schema:PropertyValue CDIF requires.
+
+    Takes text, a PropertyValue node (bare, sc: or schema: keys) or a bare
+    {"@id": ...}. The text, the node's value, or failing that its url or @id,
+    becomes schema:value; a web address is also the schema:url. Anything else
+    -- a list, a node naming none of those -- is returned as it is, so the
+    schema reports it rather than the value disappearing.
+    """
+    if isinstance(value, (str, int)):
+        text, url, scheme = value, None, None
+    elif isinstance(value, dict):
+        text, url, scheme = (_get(value, key, f"sc:{key}", f"schema:{key}")
+                             for key in ("value", "url", "propertyID"))
+        if isinstance(url, dict):
+            url = url.get("@id")
+        if text is None:
+            text = url or value.get("@id")
+        if url is None and str(value.get("@id")).startswith(("http://", "https://")):
+            url = value["@id"]
+    else:
+        return value
+    if text is None:
+        return value
+    text = str(text)
+    if url is None and text.startswith(("http://", "https://")):
+        url = text
+    node = {"@type": ["schema:PropertyValue"]}
+    if scheme:
+        node["schema:propertyID"] = _property_id(scheme)
+    node["schema:value"] = text
+    if url:
+        node["schema:url"] = url
+    return node
+
+
+def _grant_per_funder(grant, funders):
+    """CDIF's grant takes one funder, so a co-funded grant is written once each.
+
+    Only the first keeps the grant's @id, which cannot name two nodes.
+    """
+    if not funders:
+        return [grant]
+    return [{**{k: v for k, v in grant.items() if n == 0 or k != "@id"},
+             "schema:funder": funder}
+            for n, funder in enumerate(funders)]
+
+
+_LINK_RE = re.compile(r"(https?://|urn:)\S+")
+
+
+def _convert_funder(funder):
+    """A grant's funder: an agent, or a reference when only a link is given.
+
+    The link may be the value itself or an unnamed node's @id or url. Returns
+    None for anything else, which has neither a name nor a web identifier.
+    """
+    agent = _convert_agent(funder)
+    if agent:
+        return agent
+    link = funder
+    if isinstance(funder, dict):
+        link = _get(funder, "@id", "url", "sc:url", "schema:url")
+        if isinstance(link, dict):
+            link = link.get("@id")
+    if isinstance(link, str) and _LINK_RE.fullmatch(link):
+        return {"@id": link}
+    return None
+
+
 def _convert_funding(croissant):
     """Croissant funding[] -> CDIF schema:funding[]."""
     out = []
@@ -436,16 +511,19 @@ def _convert_funding(croissant):
             continue
         item = {"@type": ["schema:MonetaryGrant"]}
         for src, dst in (("name", "schema:name"),
-                         ("description", "schema:description"),
-                         ("identifier", "schema:identifier")):
+                         ("description", "schema:description")):
             if f.get(src):
                 item[dst] = f[src]
-        funder = f.get("funder")
-        if funder:
-            agent = _convert_agent(funder)
-            if agent:
-                item["schema:funder"] = agent
-        out.append(item)
+        if f.get("identifier"):
+            item["schema:identifier"] = _grant_identifier(f["identifier"])
+        funders = [agent for agent in
+                   map(_convert_funder, _as_list(f.get("funder"))) if agent]
+        # CDIF wants a funder, an identifier or a name. A grant given only as
+        # prose has no other label.
+        if "schema:description" in item and not funders and not item.keys() & {
+                "schema:identifier", "schema:name"}:
+            item["schema:name"] = item["schema:description"]
+        out.extend(_grant_per_funder(item, funders))
     return out or None
 
 
@@ -545,14 +623,14 @@ def _convert_checksum(fobj):
     if sha and sha != NIL_SHA256_PLACEHOLDER:
         return {
             "@type": ["spdx:Checksum"],
-            "spdx:checksumAlgorithm": "checksumAlgorithm_sha256",
+            "spdx:algorithm": "SHA256",
             "spdx:checksumValue": sha,
         }
     md5 = fobj.get("md5")
     if md5:
         return {
             "@type": ["spdx:Checksum"],
-            "spdx:checksumAlgorithm": "checksumAlgorithm_md5",
+            "spdx:algorithm": "MD5",
             "spdx:checksumValue": md5,
         }
     return None
@@ -1060,11 +1138,14 @@ def _convert_fields_to_cdif(record_sets_by_file, node_for_file_id, verbose=False
         for ordinal, fld in enumerate(all_fields, start=1):
             fname = fld.get("name") or f"field_{ordinal}"
             var_id = _slug_var_id(fname)
-            if var_id in seen_var_ids:
-                var_id = f"{var_id}_{ordinal}"
+            suffix = ordinal
+            # Tables repeat column names ("id"), and ordinals restart per file.
+            while var_id in seen_var_ids:
+                var_id = f"{_slug_var_id(fname)}_{suffix}"
+                suffix += 1
             seen_var_ids.add(var_id)
-            # Record both the field name and its @id so a RecordSet.key that
-            # references either can be resolved back to this variable.
+            # Record both the field name and its @id so a reference to either
+            # can be resolved back to this variable (FAIR2 uses this map).
             field_ref_to_var_id[fname] = var_id
             if fld.get("@id"):
                 field_ref_to_var_id[fld["@id"]] = var_id
@@ -1132,84 +1213,213 @@ def _foreign_key_target(value):
     return value.get("@id")
 
 
-def _convert_foreign_keys(record_sets_by_file, field_ref_to_var_id, verbose=False):
-    """Croissant cr:Field.references -> cdif:ForeignKey, per file.
+def _component_position(var_id, position):
+    return {"@type": ["cdi:ComponentPosition"],
+            "cdi:indexes": {"@id": var_id},
+            "cdi:value": position}
+
+
+def _primary_key_id(variables):
+    # "-" never occurs in a variable @id, so this cannot collide with one.
+    return f"{variables[0]}-primarykey"
+
+
+def _key_node(variables):
+    """A cdif:Key over these variables, in order."""
+    return {"@type": ["cdif:Key"],
+            "cdif:isComposedOf": [_component_position(var_id, position)
+                                  for position, var_id in enumerate(variables, 1)]}
+
+
+def _table_columns(record_sets_by_file, mappings_by_file_id):
+    """One column per variable: (file id, RecordSet, Field, variable @id).
+
+    The mappings were built from these fields in this order. Resolving through
+    them, not through bare names, keeps same-named columns of two tables apart.
+    """
+    columns = []
+    for fid, mappings in mappings_by_file_id.items():
+        fields = [(rs, f) for rs, flds in record_sets_by_file[fid] for f in flds]
+        for (rs, fld), mapping in zip(fields, mappings):
+            columns.append((fid, rs, fld,
+                            mapping["cdif:formats_InstanceVariable"]["@id"]))
+    return columns
+
+
+def _column_resolver(columns):
+    """A function from a field reference to the one column it names, or None.
+
+    A reference is a field @id, or "field" or "recordset/field" when only one
+    of these columns answers to it.
+    """
+    by_id = {c[2]["@id"]: c for c in columns if c[2].get("@id")}
+    by_name = {}
+    for column in columns:
+        rs, name = column[1], column[2].get("name")
+        for alias in {name, f"{rs.get('@id')}/{name}", f"{rs.get('name')}/{name}"}:
+            by_name.setdefault(alias, []).append(column)
+
+    def resolve(ref):
+        if isinstance(ref, dict):
+            ref = ref.get("@id")
+        if ref in by_id:
+            return by_id[ref]
+        hits = by_name.get(ref, [])
+        return hits[0] if len(hits) == 1 else None
+
+    return resolve
+
+
+def _declared_keys(columns):
+    """id(RecordSet) -> (file id, key variables), from cr:RecordSet.key.
+
+    A key counts only if all of it resolves to columns of that RecordSet in one
+    file; part of a key identifies nothing.
+    """
+    by_record_set = {}
+    for column in columns:
+        by_record_set.setdefault(id(column[1]), []).append(column)
+    keys = {}
+    for rs_id, own in by_record_set.items():
+        resolve = _column_resolver(own)
+        declared = [resolve(ref) for ref in _as_list(own[0][1].get("key"))]
+        if declared and all(declared) and len({c[0] for c in declared}) == 1:
+            keys[rs_id] = (declared[0][0], [c[3] for c in declared])
+    return keys
+
+
+def _convert_data_structures(record_sets_by_file, columns, verbose=False):
+    """Croissant keys and references -> a cdi:WideDataStructure per table.
 
     Croissant states a foreign key flat, on the field: these values reference
-    that field's. CDIF states it on the data structure, because a key can span
-    several columns -- cdif:has_ForeignKey holds a cdif:ForeignKey whose
-    cdif:isComposedOf is an ordered list of cdi:ComponentPosition wrappers,
-    each indexing one variable at one position. A Croissant reference is always
-    single-column, so each becomes a one-position key.
+    that field's. CDIF states it on the data structure, and the target is a key
+    rather than a field: cdif:has_ForeignKey holds a cdif:ForeignKey whose
+    cdif:isComposedOf lists the referencing variable and whose
+    cdif:references_PrimaryKey names a cdif:Key. So both ends need a structure
+    -- the referencing file, and the referenced one, whose structure holds that
+    key as cdif:has_PrimaryKey. In a dataset of several tables a declared key
+    has no other place either (see _convert_primary_key), so every keyed file
+    gets a structure.
 
-    The position sits on the wrapper rather than on the variable, which is what
-    lets the variable be a plain @id reference into schema:variableMeasured
-    instead of a duplicated inline copy.
+    cdi:DataStructure is abstract, and every layout must list its components.
+    A Croissant table is wide: one component per variable of the file, a
+    cdi:IdentifierComponent for a key field and a cdi:MeasureComponent for any
+    other, a foreign key column included.
 
-    Returns {file id: [ForeignKey]}.
+    The referenced key is the target RecordSet's declared key. A target
+    RecordSet with no key gets one made of the referenced field, provided only
+    one of its fields is referenced anywhere. Anything else cannot be stated
+    and is skipped with a warning: a reference to part of a composite key, to a
+    field other than the declared key, or to either of two fields of a keyless
+    RecordSet; and a second key in one file (a structure has one primary key).
 
-    Resolution runs here, not in the field loop, because a reference routinely
-    points into a RecordSet processed later -- a Hugging Face split field
-    naming its splits enumeration -- so the variable ids are only all known
-    once every field has been seen.
+    Returns {file id: structure}. Runs after the field loop because a reference
+    routinely points into a RecordSet processed later.
     """
-    by_file = {}
-    for fid, rs_groups in record_sets_by_file.items():
-        keys = []
+    def warn(message):
+        if verbose:
+            print(f"  WARN: {message}")
+
+    resolve = _column_resolver(columns)
+
+    # (source column, target column) for every reference with variables at both
+    # ends. A RecordSet with inline cr:data has no file and so no variables --
+    # every reference in the current corpus points into one. Dropping the key is
+    # right; dropping it silently is not.
+    by_field = {id(c[2]): c for c in columns}
+    references = []
+    for rs_groups in record_sets_by_file.values():
         for _rs, fields in rs_groups:
             for fld in fields:
-                if not isinstance(fld, dict):
-                    continue
-                target_ref = _foreign_key_target(_get(fld, "references", "cr:references"))
+                target_ref = _foreign_key_target(
+                    _get(fld, "references", "cr:references"))
                 if not target_ref:
                     continue
-                local = field_ref_to_var_id.get(fld.get("@id")) or                     field_ref_to_var_id.get(fld.get("name"))
-                target = field_ref_to_var_id.get(target_ref) or                     field_ref_to_var_id.get(str(target_ref).split("/")[-1])
-                if not local or not target:
-                    # A reference into a RecordSet with no file source (inline
-                    # cr:data -- every such reference in the current corpus) has
-                    # no CDIF variable to point at. Dropping the key is right;
-                    # dropping it silently is not.
-                    if verbose:
-                        print(f"  WARN: cannot resolve foreign key "
-                              f"{fld.get('@id')!r} -> {target_ref!r}; skipping")
-                    continue
-                keys.append({
-                    "@type": ["cdif:ForeignKey"],
-                    "cdif:isComposedOf": [{
-                        "@type": ["cdi:ComponentPosition"],
-                        "cdi:indexes": {"@id": local},
-                        "cdi:value": 1,
-                    }],
-                    "cdif:references": {"@id": target},
-                })
-        if keys:
-            by_file[fid] = keys
-    return by_file
+                source, target = by_field.get(id(fld)), resolve(target_ref)
+                if source and target:
+                    references.append((source, target))
+                else:
+                    warn(f"cannot resolve foreign key {fld.get('@id')!r} -> "
+                         f"{target_ref!r}; skipping")
 
+    declared = _declared_keys(columns)
+    record_sets = {id(c[1]): c[1] for c in columns}
+    for rs_id, rs in record_sets.items():
+        if rs.get("key") and rs_id not in declared:
+            warn(f"key of RecordSet {rs.get('@id')!r} does not resolve to "
+                 f"fields of one file; skipping")
 
-def _convert_primary_key(croissant, field_ref_to_var_id):
-    """Croissant cr:RecordSet.key -> CDIF cdif:hasPrimaryKey.
+    # id(RecordSet) -> (file id, key variables), declared or inferred
+    keys = dict(declared)
+    referenced = {}     # keyless RecordSet -> the columns references name
+    for _source, target in references:
+        if not target[1].get("key"):
+            referenced.setdefault(id(target[1]), set()).add((target[0], target[3]))
+    for rs_id, targets in referenced.items():
+        if len(targets) == 1:
+            fid, var_id = next(iter(targets))
+            keys[rs_id] = (fid, [var_id])
 
-    Emits a cdif:Key whose cdif:isComposedOf is the ordered list of the key
-    fields' InstanceVariable @ids. Returns None if no resolvable key."""
-    refs = []
-    for rs in _as_list(croissant.get("recordSet", [])):
-        if not isinstance(rs, dict):
+    primary = {}        # file id -> key variables
+    foreign = {}        # file id -> [ForeignKey]
+    for source, target in references:
+        fid, key = keys.get(id(target[1]), (None, None))
+        if key != [target[3]] or primary.setdefault(fid, key) != key:
+            warn(f"foreign key {source[2].get('@id')!r} -> "
+                 f"{target[2].get('@id')!r}: the target is not, by itself, the "
+                 f"primary key of its table; skipping")
             continue
-        for k in _as_list(rs.get("key")):
-            ref = k.get("@id") if isinstance(k, dict) else k
-            if not ref:
-                continue
-            var_id = field_ref_to_var_id.get(ref)
-            if not var_id:
-                # key may reference "recordset/field"; try the trailing segment
-                var_id = field_ref_to_var_id.get(str(ref).split("/")[-1])
-            if var_id:
-                refs.append({"@id": var_id})
-    if not refs:
+        foreign.setdefault(source[0], []).append({
+            "@type": ["cdif:ForeignKey"],
+            "cdif:isComposedOf": [_component_position(source[3], 1)],
+            "cdif:references_PrimaryKey": {"@id": _primary_key_id(key)},
+        })
+
+    if len(record_sets) > 1:
+        for rs_id, (fid, key) in declared.items():
+            if primary.setdefault(fid, key) != key:
+                warn(f"key of RecordSet {record_sets[rs_id].get('@id')!r}: its "
+                     f"file already has another primary key; skipping")
+
+    structures = {}
+    for fid in dict.fromkeys(c[0] for c in columns):
+        if fid not in primary and fid not in foreign:
+            continue
+        file_keys = [key for key_fid, key in keys.values() if key_fid == fid]
+        identifiers = {var_id for key in file_keys for var_id in key}
+        structure = {
+            "@type": ["cdi:WideDataStructure"],
+            "cdi:has_DataStructureComponent": [{
+                "@type": ["cdi:IdentifierComponent" if column[3] in identifiers
+                          else "cdi:MeasureComponent"],
+                "cdif:isDefinedBy_Variable": {"@id": column[3]},
+            } for column in columns if column[0] == fid],
+        }
+        key = primary.get(fid) or (file_keys[0] if file_keys else None)
+        if key:
+            structure["cdif:has_PrimaryKey"] = {
+                "@id": _primary_key_id(key), **_key_node(key)}
+        if fid in foreign:
+            structure["cdif:has_ForeignKey"] = foreign[fid]
+        structures[fid] = structure
+    return structures
+
+
+def _convert_primary_key(columns, structures):
+    """Croissant cr:RecordSet.key -> dataset-level cdif:hasPrimaryKey.
+
+    That key identifies each data instance of the dataset, so it is written only
+    when the dataset is a single table. With several, each key sits on its own
+    table's data structure. A key the structure already holds is referenced, not
+    written twice.
+    """
+    keys = _declared_keys(columns)
+    if len({id(c[1]) for c in columns}) != 1 or not keys:
         return None
-    return {"@type": ["cdif:Key"], "cdif:isComposedOf": refs}
+    (fid, variables), = keys.values()
+    if fid in structures:
+        return {"@id": _primary_key_id(variables)}
+    return _key_node(variables)
 
 
 # ---------------------------------------------------------------------------
@@ -1271,6 +1481,8 @@ CROISSANT_TO_CDIF = _engine.MappingSet(
         "schema:conditionsOfAccess": "array",
         "schema:keywords": "array",
         "schema:contributor": "array",
+        "schema:funding": "array",
+        "schema:temporalCoverage": "array",
         "schema:distribution": "array",
         "schema:variableMeasured": "array",
         "schema:relatedLink": "array",
@@ -1418,7 +1630,7 @@ def convert(croissant, verbose=False):
     cdif_distribution, node_for_file_id = _convert_distribution(
         croissant, record_sets_by_file, verbose=verbose)
 
-    variables, mappings_by_file, field_ref_to_var_id = _convert_fields_to_cdif(
+    variables, mappings_by_file, _ = _convert_fields_to_cdif(
         record_sets_by_file, node_for_file_id, verbose=verbose)
 
     # Attach hasPhysicalMapping arrays to the right nodes (current cdif: name)
@@ -1427,21 +1639,14 @@ def convert(croissant, verbose=False):
         if node is not None:
             node["cdif:hasPhysicalMapping"] = mappings
 
-    # Foreign keys live on the data structure, which a distribution attaches
-    # via cdi:isStructuredBy. Typed cdi:DataStructure, the generic base: the
-    # Dimensional / Long / Wide variants each name a data layout and must
-    # enumerate their components, while the base admits a structure whose
-    # content is a key. This is the converter's only data-structure output, so
-    # the record gains data_structure conformance -- detect_conformance reads
-    # that from the content; nothing declares it here.
-    for fid, keys in _convert_foreign_keys(
-            record_sets_by_file, field_ref_to_var_id, verbose=verbose).items():
-        node = node_for_file_id.get(fid)
-        if node is None:
-            continue
-        structure = node.setdefault("cdi:isStructuredBy",
-                                    {"@type": ["cdi:DataStructure"]})
-        structure.setdefault("cdif:has_ForeignKey", []).extend(keys)
+    # Foreign keys live on a data structure, which the file's node attaches via
+    # cdi:isStructuredBy. The record gains data_structure conformance --
+    # detect_conformance reads that from the content; nothing declares it here.
+    columns = _table_columns(record_sets_by_file, mappings_by_file)
+    structures = _convert_data_structures(
+        record_sets_by_file, columns, verbose=verbose)
+    for fid, structure in structures.items():
+        node_for_file_id[fid]["cdi:isStructuredBy"] = structure
 
     # A FileObject that no RecordSet draws data from is not a distribution of
     # this dataset — a distribution is another downloadable form of the same
@@ -1477,7 +1682,7 @@ def convert(croissant, verbose=False):
         out["schema:variableMeasured"] = variables
 
     # RecordSet primary key -> cdif:hasPrimaryKey
-    primary_key = _convert_primary_key(croissant, field_ref_to_var_id)
+    primary_key = _convert_primary_key(columns, structures)
     if primary_key:
         out["cdif:hasPrimaryKey"] = primary_key
 
@@ -1495,7 +1700,10 @@ def convert(croissant, verbose=False):
     ]
     for key in PASS_THROUGH:
         if key in croissant:
-            out[key] = croissant[key]
+            value = croissant[key]
+            # CDIF wants a list even of one period; Croissant may carry it bare.
+            out[key] = (_as_list(value) if key == "schema:temporalCoverage"
+                        else value)
 
     # ---- Conformance stub (CDIF subjectOf / CatalogRecord) ---------------
     # @type includes schema:Dataset so the CDIF frame keeps the block
