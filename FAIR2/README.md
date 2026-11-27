@@ -61,7 +61,7 @@ python FAIR2/fair2_to_cdif.py fair2.json -o out.jsonld --static-conformance
 | `dateUpdated` | `schema:dateModified` |
 | `creator` | `schema:creator` `@list`, with ORCID/ROR identifiers and affiliations |
 | `contributor` + `prov:hadRole` (CRediT / CRO) | one `schema:Role` per role, `roleName` a DefinedTerm with the role IRI |
-| `funding` Grants | `schema:funding` MonetaryGrants with funders |
+| `funding` Grants | `schema:funding` MonetaryGrants, one per funder; a text identifier becomes a `schema:PropertyValue` |
 | `spatialCoverage` (bbox > hull > sites) | flat list of `schema:Place` |
 | `accessRights` agreement level | `schema:conditionsOfAccess` |
 | `dataArticle`, `dataArchive`, `citation` | `schema:relatedLink` LinkRoles |

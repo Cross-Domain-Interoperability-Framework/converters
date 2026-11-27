@@ -301,15 +301,14 @@ def t_grant(value, src, rule, ctx):
         grant = {"@type": ["schema:MonetaryGrant"]}
         if g.get("@id"):
             grant["@id"] = ctx["doc"].absolute(g["@id"])
-        for key, target in (("name", "schema:name"), ("identifier", "schema:identifier"),
-                            ("url", "schema:url")):
+        for key, target in (("name", "schema:name"), ("url", "schema:url")):
             if isinstance(g.get(key), str):
                 grant[target] = g[key]
+        if isinstance(g.get("identifier"), str) and g["identifier"]:
+            grant["schema:identifier"] = _croissant._grant_identifier(g["identifier"])
         funders = [_agent(f, ctx["doc"]) for f in _as_list(g.get("funder"))]
-        if funders:
-            grant["schema:funder"] = funders
-        if len(grant) > 1:
-            out.append(grant)
+        if funders or len(grant) > 1:
+            out.extend(_croissant._grant_per_funder(grant, funders))
     return out or None
 
 
@@ -632,6 +631,7 @@ TABLE_SET = _engine.MappingSet(
     str(TABLE), transforms=TRANSFORMS,
     arity={"schema:creator": "ordered", "schema:contributor": "array",
            "schema:funding": "array", "schema:spatialCoverage": "array",
+           "schema:temporalCoverage": "array",
            "schema:conditionsOfAccess": "array", "schema:relatedLink": "array",
            "schema:keywords": "array", "prov:wasGeneratedBy": "array",
            "dcterms:conformsTo": "array"})

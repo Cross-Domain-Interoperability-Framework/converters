@@ -11,7 +11,7 @@ DDI-CDI, CSVW, PROV, and DQV).
 `ConvertFromCroissant.py` emits the current CDIF shape:
 `cdif:hasPhysicalMapping` (with `cdif:index` / `cdif:formats_InstanceVariable`),
 single-valued `cdif:physicalDataType`, `cdi:hasIntendedDataType`, and
-`cdif:hasPrimaryKey`. The legacy `cdi:hasValueDomain` / `cdi:locator` /
+`cdif:hasPrimaryKey` / `cdif:has_PrimaryKey`. The legacy `cdi:hasValueDomain` / `cdi:locator` /
 `cdi:hasIndex` / `cdi:ValueMapping` forms are no longer produced.
 
 The conversion is **lossy in the Croissant→CDIF direction** because Croissant
@@ -24,15 +24,17 @@ does not carry information that CDIF requires or commonly expects:
   `schema:DataDownload` and may carry CSVW parsing properties. Croissant carries
   CSV semantics *implicitly* inside `cr:Transform`, so the inverse cannot
   reconstruct the CSVW block — only typed-column membership in a RecordSet.
-- CDIF discovery / data-structure features (`schema:spatialCoverage`,
-  `temporalCoverage`, `measurementTechnique`, the full `cdi:isStructuredBy`
-  component model, PROV `wasGeneratedBy`) have no Croissant equivalents. The
-  inverse leaves these absent; downstream curation is required.
+- CDIF discovery features (`schema:spatialCoverage`, `temporalCoverage`,
+  `measurementTechnique`, PROV `wasGeneratedBy`) have no Croissant equivalents.
+  The inverse leaves these absent; downstream curation is required.
+- Croissant has no data-structure layer. The inverse builds a
+  `cdi:isStructuredBy` structure only where keys call for one (see
+  [Data structure and foreign keys](#data-structure-and-foreign-keys)).
 
 The inverse handles the **lossless subset**: discovery-level dataset metadata,
 distribution / file inventory (flat and archive), tabular RecordSet →
-`cdi:InstanceVariable` + `cdif:hasPhysicalMapping`, and `cr:RecordSet.key` →
-`cdif:hasPrimaryKey`.
+`cdi:InstanceVariable` + `cdif:hasPhysicalMapping`, `cr:RecordSet.key` →
+a primary key, and `cr:Field.references` → `cdif:ForeignKey`.
 
 > **Validation target depends on content.** A Croissant document **with** a
 > `cr:RecordSet` produces a Data-Description-level CDIF document (validate against
@@ -52,14 +54,14 @@ distribution / file inventory (flat and archive), tabular RecordSet →
 | `license` | `schema:license` | If absent or OGC `nil:missing`, output is empty |
 | `datePublished` | `schema:datePublished` | Direct |
 | `dateModified` | `schema:dateModified` | Direct; **fallback** to `datePublished` then `dateCreated` when absent (CDIF discovery requires it). Never fabricated — if the source carries no date at all, it stays absent (enrich upstream; see note below). |
-| `creator` | `schema:creator` (wrapped in `@list`) | CDIF uses `@list` so authorship order is RDF-stable |
+| `creator` | `schema:creator` (wrapped in `@list`) | CDIF uses `@list` so authorship order is RDF-stable; each agent's `@type` is an array, as for every agent (publisher, funder, affiliation) |
 | `keywords` | `schema:keywords` | Direct (kept as array) |
 | `publisher` | `schema:publisher` | Direct |
 | `version` | `schema:version` | Omitted if Croissant's placeholder `"not assigned"` |
 | `inLanguage` | `schema:inLanguage` | Direct |
 | `sameAs` | `schema:sameAs` | Direct |
 | `includedInDataCatalog` | `schema:includedInDataCatalog` | Direct (shared schema.org property) |
-| `funding` | `schema:funding` | `MonetaryGrant` description / funder mapped through |
+| `funding` | `schema:funding` | Always an array of `MonetaryGrant`; description / funder mapped through. A grant with only a description also takes it as `schema:name`, since CDIF requires a name, funder or identifier. A grant with several funders is written once per funder. A funder given only as a web or `urn:` link (a string, or an unnamed node's `@id` or `url`) becomes an `{"@id": …}` reference; one given as other text is dropped. An identifier given as text or as a `PropertyValue` (`value`, `url`, `propertyID`) becomes a `schema:PropertyValue`; other properties of the source node are not carried |
 
 ### Croissant `citeAs` and `url` → CDIF `schema:identifier`
 
@@ -94,6 +96,7 @@ hardcoded list. In practice this means:
 - `manifest/2.0` — when an archive distribution carries member files (a
   `schema:DataDownload` with `schema:hasPart`), as Kaggle zip datasets do. Detected
   automatically; no source-specific special-casing.
+- `data_structure/2.0` — when keys gave a file a `cdi:isStructuredBy` structure.
 
 ```json
 "schema:subjectOf": {
@@ -105,6 +108,7 @@ hardcoded list. In practice this means:
     {"@id": "https://w3id.org/cdif/discovery/2.0"}
     // + data_description/2.0 when InstanceVariable variables are present
     // + manifest/2.0 when an archive distribution has hasPart member files
+    // + data_structure/2.0 when keys produced a data structure
   ]
 }
 ```
@@ -143,8 +147,8 @@ collects the components as `schema:MediaObject`s.
 | `contentUrl` | `schema:contentUrl` | Direct; omitted if OGC `nil:inapplicable` |
 | `encodingFormat` (string) | `schema:encodingFormat` (array of one) | CDIF prefers array |
 | `contentSize` (string `"NNN B"`) | `schema:size` (`QuantitativeValue`) | Parsed to number + unit |
-| `sha256` | `spdx:checksum` (`checksumAlgorithm_sha256`) | The nil placeholder (64 zeros) the forward converter emits is recognized and dropped |
-| `md5` | `spdx:checksum` (`checksumAlgorithm_md5`) | |
+| `sha256` | `spdx:checksum` (`spdx:algorithm` `SHA256`) | The nil placeholder (64 zeros) the forward converter emits is recognized and dropped |
+| `md5` | `spdx:checksum` (`spdx:algorithm` `MD5`) | Used when `sha256` is absent |
 | `name` | `schema:name` | Direct |
 | `description` | `schema:description` | Direct |
 
@@ -161,7 +165,8 @@ collects the components as `schema:MediaObject`s.
 | `cr:Field.dataType` | `cdif:physicalDataType` (single value) + `cdi:hasIntendedDataType` (IRI) on the variable, and `cdif:physicalDataType` on the mapping | Reverse-mapped via the table below |
 | `cr:Field.description` | `schema:description` on the InstanceVariable | Direct |
 | `cr:Field.equivalentProperty` (URL) | `schema:propertyID` on the InstanceVariable | Direct |
-| `cr:RecordSet.key` | `cdif:hasPrimaryKey` → `cdif:Key` / `cdif:isComposedOf` | Key field `@id`s resolved to their InstanceVariable `@id`s |
+| `cr:RecordSet.key` | `cdif:Key` / `cdif:isComposedOf`, as `cdif:hasPrimaryKey` or `cdif:has_PrimaryKey` | See [Primary key](#primary-key) |
+| `cr:Field.references` | `cdif:ForeignKey` on a `cdi:WideDataStructure` | See [Data structure and foreign keys](#data-structure-and-foreign-keys) |
 
 ### Data type mapping (inverse)
 
@@ -183,7 +188,7 @@ For each `cr:Field` the inverse emits a `schema:variableMeasured` entry:
 
 ```json
 {
-  "@id": "#<sluggified field name>",
+  "@id": "#<sluggified field name>",   // numeric suffix when a name repeats
   "@type": ["schema:PropertyValue", "cdi:InstanceVariable"],
   "schema:name": "<field name>",
   "schema:description": "<field description>",
@@ -210,28 +215,83 @@ is the variable name and the `cdif:index` ordinal.
 ### Primary key
 
 `cr:RecordSet.key` (a single `{"@id": …}` or a list) is resolved to the key
-fields' InstanceVariable `@id`s and emitted as a dataset-level `cdif:hasPrimaryKey`:
+fields' InstanceVariable `@id`s and written as a `cdif:Key`: one
+`cdi:ComponentPosition` per field, in key order. Where it goes depends on the
+number of tables (RecordSets with file-backed fields):
+
+- **One table:** dataset-level `cdif:hasPrimaryKey`. If the table also has a
+  data structure (a self-referencing foreign key), the dataset-level property is
+  an `@id` reference to the structure's key.
+- **Several tables:** no dataset-level key, since no one key identifies every
+  data instance. Each key is the `cdif:has_PrimaryKey` of its own file's data
+  structure (below).
 
 ```json
 "cdif:hasPrimaryKey": {
   "@type": ["cdif:Key"],
-  "cdif:isComposedOf": [ {"@id": "#patientid"}, {"@id": "#measurename"} ]
+  "cdif:isComposedOf": [
+    {"@type": ["cdi:ComponentPosition"], "cdi:indexes": {"@id": "#patientid"}, "cdi:value": 1},
+    {"@type": ["cdi:ComponentPosition"], "cdi:indexes": {"@id": "#measurename"}, "cdi:value": 2}
+  ]
 }
 ```
 
-## Data Structure profile (not reconstructed)
+A key is skipped, with a warning under `-v`, unless all of it resolves to fields
+of its RecordSet in one file.
 
-The inverse does **not** synthesize the CDIF Data Structure profile
-(`cdi:isStructuredBy` → `DataStructure` with typed components). The structural
-information is documented in [`CDIFtoCroissant.md`](CDIFtoCroissant.md), but
-Croissant does not carry enough to rebuild it:
+## Data structure and foreign keys
 
-| Croissant | CDIF Data Structure target | Why not auto-generated |
-|-----------|----------------------------|------------------------|
-| `cr:RecordSet.key` | `cdif:hasPrimaryKey` (dataset level) | **Produced** — see above |
-| `cr:Field.references` | `cdif:ForeignKey` on a `cdi:DataStructure` | A foreign key is recoverable in principle, but the full DataStructure / component graph it lives in is not; left to curation |
-| _(none)_ | `cdif:role` (`UnitIdentifier` / `Measure` / `Attribute` / `Dimension` / `Descriptor` / `ReferenceVariable`) | Croissant fields have no role concept |
-| _(none)_ | `cdi:RepresentedVariable`, `cdi:DataStructure` flavour (Wide/Long/Dimensional) | No Croissant equivalent |
+CDIF states a foreign key on a data structure, so a resolvable
+`cr:Field.references` gives a `cdi:isStructuredBy` structure to both the
+referencing file and the referenced file. In a dataset of several tables, every
+file with a declared key gets one too. Other files get none.
+
+The structure is a `cdi:WideDataStructure` (a Croissant table is wide).
+`cdi:DataStructure` is abstract and is never emitted.
+
+| Part of the structure | Source |
+|-----------------------|--------|
+| `cdi:has_DataStructureComponent` | One component per variable of the file: `cdi:IdentifierComponent` for a key field, `cdi:MeasureComponent` for every other field, foreign key columns included. Each names its variable with `cdif:isDefinedBy_Variable` |
+| `cdif:has_PrimaryKey` | The file's key as a `cdif:Key` with an `@id`; `cdif:isComposedOf` holds one `cdi:ComponentPosition` (`cdi:indexes`, `cdi:value`) per key field |
+| `cdif:has_ForeignKey` | One `cdif:ForeignKey` per referencing field: `cdif:isComposedOf` (that variable, position 1) and `cdif:references_PrimaryKey` (the target key's `@id`) |
+
+```json
+"cdi:isStructuredBy": {
+  "@type": ["cdi:WideDataStructure"],
+  "cdi:has_DataStructureComponent": [
+    {"@type": ["cdi:IdentifierComponent"], "cdif:isDefinedBy_Variable": {"@id": "#userid"}},
+    {"@type": ["cdi:MeasureComponent"], "cdif:isDefinedBy_Variable": {"@id": "#movieid"}}
+  ],
+  "cdif:has_PrimaryKey": {
+    "@type": ["cdif:Key"],
+    "@id": "#userid-primarykey",
+    "cdif:isComposedOf": [
+      {"@type": ["cdi:ComponentPosition"], "cdi:indexes": {"@id": "#userid"}, "cdi:value": 1}
+    ]
+  },
+  "cdif:has_ForeignKey": [{
+    "@type": ["cdif:ForeignKey"],
+    "cdif:isComposedOf": [
+      {"@type": ["cdi:ComponentPosition"], "cdi:indexes": {"@id": "#movieid"}, "cdi:value": 1}
+    ],
+    "cdif:references_PrimaryKey": {"@id": "#movieid_2-primarykey"}
+  }]
+}
+```
+
+The referenced key is the target RecordSet's declared `key`. A target RecordSet
+with no `key` gets one made of the referenced field, provided only one of its
+fields is referenced anywhere. A reference is skipped, with a warning under
+`-v`, when:
+
+- either end has no CDIF variable (for example a RecordSet with inline `cr:data`);
+- the referenced field is only part of a composite key, or is not the declared key;
+- two different fields of a keyless RecordSet are referenced;
+- its file already has a different primary key (a structure holds one; the same
+  rule drops a second declared key in one file).
+
+Croissant carries no information for `cdi:RepresentedVariable` nodes, attribute
+components, or the Long and Dimensional layouts; those are left to curation.
 
 ## Croissant Properties with No CDIF Equivalent (Dropped)
 
@@ -257,7 +317,7 @@ A warning is printed when any of these is encountered.
 | `prov:wasDerivedFrom` | Populated only with the source Croissant reference (traceability), not science-data lineage. |
 | `dqv:hasQualityMeasurement` | No Croissant DQV equivalent. |
 | CSVW table block (`csvw:delimiter`, `csvw:header`, …) | Croissant carries CSV semantics implicitly via Transform. |
-| `cdi:isStructuredBy` + component roles | Croissant fields have no role/structure concept. |
+| `cdi:isStructuredBy` for files that need no key structure; Attribute and Dimension component roles | Croissant fields have no role/structure concept. |
 | `cdif:uses` (concept reference) | Croissant has only `equivalentProperty` URL → emitted as `schema:propertyID`; a SKOS concept scheme is unknown. |
 
 ## Pass-through Properties
@@ -273,7 +333,8 @@ forward converter's pass-throughs.
 
 A CDIF document converted to Croissant 1.1 and back is **not** byte-identical to
 the original. Properties outside Croissant's vocabulary (unless preserved as
-pass-through) are lost, and the Data Structure profile is not reconstructed.
+pass-through) are lost. The forward converter reads only the primary key at
+data-structure level, so foreign keys do not survive the trip back to Croissant.
 Round-tripping is intended for CDIF→Croissant→CDIF integrity testing of the
 **discovery and tabular subset** (which validates against the current Discovery /
 DataDescription schemas), not for general lossless transport.

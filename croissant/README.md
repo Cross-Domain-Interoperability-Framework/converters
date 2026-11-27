@@ -119,7 +119,11 @@ list. The converter:
 - Generates `schema:variableMeasured` (`cdi:InstanceVariable`) + per-file
   `cdif:hasPhysicalMapping` entries (`cdif:index`, `cdif:formats_InstanceVariable`,
   `cdif:physicalDataType`) from `cr:RecordSet` / `cr:Field`
-- Maps `cr:RecordSet.key` → `cdif:hasPrimaryKey` (`cdif:Key` / `cdif:isComposedOf`)
+- Maps `cr:RecordSet.key` → a `cdif:Key`: dataset-level `cdif:hasPrimaryKey` for a
+  single table, `cdif:has_PrimaryKey` on each table's data structure for several
+- Maps `cr:Field.references` → `cdif:ForeignKey` on a `cdi:WideDataStructure`
+  (`cdi:isStructuredBy` on both files; see
+  [CroissantToCDIF.md](CroissantToCDIF.md#data-structure-and-foreign-keys))
 - Emits the current `schema:subjectOf` catalog-record shape:
   `schema:additionalType: [{"@id": "dcat:CatalogRecord"}]` — an **IRI reference**, not a
   string literal — plus `schema:about`, an `@id` of the resource IRI with `/metadata`
@@ -177,7 +181,8 @@ pip install mlcroissant          # optional, for validating Croissant output
 - **`cdi:TabularTextDataSet` + `cdif:hasPhysicalMapping`** → `cr:RecordSet` with
   `cr:Field` entries (`source.extract.column`). The RecordSet `@id` is kept
   distinct from the source FileObject `@id` (else JSON-LD merges the nodes).
-- **`cdif:hasPrimaryKey`** → `cr:RecordSet.key`.
+- **`cdif:has_PrimaryKey`** (data structure), else **`cdif:hasPrimaryKey`** →
+  `cr:RecordSet.key`.
 - **Data types** map with the variable's logical type preferred over the
   mapping's storage token (`xsd:decimal`/`Numeric` → `sc:Float`, etc.).
 - **`schema:propertyID` / `cdif:uses`** → `cr:Field.equivalentProperty`.
